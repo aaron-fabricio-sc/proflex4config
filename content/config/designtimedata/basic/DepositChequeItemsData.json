@@ -1,0 +1,19 @@
+{
+    "depositHints": true,
+    "insertCheques": true,
+    "insertChequesCodeLeft": false,
+    "insertChequesAndNotes": false,
+    "insertChequesCodeLeftAndNotes": false,
+    "ejectCheques": false,
+    "ejectChequesCodeLeft": false,
+    "ejectChequesAndNotes": false,
+    "ejectChequesCodeLeftAndNotes": false,
+    "scanCheques": false,
+    "scanNotes": false,
+    "takeMetal": true,
+    "turnChequesLongSideFirst": true,
+    "turnChequesShortSideFirst": false,
+    "turnChequesShortSideFirstCodeLeft": false,
+    "animationTextScanCheques": "Scanning cheque 1",
+    "animationTextScanNotes": "Processing note 1"
+}

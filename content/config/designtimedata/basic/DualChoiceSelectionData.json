@@ -1,0 +1,48 @@
+{
+    "groups": [
+        {
+            "name": "SOMETHING_I_KNOW",
+            "items": [
+                {
+                    "result": "ACCOUNT_NUMBER",
+                    "selected": false,
+                    "state": 0
+                },
+                {
+                    "result": "SOCIAL_SECURITY_NUMBER",
+                    "selected": false,
+                    "state": 0
+                    
+                },
+                {
+                    "result": "TRANSACTION_CODE",
+                    "selected": false,
+                    "exclusive": true,
+                    "state": 0
+                }
+            ]
+        },
+        {
+            "name": "SOMETHING_I_HAVE",
+            "items": [
+                {
+                    "result": "ID_CARD",
+                    "selected": false,
+                    "exclusive": true,
+                    "state": 0
+                },
+                {
+                    "result": "DRIVER_LICENSE",
+                    "selected": false,
+                    "state": 2
+                },
+                {
+                    "result": "PASSPORT",
+                    "selected": false,
+                    "state": 0
+                }
+            ]
+        }
+    ]
+    
+}

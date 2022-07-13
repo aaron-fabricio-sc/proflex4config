@@ -1,0 +1,54 @@
+<!--
+$MOD$ receipt.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <nav id="flexNav"></nav>
+    <article id="flexArticle">
+        <div id="flexMessageContainerArticle" class="flexMessageContainer" data-bind="visible: messageBoxVisible">
+            <div class="messageArea" data-view-key="" data-content-style="InfoBox" data-bind="
+                                                            gesture: {
+                                                                options: {
+                                                                    lockIfSpace: true
+                                                                },
+                                                                grid: 'messageGrid',
+                                                                gestures: {
+                                                                    Swipe: {
+                                                                        direction: 'DIRECTION_VERTICAL',
+                                                                        events: ['swipe']
+                                                                    },
+                                                                    Pan: {
+                                                                        direction:'DIRECTION_VERTICAL',
+                                                                        events:['panstart','panmove','panend']
+                                                                    }
+                                                                },
+                                                                containment: {
+                                                                    element: '#flexArticle .messageArea',
+                                                                    useScrollWidth: false,
+                                                                    useScrollHeight: false
+                                                                },
+                                                                target: 'MESSAGE'
+                                                            }">
+                <var id="MESSAGE" class="color04 font02" data-bind="command: {id: 'MESSAGE', type: CMDTYPE.TEXT, action: null, state: CMDSTATE.NONE, label: {html: messageText, inplace: true}}"></var>
+                <div id="messageGrid"></div> <!-- only for defining a smaller grid than the whole MESSAGE -->
+            </div>
+        </div>
+    </article>
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonsZone">
+            <div class="buttonZone">
+                <div id="buttonConfirm" class="button footerButton"
+                     data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                    <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                    <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel"></div>
+</footer>

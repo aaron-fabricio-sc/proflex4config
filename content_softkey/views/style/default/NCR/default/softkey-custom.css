@@ -1,0 +1,255 @@
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ softkey-custom.css 4.3.1-200122-21-0cd8a9f7-1a04bc7d
+
+*/
+
+/*Place your changes here*/
+/* padding: top right bottom left; */
+
+:root {
+    --header-height-dm-total: 380px;
+    --header-height-dm-image: 290px;
+}
+
+#flexHeader {
+    flex-basis: 251px;
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexHeader,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexHeader,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexHeader {
+    flex-basis: 375px;
+}
+
+/* -- DM support -- */
+body[data-dm-available = true] div[data-view-id = "amountentry"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "cardanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "depositenvelopeanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "genericimage"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "mobiletransaction"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "message"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "numericentry"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "outofservice"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "offlinespa"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "pinentry"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "pleasewait"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "printeranimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "question"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "receipt"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "scancodeanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "withdrawalanimations"] #flexHeader{
+    flex-basis: 375px;
+}
+
+#flexMessageContainerHeader {
+    margin-top: 171px; /* 251-80 */
+}
+
+#flexArticle {
+    padding-bottom: 0 !important;
+    margin-top: 17px;
+}
+
+/*-- Flex Nav/Aside --*/
+#flexNav, #flexNavPopup, #flexAside, #flexAsidePopup {
+    margin-top: 50px;
+}
+
+#flexNav>:not(:first-child), #flexNavPopup>:not(:first-child),
+#flexAside>:not(:first-child), #flexAsidePopup>:not(:first-child) {
+    margin-top: 55px;
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexNav,
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexAside,
+
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexNav,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexNav,
+
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexAside,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexAside {
+    margin-top: -74px;
+}
+
+/* -- DM support -- */
+body[data-dm-available = true] div[data-view-id = "amountentry"] #flexNav,
+body[data-dm-available = true] div[data-view-id = "question"] #flexNav,
+body[data-dm-available = true] div[data-view-id = "receipt"] #flexNav,
+
+body[data-dm-available = true] div[data-view-id = "amountentry"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "cardanimations"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "message"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "numericentry"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "pinentry"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "question"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "receipt"] #flexAside {
+    margin-top: -74px;
+}
+
+/*-- BreadCrumb group --*/
+#breadCrumbGroup, #slideIndicatorGroup {
+    margin-top: 410px; /*please update if softkey pos changes*/
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #slideIndicatorGroup,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #slideIndicatorGroup,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #slideIndicatorGroup {
+    /* Please update if softkey position changes */
+    margin-top: 286px;
+}
+
+/*-- Popup window --*/
+#flexNavPopup, #flexAsidePopup {
+    margin-top: 5px;
+}
+
+.popupWindow {
+    height: 250px;
+    margin-top: 408px;
+}
+
+#popupWindowAmountEntry {
+    height: 486px;
+    margin-top: 279px;
+}
+
+#popupWindowHelp {
+    height: 494px;
+    margin-top: 270px;
+}
+
+/*-- View: welcome --*/
+div[data-view-id="welcome-view"] #flexMain,
+div[data-view-id="welcome"] #flexMain {
+    margin-top: 0;
+}
+
+/*-- View: Accountinformation --*/
+#flexAccountDetailsArea {
+    margin-top: 0;
+}
+
+#flexTransactionsHeader {
+    flex-basis: 60px;
+}
+
+#flexTransactionsHeaderAINStdAINIfxAINPcemov {
+    height: 60px;
+}
+
+#flexTransactionsHeader {
+    margin-top: 10px;
+}
+
+#flexTransactionsHeader {
+    flex-basis: 80px;
+}
+
+#flexTransactionsHeaderAINStdAINIfxAINPcemov {
+    height: 80px;
+}
+
+.transaction {
+    height: 100px;
+}
+
+.row1TransData {
+    height: 30px;
+}
+
+.row2TransData, .column1purposeValue, .column2purposeValue {
+    height: 60px;
+}
+
+.row2TransData {
+    padding: 5px 0 5px 0;
+}
+
+/* -- View: numericentry -- */
+div[data-view-id="numericentry"] #generalInputFieldArea {
+    padding-top: 130px;
+}
+
+/* -- DM support for mobiletransaction -- */
+body[data-dm-available = true] div[data-view-id = "mobiletransaction"] #mobilePhone {
+    height: 370px;
+}
+
+/* -- DM support for printeranimations / withdrawalanimations -- */
+body[data-dm-available = true] div[data-view-id="printeranimations"] #flexArticle figure:not([id="waitSpinner"]),
+body[data-dm-available = true] div[data-view-id="withdrawalanimations"] #flexArticle figure:not([id="waitSpinner"]) {
+    margin-top: 0;
+}
+
+/* -- DM support for message and question -- */
+body[data-dm-available = true] div[data-view-id="message"] .messageArea,
+body[data-dm-available = true] div[data-view-id="question"] .messageArea {
+    max-height: 245px;
+}
+
+body[data-dm-available = true] div[data-view-id="question"] .messageArea[data-other-available="true"] {
+    max-height: 115px;
+}
+
+/* -- DM support for scancodeanimatons -- */
+body[data-dm-available = true] div[data-view-id = "scancodeanimations"] #flexArticle figure {
+    margin-top: -20px;
+}
+
+/* -- DM support for depositanimatons /depositchequesanimations -- */
+body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexArticle,
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexArticle {
+    margin-top: 0;
+}
+
+body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexAnimationHead,
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexAnimationHead  {
+    max-height: 130px;
+}
+
+body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexArticle figure:not([class="shortSideFirst"]) {
+    margin-top: -50px;
+}
+
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexArticle figure:not([id="waitSpinner"]) {
+    margin-top: 0;
+}
+
+/* -- DM support for numericentry -- */
+body[data-dm-available = true] div[data-view-id = "numericentry"] #flexArticle {
+    margin-top: -107px;
+}
+

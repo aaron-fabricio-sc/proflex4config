@@ -1,0 +1,45 @@
+<!--
+$MOD$ genericimage.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <div id="cardAnimationSingleArea">
+            <img id="animation" class="genericImage" src="" data-bind="attr: {src: getLabel('GUI_[#VIEW_KEY#]_Generic_Image', 'style/default/images/credit_card_01.svg')}">
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button footerButton"
+                    data-bind="command: {id: 'CONFIRM', label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm'), inplace: false}, eppkey: 'CONFIRM'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+        <div class="buttonZone">
+            <div id="buttonCorrect" class="button footerButton"
+                    data-bind="command: {id: 'CORRECT', label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Correct', 'Correct'), inplace: false}, eppkey: 'CORRECT'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CORRECT')"></var>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'CANCEL', label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel'), inplace: false}, eppkey: 'CANCEL'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,71 @@
+<!--
+$MOD$ message.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <nav id="flexNav">
+        <div id="flexNavSK00"></div>
+        <div id="flexNavSK01"></div>
+        <div id="flexNavSK02"></div>
+        <div id="flexNavSK03"></div>
+    </nav>
+    <article id="flexArticle">
+        <div id="flexMessageContainerArticle" class="flexMessageContainer" data-bind="visible: messageBoxVisible">
+            <div class="messageArea" data-view-key="" data-content-style="InfoBox" data-bind="attr: { 'data-content-style': messageLevel },
+                                                            gesture: {
+                                                                options: {
+                                                                    lockIfSpace: true
+                                                                },
+                                                                grid: '#flexArticle .messageArea',
+                                                                gestures: {
+                                                                    Swipe: {
+                                                                        direction: 'DIRECTION_VERTICAL',
+                                                                        events: ['swipe'],
+                                                                        enable: false
+                                                                    },
+                                                                    Pan: {
+                                                                        direction:'DIRECTION_VERTICAL',
+                                                                        events:['panstart','panmove','panend'],
+                                                                        enable: false,
+                                                                    }
+                                                                },
+                                                                containment: {
+                                                                    element: '#flexArticle .messageArea',
+                                                                    useScrollWidth: false,
+                                                                    useScrollHeight: false
+                                                                },
+                                                                target: 'MESSAGE'
+                                                            }">
+                <var id="MESSAGE" class="color03 font01" data-bind="command: {id: 'MESSAGE', adaType: ADA_TYPE.MESSAGE, action: null, state: CMDSTATE.NONE, label: {html: messageText, inplace: true}}"></var>
+            </div>
+        </div>
+    </article>
+    <aside id="flexAside">
+        <div id="flexAsideSK00"></div>
+        <div id="flexAsideSK01">
+            <div class="button button01 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BTN_SCROLL_UP', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.SELECTION_KEY, adakey: '6', eppkey: 'F2'}">
+                <svg data-bind="svguse: { name: 'arrow_up.svg' }"></svg>
+            </div>
+        </div>
+        <div id="flexAsideSK02">
+            <div class="button button01 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BTN_SCROLL_DOWN', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.SELECTION_KEY, adakey: '7', eppkey: 'F3'}">
+                <svg data-bind="svguse: { name: 'arrow_down.svg' }"></svg>
+            </div>
+        </div>
+        <div id="flexAsideSK03">
+            <div id="buttonConfirm" class="button button04 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM', args: ['CONFIRM','CONFIRM'], adaType: ADA_TYPE.SELECTION_KEY, adakey: '8', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: ['CONFIRM', 'F4']}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel"></div>
+</footer>

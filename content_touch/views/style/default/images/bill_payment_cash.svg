@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+		 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+<g class="shadowGroup1">
+	<path d="M41,15v13H13V15H41 M42,14H12v15h30V14L42,14z"/>
+	<path d="M27.5,18.8c1.5,0,2.7,1.2,2.7,2.7s-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7S26,18.8,27.5,18.8 M27.5,18c-1.9,0-3.5,1.6-3.5,3.5
+		s1.6,3.5,3.5,3.5s3.5-1.6,3.5-3.5S29.4,18,27.5,18L27.5,18z"/>
+	<path d="M14,16v11h26V16H14z M38.2,23.4c-1,0-1.8,0.8-1.8,1.8c0,0.3,0.1,0.6,0.2,0.8H17.4c0.1-0.2,0.2-0.5,0.2-0.8
+		c0-1-0.8-1.8-1.8-1.8c-0.3,0-0.6,0.1-0.8,0.2v-4.2c0.2,0.1,0.5,0.2,0.8,0.2c1,0,1.8-0.8,1.8-1.8c0-0.3-0.1-0.6-0.2-0.8h19.2
+		c-0.1,0.2-0.2,0.5-0.2,0.8c0,1,0.8,1.8,1.8,1.8c0.3,0,0.6-0.1,0.8-0.2v4.2C38.8,23.5,38.5,23.4,38.2,23.4z"/>
+	<polygon points="27,31 27,43 6,43 6,4 27,4 27,13 28,13 28,3 5,3 5,44 28,44 28,31 	"/>
+	<rect x="8" y="7" width="17" height="1"/>
+	<rect x="8" y="11" width="17" height="1"/>
+	<rect x="8" y="31" width="17" height="1"/>
+	<rect x="8" y="35" width="17" height="1"/>
+	<rect x="8" y="15" width="3" height="1"/>
+	<rect x="8" y="19" width="3" height="1"/>
+	<rect x="8" y="23" width="3" height="1"/>
+	<rect x="8" y="27" width="3" height="1"/>
+</g>
+<g class="shadowGroup2">
+	<path d="M40,14v13H12V14H40 M41,13H11v15h30V13L41,13z"/>
+	<path d="M26.5,17.8c1.5,0,2.7,1.2,2.7,2.7s-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7S25,17.8,26.5,17.8 M26.5,17c-1.9,0-3.5,1.6-3.5,3.5
+		s1.6,3.5,3.5,3.5s3.5-1.6,3.5-3.5S28.4,17,26.5,17L26.5,17z"/>
+	<path d="M13,15v11h26V15H13z M37.2,22.4c-1,0-1.8,0.8-1.8,1.8c0,0.3,0.1,0.6,0.2,0.8H16.4c0.1-0.2,0.2-0.5,0.2-0.8
+		c0-1-0.8-1.8-1.8-1.8c-0.3,0-0.6,0.1-0.8,0.2v-4.2c0.2,0.1,0.5,0.2,0.8,0.2c1,0,1.8-0.8,1.8-1.8c0-0.3-0.1-0.6-0.2-0.8h19.2
+		c-0.1,0.2-0.2,0.5-0.2,0.8c0,1,0.8,1.8,1.8,1.8c0.3,0,0.6-0.1,0.8-0.2v4.2C37.8,22.5,37.5,22.4,37.2,22.4z"/>
+	<polygon points="26,30 26,42 5,42 5,3 26,3 26,12 27,12 27,2 4,2 4,43 27,43 27,30 	"/>
+	<rect x="7" y="6" width="17" height="1"/>
+	<rect x="7" y="10" width="17" height="1"/>
+	<rect x="7" y="30" width="17" height="1"/>
+	<rect x="7" y="34" width="17" height="1"/>
+	<rect x="7" y="14" width="3" height="1"/>
+	<rect x="7" y="18" width="3" height="1"/>
+	<rect x="7" y="22" width="3" height="1"/>
+	<rect x="7" y="26" width="3" height="1"/>
+</g>
+<g class="shadowGroup3">
+	<path d="M39,13v13H11V13H39 M40,12H10v15h30V12L40,12z"/>
+	<path d="M25.5,16.8c1.5,0,2.7,1.2,2.7,2.7s-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7S24,16.8,25.5,16.8 M25.5,16c-1.9,0-3.5,1.6-3.5,3.5
+		s1.6,3.5,3.5,3.5s3.5-1.6,3.5-3.5S27.4,16,25.5,16L25.5,16z"/>
+	<path d="M12,14v11h26V14H12z M36.2,21.4c-1,0-1.8,0.8-1.8,1.8c0,0.3,0.1,0.6,0.2,0.8H15.4c0.1-0.2,0.2-0.5,0.2-0.8
+		c0-1-0.8-1.8-1.8-1.8c-0.3,0-0.6,0.1-0.8,0.2v-4.2c0.2,0.1,0.5,0.2,0.8,0.2c1,0,1.8-0.8,1.8-1.8c0-0.3-0.1-0.6-0.2-0.8h19.2
+		c-0.1,0.2-0.2,0.5-0.2,0.8c0,1,0.8,1.8,1.8,1.8c0.3,0,0.6-0.1,0.8-0.2v4.2C36.8,21.5,36.5,21.4,36.2,21.4z"/>
+	<polygon points="25,29 25,41 4,41 4,2 25,2 25,11 26,11 26,1 3,1 3,42 26,42 26,29 	"/>
+	<rect x="6" y="5" width="17" height="1"/>
+	<rect x="6" y="9" width="17" height="1"/>
+	<rect x="6" y="29" width="17" height="1"/>
+	<rect x="6" y="33" width="17" height="1"/>
+	<rect x="6" y="13" width="3" height="1"/>
+	<rect x="6" y="17" width="3" height="1"/>
+	<rect x="6" y="21" width="3" height="1"/>
+	<rect x="6" y="25" width="3" height="1"/>
+</g>
+<g>
+	<path class="fillColor" d="M38,12v13H10V12H38 M39,11H9v15h30V11L39,11z"/>
+	<path class="fillColor" d="M24.5,15.8c1.5,0,2.7,1.2,2.7,2.7s-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7S23,15.8,24.5,15.8 M24.5,15c-1.9,0-3.5,1.6-3.5,3.5
+		s1.6,3.5,3.5,3.5s3.5-1.6,3.5-3.5S26.4,15,24.5,15L24.5,15z"/>
+	<path class="fillColor" d="M11,13v11h26V13H11z M35.2,20.4c-1,0-1.8,0.8-1.8,1.8c0,0.3,0.1,0.6,0.2,0.8H14.4c0.1-0.2,0.2-0.5,0.2-0.8
+		c0-1-0.8-1.8-1.8-1.8c-0.3,0-0.6,0.1-0.8,0.2v-4.2c0.2,0.1,0.5,0.2,0.8,0.2c1,0,1.8-0.8,1.8-1.8c0-0.3-0.1-0.6-0.2-0.8h19.2
+		c-0.1,0.2-0.2,0.5-0.2,0.8c0,1,0.8,1.8,1.8,1.8c0.3,0,0.6-0.1,0.8-0.2v4.2C35.8,20.5,35.5,20.4,35.2,20.4z"/>
+	<polygon class="fillColor" points="24,28 24,40 3,40 3,1 24,1 24,10 25,10 25,0 2,0 2,41 25,41 25,28 	"/>
+	<rect class="fillColor" x="5" y="4" width="17" height="1"/>
+	<rect class="fillColor" x="5" y="8" width="17" height="1"/>
+	<rect class="fillColor" x="5" y="28" width="17" height="1"/>
+	<rect class="fillColor" x="5" y="32" width="17" height="1"/>
+	<rect class="fillColor" x="5" y="12" width="3" height="1"/>
+	<rect class="fillColor" x="5" y="16" width="3" height="1"/>
+	<rect class="fillColor" x="5" y="20" width="3" height="1"/>
+	<rect class="fillColor" x="5" y="24" width="3" height="1"/>
+</g>
+</svg>

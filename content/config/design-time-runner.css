@@ -1,0 +1,208 @@
+/*
+$MOD$ design-time-runner.css 4.3.1-210624-21-ae6e96c6-1a04bc7d
+*/
+
+/*-- Design Time Runner --*/
+:root {
+    /* basic colors*/
+    --color01-dtr: rgba(0, 255, 255, 1);
+    --color02-dtr: rgba(255, 255, 0, 1);
+    --color03-dtr: rgba(255, 255, 255, 1);
+    --color04-dtr: rgba(0, 0, 0, 1);
+    --color04-alpha-50-dtr: rgba(0, 0, 0, .5);
+    --color05-dtr: rgba(41, 40, 44, 1);
+    --color06-dtr: rgba(0, 255, 0, 1);
+    --color07-dtr: rgba(255, 0, 0, 1);
+    --color08-dtr: rgba(255, 100, 0, 1);
+}
+
+/*-- Colors --*/
+.color01-dtr {
+    color: var(--color01-dtr);
+}
+
+.color02-dtr {
+    color: var(--color02-dtr);
+}
+
+.color03-dtr {
+    color: var(--color03-dtr);
+}
+
+.color04-dtr, .dtr_menu button:disabled > var, .dtr_menu .disabled > var {
+    color: var(--color04-dtr);
+}
+
+.color05-dtr {
+    color: var(--color05-dtr);
+}
+
+.color06-dtr {
+    color: var(--color06-dtr);
+}
+
+.color07-dtr {
+    color: var(--color07-dtr);
+}
+
+.color08-dtr {
+    color: var(--color08-dtr);
+}
+
+
+
+#activator_icon {
+    pointer-events: none;
+}
+
+.dtr_menu_activator {
+    display: none;
+    position: absolute;
+    left: 5px;
+    top: 0; /*will be calculated*/
+    width: 6%;
+    height: auto;
+    pointer-events: all;
+    opacity: 0.8;
+    z-index: 99991;
+}
+
+.dtr_menu_activator:active {
+    pointer-events: all;
+    transform: translate(2px, 2px);
+}
+
+.dtr_menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 300px;
+    height: auto; /*will be calculated*/
+    padding: 10px 10px 10px 0;
+    background: var(--color04-alpha-50-dtr);
+    overflow-y: auto;
+    z-index: 99990;
+    box-shadow: 3px 3px 3px var(--color04-dtr);
+    border-top: 1px groove var(--color04-dtr);
+    border-right: 1px groove var(--color04-dtr);
+    border-bottom: 1px groove var(--color04-dtr);
+}
+
+.dtr_menu var, .dtr_menu span {
+    text-shadow: none;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.dtr_menu>ul>li {
+    margin-bottom: 1px;
+}
+
+#dtr_menu .generalInput {
+    height: 25px;
+    padding: 3px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: left;
+    background: var(--color03-dtr);
+    border: none;
+    cursor: inherit;
+    outline: none;
+    z-index: 2;
+}
+
+.dtr_menu_item {
+    padding: 2px 5px 2px 5px;
+    width: auto;
+}
+
+.dtr_menu_item var {
+    color: var(--color04-dtr);
+    /*font-variant: small-caps;*/
+}
+
+#dtr_menu_items .dtr_menu_item,
+#dtr_menu_items .dtr_menu_item_ext,
+#dtr_more_items .dtr_menu_item {
+    display: inline-flex;
+    pointer-events: auto;
+    text-transform: lowercase;
+}
+
+#dtr_menu_items .button, #dtr_more_items .button {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--color03-dtr);
+    border: 1px solid var(--color04-dtr);
+    padding: 0 5px 0 5px;
+    box-shadow: none;
+    outline: none;
+    transition: transform .2s ease-in-out;
+}
+
+#dtr_menu_items .button:hover {
+    transform: scale(1.2, 1.2);
+}
+
+#dtr_menu_items .button var, #dtr_more_items .button var {
+    padding: 0 5px 0 25px;
+    align-items: center;
+    text-align: center;
+    word-wrap: normal;
+}
+
+#dtr_menu_items .dtr_menu_item_ext>var,
+#dtr_menu_items .dtr_menu_item_ext>span {
+    text-transform: none;
+}
+
+.dtr_menu_item:hover, .dtr_menu_item:focus {
+    background: var(--color04-dtr);
+    color: var(--color03-dtr);
+}
+
+.dtr_menu_item.tooltip {
+    display: inline;
+    position: relative;
+}
+
+.dtr_menu_item.tooltip:hover::after {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    padding: 3px 6px;
+    z-index: 98;
+    width: auto;
+    border-radius: 5px;
+    background: var(--color06-dtr);
+    color: var(--color03-dtr);
+    content: attr(data-item-name);
+}
+
+/*Scrollbar*/
+#dtr_menu::-webkit-scrollbar,
+#dtr_options_menu::-webkit-scrollbar {
+    width: 11%;
+}
+
+#dtr_menu::-webkit-scrollbar-track,
+#dtr_options_menu::-webkit-scrollbar-track {
+    background: var(--color03-dtr);
+    border: solid var(--color03-dtr);
+}
+
+#dtr_menu::-webkit-scrollbar-thumb,
+#dtr_options_menu::-webkit-scrollbar-thumb {
+    background: var(--color04-dtr);
+    border: solid var(--color03-dtr);
+}
+
+
+@media (min-width: 1280px) {
+    .dtr_menu {
+        width: 410px;
+    }
+}

@@ -1,0 +1,81 @@
+<!--
+$MOD$ accountselection.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <!-- nav -->
+    <nav id="flexNav">
+        <!-- ko template: { foreach: dataList.itemsLeft, afterRender: notify.bind($root) } -->
+            <div data-bind="attr: {id: 'flexNavSK0' + $index()}">
+                <div class="button button04 skLeft borderDrawing" data-bind="
+                            command: {id: $data.result, adaType: $root.ADA_TYPE.SELECTION_KEY, adaText: $data.rawdata[1], adaTextPost: $data.rawdata[1], adakey: ($index() + 1), state: $data.state, eppkey: 'F' + (8 - $index())}">
+                    <var class="color03 font01" data-bind="html: $data.rawdata[1]"></var>
+                </div>
+                <div id="additional" data-bind="visible: $data.state === 0">
+                    <var class="color03 font02" data-bind="format: {src: $data.rawdata[0](), pattern: '#x+-4:4'}"></var>
+                    <div class="separator"></div>
+                    <!-- use a different color for negative amounts and, if a decimal sign ('+' or '-') is there, show it in front of the amount -->
+                    <!-- ko  if: $data.rawdata[4]() === '+' -->
+                        <var class="color02 font02" data-bind="text: $data.rawdata[4]() + $data.rawdata[3]() + ' ' + $data.rawdata[2]()"></var>
+                    <!-- /ko -->
+                    <!-- ko  if: $data.rawdata[4]() === '-' -->
+                        <var class="color08 font02" data-bind="text: $data.rawdata[4]() + $data.rawdata[3]() + ' ' + $data.rawdata[2]()"></var>
+                    <!-- /ko -->
+                    <!-- ko  if: $data.rawdata[4]() !== '-' && $data.rawdata[4]() !== '+' -->
+                        <var class="color02 font02" data-bind="text: $data.rawdata[3]() + ' ' + $data.rawdata[2]()"></var>
+                    <!-- /ko -->
+
+                </div>
+            </div>
+        <!-- /ko -->
+        <div id="flexNavSK03">
+            <div class="button button02 skLeft iconButton"
+                 data-bind="command: {id: 'BTN_SCROLL_UP', adaType: ADA_TYPE.SELECTION_KEY, adakey: '4', state: CMDSTATE.DISABLED, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Previous', 'Previous')}, eppkey: 'F5'}">
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('BTN_SCROLL_UP')"></var>
+                <svg data-bind="svguse: { name: 'arrow_left.svg' }"></svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <!-- slide indicator group -->
+        <div id="slideIndicatorGroup" data-bind="foreach: slides, visible: slides().length > 1">
+            <div class="slideIndicator"></div>
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <!-- ko template: { foreach: dataList.itemsRight } -->
+            <div data-bind="attr: {id: 'flexAsideSK0' + $index()}"></div>
+        <!-- /ko -->
+        <div id="flexAsideSK03">
+            <div class="button button02 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BTN_SCROLL_DOWN', adaType: ADA_TYPE.SELECTION_KEY, adakey: '8', state: CMDSTATE.DISABLED, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Next', 'Next')}, eppkey: 'F4'}">
+                <svg data-bind="svguse: { name: 'arrow_right.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('BTN_SCROLL_DOWN')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button footerButton"
+                    data-bind="command: {id: 'ACCOUNT_PRINT', state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_AccountPrint', 'Print account')}, eppkey: 'CONFIRM'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('ACCOUNT_PRINT')"></var>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

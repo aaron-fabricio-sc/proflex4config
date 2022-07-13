@@ -1,0 +1,1448 @@
+{
+    "FLOW": {
+        "DEFAULT_ACTIONS": {
+            "flow": [
+                {"action": "BACK"},
+                {"action": "CANCEL", "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}},
+                {"actio": "CONFIRM", "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}},
+                {"action": "MAIN_MENU", "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "cardReader", "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "cardReaderLSF", "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "contactlessReader", "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "flexItemsSlot", "from": {"viewkey": "CardPresentation"}, "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}}
+            ]
+        },
+        "WELCOME_VIEW": {
+            "view": {
+                "name": "welcome",
+                "viewkey": "Welcome",
+                "mediaIds": [],
+                "texts": {
+                    "headline": {"en": "Welcome"},
+                    "instruction": {"en": "Welcome to ProFlex4 UI"}
+                }
+            }
+        },
+        "OUT_OF_SERVICE": {
+            "view": {
+                "name": "outofservice",
+                "viewkey": "OutOfServiceInfo",
+                "mediaIds": ["flexArticle"],
+                "texts": {
+                    "headline": {"en": "&nbsp"},
+                    "instruction": {"en": "&nbsp"}
+                }
+            },
+            "flow": [
+                {"action": "*", "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}}
+            ]
+        },
+        "OUT_OF_SERVICE_ADDITIONAL_INFOS": {
+            "view": {
+                "name": "outofserviceadditionalinfos",
+                "viewkey": "OutOfServiceAtmInfos",
+                "mediaIds": [
+                ],
+                "texts": {
+                    "headline": {
+                        "en": "Out of order"
+                    },
+                    "instruction": {
+                        "en": "Sorry for the inconvenience, this terminal is currently out of service.<br>The nearest {#flexMain.srcLen#} ATM(s) is/are located at the following address(es):"
+                    }
+                }
+            },
+            "flow": [
+                {
+                    "action": "*",
+                    "dest": {
+                        "view": "idlepresentation",
+                        "viewkey": "IdleLoopPresentation"
+                    }
+                }
+            ]
+        },
+        "OFFLINE_SPA": {
+            "view": {
+                "name": "offlinespa",
+                "viewkey": "OfflineSPA",
+                "texts": {
+                    "headline": {"en": "This ATM is fuera de linea."},
+                    "instruction": {"en": "Please find another cashpoint."}
+                }
+            }
+        },
+        "MESSAGE": {
+            "view": {
+                "name": ["message", "messagepopup.component"],
+                "viewkey": "AccountNoAccountAvailableInfo",
+                "mediaIds": ["messageArea"],
+                "texts": {
+                    "headline": {"en": "Message"},
+                    "instruction": {"en": "Default instruction text."}
+                }
+            },
+            "flow": [
+                {"action": "*", "from": {"viewkey": "WithdrawalNotesDispenseInfo", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "CCTAFW_PROP_COIN_DISPENSE_AMOUNT"], "ifvalue": ["COUTMIXED", "EX:!EMPTY"]}}, "dest": {"view": "message", "viewkey": "WithdrawalCoinsDispensing"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalNotesDispenseInfo", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "CCTAFW_PROP_COIN_DISPENSE_AMOUNT"], "ifvalue": ["COUT_PRESTAGED", "EX:!EMPTY"]}}, "dest": {"view": "message", "viewkey": "WithdrawalCoinsDispensing"}},
+
+                {"action": "*", "from": {"viewkey": "WithdrawalNotesDispenseInfo", "context": {"property": "CCTAFW_PROP_NOTE_DISPENSE_AMOUNT", "ifvalue": "EX:!EMPTY"}}, "dest": {"view": "withdrawalanimations", "viewkey": "WithdrawalNotesAndReceiptPresentation"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalNotesDispenseInfo", "context": {"property": "CCTAFW_PROP_COIN_DISPENSE_AMOUNT", "ifvalue": "EX:!EMPTY"}}, "dest": {"view": "withdrawalanimations", "viewkey": "WithdrawalCoinsAndReceiptPresentation"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalNotesDispenseInfo", "context": {"property": ["CCTAFW_PROP_NOTE_DISPENSE_AMOUNT", "CCTAFW_PROP_COIN_DISPENSE_AMOUNT"], "ifvalue": ["EX:!EMPTY", "EX:!EMPTY"]}}, "dest": {"view": "withdrawalanimations", "viewkey": "WithdrawalNotesAndCoinsAndReceiptPresentation"}},
+
+                {"action": "*", "from": {"viewkey": "WithdrawalCoinsDispensing", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "withdrawalanimations", "viewkey": "WithdrawalNotesAndCoinsAndReceiptPresentation"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalCoinsDispensing", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT_PRESTAGED"}}, "dest": {"view": "withdrawalanimations", "viewkey": "WithdrawalNotesAndCoinsAndReceiptPresentation"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalCoinsDispensing"}, "dest": {"view": "withdrawalanimations", "viewkey": "WithdrawalCoinsAndReceiptPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "AssistanceCancelledInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHCCDM"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "AssistanceCancelledInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "AssistanceCancelledInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "AssistanceDepositChequesProcessedInfo" }, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesFlushingWait"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "BalanceInquiryInfo"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "AccountPreferenceCompleteInfo"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "AccountPreferenceFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "FastCashPreferenceCompleteInfo"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "FastCashPreferenceFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "LanguagePreferenceCompleteInfo"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "LanguagePreferenceFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "MenuPreferenceCompleteInfo"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "MenuPreferenceFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "ReceiptPreferenceCompleteInfo"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "ReceiptPreferenceSelectionFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "ClearPreferencesCompleteInfo"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "ClearPreferencesFailedInfo"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "DepositEnvelopeInsertionCompleteInfo"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptQuestion"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "TransferCompleteInfo"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptQuestion"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "BillPaymentCompleteInfo"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptQuestion"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "OrderCompleteInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "OrderCashFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "OrderChequesFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "OrderCurrenciesFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "OrderPostalStatementsFailedInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "PinChangeCompleteInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "*", "from": {"viewkey": "PinUnlockProcessedInfo"}, "dest": {"view": "message", "viewkey": "PinUnlockCompleteInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinUnlockCompleteInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "WithdrawalNotesRetractInfo"}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositChequesRetractedInfo"}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositEnvelopeRetractInfo"}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "CardRetainedInfo"}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "HostResponseInfo", "context": {"property": ["CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "PROP_PENULTIMATE_VIEWKEY"], "ifvalue": ["", "PinEntry"]}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "CONFIRM", "from": {"viewkey": "HostResponseInfo", "context": {"property": "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "ifvalue": "6080"}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "CONFIRM", "from": {"viewkey": "HostResponseInfo", "context": {"property": "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "ifvalue": "55000"}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "CONFIRM", "from": {"viewkey": "HostResponseInfo", "context": {"property": "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "ifvalue": "53000"}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "CONFIRM", "from": {"viewkey": "HostResponseInfo", "context": {"property": "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "ifvalue": "75000"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "PinInvalidInfo", "context": {"property": "PROP_STEP_RETURN_CODE", "ifvalue": "1"}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinTryLimitReachedInfo", "context": {"property": "PROP_STEP_RETURN_CODE", "ifvalue": "2"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "PrepaidPhoneNumberInvalidInfo"}, "dest": {"view": "numericentry", "viewkey": "PrepaidPhoneNumberInput"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PrepaidCompleteInfo"}, "dest": {"view": "question", "viewkey": "PrepaidChargingNumberReceiptQuestion"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "GeneralErrorInfo", "context": {"property": "CCTAFW_PROP_ERROR_INDEX", "ifvalue": "ERR108001"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "*", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}}
+            ]
+        },
+
+        "QUESTION": {
+            "view": {
+                "name": "question",
+                "viewkey": "ReceiptQuestion",
+                "texts": {
+                    "headline": {"en": "Please select."},
+                    "instruction": {"en": "You have the following options."}
+                }
+            },
+            "flow": [
+                {"action": "OTHER", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "OTHER", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "PRINT", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "PRINT", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "AdaHideScreenQuestion" }, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "YES", "from": {"viewkey": "AdaHideScreenQuestion"}, "dest": {"view": "adaadjustment", "viewkey": "AdaAdjustmentSelection"}},
+                {"action": "NO", "from": {"viewkey": "AdaHideScreenQuestion"}, "dest": {"view": "adaadjustment", "viewkey": "AdaAdjustmentSelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "AdaShowTutorialQuestion" }, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "YES", "from": {"viewkey": "AdaShowTutorialQuestion"}, "dest": {"view": "adainformation", "viewkey": "AdaTutorialInfo"}},
+                {"action": "NO", "from": {"viewkey": "AdaShowTutorialQuestion"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "WithdrawalAlternativeAmountConfirmation" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "OTHER", "from": {"viewkey": "WithdrawalAlternativeAmountConfirmation" }, "dest": {"view": "billselection", "viewkey": "WithdrawalMixtureSelection"}},
+                {"action": "YES", "from": {"viewkey": "WithdrawalAlternativeAmountConfirmation"}, "dest": {"view": "question", "viewkey": "ReceiptQuestion"}},
+                {"action": "NO", "from": {"viewkey": "WithdrawalAlternativeAmountConfirmation"}, "dest": {"view": "amountentry", "viewkey": "WithdrawalAlternativeAmountInput"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "WithdrawalResubmitConfirmation" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "OTHER", "from": {"viewkey": "WithdrawalResubmitConfirmation" }, "dest": {"view": "amountentry", "viewkey": "WithdrawalAlternativeAmountInput"}},
+                {"action": "YES", "from": {"viewkey": "WithdrawalResubmitConfirmation"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "NO", "from": {"viewkey": "WithdrawalResubmitConfirmation"}, "dest": {"view": "amountentry", "viewkey": "AssistanceLimitApprovalInfo"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "NO", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "question", "viewkey": "WithdrawalResubmitConfirmation"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "NO", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "question", "viewkey": "WithdrawalResubmitConfirmation"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "NO", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "question", "viewkey": "WithdrawalResubmitConfirmation"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ENV"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ENV"}}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "NO", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ENV"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "NO", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BILLPAY"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BILLPAY"}}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "NO", "from": {"viewkey": "ReceiptQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BILLPAY"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptQuestion" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "ReceiptQuestion"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "AccountPreferenceConfirmation"}, "dest": {"view": "message", "viewkey": "AccountPreferenceFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "AccountPreferenceConfirmation"}, "dest": {"view": "message", "viewkey": "AccountPreferenceCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "AccountPreferenceConfirmation"}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "FastCashPreferenceConfirmation"}, "dest": {"view": "message", "viewkey": "FastCashPreferenceFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "FastCashPreferenceConfirmation"}, "dest": {"view": "message", "viewkey": "FastCashPreferenceCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "FastCashPreferenceConfirmation"}, "dest": {"view": "amountselection", "viewkey": "FastCashPreferenceAmountSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptPreferenceConfirmation"}, "dest": {"view": "message", "viewkey": "ReceiptPreferenceSelectionFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "ReceiptPreferenceConfirmation"}, "dest": {"view": "message", "viewkey": "ReceiptPreferenceCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "ReceiptPreferenceConfirmation"}, "dest": {"view": "checkboxes", "viewkey": "ReceiptPreferenceMultipleChoiceSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "ClearPreferencesConfirmation"}, "dest": {"view": "message", "viewkey": "ClearPreferencesFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "ClearPreferencesConfirmation"}, "dest": {"view": "message", "viewkey": "ClearPreferencesCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "ClearPreferencesConfirmation"}, "dest": {"view": "checkboxes", "viewkey": "ClearPreferencesMultipleChoiceSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "DepositChequesAnotherBundleQuestion"},  "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}},
+                {"action": "YES", "from": {"viewkey": "DepositChequesAnotherBundleQuestion"}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+                {"action": "NO", "from": {"viewkey": "DepositChequesAnotherBundleQuestion", "context": {"property": "CCCHCCDMTAFW_CHEQUE_PARALLELIZATION", "ifvalue": "0"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesReadingChequesWait"}},
+                {"action": "NO", "from": {"viewkey": "DepositChequesAnotherBundleQuestion", "context": {"property": "CCCHCCDMTAFW_CHEQUE_PARALLELIZATION", "ifvalue": "1"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesPleaseWait"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "DepositChequesSummaryResult"},  "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}},
+                {"action": "YES", "from": {"viewkey": "DepositChequesSummaryResult"},  "dest": {"view": "pleasewait", "viewkey": "AssistanceDepositChequesApprovalInfo"}},
+                {"action": "NO", "from": {"viewkey": "DepositChequesSummaryResult"},  "dest": {"view": "depositchequesresult", "viewkey": "DepositChequesResult"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "DepositMixedMediaSummaryResult"},  "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}},
+                {"action": "YES", "from": {"viewkey": "DepositMixedMediaSummaryResult"},  "dest": {"view": "depositchequesresult", "viewkey": "DepositChequesResult"}},
+                {"action": "NO", "from": {"viewkey": "DepositMixedMediaSummaryResult"},  "dest": {"view": "pleasewait", "viewkey": "AssistanceDepositChequesApprovalInfo"}},
+                {"action": "OTHER", "from": {"viewkey": "DepositMixedMediaSummaryResult"},  "dest": {"view": "depositanimations", "viewkey": "DepositResult"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "DepositEnvelopeDispenseQuestion"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "DepositEnvelopeDispenseQuestion"},  "dest": {"view": "pleasewait", "viewkey": "DepositEnvelopeDispenseWait"}},
+                {"action": "NO", "from": {"viewkey": "DepositEnvelopeDispenseQuestion"},  "dest": {"view": "amountentry", "viewkey": "DepositEnvelopeAmountInput"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "DepositEnvelopeAmountConfirmation"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "DepositEnvelopeAmountConfirmation"},  "dest": {"view": "depositenvelopeanimations", "viewkey": "DepositEnvelopeInsertion"}},
+                {"action": "NO", "from": {"viewkey": "DepositEnvelopeAmountConfirmation"},  "dest": {"view": "amountentry", "viewkey": "DepositEnvelopeAmountInput"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "TransferAmountConfirmation"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "TransferAmountConfirmation"},  "dest": {"view": "message", "viewkey": "TransferCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "TransferAmountConfirmation"},  "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "PrepaidAmountConfirmation"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "PrepaidAmountConfirmation"},  "dest": {"view": "question", "viewkey": "PrepaidCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "PrepaidAmountConfirmation"},  "dest": {"view": "prepaidproviderselection", "viewkey": "PrepaidProviderSelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "PrepaidMinuteConfirmation"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "PrepaidMinuteConfirmation"},  "dest": {"view": "question", "viewkey": "PrepaidCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "PrepaidMinuteConfirmation"},  "dest": {"view": "prepaidproviderselection", "viewkey": "PrepaidProviderSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "PrepaidChargingNumberReceiptQuestion"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "PrepaidChargingNumberReceiptQuestion"},  "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "NO", "from": {"viewkey": "PrepaidChargingNumberReceiptQuestion"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "BillPaymentConfirmation"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "BillPaymentConfirmation"},  "dest": {"view": "question", "viewkey": "BillPaymentDataConfirmation"}},
+                {"action": "NO", "from": {"viewkey": "BillPaymentConfirmation"},  "dest": {"view": "selection", "viewkey": "BillPaymentPaymentCategorySelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "BillPaymentDataConfirmation"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "BillPaymentDataConfirmation"},  "dest": {"view": "question", "viewkey": "BillPaymentCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "BillPaymentDataConfirmation"},  "dest": {"view": "selection", "viewkey": "BillPaymentPaymentCategorySelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "OrderCashConfirmation"},  "dest": {"view": "message", "viewkey": "OrderCashFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "OrderCashConfirmation"},  "dest": {"view": "message", "viewkey": "OrderCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "OrderCashConfirmation"},  "dest": {"view": "amountselection", "viewkey": "OrderAmountSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "OrderShippingQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}},  "dest": {"view": "message", "viewkey": "OrderCurrenciesFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "OrderShippingQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}},  "dest": {"view": "question", "viewkey": "OrderCurrenciesConfirmation"}},
+                {"action": "NO", "from": {"viewkey": "OrderShippingQuestion", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}},  "dest": {"view": "question", "viewkey": "OrderCurrenciesConfirmation"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "OrderCurrenciesConfirmation"},  "dest": {"view": "message", "viewkey": "OrderCurrenciesFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "OrderCurrenciesConfirmation"},  "dest": {"view": "message", "viewkey": "OrderCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "OrderCurrenciesConfirmation"},  "dest": {"view": "selection", "viewkey": "OrderCurrenciesCurrencySelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "OrderChequesConfirmation"},  "dest": {"view": "message", "viewkey": "OrderChequesFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "OrderChequesConfirmation"},  "dest": {"view": "message", "viewkey": "OrderCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "OrderChequesConfirmation"},  "dest": {"view": "selection", "viewkey": "OrderUnitSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "OrderPostalStatementConfirmation"},  "dest": {"view": "message", "viewkey": "OrderPostalStatementsFailedInfo"}},
+                {"action": "YES", "from": {"viewkey": "OrderPostalStatementConfirmation"},  "dest": {"view": "message", "viewkey": "OrderCompleteInfo"}},
+                {"action": "NO", "from": {"viewkey": "OrderPostalStatementConfirmation"},  "dest": {"view": "message", "viewkey": "OrderPostalStatementsFailedInfo"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "AccountDetailedSelection"},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "AccountDetailedSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}},  "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "YES", "from": {"viewkey": "AccountDetailedSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}},  "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "NO", "from": {"viewkey": "AccountDetailedSelection"},  "dest": {"view": "accountselection", "viewkey": "AccountSelection"}}
+            ]
+        },
+
+        "PLEASE_WAIT": {
+            "view": {
+                "name": ["pleasewait", "pleasewait.component"],
+                "viewkey": "PleaseWait",
+                "mediaIds": ["flexMain", "flexArticle", "flexArticlePopup"],
+                "texts": {
+                    "headline": {"en": "Please wait..."},
+                    "instruction": {"en": "Su petición esta en proceso."}
+                }
+            },
+            "flow": [
+                {"action": "*", "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}},
+                {"action": "*", "from": {"viewkey": "TransactionEndWait"}, "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesProcessingWait"}, "dest": {"view": "depositresult", "viewkey": "DepositResult"}},
+                {"action": "*", "from": {"viewkey": "DepositCoinsProcessingWait"}, "dest": {"view": "depositresult", "viewkey": "DepositResult"}},
+                
+                {"action": "pleasewait", "from": {"viewkey": "DepositEnvelopeDispenseWait"}, "dest": {"view": "depositenvelopeanimations", "viewkey": "DepositEnvelopePresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositEnvelopeDispenseWait"}, "dest": {"view": "depositenvelopeanimations", "viewkey": "DepositEnvelopePresentation"}},
+                
+                {"action": "pleasewait", "from": {"viewkey": "BillPaymentPreparePayeeSelectionWait"}, "dest": {"view": "billpaymentselection", "viewkey": "BillPaymentPayeeSelection"}},
+                {"action": "*", "from": {"viewkey": "BillPaymentPreparePayeeSelectionWait"}, "dest": {"view": "billpaymentselection", "viewkey": "BillPaymentPayeeSelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTFAST"}}, "dest": {"view": "question", "viewkey": "WithdrawalResubmitConfirmation"}},
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "question", "viewkey": "WithdrawalResubmitConfirmation"}},
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "question", "viewkey": "WithdrawalResubmitConfirmation"}},
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "question", "viewkey": "WithdrawalResubmitConfirmation"}},                
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRollback"}},
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsRollback"}},
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRollback"}},
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceLimitApprovalInfo"}, "dest": {"view": "question", "viewkey": "WithdrawalResubmitConfirmation"}},
+                
+                {"action": "*", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTFAST"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "*", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "*", "from": {"viewkey": "AssistanceLimitApprovalInfo", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "*", "from": {"viewkey": "AssistanceLimitApprovalInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceDepositChequesApprovalInfo"}, "dest": {"view": "message", "viewkey": "AssistanceCancelledInfo"}},
+                {"action": "*", "from": {"viewkey": "AssistanceDepositChequesApprovalInfo"}, "dest": {"view": "message", "viewkey": "AssistanceDepositChequesProcessedInfo"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "AssistanceSupportInfo"}, "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}},
+                {"action": "*", "from": {"viewkey": "AssistanceSupportInfo"}, "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositRetract"}, "dest": {"view": "message", "viewkey": "WithdrawalNotesRetractInfo"}},
+                {"action": "*", "from": {"viewkey": "DepositChequesRetractWait"}, "dest": {"view": "message", "viewkey": "DepositChequesRetractedInfo"}},
+
+                {"action": "*", "from": {"viewkey": "StatementPrintPrintingStatementWait"}, "dest": {"view": "printeranimations", "viewkey": "StatementPresentation"}}
+            ]
+        },
+
+        "IDLE_LOOP": {
+            "view": {
+                "name": "idlepresentation",
+                "viewkey": "IdleLoopPresentation",
+                "mediaIds": ["cardReader", "cardReaderLSF", "contactlessReader"], "texts": {
+                    "headline": {"en": "Please insert your card."},
+                    "instruction": {"en": "Por favor, inserte su tarjeta.  Bitte führen Sie Ihre Karte ein."}
+                }
+            },
+            "flow": [
+                {"action": "LANGUAGE", "dest": {"view": "selection", "viewkey": "LanguageSelection"}},
+                {"action": "MAIN_MENU", "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "cardReader", "from": {"context": {"property": "CCTAFW_PROP_TRANSACTION_TECHNOLOGY", "ifvalue": "0"}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "cardReader", "from": {"context": {"property": "CCTAFW_PROP_TRANSACTION_TECHNOLOGY", "ifvalue": "1"}}, "dest": {"view": "emvapplicationselection", "viewkey": "EmvApplicationSelection"}},
+                {"action": "cardReaderLSF", "from": {"context": {"property": "CCTAFW_PROP_TRANSACTION_TECHNOLOGY", "ifvalue": "0"}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "cardReaderLSF", "from": {"context": {"property": "CCTAFW_PROP_TRANSACTION_TECHNOLOGY", "ifvalue": "1"}}, "dest": {"view": "emvapplicationselection", "viewkey": "EmvApplicationSelection"}},
+                {"action": "contactlessReader", "dest": {"view": "emvapplicationselection", "viewkey": "EmvApplicationSelection"}},
+                {"action": "CARDLESS", "dest": {"view": "numericentry", "viewkey": "PrestagedTransactionCodeInput"}},
+                {"action": "REQUEST_SUPPORT", "dest": {"view": "pleasewait", "viewkey": "AssistanceSupportInfo"}}
+            ]
+        },
+
+        "PIN_ENTRY": {
+            "view": {
+                "name": "pinentry",
+                "viewkey": "PinEntry",
+                "mediaIds": ["PIN"],
+                "texts": {
+                    "headline": {"en": "Enter your PIN"},
+                    "instruction": {"en": "Please use the keypad of the ATM. Press Correct to correct your PIN."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "PROP_STEP_RETURN_CODE", "ifvalue": "1"}}, "dest": {"view": "message", "viewkey": "PinInvalidInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "PROP_STEP_RETURN_CODE", "ifvalue": "2"}}, "dest": {"view": "message", "viewkey": "PinTryLimitReachedInfo"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "ifvalue": "6080"}}, "dest": {"view": "message", "viewkey": "HostResponseInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "ifvalue": "55000"}}, "dest": {"view": "message", "viewkey": "HostResponseInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "ifvalue": "53000"}}, "dest": {"view": "message", "viewkey": "HostResponseInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE", "ifvalue": "75000"}}, "dest": {"view": "message", "viewkey": "HostResponseInfo"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_ERROR_INDEX", "ifvalue": "ERR108001"}}, "dest": {"view": "message", "viewkey": "GeneralErrorInfo"}},
+
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": ""}}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTFAST"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "amountentry", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "amountentry", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "amountentry", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "VOUCHER"}}, "dest": {"view": "selection", "viewkey": "ValueItemAmountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BAL"}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "depositanimations", "viewky": "DepositNotesInsertion"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsInsertion"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesAndCoinsInsertion"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ACCOUNTCHG"}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "FCCHG"}}, "dest": {"view": "amountselection", "viewkey": "FastCashPreferenceAmountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "LANGCHG"}}, "dest": {"view": "selection", "viewkey": "LanguageSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MENUCHG"}}, "dest": {"view": "menupreferences", "viewkey": "MenuPreferenceSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "RECCHG"}}, "dest": {"view": "checkboxes", "viewkey": "ReceiptPreferenceMultipleChoiceSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CLEARPREFCHG"}}, "dest": {"view": "checkboxes", "viewkey": "ClearPreferencesMultipleChoiceSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHCCDM"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ENV"}}, "dest": {"view": "question", "viewkey": "DepositEnvelopeDispenseQuestion"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "AIN"}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "STPM"}}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "STP"}}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PREPAID"}}, "dest": {"view": "prepaidproviderselection", "viewkey": "PrepaidProviderSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BILLPAY"}}, "dest": {"view": "selection", "viewkey": "BillPaymentPaymentCategorySelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCASH"}}, "dest": {"view": "amountselection", "viewkey": "OrderAmountSelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}}, "dest": {"view": "selection", "viewkey": "OrderCurrenciesCurrencySelection"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCHQ"}}, "dest": {"view": "selection", "viewkey": "OrderUnitSelection"}}, 
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDPOST"}}, "dest": {"view": "question", "viewkey": "OrderPostalStatementConfirmation"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PINCHG"}}, "dest": {"view": "pinentry", "viewkey": "PinChangePinEntry"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PINUNLOCK"}}, "dest": {"view": "message", "viewkey": "PinUnlockProcessedInfo"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+                {"action": "PIN", "from": {"viewkey": "PinEntry"}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": ""}}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTFAST"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "amountentry", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "amountentry", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "amountentry", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "VOUCHER"}}, "dest": {"view": "selection", "viewkey": "ValueItemAmountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BAL"}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "depositanimations", "viewky": "DepositNotesInsertion"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsInsertion"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesAndCoinsInsertion"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ACCOUNTCHG"}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "FCCHG"}}, "dest": {"view": "amountselection", "viewkey": "FastCashPreferenceAmountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "LANGCHG"}}, "dest": {"view": "selection", "viewkey": "LanguageSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MENUCHG"}}, "dest": {"view": "menupreferences", "viewkey": "MenuPreferenceSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "RECCHG"}}, "dest": {"view": "checkboxes", "viewkey": "ReceiptPreferenceMultipleChoiceSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CLEARPREFCHG"}}, "dest": {"view": "checkboxes", "viewkey": "ClearPreferencesMultipleChoiceSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHCCDM"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ENV"}}, "dest": {"view": "question", "viewkey": "DepositEnvelopeDispenseQuestion"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "AIN"}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "STPM"}}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "STP"}}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PREPAID"}}, "dest": {"view": "prepaidproviderselection", "viewkey": "PrepaidProviderSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BILLPAY"}}, "dest": {"view": "selection", "viewkey": "BillPaymentPaymentCategorySelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCASH"}}, "dest": {"view": "amountselection", "viewkey": "OrderAmountSelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}}, "dest": {"view": "selection", "viewkey": "OrderCurrenciesCurrencySelection"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCHQ"}}, "dest": {"view": "selection", "viewkey": "OrderUnitSelection"}}, 
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDPOST"}}, "dest": {"view": "question", "viewkey": "OrderPostalStatementConfirmation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PINCHG"}}, "dest": {"view": "pinentry", "viewkey": "PinChangePinEntry"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PINUNLOCK"}}, "dest": {"view": "message", "viewkey": "PinUnlockProcessedInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinEntry", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "PinEntry"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "PIN", "from": {"viewkey": "PinChangePinEntry"}, "dest": {"view": "pinentry", "viewkey": "PinChangePinConfirmation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinChangePinEntry"}, "dest": {"view": "pinentry", "viewkey": "PinChangePinConfirmation"}},
+                {"action": "CANCEL", "from": {"viewkey": "PinChangePinEntry"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "PIN", "from": {"viewkey": "PinChangePinConfirmation"}, "dest": {"view": "message", "viewkey": "PinChangeCompleteInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PinChangePinConfirmation"}, "dest": {"view": "message", "viewkey": "PinChangeCompleteInfo"}},
+                {"action": "CANCEL", "from": {"viewkey": "PinChangePinConfirmation"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}}
+            ]
+        },
+
+        "PIN_ENTRY_ETS": {
+            "view": {
+                "name": "pinentryets",
+                "viewkey": "PinEntry",
+                "mediaIds": ["PIN"],
+                "texts": {
+                    "headline": {"en": "Enter your PIN"},
+                    "instruction": {"en": "Please use the touch keyboard of the screen to enter your PIN."}
+                }
+            },
+            "flow": "PIN_ENTRY"
+        },
+
+        "SELECTION": {
+            "view": {
+                "name": ["selection", "selectionpopup.component"],
+                "viewkey": "MenuSelection",
+                "texts": {
+                    "headline": {"en": "Item selection"},
+                    "instruction": {"en": "Please choose your desired item."}
+                }
+            },
+            "flow": [
+                {"action": "CANCEL", "from": {"viewkey": "LanguageSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": ""}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "CANCEL", "from": {"viewkey": "LanguageSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "LANGCHG"}}, "dest": {"view": "message", "viewkey": "LanguagePreferenceFailedInfo"}},
+                
+                {"action": "*", "from": {"viewkey": "LanguageSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "LANGCHG"}}, "dest": {"view": "message", "viewkey": "LanguagePreferenceCompleteInfo"}},
+                {"action": "*", "from": {"viewkey": "LanguageSelection", "context": {"property": "CCTAFW_PROP_ADA_STATUS_VALUE", "ifvalue": "IDLE"}}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "*", "from": {"viewkey": "LanguageSelection", "context": {"property": "CCTAFW_PROP_ADA_STATUS_VALUE", "ifvalue": "OFF"}}, "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "*", "from": {"viewkey": "LanguageSelection", "context": {"property": "CCTAFW_PROP_ADA_STATUS_VALUE", "ifvalue": "ON"}}, "dest": {"view": "question", "viewkey": "AdaHideScreenQuestion"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "COUTFAST", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "COUT", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "COINOUT", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "COUTMIXED", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "VOUCHER", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "BAL", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "CIN", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "COININ", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "CINMIXED", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "ACCOUNTCHG", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "FCCHG", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "LANGCHG", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "MENUCHG", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "RECCHG", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "CLEARPREFCHG", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "CHCCDM", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "CHQCASH", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "ENV", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "AIN", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "STPM", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "STP", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "TRA", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "PREPAID", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "BILLPAY", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "ORDCASH", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "ORDCURR", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "ORDCHQ", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "ORDPOST", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "PINCHG", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "PINUNLOCK", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+                {"action": "MIXEDMEDIA", "from": {"viewkey": "MenuSelection", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "cardanimations", "viewkey": "CardInsertion"}},
+
+                {"action": "COUTFAST", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation" }},
+                {"action": "COUT", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "selection", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "COINOUT", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "selection", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "COUTMIXED", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "selection", "viewkey": "WithdrawalAmountSelection"}},
+                {"action": "VOUCHER", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "selection", "viewkey": "ValueItemAmountSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "WithdrawalCurrencySelection" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalCurrencySelection" }, "dest": {"view": "amountselection", "viewkey": "WithdrawalAmountSelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "ValueItemAmountSelection" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "ValueItemAmountSelection" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "BAL", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                
+                {"action": "CIN", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "depositanimations", "viewky": "DepositNotesInsertion"}},
+                {"action": "COININ", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsInsertion"}},
+                {"action": "CINMIXED", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesAndCoinsInsertion"}},
+
+                {"action": "ACCOUNTCHG", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "FCCHG", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "amountselection", "viewkey": "FastCashPreferenceAmountSelection"}},
+                {"action": "LANGCHG", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "selection", "viewkey": "LanguageSelection"}},
+                {"action": "MENUCHG", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "menupreferences", "viewkey": "MenuPreferenceSelection"}},
+                {"action": "RECCHG", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "checkboxes", "viewkey": "ReceiptPreferenceMultipleChoiceSelection"}},
+                {"action": "CLEARPREFCHG", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "checkboxes", "viewkey": "ClearPreferencesMultipleChoiceSelection"}},
+
+                {"action": "CHCCDM", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+                {"action": "CHQCASH", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+
+                {"action": "ENV", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "question", "viewkey": "DepositEnvelopeDispenseQuestion"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "DepositEnvelopeDocumentTypeSelection"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositEnvelopeDocumentTypeSelection"}, "dest": {"view": "question", "viewkey": "DepositEnvelopeAmountConfirmation"}},
+
+                {"action": "AIN", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+
+                {"action": "STPM", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "STP", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                
+                {"action": "TRA", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "PREPAID", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "prepaidproviderselection", "viewkey": "PrepaidProviderSelection"}},
+                {"action": "BILLPAY", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "selection", "viewkey": "BillPaymentPaymentCategorySelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "BillPaymentPaymentCategorySelection" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "BillPaymentPaymentCategorySelection" }, "dest": {"view": "pleasewait", "viewkey": "BillPaymentPreparePayeeSelectionWait"}},
+                
+                {"action": "ORDCASH", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "amountselection", "viewkey": "OrderAmountSelection"}},
+                {"action": "ORDCURR", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "selection", "viewkey": "OrderCurrenciesCurrencySelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "OrderCurrenciesCurrencySelection" }, "dest": {"view": "message", "viewkey": "OrderCurrenciesFailedInfo"}},
+                {"action": "*", "from": {"viewkey": "OrderCurrenciesCurrencySelection" }, "dest": {"view": "amountselection", "viewkey": "OrderAmountSelection"}},
+                
+                {"action": "ORDCHQ", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "selection", "viewkey": "OrderUnitSelection"}},                
+
+                {"action": "CANCEL", "from": {"viewkey": "OrderUnitSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCHQ"} }, "dest": {"view": "message", "viewkey": "OrderChequesFailedInfo"}},
+                {"action": "OTHER", "from": {"viewkey": "OrderUnitSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCHQ"} }, "dest": {"view": "numericentry", "viewkey": "OrderUnitInput"}},
+                {"action": "*", "from": {"viewkey": "OrderUnitSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCHQ"} }, "dest": {"view": "question", "viewkey": "OrderChequesConfirmation"}},
+
+                {"action": "ORDPOST", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "question", "viewkey": "OrderPostalStatementConfirmation"}},
+
+                {"action": "PINCHG", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "pinentry", "viewkey": "PinChangePinEntry"}},
+                
+                {"action": "PINUNLOCK", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "message", "viewkey": "PinUnlockProcessedInfo"}},
+                
+                {"action": "MIXEDMEDIA", "from": {"viewkey": "MenuSelection"}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesMediaInInfo"}},
+				
+                {"action": "SSN", "from": {"viewkey": "CardlessIdentificationSelection"}, "dest": {"view": "formentry", "viewkey": "CardlessIdEntry"}},
+                {"action": "Passport", "from": {"viewkey": "CardlessIdentificationSelection"}, "dest": {"view": "formentry", "viewkey": "CardlessIdEntry"}},
+                {"action": "DriversLicense", "from": {"viewkey": "CardlessIdentificationSelection"}, "dest": {"view": "formentry", "viewkey": "CardlessIdEntry"}},
+                {"action": "Account", "from": {"viewkey": "CardlessIdentificationSelection"}, "dest": {"view": "formentry", "viewkey": "CardlessIdEntry"}},
+                {"action": "Id", "from": {"viewkey": "CardlessIdentificationSelection"}, "dest": {"view": "formentry", "viewkey": "CardlessIdEntry"}},
+                {"action": "PRESTAGED_CODE", "from": {"viewkey": "CardlessIdentificationSelection"}, "dest": {"view": "numericentry", "viewkey": "PrestagedSecureCodeInput"}},
+                
+                {"action": "*", "from": {"viewkey": "PrepaidMinuteSelection"}, "dest": {"view": "numericentry", "viewkey": "PrepaidPhoneNumberInput"}}
+
+            ]
+        },
+
+        "ACCOUNT_SELECTION": {
+            "view": {
+                "name": "accountselection",
+                "viewkey": "AccountSelection",
+                "texts": {
+                    "headline": {"en": "Select account."},
+                    "instruction": {"en": "Please select your desired account you want to get the money from."}
+                }
+            },
+            "flow": [
+                {"action": "ACCOUNT_PRINT", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ACCOUNTCHG"}}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "CANCEL", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ACCOUNTCHG"}}, "dest": {"view": "message", "viewkey": "AccountPreferenceFailedInfo"}},
+                {"action": "*", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ACCOUNTCHG"}}, "dest": {"view": "question", "viewkey": "AccountPreferenceConfirmation"}},
+                
+                {"action": "ACCOUNT_PRINT", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BAL"}}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "CANCEL", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BAL"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BAL"}}, "dest": {"view": "message", "viewkey": "BalanceInquiryInfo"}},
+                
+                {"action": "ACCOUNT_PRINT", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "AIN"}}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "CANCEL", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "AIN"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "AIN"}}, "dest": {"view": "accountinformation", "viewkey": "AccountInformationOverview"}},
+
+                {"action": "ACCOUNT_PRINT", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "CANCEL", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "*", "from": {"viewkey": "AccountSelection", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "CCTAFW_PROP_FAC_OPTION[1]"], "ifvalue": ["TRA","1"]}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "*", "from": {"viewkey": "AccountSelection", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "CCTAFW_PROP_FAC_OPTION[1]"], "ifvalue": ["TRA","2"]}}, "dest": {"view": "accountselection", "viewkey": "AccountSelection"}},
+                {"action": "*", "from": {"viewkey": "AccountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "amountentry", "viewkey": "TransferAmountInput"}},
+
+                {"action": "ACCOUNT_PRINT", "dest": {"view": "pleasewait", "viewkey": "StatementPrintPrintingStatementWait"}},
+                {"action": "CANCEL", "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "dest": {"view": "question", "viewkey": "AccountDetailedSelection"}}
+            ]
+        },
+
+        "AMOUNT_SELECTION": {
+            "view": {
+                "name": "amountselection",
+                "viewkey": "WithdrawalAmountSelection",
+                "texts": {
+                    "headline": {"en": "Select amount."},
+                    "instruction": {"en": "Please select the cash amount you want to get."}
+                }
+            },
+            "flow": [
+
+
+                {"action": "OTHER", "from": {"viewkey": "WithdrawalAlternativeAmountSelection" }, "dest": {"view": "amountselection", "viewkey": "WithdrawalAmountSelection"}},
+
+                {"action": "DENOM_SELECTION", "dest": {"view": "billselection", "viewkey": "WithdrawalMixtureSelection"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "WithdrawalAmountSelection" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "OTHER", "from": {"viewkey": "WithdrawalAmountSelection" }, "dest": {"view": "amountentry", "viewkey": "WithdrawalAlternativeAmountInput"}},
+                {"action": "DENOM_SELECTION", "from": {"viewkey": "WithdrawalAmountSelection" }, "dest": {"view": "billselection", "viewkey": "WithdrawalMixtureSelection"}},
+
+                {"action": "*", "from": {"viewkey": "WithdrawalAmountSelection", "context": {"property": ["CCTAFW_PROP_HIGH_AMOUNT_MINOR", "CCTAFW_PROP_LOW_AMOUNT_MINOR"], "ifvalue": ["EX:!EMPTY", "EX:!EMPTY"]}}, "dest": {"view": "amountselection", "viewkey": "WithdrawalAlternativeAmountSelection"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "question", "viewkey": "ReceiptQuestion"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "question", "viewkey": "ReceiptQuestion"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "question", "viewkey": "ReceiptQuestion"}},
+
+                {"action": "*", "from": {"viewkey": "WithdrawalAlternativeAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "question", "viewkey": "ReceiptQuestion"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalAlternativeAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "question", "viewkey": "ReceiptQuestion"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalAlternativeAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "question", "viewkey": "ReceiptQuestion"}},
+
+                {"action": "*", "from": {"viewkey": "WithdrawalAlternativeAmountSelection", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_ACTION"], "ifvalue": ["COUT", "MIXTURE"]}}, "dest": {"view": "billselection", "viewkey": "WithdrawalMixtureSelection"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalAlternativeAmountSelection", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_ACTION"], "ifvalue": ["COINOUT", "MIXTURE"]}}, "dest": {"view": "billselection", "viewkey": "WithdrawalMixtureSelection"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalAlternativeAmountSelection", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_ACTION"], "ifvalue": ["COUTMIXED", "MIXTURE"]}}, "dest": {"view": "billselection", "viewkey": "WithdrawalMixtureSelection"}},
+                
+                
+                {"action": "CANCEL", "from": {"viewkey": "FastCashPreferenceAmountSelection" }, "dest": {"view": "message", "viewkey": "FastCashPreferenceFailedInfo"}},
+                {"action": "OTHER", "from": {"viewkey": "FastCashPreferenceAmountSelection" }, "dest": {"view": "amountentry", "viewkey": "FastCashPreferenceAmountInput"}},
+                {"action": "DENOM_SELECTION", "from": {"viewkey": "FastCashPreferenceAmountSelection" }, "dest": {"view": "billselection", "viewkey": "WithdrawalMixtureSelection"}},
+                {"action": "*", "from": {"viewkey": "FastCashPreferenceAmountSelection" }, "dest": {"view": "question", "viewkey": "FastCashPreferenceConfirmation"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "PrepaidAmountSelection" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "OTHER", "from": {"viewkey": "PrepaidAmountSelection" }, "dest": {"view": "not_supported", "viewkey": "not_supported"}},
+                {"action": "DENOM_SELECTION", "from": {"viewkey": "PrepaidAmountSelection" }, "dest": {"view": "not_supported", "viewkey": "not_supported"}},
+                {"action": "*", "from": {"viewkey": "PrepaidAmountSelection" }, "dest": {"view": "numericentry", "viewkey": "PrepaidPhoneNumberInput"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "OrderAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCASH"}  }, "dest": {"view": "message", "viewkey": "OrderCashFailedInfo"}},
+                {"action": "CANCEL", "from": {"viewkey": "OrderAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}  }, "dest": {"view": "message", "viewkey": "OrderCurrenciesFailedInfo"}},
+                {"action": "OTHER", "from": {"viewkey": "OrderAmountSelection" }, "dest": {"view": "amountentry", "viewkey": "OrderAmountInput"}},
+                {"action": "DENOM_SELECTION", "from": {"viewkey": "OrderAmountSelection" }, "dest": {"view": "not_supported", "viewkey": "not_supported"}},
+                {"action": "*", "from": {"viewkey": "OrderAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCASH"} }, "dest": {"view": "question", "viewkey": "OrderCashConfirmation"}},
+                {"action": "*", "from": {"viewkey": "OrderAmountSelection", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"} }, "dest": {"view": "question", "viewkey": "OrderShippingQuestion"}}
+            ]
+        },
+
+        "BILL_PAYMENT_SELECTION": {
+            "view": {
+                "name": "billpaymentselection",
+                "viewkey": "BillPaymentSelection",
+                "texts": {
+                    "headline": {"en": "Select payee"},
+                    "instruction": {"en": "Please select the payee corporation."}
+                }
+            },
+            "flow": [
+                {"action": "CANCEL", "from": {"viewkey": "BillPaymentPayeeSelection" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "BillPaymentPayeeSelection" }, "dest": {"view": "numericentry", "viewkey": "BillPaymentBillReferenceNumberInput"}}
+            ]
+        },
+
+        "EMV_APPLICATION_SELECTION": {
+            "view": {
+                "name": "emvapplicationselection",
+                "viewkey": "EmvApplicationSelection",
+                "texts": {
+                    "headline": {"en": "Select EMV application"},
+                    "instruction": {"en": "Please select your desired EMV application."}
+                }
+            },
+            "flow": [
+                {"action": "CANCEL", "from": {"viewkey": "EmvApplicationSelection" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "EmvApplicationSelection" }, "dest": {"view": "pinentry", "viewkey": "PinEntry"}}
+            ]
+        },
+
+        "PREPAID_PROVIDER_SELECTION": {
+            "view": {
+                "name": "prepaidproviderselection",
+                "viewkey": "PrepaidProviderSelection",
+                "texts": {
+                    "headline": {"en": "Select provider"},
+                    "instruction": {"en": "Please select one of the options..."}
+                }
+            },
+            "flow": [
+                {"action": "CANCEL", "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "dest": {"view": "amountselection", "viewkey": "PrepaidAmountSelection"}},
+                {"action": "*", "from": {"viewkey": "PrepaidProviderSelection", "context": {"property": "EDM_PROP_CONFIG_MINUTE_SELECTION", "ifvalue": "1"} }, "dest": {"view": "selection", "viewkey": "PrepaidMinuteSelection"}}
+            ]
+        },
+
+        "ACCOUNT_INFORMATION": {
+            "view": {
+                "name": "accountinformation",
+                "viewkey": "AccountInformationOverview",
+                "texts": {
+                  
+                    "headline": {"en": "Información de la cuenta"},
+                    "instruction": {"en": "Please note."},
+                    "datos":{"en":"dato de prueba"}
+                    
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "from": {"viewkey": "BalanceInquiryInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "PRINT", "from": {"viewkey": "BalanceInquiryInfo"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "CANCEL", "from": {"viewkey": "BalanceInquiryInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "AccountInformationOverview"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "PRINT", "from": {"viewkey": "AccountInformationOverview"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "CANCEL", "from": {"viewkey": "AccountInformationOverview"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}}
+            ]
+        },
+
+        "AMOUNT_ENTRY": {
+            "view": {
+                "name": "amountentry",
+                "viewkey": "WithdrawalAlternativeAmountInput",
+                "texts": {
+                    "headline": {"en": "Enter amount"},
+                    "instruction": {"en": "Please enter your individual amount."}
+                }
+            },
+            "flow": [
+                {"action": "CANCEL", "from": {"viewkey": "WithdrawalAlternativeAmountInput"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "FastCashPreferenceAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "FCCHG"}}, "dest": {"view": "question", "viewkey": "FastCashPreferenceConfirmation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "WithdrawalAlternativeAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "FCCHG"}}, "dest": {"view": "question", "viewkey": "FastCashPreferenceConfirmation"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "WithdrawalAlternativeAmountInput", "context": {"property": ["CCTAFW_PROP_HIGH_AMOUNT_MINOR", "CCTAFW_PROP_LOW_AMOUNT_MINOR"], "ifvalue": ["EX:!EMPTY", "EX:!EMPTY"]}}, "dest": {"view": "selection", "viewkey": "WithdrawalAlternativeAmountSelection"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "WithdrawalAlternativeAmountInput"}, "dest": {"view": "question", "viewkey": "WithdrawalAlternativeAmountConfirmation"}},
+                {"action": "MIXTURE", "from": {"viewkey": "WithdrawalAlternativeAmountInput"}, "dest": {"view": "billselection", "viewkey": "WithdrawalMixtureSelection"}},
+                {"action": "MIXTURE", "from": {"viewkey": "WithdrawalAlternativeAmountInput", "context": {"property": ["CCTAFW_PROP_HIGH_AMOUNT_MINOR", "CCTAFW_PROP_LOW_AMOUNT_MINOR"], "ifvalue": ["EX:!EMPTY", "EX:!EMPTY"]}}, "dest": {"view": "selection", "viewkey": "WithdrawalAlternativeAmountSelection"}},
+
+                
+                
+                {"action": "CANCEL", "from": {"viewkey": "DepositPartialDepositAmountInput"}, "dest": {"view": "depositresult", "viewkey": "DepositResult"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "DepositPartialDepositAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN_PRESTAGED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositStorageProcessingWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositPartialDepositAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "depositanimations", "viewkey": "DepositStorageProcessingWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositPartialDepositAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "depositanimations", "viewkey": "DepositStorageProcessingWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositPartialDepositAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositStorageProcessingWait"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "DepositEnvelopeAmountInput"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositEnvelopeAmountInput"}, "dest": {"view": "selection", "viewkey": "DepositEnvelopeDocumentTypeSelection"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "TransferAmountInput"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "TransferAmountInput"}, "dest": {"view": "question", "viewkey": "TransferAmountConfirmation"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "BillPaymentAmountInput"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "BillPaymentAmountInput"}, "dest": {"view": "question", "viewkey": "BillPaymentConfirmation"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "OrderAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCASH"}}, "dest": {"view": "message", "viewkey": "OrderCashFailedInfo"}},
+                {"action": "CANCEL", "from": {"viewkey": "OrderAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}}, "dest": {"view": "message", "viewkey": "OrderCurrenciesFailedInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "OrderAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCASH"}}, "dest": {"view": "question", "viewkey": "OrderCashConfirmation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "OrderAmountInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}}, "dest": {"view": "question", "viewkey": "OrderShippingQuestion"}},
+                
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "OTHER", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "OTHER", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "*", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}}
+            ]
+        },
+        "BILL_SPLITTING": {
+            "view": {
+                "name": "billsplitting",
+                "viewkey": "WithdrawalMixtureSelection",
+                "texts": {
+                    "headline": {"en": "Bill splitting"},
+                    "instruction": {"en": "You may change or accept the given denomination.<br>Split by pressing +/- or reset."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "message", "viewkey": "WithdrawalNotesDispenseInfo"}},
+                {"action": "CANCEL", "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}}
+            ]
+        },
+        "BILL_SELECTION": {
+            "view": {
+                "name": "billselection",
+                "viewkey": "WithdrawalMixtureSelection",
+                "texts": {
+                    "headline": {"en": "Bill selection"},
+                    "instruction": {"en": "Change the denomination as you desire. Choose +/-."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "pleasewait", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "message", "viewkey": "WithdrawalNotesDispenseInfo"}},
+                {"action": "CANCEL", "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}}
+            ]
+        },
+        "ADA_ADJUSTMENT_SELECTION": {
+            "view": {
+                "name": "adaadjustment",
+                "viewkey": "AdaAdjustmentSelection",
+                "texts": {
+                    "headline": {"en": "Please configure your volume and rate"},
+                    "instruction": {"en": "You have the following options."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "dest": {"view": "selection", "viewkey": "AdaShowTutorialQuestion"}}
+            ]
+        },
+
+        "ADA_TUTORIAL_INFOTMENT_SELECTION": {
+            "view": {
+                "name": "adainformation",
+                "viewkey": "AdaTutorialInfo",
+                "texts": {
+                    "headline": {"en": "Note"},
+                    "instruction": {"en": "Please read and confirm the information."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "dest": {"view": "selection", "viewkey": "MenuSelection"}},
+                {"action": "MESSAGE", "dest": {"view": "selection", "viewkey": "MenuSelection"}}
+            ]
+        },
+
+        "DEPOSIT_CHEQUES_RESULT": {
+            "view": {
+                "name": "depositchequesresult",
+                "viewkey": "DepositChequesResult",
+                "texts": {
+                    "headline": {"en": "Cheque deposit"},
+                    "instruction": {"en": "You have the following options. Your current total cheque amount:<span class='color03'> € {#flexMain.totalAmount#}</span>"}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "from": {"viewkey": "DepositChequesResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHCCDM"}}, "dest": {"view": "question", "viewkey": "DepositChequesSummaryResult"}},
+                {"action": "CANCEL", "from": {"viewkey": "DepositChequesResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHCCDM"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "DepositChequesResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "question", "viewkey": "DepositChequesSummaryResult"}},
+                {"action": "CANCEL", "from": {"viewkey": "DepositChequesResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "DepositChequesResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "question", "viewkey": "DepositMixedMediaSummaryResult"}},
+                {"action": "CANCEL", "from": {"viewkey": "DepositChequesResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}}
+            ]
+        },
+
+        "DEPOSIT_CHEQUES_ANIMATIONS": {
+            "view": {
+                "name": "depositchequesanimations",
+                "viewkey": "DepositChequesMediaInInfo",
+                "mediaIds": ["flexAnimations"],
+                "texts": {
+                    "headline": {"en": "Deposit cheques items"},
+                    "instruction": {"en": "Please insert your desired items to deposit."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "dest": {"view": "depositchequesresult", "viewkey": "DepositChequesResult"}},
+
+                {"action": "CANCEL", "from": {"viewkey": "DepositChequesMediaInInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositChequesMediaInInfo"}, "dest": {"view": "question", "viewkey": "DepositChequesAnotherBundleQuestion"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositChequesEjectWait"}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesOutputNotEmptyInfo"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositChequesOutputNotEmptyInfo"}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesPresentMediaInfo"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositChequesPresentMediaInfo"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "*", "from": {"viewkey": "DepositChequesReadingChequesWait"}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesPleaseWait"}},
+
+                {"action": "*", "from": {"viewkey": "DepositChequesPleaseWait", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHCCDM"}}, "dest": {"view": "question", "viewkey": "DepositChequesSummaryResult"}},
+                {"action": "*", "from": {"viewkey": "DepositChequesPleaseWait", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "question", "viewkey": "DepositChequesSummaryResult"}},
+                {"action": "*", "from": {"viewkey": "DepositChequesPleaseWait", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "question", "viewkey": "DepositMixedMediaSummaryResult"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositChequesFlushingWait", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositChequesFlushingWait"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "itemsRetracted", "from": {"viewkey": "DepositChequesPresentMediaInfo"}, "dest": {"view": "pleasewait", "viewkey": "DepositChequesRetractWait"}}
+
+            ]
+        },
+
+        "CARD_ANIMATIONS": {
+            "view": {
+                "name": "cardanimations",
+                "viewkey": "CardInsertion",
+                "mediaIds": ["cardInsert", "cardInsertLSF", "contactlessReaderArea", "cardEject"],
+                "texts": {
+                    "headline": {"en": "Card"},
+                    "instruction": {"en": "Please take or insert your card."}
+                }
+            },
+            "flow": [
+                {"action": "CANCEL", "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "CARDLESS", "dest": {"view": "numericentry", "viewkey": "PrestagedTransactionCodeInput"}},
+                
+                {"action": "cardInsert", "from": {"viewkey": "CardInsertion", "context": {"property": "CCTAFW_PROP_TRANSACTION_TECHNOLOGY", "ifvalue": "0"}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "cardInsert", "from": {"viewkey": "CardInsertion", "context": {"property": "CCTAFW_PROP_TRANSACTION_TECHNOLOGY", "ifvalue": "1"}}, "dest": {"view": "emvapplicationselection", "viewkey": "EmvApplicationSelection"}},
+                {"action": "cardInsertLSF", "from": {"viewkey": "CardInsertion", "context": {"property": "CCTAFW_PROP_TRANSACTION_TECHNOLOGY", "ifvalue": "0"}}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+                {"action": "cardInsertLSF", "from": {"viewkey": "CardInsertion", "context": {"property": "CCTAFW_PROP_TRANSACTION_TECHNOLOGY", "ifvalue": "1"}}, "dest": {"view": "emvapplicationselection", "viewkey": "EmvApplicationSelection"}},
+                {"action": "contactlessReaderArea", "from": {"viewkey": "CardInsertion"}, "dest": {"view": "pinentry", "viewkey": "PinEntry"}},
+
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT"}}, "dest": {"view": "message", "viewkey": "WithdrawalNotesDispenseInfo"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTFAST"}}, "dest": {"view": "message", "viewkey": "WithdrawalNotesDispenseInfo"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COINOUT"}}, "dest": {"view": "message", "viewkey": "WithdrawalCoinsDispensing"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUTMIXED"}}, "dest": {"view": "message", "viewkey": "WithdrawalNotesDispenseInfo"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "VOUCHER"}}, "dest": {"view": "message", "viewkey": "WithdrawalNotesDispenseInfo"}},
+
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_VIEWKEY"], "ifvalue": ["CIN", "DepositNotesRollback"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalOutput"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_ACTION"], "ifvalue": ["CIN", "CANCEL"]}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "depositanimations", "viewkey": "DepositStorageProcessingWait"}},
+
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_VIEWKEY"], "ifvalue": ["COININ", "DepositCoinsRollback"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsRemoval"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "depositanimations", "viewkey": "DepositStorageProcessingWait"}},
+
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositStorageProcessingWait"}},
+
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BAL"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "FCCHG"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "LANGCHG"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MENUCHG"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "RECCHG"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHCCDM"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "message", "viewkey": "WithdrawalNotesDispenseInfo"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ENV"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PREPAID"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCASH"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCURR"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCHQ"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDPOST"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PINCHG"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PINUNLOCK"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "cardEject", "from": {"viewkey": "CardPresentation"}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "cardRetained", "from": {"viewkey": "CardPresentation"}, "dest": {"view": "message", "viewkey": "CardRetainInfo"}},
+                
+                {"action": "cardNotInserted", "from": {"viewkey": "CardInsertion"}, "dest": {"view": "message", "viewkey": "CardTimeoutInfo"}}
+            ]
+        },
+
+        "PRINTER_ANIMATIONS": {
+            "view": {
+                "name": "printeranimations",
+                "viewkey": "StatementPresentation",
+                "mediaIds": ["documentEject", "receiptEject", "eReceiptSend"],
+                "texts": {
+                    "headline": {"en": "Documents"},
+                    "instruction": {"en": "Please take your document(s)."}
+                }
+            },
+            "flow": [
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BAL"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN_PRESTAGED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositStorageProcessingWait"}},
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHCCDM"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CHQCASH"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ENV"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "AIN"}}, "dest": {"view": "accountinformation", "viewkey": "AccountInformationOverview"}},
+
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "TRA"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "PREPAID"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "*", "from": {"viewkey": "ReceiptPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "BILLPAY"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "*", "from": {"viewkey": "StatementPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "STP"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "StatementPresentation", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "STPM"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "mediaRetained", "from": {"viewkey": "StatementPresentation" }, "dest": {"view": "message", "viewkey": "StatementPrintRetainStatementInfo"}},
+
+                {"action": "*", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}}
+                
+            ]
+        },
+
+        "DEPOSIT_ANIMATIONS": {
+            "view": {
+                "name": "depositanimations",
+                "viewkey": "DepositNotesInsertion",
+                "mediaIds": ["flexAnimations"],
+                "texts": {
+                    "headline": {"en": "Deposit items"},
+                    "instruction": {"en": "Please insert your desired items to deposit."}
+                }
+            },
+            "flow": [
+                {"action": "CANCEL",  "from": {"viewkey": "DepositNotesAndCoinsInsertion"}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalInput"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesAndCoinsInsertion"}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "*",       "from": {"viewkey": "DepositNotesAndCoinsInsertion"}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesRemovalInputMetal", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesRemovalInput", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "1"}}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesRemovalInput", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "2"}}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalInput", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "1"}}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalInput", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "2"}}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+
+
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "1"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalInput"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "2"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalInput"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "3"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalInputMetal"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": "CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "ifvalue": "4"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalInput"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesRemovalIOMetal", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["0", "IMPLICIT"]}}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["1", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIO"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["2", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIO"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["3", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIOMetal"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["4", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIO"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalIOMetal", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["0", "IMPLICIT"]}}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalIO", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["1", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalIO", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["2", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalIOMetal", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["3", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalIO", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["4", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesProcessingWait"}},
+
+
+
+                {"action": "*", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["1", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIO"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["2", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIO"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["3", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIOMetal"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesInsertion", "context": {"property": ["CCCAINTAFW_PROP_PRESENT_INPUT_REASON", "CCCAINTAFW_PROP_DEVICE_CONTROL"], "ifvalue": ["4", "IMPLICIT"]}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIO"}},
+
+
+
+                {"action": "CANCEL",  "from": {"viewkey": "DepositNotesInsertion"}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalInput"}},
+                {"action": "CANCEL",  "from": {"viewkey": "DepositNotesInsertion", "context": {"property": "CCCAINTAFW_PROP_DEVICE_CONTROL", "ifvalue": "IMPLICIT"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRemovalIO"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositNotesInsertion"}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                {"action": "*",       "from": {"viewkey": "DepositNotesInsertion"}, "dest": {"view": "pleasewait", "viewkey": "DepositNotesProcessingWait"}},
+                
+                {"action": "CANCEL",  "from": {"viewkey": "DepositCoinsInsertion"}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsRollback"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositCoinsInsertion"}, "dest": {"view": "pleasewait", "viewkey": "DepositCoinsProcessingWait"}},
+                {"action": "*",       "from": {"viewkey": "DepositCoinsInsertion"}, "dest": {"view": "pleasewait", "viewkey": "DepositCoinsProcessingWait"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalIO", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsRollback"}},
+               
+                {"action": "*", "from": {"viewkey": "DepositStorageProcessingWait", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositStorageProcessingWait", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "DepositCoinsRollback", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN_PRESTAGED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRollback"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositCoinsRollback", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRollback"}},
+                {"action": "CONFIRM", "from": {"viewkey": "DepositCoinsRollback"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositNotesRollback", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "CCTAFW_PROP_CARD_ACTIVE"], "ifvalue": ["CIN_PRESTAGED", "1"]}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRollback", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "CCTAFW_PROP_CARD_ACTIVE"], "ifvalue": ["CIN_PRESTAGED", "0"]}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositNotesRollback"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositCoinsRollback"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalOutput", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_VIEWKEY", "CCTAFW_PROP_CARD_ACTIVE"], "ifvalue": ["CIN", "DepositNotesRollback", "1"]}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalOutput", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_VIEWKEY", "CCTAFW_PROP_CARD_ACTIVE"], "ifvalue": ["CIN", "DepositNotesRollback", "0"]}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositCoinsRemoval", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_VIEWKEY", "CCTAFW_PROP_CARD_ACTIVE"], "ifvalue": ["COININ", "DepositCoinsRollback", "1"]}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "*", "from": {"viewkey": "DepositCoinsRemoval", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "PROP_PENULTIMATE_VIEWKEY", "CCTAFW_PROP_CARD_ACTIVE"], "ifvalue": ["COININ", "DepositCoinsRollback", "0"]}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "*", "from": {"viewkey": "DepositNotesRemovalOutput"}, "dest": {"view": "depositresult", "viewkey": "DepositResult"}},
+                {"action": "itemsRetracted", "from": {"viewkey": "DepositNotesRemovalOutput"}, "dest": {"view": "pleasewait", "viewkey": "DepositRetract"}}
+            ]
+        },
+
+        "DEPOSIT_ENVELOPE_ANIMATIONS": {
+            "view": {
+                "name": "depositenvelopeanimations",
+                "viewkey": "DepositEnvelopeInsertion",
+                "mediaIds": ["ejectEnvelope", "insertEnvelope"],
+                "texts": {
+                    "headline": {"en": "Envelopes"},
+                    "instruction": {"en": "Please take / insert an envelope."}
+                }
+            },
+            "flow": [
+                {"action": "*", "from": {"viewkey": "DepositEnvelopePresentation"}, "dest": {"view": "amountentry", "viewkey": "DepositEnvelopeAmountInput"}},
+                {"action": "itemsRetracted", "from": {"viewkey": "DepositEnvelopePresentation"}, "dest": {"view": "message", "viewkey": "DepositEnvelopeRetractInfo"}},
+                
+                {"action": "*", "from": {"viewkey": "DepositEnvelopeInsertion"}, "dest": {"view": "message", "viewkey": "DepositEnvelopeInsertionCompleteInfo"}}
+            ]
+        },
+
+        "SCAN_CODE_ANIMATIONS": {
+            "view": {
+                "name": "scancodeanimations",
+                "viewkey": "BarcodeScan",
+                "mediaIds": ["barCodeScan", "qrCodeScan"],
+                "texts": {
+                    "headline": {"en": "Barcode / QR-Code scanning"},
+                    "instruction": {"en": "Please hold your barcode / QR-Code below the scanner."}
+                }
+            },
+            "flow": [
+                {"action": "*", "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}}
+            ]
+        },
+
+        "WITHDRAWAL_ANIMATIONS": {
+            "view": {
+                "name": "withdrawalanimations",
+                "viewkey": "WithdrawalNotesAndReceiptPresentation",
+                "mediaIds": ["coinsEject", "notesEject", "voucherEject", "receiptEject", "eReceiptSend"],
+                "texts": {
+                    "headline": {"en": "Withdrawal items."},
+                    "instruction": {"en": "Please take your desired items."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalNotesAndReceiptPresentation"}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalCoinsAndReceiptPresentation"}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "*", "from": {"viewkey": "WithdrawalNotesAndCoinsAndReceiptPresentation"}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "*", "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                {"action": "itemsRetracted", "dest": {"view": "message", "viewkey": "WithdrawalNotesRetractInfo"}}
+            ]
+        },
+
+        "GENERIC_IMAGE": {
+            "view": {
+                "name": "genericimage",
+                "viewkey": "GenericImage",
+                "texts": {
+                    "headline": {"en": "Generic image"},
+                    "instruction": {"en": "Please confirm..."}
+                }
+            },
+            "flow": [
+                {"action": "*", "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}}
+            ]
+        },
+
+        "DEPOSIT_RESULT": {
+            "view": {
+                "name": "depositresult",
+                "viewkey": "DepositResult",
+                "texts": {
+                    "headline": {"en": "Deposit result"},
+                    "instruction": {"en": "Please check the amounts below."}
+                }
+           },
+            "flow": [
+                {"action": "CONFIRM_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN_PRESTAGED"}}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}},
+                {"action": "INSERTMOREMONEY", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN_PRESTAGED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesAndCoinsInsertion"}},
+                {"action": "PARTIAL_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN_PRESTAGED"}}, "dest": {"view": "amountentry", "viewkey": "DepositPartialDepositAmountInput"}},
+                {"action": "CANCEL",          "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN_PRESTAGED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsRollback"}},
+
+                {"action": "CONFIRM_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "pleasewait", "viewkey": "AssistanceLimitApprovalInfo"}},
+                {"action": "INSERTMOREMONEY", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesInsertion"}},
+                {"action": "PARTIAL_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "amountentry", "viewkey": "DepositPartialDepositAmountInput"}},
+                {"action": "CANCEL",          "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRollback"}},
+
+                {"action": "CONFIRM_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "pleasewait", "viewkey": "AssistanceLimitApprovalInfo"}},
+                {"action": "INSERTMOREMONEY", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsInsertion"}},
+                {"action": "PARTIAL_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "amountentry", "viewkey": "DepositPartialDepositAmountInput"}},
+                {"action": "CANCEL",          "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COININ"}}, "dest": {"view": "depositanimations", "viewkey": "DepositCoinsRollback"}},
+
+                {"action": "CONFIRM_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "pleasewait", "viewkey": "AssistanceLimitApprovalInfo"}},
+                {"action": "INSERTMOREMONEY", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesAndCoinsInsertion"}},
+                {"action": "PARTIAL_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "amountentry", "viewkey": "DepositPartialDepositAmountInput"}},
+                {"action": "CANCEL",          "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CINMIXED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesRollback"}},
+                
+                {"action": "CONFIRM_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "question", "viewkey": "DepositMixedMediaSummaryResult"}},
+                {"action": "INSERTMOREMONEY", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "not_supported", "viewkey": "not_supported"}},
+                {"action": "PARTIAL_DEPOSIT", "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "not_supported", "viewkey": "not_supported"}},
+                {"action": "CANCEL",          "from": {"viewkey": "DepositResult", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "MIXEDMEDIA"}}, "dest": {"view": "depositchequesanimations", "viewkey": "DepositChequesEjectWait"}}
+            ]
+        },
+
+        "NUMERIC_INPUT": {
+            "view": {
+                "name": "numericentry",
+                "viewkey": "BillPaymentBillReferenceNumberInput",
+                "texts": {
+                    "headline": {"en": "Enter numeric"},
+                    "instruction": {"en": "Please enter an individual numeric value."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "PrestagedTransactionCodeInput"}, "dest": {"view": "numericentry", "viewkey": "PrestagedSecureCodeInput"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "PrestagedTransactionCodeInput", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "1"}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CANCEL", "from": {"viewkey": "PrestagedTransactionCodeInput", "context": {"property": "CCTAFW_PROP_CARD_ACTIVE", "ifvalue": "0"}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+
+                {"action": "CONFIRM", "from": {"viewkey": "PrestagedSecureCodeInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "COUT_PRESTAGED"}}, "dest": {"view": "message", "viewkey": "WithdrawalNotesDispenseInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PrestagedSecureCodeInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "CIN_PRESTAGED"}}, "dest": {"view": "depositanimations", "viewkey": "DepositNotesAndCoinsInsertion"}},
+                
+                
+                {"action": "CANCEL", "from": {"viewkey": "PrestagedSecureCodeInput", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "CCTAFW_PROP_CARD_ACTIVE"] , "ifvalue": ["COUT_PRESTAGED", "1"]}}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CANCEL", "from": {"viewkey": "PrestagedSecureCodeInput", "context": {"property": ["CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "CCTAFW_PROP_CARD_ACTIVE"] , "ifvalue": ["COUT_PRESTAGED", "0"]}}, "dest": {"view": "pleasewait", "viewkey": "TransactionEndWait"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "PrepaidPhoneNumberInput" }, "dest": {"view": "numericentry", "viewkey": "PrepaidPhoneNumberConfirmationInput"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PrepaidPhoneNumberConfirmationInput" }, "dest": {"view": "question", "viewkey": "PrepaidAmountConfirmation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PrepaidPhoneNumberConfirmationInput", "context": {"property": ["CCTAFW_PROP_CUSTOMER_INPUT_VARIABLE[43]", "EDM_PROP_CONFIG_MINUTE_SELECTION"], "ifvalue": ["EX:!EMPTY", "1"]} }, "dest": {"view": "question", "viewkey": "PrepaidMinuteConfirmation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "PrepaidPhoneNumberConfirmationInput", "context": {"property": "CCTAFW_PROP_CUSTOMER_INPUT_VARIABLE[43]", "ifvalue": "EX:EMPTY"}}, "dest": {"view": "message", "viewkey": "PrepaidPhoneNumberInvalidInfo"}},
+                {"action": "CANCEL", "from": {"viewkey": "PrepaidPhoneNumberInput" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CONFIRM", "from": {"viewkey": "BillPaymentBillReferenceNumberInput" }, "dest": {"view": "amountentry", "viewkey": "BillPaymentAmountInput"}},
+                {"action": "CANCEL", "from": {"viewkey": "BillPaymentBillReferenceNumberInput" }, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                
+                {"action": "CANCEL", "from": {"viewkey": "OrderUnitInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCHQ"} }, "dest": {"view": "message", "viewkey": "OrderChequesFailedInfo"}},
+                {"action": "CONFIRM", "from": {"viewkey": "OrderUnitInput", "context": {"property": "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE", "ifvalue": "ORDCHQ"} }, "dest": {"view": "question", "viewkey": "OrderChequesConfirmation"}}
+            ]
+        },
+
+        "MENU_PREFERENCES": {
+            "view": {
+                "name": "menupreferences",
+                "viewkey": "MenuPreferenceSelection",
+                "texts": {
+                    "headline": {"en": "Menu preferences"},
+                    "instruction": {"en": "You may customize your favorite menu items order and button size."}
+                }
+            },
+            "flow": [
+                {"action": "CONFIRM", "dest": {"view": "message", "viewkey": "MenuPreferenceCompleteInfo"}},
+                {"action": "CANCEL", "dest": {"view": "message", "viewkey": "MenuPreferenceFailedInfo"}}
+            ]
+        },
+
+        "CHECK_BOX_PREFERENCES": {
+            "view": {
+                "name": "checkboxes",
+                "viewkey": "ReceiptPreferenceMultipleChoiceSelection",
+                "texts": {
+                    "headline": {"en": "Receipt preferences"},
+                    "instruction": {"en": "Please check your options..."}
+                }
+            },
+            "flow": [
+                {"action": "*", "from": {"viewkey": "ReceiptPreferenceMultipleChoiceSelection"}, "dest": {"view": "question", "viewkey": "ReceiptPreferenceConfirmation"}},
+                {"action": "CANCEL", "from": {"viewkey": "ReceiptPreferenceMultipleChoiceSelection"}, "dest": {"view": "message", "viewkey": "ReceiptPreferenceSelectionFailedInfo"}},
+                
+                {"action": "*", "from": {"viewkey": "ClearPreferencesMultipleChoiceSelection"}, "dest": {"view": "question", "viewkey": "ClearPreferencesConfirmation"}},
+                {"action": "CANCEL", "from": {"viewkey": "ClearPreferencesMultipleChoiceSelection"}, "dest": {"view": "message", "viewkey": "ClearPreferencesFailedInfo"}}
+            ]
+        },
+
+        "CHIP_TRANSACTIONS": {
+            "view": {
+                "name": "chiptransactions",
+                "viewkey": "ChipTransactionsInfo",
+                "texts": {
+                    "headline": {"en": "Chip transactions"},
+                    "instruction": {"en": "These are the transactions on the chip."}
+                }
+            },
+            "flow": [
+                {"action": "BTN_SCROLL_LEFT",  "from": {"viewkey": "ChipTransTransactionsInfo"},    "dest": {"view": "message", "viewkey": "ChipBalanceInfo"}},
+                {"action": "BTN_SCROLL_RIGHT", "from": {"viewkey": "ChipTransTransactionsInfo"},    "dest": {"view": "chiptransactions", "viewkey": "ChipTransPayTransactionsInfo"}},
+                {"action": "BTN_SCROLL_LEFT",  "from": {"viewkey": "ChipTransPayTransactionsInfo"}, "dest": {"view": "chiptransactions", "viewkey": "ChipTransTransactionsInfo"}},
+                {"action": "BTN_SCROLL_RIGHT", "from": {"viewkey": "ChipTransPayTransactionsInfo"}, "dest": {"view": "question", "viewkey": "ReceiptQuestion"}}
+            ]
+        },
+        "FORM_ENTRY": {
+            "view": {
+                "name": "formentry", "viewkey": "AddressInput", "texts": {
+                    "headline": {"en": "Form"},
+                    "instruction": {"en": "Please enter the following input fields."}
+                }
+            }
+        },
+        "RECEIPT": {
+            "view": {
+                "name": "receipt", "viewkey": "ReceiptInfo", "texts": {
+                    "headline": {"en": "Receipt info"},
+                    "instruction": {"en": "Please read your receipt information."}
+                }
+            }
+        },
+        "MOBILE_TRANSACTON": {
+            "view": {
+                "name": "mobiletransaction", "viewkey": "MobileTransaction", "texts": {
+                    "headline": {"en": "Prestaged mobile transaction"},
+                    "instruction": {"en": "Please confirm the same code - as displayed below - at your mobile."}
+                }
+			}	
+        },
+        "SCANNED_IMAGE_VIEWER": {
+            "view": {
+                "name": "scannedimageviewer",
+                "viewkey": "DocumentScanPrepare",
+                "mediaIds": [{"id": "imgViewer", "viewkey": "DocumentScanning"}],
+                "texts": {
+                    "headline": {"en": "Scanned image"},
+                    "instruction": {"en": "Please verify that your scanned document is correct."}
+                }
+            },
+            "flow": [
+                {"action": "imgViewer", "from": {"viewkey": "DocumentScanning"}, "dest": {"view": "scannedimageviewer", "viewkey": "DocumentScanResult"}},
+                {"action": "ACCEPT", "from": {"viewkey": "DocumentScanPrepare"}, "dest": {"view": "scannedimageviewer", "viewkey": "DocumentScanning"}},
+                {"action": "ACCEPT", "from": {"viewkey": "DocumentScanResult"}, "dest": {"view": "scannedimageviewer", "viewkey": "DocumentScanPrepare"}},
+                {"action": "ACCEPT", "from": {"viewkey": "SignatureScanResult"}, "dest": {"view": "idlepresentation", "viewkey": "IdleLoopPresentation"}},
+                {"action": "SCAN_AGAIN", "from": {"viewkey": "DocumentScanResult"}, "dest": {"view": "scannedimageviewer", "viewkey": "DocumentScanPrepare"}},
+                {"action": "SCAN_AGAIN", "from": {"viewkey": "SignatureScanResult"}, "dest": {"view": "signaturepad", "viewkey": "SignatureInputTouch"}},
+				{"action": "PRINT", "from": {"viewkey": "ViewPaidCheques"}, "dest": {"view": "printeranimations", "viewkey": "ReceiptPresentation"}}
+            ]
+        },
+        "SIGNATURE_PAD": {
+            "view": {
+                "name": "signaturepad",
+                "viewkey": "SignatureInputTouch",
+                "mediaIds": [{"id": "flexArticle", "viewkey": "SignatureRequest"}],
+                "texts": {
+                    "headline": {"en": "Signature"},
+                    "instruction": {"en": "Please use your finger to write your signature on the screen."}
+                }
+            },
+            "flow": [
+                {"action": "flexArticle", "from": {"viewkey": "SignatureRequest"}, "dest": {"view": "scannedimageviewer", "viewkey": "SignatureScanResult"}},
+                {"action": "CONFIRM", "from": {"viewkey": "SignatureInputTouch"}, "dest": {"view": "scannedimageviewer", "viewkey": "SignatureScanResult"}}
+            ]
+        },
+        "VIDEO_IMAGE": {
+            "view": {
+                "name": "videoassistance", "viewkey": "VideoAssistance", "texts": {
+                    "headline": {"en": "Video conference"},
+                    "instruction": {"en": "The video connection is being established ..."}
+                }
+            }
+        },
+        "DUAL_CHOICE_SELECTION": {
+            "view": {
+                "name": "dualchoiceselection",
+                "viewkey": "CardlessDualIdentificationSelection",
+                "texts": {
+                    "headline": {"en": "Two forms of ID required"},
+                    "instruction": {"en": "Please select one from each column, then press Confirm"}
+                }
+            },
+            "flow": [
+                {"action": "*", "from": {"viewkey": "CardlessDualIdentificationSelection"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}},
+                {"action": "CONFIRM", "from": {"viewkey": "CardlessDualIdentificationSelection"}, "dest": {"view": "cardanimations", "viewkey": "CardPresentation"}}
+            ]
+        },
+        "MOBILE_ANIMATIONS": {
+            "view": {
+                "name": "mobileanimations",
+                "viewkey": "MobileAnimations",
+                "texts": {
+                    "headline": { "en": "Mobile contactless" },
+                    "instruction": { "en": "Please move your mobile towards the contactless reader." }
+                }
+            }
+        },
+        "TRANS_LOG": {
+            "view": {
+                "name": "emvtransactions",
+                "viewkey": "EmvTransactions",
+                "texts": {
+                    "headline": {"en": "Transaction log"},
+                    "instruction": {"en": "This is the transaction log."}
+                }
+            }
+        }
+    }
+}
+

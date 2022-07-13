@@ -1,0 +1,260 @@
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ softkey-custom.css 4.3.1-200122-21-0cd8a9f7-1a04bc7d
+
+*/
+
+/*Place your changes here*/
+/* padding: top right bottom left; */
+
+@media (min-width: 1280px) {
+
+    :root {
+        --header-height-dm-total: 520px;
+        --header-height-dm-image: 420px;
+    }
+
+    #flexHeader {
+        flex-basis: 370px;
+    }
+
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexHeader,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexHeader,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexHeader,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexHeader,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexHeader,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexHeader,
+    body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexHeader,
+    body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexHeader {
+        flex-basis: 515px;
+    }
+
+    /* -- DM support -- */
+    body[data-dm-available = true] div[data-view-id = "amountentry"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "cardanimations"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "depositenvelopeanimations"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "genericimage"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "message"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "mobiletransaction"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "numericentry"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "outofservice"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "offlinespa"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "pinentry"] #flexHeader,
+    body[data-dm-available=true] div[data-view-id = "pleasewait"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "printeranimations"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "question"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "receipt"] #flexHeader,
+    body[data-dm-available = true] div[data-view-id = "scancodeanimations"] #flexHeader,
+    body[data-dm-available=true] div[data-view-id = "withdrawalanimations"] #flexHeader {
+        flex-basis: 515px;
+    }
+
+    #flexHeaderBottom {
+        flex-basis: 90px;
+        padding: 0 70px 0 70px;
+    }
+
+    #flexMessageContainerHeader {
+        margin-top: 280px; /* 370-90 */
+    }
+
+    #flexArticle {
+        padding-bottom: 0 !important;
+        margin-top: 35px;
+    }
+
+    /*-- Flex Nav/Aside --*/
+    #flexNav, #flexNavPopup, #flexAside, #flexAsidePopup {
+        margin-top: 60px;
+    }
+
+    #flexNav > :not(:first-child), #flexNavPopup > :not(:first-child),
+    #flexAside > :not(:first-child), #flexAsidePopup > :not(:first-child) {
+        margin-top: 84px;
+    }
+
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexNav,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexNav,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexNav,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexNav,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexNav,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexNav,
+
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexAside,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexAside,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexAside,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexAside,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexAside,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexAside,
+
+    body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexNav,
+    body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexNav,
+
+    body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexAside,
+    body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexAside {
+        margin-top: -85px;
+    }
+
+    /* DM support */
+    body[data-dm-available = true] div[data-view-id = "amountentry"] #flexNav,
+    body[data-dm-available = true] div[data-view-id = "question"] #flexNav,
+    body[data-dm-available = true] div[data-view-id = "receipt"] #flexNav,
+
+    body[data-dm-available = true] div[data-view-id = "amountentry"] #flexAside,
+    body[data-dm-available = true] div[data-view-id = "cardanimations"] #flexAside,
+    body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexAside,
+    body[data-dm-available = true] div[data-view-id = "message"] #flexAside,
+    body[data-dm-available = true] div[data-view-id = "numericentry"] #flexAside,
+    body[data-dm-available = true] div[data-view-id = "pinentry"] #flexAside,
+    body[data-dm-available = true] div[data-view-id = "question"] #flexAside,
+    body[data-dm-available = true] div[data-view-id = "receipt"] #flexAside {
+        margin-top: -85px;
+    }
+
+    /*-- BreadCrumb group --*/
+    #breadCrumbGroup, #slideIndicatorGroup {
+        margin-top: 530px; /*please update if softkey pos changes*/
+    }
+
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #slideIndicatorGroup,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #slideIndicatorGroup,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #slideIndicatorGroup,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #slideIndicatorGroup,
+    body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #slideIndicatorGroup,
+    body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #slideIndicatorGroup,
+    body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #slideIndicatorGroup {
+        /* Please update if softkey position changes */
+        margin-top: 385px;
+    }
+
+    /*-- Popup window --*/
+    #flexNavPopup, #flexAsidePopup {
+        margin-top: 5px;
+    }
+
+    .popupWindow {
+        height: 296px;
+        margin-top: 575px;
+    }
+
+    #popupWindowAmountEntry {
+        height: 613px;
+        margin-top: 407px;
+    }
+
+    #popupWindowHelp {
+        height: 682px;
+        margin-top: 340px;
+    }
+
+    /*-- View: welcome --*/
+    div[data-view-id="welcome-view"] #flexMain,
+    div[data-view-id="welcome"] #flexMain {
+        margin-top: 50px;
+    }
+
+    /*-- View: Accountinformation --*/
+    #flexTransactionsHeader {
+        flex-basis: 60px;
+    }
+
+    #flexTransactionsHeaderAINStdAINIfxAINPcemov {
+        height: 60px;
+    }
+
+    #flexTransactionsHeader {
+        margin-top: 30px;
+    }
+
+    #flexTransactionsHeader {
+        flex-basis: 90px;
+    }
+
+    #flexTransactionsHeaderAINStdAINIfxAINPcemov {
+        height: 90px;
+    }
+
+    .transaction {
+        height: 111px;
+    }
+
+    .row1TransData {
+        height: 35px;
+    }
+
+    .row2TransData, .column1purposeValue, .column2purposeValue {
+        height: 66px;
+    }
+
+    .row2TransData {
+        padding: 5px 0 5px 0;
+    }
+
+/* -- DM-Support -- */
+    /* -- DM support for mobiletransaction -- */
+    body[data-dm-available = true] div[data-view-id = "mobiletransaction"] #mobilePhone {
+        height: 480px;
+    }
+
+    /* -- DM support for printeranimations / withdrawalanimations -- */
+    body[data-dm-available = true] div[data-view-id="printeranimations"] figure:not([id="waitSpinner"]),
+    body[data-dm-available = true] div[data-view-id="withdrawalanimations"] figure:not([id="waitSpinner"]) {
+        margin-top: 0;
+    }
+
+    /* -- DM support for message and question -- */
+    body[data-dm-available = true] div[data-view-id="message"] #flexArticle,
+    body[data-dm-available = true] div[data-view-id="question"] #flexArticle {
+        margin-top: 20px;
+    }
+
+    body[data-dm-available = true] div[data-view-id="message"] .messageArea,
+    body[data-dm-available = true] div[data-view-id="question"] .messageArea {
+        max-height: 320px;
+    }
+
+    body[data-dm-available = true] div[data-view-id="question"] .messageArea[data-other-available="true"] {
+        max-height: 150px;
+    }
+
+    /* -- DM support for depositenvelopeanimatons -- */
+    body[data-dm-available = true] div[data-view-id = "depositenvelopeanimations"] #flexArticle {
+        margin-top: 0;
+    }
+
+    /* -- DM support for depositanimatons / depositchequesanimations -- */
+    body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexArticle,
+    body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexArticle {
+        margin-top: 10px;
+    }
+
+    body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexAnimationHead,
+    body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexAnimationHead {
+        max-height: 175px;
+    }
+
+    body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexArticle figure:not([class="shortSideFirst"]) {
+        margin-top: -100px;
+    }
+
+    body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexArticle figure:not([id="waitSpinner"]) {
+        margin-top: 0;
+    }
+
+    /* -- DM support for numericentry -- */
+    body[data-dm-available = true] div[data-view-id = "numericentry"] #flexArticle {
+        margin-top: -109px;
+    }
+}
+

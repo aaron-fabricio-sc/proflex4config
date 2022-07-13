@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="change-check-amount" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+<g class="shadowGroup1">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10"  d="M6.9,42.5l17.7-6.4
+		c0,0,17.1-17.1,18.5-18.5s1.1-2.9,0-4c-1.1-1.2-3.6-3.7-3.6-3.7S37,7.4,35.9,6.3c-1.1-1.1-2.6-1.4-4,0c-0.3,0.3-1.1,1.1-2.3,2.3
+		c-5,5-16.2,16.2-16.2,16.2L6.9,42.5z"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10"  x1="28.3" y1="9.8" x2="39.6" y2="21.1"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="13.4" y1="24.8" x2="24.6" y2="36"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="35.7" y1="17.2" x2="20.8" y2="32.1"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="32" y1="13.4" x2="17" y2="28.4"/>
+</g>
+<g class="shadowGroup2">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10"  d="M5.9,41.6l17.7-6.4
+		c0,0,17.1-17.1,18.5-18.5c1.4-1.4,1.1-2.9,0-4C41,11.5,38.5,9,38.5,9S36,6.5,34.9,5.4s-2.6-1.4-4,0c-0.3,0.3-1.1,1.1-2.3,2.3
+		c-5,5-16.2,16.2-16.2,16.2L5.9,41.6z"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10"  x1="27.3" y1="8.9" x2="38.6" y2="20.2"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="12.4" y1="23.9" x2="23.6" y2="35.1"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="34.7" y1="16.3" x2="19.8" y2="31.2"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="31" y1="12.5" x2="16" y2="27.5"/>
+</g>
+<g class="shadowGroup3">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10"  d="M4.9,40.6l17.7-6.4
+		c0,0,17.1-17.1,18.5-18.5c1.4-1.4,1.1-2.9,0-4C40,10.5,37.5,8,37.5,8S35,5.5,33.9,4.4s-2.6-1.4-4,0c-0.3,0.3-1.1,1.1-2.3,2.3
+		c-5,5-16.2,16.2-16.2,16.2L4.9,40.6z"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10"  x1="26.3" y1="7.9" x2="37.6" y2="19.2"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="11.4" y1="22.9" x2="22.6" y2="34.1"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="33.7" y1="15.3" x2="18.8" y2="30.2"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="30" y1="11.5" x2="15" y2="26.5"/>
+</g>
+<g>
+	<path id="path1" class="strokeColor" stroke-miterlimit="10" d="M3.9,39.6l17.7-6.4c0,0,17.1-17.1,18.5-18.5c1.4-1.4,1.1-2.9,0-4
+		C39,9.5,36.5,7,36.5,7S34,4.5,32.9,3.4c-1.1-1.1-2.6-1.4-4,0c-0.3,0.3-1.1,1.1-2.3,2.3c-5,5-16.2,16.2-16.2,16.2L3.9,39.6z"/>
+	<line id="line1" class="strokeColor" stroke-width="4" stroke-miterlimit="10" x1="25.3" y1="6.9" x2="36.6" y2="18.2"/>
+	<line id="line2" class="strokeColor" stroke-miterlimit="10" x1="10.4" y1="21.9" x2="21.6" y2="33.1"/>
+	<line id="line3" class="strokeColor" stroke-miterlimit="10" x1="32.7" y1="14.3" x2="17.8" y2="29.2"/>
+	<line id="line4" class="strokeColor" stroke-miterlimit="10" x1="29" y1="10.5" x2="14" y2="25.5"/>
+</g>
+
+    <script type="text/javascript">
+        <![CDATA[
+            let id = this.frameElement && this.frameElement.parentElement ? this.frameElement.parentElement.id : "";
+            if(id === "buttonCorrect" || id === "buttonCorrectPopup") {
+                document.getElementById("path1").setAttribute("class", "strokeColor02");
+                document.getElementById("line1").setAttribute("class", "strokeColor02");
+                document.getElementById("line2").setAttribute("class", "strokeColor02");
+                document.getElementById("line3").setAttribute("class", "strokeColor02");
+                document.getElementById("line4").setAttribute("class", "strokeColor02");
+            }
+        ]]>
+    </script>
+</svg>

@@ -1,0 +1,70 @@
+<!--
+$MOD$ formentry.html 4.3.1-200123-21-8cd258cb-1a04bc7d
+-->
+
+<!-- Main -->
+<main id="flexMain" data-bind="gesture: { grid: 'flexInputFormArea',
+                                          target: 'flexArticle',
+                                          gestures: { Swipe: {'direction':'DIRECTION_HORIZONTAL', events:['swipe']},
+                                                      Pan: {'direction':'DIRECTION_HORIZONTAL', events:['panstart','panmove','panend']}},
+                                                      containment: {element:'window'}}">
+    <!-- Nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- Article -->
+    <article id="flexArticle" data-bind="foreach: { data: dataList.items, as: 'item' }">
+
+        <!-- Input field area -->
+        <div class="flexInputFormArea" >
+            <!-- Input field -->
+            <div class="generalInputFieldAreaZone" data-bind="attr: {'data-validation-state': item.validationState, 'data-view-state': item.state}">
+                <label class="generalInputLabel color05 font03" for="generalInput" data-bind="attr: { for: item.id }, html: item.computedLabel"></label>
+                <input type="text"  step="any" id="generalInput" class="font04 generalInput" onfocus="blur();" placeholder="" tabindex="-1"
+                       data-bind="
+                              attr: { placeholder: item.formattedPlaceHolder,
+                                      id: item.id,
+                                      tabindex: ($index() + 1),
+                                      'data-validation-state': item.validationState,
+                                      'data-input-type': item.type
+                                    },
+                              format: { src: item.value, target: item.formattedValue, placeholder_src: item.placeHolder, placeholder_target: item.formattedPlaceHolder, pattern: item.formatOption },
+                              autoSizeInputFont: item.value,
+                              command: { id: item.id,
+                                         state: item.state,
+                                         label: {value: item.formattedValue, inplace: true},
+                                         action: null
+                                        }"
+                />
+                <svg class="confirm" data-bind="svguse: { name: 'confirm.svg' }, visible: item.validationState() === 'valid'"></svg>
+                <svg data-bind="svguse: { name: 'attention.svg' }, visible: item.validationState() === 'invalid'"></svg>
+            </div>
+        </div>
+    </article>
+
+    <!-- Aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- Footer -->
+<footer id="flexFooter">
+
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button footerButton"
+                 data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON,  label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </div>
+
+    <div id="flexCancel">
+        <!-- Cancel btn -->
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

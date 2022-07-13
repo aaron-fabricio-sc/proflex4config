@@ -1,0 +1,103 @@
+<!--
+$MOD$ adaadjustment.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav">
+        <!-- volume -->
+        <div id="flexNavSK00" class="font01" data-bind="attr: {vol: getLabel('GUI_[#VIEW_KEY#]_Label_Volume', 'VOLUME')}">
+            <div class="button button01 skLeft iconButton borderDrawing" tabindex="3"
+                 data-bind="command: {id: 'VOL_PLUS',
+                    adaType: ADA_TYPE.SELECTION_KEY,
+                    state: CMDSTATE.ENABLED,
+                    label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Volumeplus', '')},
+                    eppkey: 'F8',
+                    adakey:'1'}">
+                <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+                <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('VOL_PLUS')"></var>
+            </div>
+        </div>
+        <div id="flexNavSK01">
+            <div class="button button01 skLeft iconButton borderDrawing" tabindex="1"
+                 data-bind="command: {id: 'VOL_MINUS',
+                    adaType: ADA_TYPE.SELECTION_KEY,
+                    state: CMDSTATE.ENABLED,
+                    label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Volumeminus', '')},
+                    eppkey: 'F7',
+                    adakey:'2'}">
+                <svg data-bind="svguse: { name: 'minus.svg' }"></svg>
+                <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('VOL_MINUS')"></var>
+            </div>
+        </div>
+        <!-- rate -->
+        <div id="flexNavSK02" class="font01" data-bind="attr: {rate: getLabel('GUI_[#VIEW_KEY#]_Label_Rate', 'RATE')}">
+            <div class="button button01 skLeft iconButton borderDrawing" tabindex="4"
+                 data-bind="command: {id: 'RATE_PLUS',
+                    adaType: ADA_TYPE.SELECTION_KEY,
+                    state: CMDSTATE.ENABLED,
+                    label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Rateplus', '')},
+                    eppkey: 'F6',
+                    adakey:'3'}">
+                <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+                <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('RATE_PLUS')"></var>
+            </div>
+        </div>
+        <div id="flexNavSK03">
+            <div class="button button01 skLeft iconButton borderDrawing" tabindex="2"
+                 data-bind="command: {id: 'RATE_MINUS',
+                    adaType: ADA_TYPE.SELECTION_KEY,
+                    state: CMDSTATE.ENABLED,
+                    label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Rateminus', '')},
+                    eppkey: 'F5',
+                    adakey:'4'}">
+                <svg data-bind="svguse: { name: 'minus.svg' }"></svg>
+                <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('RATE_MINUS')"></var>
+            </div>
+        </div>
+    </nav>
+
+    <!-- article -->
+    <article id="flexArticle"></article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <div id="flexAsideSK00"></div>
+        <div id="flexAsideSK01"></div>
+        <div id="flexAsideSK02">
+            <div id="buttonConfirm" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {
+                    id: 'CONFIRM',
+                    args: ['CONFIRM','CONFIRM'],
+                    adaType: ADA_TYPE.SELECTION_KEY,
+                    adakey: '7',
+                    state: CMDSTATE.ENABLED,
+                    label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'CONFIRM')},
+                    eppkey: ['CONFIRM', 'F3']}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK03">
+            <div id="buttonCancel" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {
+                    id: 'CANCEL',
+                    args: ['CANCEL','CANCEL'],
+                    adaType: ADA_TYPE.SELECTION_KEY,
+                    adakey: '8',
+                    state: CMDSTATE.ENABLED,
+                    label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'CANCEL')},
+                    eppkey: ['CANCEL', 'F4']}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel"></div>
+</footer>

@@ -1,0 +1,107 @@
+<!--
+$MOD$ billsplitting.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <div id="amountHead">
+            <var id="splittingAmountText" class="color01 font01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_AmountHint', 'Your amount:')"></var>
+            <var id="splittingAmount" class="color02 font01" data-bind="format: { src: amount, pattern: isCoinsAvailable ? '#M' : '#ATRM0' }"></var>
+        </div>
+        <div id="listContainer">
+            <div id="flexDistributions" data-bind="foreach: { data: distribution, as: 'item' },
+                                                     gesture: {
+                                                        options: {
+                                                            processItemVisibility: true,
+                                                            itemVisibilityTransitions: 'scale',
+                                                            sendAutoMovementEvents: true
+                                                        },
+                                                        grid: 'flexDistributionRow',
+                                                        verticalScrollbarElement: 'BillSplittingScrollbar',
+                                                        listElementName: 'flexDistributionRow',
+                                                        gestures: {
+                                                            Swipe: {
+                                                                direction: 'DIRECTION_VERTICAL',
+                                                                events: ['swipe']
+                                                            },
+                                                            Pan: {
+                                                                direction:'DIRECTION_VERTICAL',
+                                                                events:['panstart','panmove','panend'],
+                                                                enable: true
+                                                            }
+                                                        },
+                                                        containment: {
+                                                            element:'flexDistributions',
+                                                            useScrollWidth: false,
+                                                            useScrollHeight: false }
+                                                        }">
+                <div class="flexDistributionRow"
+                     data-bind="slideVisible: { visible: item.count() > 0, duration: 600 }">
+                    <div class="itemStack" data-bind="foreach: { data: item.notes, afterRender: $root.viewHelper.getActiveModule().addNote, beforeRemove:$root.viewHelper.getActiveModule().removeNote }">
+                        <div class="" data-bind="attr: { class: item.type === 0 ? 'note' : 'coin' }">
+                            <!-- ko  if: item.type === 0 -->
+                                <svg data-bind="attr: { 'data-item-value': item.value },
+                                                svguse: { name: item.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                          inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                            <!-- /ko -->
+                            <!-- ko  if: item.type === 1 -->
+                                <svg data-bind="attr: { 'data-item-value': item.value, 'data-currency-iso': item.currency },
+                                                svguse: { name: 'single_coin_generic.svg', inline: true, afterRender: $root.viewHelper.singleCoinSymbol }"></svg>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                    <var class="color01 font01 crossX" data-bind="text: 'x'"></var>
+                    <var class="color03 font01" data-bind="text: item.count"></var>
+                    <var class="color01 font01" data-bind="text: ' = '"></var>
+                    <var class="color02 font01 result" data-bind="format: { src: item.result, pattern: '#ATRM0' }"></var>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <aside id="flexAside">
+        <div class="buttonZone">
+            <div class="button dialogSmallButton borderDrawing"
+                 data-bind="command: {id: 'SMALLER', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_SmallerBills', 'Smaller bills')}}">
+                <svg data-bind="svguse: { name: 'minus.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('SMALLER')"></var>
+            </div>
+        </div>
+        <div class="buttonZone">
+            <div class="button dialogSmallButton borderDrawing"
+                 data-bind="command: {id: 'BIGGER', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_BiggerBills', 'Bigger bills')}}">
+                <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('BIGGER')"></var>
+            </div>
+        </div>
+        <div class="buttonZone">
+            <div id="buttonCorrect" class="button dialogSmallButton buttonCorrect borderDrawing"
+                 data-bind=" command: {id: 'CORRECT', type: CMDTYPE.BUTTON, args: ['CORRECT', 'CORRECT'], state: CMDSTATE.DISABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Reset', 'Reset')}, eppkey: ['CLEAR', 'BACKSPACE']}">
+                <svg data-bind="svguse: { name: 'reset.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('CORRECT')"></var>
+            </div>
+        </div>
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button dialogSmallButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_GetMoney', 'Get money')}, eppkey: 'CONFIRM'}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

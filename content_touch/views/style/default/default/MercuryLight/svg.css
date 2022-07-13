@@ -1,0 +1,809 @@
+@charset "utf-8";
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ svg.css 4.3.1-200827-21-0feba36c-1a04bc7d
+
+*/
+
+/*
+ * CSS document for resolution-independent information
+ */
+
+svg {
+    /* basic colors*/
+    --color01: rgba(10, 35, 100, 1);
+    shape-rendering: geometricPrecision;
+
+    /*-- Slots --*/
+    --stopColor01: var(--color01);
+    --stopColor02: var(--color05);
+
+    --slotFrameColor: rgba(3, 19, 100, 1);
+    --slotFillColor: rgb(0, 66, 255);
+}
+
+/*-- Fonts --*/
+svg @font-face {
+    font-family: "Ubuntu Light";
+    src: url(../../fonts/Ubuntu/Ubuntu-Light.ttf) format('truetype');
+    font-weight: normal;
+}
+
+svg @font-face {
+    font-family: "Ubuntu";
+    src: url(../../fonts/Ubuntu/Ubuntu-Regular.ttf) format('truetype');
+    font-style: normal;
+}
+
+svg @font-face {
+    font-family: "Ubuntu";
+    src: url(../../fonts/Ubuntu/Ubuntu-Bold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+svg @font-face {
+    font-family: "Quivira";
+    src: url(../../fonts/Quivira/Quivira.otf) format('opentype');
+    font-weight: normal;
+}
+
+svg * {
+    font-family: "Ubuntu Light", Quivira, Arial, Verdana, sans-serif;
+}
+
+svg .font01 {
+    font-size: 21px;
+    line-height: 30px;
+}
+
+svg .font02 {
+    font-size: 19px;
+    line-height: 24px;
+}
+
+svg .font03 {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+svg .font04 {
+    font-size: 40px;
+    line-height: 50px;
+}
+
+svg .font06 {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+/*-- Logo --*/
+.logoWN {
+    fill: black;
+}
+
+/*-- Shadows --*/
+.shadowGroup1 {
+    opacity: 0;
+}
+
+.shadowGroup2 {
+    opacity: 0;
+}
+
+.shadowGroup3 {
+    opacity: 0;
+}
+
+/*-- Slots --*/
+@keyframes slotFrameBlink {
+    0% {
+        stroke: var(--slotFrameColor);
+    }
+    50% {
+        stroke: rgba(0, 0, 0, 0.75);
+    }
+    75% {
+        stroke: var(--slotFrameColor);
+    }
+    100% {
+        stroke: var(--slotFrameColor);
+    }
+}
+
+@keyframes slotBlink {
+    0% {
+        fill: var(--slotFillColor);
+    }
+    50% {
+        fill: rgba(0, 0, 0, 0.75);
+    }
+    75% {
+        fill: var(--slotFillColor);
+    }
+    100% {
+        fill: var(--slotFillColor);
+    }
+}
+
+.slotFrameColor {
+    stroke: var(--slotFrameColor);
+    animation: slotFrameBlink 1.5s infinite;
+}
+
+.slotFillColor {
+    fill: var(--slotFillColor);
+    animation: slotBlink 1.5s infinite;
+}
+
+/*-- Colors --*/
+svg .color01 {
+    fill: var(--color01);
+}
+
+.strokeColor {
+    stroke: var(--color01);
+    fill: none;
+}
+
+.fillColor {
+    fill: var(--color01);
+    stroke: none;
+}
+
+svg .color02 {
+    fill: var(--color01);
+}
+
+.strokeColor02 {
+    stroke: var(--color01);
+    fill: none;
+}
+
+.fillColor02 {
+    fill: var(--color01);
+    stroke: none;
+}
+
+svg .color03 {
+    fill: var(--color01);
+}
+
+.strokeColor03 {
+    stroke: var(--color01);
+    fill: none;
+}
+
+.fillColor03 {
+    fill: var(--color01);
+    stroke: none;
+}
+
+svg .color04 {
+    fill: rgba(0, 0, 0, 1);
+}
+
+.strokeColor04 {
+    stroke: rgba(0, 0, 0, 1);
+    fill: none;
+}
+
+.fillColor04 {
+    fill: rgba(0, 0, 0, 1);
+    stroke: none;
+}
+
+svg .color05 {
+    fill: rgba(90, 90, 90, 1);
+}
+
+.strokeColor05 {
+    stroke: rgba(90, 90, 90, 1);
+    fill: none;
+}
+
+.fillColor05 {
+    fill: rgba(90, 90, 90, 1);
+    stroke: none;
+}
+
+svg .color06 {
+    fill: rgba(255, 255, 255, 1);
+}
+
+.strokeColor06 {
+    stroke: rgba(255, 255, 255, 1);
+    fill: none;
+}
+
+.fillColor06 {
+    fill: rgba(255, 255, 255, 1);
+    stroke: none;
+}
+
+svg .color07 {
+    fill: rgba(198, 58, 51, 1);
+}
+
+.strokeColor07 {
+    stroke: rgba(198, 58, 51, 1);
+    fill: none;
+}
+
+.fillColor07 {
+    fill: rgba(198, 58, 51, 1);
+    stroke: none;
+}
+
+svg .color08 {
+    fill: rgba(30, 140, 40, 1);
+}
+
+.strokeColor08 {
+    stroke: rgba(30, 140, 40, 1);
+    fill: none;
+}
+
+.fillColor08 {
+    fill: rgba(30, 140, 40, 1);
+    stroke: none;
+}
+
+svg .color09 {
+    fill: rgba(198, 58, 51, 1);
+}
+
+.strokeColor09 {
+    stroke: rgba(198, 58, 51, 1);
+    fill: none;
+}
+
+.fillColor09 {
+    fill: rgba(198, 58, 51, 1);
+    stroke: none;
+}
+
+/* EURO notes */
+.euroNote_5 {
+    fill: #99aa88;
+}
+
+.euroNoteStripe_5 {
+    fill: #556655;
+}
+
+.euroNote_10 {
+    fill: #BB5577;
+}
+
+.euroNoteStripe_10 {
+    fill: #883355;
+}
+
+.euroNote_20 {
+    fill: #5577FF;
+}
+
+.euroNoteStripe_20 {
+    fill: #2244BB;
+}
+
+.euroNote_50 {
+    fill: #FFAA44;
+}
+
+.euroNoteStripe_50 {
+    fill: #AA5500;
+}
+
+.euroNote_100 {
+    fill: #337733;
+}
+
+.euroNoteStripe_100 {
+    fill: #114411;
+}
+
+.euroNote_200 {
+    fill: #EEEE00;
+}
+
+.euroNoteStripe_200 {
+    fill: #AAAA00;
+}
+
+.euroNote_500 {
+    fill: #FF77FF;
+}
+
+.euroNoteStripe_500 {
+    fill: #AA55AA;
+}
+
+.euroNote_neutral {
+    fill: #676769;
+}
+
+.euroNoteStripe_neutral {
+    fill: #3f3f41;
+}
+
+/* Note general text/ euro flag */
+#noteCurrencyName {
+    fill: #646464;
+    font-size: 8px;
+}
+
+#noteValueLeft {
+    fill: #646464;
+    font-size: 20px;
+}
+
+#noteValueRight {
+    fill: #646464;
+    font-size: 35px;
+    text-anchor: end;
+}
+
+.euroFlag {
+    fill: #436EB3;
+}
+
+/* Coins basic colors */
+.colorBronze {
+    fill: #ba4a19;
+}
+
+.colorSilver {
+    fill: #d8d7dd;
+}
+
+.colorGold {
+    fill: #ddc973;
+}
+
+#coinValue {
+    fill: #29282C;
+    font-size: 30px;
+    text-anchor: middle;
+}
+
+#coinCurrencyName {
+    fill: #29282C;
+    font-size: 10px;
+}
+
+/* GENERIC notes */
+.genNoteMain {
+    fill: #C8E8CC;
+}
+
+.genNote_5 {
+    fill: #337733;
+}
+
+.genNoteStripe_5 {
+    fill: #114411;
+}
+
+.genNote_10 {
+    fill: #377756;
+}
+
+.genNoteStripe_10 {
+    fill: #1f3f2e;
+}
+
+.genNote_20 {
+    fill: #3f4c28;
+}
+
+.genNoteStripe_20 {
+    fill: #192311;
+}
+
+.genNote_50 {
+    fill: #375041;
+}
+
+.genNoteStripe_50 {
+    fill: #122416;
+}
+
+.genNote_100 {
+    fill: #3e7713;
+}
+
+.genNoteStripe_100 {
+    fill: #1c390f;
+}
+
+.genNote_200 {
+    fill: #29770a;
+}
+
+.genNoteStripe_200 {
+    fill: #1b3e0a;
+}
+
+.genNote_500 {
+    fill: #1f3e2f;
+}
+
+.genNoteStripe_500 {
+    fill: #0f1f12;
+}
+
+.deviceOutOfServiceColor {
+    fill: rgba(198, 58, 51, 1);
+    stroke: none;
+}
+
+/*Euro notes: New use of SVG inline or SVG use tag*/
+svg use.single_bill_euro_group, svg.single_bill_euro_clone {
+    fill: #3f3f41;
+}
+
+svg[data-item-value="500"] use.single_bill_euro_group, svg[data-item-value="500"].single_bill_euro_clone {
+    fill: #99aa88;
+}
+
+svg[data-item-value="500"].single_bill_euro_clone .noteStripeColor {
+    fill: #556655;
+}
+
+svg[data-item-value="1000"] use.single_bill_euro_group, svg[data-item-value="1000"].single_bill_euro_clone {
+    fill: #BB5577;
+}
+
+svg[data-item-value="1000"].single_bill_euro_clone .noteStripeColor {
+    fill: #883355;
+}
+
+svg[data-item-value="2000"] use.single_bill_euro_group, svg[data-item-value="2000"].single_bill_euro_clone {
+    fill: #5577FF
+}
+
+svg[data-item-value="2000"].single_bill_euro_clone .noteStripeColor {
+    fill: #2244BB;
+}
+
+svg[data-item-value="5000"] use.single_bill_euro_group, svg[data-item-value="5000"].single_bill_euro_clone {
+    fill: #FFAA44
+}
+
+svg[data-item-value="5000"].single_bill_euro_clone .noteStripeColor {
+    fill: #AA5500;
+}
+
+svg[data-item-value="10000"] use.single_bill_euro_group, svg[data-item-value="10000"].single_bill_euro_clone {
+    fill: #337733
+}
+
+svg[data-item-value="10000"].single_bill_euro_clone .noteStripeColor {
+    fill: #114411;
+}
+
+svg[data-item-value="20000"] use.single_bill_euro_group, svg[data-item-value="20000"].single_bill_euro_clone {
+    fill: #EEEE00
+}
+
+svg[data-item-value="20000"].single_bill_euro_clone .noteStripeColor {
+    fill: #AAAA00;
+}
+
+svg[data-item-value="50000"] use.single_bill_euro_group, svg[data-item-value="50000"].single_bill_euro_clone {
+    fill: #FF77FF
+}
+
+svg[data-item-value="50000"].single_bill_euro_clone .noteStripeColor {
+    fill: #AA55AA;
+}
+
+/* Note general text/ euro flag */
+#noteCurrencyName {
+    fill: #646464;
+    font-size: 8px;
+}
+
+#noteValueLeft {
+    fill: #646464;
+    font-size: 20px;
+}
+
+#noteValueRight {
+    fill: #646464;
+    font-size: 35px;
+    text-anchor: end;
+}
+
+.euroFlag {
+    fill: #436EB3;
+}
+
+
+/* GENERIC notes */
+.genNoteMain {
+    fill: #C8E8CC;
+}
+
+.genNote_5 {
+    fill: #337733;
+}
+
+.genNoteStripe_5 {
+    fill: #114411;
+}
+
+.genNote_10 {
+    fill: #377756;
+}
+
+.genNoteStripe_10 {
+    fill: #1f3f2e;
+}
+
+.genNote_20 {
+    fill: #3f4c28;
+}
+
+.genNoteStripe_20 {
+    fill: #192311;
+}
+
+.genNote_50 {
+    fill: #375041;
+}
+
+.genNoteStripe_50 {
+    fill: #122416;
+}
+
+.genNote_100 {
+    fill: #3e7713;
+}
+
+.genNoteStripe_100 {
+    fill: #1c390f;
+}
+
+.genNote_200 {
+    fill: #29770a;
+}
+
+.genNoteStripe_200 {
+    fill: #1b3e0a;
+}
+
+.genNote_500 {
+    fill: #1f3e2f;
+}
+
+.genNoteStripe_500 {
+    fill: #0f1f12;
+}
+
+/*Generic notes: New use of SVG inline or SVG use tag*/
+svg use.single_bill_generic_group, svg.single_bill_generic_clone {
+    fill: #114411;
+}
+
+svg use.single_bill_generic_clone .noteStripeColor {
+    fill: #546a56;
+}
+
+svg[data-item-value="5"] use.single_bill_generic_group, svg[data-item-value="5"].single_bill_generic_clone,
+svg[data-item-value="500"] use.single_bill_generic_group, svg[data-item-value="500"].single_bill_generic_clone {
+    fill: #337733;
+}
+
+svg[data-item-value="5"].single_bill_generic_clone .noteStripeColor,
+svg[data-item-value="500"].single_bill_generic_clone .noteStripeColor {
+    fill: #114411;
+}
+
+svg[data-item-value="10"] use.single_bill_generic_group, svg[data-item-value="10"].single_bill_generic_clone,
+svg[data-item-value="1000"] use.single_bill_generic_group, svg[data-item-value="1000"].single_bill_generic_clone {
+    fill: #377756;
+}
+
+svg[data-item-value="10"].single_bill_generic_clone .noteStripeColor,
+svg[data-item-value="1000"].single_bill_generic_clone .noteStripeColor {
+    fill: #1f3f2e;
+}
+
+svg[data-item-value="20"] use.single_bill_generic_group, svg[data-item-value="20"].single_bill_generic_clone,
+svg[data-item-value="2000"] use.single_bill_generic_group, svg[data-item-value="2000"].single_bill_generic_clone {
+    fill: #3f4c28
+}
+
+svg[data-item-value="20"].single_bill_generic_clone .noteStripeColor,
+svg[data-item-value="2000"].single_bill_generic_clone .noteStripeColor {
+    fill: #192311;
+}
+
+svg[data-item-value="50"] use.single_bill_generic_group, svg[data-item-value="50"].single_bill_generic_clone,
+svg[data-item-value="5000"] use.single_bill_generic_group, svg[data-item-value="5000"].single_bill_generic_clone {
+    fill: #375041
+}
+
+svg[data-item-value="50"].single_bill_generic_clone .noteStripeColor,
+svg[data-item-value="5000"].single_bill_generic_clone .noteStripeColor {
+    fill: #122416;
+}
+
+svg[data-item-value="100"] use.single_bill_generic_group, svg[data-item-value="100"].single_bill_generic_clone,
+svg[data-item-value="10000"] use.single_bill_generic_group, svg[data-item-value="10000"].single_bill_generic_clone {
+    fill: #3e7713
+}
+
+svg[data-item-value="100"].single_bill_generic_clone .noteStripeColor,
+svg[data-item-value="10000"].single_bill_generic_clone .noteStripeColor {
+    fill: #1c390f;
+}
+
+svg[data-item-value="200"] use.single_bill_generic_group, svg[data-item-value="200"].single_bill_generic_clone,
+svg[data-item-value="20000"] use.single_bill_generic_group, svg[data-item-value="20000"].single_bill_generic_clone {
+    fill: #1b3e0a
+}
+
+svg[data-item-value="200"].single_bill_generic_clone .noteStripeColor,
+svg[data-item-value="20000"].single_bill_generic_clone .noteStripeColor {
+    fill: #3a810f;
+}
+
+svg[data-item-value="50000"] use.single_bill_generic_group, svg[data-item-value="50000"].single_bill_generic_clone {
+    fill: #1f3e2f
+}
+
+svg[data-item-value="50000"].single_bill_generic_clone .noteStripeColor {
+    fill: #0f1f12;
+}
+
+
+/* Coins basic colors */
+.colorBronze {
+    fill: #ba4a19;
+}
+
+.colorSilver {
+    fill: #d8d7dd;
+}
+
+.colorGold {
+    fill: #ddc973;
+}
+
+#coinValue {
+    fill: #29282C;
+    font-size: 30px;
+    text-anchor: middle;
+}
+
+#coinCurrencyName {
+    fill: #29282C;
+    font-size: 10px;
+}
+
+/*Coins: New use of SVG inline or SVG use tag*/
+svg[data-item-value="1"] use.single_coin_generic_group,
+svg[data-item-value="2"] use.single_coin_generic_group,
+svg[data-item-value="5"] use.single_coin_generic_group,
+svg[data-item-value="1"].single_coin_generic_clone .outerCircle,
+svg[data-item-value="1"].single_coin_generic_clone .innerCircle,
+svg[data-item-value="1"].single_coin_generic_clone .innerShadow,
+svg[data-item-value="2"].single_coin_generic_clone .outerCircle,
+svg[data-item-value="2"].single_coin_generic_clone .innerCircle,
+svg[data-item-value="2"].single_coin_generic_clone .innerShadow,
+svg[data-item-value="5"].single_coin_generic_clone .outerCircle,
+svg[data-item-value="5"].single_coin_generic_clone .innerCircle,
+svg[data-item-value="5"].single_coin_generic_clone .innerShadow {
+    fill: #ba4a19;
+}
+
+svg[data-item-value="10"] use.single_coin_generic_group,
+svg[data-item-value="20"] use.single_coin_generic_group,
+svg[data-item-value="50"] use.single_coin_generic_group,
+svg[data-item-value="10"].single_coin_generic_clone .outerCircle,
+svg[data-item-value="10"].single_coin_generic_clone .innerCircle,
+svg[data-item-value="10"].single_coin_generic_clone .innerShadow,
+svg[data-item-value="20"].single_coin_generic_clone .outerCircle,
+svg[data-item-value="20"].single_coin_generic_clone .innerCircle,
+svg[data-item-value="20"].single_coin_generic_clone .innerShadow,
+svg[data-item-value="50"].single_coin_generic_clone .outerCircle,
+svg[data-item-value="50"].single_coin_generic_clone .innerCircle,
+svg[data-item-value="50"].single_coin_generic_clone .innerShadow,
+svg[data-item-value="100"].single_coin_generic_clone .innerCircle,
+svg[data-item-value="200"].single_coin_generic_clone .innerCircle {
+    fill: #ddc973;
+}
+
+svg[data-item-value="100"] use.single_coin_generic_group,
+svg[data-item-value="200"] use.single_coin_generic_group,
+svg[data-item-value="100"].single_coin_generic_clone .outerCircle,
+svg[data-item-value="200"].single_coin_generic_clone .outerCircle {
+    fill: #d8d7dd;
+}
+
+
+/*Cheques*/
+svg[data-cheque-no="1"] use.single_cheque_generic_short_side_group {
+    fill: #DA542E;
+}
+
+svg[data-cheque-no="2"] use.single_cheque_generic_short_side_group {
+    fill: #a9c783;
+}
+
+svg[data-cheque-no="3"] use.single_cheque_generic_short_side_group {
+    fill: #28a5e1;
+}
+
+svg use.single_cheque_generic_short_side_group,
+svg[data-cheque-no="4"] use.single_cheque_generic_short_side_group {
+    fill: #95BDD4;
+}
+
+
+/* Out of service */
+.deviceOutOfServiceColor {
+    fill: rgba(198, 58, 51, 1);
+    stroke: none;
+}
+
+/*svg path, svg line, svg polyline {*/
+/*    fill: inherit;*/
+/*    stroke: inherit;*/
+/*    width: inherit;*/
+/*    height: inherit;*/
+/*}*/
+
+/*CONFIRM, CANCEL, CORRECT*/
+
+use.confirm_group, use.cancel_group, use.change_check_amount_group {
+    stroke: var(--color04);
+    fill: none;
+}
+
+div[id="buttonConfirm"] use.confirm_group,
+div[id="buttonConfirmPopup"] use.confirm_group,
+div[class~="buttonConfirm"] use.confirm_group,
+svg[class~="confirm"] use.confirm_group,
+div[id="buttonConfirm"] use.yes_group,
+div[id="buttonConfirmPopup"] use.yes_group,
+div[class~="buttonConfirm"] use.yes_group,
+svg[class~="confirm"] use.yes_group {
+    --color01: var(--color09);
+    stroke: var(--color04);
+    fill: none;
+}
+
+.generalInput svg[class~="confirm"] use.confirm_group,
+.generalInputFieldAreaZone svg[class~="confirm"] use.confirm_group {
+    --color01: var(--color06);
+}
+
+div[id="buttonCancel"] use.cancel_group,
+div[id="buttonCancelPopup"] use.cancel_group,
+div[id="buttonCancel"] use.no_group,
+div[id="buttonCancelPopup"] use.no_group {
+    --color01: var(--color09);
+    stroke: var(--color04);
+    fill: none;
+}
+
+div[id="buttonCorrect"] use.correct_group, div[id="buttonCorrect"] use.reset_group,
+div[id="buttonCorrectPopup"] use.correct_group, div[id="buttonCorrect"] use.reset_group {
+    --color01: var(--color04);
+    stroke: var(--color04);
+    fill: none;
+}
+

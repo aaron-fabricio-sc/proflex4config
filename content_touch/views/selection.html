@@ -1,0 +1,78 @@
+<!--
+$MOD$ selection.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main
+  id="flexMain"
+  data-bind="gesture: {
+                                 grid: 'buttonZone',
+                                 target: 'flexArticle',
+                                 gestures: {
+                                    Swipe: {
+                                        direction: 'DIRECTION_HORIZONTAL', events: ['swipe']
+                                    },
+                                    Pan: {
+                                        direction: 'DIRECTION_HORIZONTAL', events: ['panstart','panmove','panend']
+                                    }
+                                 },
+                                 options: {lockIfSpace: true},
+                                 containment: {element: 'window'},
+                                 horizontalScrollbarElement: 'selectionScrollbar'
+                             }"
+>
+  <!-- nav -->
+  <nav id="flexNav"></nav>
+
+  <!-- article -->
+  <article id="flexArticle" data-bind="foreach: { data: dataList.items }">
+    <div
+      class="buttonZone animate__animated animate__pulse animate__infinite infinite"
+    >
+      <div
+        class="button menuButton borderDrawing"
+        data-bind="
+                            attr: { class: 'button menuButton borderDrawing ' + $data.prominent},
+                            command: {id: $data.result, type: $root.CMDTYPE.BUTTON, state: $data.state }"
+      >
+        <svg data-bind="svguse: { name: $data.icon }"></svg>
+        <var class="color03 font01" data-bind="html: $data.captions[0]"></var>
+      </div>
+    </div>
+  </article>
+
+  <!-- aside -->
+  <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+  <div id="flexExtra">
+    <div class="buttonZone">
+      <div
+        class="button footerButton"
+        data-bind="command: {id: 'BACK', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Back', 'Back')}}"
+      >
+        <svg data-bind="svguse: { name: 'arrow_left.svg' }"></svg>
+        <var
+          class="color03 font01"
+          data-bind="html: cmdRepos.getCmdLabel('BACK')"
+        ></var>
+      </div>
+    </div>
+  </div>
+  <div id="flexCancel">
+    <div class="buttonZone">
+      <div
+        id="buttonCancel"
+        class="button footerButton"
+        data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}"
+      >
+        <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+        <var
+          class="color09 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CANCEL')"
+        ></var>
+      </div>
+    </div>
+  </div>
+</footer>

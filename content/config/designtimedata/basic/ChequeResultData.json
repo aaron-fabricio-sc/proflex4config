@@ -1,0 +1,30 @@
+{
+    "minAmount": 0,
+    "maxAmount": 250000,
+    "cheques": [
+        {
+            "amount": 10000,
+            "scoreOCR": true,
+            "scoreMICR": true,
+            "isAccepted": false,
+            "frontImagePath": "style/default/images/single_cheque_generic_long_side.svg",
+            "backImagePath": "style/default/images/single_cheque_generic_long_side_back.svg"
+        },
+        {
+            "amount": 1000,
+            "scoreOCR": true,
+            "scoreMICR": true,
+            "isAccepted": false,
+            "frontImagePath": "style/default/images/single_cheque_generic_long_side.svg",
+            "backImagePath": "style/default/images/single_cheque_generic_long_side_back.svg"
+        },
+        {
+            "amount": 50000,
+            "scoreOCR": true,
+            "scoreMICR": true,
+            "isAccepted": false,
+            "frontImagePath": "style/default/images/single_cheque_generic_long_side.svg",
+            "backImagePath": "style/default/images/single_cheque_generic_long_side_back.svg"
+        }
+    ]
+}

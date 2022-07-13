@@ -1,0 +1,3 @@
+{
+  "//": "Overwrite the default parameter or add new view names to the list, configure route and/or set individual route/moduleId. Note: 'name' must be unique and corresponding to a physical view. They will be merged to the RouteConfig.json during runtime"
+}

@@ -1,0 +1,1278 @@
+@charset "utf-8";
+
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+$MOD$ mercury-base.css 4.3.1-200123-21-6725089a-1a04bc7d
+
+*/
+
+/*
+=== Mercury base style ===
+
+Base style for both "MercuryDark" and  "MercuryLight" theme.
+It adds colors, border-radius and animation effects to the base layouts.css style.
+
+*/
+
+/*-- Fonts --*/
+@font-face {
+    font-family: "Ubuntu Light";
+    src: url(../../fonts/Ubuntu/Ubuntu-Light.ttf) format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(../../fonts/Ubuntu/Ubuntu-Regular.ttf) format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(../../fonts/Ubuntu/Ubuntu-Bold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Quivira";
+    src: url(../../fonts/Quivira/Quivira.otf) format('opentype');
+    font-weight: normal;
+}
+
+html * {
+    font-family: Ubuntu, "Ubuntu Light", Quivira, Arial, Verdana, sans-serif;
+}
+
+/*-- Help --*/
+#flexHelp>div {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/*-- Date/Time --*/
+#flexTime>#time>var:nth-child(1) {
+    font-weight: bold;
+}
+
+#flexHeader[data-message-visible="true"] time {
+    filter: blur(4px);
+}
+
+/*-- Header-top --*/
+#flexHeaderTop {
+    font-family: "Ubuntu Light", Quivira, Arial, Verdana, sans-serif;
+}
+
+/*-- Header-bottom --*/
+#flexHeaderBottom {
+    order: 2;
+    /*For smooth toggle when header message disappears*/
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#flexHeader[data-message-visible="true"]:not([data-view-id="message"]):not([data-view-id="question"]):not([data-view-id="receipt"]) #flexHeaderBottom {
+    opacity: 0;
+    /*For smooth toggle when header message appears*/
+    transition: opacity 0.5s;
+}
+
+#flexHeader[data-message-visible="true"] #flexAdditionalHeaderInfo {
+    opacity: 0.15;
+    /*For smooth toggle when header message appears*/
+    transition: opacity 0.5s;
+}
+
+div[data-popup-active="true"] #headline, div[data-popup-active="true"] #instruction,
+div[data-popup-active="true"] #flexTime, div[data-popup-active="true"] #flexAdditionalHeaderInfo,
+div[data-popup-active="true"] #flexNav, div[data-popup-active="true"] #flexArticle, div[data-popup-active="true"] #flexAside {
+    opacity: 0.15;
+}
+
+/*-- Main --*/
+#flexMain.hideFlexMainOnActiveVK {
+    transition: opacity 0.2s ease-out;
+}
+
+/*-- Footer --*/
+div[data-popup-active="true"] #flexFooter {
+    opacity: 0.15;
+}
+
+/*-- Buttons --*/
+#flexFooter #buttonCorrect {
+    /*usually the left border is none of correct, but we want one because we use it as a reset button*/
+    border-left: 1px solid var(--color10);
+}
+
+.button {
+    background: linear-gradient(180deg, var(--color01-alpha-60) 0%, var(--color01-alpha-30) 100%);
+    border: 1px solid var(--color01);
+}
+
+#buttonCancel, #buttonCancelPopup {
+    background: linear-gradient(180deg, var(--color07-alpha-60) 0%, var(--color07-alpha-30) 100%);
+    border: 1px solid var(--color07);
+}
+
+#buttonConfirm, .buttonConfirm, #buttonConfirmPopup {
+    background: linear-gradient(180deg, var(--color06-alpha-60) 0%, var(--color06-alpha-30) 100%);
+    border: 1px solid var(--color06);
+}
+
+#buttonCorrect, #buttonCorrectPopup {
+    background: linear-gradient(180deg, var(--color10-alpha-60) 0%, var(--color10-alpha-30) 100%);
+    border: 1px solid var(--color10);
+    border-left: none;
+}
+
+.button.pressed {
+    transform: scale(0.92);
+}
+
+.button.activeCenter {
+    animation: activeCenterAnim var(--command-automation-duration) ease-out;
+}
+
+.button.activeUpper {
+    box-shadow: 0 10px 5px 0 var(--color04);
+    animation: activeUpperAnim var(--command-automation-duration) ease-out;
+}
+
+.button.activeLower {
+    box-shadow: 0 -10px 5px 0 var(--color04);
+    animation: activeLowerAnim var(--command-automation-duration) ease-out;
+}
+
+.button.activeLeft {
+    box-shadow: 10px 0 5px 0 var(--color04);
+    animation: activeLeftAnim var(--command-automation-duration) ease-out;
+}
+
+.button.activeRight {
+    box-shadow: -10px 0 5px 0 var(--color04);
+    animation: activeRightAnim var(--command-automation-duration) ease-out;
+}
+
+.button.activeUpperLeft {
+    box-shadow: 10px 10px 17px 0 var(--color04);
+    animation: activeUpperLeftAnim var(--command-automation-duration) ease-out;
+}
+
+.button.activeLowerLeft {
+    box-shadow: 10px -10px 17px 0 var(--color04);
+    animation: activeLowerLeftAnim var(--command-automation-duration) ease-out;
+}
+
+.button.activeUpperRight {
+    box-shadow: -10px 10px 17px 0 var(--color04);
+    animation: activeUpperRightAnim var(--command-automation-duration) ease-out;
+}
+
+.button.activeLowerRight {
+    box-shadow: -10px -10px 17px 0 var(--color04);
+    animation: activeLowerRightAnim var(--command-automation-duration) ease-out;
+}
+
+/*Buttons disabled*/
+.button[disabled], .disabled,
+#buttonConfirm[disabled], .buttonConfirm[disabled], #buttonConfirmPopup[disabled],
+#buttonCancel[disabled], #buttonCancelPopup[disabled],
+#buttonCorrect[disabled], #buttonCorrectPopup[disabled] {
+    box-shadow: none;
+    pointer-events: none;
+    animation: none
+}
+
+.button[disabled], .disabled {
+    background: var(--color01-alpha-25);
+    border: 1px solid var(--color01-alpha-0);
+    transition: background 0.25s;
+}
+
+#buttonCancel[disabled], #buttonCancelPopup[disabled] {
+    background: var(--color07-alpha-25);
+    border: 1px solid var(--color07-alpha-0);
+    transition: background 0.25s;
+}
+
+#buttonConfirm[disabled], .buttonConfirm[disabled], #buttonConfirmPopup[disabled] {
+    background: var(--color06-alpha-25);
+    border: 1px solid var(--color06-alpha-0);
+    transition: background 0.25s;
+}
+
+#buttonCorrect[disabled], #buttonCorrectPopup[disabled], #flexFooter #buttonCorrect[disabled] {
+    background: var(--color10-alpha-25);
+    border: 1px solid var(--color10-alpha-0);
+    border-left: none;
+    transition: background 0.25s;
+}
+
+.button[disabled]>var, .disabled>var, .button[disabled] span, .disabled span {
+    color: var(--color04-alpha-50);
+    text-shadow: none;
+    transition: background 0.25s;
+}
+
+.disabledElement,
+.slidingCheckBox[disabled], .slidingCheckBox .disabled,
+.checkBoxItem[disabled], .radioButtonItem[disabled], .radioButton[disabled] {
+    opacity: 0.25;
+}
+
+.checkBoxItem[disabled] .slidingCheckBox, .radioButtonItem[disabled] .radioButton {
+    opacity: 0.7;
+}
+
+.button[disabled]>img, .disabled>img,
+.button[disabled]>object, .disabled>object,
+.button[disabled]>svg, .disabled>svg,
+.checkBoxItem[disabled]>object, .checkBoxItem[disabled]>svg,
+.radioButtonItem[disabled]>object, .radioButtonItem[disabled]>svg {
+    opacity: 0.2;
+    transition: opacity 0.25s;
+}
+
+/*To override disabled elements of opacity: 0.25 in layouts.css*/
+.button[disabled], .disabled,
+input:disabled, textarea:disabled,
+div[data-view-id="formentry"] input:disabled {
+    opacity: initial;
+}
+
+.button var, .button span {
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px var(--color04);
+}
+
+.subMenuItem[disabled]::after {
+    color: var(--color03-alpha-25);
+}
+
+.subMenuItem::after {
+    position: absolute;
+    /*content: '\22ee';*/
+    /*color: var(--color03);*/
+}
+
+/*-- Selection bread crumbs --*/
+.breadCrumb {
+    background: var(--color01-alpha-50);
+}
+
+.breadCrumb:last-child {
+    color: var(--color03);
+}
+
+.breadCrumb:first-child {
+    color: var(--color02);
+}
+
+.breadCrumb:active:not(:last-child) {
+    color: var(--color03);
+}
+
+.breadCrumb::after { /*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+    position: absolute;
+    content: '';
+    /*we need to prevent the arrows from getting buried under the next link*/
+    z-index: 1;
+    /*stylish arrow design using box shadow*/
+    box-shadow: 2px -2px 0 1px var(--color04-alpha-60), 3px -3px 0 2px var(--color09-alpha-15);
+}
+
+.breadCrumb:last-child::after { /*we don't need an arrow after the last link*/
+    content: none;
+}
+
+.breadCrumb::before { /*we will use the :before element to show numbers*/
+    position: absolute;
+    content: attr(data-number);
+    text-align: center;
+    alignment: center;
+    color: var(--color03);
+}
+
+/*-- Inputs and textareas --*/
+input, textarea {
+    cursor: inherit;
+    outline: none;
+}
+
+input[type="text"]:enabled, input[type="number"]:enabled, input[type="email"]:enabled, input[type="search"]:enabled,
+input[type="tel"]:enabled, input[type="url"]:enabled, textarea:enabled {
+    background: var(--color09);
+    border: none;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="search"]:focus,
+input[type="tel"]:focus, input[type="url"]:focus, textarea:focus {
+    background: var(--color09);
+    border: none;
+}
+
+input:disabled, textarea:disabled {
+    opacity: 0.7;
+    background-color: var(--color09-alpha-30);
+    border: 1px solid var(--color09-alpha-30);
+}
+
+div[data-view-id="formentry"] input:disabled {
+    background-color: var(--color09-alpha-40);
+    border: 2px solid var(--color09-alpha-0);
+}
+
+.generalInputLabel {
+    text-shadow: none;
+    color: var(--color05);
+}
+
+/* enabled but not the active input field */
+input[data-visual-state="0"] {
+    opacity: 1;
+}
+
+/* pressed = active input field */
+input[data-visual-state="1"] {
+    opacity: 1;
+}
+
+/* Use a different style for inputs which are disabled, but should much as visible as other elements are */
+input:disabled:required, textarea:disabled:valid {
+    opacity: 1;
+}
+
+/* pressed = active input field */
+input[data-visual-state="1"] {
+    border: 2px solid var(--color01);
+}
+
+.generalInput {
+    text-align: right;
+}
+
+.generalInputCaption {
+    z-index: 2;
+    text-align: right;
+}
+
+/* special styling for the input field and of the Virtual keyboard */
+/* validation state: empty: no value or disabled */
+input[type="text"][data-validation-state="empty"],
+input[data-validation-state="empty"][id="generalVKInput"] {
+    border: 2px solid var(--color09);
+}
+
+/* validation state: valid */
+input[type="text"][data-validation-state="valid"],
+input[data-validation-state="valid"][id="generalVKInput"] {
+    border: 2px solid var(--color06);
+}
+
+/* validation state: wrong */
+input[type="text"][data-validation-state="invalid"],
+input[data-validation-state="invalid"][id="generalVKInput"] {
+    border: 2px solid var(--color07);
+}
+
+/* validation state: empty: no value or disabled */
+var[data-validation-state="empty"] {
+    /* no additional style */
+}
+
+/* validation state: valid */
+var[data-validation-state="valid"] {
+    color: var(--color06);
+}
+
+/* validation state: wrong */
+var[data-validation-state="invalid"] {
+    color: var(--color07);
+}
+
+/* Style for the HTML5 placeholder attribute within input or form fields */
+input::placeholder {
+    color: var(--color04);
+    opacity: 0.3;
+}
+
+/*-- Scrollbar --*/
+::-webkit-scrollbar-track {
+    border: solid var(--color01);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color01-alpha-40);
+}
+
+.scrollbar-vertical {
+    background-color: var(--color03-alpha-50);
+}
+
+.scrollbar-horizontal {
+    background: linear-gradient(180deg, var(--color01-alpha-60) 0%, var(--color01-alpha-30) 100%);
+}
+
+/*-- Checkboxes --*/
+.slidingCheckBox {
+    border: 1px solid var(--color01);
+    box-shadow: 2px 2px 8px 0 var(--color04-alpha-80);
+}
+
+.slidingCheckBox::after, .slidingCheckBox::before {
+    text-shadow: 2px 2px 0 var(--color04-alpha-80);
+}
+
+.slidingCheckBox::after {
+    color: var(--color07-alpha-80);
+    content: 'O';
+}
+
+.slidingCheckBox::before {
+    color: var(--color06);
+    content: 'I';
+}
+
+.slidingCheckBox label {
+    background: linear-gradient(180deg, var(--color01) 20%, var(--color01-sliding-checkbox-label) 100%);
+    box-shadow: 0 2px 2px 0 var(--color04-alpha-70);
+    transition: left 0.3s ease-out;
+}
+
+.checkBoxItem {
+    text-transform: uppercase;
+}
+
+/*-- Radiobuttons --*/
+.radioButton, .radioButton input[type=radio],
+.radioButton input[type=radio]:checked + label{
+    border-radius: 50%;
+}
+
+.radioButtonItem {
+    text-transform: uppercase;
+}
+
+.radioButton {
+    border: 1px solid var(--color01);
+    box-shadow: 2px 2px 8px 0 var(--color04-alpha-80);
+}
+
+.radioButton label {
+    background: linear-gradient(180deg, var(--color01) 20%, var(--color01-sliding-checkbox-label) 100%);
+    box-shadow: 2px 2px 2px 0 var(--color04-alpha-70);
+}
+
+@keyframes radioActive {
+    0% {
+        transform: scale(0.5);
+        box-shadow: 0 0 11px 0 var(--color01-alpha-10), 0 0 11px 0 var(--color01-alpha-30);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 11px 11px var(--color01-alpha-10), 0 0 11px 11px var(--color01-alpha-30);
+    }
+}
+
+.radioButton input[type=radio]:checked + label {
+    animation: radioActive 0.2s ease-out;
+}
+
+/*-- Wait spinner --*/
+#waitSpinner .point {
+    background-color: var(--color09-alpha-1);
+}
+
+.spinner {
+    z-index: 9999;
+}
+
+#waitSpinner .circle {
+    border: solid transparent;
+    /* Can't be optimized since top must be separated from other border sides */
+    border-top: solid var(--color09-alpha-1);
+}
+
+.spinner2 {
+    border: 15px solid var(--color02-alpha-15);
+    border-top: 15px solid var(--color02-alpha-80);
+}
+
+/* bounce following spinner */
+#waitSpinner .followingSpinnerShape {
+    background-color: var(--color02-alpha-60);
+    border: 1px solid var(--color02);
+    animation-name: bounce_followingSpinner;
+    animation-duration: 2.1s;
+    animation-iteration-count: infinite;
+    /*animation-timing-function: ease-in-out;*/
+}
+
+#followingSpinner_1 {
+    animation-delay: 0s;
+}
+
+#followingSpinner_2 {
+    animation-delay: 0.21s;
+}
+
+#followingSpinner_3 {
+    animation-delay: 0.42s;
+}
+
+#followingSpinner_4 {
+    animation-delay: 0.63s;
+}
+
+/* rotate plane spinner */
+.rotatePlaneSpinner {
+    background-color: var(--color02-alpha-60);
+    border: 1px solid var(--color02);
+    animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(120px);
+    }
+    50% {
+        transform: perspective(120px) rotateY(180deg);
+        background-color: var(--color01-alpha-60);
+        border: 1px solid var(--color01);
+    }
+    100% {
+        transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+/* stretch play spinner */
+.stretchPlaySpinner>div {
+    background-color: var(--color02-alpha-60);
+    border: 1px solid var(--color02);
+    display: inline-block;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.stretchPlaySpinner .rect2 {
+    animation-delay: -1.1s;
+}
+
+.stretchPlaySpinner .rect3 {
+    animation-delay: -1.0s;
+}
+
+.stretchPlaySpinner .rect4 {
+    animation-delay: -0.9s;
+}
+
+.stretchPlaySpinner .rect5 {
+    animation-delay: -0.8s;
+}
+
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+    }
+    50% {
+        background-color: var(--color01-alpha-60);
+        border: 1px solid var(--color01);
+    }
+    20% {
+        transform: scaleY(1.0);
+    }
+}
+
+/* cube grid spinner */
+.sk-cube-grid {
+    width: 80px;
+    height: 80px;
+}
+
+.sk-cube-grid .sk-cube {
+    width: 30%;
+    height: 30%;
+    float: left;
+    background-color: var(--color01-alpha-60);
+    border: 1px solid var(--color01);
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.sk-cube-grid .sk-cube1 {
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube2 {
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube3 {
+    animation-delay: 0.4s;
+}
+
+.sk-cube-grid .sk-cube4 {
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube5 {
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube6 {
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube7 {
+    animation-delay: 0s;
+}
+
+.sk-cube-grid .sk-cube8 {
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube9 {
+    animation-delay: 0.2s;
+}
+
+@keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        transform: scale3D(1, 1, 1);
+    }
+    35% {
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+/* follow balls spinner */
+.follow-balls {
+    width: 77px;
+    text-align: center;
+}
+
+.follow-balls>div {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    background-color: var(--color01);
+    /*border-radius: 100%;*/
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.follow-balls .bounce1 {
+    animation-delay: -0.32s;
+}
+
+.follow-balls .bounce2 {
+    background-color: var(--color02);
+    animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/*-- OK-ZOOM --*/
+.ok-loupe {
+    /*to overwrite script values from 'okzoom' plugin*/
+    border: 2px solid var(--color09) !important;
+}
+
+/*-- Components - Popup overlay and window --*/
+.modalOverlay, .modalOverlayPopup {
+    background-color: var(--color04-alpha-60);
+}
+
+#waitSpinnerModalOverlay.modalOverlay {
+    background-color: var(--color04-alpha-30);
+}
+
+.popupWindow {
+    background-color: var(--color04);
+    border: 1px solid var(--color09);
+    box-shadow: 2px 2px 8px var(--color04-alpha-80);
+    animation: fadeIn 0.35s ease-in;
+}
+
+/* pop up hints */
+.popupHint, .popupHint[data-content-style$="InfoBox"] {
+    display: inline-block;
+    background: var(--color04);
+    color: var(--color09);
+    border: 1px solid var(--color01);
+    text-align: center;
+    word-wrap: break-word;
+    z-index: 1002;
+    background: var(--color05) linear-gradient(180deg, var(--color09-alpha-15) 0%, var(--color07-alpha-0) 100%);
+    box-shadow: 5px 5px 8px var(--color04-alpha-80);
+    transform: translatez(0);
+}
+
+.popupHint[data-content-style$="WarningBox"] {
+    border: 1px solid var(--color02);
+}
+
+.popupHint[data-content-style$="ErrorBox"] {
+    border: 1px solid var(--color07);
+}
+
+.popupHint::before, .popupHint[data-content-style$="InfoBox"]::before {
+    color: var(--color01);
+    content: "\25c4";
+}
+
+.popupHint[data-content-style$="WarningBox"]::before {
+    color: var(--color02);
+}
+
+.popupHint[data-content-style$="ErrorBox"]::before {
+    color: var(--color07);
+}
+
+/*-- List container/rows and shadows top/bottom --*/
+.listRow:nth-of-type(odd) {
+    background: var(--color09-alpha-10);
+}
+
+.listRow:nth-of-type(even) {
+    background: var(--color09-alpha-20);
+}
+
+/*-- General message / escalation in  message and question view --*/
+#flexMessageContainerHeader .messageArea {
+    animation: escalationMoveIn 0.8s ease-in;
+}
+
+#flexMessageContainerHeader .disappear {
+    animation: escalationMoveOut 0.5s ease-out;
+}
+
+#flexMessageContainerArticle {
+    animation: fadeIn 0.25s ease-in; /*zoom/scale effects may disturb UIMovements for content scrolling purpose*/
+}
+
+.messageArea, .messageArea[data-content-style$="InfoBox"] {
+    background: var(--color05);
+    border: 1px solid var(--color09);
+}
+
+.messageArea[data-content-style$="WarningBox"] {
+    background: var(--color05);
+    border: 1px solid var(--color02);
+}
+
+.messageArea[data-content-style$="ErrorBox"] {
+    background: var(--color05);
+    border: 1px solid var(--color07);
+}
+
+/*-- Virtual Keyboard --*/
+#vkModalOverlay.modalOverlay {
+    background-color: var(--color04-alpha-60);
+}
+
+/*-- In transaction background --*/
+@keyframes borderTop {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        filter: saturate(400%);
+        -webkit-filter: saturate(400%);
+    }
+}
+
+#txnBackground {
+    border-top: 1px solid var(--color01-alpha-40);
+    animation: borderTop 2s ease-in-out;
+    background: linear-gradient(180deg, var(--color01-alpha-7) 0%, var(--color01-alpha-2) 10%, var(--color01-alpha-9) 100%);
+}
+
+/*-- Timeout progress bar --*/
+.timeoutProgressBar {
+    display: none;
+    overflow: hidden;
+    background-color: var(--color09);
+}
+
+/*
+ * View specific
+ */
+
+/*-- Views: idlepresentation and cardanimations --*/
+.contactlessReaderBack {
+    background: linear-gradient(180deg, var(--color09-alpha-30) 0%, var(--color09-alpha-20) 100%);
+    border: 1px solid var(--color01);
+    border-radius: 10px;
+}
+
+/*-- View: pinentry --*/
+#pinDigitsArea {
+    animation: fadeIn 0.15s;
+}
+
+.pinDigit.flipped {
+    transform: rotateY(180deg);
+    animation: flip-Y-180 0.6s ease-out;
+}
+
+div.front {
+    background-color: var(--color09-alpha-30);
+}
+
+div.frontCurrent {
+    background-color: var(--color09-alpha-30);
+}
+
+div.frontCurrent>var {
+    animation: blink 1s ease-out infinite;
+}
+
+div.back {
+    background-color: var(--color01-alpha-70);
+}
+
+/*-- View: pinentryets --*/
+#flexEtsContainerArea {
+    background-color: var(--color03-alpha-10);
+    /*background: var(--color05) linear-gradient(180deg, var(--color01-alpha-5) 0%, var(--color01-alpha-10) 100%);*/
+}
+
+div[data-view-id="pinentryets"] div.back {
+    background-color: var(--color02-alpha-60);
+    border: none;
+    transform: rotateY(180deg);
+}
+
+div[data-view-id="pinentryets"] #buttonCorrect {
+    /*usually the left border is none of correct, but we want one because we use it as a reset button*/
+    border-left: 1px solid var(--color10);
+}
+
+div[data-view-id="pinentryets"] #buttonCorrect[disabled] {
+    /*usually the left border is none of correct, but we want one because we use it as a reset button*/
+    border-left: 1px solid var(--color10-alpha-0);
+}
+
+/*-- Views: message, question --*/
+div[data-view-id="message"] #flexTime,
+div[data-view-id="question"] #flexTime,
+div[data-view-id="receipt"] #flexTime {
+    filter: none;
+}
+
+/*-- View: accountselection / billpaymentselection --*/
+div[data-view-id="accountselection"] #flexArticle .button,
+div[data-view-id="billpaymentselection"] #flexArticle .button {
+    box-shadow: 0 3px 5px 0 var(--color04);
+}
+
+div[data-view-id="accountselection"] .additional,
+div[data-view-id="billpaymentselection"] .additional {
+    background: var(--color09-alpha-20);
+    border: 1px solid var(--color09-alpha-0);
+    animation: accountSelectionDetails 0.6s ease-in;
+}
+
+/*-- View: pleasewait --*/
+/* Points loader */
+#waitLine>div {
+    background-color: var(--color01-alpha-60);
+}
+
+/* Wave spinner */
+#spinnerWave>div {
+    background-color: var(--color01-alpha-60);
+    color: var(--color01-alpha-80);
+}
+
+/*-- View: billsplitting --*/
+div[data-view-id="billsplitting"] #flexMain[data-message-visible="true"] #flexAside>:first-child {
+    transition: opacity 0.5s;
+}
+
+div[data-view-id="billsplitting"] #buttonCorrect, div[data-view-id="billselection"] #buttonCorrect {
+    /*usually the left border is none of correct, but we want one because we use it as a reset button*/
+    border-left: 1px solid var(--color10);
+}
+
+div[data-view-id="billsplitting"] #buttonCorrect[disabled], div[data-view-id="billselection"] #buttonCorrect[disabled] {
+    /*usually the left border is none of correct, but we want one because we use it as a reset button*/
+    border-left: 1px solid var(--color10-alpha-0);
+}
+
+div[data-view-id="billsplitting"] #flexMain[data-message-visible="true"] #flexAside>:first-child {
+    opacity: 0.1;
+}
+
+/*-- View: billselection --*/
+div[data-view-id="billselection"] .itemCount {
+    font-weight: bold;
+    background-color: var(--color03-alpha-80);
+}
+
+/*-- View: amountentry, numericentry, formentry --*/
+.generalInputFieldAreaZone[data-view-state="2"] object,
+.generalInputFieldAreaZone[data-view-state="2"] svg {
+    opacity: 0.2;
+}
+
+#generalInputBack {
+    background: var(--color04-generalinputback);
+}
+
+div[data-txn-background="true"] #generalInputBack {
+    background: var(--color04-generalinputback-txnbkg);
+}
+
+#flexArticlePopupAmountEntry #generalInputBack {
+    background: var(--color03-generalinputback-popup);
+}
+
+div[data-view-id="amountentry"] #buttonCorrect,
+div[data-view-id="numericentry"] #buttonCorrect, #buttonCorrectPopup {
+    flex-direction: row;
+    justify-content: flex-start;
+    box-shadow: none;
+}
+
+#buttonCorrectFront {
+    background: linear-gradient(180deg, var(--color10-alpha-60) 0%, var(--color10-alpha-30) 100%);
+    border: 1px solid var(--color10);
+    border-top: none;
+    border-right: none;
+    transform: rotateZ(45deg);
+    clip-path: polygon(50% 50%, 100% 100%, 0 100%, 0 0);
+    -moz-clip-path: polygon(50% 50%, 100% 100%, 0 100%, 0 0); /*Firefox currently does not support clip-path polygon*/
+}
+
+#buttonCorrect[disabled] #buttonCorrectFront,
+#buttonCorrectPopup[disabled] #buttonCorrectFront {
+    background: var(--color10-alpha-25);
+    border: 1px solid var(--color10-alpha-0);
+    box-shadow: none;
+    clip-path: polygon(50% 50%, 100% 100%, 0 100%, 0 0);
+    -moz-clip-path: polygon(50% 50%, 100% 100%, 0 100%, 0 0); /*Firefox currently does not support clip-path polygon*/
+}
+
+/*-- View: depositresult --*/
+.flexDepositResultDetailsRow[data-row-l2="true"] {
+    background: var(--color07-alpha-30);
+}
+
+.flexDepositResultDetailsRow[data-row-l2="true"] .note {
+    border: 1px solid var(--color07);
+    background: var(--color07-alpha-80);
+}
+
+/*== View: common item animations views ==*/
+/*-- Items slots --*/
+.warningIcon::before {
+    content: "";
+    background: url('../../images/deposit_warning_red_circle.svg') no-repeat;
+}
+
+/*-- View: accountinformation --*/
+/*- AINStd, AINIfx, AINPcemov -*/
+#flexAccountAINStdAINIfxAINPcemov {
+    background: var(--color09-alpha-10);
+}
+
+#balanceArea {
+    border-left: 1px solid var(--color04);
+}
+
+/* Transaction area */
+#flexTransactionsHeader {
+    background: var(--color09-alpha-50);
+}
+
+/*-- AINPcebal --*/
+#flexAccountDetailsAINPcebal {
+    background: var(--color09-alpha-10);
+}
+
+.transaction {
+    animation: moveInTop 0.3s;
+}
+
+/*-- View: depositchequesresult --*/
+#chqControl {
+    background: var(--color09-alpha-25);
+    border: 1px solid var(--color04-alpha-0);
+}
+
+#chqControl.accepted {
+    border: 1px solid var(--color06);
+}
+
+#chqControl.declined {
+    border: 1px solid var(--color07);
+}
+
+#chqInfo[data-cheque-state="declined"] {
+    background: var(--color07-alpha-50);
+}
+
+#chqInfoArea .chequeImageContainer {
+    transition: all 0.5s linear;
+}
+
+/*-- View: menupreferences --*/
+div[data-view-id="menupreferences"] .currentPreferencesButton {
+    background: linear-gradient(180deg, var(--color09-alpha-60) 0%, var(--color09-alpha-30) 100%);
+    border: 1px solid var(--color09);
+    animation-name: transitionPreferencesCurrent;
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton>object,
+div[data-view-id="menupreferences"] .currentPreferencesButton>svg {
+    filter: brightness(0%) invert(100%);
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton.prominentItem .preferencesMinMaxButton::before {
+    font-weight: bold;
+    text-shadow: 1px 1px 3px var(--color04);
+    border-top: 2px outset var(--color09);
+    border-right: 2px inset var(--color09);
+    animation: iconSizeBoxSmaller 1.5s steps(5, start) infinite;
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton .preferencesMinMaxButton::before {
+    font-weight: bold;
+    text-shadow: 1px 1px 3px var(--color04);
+    border-bottom: 2px inset var(--color09);
+    border-left: 2px outset var(--color09);
+    animation: iconSizeBoxLarger 1.5s steps(5, start) infinite;
+}
+
+div[data-view-id="menupreferences"] .wobbling {
+    animation-name: pulsatePreferences;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton {
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms !important;
+    animation-delay: 0s !important;
+    animation-fill-mode: forwards;
+}
+
+/* -- View: scancodeanimations.html --*/
+.scanBackground {
+    background-color: var(--color09-alpha-20);
+}
+
+#barcodeSlot, #qrcodeSlot {
+    background-color: var(--color09-alpha-30);
+    border: solid 1px var(--color09-alpha-60);
+}
+
+/* cheque scanning animation */
+#chequeScanRedLight {
+    border-radius: 6px;
+}
+
+/*-- View: chiptransactions.html --*/
+/* Transaction area */
+#flexChipTransactionsHeader {
+    background: var(--color09-alpha-50);
+}
+
+.chipTransaction {
+    animation: moveInTop 0.3s;
+}
+
+/*-- View: receipt.html --*/
+div[data-view-id="receipt"] #flexMessageContainerArticle {
+    align-items: center;
+}
+
+div[data-view-id="receipt"] .messageArea {
+    position: relative; /*because of pseudo elements before/after to keep responsivity*/
+    justify-content: center;
+    border: none;
+    box-shadow: none;
+    /*sawtooth effect*/
+    background: linear-gradient(-135deg, var(--color09) 8px, transparent 0) 0 8px, linear-gradient(135deg, var(--color09) 8px, var(--color05) 0) 0 8px;
+    background-color: var(--color09);
+    background-position: left bottom;
+    background-repeat: repeat-x;
+}
+
+/*sawtooth effect: resolution dependent, note that background-size must be after the background: linear-gradient*/
+@media (min-width: 1px) {
+    div[data-view-id="receipt"] .messageArea {
+        background-size: 22px 10px;
+    }
+}
+
+@media (min-width: 1280px) {
+    div[data-view-id="receipt"] .messageArea {
+        background-size: 26px 10px;
+    }
+}
+
+div[data-view-id="receipt"] .messageArea::before,
+div[data-view-id="receipt"] .messageArea::after {
+    position: absolute;
+    content: '\25D7';
+    color: var(--color05);
+}
+
+div[data-view-id="receipt"] .messageArea::after {
+    content: '\25D6';
+}
+
+div[data-view-id="receipt"] .messageArea > var {
+    font-family: Courier, sans-serif;
+    text-shadow: none;
+    word-break: break-all;
+}
+
+/*-- View: mobiletransaction.html --*/
+#mobilePhoneTop, #mobilePhoneBottom {
+    border-radius: 10px;
+}
+
+.mobilePhoneBack {
+    background: var(--color03-alpha-60);
+    border: 1px solid var(--color01);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+#mobilePhoneDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobilePhoneDisplayBack {
+    background: var(--color04-alpha-40);
+    z-index: 1;
+}
+
+#mobilePhone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*-- View: signaturepad.html --*/
+#signatureArea {
+    background-color: var(--color09-alpha-20);
+    color: var(--color03);
+    border: 1px solid var(--color09-alpha-60);
+    z-index: 1;
+}
+
+/*-- View: scannedimageviewer --*/
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #imgViewer {
+    background: var(--color04-alpha-80);
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #chqImgCarrier2 {
+    border: 2px solid var(--color01);
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #chqImgCarrier2 {
+    transition: top 0.25s, left 0.25s, margin-top 0.25s, width 0.25s, height 0.25s;
+    transition-timing-function: ease-in;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier2 {
+    transition: top 0.25s, left 0.25s, margin-top 0.25s, width 0.25s, height 0.25s;
+    transition-timing-function: ease-in;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="out"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="out"] #chqImgCarrier2 {
+    transition: top 0.25s, left 0.25s, margin-top 0.25s, width 0.25s, height 0.25s;
+    transition-timing-function: ease-out;
+}
+
+/*-- View: outofserviceadditionalinfos.html --*/
+#atmInfosHeadline {
+    background: linear-gradient(180deg, var(--color09-alpha-50) 0%, var(--color09-alpha-50) 94%, var(--color09-alpha-0) 95%, var(--color09-alpha-1) 100%);
+}
+
+#mapLocationContainer #mapLocationContainerClose {
+    border: none;
+    font-weight: bold;
+    background-color: rgba(0, 60, 136, .5);
+    color: var(--color09);
+}
+
+#mapLocationContainer #mapLocationContainerClose:focus,
+#mapLocationContainer #mapLocationContainerClose:hover {
+    text-decoration: none;
+    background-color: rgba(0, 60, 136, .7)
+}
+
+#mapLocationContainer #popup-content {
+    word-break: keep-all;
+}
+
+/* -- View: dualchoiceselection.html --*/
+div[data-view-id="dualchoiceselection"] #leftColumnText {
+    animation: fadeInRight 0.75s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #rightColumnText {
+    animation: fadeInLeft 0.75s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #leftColumnText[data-validation-state=true],
+div[data-view-id="dualchoiceselection"] #rightColumnText[data-validation-state=true] {
+    color: var(--color06);
+    transition: color 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft,
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight {
+    border-top: 1px dashed var(--color09);
+    animation: zoomIn 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorVertical {
+    align-self: center;
+    border-left: 1px dashed var(--color09);
+    animation: zoomIn 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorVertical[data-validation-state=true] {
+    border-left: 1px solid var(--color06);
+    transition: border-left 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft[data-validation-state=true],
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight[data-validation-state=true] {
+    border-top: 1px solid var(--color06);
+    transition: border-top 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft,
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight {
+    border-top: 1px dashed var(--color09);
+}

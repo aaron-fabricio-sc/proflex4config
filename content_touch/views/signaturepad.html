@@ -1,0 +1,70 @@
+<!--
+$MOD$ signaturepad.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+﻿<!-- main -->
+<main id="flexMain">
+    <nav id="flexNav"></nav>
+
+    <article id="flexArticle">
+        <canvas id="signatureArea" data-line-thickness="4.5" data-bind="
+            gesture: {
+                options: {
+                },
+                gestures: {
+                    Press: {
+                        events:['press'],
+                        disableDefaultHandler: true,
+                        handler: $root.viewHelper.getActiveModule().drawSignature
+                    },
+                    Pan: {
+                        direction: 'DIRECTION_ALL',
+                        events:['panstart','panmove','panend'],
+                        disableDefaultHandler: true,
+                        handler: jQuery.throttle(10, ev => $root.viewHelper.getActiveModule().drawSignature(ev))
+                    },
+                    Tap: {
+                        events:['tap'],
+                        disableDefaultHandler: true,
+                        handler: $root.viewHelper.getActiveModule().drawSignature
+                    }
+                }
+            }">
+        </canvas>
+    </article>
+
+    <aside id="flexAside"></aside>
+</main>
+
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonsZone">
+            <div class="buttonZone">
+                <div id="buttonConfirm" class="button footerButton"
+                     data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, state: CMDSTATE.DISABLED, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                    <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                    <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+                </div>
+            </div>
+            <div class="buttonZone">
+                <div id="buttonCorrect" class="button footerButton"
+                     data-bind="command: {id: 'CORRECT', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Correct', 'Correct')}, eppkey: 'BACKSPACE'}">
+                    <svg data-bind="svguse: { name: 'correct.svg' }"></svg>
+                    <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('CORRECT')"></var>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                 data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>
+

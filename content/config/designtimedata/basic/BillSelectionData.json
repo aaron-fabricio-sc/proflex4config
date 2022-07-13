@@ -1,0 +1,36 @@
+{
+    "amount": "50000",
+    "currency": "EUR",
+    "symbol": "€",
+    "ada": "Euro",
+    "exponent": "-2",
+    "maxnotes": 60,
+    "maxcoins": 50,
+    "maxamount": 50000,
+    "denominations": [
+        {
+            "type": 0,
+            "count": 150,
+            "val": 500,
+            "softLimit": 0
+        },
+        {
+            "type": 0,
+            "count": 150,
+            "val": 1000,
+            "softLimit": 0
+        },
+        {
+            "type": 0,
+            "count": 15,
+            "val": 2000,
+            "softLimit": 0
+        },
+        {
+            "type": 0,
+            "count": 20,
+            "val": 5000,
+            "softLimit": 0
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+<!--
+$MOD$ pinentry.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<!-- Main -->
+<main id="flexMain">
+    <!-- Nav -->
+    <nav id="flexNav"></nav>
+    <!-- Article -->
+    <article id="flexArticle" data-bind="command: {id: 'PIN', type: CMDTYPE.OTHER, action: designMode ? onButtonPressed : null, state: CMDSTATE.NONE}">
+        <!-- Pin digits area -->
+        <div id="pinDigitsArea" data-pin-range="low" data-bind="visibility: activatePinContainer, foreach: pinDigitExpected, attr: {'data-pin-range': maxPinLength <= 12 ? 'low' : 'high'}">
+            <div class="pinDigitContainer">
+                <div class="pinDigit" data-bind="attr: {class: $data ? 'pinDigit flipped' : 'pinDigit'}">
+                    <div class="front" data-bind="attr: { class: $parent.currentPinLen() === $index() ? 'frontCurrent' : 'front' }">
+                        <var class="color03 font01" data-bind="text: $parent.currentPinLen() === $index() ? '_' : ''"></var>
+                    </div>
+                    <div class="back">
+                        <var class="color02 font01">*</var>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- Footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonsZone">
+            <div class="buttonZone">
+                <div id="buttonConfirm" class="button footerButton"
+                     data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, state: CMDSTATE.DISABLED, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                    <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                    <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+                </div>
+            </div>
+            <div class="buttonZone">
+                <div id="buttonCorrect" class="button footerButton" style="display: none;"
+                     data-bind="command: {id: 'CORRECT', type: CMDTYPE.BUTTON, state: CMDSTATE.NONE, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Correct', 'Correct')}, eppkey: 'BACKSPACE'}">
+                    <svg data-bind="svguse: { name: 'correct.svg' }"></svg>
+                    <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('CORRECT')"></var>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <!-- Cancel btn -->
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                 data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, state: CMDSTATE.DISABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

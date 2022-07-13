@@ -1,0 +1,149 @@
+<!--
+$MOD$ depositresult.html 4.3.1-200123-21-8cd258cb-1a04bc7d
+-->
+
+<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav">
+        <div id="flexNavSK00"></div>
+        <div id="flexNavSK01">
+            <div class="button button01 skLeft iconButton" disabled="disabled"
+                 data-bind="command: {id: 'BTN_SCROLL_UP', adaType: ADA_TYPE.SELECTION_KEY, adakey: '2', adaText: getLabel('GUI_[#VIEW_KEY#]_Button_Previous_ADA',''), state: CMDSTATE.DISABLED, eppkey: 'F7'}">
+                <svg data-bind="svguse: { name: 'arrow_up.svg' }"></svg>
+            </div>
+        </div>
+        <div id="flexNavSK02"></div>
+        <div id="flexNavSK03">
+            <div class="button button01 skLeft iconButton borderDrawing" disabled="disabled"
+                 data-bind="command: {id: 'BTN_SCROLL_DOWN', adaType: ADA_TYPE.SELECTION_KEY, adakey: '4', adaText: getLabel('GUI_[#VIEW_KEY#]_Button_Next_ADA',''), state: CMDSTATE.DISABLED, eppkey: 'F5'}">
+                <svg data-bind="svguse: { name: 'arrow_down.svg' }"></svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- article -->
+    <article id="flexArticle" data-bind="virtualExtend: {xTotal: [ko.observable(''), ko.observable('')]}">
+        <div id="flexDepositResultTotalAmount" class="font02">
+            <div id="flexDepositResultTotalAmountRow1">
+                <var id="firstRowAmountCaptionArea" class="font01 color01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_TotalAmount', 'Total amount:')"></var>
+                <span id="firstRowAmountCurrencyArea" class="font01 color03" data-bind="html: totalData()[0].currency"></span>
+                <!-- This part shows usage of the 'virtualExtend' custom-binding. The corresponding view-model is extended by
+                an array ('xTotal') containing 2 knockout-observables that later on are used to contain the formatted, mixed text-content for ada totalAmount.
+                Originally this array is not part of the view-model but created at runtime.-->
+                <div id="firstRowAmountSumCaptionArea" data-bind="
+                        format: {src: totalData()[0].total, target: $root.xTotal[0], pattern: '#C'},
+                        command: {id: 'DYN01', adaType: ADA_TYPE.DYNAMIC_VALUE, state: CMDSTATE.NONE,
+                        adaText: getLabel('GUI_[#VIEW_KEY#]_Label_TotalAmount_ADA', 'The total sum is {#sum#} {#currency#}', {},
+                                    {'sum': $root.xTotal[0],
+                                     'currency': totalData()[0].currency
+                                    } )}">
+                    <var id="firstRowAmountSumCaption" class="font01 color03" data-bind="text: $root.xTotal[0]"></var>
+                </div>
+            </div>
+            <!-- ko  if: isMixedCurrency -->
+            <div id="flexDepositResultTotalAmountRow2">
+                <var id="secondRowAmountCaptionArea" class="font01 color01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_TotalAmount', 'Total amount:')"></var>
+                <span id="secondRowAmountCurrencyArea" class="font01 color03" data-bind="html: totalData()[1].currency"></span>
+                <div id="secondRowAmountSumCaptionArea" data-bind="
+                    format: {src: totalData()[1].total, target: $root.xTotal[1], pattern: '#C'},
+                    command: {id: 'DYN02', adaType: ADA_TYPE.DYNAMIC_VALUE, state: CMDSTATE.NONE,
+                    adaText: getLabel('GUI_[#VIEW_KEY#]_Label_TotalAmount_ADA', 'The total sum is {#sum#} {#currency#}', {},
+                                {'sum': $root.xTotal[1],
+                                 'currency': totalData()[1].currency
+                                } )}">
+                    <var id="secondRowAmountSumCaption" class="font01 color03" data-bind="text: $root.xTotal[1]"></var>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div id="flexDepositResultDetails" data-bind="foreach: { data: dataList.items, as: 'item', afterRender: notify.bind($root) }, visible: viewActivated">
+            <div class="flexDepositResultDetailsRow listRow" data-row-l2="" data-list-down-active="false" data-list-up-active="false" data-bind="
+                    attr: {'data-row-l2': item.itemInfo.level !== 2 ? 'false' : 'true',
+                            'data-list-down-active': $root.cmdRepos.isActive('BTN_SCROLL_DOWN'),
+                            'data-list-up-active': $root.cmdRepos.isActive('BTN_SCROLL_UP')},
+                    style: {'animation-duration': ($index() * 0.2 + 0.4) + 's'}">
+                <!-- CHECK IF IT'S A NOTE OR COIN -->
+                <div class="" data-bind="attr: { class: item.itemInfo.type === 0 ? 'note' : 'coin' }">
+                    <!-- ko  if: item.itemInfo.type === 0 -->
+                    <svg data-bind="attr: { 'data-item-value': item.itemInfo.value },
+                                    svguse: { name: item.itemInfo.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                              inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                   <!-- /ko -->
+                    <!-- ko  if: item.itemInfo.type === 1 -->
+                    <svg data-bind="attr: { 'data-item-value': item.itemInfo.value, 'data-currency-iso': item.itemInfo.currency },
+                                    svguse: { name: 'single_coin_generic.svg', inline: true, afterRender: $root.viewHelper.singleCoinSymbol }"></svg>
+                    <!-- /ko -->
+                </div>
+
+                <!-- ko  if: item.itemInfo.level !== 2 -->
+                <var class="crossX color03 font01" data-bind="text: 'X'"></var>
+                <!-- /ko -->
+
+                <!-- ko  if: item.itemInfo.level === 2 -->
+                <div class="crossX">
+                    <svg data-bind="svguse: { name: 'l2_notes.svg' }"></svg>
+                </div>
+                <!-- /ko -->
+
+                <var class="count color03 font01" data-bind="text: item.count"></var>
+                <var class="equals color03 font01" data-bind="text: '='"></var>
+                <var class="result color01 font01" data-bind="
+                      format: { src: (item.count * item.itemInfo.value), pattern: '#C' },
+                      command: { id: 'DEPOSIT_ROW' + $index(),
+                                 adaType: $root.ADA_TYPE.DYNAMIC_VALUE,
+                                 state: $root.CMDSTATE.NONE,
+                                 action: null,
+                                 adaText: $root.getLabel('GUI_[#VIEW_KEY#]_Label_Deposit_Row_ADA', 'You have inserted {#count#} times {#val#} {#currency#}',
+                                          null,
+                                          {
+                                             'count': item.count,
+                                             'val': item.itemInfo.valueAda,
+                                             'currency': item.itemInfo.currency,
+                                             'level': item.itemInfo.level
+                                          })
+                               }">
+                </var>
+            </div>
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <div id="flexAsideSK00">
+            <div id="buttonConfirm" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM_DEPOSIT', args: ['CONFIRM_DEPOSIT', 'CONFIRM_DEPOSIT'], adaType: ADA_TYPE.SELECTION_KEY, adakey: '5', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_ConfirmDeposit', 'Confirm Deposit')}, eppkey: ['CONFIRM', 'F1']}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM_DEPOSIT')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK01"></div>
+        <div id="flexAsideSK02">
+            <div class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'INSERTMOREMONEY', adaType: ADA_TYPE.SELECTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_InsertMoreMoney', 'Insert more money')}, eppkey: 'F3', adakey: '7'}">
+                <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('INSERTMOREMONEY')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK03">
+            <div class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'PARTIAL_DEPOSIT', adaType: ADA_TYPE.SELECTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_PartialDeposit', 'Partial Deposit')}, eppkey: 'F4', adakey: '8'}">
+                <svg data-bind="svguse: { name: 'partial_deposit.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('PARTIAL_DEPOSIT')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                 data-bind="command: {id: 'DEPOSIT_CANCEL', args: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_CancelDeposit', 'Cancel Deposit')}, eppkey: 'CANCEL'}">
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('DEPOSIT_CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

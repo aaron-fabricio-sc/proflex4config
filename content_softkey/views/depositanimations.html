@@ -1,0 +1,212 @@
+<!--
+$MOD$ depositanimations.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <!-- Additional information -->
+        <div id="flexAnimationHead">
+            <div id="flexAdditionalHints" data-bind="visible: viewFlexDepositHints" >
+                <!-- Texts -->
+                <div id="flexAdditionalTexts">
+                    <var class="font03 color01" data-bind="text: getLabel('GUI_[#VIEW_KEY#]_Label_DepositHintsNoEnvelopes','No envelopes.')"></var>
+                    <var class="font03 color01" data-bind="text: getLabel('GUI_[#VIEW_KEY#]_Label_DepositHintsNoClips','No clips.')"></var>
+                    <var class="font03 color01" data-bind="text: getLabel('GUI_[#VIEW_KEY#]_Label_DepositHintsNoFoldedBills','No folded notes.')"></var>
+                    <var class="font03 color01" data-bind="visible: !viewFlexCoinsInsert(), text: getLabel('GUI_[#VIEW_KEY#]_Label_DepositHintsNoCoins','No coins.')"></var>
+                    <var class="font03 color01" data-bind="visible: maxItems, text: getLabel('GUI_[#VIEW_KEY#]_Label_DepositHintsNotTooManyNotes','Not more than 50 notes.')"></var>
+                </div>
+                <!-- Icons -->
+                <div id="flexAdditionalIcons">
+                    <svg class="warningIcon" data-warning-circle="true" data-bind="svguse: { name: 'deposit_warning_envelope.svg', inline: true, afterRender: $root.viewHelper.depositWarningSymbol }"></svg>
+                    <svg class="warningIcon" data-warning-circle="true" data-bind="svguse: { name: 'deposit_warning_clip.svg', inline: true, afterRender: $root.viewHelper.depositWarningSymbol }"></svg>
+                    <svg class="warningIcon" data-warning-circle="true" data-bind="svguse: { name: 'deposit_warning_folded.svg', inline: true, afterRender: $root.viewHelper.depositWarningSymbol }"></svg>
+                    <svg class="warningIcon" data-warning-circle="true" data-bind="visible: !viewFlexCoinsInsert(), svguse: { name: 'deposit_warning_coins.svg', inline: true, afterRender: $root.viewHelper.depositWarningSymbol }"></svg>
+                    <svg class="warningIcon" data-warning-circle="true" data-bind="visible: maxItems, svguse: { name: 'deposit_warning_amount.svg', inline: true, afterRender: $root.viewHelper.depositWarningSymbol }"></svg>
+                </div>
+            </div>
+        </div>
+        <!-- Animations -->
+        <div id="flexAnimations">
+            <!-- notes insert slot in -->
+            <figure data-bind="visible: viewFlexNotesInsert">
+                <div id="notesInsertSlotIn" class="flexItemsSlotIn">
+                    <div id="notesInsertSlotInAnimationArea" data-bind="foreach: notes">
+                        <div class="note">
+                            <svg data-bind="attr: { 'data-item-value': $data.val },
+                                            svguse: { name: $root.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                      inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                        </div>
+                    </div>
+                    <svg data-bind="svguse: { name: 'slot_in.svg' }"></svg>
+                </div>
+            </figure>
+            <!-- notes eject slot in -->
+            <figure data-bind="visible: viewFlexNotesEject">
+                <div id="notesEjectSlotIn" class="flexItemsSlotIn">
+                    <div id="notesEjectSlotInAnimationArea" data-bind="foreach: notes">
+                        <!-- ko foreach: { data: $data.count } -->
+                        <div class="note" data-bind="visible: $index() < 1">
+                            <svg data-bind="attr: { 'data-item-value': $parent.val },
+                                            svguse: { name: $root.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                      inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                    <svg data-bind="svguse: { name: 'slot_in.svg' }"></svg>
+                </div>
+                <!--var class="font01 color02" data-bind="text: animationTextNotes() + getLabel('GUI_[#VIEW_KEY#]_Label_CurrencySymbol', '&euro;')()"></var-->
+            </figure>
+            <!-- metal detection -->
+            <figure data-bind="visible: viewFlexTakeMetal">
+                <div class="flexMetalSlotIn">
+                    <div id="takeMetalItems">
+                    <div id="takeMetalAnimationArea">
+                        <svg class="warningIcon" data-bind="svguse: { name: 'deposit_warning_clip.svg' }"></svg>
+                        <svg class="redCircle" data-bind="svguse: { name: 'deposit_warning_red_circle.svg' }"></svg>
+                    </div>
+                    <div id="takeCoinAnimationArea">
+                        <svg class="warningIcon" data-bind="svguse: { name: 'deposit_warning_coins.svg' }"></svg>
+                        <svg class="redCircle" data-bind="svguse: { name: 'deposit_warning_red_circle.svg' }"></svg>
+                    </div>
+                </div>
+                    <svg data-bind="svguse: { name: 'slot_in.svg' }"></svg>
+                </div>
+            </figure>
+            <!-- turn notes -->
+            <figure data-bind="visible: viewFlexTurnNotes">
+                <div class="flexItemsSlotIn">
+                    <div id="turnNotesAnimationArea">
+                        <div class="note">
+                            <svg data-bind="svguse: { name: $root.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg' }"></svg>
+                        </div>
+                     </div>
+                    <svg data-bind="svguse: { name: 'slot_in.svg' }"></svg>
+                 </div>
+            </figure>
+            <!-- turn notes short side first (not possible - superfluous animation !!!-->
+            <figure data-bind="visible: viewFlexTurnNotesShortSideFirst">
+                <div class="flexItemsSlotIn">
+                    <div id="turnNotesShortSideFirstAnimationArea">
+                        <div class="note">
+                            <svg data-bind="svguse: { name: $root.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg' }"></svg>
+                        </div>
+                    </div>
+                    <svg data-bind="svguse: { name: 'slot_in.svg' }"></svg>
+                </div>
+            </figure>
+
+            <!-- Insert notes short side first slot top -->
+            <figure class="shortSideFirst" data-bind="visible: viewFlexNotesInsertShortSideFirst">
+                <div class="flexItemsSlot">
+                    <svg data-bind="svguse: { name: 'slot.svg' }"></svg>
+                    <div id="noteInsert3D" class="itemLane" data-bind="foreach: notes">
+                        <div class="notesInsertShortSideFirstAnimation3D note">
+                            <svg data-bind="attr: { 'data-item-value': $data.val },
+                                            svguse: { name: $root.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                      inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <!-- Eject notes short side first slot top -->
+            <figure class="shortSideFirst" data-bind="visible: viewFlexNotesEjectShortSideFirst">
+                <div class="flexItemsSlot">
+                    <svg data-bind="svguse: { name: 'slot.svg' }"></svg>
+                    <div class="itemLane" data-bind="foreach: notes">
+                        <div id="noteEject3D" class="note" data-bind="foreach: $data.count">
+                            <div class="notesEjectShortSideFirstAnimation3D" data-bind="visible: $index() < 5">
+                                <svg data-bind="attr: { 'data-item-value': $parent.val },
+                                                svguse: { name: $root.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                          inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <!-- Take metal side first slot top -->
+            <figure  class="shortSideFirst" data-bind="visible: viewFlexTakeMetalShortSideFirst">
+                <div class="flexItemsSlot">
+                    <svg data-bind="svguse: { name: 'slot.svg' }"></svg>
+                    <div class="itemLaneMetal">
+                        <div class="metalEjectShortSideFirstAnimation3D">
+                            <svg class="warningIcon" data-bind="svguse: { name: 'deposit_warning_clip.svg' }"></svg>
+                            <svg class="warningIcon" data-bind="svguse: { name: 'deposit_warning_coins.svg' }"></svg>
+                        </div>
+                    </div>
+                    <div class="flexMetalWarningArea">
+                        <div class="metalWarningAnimation">
+                            <svg class="warningIconBig" data-bind="svguse: { name: 'deposit_warning_clip.svg' }"></svg>
+                            <svg class="warningIconBig" data-bind="svguse: { name: 'deposit_warning_coins.svg' }"></svg>
+                        </div>
+                        <div class="metalWarningAnimation">
+                            <svg class="redCircleBig" data-bind="svguse: { name: 'deposit_warning_red_circle.svg' }"></svg>
+                            <svg class="redCircleBig" data-bind="svguse: { name: 'deposit_warning_red_circle.svg' }"></svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <!-- coins insert slot in-->
+            <figure  data-bind="visible: viewFlexCoinsInsert">
+                <div id="coinsInsertSlotIn" class="flexItemsSlotIn">
+                    <div data-bind="foreach: [1,2,5,10,20,50,100,200]">
+                        <div class="coin" data-bind="style: {'animation-duration': ($index() + 1.1) + 's'}">
+                            <svg data-bind="attr: { 'data-item-value': $data, 'data-currency-iso': $root.currency },
+                                            svguse: { name: 'single_coin_generic.svg', inline: true, afterRender: $root.viewHelper.singleCoinSymbol }"></svg>
+                        </div>
+                    </div>
+                    <svg data-bind="svguse: { name: 'slot_in.svg' }"></svg>
+                </div>
+            </figure>
+            <!-- coins eject slot in -->
+            <figure  data-bind="visible: viewFlexCoinsEject">
+                <div id="coinsEjectSlotIn" class="flexItemsSlotIn">
+                    <div data-bind="foreach: coins">
+                        <!-- ko foreach: { data: $data.count } -->
+                        <div class="coin" data-bind="style: {'animation-duration': (1.5 + $parentContext.$index() * 0.2) + 's', 'padding-top': ($index() + 5) + 'px'}, attr: { id: 'coin' +  $index() % 2 }">
+                            <svg data-bind="attr: { 'data-item-value': $parent.val, 'data-currency-iso': $root.currency },
+                                            svguse: { name: 'single_coin_generic.svg', inline: true, afterRender: $root.viewHelper.singleCoinSymbol }"></svg>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                    <svg data-bind="svguse: { name: 'slot_in.svg' }"></svg>
+                </div>
+                <!--var class="font01 color02" data-bind="text: animationTextCoins() + getLabel('GUI_[#VIEW_KEY#]_Label_CurrencySymbol', '&euro;')()"></var-->
+            </figure>
+
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <div id="flexAsideSK00"></div>
+        <div id="flexAsideSK01"></div>
+        <div id="flexAsideSK02"></div>
+        <div id="flexAsideSK03"></div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button footerButton"
+                    data-bind="command: {id: 'DEPOSIT_CONFIRM', args: 'CONFIRM', state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm deposit')}, eppkey: 'CONFIRM'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('DEPOSIT_CONFIRM')"></var>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'DEPOSIT_CANCEL', args: 'CANCEL', state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel deposit')}, eppkey: 'CANCEL'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('DEPOSIT_CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

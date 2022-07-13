@@ -1,0 +1,69 @@
+<!--
+$MOD$ printeranimations.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+
+        <figure data-bind="visible: viewFlexDocument">
+            <var class="font01 color02" data-bind="html: animationTextDocument"></var>
+            <div id="documentEject" class="flexItemsSlot">
+                <svg data-bind="svguse: { name: 'slot.svg' }"></svg>
+                <div class="itemLane">
+                    <div id="documentEject3D" data-bind="if: getLabel('GUI_[#VIEW_KEY#]_Headline', 'Document') !== ''">
+                        <svg id="documentEjectAnimation3D" data-bind="svguse: { name: 'document.svg' }"></svg>
+                    </div>
+                </div>
+            </div>
+        </figure>
+
+        <!-- receipt eject -->
+        <figure data-bind="visible: viewFlexReceipt">
+            <var class="font01 color02" data-bind="html: animationTextReceipt"></var>
+            <div id="receiptEject" class="flexItemsSlot">
+                <svg data-bind="svguse: { name: 'slot.svg' }"></svg>
+                <div class="itemLane">
+                    <div id="receiptEject3D" data-bind="if: getLabel('GUI_[#VIEW_KEY#]_Headline', 'Receipt') !== ''">
+                        <svg id="receiptEjectAnimation3D" data-bind="svguse: { name: 'receipt.svg' }"></svg>
+                    </div>
+                </div>
+            </div>
+        </figure>
+
+        <!-- send electronic receipt  -->
+        <figure data-bind="visible: viewFlexElectronicReceipt">
+            <var class="font01 color02" data-bind="html: animationTextElectronicReceipt"></var>
+            <div id="eReceiptSend" data-bind="if: getLabel('GUI_[#VIEW_KEY#]_Headline', 'Receipt') !== ''">
+                <svg id="eReceiptSendAnimation" data-bind="svguse: { name: 'receipt.svg' }"></svg>
+            </div>
+        </figure>
+
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button footerButton"
+                    data-bind="command: {id: 'CONFIRM', adaType: ADA_TYPE.FUNCTION_KEY, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

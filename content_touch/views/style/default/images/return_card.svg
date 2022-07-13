@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+<g class="shadowGroup1">
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="16,30.2 25.5,40.2 35,30.2 	"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="25.5" y1="17.2" x2="25.5" y2="40.2"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10"  points="23,21.8 11.5,21.8 11.5,7.8
+		40.5,7.8 40.5,21.8 28,21.8 	"/>
+	<rect x="11.5" y="10.2"  width="29" height="3"/>
+</g>
+<g class="shadowGroup2">
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="15,29.2 24.5,39.2 34,29.2 	"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="24.5" y1="16.2" x2="24.5" y2="39.2"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10"  points="22,20.8 10.5,20.8 10.5,6.8
+		39.5,6.8 39.5,20.8 27,20.8 	"/>
+	<rect x="10.5" y="9.2"  width="29" height="3"/>
+</g>
+<g class="shadowGroup3">
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="14,28.2 23.5,38.2 33,28.2 	"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="23.5" y1="15.2" x2="23.5" y2="38.2"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10"  points="21,19.8 9.5,19.8 9.5,5.8
+		38.5,5.8 38.5,19.8 26,19.8 	"/>
+	<rect x="9.5" y="8.2"  width="29" height="3"/>
+</g>
+<g>
+	<polyline class="strokeColor" stroke-miterlimit="10" points="13,27.2 22.5,37.2 32,27.2 	"/>
+	<line class="strokeColor" stroke-miterlimit="10" x1="22.5" y1="14.2" x2="22.5" y2="37.2"/>
+	<polyline class="strokeColor" stroke-miterlimit="10" points="20,18.8 8.5,18.8 8.5,4.8 37.5,4.8 37.5,18.8 25,18.8 	"/>
+	<rect x="8.5" y="7.2" class="fillColor" width="29" height="3"/>
+</g>
+</svg>

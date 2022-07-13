@@ -1,0 +1,87 @@
+<!--
+$MOD$ outofserviceadditionalinfos.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <div id="atmInfos" data-bind="attr: {'data-allow-map-locations': allowMapLocations() ? 'true' : 'false'}">
+            <div id="atmInfosHeadline" class="font02">
+                <var class="color03 font01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_ATMInfosAddress', 'ATM Address')"></var>
+                <div id="atmInfosHeadlineDistance">
+                    <var class="color03 font01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_ATMInfosDistance', 'Distance')"></var>
+                    <var class="color03 font01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_DistanceKM', 'km')"></var>
+                </div>
+                <var class="atmMapLocationHead color03 font01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_ATMInfosLocation', 'Location'), visible: allowMapLocations"></var>
+                <var class="atmStatusHead color03 font01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_ATMInfosStatus', 'Status')"></var>
+            </div>
+            <div id="listContainer">
+                <div id="flexAtmInfosDetails" data-bind="foreach: { data: dataList.items, as: 'item'},
+                                                         gesture: {
+                                                            options: {
+                                                                processItemVisibility: true,
+                                                                itemVisibilityTransitions: 'scale',
+                                                                sendAutoMovementEvents: true
+                                                            },
+                                                            grid: 'flexAtmInfosDetailsRow',
+                                                            listElementName: 'flexAtmInfosDetailsRow',
+                                                            verticalScrollbarElement: 'atmInfosScrollbar',
+
+                                                            gestures: {
+                                                                Swipe: {
+                                                                    direction: 'DIRECTION_VERTICAL',
+                                                                    events: ['swipe']
+                                                                },
+                                                                Pan: {
+                                                                    direction:'DIRECTION_VERTICAL',
+                                                                    events:['panstart','panmove','panend'],
+                                                                    enable: true
+                                                                }
+                                                            },
+                                                            containment: {
+                                                                element: 'flexAtmInfosDetails',
+                                                                useScrollWidth: false,
+                                                                useScrollHeight: false
+                                                            }
+                                                         }">
+                    <div class="flexAtmInfosDetailsRow listRow">
+                        <div class="atmAddress">
+                            <var class="color03 font01" data-bind="text: item.name"></var>
+                            <var class="atmLocation color01 font01" data-bind=
+                                    "text: `${item.addressData.street} ${item.addressData.streetNo}${item.addressData.street && item.addressData.city ? ',' : ''} ${item.addressData.city} ${item.addressData.zipCode}`"></var>
+                        </div>
+                        <var class="atmDistance color03 font01" data-bind="format: { src: function() { return item.distanceKm ? `${parseFloat(item.distanceKm).toFixed(2) * 100}` : '' }(), pattern: '#C'}"></var>
+                        <div class="atmMapLocation" data-bind="command: {id: 'MAP_LOCATION_' + $index(), type: $root.CMDTYPE.BUTTON, state: item.addressData.lon && item.addressData.lat  ? $root.CMDSTATE.ENABLED : $root.CMDSTATE.DISABLED}, visible: $root.allowMapLocations">
+                            <svg class="atmMapLocation" data-bind="svguse: { name: 'location.svg'}, visible: item.addressData.lon && item.addressData.lat"></svg>
+                        </div>
+                        <var class="" data-bind="attr: { class: item.wkstState === 'OPENCONSUMER' ? 'atmState color06 font04' : 'atmState color07 font04'}">&#x25C9</var>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mapLocationContainer" style="display: none;">
+            <button id="mapLocationContainerClose" class="ol-control" data-bind="click: $root.viewHelper.getActiveModule().closeMapLocation">X</button>
+        </div>
+        <div id="atmQRCodes">
+            <img class="qrcode" alt="" src="" data-bind="iconimage: { name: 'GUI_[#VIEW_KEY#]_Image_ATMInfosQRCodeApple', icondefault: 'qrcode.svg' }">
+            <var class="color03 font01"
+                 data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_ATMInfosApple', 'Apple')"></var>
+            <img class="qrcode" alt="" src="" data-bind="iconimage: { name: 'GUI_[#VIEW_KEY#]_Image_ATMInfosQRCodeAndroid', icondefault: 'qrcode.svg' }">
+            <var class="color03 font01"
+                 data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_ATMInfosAndroid', 'Android')"></var>
+        </div>
+        <div id="atmQRCodesInfo">
+            <var class="color03 font03" data-bind="
+                 html: getLabel('GUI_[#VIEW_KEY#]_Label_ATMQRCodesInfo', 'Consult the mobile application for directions and more details. Don’t have the mobile application yet? Download it from Apple Store or Google Play Store by searching for DN Mobile Application.')"></var>
+        </div>
+    </article>
+
+    <aside id="flexAside"></aside>
+</main>
+
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel"></div>
+</footer>

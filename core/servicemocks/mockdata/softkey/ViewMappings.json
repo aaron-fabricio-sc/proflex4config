@@ -1,0 +1,1316 @@
+{
+  "AccountDetailedSelection" : {
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "AccountInformationDisplayQuestion" : "(#Question#)",
+  "AccountInformationOverview" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "0",
+      "PRINT" : "[&VAR_PRINTER_VIEWSTATE_S;;0&]"
+    },
+    "config" : {
+      "AINType" : "AINStd"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "accountinformation"
+  },
+  "AccountNoAccountAvailableInfo" : "(#Message#)",
+  "AccountNumberInput" : "(#IdInput#)",
+  "AccountOnlyOneAccountAvailableInfo" : "(#Message#)",
+  "AccountPreferenceCompleteInfo" : "(#Message#)",
+  "AccountPreferenceConfirmation" : "(#Question#)",
+  "AccountPreferenceFailedInfo" : "(#Message#)",
+  "AccountSelection" : {
+    "commandconfig" : {
+      "ACCOUNT_PRINT" : "VAR_ACCOUNT_PRINT_VIEWSTATE_S"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "accountselection"
+  },
+  "AccountSplittingResultInfo" : "(#Message#)",
+  "AdaAdjustmentSelection" : {
+    "config" : {
+      "rateMax" : "5",
+      "rateMin" : "-5",
+      "rateStepSize" : "1",
+      "volumeMax" : "7",
+      "volumeMin" : "0",
+      "volumeStepSize" : "1"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "adaadjustment"
+  },
+  "AdaHideScreenQuestion" : "(#Question#)",
+  "AdaShowTutorialQuestion" : "(#Question#)",
+  "AdaStartWait" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "timeout" : "(#ImmediateTimeout#)",
+    "url" : "pleasewait"
+  },
+  "AdaTutorialInfo" : {
+    "timeout" : "(#AdaTutorialInfoTimeout#)",
+    "url" : "adainformation"
+  },
+  "AssistanceCancelledInfo" : "(#Message#)",
+  "AssistanceCheckCashingApprovalInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "0"
+    },
+    "popup" : {
+      "oncancel" : "false",
+      "ontimeout" : "false"
+    },
+    "reload" : [ "CCHPFW_PROP_POLLING_STATUS" ],
+    "resultMapping" : {
+      "3" : "0"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "pleasewait"
+  },
+  "AssistanceCheckCashingProcessedInfo" : "(#Message#)",
+  "AssistanceCheckCashingProcessedInfoWithChanges" : "(#Message#)",
+  "AssistanceDepositChequesApprovalInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "0"
+    },
+    "popup" : {
+      "oncancel" : "false",
+      "ontimeout" : "false"
+    },
+    "reload" : [ "CCHPFW_PROP_POLLING_STATUS" ],
+    "resultMapping" : {
+      "3" : "0"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "pleasewait"
+  },
+  "AssistanceDepositChequesProcessedInfo" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "timeout" : "(#ConfirmationTimeout#)",
+    "url" : "message.html"
+  },
+  "AssistanceDepositChequesProcessedInfoWithChanges" : "(#Message#)",
+  "AssistanceLimitApprovalInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "0"
+    },
+    "popup" : {
+      "oncancel" : "false",
+      "ontimeout" : "false"
+    },
+    "reload" : [ "CCHPFW_PROP_POLLING_STATUS" ],
+    "resultMapping" : {
+      "2" : "0",
+      "3" : "0"
+    },
+    "timeout" : "(#AssistanceInfoTimeout#)",
+    "url" : "pleasewait"
+  },
+  "AssistanceSupportInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "0"
+    },
+    "popup" : {
+      "oncancel" : "false",
+      "ontimeout" : "false"
+    },
+    "reload" : [ "CCHPFW_PROP_POLLING_STATUS" ],
+    "resultMapping" : {
+      "2" : "0",
+      "3" : "0"
+    },
+    "timeout" : "(#AssistanceInfoTimeout#)",
+    "url" : "pleasewait"
+  },
+  "AssistanceTimeoutInfo" : "(#Message#)",
+  "BalanceInquiryInfo" : {
+    "timeout" : "(#InputTimeout#)",
+    "url" : "message"
+  },
+  "BarcodeNumberInput" : "(#IdInput#)",
+  "BarcodeScan" : {
+    "commandconfig" : {
+      "CANCEL" : "0"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "scancodeanimations"
+  },
+  "BillPaymentAmountInput" : "(#AmountInputDecimal#)",
+  "BillPaymentBillReferenceNumberInput" : "(#NumericInput#)",
+  "BillPaymentCompleteInfo" : "(#Message#)",
+  "BillPaymentConfirmation" : "(#Question#)",
+  "BillPaymentDataConfirmation" : "(#Question#)",
+  "BillPaymentFormInput" : {
+    "items" : {
+      "inputFields" : [ {
+        "id" : "Payee_ID",
+        "type" : "text",
+        "mandatory" : "true",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "3",
+        "maxLen" : "27",
+        "forbiddenPattern" : "^\\s+$",
+        "value" : "[&CCTAFW_PROP_CUSTOMER_INPUT_VARIABLE[53];;&]"
+      }, {
+        "id" : "Payee_name",
+        "type" : "text",
+        "mandatory" : "false",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "3",
+        "maxLen" : "27",
+        "forbiddenPattern" : "^\\s+$",
+        "value" : "[&CCTAFW_PROP_CUSTOMER_INPUT_VARIABLE[54];;&]"
+      }, {
+        "id" : "Bill_reference_number",
+        "type" : "text",
+        "mandatory" : "true",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "1",
+        "maxLen" : "18",
+        "forbiddenPattern" : "^\\s+$",
+        "value" : "[&CCTAFW_PROP_CUSTOMER_INPUT_VARIABLE[55];;&]"
+      }, {
+        "id" : "Amount",
+        "type" : "amount",
+        "mandatory" : "true",
+        "formatOption" : "#M",
+        "clearByCorrect" : "true",
+        "minValue" : "[&CCTAFW_PROP_MIN_AMOUNT_ACT;;0&]",
+        "maxValue" : "[&CCTAFW_PROP_MAX_AMOUNT_ACT;;0&]",
+        "multiplier" : "1",
+        "allowLeadingZero" : "false",
+        "decimal" : "true",
+        "value" : "[&CCTAFW_PROP_TRANSACTION_AMOUNT;;&]"
+      }, {
+        "id" : "CustomerNo",
+        "type" : "number",
+        "mandatory" : "true",
+        "clearByCorrect" : "true"
+      }, {
+        "id" : "InvoiceNo",
+        "type" : "number",
+        "mandatory" : "true",
+        "clearByCorrect" : "true"
+      }, {
+        "id" : "Month",
+        "type" : "number",
+        "mandatory" : "true",
+        "clearByCorrect" : "true"
+      }, {
+        "id" : "PhoneNumber",
+        "type" : "number",
+        "mandatory" : "true",
+        "clearByCorrect" : "true"
+      } ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "formentry"
+  },
+  "BillPaymentPayeeSelection" : {
+    "timeout" : "(#InputTimeout#)",
+    "url" : "billpaymentselection"
+  },
+  "BillPaymentPaymentCategorySelection" : "(#Selection#)",
+  "BillPaymentPreparePayeeSelectionWait" : "(#WaitSpin#)",
+  "BleConfirmationMessage" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "mobiletransaction"
+  },
+  "CardAdminCardInfo" : "(#Message#)",
+  "CardEjectFailedInfo" : "(#Message#)",
+  "CardInsertion" : {
+    "commandconfig" : {
+      "CARDLESS" : "VAR_CARDLESS_VIEWSTATE_S",
+      "REQUEST_SUPPORT" : "VAR_REQUEST_SUPPORT_VIEWSTATE_S"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "cardanimations"
+  },
+  "CardInvalidInfo" : "(#Message#)",
+  "CardJamInfo" : "(#Message#)",
+  "CardNotReadableInfo" : "(#Message#)",
+  "CardPresentation" : {
+    "commandconfig" : {
+      "CANCEL" : "3"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "cardanimations"
+  },
+  "CardReaderNotOperationalInfo" : "(#Message#)",
+  "CardRetainInfo" : "(#Message#)",
+  "CardTimeoutInfo" : "(#Message#)",
+  "CardlessDualIdentificationSelection" : {
+    "group_0" : {
+      "items" : [ {
+        "id" : "TRANSACTION_CODE",
+        "exclusive" : "true"
+      } ]
+    },
+    "group_1" : {
+      "items" : [ {
+        "id" : "ID_CARD",
+        "exclusive" : "true"
+      } ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "dualchoiceselection.html"
+  },
+  "CardlessIdEntry" : {
+    "items" : {
+      "inputFields" : [ {
+        "id" : "SSN",
+        "type" : "[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_INPUT_TYPE;;&]",
+        "mandatory" : "true",
+        "formatOption" : "#[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_OPTION;;&]",
+        "clearByCorrect" : "false",
+        "minLen" : "9",
+        "maxLen" : "9",
+        "multiplier" : "1",
+        "allowLeadingZero" : "true",
+        "forbiddenPattern" : "^\\s+$"
+      }, {
+        "id" : "Account",
+        "type" : "[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_INPUT_TYPE;;&]",
+        "mandatory" : "true",
+        "formatOption" : "#[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_OPTION;;&]",
+        "clearByCorrect" : "false",
+        "minLen" : "10",
+        "maxLen" : "10",
+        "multiplier" : "1",
+        "allowLeadingZero" : "true",
+        "forbiddenPattern" : "^\\s+$"
+      }, {
+        "id" : "Passport",
+        "type" : "[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_INPUT_TYPE;;&]",
+        "mandatory" : "true",
+        "formatOption" : "#[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_OPTION;;&]",
+        "clearByCorrect" : "false",
+        "minLen" : "8",
+        "maxLen" : "12",
+        "multiplier" : "1",
+        "allowLeadingZero" : "true",
+        "forbiddenPattern" : "^\\s+$"
+      }, {
+        "id" : "DriversLicense",
+        "type" : "[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_INPUT_TYPE;;&]",
+        "mandatory" : "true",
+        "formatOption" : "#[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_OPTION;;&]",
+        "clearByCorrect" : "false",
+        "minLen" : "12",
+        "maxLen" : "12",
+        "multiplier" : "1",
+        "allowLeadingZero" : "true",
+        "forbiddenPattern" : "^\\s+$"
+      }, {
+        "id" : "[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_OPTION;;&]",
+        "type" : "[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_INPUT_TYPE;;&]",
+        "mandatory" : "true",
+        "formatOption" : "#[&CCTAFW_PROP_CARDLESS_IDENTIFICATION_OPTION;;&]",
+        "clearByCorrect" : "false",
+        "minLen" : "1",
+        "maxLen" : "30",
+        "forbiddenPattern" : "^\\s+$"
+      } ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "formentry"
+  },
+  "CardlessIdentificationSelection" : "(#Selection#)",
+  "ChequeCashingAlternativeAmountDispensable" : "(#Message#)",
+  "ChequeCashingNotDispensable" : "(#Message#)",
+  "ChequeCashingSummaryResult" : {
+    "commandconfig" : {
+      "YES" : "[&VAR_TRANSFERCHEQUE_VIEWSTATE_S;;3&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "ClearPreferencesCompleteInfo" : "(#Message#)",
+  "ClearPreferencesConfirmation" : "(#Question#)",
+  "ClearPreferencesFailedInfo" : "(#Message#)",
+  "ClearPreferencesMultipleChoiceSelection" : {
+    "config" : {
+      "allowConfirmWithoutSelection" : "false"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "checkboxes"
+  },
+  "ContinueTransactionQuestion" : "(#Question#)",
+  "CustomIdBICInput" : "(#IdInput#)",
+  "CustomIdIBANInput" : "(#IdInput#)",
+  "DccQuestion" : "(#Question#)",
+  "DepositChequesAmountTooHighInfo" : "(#Message#)",
+  "DepositChequesAmountTooLowInfo" : "(#Message#)",
+  "DepositChequesAmountTooLowMoreEntryInfo" : "(#Message#)",
+  "DepositChequesAnotherBundleQuestion" : "(#Question#)",
+  "DepositChequesChangeAmountInput" : {
+    "config" : {
+      "decimal" : "true",
+      "preValue" : "[&CCTAFW_PROP_UI_INPUT_FIELD_CONTENT_FORMATTED[0];;&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "amountentry"
+  },
+  "DepositChequesChangeNotDispensableInfo" : "(#Message#)",
+  "DepositChequesEjectWait" : {
+    "commandconfig" : {
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesFlushOnErrorWait" : {
+    "commandconfig" : {
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesFlushingWait" : {
+    "commandconfig" : {
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesHardwareErrorInfo" : "(#Message#)",
+  "DepositChequesInputNotEmptyInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "3",
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "timeout" : "(#MessageTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesMediaInInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesOutputNotEmptyInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "3",
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "timeout" : "(#MessageTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesPleaseWait" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesPresentMediaInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "3",
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesReadingChequesWait" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositchequesanimations"
+  },
+  "DepositChequesResult" : {
+    "commandconfig" : {
+      "CANCEL" : "0"
+    },
+    "config" : {
+      "checkForAcceptOneCheque" : "false"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "depositchequesresult"
+  },
+  "DepositChequesRetractWait" : "(#Wait#)",
+  "DepositChequesRetractedInfo" : "(#Message#)",
+  "DepositChequesSummaryResult" : {
+    "commandconfig" : {
+      "YES" : "[&VAR_TRANSFERCHEQUE_VIEWSTATE_S;;3&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "DepositCoinsCloseTrayWait" : "(#Wait#)",
+  "DepositCoinsDeviceErrorInfo" : "(#Message#)",
+  "DepositCoinsForcedDepositInfo" : "(#Message#)",
+  "DepositCoinsInsertion" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;0",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;3"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_COIN_INSERT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositCoinsInsertionConfirmation" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;3",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_COIN_INSERT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositCoinsProcessingFailedInfo" : "(#Message#)",
+  "DepositCoinsProcessingWait" : "(#Wait#)",
+  "DepositCoinsRemoval" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;3",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_COIN_PRESENT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositCoinsRollback" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;3",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;3"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositanimations"
+  },
+  "DepositCoinsShutterBlockedInfo" : "(#Message#)",
+  "DepositCoinsShutterNotClosedInfo" : "(#Message#)",
+  "DepositCoinsShutterOpenInfo" : "(#Message#)",
+  "DepositEnvelopeAmountConfirmation" : "(#Question#)",
+  "DepositEnvelopeAmountInput" : "(#AmountInputDecimal#)",
+  "DepositEnvelopeContinueWithoutDispenseQuestion" : "(#Question#)",
+  "DepositEnvelopeDispenseFailedInfo" : "(#Message#)",
+  "DepositEnvelopeDispenseQuestion" : "(#Question#)",
+  "DepositEnvelopeDispenseWait" : "(#WaitSpin#)",
+  "DepositEnvelopeDocumentTypeSelection" : "(#Selection#)",
+  "DepositEnvelopeInsertion" : {
+    "commandconfig" : {
+      "CANCEL" : "3"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositenvelopeanimations"
+  },
+  "DepositEnvelopeInsertionCompleteInfo" : "(#Message#)",
+  "DepositEnvelopeInsertionFailedInfo" : "(#Message#)",
+  "DepositEnvelopeInsertionTimeoutInfo" : "(#Message#)",
+  "DepositEnvelopePresentation" : {
+    "commandconfig" : {
+      "CANCEL" : "3"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositenvelopeanimations"
+  },
+  "DepositEnvelopeRetractInfo" : "(#Message#)",
+  "DepositLimitCapacityProblemInfo" : "(#Message#)",
+  "DepositLimitCeilingAutoCashinInfo" : "(#Message#)",
+  "DepositLimitCeilingInfo" : "(#Message#)",
+  "DepositLimitCurrencyProblemInfo" : "(#Message#)",
+  "DepositLimitFloorQuestion" : "(#Question#)",
+  "DepositMixedMediaSummaryResult" : {
+    "commandconfig" : {
+      "NO" : "[&VAR_CONFIRM_DEPOSIT_VIEWSTATE_S;;3&]",
+      "OTHER" : "[&VAR_NOTE_DETAILS_VIEWSTATE_S;;3&]",
+      "YES" : "[&VAR_CHEQUE_DETAILS_VIEWSTATE_S;;3&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "DepositNotesAndCoinsInsertion" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;0",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_INSERT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesInsertion" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;0",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_INSERT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesJamInsertion" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;3",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_INSERT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesJamRemoval" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;0",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesProcessingWait" : "(#Wait#)",
+  "DepositNotesRemovalIO" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;2",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;2"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesRemovalIOMetal" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;2",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;2"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesRemovalInput" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;0",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesRemovalInputMetal" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;0",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesRemovalInputSSF" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;0",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;0"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesRemovalOutput" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;3",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "[&CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT_MS;;&]",
+    "url" : "depositanimations"
+  },
+  "DepositNotesRollback" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;3",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;3"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositanimations"
+  },
+  "DepositPartialDepositAlternativeAmountQuestion" : {
+    "commandconfig" : {
+      "NO" : "[&VAR_HIGHER_PARTIAL_DEPOSIT_AMOUNT_VIEWSTATE_S;;3&]",
+      "OTHER" : "3",
+      "YES" : "[&VAR_LOWER_PARTIAL_DEPOSIT_AMOUNT_VIEWSTATE_S;;3&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "DepositPartialDepositAmountInput" : "(#AmountInputDecimal#)",
+  "DepositPartialDepositFailedInfo" : "(#Message#)",
+  "DepositPartialDepositImpossibleInfo" : "(#Message#)",
+  "DepositResult" : {
+    "commandconfig" : {
+      "CONFIRM_DEPOSIT" : "VAR_CONFIRM_DEPOSIT_VIEWSTATE_S;0",
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S",
+      "INSERTMOREMONEY" : "VAR_INSERTMOREMONEY_VIEWSTATE_S",
+      "PARTIAL_DEPOSIT" : "VAR_PARTIAL_DEPOSIT_VIEWSTATE_S"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "depositresult"
+  },
+  "DepositRetract" : "(#Wait#)",
+  "DepositSelectDepositType" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "NO" : "0",
+      "YES" : "0"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "DepositStorageDeviceFullInfo" : "(#Message#)",
+  "DepositStorageFailedInfo" : "(#Message#)",
+  "DepositStorageProcessingWait" : {
+    "commandconfig" : {
+      "DEPOSIT_CANCEL" : "VAR_DEPOSIT_CANCEL_VIEWSTATE_S;3",
+      "DEPOSIT_CONFIRM" : "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S;3"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "depositanimations"
+  },
+  "DepositTimeoutContinueInfo" : "(#Message#)",
+  "DocumentScanPrepare" : {
+    "commandconfig" : {
+      "ACCEPT" : "0",
+      "CANCEL" : "0",
+      "NEXT_IMAGE" : "3",
+      "SCAN_AGAIN" : "3"
+    },
+    "config" : {
+      "mode" : "prepare"
+    },
+    "timeout" : "(#ConfirmationTimeout#)",
+    "url" : "scannedimageviewer"
+  },
+  "DocumentScanResult" : {
+    "commandconfig" : {
+      "ACCEPT" : "0",
+      "NEXT_IMAGE" : "3"
+    },
+    "config" : {
+      "mode" : "result"
+    },
+    "timeout" : "(#ConfirmationTimeout#)",
+    "url" : "scannedimageviewer"
+  },
+  "DocumentScanning" : {
+    "commandconfig" : {
+      "ACCEPT" : "3",
+      "NEXT_IMAGE" : "3",
+      "SCAN_AGAIN" : "3"
+    },
+    "config" : {
+      "mode" : "scanning"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "scannedimageviewer"
+  },
+  "EmvApplicationReselectionInfo" : "(#Message#)",
+  "EmvApplicationSelection" : {
+    "timeout" : "(#InputTimeout#)",
+    "url" : "emvapplicationselection"
+  },
+  "EmvTransLog" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "0",
+      "PRINT" : "3"
+    },
+    "config" : {
+      "TransLogTableType" : "TransLogStd"
+    },
+    "timeout" : "(#ConfirmationTimeout#)",
+    "url" : "emvtransactions.html"
+  },
+  "EmvTransLogECash" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "0",
+      "PRINT" : "3"
+    },
+    "config" : {
+      "TransLogTableType" : "TransLogECash"
+    },
+    "timeout" : "(#ConfirmationTimeout#)",
+    "url" : "emvtransactions.html"
+  },
+  "FastCashPreferenceAmountInput" : "(#AmountInputNoDecimal#)",
+  "FastCashPreferenceAmountSelection" : "(#AmountSelection#)",
+  "FastCashPreferenceCompleteInfo" : "(#Message#)",
+  "FastCashPreferenceConfirmation" : "(#Question#)",
+  "FastCashPreferenceCurrencySelection" : "(#Selection#)",
+  "FastCashPreferenceFailedInfo" : "(#Message#)",
+  "FccConfirmation" : "(#Question#)",
+  "FeeInfo" : "(#Message#)",
+  "FeeQuestion" : "(#Question#)",
+  "GeneralErrorInfo" : "(#Message#)",
+  "HostAdvertisingInfo" : "(#Message#)",
+  "HostCancelInfo" : "(#Message#)",
+  "HostItemInput" : "(#NumericInput#)",
+  "HostItemQuestion" : "(#Question#)",
+  "HostItemSelection" : "(#Selection#)",
+  "HostResponseInfo" : "(#Message#)",
+  "IdleLoopPresentation" : {
+    "commandconfig" : {
+      "BUTTON_IDLE_LOOP_LEFT" : "VAR_MAIN_VIEWSTATE_S",
+      "BUTTON_IDLE_LOOP_RIGHT" : "VAR_MAIN_VIEWSTATE_S",
+      "CARDLESS" : "VAR_CARDLESS_VIEWSTATE_S",
+      "REQUEST_SUPPORT" : "VAR_REQUEST_SUPPORT_VIEWSTATE_S"
+    },
+    "config" : {
+      "backToDefaultLanguageTimeout" : "120000"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "idlepresentation"
+  },
+  "ImageValidationInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "0"
+    },
+    "reload" : [ "CCHPFW_PROP_POLLING_STATUS" ],
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "pleasewait"
+  },
+  "ImageValidationRescanInfo" : "(#Message#)",
+  "LanguagePreferenceCompleteInfo" : "(#Message#)",
+  "LanguagePreferenceFailedInfo" : "(#Message#)",
+  "LanguageSelection" : {
+    "timeout" : "(#InputTimeout#)",
+    "url" : "selection"
+  },
+  "LanguageSelectionFailedInfo" : "(#Message#)",
+  "MenuFunctionNotAvailableForCardInfo" : "(#Message#)",
+  "MenuFunctionNotAvailableInfo" : "(#Message#)",
+  "MenuSelection" : {
+    "commandconfig" : {
+      "PINAUTH" : "3"
+    },
+    "priorities" : {
+      "extendedpriorities" : "CCTAFW_PROP_MENU_PREFERENCE",
+      "itemgaps" : "false",
+      "order" : [ "COUTFAST" ],
+      "prominent" : [ "COUTFAST=prominentItem", "BAL=prominentItem", "WITHDRAW_OPTIONS=subMenuItem", "DEPOSIT_OPTIONS=subMenuItem", "ACCOUNT_OVERVIEWS=subMenuItem", "TRANSFER_OPTIONS=subMenuItem", "ACCOUNT_SERVICES=subMenuItem", "CUSTOMIZE_OPTIONS=subMenuItem" ],
+      "submenus" : [ {
+        "WITHDRAW_OPTIONS" : [ "COUT", "COINOUT", "COUTMIXED", "VOUCHER" ]
+      }, {
+        "DEPOSIT_OPTIONS" : [ "CIN", "COININ", "CINMIXED", "CHCCDM", "MIXEDMEDIA", "CHQCASH", "ENV" ]
+      }, {
+        "ACCOUNT_OVERVIEWS" : [ "AIN", "BAL", "STPM", "STP" ]
+      }, {
+        "TRANSFER_OPTIONS" : [ "BILLPAY", "PREPAID", "TRA" ]
+      }, {
+        "ACCOUNT_SERVICES" : [ "ORDCASH", "ORDCHQ", "ORDCURR", "ORDPOST" ]
+      }, {
+        "CUSTOMIZE_OPTIONS" : [ "ACCOUNTCHG", "CLEARPREFCHG", "FCCHG", "LANGCHG", "MENUCHG", "RECCHG", "PINCHG", "PINUNLOCK" ]
+      } ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "selection"
+  },
+  "MultiAccountSelection" : {
+    "config" : {
+      "allowConfirmWithoutSelection" : "false",
+      "maxSelection" : "2",
+      "minSelection" : "2"
+    },
+    "items" : {
+      "inputFields" : [ {
+        "id" : "EMAIL",
+        "editable" : "true",
+        "type" : "email",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "3",
+        "maxLen" : "27"
+      }, {
+        "id" : "TWITTER",
+        "editable" : "true",
+        "type" : "text",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "3",
+        "maxLen" : "27"
+      }, {
+        "id" : "TEXTMESSAGE",
+        "editable" : "true",
+        "type" : "number",
+        "mandatory" : "0",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "5",
+        "maxLen" : "15",
+        "multiplier" : "1",
+        "allowLeadingZero" : "true"
+      }, {
+        "id" : "FACEBOOK",
+        "editable" : "true",
+        "type" : "text",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "3",
+        "maxLen" : "27"
+      } ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "checkboxes"
+  },
+  "OrderAmountInput" : "(#AmountInputNoDecimal#)",
+  "OrderAmountSelection" : "(#AmountSelection#)",
+  "OrderCashConfirmation" : "(#Question#)",
+  "OrderCashFailedInfo" : "(#Message#)",
+  "OrderChequesConfirmation" : "(#Question#)",
+  "OrderChequesFailedInfo" : "(#Message#)",
+  "OrderCompleteInfo" : "(#Message#)",
+  "OrderCurrenciesConfirmation" : "(#Question#)",
+  "OrderCurrenciesCurrencySelection" : "(#Selection#)",
+  "OrderCurrenciesFailedInfo" : "(#Message#)",
+  "OrderPostalStatementConfirmation" : "(#Question#)",
+  "OrderPostalStatementsFailedInfo" : "(#Message#)",
+  "OrderShippingQuestion" : "(#Question#)",
+  "OrderUnitInput" : "(#NumericInput#)",
+  "OrderUnitSelection" : "(#Selection#)",
+  "OutOfServiceAtmInfos" : {
+    "config" : {
+      "allowMapLocations" : "true",
+      "zoomToExtent" : [ 959820.123955838, 6752779.1633845335, 986719.4319369645, 6752834.6516561555 ]
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "outofserviceadditionalinfos.html"
+  },
+  "OutOfServiceInfo" : {
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "outofservice"
+  },
+  "PaymentAccountingQuestion" : "(#Question#)",
+  "PaymentChangeIncompleteQuestion" : "(#Question#)",
+  "PaymentChangeNotPossibleInfo" : "(#Message#)",
+  "PaymentChangeNotPossibleQuestion" : "(#Question#)",
+  "PaymentErrorInfo" : "(#Message#)",
+  "PaymentPayOutAccountingQuestion" : "(#Question#)",
+  "PaymentUnderpaidInfo" : "(#Message#)",
+  "PayoutFallbackInfo" : "(#Message#)",
+  "PceAccountInformationOverview" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "0",
+      "PRINT" : "0"
+    },
+    "config" : {
+      "AINType" : "AINPcemov"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "accountinformation"
+  },
+  "PceBalanceInquiryInfo" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "0",
+      "PRINT" : "0"
+    },
+    "config" : {
+      "AINType" : "AINPcebal"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "accountinformation"
+  },
+  "PinChangeCompleteInfo" : "(#Message#)",
+  "PinChangeFailedInfo" : "(#Message#)",
+  "PinChangePinConfirmation" : "(#PinInput#)",
+  "PinChangePinEntry" : "(#PinInput#)",
+  "PinChangeRetryQuestion" : "(#Question#)",
+  "PinEntry" : "(#PinInput#)",
+  "PinInvalidInfo" : "(#Message#)",
+  "PinTryLimitReachedInfo" : "(#Message#)",
+  "PinUnlockCompleteInfo" : "(#Message#)",
+  "PinUnlockFailedInfo" : "(#Message#)",
+  "PinUnlockProcessedInfo" : "(#MessageAsync#)",
+  "PleaseWait" : "(#WaitSpin#)",
+  "PrepaidAlternativeAmountInput" : "(#AmountInputNoDecimal#)",
+  "PrepaidAmountConfirmation" : "(#Question#)",
+  "PrepaidAmountSelection" : "(#AmountSelection#)",
+  "PrepaidChargingNumberReceiptQuestion" : {
+    "commandconfig" : {
+      "CANCEL" : "3",
+      "YES" : "[&VAR_PREPAID_PRINT_VIEWSTATE_S;;3&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "PrepaidCompleteInfo" : "(#Message#)",
+  "PrepaidMinuteConfirmation" : "(#Question#)",
+  "PrepaidMinuteSelection" : "(#Selection#)",
+  "PrepaidOutOfLimitsInfo" : "(#Message#)",
+  "PrepaidPhoneNumberConfirmationInput" : "(#PhoneNumberInput#)",
+  "PrepaidPhoneNumberInput" : "(#PhoneNumberInput#)",
+  "PrepaidPhoneNumberInvalidInfo" : "(#Message#)",
+  "PrepaidProviderSelection" : {
+    "timeout" : "(#InputTimeout#)",
+    "url" : "prepaidproviderselection"
+  },
+  "PrestagedDepositConfirmation" : "(#Question#)",
+  "PrestagedDepositFailedInfo" : "(#Message#)",
+  "PrestagedDepositSplitConfirmation" : "(#Question#)",
+  "PrestagedInitializationFailedInfo" : "(#Message#)",
+  "PrestagedLowerAmountQuestion" : "(#Question#)",
+  "PrestagedSecureCodeInput" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "0"
+    },
+    "config" : {
+      "allowLeadingZero" : "true",
+      "clearByCorrect" : "true",
+      "formatOption" : "#X*",
+      "maxLen" : "4",
+      "minLen" : "4",
+      "showLastInputOnSecure" : "true"
+    },
+    "privateInput" : "true",
+    "timeout" : "(#InputTimeout#)",
+    "url" : "numericentry"
+  },
+  "PrestagedTransactionCodeInput" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "0"
+    },
+    "config" : {
+      "allowLeadingZero" : "true",
+      "clearByCorrect" : "true",
+      "decimal" : "false",
+      "maxLen" : "4",
+      "minLen" : "4",
+      "showLastInputOnSecure" : "true"
+    },
+    "privateInput" : "true",
+    "timeout" : "(#InputTimeout#)",
+    "url" : "numericentry"
+  },
+  "PrestagedTransactionConfirmation" : "(#Question#)",
+  "PrestagedWithdrawalConfirmation" : "(#Question#)",
+  "PrestagedWithdrawalFailedInfo" : "(#Message#)",
+  "ReceiptCopyQuestion" : "(#Question#)",
+  "ReceiptInfo" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "receipt"
+  },
+  "ReceiptPreferenceCompleteInfo" : "(#Message#)",
+  "ReceiptPreferenceConfirmation" : "(#Question#)",
+  "ReceiptPreferenceMultipleChoiceSelection" : {
+    "config" : {
+      "allowConfirmWithoutSelection" : "false"
+    },
+    "items" : {
+      "inputFields" : [ {
+        "id" : "EMAIL",
+        "editable" : "true",
+        "type" : "email",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "3",
+        "maxLen" : "27"
+      }, {
+        "id" : "TWITTER",
+        "editable" : "true",
+        "type" : "text",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "3",
+        "maxLen" : "27"
+      }, {
+        "id" : "TEXTMESSAGE",
+        "editable" : "true",
+        "type" : "number",
+        "mandatory" : "0",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "5",
+        "maxLen" : "15",
+        "multiplier" : "1",
+        "allowLeadingZero" : "true"
+      }, {
+        "id" : "FACEBOOK",
+        "editable" : "true",
+        "type" : "text",
+        "formatOption" : "NONE",
+        "clearByCorrect" : "true",
+        "minLen" : "3",
+        "maxLen" : "27"
+      } ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "checkboxes"
+  },
+  "ReceiptPreferenceSelection" : {
+    "priorities" : {
+      "prominent" : [ "[&CCTAFW_PROP_RECEIPT_PREFERENCE;;OTHER&]=prominentItem" ],
+      "staticpos" : [ "OTHER=8" ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "selection"
+  },
+  "ReceiptPreferenceSelectionFailedInfo" : "(#Message#)",
+  "ReceiptPresentation" : "(#PrinterAnimations#)",
+  "ReceiptProcessWithPrinterErrorQuestion" : "(#Question#)",
+  "ReceiptQuestion" : "(#Question#)",
+  "ReceiptSendPresentation" : {
+    "commandconfig" : {
+      "CANCEL" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "timeout" : "(#MessageTimeout#)",
+    "url" : "printeranimations"
+  },
+  "SessionBasedReceiptPresentation" : "(#PrinterAnimations#)",
+  "SessionBasedReceiptQuestion" : "(#QuestionOther#)",
+  "SessionEndInfo" : "(#Message#)",
+  "SignatureInputTouch" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "2",
+      "CORRECT" : "0"
+    },
+    "config" : {
+      "mode" : "drawing"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "signaturepad"
+  },
+  "SignatureRequest" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "3",
+      "CORRECT" : "3"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "signaturepad"
+  },
+  "SignatureScanResult" : {
+    "commandconfig" : {
+      "ACCEPT" : "0",
+      "CONFIRM" : "3",
+      "NEXT_IMAGE" : "3",
+      "SCAN_AGAIN" : "0"
+    },
+    "config" : {
+      "mode" : "result"
+    },
+    "timeout" : "(#ConfirmationTimeout#)",
+    "url" : "scannedimageviewer"
+  },
+  "StatementPresentation" : "(#PrinterAnimations#)",
+  "StatementPrintPrintingStatementWait" : "(#Wait#)",
+  "StatementPrintRetainStatementInfo" : "(#Message#)",
+  "StoreTransactionSettingsFailedInfo" : "(#Message#)",
+  "StoreTransactionSettingsQuestion" : "(#Question#)",
+  "StoreTransactionSettingsSuccessInfo" : "(#Message#)",
+  "SuspendApplicationInfo" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#SuspendApplicationInfoTimeout#)",
+    "url" : "outofservice"
+  },
+  "TransactionEndWait" : {
+    "config" : {
+      "autoUpdateOnLanguageChange" : "false"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "pleasewait"
+  },
+  "TransferAmountConfirmation" : "(#Question#)",
+  "TransferAmountInput" : "(#AmountInputDecimal#)",
+  "TransferCompleteInfo" : "(#Message#)",
+  "TwoStepATMValidationInfo" : {
+    "commandconfig" : {
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "beepontimeout" : "false",
+      "beepontimeoutperiod" : "0",
+      "oncancel" : "false",
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#ConfirmationTimeout#)",
+    "url" : "message"
+  },
+  "ValueItemAlternativeAmountConfirmation" : "(#Question#)",
+  "ValueItemAlternativeAmountInput" : {
+    "config" : {
+      "allowLeadingZero" : "false",
+      "maxAmount" : "10",
+      "maxLen" : "2",
+      "minAmount" : "1",
+      "minLen" : "1"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "numericentry"
+  },
+  "ValueItemAmountSelection" : "(#Selection#)",
+  "ValueItemDispenseFailedInfo" : "(#Message#)",
+  "ValueItemNoAlternativeAmountsInfo" : "(#Message#)",
+  "VideoConnectionBackground" : {
+    "commandconfig" : {
+      "CANCEL" : "0"
+    },
+    "popup" : {
+      "oncancel" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "videoassistance"
+  },
+  "VideoSessionCancelledInfo" : "(#Message#)",
+  "VideoSessionStartQuestion" : "(#Question#)",
+  "WithdrawalAlternativeAmountConfirmation" : {
+    "commandconfig" : {
+      "OTHER" : "[&VAR_MIXTURE_SELECTION_VIEWSTATE_S;;3&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "WithdrawalAlternativeAmountInput" : "(#WithdrawalAmountInput#)",
+  "WithdrawalAlternativeAmountSelection" : "(#AmountSelection#)",
+  "WithdrawalAmountSelection" : "(#AmountSelection#)",
+  "WithdrawalAmountSelectionErrorInfo" : "(#Message#)",
+  "WithdrawalAmountSelectionFailedInfo" : "(#Message#)",
+  "WithdrawalCoinsAndReceiptPresentation" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "timeout" : "(#MessageTimeout#)",
+    "url" : "withdrawalanimations"
+  },
+  "WithdrawalCoinsDispensing" : "(#MessageAsync#)",
+  "WithdrawalCoinsErrorBeforeCoinsInfo" : "(#Message#)",
+  "WithdrawalCoinsPartialCoinAndReceiptPresentation" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "timeout" : "(#MessageTimeout#)",
+    "url" : "withdrawalanimations"
+  },
+  "WithdrawalCurrencySelection" : "(#Selection#)",
+  "WithdrawalMixtureSelection" : {
+    "commandconfig" : {
+      "CANCEL" : "0",
+      "CONFIRM" : "0"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "billselection"
+  },
+  "WithdrawalMultiBundleContinueQuestion" : "(#Question#)",
+  "WithdrawalMultiBundleNotesAndCoinsPresentation" : {
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "withdrawalanimations"
+  },
+  "WithdrawalMultiBundleNotesPresentation" : {
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "withdrawalanimations"
+  },
+  "WithdrawalMultiBundleRejectInformation" : "(#Message#)",
+  "WithdrawalMultiBundleRetractInformation" : "(#Message#)",
+  "WithdrawalNoAlternativeAmountsInfo" : "(#Message#)",
+  "WithdrawalNotesAndCoinsAndReceiptPresentation" : {
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "withdrawalanimations"
+  },
+  "WithdrawalNotesAndPartialCoinsAndReceiptPresentation" : {
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "withdrawalanimations"
+  },
+  "WithdrawalNotesAndReceiptPresentation" : {
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "withdrawalanimations"
+  },
+  "WithdrawalNotesDenomAlgoSelection" : "(#Selection#)",
+  "WithdrawalNotesDispenseInfo" : "(#MessageAsync#)",
+  "WithdrawalNotesErrorBeforeNotesInfo" : "(#Message#)",
+  "WithdrawalNotesInvalidFastCashInfo" : "(#Message#)",
+  "WithdrawalNotesNoFastCashFallbackInfo" : "(#Message#)",
+  "WithdrawalNotesRejectInfo" : "(#Message#)",
+  "WithdrawalNotesRemovalInfo" : "(#MessageAsync#)",
+  "WithdrawalNotesRetractInfo" : "(#Message#)",
+  "WithdrawalResubmitConfirmation" : {
+    "commandconfig" : {
+      "NO" : "[&VAR_LIMIT_APPROVAL_VIEWSTATE_S;;3&]",
+      "OTHER" : "0"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "WithdrawalResubmitFailedInfo" : "(#Message#)",
+  "WithdrawalResubmitInfo" : "(#Message#)"
+}

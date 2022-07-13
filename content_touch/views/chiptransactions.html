@@ -1,0 +1,107 @@
+<!--
+$MOD$ chiptransactions.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<!-- Main -->
+<main id="flexMain">
+
+    <!-- Nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- Article -->
+    <article id="flexArticle">
+
+        <!-- Account transaction area -->
+        <div id="flexChipTransactionsArea">
+
+            <!-- Transaction header -->
+            <div id="flexChipTransactionsHeader">
+                <div id="rowChipTransactionsHeader">
+                    <var id="transHeadChipDateLabel" class="color03 font02"
+                         data-bind="command: {id: 'dateLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Date', 'Date'), inplace: true}}">
+                    </var>
+                    <var id="transHeadChipTimeLabel" class="color03 font02"
+                         data-bind="command: {id: 'timeLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Time', 'Time'), inplace: true}}">
+                    </var>
+                    <var id="transHeadChipAmountLabel" class="color03 font02"
+                         data-bind="command: {id: 'amountLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Amount', 'Amount'), inplace: true}}">
+                    </var>
+                    <var id="transHeadChipBalanceLabel" class="color03 font02"
+                         data-bind="command: {id: 'balanceLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Balance', 'New Balance'), inplace: true}}">
+                    </var>
+                    <var id="transHeadChipStateLabel" class="color03 font02"
+                         data-bind="command: {id: 'stateLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_State', 'State'), inplace: true}}">
+                    </var>
+                </div>
+            </div>
+
+            <!-- Transaction data -->
+            <div id="listContainer">
+                <div id="flexChipTransactionsDataArea" data-bind="foreach: dataList.items,
+                                                                  gesture: {
+                                                                        options: {
+                                                                            processItemVisibility: true,
+                                                                            sendAutoMovementEvents: true,
+                                                                            lockIfSpace: true
+                                                                        },
+                                                                        grid: 'ChipTransRow',
+                                                                        verticalScrollbarElement: 'flexChipTransactionsDataAreaScrollbar',
+                                                                        gestures: {
+                                                                            Swipe: {
+                                                                                direction: 'DIRECTION_VERTICAL',
+                                                                                events: ['swipe']
+                                                                            },
+                                                                            Pan: {
+                                                                                direction:'DIRECTION_VERTICAL',
+                                                                                events:['panstart','panmove','panend']
+                                                                            }
+                                                                        },
+                                                                        containment: {
+                                                                            element: 'flexChipTransactionsDataArea',
+                                                                            useScrollWidth: false,
+                                                                            useScrollHeight: false
+                                                                        }
+                                                                  }">
+                        <div class="chipTransaction listRow ChipTransRow" >
+                            <div class="rowChipTransData">
+                               <var class="chipDateValue color03 font02" data-bind="text: $data.transDate"></var>
+                               <var class="chipTimeValue color03 font02" data-bind="text: $data.transTime"></var>
+                               <var data-bind="text: ($data.transSign == 'H' || $data.transSign == '+' ? '+ ' + $data.transAmount : '- ' + $data.transAmount), attr: { class: ($data.transSign == 'H' || $data.transSign == '+' ? 'chipAmountValue color06 font02' : 'chipAmountValue color08 font02') }"></var>
+                               <var class="chipBalanceValue color06 font02" data-bind="text: $data.transNewBalance"> </var>
+                               <var class="chipStateValue color03 font02" data-bind="text: $data.transState"></var>
+                            </div>
+                        </div>
+                 </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Aside -->
+    <aside id="flexAside">
+        <div class="buttonZone">
+            <div class="button dialogSmallButton borderDrawing" data-bind=" command: {id: 'BTN_SCROLL_RIGHT', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Next', 'NEXT')} }">
+                <svg data-bind="svguse: { name: 'arrow_right_right.svg' }"></svg>
+            </div>
+        </div>
+
+        <div class="buttonZone">
+            <div class="button dialogSmallButton borderDrawing" data-bind=" command: {id: 'BTN_SCROLL_LEFT', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Back', 'BACK')} }">
+                <svg data-bind="svguse: { name: 'arrow_left_left.svg' }"></svg>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- Footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <!-- Cancel btn -->
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

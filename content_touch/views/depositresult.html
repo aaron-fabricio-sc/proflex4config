@@ -1,0 +1,134 @@
+<!--
+$MOD$ depositresult.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <div id="flexDepositResultTotalAmount" class="font02">
+            <div id="flexDepositResultTotalAmountRow1">
+                <var id="firstRowAmountCaptionArea" class="font01 color01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_TotalAmount', 'Total amount:')"></var>
+                <span id="firstRowAmountCurrencyArea" class="font01 color03" data-bind="html: totalData()[0].currency"></span>
+                <!-- This part shows usage of the 'virtualExtend' custom-binding. The corresponding view-model is extended by
+                an array ('xTotal') containing 2 knockout-observables that later on are used to contain the formatted, mixed text-content for ada totalAmount.
+                Originally this array is not part of the view-model but created at runtime.-->
+                <div id="firstRowAmountSumCaptionArea" data-bind="
+                        virtualExtend: {xTotal: [ko.observable(''), ko.observable('')]},
+                        format: {src: totalData()[0].total, target: $root.xTotal[0], pattern: '#C'}">
+                    <var id="firstRowAmountSumCaption" class="font01 color03" data-bind="text: xTotal[0]"></var>
+                </div>
+            </div>
+            <!-- ko  if: isMixedCurrency -->
+            <div id="flexDepositResultTotalAmountRow2">
+                <var id="secondRowAmountCaptionArea" class="font01 color01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_TotalAmount', 'Total amount:')"></var>
+                <span id="secondRowAmountCurrencyArea" class="font01 color03" data-bind="html: totalData()[1].currency"></span>
+                <div id="secondRowAmountSumCaptionArea" data-bind="format: {src: totalData()[1].total, target: $root.xTotal[1], pattern: '#C'}">
+                    <var id="secondRowAmountSumCaption" class="font01 color03" data-bind="text: xTotal[1]"></var>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div id="listContainer">
+            <div id="flexDepositResultDetails" data-bind="foreach: { data: dataList.items, as: 'item'},
+                                                            gesture: {
+                                                                options: {
+                                                                    processItemVisibility: true,
+                                                                    itemVisibilityTransitions: 'scale',
+                                                                    sendAutoMovementEvents: true
+                                                                },
+                                                                grid: 'flexDepositResultDetailsRow',
+                                                                listElementName: 'flexDepositResultDetailsRow',
+                                                                verticalScrollbarElement: 'depositResultScrollbar',
+
+                                                                gestures: {
+                                                                    Swipe: {
+                                                                        direction: 'DIRECTION_VERTICAL',
+                                                                        events: ['swipe']
+                                                                    },
+                                                                    Pan: {
+                                                                        direction:'DIRECTION_VERTICAL',
+                                                                        events:['panstart','panmove','panend'],
+                                                                        enable: true
+                                                                    }
+                                                                },
+                                                                containment: {
+                                                                    element: 'flexDepositResultDetails',
+                                                                    useScrollWidth: false,
+                                                                    useScrollHeight: false
+                                                                }
+                                                            }">
+                <div class="flexDepositResultDetailsRow listRow" data-row-l2="" data-bind="attr: {'data-row-l2': item.itemInfo.level !== 2 ? 'false' : 'true'}">
+                    <!-- CHECK IF IT'S A NOTE OR COIN -->
+                    <div class="" data-bind="attr: { class: item.itemInfo.type === 0 ? 'note' : 'coin' }">
+                        <!-- ko  if: item.itemInfo.type === 0 -->
+                        <svg data-bind="attr: { 'data-item-value': item.itemInfo.value },
+                                        svguse: { name: item.itemInfo.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                  inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                        <!-- /ko -->
+                        <!-- ko  if: item.itemInfo.type === 1 -->
+                        <svg data-bind="attr: { 'data-item-value': item.itemInfo.value, 'data-currency-iso': item.itemInfo.currency },
+                                        svguse: { name: 'single_coin_generic.svg', inline: true, afterRender: $root.viewHelper.singleCoinSymbol }"></svg>
+                        <!-- /ko -->
+                    </div>
+
+                    <!-- ko  if: item.itemInfo.level !== 2 -->
+                    <var class="crossX color03 font01" data-bind="text: 'X'"></var>
+                    <!-- /ko -->
+
+                    <!-- ko  if: item.itemInfo.level === 2 -->
+                    <div class="crossX">
+                        <svg data-bind="svguse: { name: 'l2_notes.svg' }"></svg>
+                    </div>
+                    <!-- /ko -->
+
+                    <var class="count color03 font01" data-bind="text: item.count"></var>
+                    <var class="equals color03 font01" data-bind="text: '='"></var>
+                    <var class="result color01 font01" data-bind="format: { src: (item.count * item.itemInfo.value), pattern: '#C' }"></var>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <div class="buttonZone">
+            <div class="button dialogSmallButton borderDrawing"
+                 data-bind="command: {id: 'INSERTMOREMONEY', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_InsertMoreMoney', 'Insert more money')}}">
+                <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('INSERTMOREMONEY')"></var>
+            </div>
+        </div>
+        <div class="buttonZone">
+            <div class="button dialogSmallButton borderDrawing"
+                 data-bind="command: {id: 'PARTIAL_DEPOSIT', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_PartialDeposit', 'Partial Deposit')}}">
+                <svg data-bind="svguse: { name: 'partial_deposit.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('PARTIAL_DEPOSIT')"></var>
+            </div>
+        </div>
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button dialogSmallButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM_DEPOSIT', type: CMDTYPE.BUTTON, args: ['CONFIRM_DEPOSIT'], label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_ConfirmDeposit', 'Confirm Deposit')}, eppkey: 'CONFIRM'}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM_DEPOSIT')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                 data-bind="command: {id: 'DEPOSIT_CANCEL', type: CMDTYPE.BUTTON, args: 'CANCEL', label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_CancelDeposit', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('DEPOSIT_CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

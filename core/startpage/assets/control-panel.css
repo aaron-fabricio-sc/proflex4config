@@ -1,0 +1,939 @@
+/*
+$MOD$ control-panel.css 4.3.1-210505-21-c0d9f31f-1a04bc7d
+*/
+
+@import "services.css";
+
+/*override jq-ui*/
+.ui-widget {
+    /*jq-ui theme font's to big*/
+    font-size: 1em;
+}
+
+.ui-widget .ui-widget {
+    /*jq-ui theme font's to big*/
+    font-size: 0.88em;
+}
+
+.ui-tabs .ui-tabs-panel {
+    /*jq-ui prevent from dragging below fieldsets to far down*/
+    padding-bottom: 6px;
+}
+
+/*override select2.css*/
+.select2-container--default .select2-results > .select2-results__options {
+    max-height: 400px;
+}
+
+/*-- Control panel --*/
+body #controlPanelMode {
+    background: #1a1a1a url("images/ProFlex4_UI_background.png") no-repeat top center fixed;
+    background-blend-mode: screen;
+    background-size: 100% 100%;
+    padding: 0;
+    margin-top: -13px;
+    top: 0;
+}
+
+body[data-style-type="MercuryDark"] #controlPanelMode {
+    background: #1a1a1a url("images/ProFlex4_UI_background.png") no-repeat top center fixed;
+    background-blend-mode: screen;
+    background-size: 100% 100%;
+    padding: 0;
+    margin-top: -13px;
+    top: 0;
+}
+
+body[data-style-type="MercuryLight"] #controlPanelMode {
+    background: #cccccc url("theme-light/ProFlex4_UI_background-light.png") no-repeat top center fixed;
+    background-blend-mode: screen;
+    background-size: 100% 100%;
+    padding: 0;
+    margin-top: -13px;
+    top: 0;
+}
+
+#controlPanelMode H1 {
+    padding-top: 10px;
+}
+
+body[data-style-type="MercuryLight"] #controlPanelMode H1 {
+    color: black;
+}
+
+body #controlPanel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*background: #cccccc url("ProFlex4_UI_background.png") no-repeat top center fixed;*/
+    background-blend-mode: screen;
+    background-size: 100% 100%;
+}
+
+body[data-style-type="MercuryDark"] #controlPanel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*background: #cccccc url("ProFlex4_UI_background.png") no-repeat top center fixed;*/
+    background-blend-mode: screen;
+    background-size: 100% 100%;
+}
+
+body[data-style-type="MercuryLight"] #controlPanel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*background: #cccccc url("ProFlex4_UI_background-light.png") no-repeat top center fixed;*/
+    background-blend-mode: screen;
+    background-size: 100% 100%;
+}
+
+@keyframes shake {
+    from, to {
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+#functionHead {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+#toggleFunctions {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #5897fb;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+input[readonly] {
+    opacity: 0.75;
+}
+
+fieldset {
+    margin-bottom: 10px;
+}
+
+/*-- More options --*/
+#styleTypes label {
+    margin: 5px 10px 0 0;
+}
+
+#vendors label {
+    margin: 5px 10px 0 0;
+}
+
+/*wait spinner and layer outline*/
+#waitSpinnerAndLayerOutline {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*-- Properties / Viewkeys area / Event area -- */
+#propertiesPanel, #viewKeysPanel, #eventsPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+#propertiesPanel #propsSelectBoxCheckBoxId {
+    align-self: flex-start;
+}
+
+#propertiesPanel #propertiesView, #viewKeysPanel #viewKeysView, #eventsPanel #eventEmitter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#propertiesView .select2, #viewKeysView .select2, #eventEmitter .select2 {
+    min-width: 100%;
+}
+
+#propertiesView .prop:nth-child(2), #viewKeysView .viewKey:nth-child(2), #eventEmitter .event:nth-child(2) {
+    margin-top: 10px;
+}
+
+#propertiesPanel .prop, #viewKeysPanel .viewKey, #eventsPanel #eventEmitter {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+#propertiesPanel label {
+}
+
+#propertiesPanel span, ul, input {
+    font: 14px/5px Arial, sans-serif;
+}
+
+#viewKeysPanel span, #viewKeysPanel ul, #viewKeysPanel input, #eventsPanel input {
+    font: 15px/4px Arial, sans-serif;
+}
+
+#propertyValueTextArea, #addPropertyValueTextArea, #viewKeyValueTextArea {
+    padding: 5px;
+    margin: 5px;
+    color: black;
+    font: 16px/18px Arial, sans-serif;
+}
+
+#propertyValueTextArea span, #addPropertyValueTextArea span, #viewKeysPanel span {
+    font-weight: bold;
+}
+
+#propertyValueTextArea .string, #addPropertyValueTextArea .string, #viewKeysPanel .string {
+    color: green;
+}
+
+#propertyValueTextArea .number, #addPropertyValueTextArea .number, #viewKeysPanel .number  {
+    color: darkorange;
+}
+
+#propertyValueTextArea .boolean, #addPropertyValueTextArea .boolean, #viewKeysPanel .boolean {
+    color: red;
+}
+
+#propertyValueTextArea .null, #addPropertyValueTextArea .null, #viewKeysPanel .null {
+    color: magenta;
+}
+
+#propertyValueTextArea .key, #addPropertyValueTextArea .key, #viewKeysPanel .key {
+    color: blue;
+}
+
+#propertiesPanel .select2-selection__placeholder,
+#propertiesPanel .select2-selection__rendered,
+#viewKeysPanel .select2-selection__placeholder,
+#viewKeysPanel .select2-selection__rendered,
+#eventsPanel .select2-selection__placeholder,
+#eventsPanel .select2-selection__rendered {
+line-height: 28px;
+}
+
+#propertiesPanel .select2-selection__rendered,
+#viewKeysPanel .select2-selection__rendered,
+#eventsPanel .select2-selection__rendered {
+    color: black;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered,
+.select2-container--classic .select2-selection--single .select2-selection__rendered,
+.select2-container, .select2-selection--single {
+    line-height: 5px;
+}
+
+input::placeholder {
+    opacity: 0.4;
+}
+
+#propertiesSelectBox, #propertyValue, #addPropertyName,
+#viewKeysSelectBox, #viewKeyValue, #eventDataSelectBox {
+    width: 100%;
+}
+
+#propertiesSelectBox {
+}
+
+.propertiesSelectBoxBasicSingle  {
+}
+
+#propertyValue, #addPropertyName, #viewKeyValue {
+    border: 1px solid #aaa;
+    height: 24px;
+}
+
+#propertyValueTextArea, #addPropertyValueTextArea, #viewKeyValueTextArea {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    max-width: 200px;
+    height: 400px;
+    max-height: 630px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: scroll;
+    background: white;
+    font-size: 16px;
+}
+
+#propWatches {
+    margin-top: 30px;
+}
+
+#propWatches .prop {
+    margin-bottom: 15px;
+}
+
+#addProperty {
+    /*background: dimgrey;*/
+    height: 300px;
+    margin-top: -146px;
+    z-index: 2;
+}
+
+#addPropertyNameLabel, #addPropertyValueLabel {
+    margin-top: 10px;
+}
+
+#addPropertyNameList {
+    height: 25px;
+    margin-bottom: 10px;
+    max-width: 548px;
+    user-select: text;
+    font-variant: small-caps;
+    font-size: 0.7em;
+    z-index: 3;
+}
+
+#select2-addPropertyNameList-container {
+    max-width: 500px;
+}
+
+#addPropButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addBtn {
+    align-self: flex-start;
+}
+
+.closeBtn {
+    align-self: flex-end;
+}
+
+/*-- Functions --*/
+#functions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /*flex: 1 1 auto;*/
+    /*width: 100%;*/
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    /*flex: 1 1 auto;*/
+}
+
+#timeoutPresenter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#timeoutPresenter>#countdown {
+    margin-top: 3px;
+}
+
+#moreOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /*flex: 1 1 auto;*/
+    flex-wrap: wrap;
+}
+
+#moreOptions section {
+    margin-top: 5px;
+}
+
+/*-- View info --*/
+#viewInfo {
+    width: 88%;
+    margin-left: 24px;
+    margin-bottom: 10px;
+}
+
+#viewInfoDetails {
+    display: grid;
+    grid-template-columns: [col1] 13% [col2] 82%;
+    grid-gap: 1px 10px;
+    overflow-x: auto;
+}
+
+#viewInfoDetails .col1 {
+    text-align: right;
+}
+
+#viewInfoDetails .col2 {
+    user-select: text;
+    font-variant: small-caps;
+}
+
+/*-- Checkbox --*/
+.controlPanelCheckBox {
+    display: inline-flex;
+}
+
+.controlPanelCheckBox>input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 5px 5px;
+    padding: 0;
+}
+
+.controlPanelCheckBox>input[type="checkbox"]+label {
+    padding: 0 10px 0 5px;
+}
+
+/*-- Viewset switch --*/
+#viewSetFunctions .funcButton {
+    height: 40px;
+    max-width: 158px;
+    font-size: 0.8em;
+}
+
+#viewSetFunctionsContainer {
+    display: flex;
+}
+
+.funcButton {
+    /*jq-ui theme font's to big*/
+    max-width: 158px;
+    font-size: 0.85em !important;
+    overflow: hidden;
+}
+
+.funcButton[disabled] {
+    opacity: 0.5;
+}
+
+.toggleButton {
+    margin-bottom: 10px;
+}
+
+/*-- EPP --*/
+#eppPanel {
+    width: 100%;
+}
+
+#eppClaims {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+}
+
+#eppClaimsLeft, #eppClaimsRight, #eppClaimsMiddle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#eppClaimsRight {
+    margin-right: 20px;
+}
+
+.buttonEpp {
+    display: block;
+    width: 66px;
+    min-width: 40px;
+    max-width: 66px;
+    height: 40px;
+    min-height: 40px;
+    margin-top: 10px;
+    border: #454545;
+    border-radius: 6px;
+    /*box-shadow: 0 0 2px 1px rgba(0,0,0,1);*/
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: center;
+    background: #eee;
+    color: white;
+    /*text-shadow: 1px 1px 0 rgba(0,0,0,0.6);*/
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+}
+
+.buttonEpp:active {
+    background: radial-gradient(ellipse at center, #ffffff 0%, #ffffff 40%, #7f7f7f 100%);
+}
+
+.eppWide {
+    height: 44px;
+    min-width: 138px;
+    max-width: 138px;
+    color: transparent;
+    /*text-shadow: 1px 1px 0 rgba(0,0,0,0.6);*/
+}
+
+.buttonEpp[data-claim-status="ENABLED"] {
+    color: #fff;
+    border: 2px solid #454545;
+    box-shadow: none;
+    /*text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;*/
+    text-shadow: 1px 1px 0px black, 1px 1px 0px #000;
+    font-weight: bold;
+    font-size: 1.4em;
+    filter: saturate(250%);
+}
+
+.buttonEpp[data-claim-status="RELEASED"] {
+    color: grey;
+    background: linear-gradient(180deg, rgba(250,250,250,0) 0%, rgba(40,101,139,0) 100%);
+    border: 1px solid grey;
+    box-shadow: none;
+    transform: none;
+}
+
+.buttonEpp[data-claim-status="RELEASED"]>var {
+    visibility: hidden;
+}
+
+.buttonEpp[data-claim-status="DISABLED"] {
+    background: none;
+    color: transparent;
+    opacity: 0.3;
+    transform: none;
+}
+
+.buttonEpp[data-cmd-status="DISABLED"] {
+    background: none;
+    box-shadow: none;
+    transform: none;
+    border-color: #8b8b8b;
+    text-shadow: none;
+}
+
+#eppClaimsLeft var, #eppClaimsRight var {
+    position: relative;
+    right: 4px;
+    top: -2px;
+}
+
+#eppClaimsNumbersLeft var, #eppClaimsNumbersMiddle var, #eppClaimsNumbersRight var {
+    position: relative;
+    top: -9px;
+    font-size: 1.6em;
+    z-index: 1;
+}
+
+@media (min-width: 690px) {
+    H1 {
+        font-size: 22px;
+    }
+
+    H2 {
+        font-size: 16px;
+    }
+
+    H3 {
+        font-size: 12px;
+    }
+
+    button {
+        min-width: 184px;
+        max-width: 184px;
+        min-height: 60px;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 16px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    #viewInfoDetails>label {
+        font-size: 18px;
+    }
+
+    #viewInfoDetails>var {
+        font-size: 20px;
+    }
+
+    .buttonEpp {
+        width: 90px;
+        min-width: 90px;
+        max-width: 86px;
+        height: 60px;
+        min-height: 60px;
+        margin-top: 20px;
+        font-size: 28px;
+    }
+
+    .eppWide {
+        height: 64px;
+        min-width: 184px;
+        max-width: 184px;
+    }
+}
+
+#cancel[data-cmd-status="DISABLED"]>var, #correct[data-cmd-status="DISABLED"]>var, #confirm[data-cmd-status="DISABLED"]>var, #help[data-cmd-status="DISABLED"]>var {
+    opacity: 0.2;
+}
+
+.buttonEpp[data-cmd-status="HIDDEN"] {
+    background: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.buttonEpp[data-cmd-status="HIDDEN"]>var {
+    opacity: 0.15;
+}
+
+#cancel {
+    color: red;
+    filter: saturate(250%);
+}
+
+#correct {
+    color: yellow;
+    filter: saturate(250%);
+}
+
+#confirm {
+    color: green;
+    filter: saturate(250%);
+}
+
+#help {
+    color: blue;
+    filter: saturate(250%);
+}
+
+.buttonEpp::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /*background: linear-gradient(180deg, #ffffff 0%, #7f7f7f 100%);*/
+}
+
+[data-counter]::after {
+    position: absolute;
+    content: attr(data-counter);
+    top: -10px;
+    right: -14px;
+    padding: 3px 9px;
+    border: 2px solid white;
+    border-radius:100px;
+    background: linear-gradient(180deg, #a0f58a 0%, #35ae00 100%);
+    box-shadow: 0 1px 2px rgba(0,0,0,.5), 0 1px 4px rgba(0,0,0,.4), 0 0 1px 	rgba(0,0,0,.7) inset, 0 10px 0 rgba(255,255,255,.11) inset;
+    background-clip: padding-box;
+    font: bold 15px/18px "Helvetica Neue", sans-serif;
+    color: white;
+    text-shadow: 2px 2px 1px rgb(0,0,0);
+    z-index: 2;
+}
+
+[data-cmd-status]::before {
+    position: absolute;
+    content: attr(data-cmd-status);
+    top: 0;
+    height: 100%;
+    right: 18px;
+    opacity: 0.6;
+    /*background: linear-gradient(180deg, #aeaeb0 0%, #4c4c4c 100%);*/
+    /*box-shadow: 0 1px 2px rgba(0,0,0,.5), 0 1px 4px rgba(0,0,0,.4), 0 0 1px 	rgba(0,0,0,.7) inset, 0 10px 0 rgba(255,255,255,.11) inset;*/
+    background-clip: padding-box;
+    text-align: left;
+    font: bold 12px/49px "Helvetica Neue", sans-serif;
+    color: black;
+    text-shadow: 0 -1px 0 rgba(255,255,255,.6);
+    z-index: 1;
+}
+
+/*-- Log areas --*/
+.logPanel {
+    min-height: 110px;
+}
+
+.logPanel .logField {
+    background: lightgray;
+    color: red;
+    height: 100px;
+    margin: 0;
+    padding: 5px;
+    overflow: scroll;
+    font-size: 1em;
+    white-space: pre-wrap;
+}
+
+#logPanelMain {
+    flex-basis: 100%;
+}
+
+#logPanelMain .logField {
+    word-break: break-word;
+    user-select: text;
+}
+
+/*-- Cassettes and hoppers, depositInfos, devices --*/
+#cashInfoSet #cashInfosContainer {
+    display: grid;
+    grid-template-columns: 0.2fr 0.4fr 0.4fr 0.3fr;
+    grid-column-gap: 40px;
+    margin-top: 15px;
+}
+
+#cashInfoSet section {
+    display: flex;
+    flex-direction: column;
+}
+
+#cashInfoSet section label {
+    margin-top: 10px;
+}
+
+#cashInfoSet section input {
+    text-align: right;
+    max-width: 60px;
+}
+
+#cashInfoSet section:nth-child(1) input {
+    text-align: center;
+    max-width: 35px;
+}
+
+#cashInfoSet section:nth-child(3) input {
+    text-align: center;
+    max-width: 35px;
+}
+
+#dispenseAmount {
+    text-align: right;
+}
+
+#cassettesContent, #hopperContent {
+    width: min-content;
+}
+
+#cassettesContent .unitMainButtons, #hopperContent .unitMainButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cassetteContainer, #hopperContainer {
+    display: grid;
+    grid-template-columns: [chName] 32% [chState] 7% [chType] 10% [chValue] 11% [chCurrency] 7% [chCount] 12%;
+    grid-gap: 10px 20px;
+    width: 493px;
+    margin-top: 20px;
+}
+
+/*-- Deposit Infos --*/
+#depositInfosContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 487px;
+    flex-grow: 0;
+    flex-wrap: wrap-reverse;
+}
+
+#depositInfosContainer section {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#depositInfosContainer #depositNoteDeviceTypes {
+    width: 25%;
+}
+
+#depositInfosContainer section[disabled] {
+    opacity: 0.7;
+}
+
+#depositInfosContainer .separatorLine {
+    width: 100%;
+    margin-top: 8px;
+    border-top: 2px solid #adacac;
+}
+
+/*-- Deposit Insertion --*/
+#depositInsertionContainer, #depositChequesInsertionContainer {
+    display: grid;
+    grid-template-columns: [chValue] 15% [chCount] 25% [chCurrency] 12% [chType] 12% [chLevel] 7% [chRemove] 15%;
+    grid-gap: 5px 8px;
+    width: 487px;
+    max-height: 218px;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+
+#depositInsertionContainer .chCount {
+    display: flex;
+}
+
+#depositInsertionContainer .chCount input,
+#depositInsertionContainer .chCount button {
+    width: 30px;
+    text-align: center;
+}
+
+#addDepositItem, #submitDeposit, #addDepositCheque, #submitDepositCheque {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/*-- Deposit Cheques Insertion --*/
+#depositChequesInsertionContainer {
+    grid-template-columns: [chValue] 15% [chCurrency] 11% [chMarkAs] 18% [chScoreMicr] 13% [chScoreOcr] 13% [chRemove] 15%;
+    grid-gap: 5px 10px;
+    max-height: 190px;
+}
+
+/*-- Devices --*/
+#devicesContainer {
+    display: grid;
+    grid-template-columns: [chName] 31% [chState] 3% [chMandatory] 11% [chInstalled] 8% [chExtra] 24%;
+    grid-gap: 10px 30px;
+    margin-top: 10px;
+}
+
+.chValue, .chCount {
+    text-align: right;
+}
+
+.chCurrency {
+    text-align: center;
+}
+
+.chState {
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.chType {
+    align-self: center;
+}
+
+.chCount {
+    margin-left: 15px;
+}
+
+.chMandatory[disabled], .chInstalled[disabled] {
+    opacity: 0.4;
+}
+
+.chExtra {
+    display: flex;
+    align-items: center;
+}
+
+.chExtra input {
+    max-width: 25px;
+    margin-left: 7px;
+    text-align: center;
+    order: 2;
+}
+
+var.chState {
+    content: " ";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff0000 20%, #bc0000 100%);
+    box-shadow: 2px 2px 5px black;
+}
+
+var.chState[data-state="true"] {
+    background: radial-gradient(circle, #00ff00 20%, #2cc706 100%);
+}
+
+/*-- Events --*/
+#eventEmitter section {
+    font-size: 0.85em;
+    margin-bottom: 10px;
+}
+
+#eventEmitter .eventData {
+    display: flex;
+    flex-direction: row;
+    max-width: 300px;
+}
+
+#eventEmitter .eventData label {
+    min-width: 88px;
+}
+
+#eventEmitter #eventDataSelectBox, #eventEmitter .select2 {
+    max-width: 50%;
+}
+
+#eventEmitter #eventToSend span,
+#eventEmitter #eventToSend input {
+    font-size: 1.2em;
+}
+
+#eventEmitter #eventToSendType {
+    color: blueviolet;;
+}
+
+#eventEmitter #eventToSendData {
+   min-width: 290px;
+}
+
+#eventEmitter #eventSendEventContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#eventEmitter #eventSendEventContainer * {
+    margin-right: 10px;
+}
+
+#eventEmitter #eventSendEventContainer #sendEventTimes,
+#eventEmitter #eventSendEventContainer #sendEventDelay {
+    width: 22px;
+    text-align: center;
+}
+
+#eventEmitter #eventSendEventContainer #sendEventDelay {
+    width: 32px;
+}
+
+/*-- Transaction --*/
+#cardTypes {
+    display: flex;
+    flex-direction: column;
+}
+
+#cardTypes div {
+    margin-top: 5px;
+}
+
+#pinInfosContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px 10px;
+}
+
+#pinInfosContainer input[type="text"] {
+    width: 20px;
+    text-align: center;
+}
+
+/*funds/prepaid*/
+#fundsAndPrepaid {
+    display: flex;
+    justify-content: space-between;
+}
+
+

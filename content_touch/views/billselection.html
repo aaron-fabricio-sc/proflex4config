@@ -1,0 +1,202 @@
+<!--
+$MOD$ billselection.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+  <nav id="flexNav"></nav>
+
+  <!-- article -->
+  <article id="flexArticle">
+    <div id="amountHead">
+      <!-- ko  if: mode === 0 -->
+      <var
+        class="color01 font01"
+        data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_RemainingAmountHint', 'Remaining amount:')"
+      ></var>
+      <!-- /ko -->
+      <!-- ko  if: mode === 1 -->
+      <var
+        class="color01 font01"
+        data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_MaxAmountHint', 'Max amount:')"
+      ></var>
+      <!-- /ko -->
+      <var
+        class="color02 font01"
+        data-bind="format: { src: remainingAmount, pattern: '#ATRM0' }"
+      ></var>
+      <var
+        class="color01 font01"
+        data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_TotalAmountHint', 'Total amount:')"
+      ></var>
+      <var
+        class="color02 font01"
+        data-bind="format: { src: totalAmount, pattern: '#ATRM0' }"
+      ></var>
+    </div>
+    <div id="listContainer">
+      <div
+        id="flexDistributions"
+        data-bind="foreach: { data: distribution, as: 'item' },
+                                                     gesture: {
+                                                        options: {
+                                                            processItemVisibility: true,
+                                                            itemVisibilityTransitions: 'scale',
+                                                            sendAutoMovementEvents: true
+                                                        },
+                                                        grid: 'flexDistributionRow',
+                                                        verticalScrollbarElement: 'BillSelectionScrollbar',
+                                                        listElementName: 'flexDistributionRow',
+                                                        gestures: {
+                                                            Swipe: {
+                                                                direction: 'DIRECTION_VERTICAL',
+                                                                events: ['swipe']
+                                                            },
+                                                            Pan: {
+                                                                direction:'DIRECTION_VERTICAL',
+                                                                events:['panstart','panmove','panend'],
+                                                                enable: true
+                                                            }
+                                                        },
+                                                        containment: {
+                                                            element:'flexDistributions',
+                                                            useScrollWidth: false,
+                                                            useScrollHeight: false }
+                                                        }"
+      >
+        <div class="flexDistributionRow">
+          <div
+            class="itemStack"
+            data-bind="foreach: { data: item.notes, afterRender: $root.viewHelper.getActiveModule().addNote, beforeRemove:$root.viewHelper.getActiveModule().removeNote }"
+          >
+            <div
+              class=""
+              data-bind="attr: { class: item.type === 0 ? 'note' : 'coin' }, style: { opacity: item.count() > 0 ? 1 : 0.5}"
+            >
+              <!-- ko  if: item.type === 0 -->
+              <!--suppress BadExpressionStatementJS -->
+              <svg
+                data-bind="attr: { 'data-item-value': item.value },
+                                            svguse: { name: item.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                      inline: true, afterRender: $root.viewHelper.singleBillSymbol }"
+              ></svg>
+              <!-- /ko -->
+              <!-- ko  if: item.type === 1 -->
+              <!--suppress BadExpressionStatementJS -->
+              <svg
+                data-bind="attr: { 'data-item-value': item.value, 'data-currency-iso': item.currency },
+                                            svguse: { name: 'single_coin_generic.svg', inline: true, afterRender: $root.viewHelper.singleCoinSymbol }"
+              ></svg>
+              <!-- /ko -->
+            </div>
+          </div>
+          <var class="color01 font01 crossX" data-bind="text: 'x'"></var>
+          <div class="buttonZone">
+            <div
+              class="button fieldButton borderDrawing"
+              data-bind="command: {id: 'DEC_' + $index(), type: $root.CMDTYPE.BUTTON, state: item.decState},
+                                        gesture: {
+                                            gestures: {
+                                                Press: {
+                                                    time: 750,
+                                                    threshold: 25,
+                                                    events:['press', 'pressup'],
+                                                    handler: $root.viewHelper.getActiveModule().onDecPress.bind(this, $index())
+                                                }
+                                            }
+                                        }"
+            >
+              <svg data-bind="svguse: { name: 'minus.svg' }"></svg>
+            </div>
+          </div>
+          <var
+            class="color04 font06 itemCount"
+            data-bind="text: item.count"
+          ></var>
+          <div class="buttonZone">
+            <div
+              class="button fieldButton borderDrawing"
+              data-bind="command: {id: 'INC_' + $index(), type: $root.CMDTYPE.BUTTON, state: item.incState},
+                                        gesture: {
+                                            gestures: {
+                                                Press: {
+                                                    time: 750,
+                                                    threshold: 25,
+                                                    events:['press', 'pressup'],
+                                                    handler: $root.viewHelper.getActiveModule().onIncPress.bind(this, $index())
+                                                }
+                                            }
+                                        }"
+            >
+              <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+            </div>
+          </div>
+          <var class="color01 font01" data-bind="text: ' = '"></var>
+          <var
+            class="color02 font01 result"
+            data-bind="format: { src: item.result, pattern: '#ATRM0' }"
+          ></var>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <aside id="flexAside">
+    <div class="buttonZone">
+      <div
+        class="button dialogSmallButton borderDrawing"
+        data-bind="command: {id: 'AUTOFILL', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Autofill', 'Autofill')}}"
+      >
+        <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+        <var
+          class="color03 font01"
+          data-bind="html: cmdRepos.getCmdLabel('AUTOFILL')"
+        ></var>
+      </div>
+    </div>
+    <div class="buttonZone">
+      <div
+        id="buttonCorrect"
+        class="button dialogSmallButton buttonCorrect borderDrawing"
+        data-bind=" command: {id: 'CORRECT', type: CMDTYPE.BUTTON, args: ['CORRECT', 'CORRECT'], state: CMDSTATE.DISABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Reset', 'Reset')}, eppkey: ['CLEAR', 'BACKSPACE']}"
+      >
+        <svg data-bind="svguse: { name: 'reset.svg' }"></svg>
+        <var
+          class="color03 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CORRECT')"
+        ></var>
+      </div>
+    </div>
+    <div class="buttonZone">
+      <div
+        id="buttonConfirm"
+        class="button dialogSmallButton borderDrawing"
+        data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, state: CMDSTATE.DISABLED, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_GetMoney', 'Confirm')}, eppkey: 'CONFIRM'}"
+      >
+        <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+        <var
+          class="color09 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"
+        ></var>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer id="flexFooter">
+  <div id="flexExtra"></div>
+  <div id="flexCancel">
+    <div class="buttonZone">
+      <div
+        id="buttonCancel"
+        class="button footerButton"
+        data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}"
+      >
+        <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+        <var
+          class="color09 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CANCEL')"
+        ></var>
+      </div>
+    </div>
+  </div>
+</footer>

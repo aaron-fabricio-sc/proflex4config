@@ -1,0 +1,127 @@
+<!--
+$MOD$ cardanimations.html 4.3.1-200827-21-0feba36c-1a04bc7d
+-->
+
+<!-- main -->
+<main id="flexMain">
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <!-- contactless reader - content key: InsertContactless / ContactlessNotOperational -->
+        <figure  id="contactlessReader" data-bind="visible: viewFlexContactlessInsert() || viewFlexContactlessNotOperational()">
+            <div id="contactlessReaderArea">
+                <div class="contactlessReaderBack">
+                    <svg class="nfcIconDisabled" data-bind="visible: viewFlexContactlessNotOperational, svguse: { name: 'nfc.svg' }"></svg>
+                    <svg class="nfcAnimation" data-bind="visible: viewFlexContactlessInsert, svguse: { name: 'nfc.svg' }"></svg>
+                </div>
+
+                <div id="cardInsertContactless" class="cardInsertContactlessAnimation" data-bind="visible: viewFlexContactlessInsert">
+                    <svg data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+
+                <div id="cardInsertContactlessNotOp" data-bind="visible: viewFlexContactlessNotOperational">
+                    <svg data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+            </div>
+            <div class="deviceOutOfService" data-bind="visible: viewFlexContactlessNotOperational">
+                <svg data-bind="svguse: { name: 'deviceoutofservice_01.svg' }"></svg>
+            </div>
+        </figure>
+
+        <!-- card reader - content key: InsertCard / InsertCardStripeUp / InsertCardNotOperational -->
+        <figure id="cardReader" data-bind="visible: viewFlexCardInsert() || viewFlexCardInsertStripeUp() || viewFlexCardNotOperational()" >
+            <div id="cardInsert" class="flexItemsSlot">
+                <!-- ko if: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot_card.svg', path: 'style/default/images/DNSeries/'}"></svg>
+                <!-- /ko -->
+                <!-- ko ifnot: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot.svg'}"></svg>
+                <!-- /ko -->
+                <div id="cardInsert3D" data-bind="visible: viewFlexCardInsert() || viewFlexCardInsertStripeUp()">
+                    <svg class="cardInsertAnimation3D" data-bind="svguse: {name: viewFlexCardInsert() ? 'credit_card_01.svg' : 'credit_card_stripe_up.svg'}"></svg>
+                </div>
+                <div id="cardNotOp" data-bind="visible: viewFlexCardNotOperational">
+                    <svg data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+            </div>
+            <div class="deviceOutOfService" data-bind="visible: viewFlexCardNotOperational">
+                <svg data-bind="svguse: { name: 'deviceoutofservice_01.svg' }"></svg>
+            </div>
+        </figure>
+
+        <!-- card reader - content key: InsertCardLSF / InsertCardLSFNotOperational -->
+        <figure id="cardReaderLSF" data-bind="visible: viewFlexCardInsertLSF() || viewFlexCardLSFNotOperational()" >
+            <div id="cardInsertLSF" class="flexItemsSlotLSF">
+                <svg data-bind="svguse: { name: 'slotLSF.svg' }"></svg>
+                <div id="cardInsert3DLSF" data-bind="visible: viewFlexCardInsertLSF()">
+                    <svg class="cardInsertAnimation3DLSF" data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+                <div id="cardLSFNotOp" data-bind="visible: viewFlexCardLSFNotOperational">
+                    <svg data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+            </div>
+            <div class="deviceOutOfService" data-bind="visible: viewFlexCardLSFNotOperational">
+                <svg data-bind="svguse: { name: 'deviceoutofservice_01.svg' }"></svg>
+            </div>
+        </figure>
+
+        <!-- card eject - content key: TakeCard / TakeCardStripeUp -->
+        <figure  data-bind="visible: viewFlexCardEject() || viewFlexCardEjectStripeUp()" >
+            <div id="cardEject" class="flexItemsSlot">
+                <!-- ko if: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot_card.svg', path: 'style/default/images/DNSeries/'}"></svg>
+                <!-- /ko -->
+                <!-- ko ifnot: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot.svg'}"></svg>
+                <!-- /ko -->
+                <div id="cardEject3D">
+                    <svg class="cardEjectAnimation3D" data-bind="svguse: {name: viewFlexCardEject() ? 'credit_card_01.svg' : 'credit_card_stripe_up.svg'}"></svg>
+                </div>
+            </div>
+        </figure>
+
+        <!-- card eject - content key: TakeCardLSF -->
+        <figure data-bind="visible: viewFlexCardEjectLSF()" >
+            <div id="cardEjectLSF" class="flexItemsSlotLSF">
+                <svg data-bind="svguse: { name: 'slotLSF.svg' }"></svg>
+                <div id="cardEject3DLSF">
+                    <svg class="cardEjectAnimation3DLSF" data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+            </div>
+        </figure>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonsZone">
+            <div class="buttonZone">
+                <div class="button footerButton"
+                     data-bind="command: {id: 'CARDLESS', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Cardless', 'Cardless')}}">
+                    <svg data-bind="svguse: { name: 'cardless.svg' }"></svg>
+                    <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('CARDLESS')"></var>
+                </div>
+            </div>
+            <div class="buttonZone">
+                <div class="button footerButton" data-bind="command: {id: 'REQUEST_SUPPORT', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_RequestSupport', '')}}">
+                    <svg data-bind="svguse: { name: '24hours.svg' }"></svg>
+                    <!--<var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('REQUEST_SUPPORT')"></var>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

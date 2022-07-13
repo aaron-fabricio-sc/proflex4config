@@ -1,0 +1,244 @@
+@charset "utf-8";
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ layouts-custom.css 4.3.1-200827-21-0feba36c-1a04bc7d
+
+*/
+
+/*
+ * CSS document for resolution-independent information
+ */
+
+/*---- Comments guidelines: ----*/
+/*
+ * Headline
+ */
+/*---- Sub headline: ----*/
+/*-- Element specific --*/
+/* Attribute specific */
+
+/*---- General order of attributes: ----*/
+/*
+element, #id, .class {
+    display: none / flex / block / inline;
+    visibility: hidden;
+    opacity: <number>; (between 0 and 1)
+    flex-direction: column / row;
+    order: <number>;
+    flex-grow: 0 / 1;
+    flex-shrink: 0 / 1;
+    align-self: flex-start / center / flex-end;
+    align-items: flex-start / center / flex-end;
+    justify-content: flex-start / center / flex-end;
+    flex-flow: wrap / column wrap / row wrap;
+    z-index: <number>;
+    overflow, overflow-x, overflow-y: auto / hidden;
+    content: <string>;
+    background-color: <string> / <hex>;
+    color: <string> / <hex>;
+    font-family: <string>;
+    font-weight: bold;
+    text-align: left / center / right;
+    font-style: normal;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border: <string> <string> / <hex>;
+    box-shadow: <numberx <numberx <numberx <color> <form>; (no influence on sizes and positions)
+    outline: none;
+    cursor: text / not-allowed;
+    pointer-events: none;
+    -webkit-text-size-adjust: <number>%;
+    -webkit-appearance: none;
+    -webkit-text-stroke-color: <string> / <hex>;
+    appearance: none;
+}
+*/
+
+:root {
+    /* basic colors*/
+    --color01: rgba(0, 255, 255, 1);
+    --color02: rgba(255, 255, 0, 1);
+    --color03: rgba(255, 255, 255, 1);
+    --color04: rgba(0, 0, 0, 1);
+    --color05: rgba(41, 40, 44, 1);
+    --color06: rgba(0, 255, 0, 1);
+    --color07: rgba(255, 0, 0, 1);
+    --color08: rgba(255, 100, 0, 1);
+    --color09: rgba(255, 255, 255, 1);
+    --color10: rgba(255, 255, 0, 1);
+    /* alpha variants */
+    --color01-alpha-0: rgba(0, 255, 255, 0);
+    --color01-alpha-2: rgba(0, 255, 255, 0.02);
+    --color01-alpha-5: rgba(0, 255, 255, 0.05);
+    --color01-alpha-7: rgba(0, 255, 255, 0.07);
+    --color01-alpha-9: rgba(0, 255, 255, 0.09);
+    --color01-alpha-10: rgba(0, 255, 255, 0.10);
+    --color01-alpha-15: rgba(0, 255, 255, 0.15);
+    --color01-alpha-25: rgba(0, 255, 255, 0.25);
+    --color01-alpha-30: rgba(0, 255, 255, 0.3);
+    --color01-alpha-40: rgba(0, 255, 255, 0.4);
+    --color01-alpha-50: rgba(0, 255, 255, 0.5);
+    --color01-alpha-60: rgba(0, 255, 255, 0.6);
+    --color01-alpha-70: rgba(0, 255, 255, 0.7);
+    --color01-alpha-80: rgba(0, 255, 255, 0.8);
+    --color02-alpha-0: rgba(255, 255, 0, 0);
+    --color02-alpha-15: rgba(255, 255, 0, 0.15);
+    --color02-alpha-25: rgba(255, 255, 0, 0.25);
+    --color02-alpha-30: rgba(255, 255, 0, 0.3);
+    --color02-alpha-40: rgba(255, 255, 0, 0.4);
+    --color02-alpha-50: rgba(255, 255, 0, 0.5);
+    --color02-alpha-60: rgba(255, 255, 0, 0.6);
+    --color02-alpha-70: rgba(255, 255, 0, 0.7);
+    --color02-alpha-80: rgba(255, 255, 0, 0.8);
+    --color03-alpha-0: rgba(255, 255, 255, 0);
+    --color03-alpha-1: rgba(255, 255, 255, 0.01);
+    --color03-alpha-2: rgba(255, 255, 255, 0.02);
+    --color03-alpha-5: rgba(255, 255, 255, 0.05);
+    --color03-alpha-10: rgba(255, 255, 255, 0.1);
+    --color03-alpha-15: rgba(255, 255, 255, 0.15);
+    --color03-alpha-20: rgba(255, 255, 255, 0.2);
+    --color03-alpha-25: rgba(255, 255, 255, 0.25);
+    --color03-alpha-30: rgba(255, 255, 255, 0.3);
+    --color03-alpha-40: rgba(255, 255, 255, 0.4);
+    --color03-alpha-50: rgba(255, 255, 255, 0.5);
+    --color03-alpha-60: rgba(255, 255, 255, 0.6);
+    --color03-alpha-70: rgba(255, 255, 255, 0.7);
+    --color03-alpha-80: rgba(255, 255, 255, 0.8);
+    --color04-alpha-0: rgba(0, 0, 0, 0);
+    --color04-alpha-20: rgba(0, 0, 0, 0.2);
+    --color04-alpha-30: rgba(0, 0, 0, 0.3);
+    --color04-alpha-40: rgba(0, 0, 0, 0.4);
+    --color04-alpha-50: rgba(0, 0, 0, 0.5);
+    --color04-alpha-60: rgba(0, 0, 0, 0.6);
+    --color04-alpha-70: rgba(0, 0, 0, 0.7);
+    --color04-alpha-80: rgba(0, 0, 0, 0.8);
+    --color06-alpha-0: rgba(0, 255, 0, 0);
+    --color06-alpha-25: rgba(0, 255, 0, 0.25);
+    --color06-alpha-30: rgba(0, 255, 0, 0.3);
+    --color06-alpha-40: rgba(0, 255, 0, 0.4);
+    --color06-alpha-60: rgba(0, 255, 0, 0.6);
+    --color06-alpha-70: rgba(0, 255, 0, 0.7);
+    --color06-alpha-80: rgba(0, 255, 0, 0.8);
+    --color07-alpha-0: rgba(255, 0, 0, 0);
+    --color07-alpha-15: rgba(255, 0, 0, 0.15);
+    --color07-alpha-25: rgba(255, 0, 0, 0.25);
+    --color07-alpha-30: rgba(255, 0, 0, 0.3);
+    --color07-alpha-50: rgba(255, 0, 0, 0.5);
+    --color07-alpha-60: rgba(255, 0, 0, 0.6);
+    --color07-alpha-80: rgba(255, 0, 0, 0.8);
+    --color09-alpha-0: var(--color03-alpha-0);
+    --color09-alpha-1: var(--color03-alpha-1);
+    --color09-alpha-2: var(--color03-alpha-2);
+    --color09-alpha-5: var(--color03-alpha-5);
+    --color09-alpha-10: var(--color03-alpha-10);
+    --color09-alpha-15: var(--color03-alpha-15);
+    --color09-alpha-20: var(--color03-alpha-20);
+    --color09-alpha-25: var(--color03-alpha-25);
+    --color09-alpha-30: var(--color03-alpha-30);
+    --color09-alpha-40: var(--color03-alpha-40);
+    --color09-alpha-50: var(--color03-alpha-50);
+    --color09-alpha-60: var(--color03-alpha-60);
+    --color10-alpha-0: var(--color02-alpha-0);
+    --color10-alpha-15: var(--color02-alpha-15);
+    --color10-alpha-25: var(--color02-alpha-25);
+    --color10-alpha-30: var(--color02-alpha-30);
+    --color10-alpha-40: var(--color02-alpha-40);
+    --color10-alpha-50: var(--color02-alpha-50);
+    --color10-alpha-60: var(--color02-alpha-60);
+    --color10-alpha-70: var(--color02-alpha-70);
+    --color10-alpha-80: var(--color02-alpha-80);
+
+    /* special colors*/
+    --color01-sliding-checkbox-label: rgb(0, 139, 139);
+    --color03-generalinputback-popup: rgb(66, 65, 70);
+    --color04-generalinputback: rgb(40, 40, 40);
+    --color04-generalinputback-txnbkg: rgb(40, 45, 48);
+    --colorSignatureBackground: var(--color05);
+
+    /* buttons */
+    --command-automation-duration: 0.15s;
+
+    /* general */
+    background: var(--color05);
+}
+
+/*-- Buttons --*/
+.button, #buttonCancel, #buttonConfirm, .buttonConfirm, #buttonCorrect, #buttonCancelPopup, #buttonConfirmPopup, #buttonCorrectPopup {
+    box-shadow: 2px 2px 8px 0 var(--color04-alpha-80);
+}
+
+.button, #buttonCancel, #buttonConfirm, .buttonConfirm, #buttonCorrect, #buttonCancelPopup, #buttonConfirmPopup, #buttonCorrectPopup {
+    box-shadow: 2px 2px 8px 0 var(--color04-alpha-80);
+}
+
+/*-- Radiobuttons --*/
+@keyframes radioActive {
+    0% {
+        transform: scale(0.5);
+        box-shadow: 0 0 11px 0 var(--color01-alpha-10), 0 0 11px 0 var(--color01-alpha-30);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 11px 11px var(--color01-alpha-10), 0 0 11px 11px var(--color01-alpha-30);
+    }
+}
+
+/*-- OK-ZOOM --*/
+.ok-loupe {
+    /*to overwrite script values from 'okzoom' plugin*/
+    box-shadow: 2px 2px 5px var(--color04) !important;
+}
+
+/*-- Components - Popup overlay and window --*/
+#popupWindowContent {
+    background: var(--color05) linear-gradient(180deg, var(--color09-alpha-15) 0%, var(--color07-alpha-0) 100%);
+}
+
+/*-- List rows and shadows top/bottom --*/
+/* top shadow */
+.listRow[data-list-up-active]:first-child:nth-of-type(odd) {
+    background: linear-gradient(180deg, var(--color04-alpha-30) 0%, var(--color09-alpha-15) 20%, var(--color09-alpha-10) 100%);
+}
+
+/* bottom shadow - depending on even or odd row */
+.listRow[data-list-down-active]:last-child:nth-of-type(odd) {
+    background: linear-gradient(180deg, var(--color09-alpha-10) 0%, var(--color09-alpha-10) 85%, var(--color04-alpha-30) 100%);
+}
+
+.listRow[data-list-down-active]:last-child:nth-of-type(even) {
+    background: linear-gradient(180deg, var(--color09-alpha-20) 0%, var(--color09-alpha-20) 85%, var(--color04-alpha-30) 100%);
+}
+
+/*-- General message / escalation in  message and question view --*/
+.messageArea, .messageArea[data-content-style$="InfoBox"] {
+    box-shadow: 2px 2px 8px var(--color04-alpha-80);
+    background: var(--color05) linear-gradient(180deg, var(--color09-alpha-15) 0%, var(--color07-alpha-0) 100%);
+}
+
+.messageArea[data-content-style$="WarningBox"] {
+    background: var(--color05) linear-gradient(180deg, var(--color02-alpha-15) 0%, var(--color07-alpha-0) 100%);
+}
+
+.messageArea[data-content-style$="ErrorBox"] {
+    background: var(--color05) linear-gradient(180deg, var(--color07-alpha-15) 0%, var(--color07-alpha-0) 100%);
+}
+
+/*-- View: billsplitting --*/
+#amountHead {
+    background: linear-gradient(180deg, var(--color09-alpha-50) 0%, var(--color09-alpha-50) 94%, var(--color09-alpha-0) 95%, var(--color09-alpha-1) 100%);
+    box-shadow: 0 10px 16px 0 var(--color04-alpha-60);
+}
+
+/*-- View: depositresult --*/
+#flexDepositResultTotalAmount {
+    background: linear-gradient(180deg, var(--color09-alpha-50) 0%, var(--color09-alpha-50) 94%, var(--color09-alpha-0) 95%, var(--color09-alpha-1) 100%);
+}

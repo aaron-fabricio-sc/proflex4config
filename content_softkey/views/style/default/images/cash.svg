@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+	 
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+	
+<circle display="none" fill="#000000" cx="21.741" cy="20.281" r="3.438"/>
+<circle display="none" fill="#000000" cx="21.767" cy="20.204" r="3.438"/>
+<circle display="none" fill="#000000" cx="21.438" cy="19.875" r="3.438"/>
+
+<g class="shadowGroup3">
+	<rect x="2.668" y="11.127" fill="none" stroke="#000000" width="38" height="20.625"/>
+	<rect x="5.991" y="13.752" fill="none" stroke="#000000" width="31.48" height="15.5"/>
+	<circle fill="#000000" cx="7.543" cy="15.346" r="1.991"/>
+	<circle fill="#000000" cx="35.887" cy="15.346" r="1.99"/>
+	<circle fill="#000000" cx="35.887" cy="27.689" r="1.99"/>
+	<circle fill="#000000" cx="7.574" cy="27.689" r="1.99"/>
+	<circle fill="none" stroke="#000000" cx="22.189" cy="20.627" r="3.438"/>
+	<line fill="none" stroke="#000000" x1="18.752" y1="26.253" x2="25.377" y2="26.253"/>
+</g>
+
+<g class="shadowGroup2">
+	<rect x="2.416" y="10.875" fill="none" stroke="#000000" width="38" height="20.625"/>
+	<rect x="5.739" y="13.5" fill="none" stroke="#000000" width="31.48" height="15.5"/>
+	<circle fill="#000000" cx="7.291" cy="15.094" r="1.991"/>
+	<circle fill="#000000" cx="35.635" cy="15.094" r="1.99"/>
+	<circle fill="#000000" cx="35.635" cy="27.438" r="1.99"/>
+	<circle fill="#000000" cx="7.322" cy="27.438" r="1.99"/>
+	<circle fill="#000000" stroke="#000000" cx="21.938" cy="20.375" r="3.438"/>
+	<line fill="none" stroke="#000000" x1="18.5" y1="26.001" x2="25.125" y2="26.001"/>
+</g>
+
+<g class="shadowGroup1">
+	<rect x="2.186" y="10.644" fill="none" stroke="#000000" width="38" height="20.625"/>
+	<rect x="5.508" y="13.269" fill="none" stroke="#000000" width="31.48" height="15.5"/>
+	<circle fill="#000000" cx="7.061" cy="14.863" r="1.991"/>
+	<circle fill="#000000" cx="35.404" cy="14.863" r="1.99"/>
+	<circle fill="#000000" cx="35.404" cy="27.207" r="1.99"/>
+	<circle fill="#000000" cx="7.092" cy="27.207" r="1.99"/>
+	<circle fill="none" stroke="#000000" cx="21.707" cy="20.144" r="3.438"/>
+	<line fill="none" stroke="#000000" x1="18.27" y1="25.77" x2="24.895" y2="25.77"/>
+</g>
+
+
+	<rect x="1.666" y="10.125" fill="none" class="strokeColor" stroke="#000000" width="38" height="20.625"/>
+	<rect x="4.989" y="12.75" fill="none" class="strokeColor" stroke="#000000" width="31.48" height="15.5"/>
+	<circle fill="#000000" class="fillColor" cx="6.541" cy="14.344" r="1.991"/>
+	<circle fill="#000000" class="fillColor" cx="34.885" cy="14.344" r="1.99"/>
+	<circle fill="#000000" class="fillColor" cx="34.885" cy="26.688" r="1.99"/>
+	<circle fill="#000000" class="fillColor" cx="6.572" cy="26.688" r="1.99"/>
+	<circle fill="none" class="strokeColor" stroke="#000000" cx="21.188" cy="19.625" r="3.438"/>
+	<line fill="none" class="strokeColor" stroke="#000000" x1="17.75" y1="25.251" x2="24.375" y2="25.251"/>
+
+<line display="none" fill="none" stroke="#000000" x1="17.963" y1="25.631" x2="24.588" y2="25.631"/>
+<line display="none" fill="none" stroke="#000000" x1="18.288" y1="25.956" x2="24.913" y2="25.956"/>
+<line display="none" fill="none" stroke="#565E5E" x1="18.622" y1="26.291" x2="25.247" y2="26.291"/>
+</svg>

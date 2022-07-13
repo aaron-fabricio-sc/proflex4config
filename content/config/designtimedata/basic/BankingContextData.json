@@ -1,0 +1,14 @@
+{
+    "dateTime": {
+        "date": "",
+        "time": "",
+        "meridiem": ""
+    },
+    "currencyData": {
+        "iso": "EUR",
+        "text": "Euro",
+        "adaText": "Euro",
+        "symbol": "bs",
+        "exponent": "-2"
+    }
+}

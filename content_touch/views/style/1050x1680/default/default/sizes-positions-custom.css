@@ -1,0 +1,625 @@
+/*
+$MOD$ sizes-positions-custom.css 4.3.1-200121-21-2e9c3f81-1a04bc7d
+*/
+
+/*
+    Touch layout for portrait orientation screen.
+    1050x1680 pixel
+*/
+
+
+/*-- fonts --*/
+/* font01 Button description, Headline, Time, ...*/
+.font01 {
+    line-height: 36px;
+}
+
+/* font02 Instruction, ...*/
+.font02 {
+    line-height: 30px;
+}
+
+/* font03 */
+.font03 {
+    line-height: 26px;
+}
+
+/* font04 */
+.font04 {
+    line-height: 56px;
+}
+
+/*-- Header --*/
+#flexHeader {
+    flex-basis: 494px;
+}
+
+#flexLogo {
+    margin-top: 49px;
+}
+
+/*-- Additional header info --*/
+#flexAdditionalHeaderInfo {
+    padding-top: 35px;
+}
+
+/*-- Help --*/
+#flexHelp {
+    margin-top: 10px;
+}
+
+/*-- Date/Time --*/
+#time {
+    padding-bottom: 14px;
+}
+
+/*-- Headline/Instruction --*/
+#flexHeaderBottom {
+    flex-basis: 130px;
+}
+
+#flexHeaderBottom>:first-child {
+    margin-bottom: 12px;
+}
+
+#flexMessageContainerHeader {
+    margin-top: 350px;
+}
+
+/*-- Article --*/
+#flexArticle, #flexArticlePopup {
+    height: 980px;
+}
+
+/*-- Footer --*/
+#flexFooter {
+    height: 256px;
+    min-height: 256px;
+}
+
+/*-- Buttons --*/
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#flexCancel object, #flexExtra #buttonConfirm object, #flexExtra .buttonConfirm object, #flexExtra #buttonCorrect object,
+#flexCancel svg, #flexExtra #buttonConfirm svg, #flexExtra .buttonConfirm svg, #flexExtra #buttonCorrect svg {
+    display: flex;
+}
+
+.button.footerButton {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#flexExtra .button, #flexCancel .button {
+    align-items: center;
+}
+/* menu button (article) */
+.menuButton {
+    height: 263px;
+}
+
+.menuButton>object, .menuButton>svg {
+    height: 68px;
+}
+
+.menuButton.prominentItem {
+    height: 543px;
+}
+
+.menuButton.prominentItem>object, .menuButton.prominentItem>svg {
+    margin-bottom: 130px;
+    height: 216px;
+}
+
+.subMenuItem::after {
+    bottom: calc(100% - 60px);
+    left: calc(100% - 30px);
+    font-size: var(--font-size06);
+    font-weight: bold;
+}
+
+/* dialog/dialogSmall button (aside: confirm) */
+.dialogButton {
+    height: 219px;
+}
+
+.dialogSmallButton {
+    height: 178px;
+}
+
+/* footer button (footer: cancel) */
+.footerButton {
+    height: 146px;
+}
+
+#listContainer {
+    height: 875px;
+}
+
+/* field button (article: input field) */
+.fieldButton {
+    width: 138px;
+    height: 101px;
+}
+
+.scrollbar-horizontal {
+    /*
+        Margin-right has to be the same as the
+        width but negative! With this trick we
+        remove the space of an element with
+        position "relative" (in this case
+        "relative" is set by javascript later).
+    */
+    height: 25px;
+    margin-top: -82px;
+}
+
+/*-- View: welcome --*/
+#welcomeMessage1 {
+    margin-top: -84px;
+}
+
+/*-- Views: message, question --*/
+div[data-view-id="message"] .messageArea,
+div[data-view-id="question"] .messageArea {
+    height: 746px;
+}
+
+/*-- Popups: - Popup overlay and window --*/
+.popupWindow {
+    height: 778px;
+    margin: 513px 40px 0 40px;
+}
+
+/* Help Popup */
+#popupWindowHelp {
+    height: 775px;
+    margin-top: 255px;
+}
+
+/* Selection Popup */
+#popupWindowSelection {
+    height: 875px;
+    margin-top: 520px;
+}
+
+#flexArticlePopupSelection {
+    max-height: 560px;
+}
+
+/* AmountEntry Popup */
+#popupWindowAmountEntry {
+    height: 800px;
+    margin-top: 370px;
+}
+
+#popupWindowAmountEntry #flexArticlePopupAmountEntry {
+    width: 456px;
+}
+
+/*-- Views: amountentry, numericentry, formentry --*/
+#flexInputArea, .flexInputFormArea {
+    width: 458px;
+}
+
+#generalInputFieldArea, .generalInputFieldAreaZone {
+    margin: 0 3px 13px 7px;
+}
+
+#generalInputBack {
+    margin-left: 426px;
+}
+
+#flexArticlePopupAmountEntry #generalInputBack {
+    margin-left: 426px;
+}
+
+div[data-view-id="amountentry"] #buttonCorrect,
+div[data-view-id="numericentry"] #buttonCorrect, #buttonCorrectPopup {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+#buttonCorrectFront {
+    width: 44px;
+    height: 43px;
+    margin-left: -22px;
+    transform: rotateZ(45deg);
+    clip-path: polygon(0px 0px, 44px 44px, 0px 70px);
+}
+
+#buttonCorrect[disabled] #buttonCorrectFront,
+#buttonCorrectPopup[disabled] #buttonCorrectFront {
+    width: 45px;
+    height: 43px;
+    clip-path: polygon(0px 0px, 43px 43px, 0px 70px);
+}
+
+div[data-view-id="amountentry"] #other {
+    margin-top: 0;
+}
+
+#pinPadButtons>.buttonZone {
+    padding: 6px;
+}
+
+/*== View: item animations views ==*/
+#flexAnimations {
+    max-height: 418px;
+    margin-top: 0;
+}
+
+.itemLane {
+    margin-top: -30px; /*move the lane onto the slot */
+    transform: perspective(1200px) rotate3d(1, 0, 0, 66deg);
+}
+
+/*-- View: depositchequesanimations --*/
+div[data-view-id="depositanimations"] #flexArticle,
+div[data-view-id="depositchequesanimations"] #flexArticle {
+    justify-content: space-around;
+}
+
+div[data-view-id="depositchequesanimations"] figure {
+    margin-top: -200px;
+}
+
+/* cheque scanning animation */
+div[data-view-id="depositchequesanimations"] #waitSpinner {
+    margin-top: 45px;
+}
+
+#chequesScanningTexts {
+    height: 55px;
+}
+
+#chequeScanRedLight {
+    width: 60px;
+    height: 130px;
+    border-radius: 6px;
+}
+
+#chequeBack {
+    margin-top: 25px;
+}
+
+.chequeScanArea {
+    width: 200px;
+    height: 90px;
+    margin-top: -106px;
+}
+
+/*-- View: billsplitting --*/
+div[data-view-id="billsplitting"] #flexAside {
+    margin-top: 0;
+    height: 860px;
+}
+
+#amountHead {
+    flex-basis: 85px;
+}
+
+.flexDistributionRow {
+    padding-bottom: 10px;
+}
+
+/*-- View: billselection --*/
+div[data-view-id="billselection"] #flexAside {
+    margin-top: 106px;
+    height: 100%;
+}
+
+div[data-view-id="billselection"]  #amountHead {
+    margin-right: -242px;
+    padding-right: 262px;
+}
+
+/*-- View: accountinformation --*/
+#flexAccountDetailsArea {
+    height: 95px;
+}
+
+/*- AINStd, AINIfx, AINPcemov -*/
+#flexAccountAINStdAINIfxAINPcemov {
+    height: 95px;
+}
+
+#balanceArea {
+    height: 95px;
+}
+
+
+/* Transaction area */
+#flexTransactionsArea {
+    height: 890px;
+}
+
+#flexTransactionsDataArea {
+    height: 780px;
+}
+
+#flexTransactionsHeaderAINStdAINIfxAINPcemov {
+    height: 95px;
+}
+
+/*- AINPcebal -*/
+#flexAccountDetailsAINPcebal {
+    height: 95px;
+}
+
+#flexTransactionsHeaderAINPcebal {
+    height: 95px;
+}
+
+/*-- View: chiptransactions --*/
+/* Transaction area */
+#flexChipTransactionsArea {
+    height: 100%;
+}
+
+#rowChipTransactionsHeader {
+    height: 80px;
+    padding-left: 20px;
+}
+
+/* Transaction */
+.chipTransaction {
+    height: 80px;
+    padding-left: 20px;
+}
+
+/*-- View: depositchequesresult --*/
+div[data-view-id="depositchequesresult"] #flexArticle {
+    height: 550px;
+}
+
+div[data-view-id="depositchequesresult"] #flexAside {
+    margin-bottom: 160px;
+}
+
+div[data-view-id="depositchequesresult"] #flexAside .buttonZone {
+    margin-bottom: 91px;
+}
+
+div[data-view-id="depositchequesresult"] #scrollbar-horizontal {
+    height: 25px;
+    margin-top: -36px;
+}
+
+#chqControl {
+    min-width: 955px;
+    max-height: 418px;
+}
+
+#chqInfoArea {
+    padding-bottom: 60px;
+}
+
+#chqInfoArea .iconButton {
+    top: 160px;
+}
+
+#chqInfoArea .iconSwipeVerticalToTurn {
+    margin-top: 10px;
+}
+
+#chqInfoArea .iconDoubleTap {
+    margin-top: 50px;
+}
+
+#chqInfoArea #chqInfo {
+    max-height: 180px;
+    margin-bottom: 39px;
+}
+
+#chqInfoArea img {
+    height: 250px;
+    min-width: 500px;
+    max-width: 500px;
+    margin-bottom: -98px;
+}
+
+#chqInfoArea .chequeImageContainer, #chqInfoArea .frontImage, #chqInfoArea .backImage {
+    height: 250px;
+}
+
+/*-- View: pleasewait --*/
+div[data-view-id="pleasewait"] #flexArticle #waitLine {
+    margin-top: 30px;
+}
+
+/*-- View: outofservice / offlinespa --*/
+.outOfServicePattern {
+    height: 195px;
+}
+
+#outOfServiceMessage {
+    min-height: 60px;
+    padding: 250px 0 256px 0;
+}
+
+/*-- View: pinentry --*/
+#pinDigitsArea {
+    margin-top: 120px;
+}
+
+.pinDigitContainer {
+    width: 60px; /*plus 2x1px border*/
+    height: 118px; /*plus 2x1px border*/
+}
+
+.pinDigitContainer:not(:last-child) {
+    margin-right: 14px;
+}
+
+.pinDigitContainer .front {
+    width: 62px;
+    height: 120px;
+}
+
+div.frontCurrent>var {
+    line-height: 2.0em;
+}
+
+div.back {
+    width: 62px;
+    height: 120px;
+}
+
+div.back>var {
+    line-height: 2.0em;
+}
+
+/*low=PIN len <= 12, high=PIN len > 12*/
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer {
+    width: 46px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer:not(:last-child) {
+    margin-right: 13px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer .front {
+    width: 48px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer div.back {
+    width: 48px;
+}
+
+/*-- View: pinentryets --*/
+div[data-view-id="pinentryets"] .fieldButton {
+    width: 128px;
+    height: 68px;
+}
+
+/*-- View: receipt.html --*/
+div[data-view-id="receipt"] .messageArea {
+    height: 500px;
+    margin-left: 64px;
+    padding: 20px;
+}
+
+div[data-view-id="receipt"] .messageArea>var {
+    height: 460px;
+    padding: 20px;
+}
+
+/*-- View: scancodeanimations.html --*/
+#barcodeRedLightTop {
+    height: 285px;
+    perspective: 310px;
+
+}
+
+#barcodeRedLight {
+    width: 85px;
+    height: 336px;
+    perspective: 310px;
+
+}
+
+#qrcodeRedLightTop {
+    height: 300px;
+    perspective: 340px;
+}
+
+#qrcodeRedLight {
+    height: 360px;
+}
+
+/*-- View: scannedimageviewer --*/
+div[data-view-id="scannedimageviewer"] #chqControl {
+    height: 478px;
+    max-height: 478px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"] {
+    height: 538px;
+    max-height: 538px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqImgCarrier2 {
+    width: 488px;
+    height: 325px;
+    margin: 24px 0 0 0;
+}
+
+div[data-view-id="scannedimageviewer"] #chequeScanRedLight {
+    height: 317px;
+    margin-top: 72px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"] #chequeScanRedLight {
+    height: 444px;
+    margin-top: 75px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea #chqInfo {
+    height: 70px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #imgViewer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"] #chqImgCarrier2 {
+    width: 346px;
+    height: 443px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #chqImgCarrier2 {
+    margin-top: 370px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier2 {
+    width: 660px;
+    height: 989px;
+    margin-top: 370px;
+}
+
+/*-- View: signaturepad.html --*/
+#signatureArea {
+    height: 478px;
+}
+
+/*-- View: mobiletransaction.html --*/
+#mobilePhone {
+    width: 350px;
+    height: 640px;
+}
+
+#mobilePhoneDisplay {
+    width: 280px;
+    height: 570px;
+}
+
+/*-- View: outofserviceadditionalinfos.html */
+div[data-view-id="outofserviceadditionalinfos"] #listContainer {
+    height: 700px;
+    max-height: 700px;
+}
+
+#atmInfosHeadline {
+    min-height: 84px;
+    margin-bottom: 4px;
+}
+
+#flexAtmInfosDetails {
+    max-height: 660px;
+}
+
+.flexAtmInfosDetailsRow {
+    padding: 30px 0 30px 20px;
+}

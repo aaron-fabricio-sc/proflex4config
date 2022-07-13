@@ -1,0 +1,25 @@
+{
+  "TRANSACTION_MODULE" : {
+    "NAME": "CCTransactionFW",
+    "ID_CARD": 10008,
+    "ID_CASH": 10012,
+    "ID_DEPOSIT": 10013,
+    "ID_ESCALATION": 10007,
+    "ID_CURRENCY_CHANGE": 10014,
+    "ID_SESSION_END": 10002
+  },
+  "EPP_MODULE": {
+    "NAME": "CCEppFW",
+    "ID_ENTER_DATA": 11,
+    "ID_ETS_LAYOUT_MOVED": 13
+  },
+  "GUIAPP_MODULE": {
+    "NAME": "GUIAPP",
+    "ID_STATUS_CHANGED": 4004,
+    "ID_POPUP_NOTIFICATION": 4021
+  },
+  "GUIDM_MODULE": {
+    "NAME": "GUIDM",
+    "ID_STATUS_CHANGED": 4004
+  }
+}

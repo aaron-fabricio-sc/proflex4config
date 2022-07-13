@@ -1,0 +1,53 @@
+<!--
+$MOD$ pleasewait.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<!-- Main -->
+<main id="flexMain">
+  <!-- Nav -->
+  <nav id="flexNav"></nav>
+  <!-- Article -->
+  <article id="flexArticle">
+    <!-- Points loader -->
+    <!-- <figure id="waitLine" style="visibility: hidden">
+      <div class="conteneur_general_load_9" align="center">
+        <div class="loader_9"></div>
+      </div>
+    </figure> -->
+
+    <div class="conteneur_general_load_9" align="center">
+      <div class="loader_9"></div>
+    </div>
+
+    <!-- Wave spinner -->
+    <!--<figure id="spinnerWave">-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--</figure>-->
+  </article>
+  <!-- Aside -->
+  <aside id="flexAside"></aside>
+</main>
+
+<!-- Footer -->
+<footer id="flexFooter">
+  <div id="flexExtra"></div>
+  <div id="flexCancel">
+    <div class="buttonZone">
+      <div
+        id="buttonCancel"
+        class="button footerButton borderDrawing"
+        data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}"
+      >
+        <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+        <var
+          class="color09 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CANCEL')"
+        ></var>
+      </div>
+    </div>
+  </div>
+</footer>

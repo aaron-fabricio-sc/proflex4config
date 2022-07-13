@@ -1,0 +1,33 @@
+{
+    "defaultTableType": "TransLogStd",
+    "TransLogStd": {
+        "transactions": [
+            { "transDate": "123456", "transTime": "123456", "transAmount": "123456789012", "transRefAmount": "123456789012", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "1234", "transPlace": "12345678901234567890123456789012345678901234567890"  },
+            { "transDate": "225959", "transTime": "311219", "transAmount": "000000001234", "transRefAmount": "000000009876", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "323456", "transTime": "123456", "transAmount": "123456789012", "transRefAmount": "123456789012", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "1234", "transPlace": "12345678901234567890123456789012345678901234567890"  },
+            { "transDate": "425959", "transTime": "311219", "transAmount": "000000001234", "transRefAmount": "000000009876", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "523456", "transTime": "123456", "transAmount": "123456789012", "transRefAmount": "123456789012", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "1234", "transPlace": "12345678901234567890123456789012345678901234567890"  },
+            { "transDate": "625959", "transTime": "311219", "transAmount": "000000001234", "transRefAmount": "000000009876", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "723456", "transTime": "123456", "transAmount": "123456789012", "transRefAmount": "123456789012", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "1234", "transPlace": "12345678901234567890123456789012345678901234567890"  },
+            { "transDate": "825959", "transTime": "311219", "transAmount": "000000001234", "transRefAmount": "000000009876", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "923456", "transTime": "123456", "transAmount": "123456789012", "transRefAmount": "123456789012", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "1234", "transPlace": "12345678901234567890123456789012345678901234567890"  },
+            { "transDate": "025959", "transTime": "311219", "transAmount": "000000001234", "transRefAmount": "000000009876", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "123456", "transTime": "123456", "transAmount": "123456789012", "transRefAmount": "123456789012", "transCountry": "123", "transCurrency": "123", "transType": "01", "transNumber": "1234", "transPlace": "12345678901234567890123456789012345678901234567890"  }
+        ]
+    },
+    "TransLogECash": {
+        "transactions": [
+            { "transDate": "123456", "transTime": "111456", "transCountry": "777", "transNumber": "9999", "transPlace": "XXXX5678901234567890123456789012345678901234567890"  },
+            { "transDate": "225959", "transTime": "222219", "transCountry": "777", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "323456", "transTime": "333456", "transCountry": "777", "transNumber": "9999", "transPlace": "XXXX5678901234567890123456789012345678901234567890"  },
+            { "transDate": "425959", "transTime": "444149", "transCountry": "777", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "523456", "transTime": "555126", "transCountry": "777", "transNumber": "9999", "transPlace": "XXXX5678901234567890123456789012345678901234567890"  },
+            { "transDate": "625959", "transTime": "666219", "transCountry": "777", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "723456", "transTime": "777564", "transCountry": "777", "transNumber": "9999", "transPlace": "XXXX5678901234567890123456789012345678901234567890"  },
+            { "transDate": "825959", "transTime": "888219", "transCountry": "777", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "923456", "transTime": "999956", "transCountry": "777", "transNumber": "9999", "transPlace": "XXXX5678901234567890123456789012345678901234567890"  },
+            { "transDate": "025959", "transTime": "000219", "transCountry": "777", "transNumber": "0011", "transPlace": "Paderborn"  },
+            { "transDate": "123456", "transTime": "111156", "transCountry": "777", "transNumber": "9999", "transPlace": "XXXX5678901234567890123456789012345678901234567890"  }
+        ]
+    }
+}

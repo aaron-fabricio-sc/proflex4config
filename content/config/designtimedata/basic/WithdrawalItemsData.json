@@ -1,0 +1,93 @@
+{
+    "ejectNotes": true,
+    "ejectCoins": true,
+    "ejectReceipt": true,
+    "ejectElectronicReceipt": false,
+    "ejectVoucher": false,
+    "amount": "75000", "amountCoins": "938", "currency": "EUR", "symbol": "€", "ada": "Euro", "exponent": "-2", "denominations": [
+    {
+        "type": 0,
+        "count": [0],
+        "val": 20000,
+        "softLimit": 20
+    },
+    {
+        "type": 0,
+        "count": [0, 1],
+        "val": 10000,
+        "softLimit": 20
+    },
+    {
+        "type": 0,
+        "count": [0, 1, 2, 3],
+        "val": 5000,
+        "softLimit": 20
+    },
+    {
+        "type": 0,
+        "count": [0, 1, 2, 3, 4],
+        "val": 2000,
+        "softLimit": 20
+    },
+    {
+        "type": 0,
+        "count": [0, 1, 2],
+        "val": 1000,
+        "softLimit": 20
+    },
+    {
+        "type": 0,
+        "count": [0, 1],
+        "val": 500,
+        "softLimit": 20
+    },
+    {
+        "type": 1,
+        "count": [0],
+        "val": 1,
+        "softLimit": 20
+    },
+    {
+        "type": 1,
+        "count": [0],
+        "val": 2,
+        "softLimit": 20
+    },
+    {
+        "type": 1,
+        "count": [0],
+        "val": 5,
+        "softLimit": 20
+    },
+    {
+        "type": 1,
+        "count": [0],
+        "val": 10,
+        "softLimit": 20
+    },
+    {
+        "type": 1,
+        "count": [0],
+        "val": 20,
+        "softLimit": 20
+    },
+    {
+        "type": 1,
+        "count": [0, 1],
+        "val": 50,
+        "softLimit": 20
+    },
+    {
+        "type": 1,
+        "count": [0, 1],
+        "val": 100,
+        "softLimit": 20
+    },
+    {
+        "type": 1,
+        "count": [0, 1, 2],
+        "val": 200,
+        "softLimit": 20
+    }
+
+]}

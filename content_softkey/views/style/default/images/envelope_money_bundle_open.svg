@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 498 300" style="enable-background:new 0 0 498 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#275C68;stroke-miterlimit:10;}
+	.st1{opacity:0.5;fill:none;stroke:#275C68;enable-background:new    ;}
+	.st2{fill:#FFFFFF;stroke:#275C68;}
+	.st3{fill:none;stroke:#275C68;}
+	.st4{fill:#FFFFFF;}
+	.st5{opacity:0.1;fill:#99AA88;enable-background:new    ;}
+	.st6{opacity:0.7;fill:#99AA88;enable-background:new    ;}
+	.st7{opacity:0.5;}
+	.st8{fill:none;stroke:#FFFFFF;stroke-width:4.5;stroke-miterlimit:10;stroke-dasharray:10.4088,10.4088;}
+	.st9{fill:#333333;}
+	.st10{font-family:'ArialMT';}
+	.st11{font-size:36px;}
+	.st12{font-size:18px;}
+	.st13{font-size:52.5px;}
+	.st14{fill:#556655;}
+	.st15{fill:#436EB3;}
+	.st16{opacity:0.1;fill:#BB5577;enable-background:new    ;}
+	.st17{opacity:0.7;fill:#BB5577;enable-background:new    ;}
+	.st18{fill:#883355;}
+	.st19{opacity:0.1;fill:#5577FF;enable-background:new    ;}
+	.st20{opacity:0.7;fill:#5577FF;enable-background:new    ;}
+	.st21{fill:#2244BB;}
+	.st22{opacity:0.1;fill:#FFAA44;enable-background:new    ;}
+	.st23{opacity:0.7;fill:#FFAA44;enable-background:new    ;}
+	.st24{fill:#AA5500;}
+	.st25{opacity:0.1;fill:#4C7B47;enable-background:new    ;}
+	.st26{opacity:0.7;fill:#4C7B47;enable-background:new    ;}
+	.st27{fill:#4C7B47;}
+	.st28{opacity:0.1;fill:#EEEE00;enable-background:new    ;}
+	.st29{opacity:0.7;fill:#EEEE00;enable-background:new    ;}
+	.st30{fill:#AAAA00;}
+</style>
+<g>
+	<polygon class="st0" points="244.7,3.8 61.8,127.1 61.6,295.8 430.4,295.8 430.6,127 	"/>
+</g>
+<polyline class="st1" points="61.8,127.1 244.6,3.5 430.6,127 "/>
+<polyline class="st2" points="61.6,127.1 244.7,3.8 430.8,127.1 "/>
+<g id="Ebene_3">
+	<line class="st3" x1="62.5" y1="126.5" x2="429.8" y2="126.4"/>
+</g>
+<g>
+	<rect id="BG_8_" x="116.3" y="15.8" class="st4" width="265.5" height="153"/>
+	<rect id="BG_1_" x="116.3" y="15.8" class="st5" width="265.5" height="153"/>
+	<rect id="noteColor" x="173.4" y="15.8" class="st6" width="150" height="153"/>
+	<g class="st7">
+		<circle class="st8" cx="249.9" cy="93.8" r="49.6"/>
+	</g>
+	<g>
+		<text id="valueLeft" transform="matrix(1 0 0 1 116.3 163.1038)" class="st9 st10 st11">5</text>
+	</g>
+	<g>
+		<text id="currencyText" transform="matrix(1 0 0 1 176.3 148.5608)" class="st9 st10 st12">euro</text>
+	</g>
+	<g>
+		<text id="valueRight" transform="matrix(1 0 0 1 352.9963 60.2546)" class="st9 st10 st13">5</text>
+	</g>
+	<rect id="stripe" x="176.4" y="150.8" class="st14" width="120" height="6"/>
+	<rect x="125.3" y="27.8" class="st15" width="31.5" height="19.5"/>
+</g>
+<g>
+	<rect id="BG_3_" x="115.6" y="38" class="st4" width="265.5" height="153"/>
+	<rect id="BG_2_" x="115.6" y="38" class="st16" width="265.5" height="153"/>
+	<rect id="noteColor_1_" x="172.6" y="38" class="st17" width="150" height="153"/>
+	<g class="st7">
+		<circle class="st8" cx="249.1" cy="116" r="49.6"/>
+	</g>
+	<g>
+		<text id="valueLeft_1_" transform="matrix(1 0 0 1 115.6003 185.2467)" class="st9 st10 st11">10</text>
+	</g>
+	<g>
+		<text id="currencyText_1_" transform="matrix(1 0 0 1 175.6003 170.7037)" class="st9 st10 st12">euro</text>
+	</g>
+	<g>
+		<text id="valueRight_1_" transform="matrix(1 0 0 1 323.2966 82.3976)" class="st9 st10 st13">10</text>
+	</g>
+	<rect id="stripe_1_" x="175.6" y="173" class="st18" width="120" height="6"/>
+	<rect x="124.6" y="50" class="st15" width="31.5" height="19.5"/>
+</g>
+<g>
+	<rect id="BG_5_" x="115.9" y="60.8" class="st4" width="265.5" height="153"/>
+	<rect id="BG_4_" x="115.9" y="60.8" class="st19" width="265.5" height="153"/>
+	<rect id="noteColor_2_" x="172.9" y="60.8" class="st20" width="150" height="153"/>
+	<g class="st7">
+		<circle class="st8" cx="249.4" cy="138.8" r="49.6"/>
+	</g>
+	<g>
+		<text id="valueLeft_2_" transform="matrix(1 0 0 1 115.9293 208.1038)" class="st9 st10 st11">20</text>
+	</g>
+	<g>
+		<text id="currencyText_2_" transform="matrix(1 0 0 1 175.9293 193.5608)" class="st9 st10 st12">euro</text>
+	</g>
+	<g>
+		<text id="valueRight_2_" transform="matrix(1 0 0 1 323.6256 105.2546)" class="st9 st10 st13">20</text>
+	</g>
+	<rect id="stripe_2_" x="175.9" y="195.8" class="st21" width="120" height="6"/>
+	<rect x="124.9" y="72.8" class="st15" width="31.5" height="19.5"/>
+</g>
+<g>
+	<rect id="BG_7_" x="116.6" y="86.6" class="st4" width="265.5" height="153"/>
+	<rect id="BG_6_" x="116.6" y="86.6" class="st22" width="265.5" height="153"/>
+	<rect id="noteColor_3_" x="173.7" y="86.6" class="st23" width="150" height="153"/>
+	<g class="st7">
+		<circle class="st8" cx="250.2" cy="164.6" r="49.6"/>
+	</g>
+	<g>
+		<text id="valueLeft_3_" transform="matrix(1 0 0 1 116.6293 233.8643)" class="st9 st10 st11">50</text>
+	</g>
+	<g>
+		<text id="currencyText_3_" transform="matrix(1 0 0 1 176.6293 219.3213)" class="st9 st10 st12">euro</text>
+	</g>
+	<g>
+		<text id="valueRight_3_" transform="matrix(1 0 0 1 323.3256 131.0151)" class="st9 st10 st13">50</text>
+	</g>
+	<rect id="stripe_3_" x="176.7" y="221.6" class="st24" width="120" height="6"/>
+	<rect x="125.6" y="98.6" class="st15" width="31.5" height="19.5"/>
+</g>
+<g>
+	<rect id="BG_10_" x="117.1" y="112" class="st4" width="265.5" height="153"/>
+	<rect id="BG_9_" x="117.1" y="112" class="st25" width="265.5" height="153"/>
+	<rect id="noteColor_4_" x="174.1" y="112" class="st26" width="150" height="153"/>
+	<g class="st7">
+		<circle class="st8" cx="250.6" cy="190" r="49.6"/>
+	</g>
+	<g>
+		<text id="valueLeft_4_" transform="matrix(1 0 0 1 117.0749 259.2087)" class="st9 st10 st11">100</text>
+	</g>
+	<g>
+		<text id="currencyText_4_" transform="matrix(1 0 0 1 177.0749 244.6657)" class="st9 st10 st12">euro</text>
+	</g>
+	<g>
+		<text id="valueRight_4_" transform="matrix(1 0 0 1 293.7712 156.3594)" class="st9 st10 st13">100</text>
+	</g>
+	<rect id="stripe_4_" x="177.1" y="247" class="st27" width="120" height="6"/>
+	<rect x="126.1" y="124" class="st15" width="31.5" height="19.5"/>
+</g>
+<g>
+	<rect id="BG_12_" x="116.7" y="137.8" class="st4" width="265.5" height="153"/>
+	<rect id="BG_11_" x="116.7" y="137.8" class="st28" width="265.5" height="153"/>
+	<rect id="noteColor_5_" x="173.8" y="137.8" class="st29" width="150" height="153"/>
+	<g class="st7">
+		<circle class="st8" cx="250.3" cy="215.8" r="49.6"/>
+	</g>
+	<g>
+		<text id="valueLeft_5_" transform="matrix(1 0 0 1 116.7293 285.0987)" class="st9 st10 st11">200</text>
+	</g>
+	<g>
+		<text id="currencyText_5_" transform="matrix(1 0 0 1 176.7293 270.5557)" class="st9 st10 st12">euro</text>
+	</g>
+	<g>
+		<text id="valueRight_5_" transform="matrix(1 0 0 1 293.4256 182.2495)" class="st9 st10 st13">200</text>
+	</g>
+	<rect id="stripe_5_" x="176.8" y="272.8" class="st30" width="120" height="6"/>
+	<rect x="125.7" y="149.8" class="st15" width="31.5" height="19.5"/>
+</g>
+<polyline class="st2" points="63,126.6 219.4,214.8 63.6,295.8 "/>
+<polyline class="st2" points="429.8,126.4 280.8,216.6 429,295.8 "/>
+<path class="st2" d="M61.6,294c0,0,144.2-82.4,163.1-92.6c13.8-7.9,23.7-7.9,34.9-0.6c11.3,7.3,159.4,86.6,169.6,93.2"/>
+</svg>

@@ -1,0 +1,46 @@
+<!--
+$MOD$ header.html 4.3.1-210422-21-8faf2d6b-1a04bc7d
+-->
+
+<header id="flexHeader" data-view-id data-message-visible="false" data-bind="attr: { 'data-message-visible': messageVisible }">
+    <div id="flexHeaderTop">
+        <div id="flexLogo">
+            <div></div> <!-- the logo placeholder -->
+        </div>
+        <div id="flexAdditionalHeaderInfo">
+            <var class="color03 font03" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_AdditionalHeaderInfo', 'ProFlex4 UI 4.3.0')"></var>
+        </div>
+        <div id="flexHelp">
+            <div id="help" class="button" data-bind="command: {id: 'HELP', type: CMDTYPE.BUTTON, state: CMDSTATE.DISABLED, eppkey: 'HELP'}">
+                <svg data-bind="svguse: { name: 'help.svg' }"></svg>
+            </div>
+        </div>
+        <time id="flexTime">
+            <!-- QR code -->
+            <div id="qrCode" style="display: none; opacity: 0;">
+                <div id="qrCodeToken"></div>
+            </div>
+            <!-- time -->
+            <div id="time">
+                <var class="color02 font01" data-bind="html: time().time"></var>
+                <var id="timeMeridiem" class="color01 font03" data-bind="html: time().meridiem"></var>
+            </div>
+            <!-- date -->
+            <div id="date">
+                <var class="color01 font03" data-bind="html: date"></var>
+            </div>
+        </time>
+    </div>
+    <div id="flexMessageContainerHeader" class="flexMessageContainer" style="display: none;"  data-bind="visible: messageVisible">
+        <div class="messageArea" data-content-style="WarningBox" data-bind="attr: { 'data-content-style': messageLevel }">
+            <var class="color03 font01" data-bind="
+                command: {id: 'MESSAGE_HEADER', adaType: ADA_TYPE.MESSAGE, adaText: messageTextAda, action: null, state: CMDSTATE.NONE, label: {html: messageText, inplace: true}}"></var>
+        </div>
+    </div>
+    <div id="flexHeaderBottom">
+        <var id="headline" class="color02 font01"
+             data-bind="command: {id: 'HEADLINE', adaType: ADA_TYPE.HEADLINE, action: null, state: CMDSTATE.NONE, label: {html: getLabel('GUI_[#VIEW_KEY#]_Headline', ''), inplace: true}}"></var>
+        <var id="instruction" class="color01 font02"
+             data-bind="command: {id: 'INSTRUCTION', adaType: ADA_TYPE.INSTRUCTION, action: null, state: CMDSTATE.NONE, label: {html: getLabel('GUI_[#VIEW_KEY#]_Instruction', ''), inplace: true}}"></var>
+    </div>
+</header>

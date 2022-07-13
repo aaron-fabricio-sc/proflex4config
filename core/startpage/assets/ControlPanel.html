@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<!--
+$MOD$ ControlPanel.html 4.3.1-210505-21-c0d9f31f-1a04bc7d
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Control panel</title>
+        <link rel="stylesheet" href="select2.css">
+        <link rel="stylesheet" href="jquery-ui.css">
+        <link rel="stylesheet" href="jquery-ui.structure.css">
+        <link rel="stylesheet" href="jquery-ui.theme.css">
+        <link rel="stylesheet" href="control-panel.css">
+
+        <!--<script src="../../../lib/jquery-min.js"></script>-->
+    </head>
+
+    <body link="#000000" text="#000000" vlink="#000000" oncontextmenu="return false;" data-style-type="MercuryDark">
+
+    <div id="controlPanelMode">
+        <H1>ProFlex4 UI / Control panel 4.3.1</H1>
+        <button id="goOnId" style="display: none;">Debug</button>
+        <div id="tabs" style="display: none;">
+            <ul>
+                <li><a href="#controlPanel">Main</a></li>
+                <li><a href="#moreOptionsPanel">More options</a></li>
+                <li><a href="#viewKeysPanel">Viewkeys</a></li>
+                <li><a href="#propertiesPanel">Properties</a></li>
+                <li><a href="#cashPanel">Cash & Deposit</a></li>
+                <li><a href="#devicesPanel">Devices</a></li>
+                <li><a href="#eventsPanel">Events</a></li>
+                <li><a href="#transactionPanel">Transaction</a></li>
+            </ul>
+            <div id="controlPanel">
+                <fieldset id="functions">
+                    <legend>Functions</legend>
+                    <button id="funcStartAda" class="funcButton" onclick="window.opener.startAda()" title="Emulates the ADA 123 trigger in IDLE view">Start ADA</button>
+                    <button id="funcGotoIdleLoop" class="funcButton" onclick="window.gotoIdleLoop()" title="Goes to the IdleLoopPresentation from any other viewkey">Goto IdleLoop</button>
+                    <button id="funcGotoDefault" class="funcButton" oncontextmenu="window.gotoDefaultContextMenu(this)" onclick="window.gotoDefault(this)" title="Goes to the previous set viewkey, right click resets it">Set Default</button>
+                    <button id="funcResetBusinessData" class="funcButton" onclick="window.resetBusinessData();" title="Reset DataService / Update ViewService">Reset / Update</button>
+                </fieldset>
+                <fieldset id="moreOptions">
+                    <legend>Options</legend>
+                    <section>
+                        <label for="beepCheckBox" title="Beep on command via BeepService">Enable BeepService</label>
+                        <input id="beepCheckBox" type="checkbox"  data-bind="checked: enableBeepMode"/>
+                    </section>
+                    <section>
+                        <label for="cancelCheckBox" title="Enables normal cancel behaviour during cancelation">Enable cancel behaviour</label>
+                        <input id="cancelCheckBox" type="checkbox" data-bind="checked: enableCancelBehaviour"/>
+                    </section>
+                    <section>
+                        <label for="pinEtsCheckBox" title="Enables PIN mode for ETS">Enable PIN ETS mode</label>
+                        <input id="pinEtsCheckBox" type="checkbox" data-bind="checked: enablePINEtsMode"/>
+                    </section>
+                    <section>
+                        <label for="subMenuCheckBox" title="Enables sub menu support if configured">Enable sub menus</label>
+                        <input id="subMenuCheckBox" type="checkbox" data-bind="checked: enableSubMenus"/>
+                    </section>
+                    <section>
+                        <label for="moveOnWaitCheckBox" title="Activates automatic move on certain viewkeys, such as 'TransactionEndWait'">Move on pleasewait</label>
+                        <input id="moveOnWaitCheckBox" type="checkbox" data-bind="checked: enableMoveOnWait"/>
+                    </section>
+                    <section>
+                        <label for="enableTraceCheckBox" title="Activates console tracing">Activate console logging</label>
+                        <input id="enableTraceCheckBox" type="checkbox" data-bind="checked: enableTrace"/>
+                    </section>
+                </fieldset>
+                <fieldset id="options">
+                    <legend>Timeout</legend>
+                    <div id="timeoutPresenter">
+                        <div id="countdown"></div>
+                    </div>
+                </fieldset>
+                <!--<fieldset id="viewInfo">-->
+                    <!--<legend>View info</legend>-->
+                    <!--<div id="viewInfoDetails">-->
+                        <!--<var>view-key:<span id="viewKey"></span></var>-->
+                        <!--<var>&nbsp;&nbsp;&nbsp;view-id:<span id="viewId"></span></var>-->
+                        <!--<var>&nbsp;ui-result:<span id="uiResult"></span></var>-->
+                    <!--</div>-->
+                <!--</fieldset>-->
+                <fieldset id="eppPanel">
+                    <legend>EPP</legend>
+                    <div id="eppClaims">
+                        <div id="eppClaimsLeft">
+                            <button onclick="window.opener.eppKeyEvent('F8')" data-bind="attr:{'data-counter': F8.claims, 'data-claim-status': F8.status, 'data-cmd-status': F8.cmdState}" data-cmd-status="HIDDEN" data-counter="1" data-claim-status="ENABLED" class="buttonEpp"><var>F8</var></button>
+                            <button onclick="window.opener.eppKeyEvent('F7')" data-bind="attr:{'data-counter': F7.claims, 'data-claim-status': F7.status, 'data-cmd-status': F7.cmdState}" data-claim-status="RELEASED" class="buttonEpp"><var>F7</var></button>
+                            <button onclick="window.opener.eppKeyEvent('F6')" data-bind="attr:{'data-counter': F6.claims, 'data-claim-status': F6.status, 'data-cmd-status': F6.cmdState}" data-claim-status="RELEASED" class="buttonEpp"><var>F6</var></button>
+                            <button onclick="window.opener.eppKeyEvent('F5')" data-bind="attr:{'data-counter': F5.claims, 'data-claim-status': F5.status, 'data-cmd-status': F5.cmdState}" data-claim-status="RELEASED" class="buttonEpp"><var>F5</var></button>
+                        </div>
+                        <div id="eppClaimsMiddle">
+                            <button onclick="window.opener.eppKeyEvent('CANCEL')" id="cancel" class="buttonEpp eppWide" data-bind="attr:{'data-counter': CANCEL.claims, 'data-claim-status': CANCEL.status, 'data-cmd-status': CANCEL.cmdState}" data-cmd-status="HIDDEN" data-claim-status="RELEASED"><var>CANCEL</var></button>
+                            <button onclick="window.opener.eppKeyEvent('CONFIRM')" id="confirm" class="buttonEpp eppWide" data-bind="attr:{'data-counter': CONFIRM.claims, 'data-claim-status': CONFIRM.status, 'data-cmd-status': CONFIRM.cmdState}" data-claim-status="ENABLED"><var>CONFIRM</var></button>
+                            <button onclick="window.opener.eppKeyEvent('BACKSPACE')" id="correct" class="buttonEpp eppWide" data-bind="attr:{'data-counter': BACKSPACE.claims, 'data-claim-status': BACKSPACE.status, 'data-cmd-status': BACKSPACE.cmdState}" data-claim-status="RELEASED"><var>CORRECT</var></button>
+                            <button onclick="window.opener.eppKeyEvent('HELP')" id="help" class="buttonEpp eppWide" data-bind="attr:{'data-counter': HELP.claims, 'data-claim-status': HELP.status, 'data-cmd-status': HELP.cmdState}" data-claim-status="RELEASED"><var>HELP</var></button>
+                        </div>
+                        <div id="eppClaimsRight">
+                            <button onclick="window.opener.eppKeyEvent('F1')" data-bind="attr:{'data-counter': F1.claims, 'data-claim-status': F1.status, 'data-cmd-status': F1.cmdState}" data-claim-status="RELEASED" class="buttonEpp"><var>F1</var></button>
+                            <button onclick="window.opener.eppKeyEvent('F2')" data-bind="attr:{'data-counter': F2.claims, 'data-claim-status': F2.status, 'data-cmd-status': F2.cmdState}" data-claim-status="RELEASED" class="buttonEpp"><var>F2</var></button>
+                            <button onclick="window.opener.eppKeyEvent('F3')" data-bind="attr:{'data-counter': F3.claims, 'data-claim-status': F3.status, 'data-cmd-status': F3.cmdState}" data-claim-status="RELEASED" class="buttonEpp"><var>F3</var></button>
+                            <button onclick="window.opener.eppKeyEvent('F4')" data-bind="attr:{'data-counter': F4.claims, 'data-claim-status': F4.status, 'data-cmd-status': F4.cmdState}" data-claim-status="RELEASED" class="buttonEpp"><var>F4</var></button>
+                        </div>
+                        <div id="eppClaimsNumbersLeft">
+                            <button onclick="window.opener.eppKeyEvent('1')" data-bind="attr:{'data-counter': $root['1'].claims, 'data-claim-status': $root['1'].status, 'data-cmd-status': $root['1'].cmdState, }" data-claim-status="DISABLED" class="buttonEpp"><var>1</var></button>
+                            <button onclick="window.opener.eppKeyEvent('4')" data-bind="attr:{'data-counter': $root['4'].claims, 'data-claim-status': $root['4'].status, 'data-cmd-status': $root['4'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>4</var></button>
+                            <button onclick="window.opener.eppKeyEvent('7')" data-bind="attr:{'data-counter': $root['7'].claims, 'data-claim-status': $root['7'].status, 'data-cmd-status': $root['7'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>7</var></button>
+                        </div>
+                        <div id="eppClaimsNumbersMiddle">
+                            <button onclick="window.opener.eppKeyEvent('2')" data-bind="attr:{'data-counter': $root['2'].claims, 'data-claim-status': $root['2'].status, 'data-cmd-status': $root['2'].cmdState}" data-claim-status="RELEASED" class="buttonEpp"><var>2</var></button>
+                            <button onclick="window.opener.eppKeyEvent('5')" data-bind="attr:{'data-counter': $root['5'].claims, 'data-claim-status': $root['5'].status, 'data-cmd-status': $root['5'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>5</var></button>
+                            <button onclick="window.opener.eppKeyEvent('8')" data-bind="attr:{'data-counter': $root['8'].claims, 'data-claim-status': $root['8'].status, 'data-cmd-status': $root['8'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>8</var></button>
+                            <button onclick="window.opener.eppKeyEvent('0')" data-bind="attr:{'data-counter': $root['0'].claims, 'data-claim-status': $root['0'].status, 'data-cmd-status': $root['0'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>0</var></button>
+                        </div>
+                        <div id="eppClaimsNumbersRight">
+                            <button onclick="window.opener.eppKeyEvent('3')" data-bind="attr:{'data-counter': $root['3'].claims, 'data-claim-status': $root['3'].status, 'data-cmd-status': $root['3'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>3</var></button>
+                            <button onclick="window.opener.eppKeyEvent('6')" data-bind="attr:{'data-counter': $root['6'].claims, 'data-claim-status': $root['6'].status, 'data-cmd-status': $root['6'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>6</var></button>
+                            <button onclick="window.opener.eppKeyEvent('9')" data-bind="attr:{'data-counter': $root['9'].claims, 'data-claim-status': $root['9'].status, 'data-cmd-status': $root['9'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>9</var></button>
+                            <button onclick="window.opener.eppKeyEvent('*')" data-bind="attr:{'data-counter': $root['*'].claims, 'data-claim-status': $root['*'].status, 'data-cmd-status': $root['*'].cmdState}" data-claim-status="ENABLED" class="buttonEpp"><var>*</var></button>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset id="logPanelMain" class="logPanel">
+                    <legend>Log</legend>
+                    <pre id="logFieldMain" class="logField" contenteditable="false" data-bind="html: logMessage"></pre>
+                </fieldset>
+            </div>
+            <div id="moreOptionsPanel">
+                <fieldset id="styleTypes">
+                    <legend>Style types:</legend>
+                    <!-- ko  if: styleTypes().length <= 4 -->
+                        <!-- ko foreach: { data: styleTypes } -->
+                            <label for="s1" data-bind="text: $data.name, attr: {for: 'styleType_' + $data.folderName}"></label>
+                            <input type="radio" name="styleGroup" id="s1" data-bind=
+                                    "checked: $parent.checkedValue,
+                                checkedValue: $data,
+                                        attr: {value: $data.name, id: 'styleType_' + $data.folderName, title: 'folderName: ' + $data.folderName},
+                                     enabled: $data.enabled"
+                            />
+                        <!-- /ko -->
+                    <!-- /ko -->
+                    <!-- ko  if: styleTypes().length > 4 -->
+                        <select id="styleTypeOptions" data-bind="options: styleTypes, value: checkedValue, optionsText: 'name', optionsAfterRender: afterRendered"></select>
+                    <!-- /ko -->
+                </fieldset>
+                <fieldset id="vendors">
+                    <legend>Vendors (softkey only):</legend>
+                    <!-- ko foreach: { data: vendors } -->
+                        <label for="v" data-bind="text: $data.name, attr: {for: 'vendor_' + $data.folderName}"></label>
+                        <input type="radio" name="vendorGroup" id="v" data-bind=
+                                "checked: $parent.checkedValue, checkedValue: $data.folderName,
+                                    attr: {value: $data.name, id: 'vendor_' + $data.folderName},
+                                 enabled: $data.enabled"/>
+                    <!-- /ko -->
+                </fieldset>
+                <fieldset id="escalationMessageFunctions">
+                    <legend>Escalation message:</legend>
+                    <button id="messageDefault" class="funcButton">Default</button>
+                    <button id="messageWarning" class="funcButton">Warning</button>
+                    <button id="messageError" class="funcButton">Error</button>
+                    <button id="closeMessage" class="funcButton">Close message</button>
+                </fieldset>
+                <div id="waitSpinnerAndLayerOutline">
+                    <div id="waitSpinnerInfos">
+                        <fieldset id="waitSpinnerFunctions">
+                            <legend>Wait spinner:</legend>
+                            <button id="showWaitSpinner" class="funcButton">Wait spinner</button>
+                            <button id="hideWaitSpinner" class="funcButton">Close spinner</button>
+                        </fieldset>
+                    </div>
+                    <div id="layerOutlineInfos">
+                        <fieldset>
+                            <legend>Layer outline</legend>
+                            <div id="layerOutlineInfosContainer">
+                                <div>
+                                    <input id="layerOutlineSelection" type="checkbox" data-bind="checked: layerOutlineSelection"/>
+                                    <label for="layerOutlineSelection">Outline</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <fieldset id="animationFunctions">
+                    <legend>Animations:</legend>
+                    <button id="stopAnimations" class="funcButton">Stop animations</button>
+                    <button id="startAnimations" class="funcButton" disabled="disabled">Start animations</button>
+                </fieldset>
+                <fieldset id="popupFunctions">
+                    <legend>Popups:</legend>
+                    <button id="showMessagePopup" class="funcButton">Message popup</button>
+                    <button id="showAmountPopup" class="funcButton">Amount popup</button>
+                    <button id="hidePopup" class="funcButton">Close</button>
+                </fieldset>
+                <fieldset id="viewSetFunctions">
+                    <legend>Change viewset:</legend>
+                    <div id="viewSetFunctionsContainer">
+                        <section>
+                            <button class="funcButton" onclick="window.viewSetSwitch('softkey')" title="Starts the softkey viewset on next navigation">softkey</button>
+                            <button class="funcButton" onclick="window.viewSetSwitch('touch')" title="Starts the touch viewset on next navigation">touch</button>
+                        </section>
+                        <section>
+                            <button class="funcButton" onclick="window.viewSetSwitch('softkey', true)" title="Starts the softkey viewset immediately">softkey <i>immediately</i></button>
+                            <button class="funcButton" onclick="window.viewSetSwitch('touch', true)" title="Starts the touch viewset immediately">touch <i>immediately</i></button>
+                        </section>
+                        <section>
+                            <button class="funcButton" onclick="window.viewSetSwitch('')" title="Starts the initial viewset on next navigation">initial viewset</button>
+                            <button class="funcButton" onclick="window.viewSetSwitch('', true)" title="Starts the initial viewset immediately">initial viewset <i>immediately</i></button>
+                        </section>
+                    </div>
+                </fieldset>
+            </div>
+            <div id="viewKeysPanel">
+                <fieldset>
+                    <legend>Viewkeys</legend>
+                    <div id="viewKeysView">
+                        <div class="viewKey">
+                            <label for="viewKeysSelectBox"></label>
+                            <select id="viewKeysSelectBox" class="viewKeysSelectBoxBasicSingle" data-placeholder="Viewkey name"
+                                    data-bind="options: vkList, value: viewKeyValue, optionsText: 'name', optionsCaption: 'Select an item...', optionsAfterRender: afterRendered">
+                            </select>
+                        </div>
+                        <div class="viewKey">
+                            <label for="viewKeyValue">View config</label>
+                            <input id="viewKeyValue" type="text" onfocus="window.editViewKey();" data-bind="value: viewConfig"/>
+                            <!--<textarea id="viewKeyValueTextArea" style="display: none;" onblur="jQuery(this).hide()" data-bind="value: viewKeyValue"></textarea>-->
+                            <pre id="viewKeyValueTextArea" contenteditable="true" style="display: none;" onblur="jQuery(this).hide()"></pre>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Check viewkeys</legend>
+                    <section>
+                        <button class="funcButton" data-bind="click: checkViewKeys, attr: { disabled: viewKeyCheckingStarted }" title="Start checking all viewkeys">Start check viewkeys</button>
+                        <button class="funcButton" data-bind="click: stopCheckViewKeys" title="Start checking all viewkeys">Stop check viewkeys</button>
+                    </section>
+                </fieldset>
+            </div>
+            <div id="propertiesPanel">
+                <fieldset>
+                    <legend>Properties</legend>
+                    <button class="funcButton" data-bind="click: watchProperty" title="Start watching the current selected property">Watch property</button>
+                    <button class="funcButton" data-bind="click: clearWatchProperty" title="Clears all watches">Clear watches</button>
+                    <button class="funcButton" data-bind="click: addProperty" title="Add a property to the list">Add property</button>
+                    <div id="propertiesView">
+                        <div class="prop">
+                            <label for="propertiesSelectBox">Properties</label>
+                            <select id="propertiesSelectBox" class="propertiesSelectBoxBasicSingle" data-placeholder="Property name"
+                                    data-bind="options: businessProperties, value: propertyData, optionsText: 'name', optionsCaption: 'Select an item...', optionsAfterRender: afterRendered">
+                            </select>
+                        </div>
+                        <div class="prop">
+                            <label for="propertyValue">Value</label>
+                            <input id="propertyValue" type="text" onfocus="window.editProperty('propertyValue', 'propertyValueTextArea');" data-bind="value: propValue"/>
+                            <!--<textarea id="propertyValueTextArea" style="display: none;" onblur="jQuery(this).hide()" data-bind="value: propertyData"></textarea>-->
+                            <pre id="propertyValueTextArea" contenteditable="true" style="display: none;" onblur="jQuery(this).hide()"></pre>
+                        </div>
+                        <div id="addProperty" class="prop addProp ui-widget-content" style="display: none;">
+                            <div id="addPropButtons">
+                                <button class="addBtn" data-bind="click: addPropertyToList">Add</button>
+                                <button class="closeBtn" data-bind="click: cancelAddProp">X</button>
+                            </div>
+                            <label id="addPropertyNameLabel" for="addPropertyNameList">Name</label>
+                            <input id="addPropertyName" type="text" placeholder="Please type an existing business property name..."
+                                   onfocus="window.editProperty('addPropertyName', 'addPropertyValueTextArea', true, 8, true);" data-bind="value: addPropertyName"/>
+                            <select id="addPropertyNameList" class="" data-allow-clear="true" style="display: none;"
+                                    data-bind="options: addPropertyNameList, value: addPropertyNameFromList">
+                            </select>
+                            <label id="addPropertyValueLabel">Value</label>
+                            <pre id="addPropertyValueTextArea" contenteditable="true" style="display: none;" onblur="jQuery(this).hide()"></pre>
+                        </div>
+                        <fieldset id="propWatches">
+                            <legend>Watches</legend>
+                            <!-- ko template: { foreach: watchProperties } -->
+                                <div class="prop">
+                                    <label for="watchPropValue" data-bind="text: $data.name, attr: {for: 'watchPropValue' + $index()}"></label>
+                                    <input id="watchPropValue" type="text" readonly disabled="" onfocus="blur();" data-bind="value: $data.value, attr: {for: 'watchPropValue' + $index()}"/>
+                                </div>
+                            <!-- /ko -->
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+            <div id="cashPanel">
+                <div id="cashAndDepositContainer">
+                    <h3>Cash info</h3>
+                    <div id="cashInfo">
+                        <fieldset id="cashInfoSet">
+                            <button data-bind="click: submit" title="Submit changes">Submit</button>
+                            <legend>Cash infos</legend>
+                            <div id="cashInfosContainer">
+                                <section>
+                                    <label for="dispenseCurrency">Currency:</label>
+                                    <input type="text" id="dispenseCurrency" onclick="this.select();" data-bind="value: currency"/>
+                                    <label for="currencySymbol">Symbol:</label>
+                                    <input type="text" id="currencySymbol" onclick="this.select();" data-bind="value: symbol"/>
+                                    <label for="currencyExponent">Exponent:</label>
+                                    <input type="text" id="currencyExponent" readonly data-bind="value: exponent"/>
+                                </section>
+                                <section>
+                                    <label for="dispenseAmount">Dispense amount (cents):</label>
+                                    <input type="text" id="dispenseAmount" onclick="this.select();" data-bind="value: amount"/>
+                                    <label for="noteDispenseAmount">Note dispense amount (cents):</label>
+                                    <input type="text" id="noteDispenseAmount" readonly onclick="this.select();" data-bind="value: noteAmount"/>
+                                    <label for="coinDispenseAmount">Coin dispense amount (cents):</label>
+                                    <input type="text" id="coinDispenseAmount" readonly onclick="this.select();" data-bind="value: coinAmount"/>
+                                </section>
+                                <section>
+                                    <label for="maxNotes">Max notes per dispense:</label>
+                                    <input type="text" id="maxNotes" onclick="this.select();" data-bind="value: maxNotes"/>
+                                    <label for="maxCoins">Max coins per dispense:</label>
+                                    <input type="text" id="maxCoins" onclick="this.select();" data-bind="value: maxCoins"/>
+                                </section>
+                                <section>
+                                    <label for="fastCashAmount">Fastcash amount:</label>
+                                    <input type="text" id="fastCashAmount" onclick="this.select();" data-bind="value: fastCashAmount"/>
+                                </section>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>Deposit info</h3>
+                    <div id="depositInfo">
+                        <fieldset id="depositInfoSet">
+                            <!--<button data-bind="click: submit" title="Submit changes">Submit</button>-->
+                            <legend>Deposit infos</legend>
+                            <div id="depositInfosContainer">
+                                <section>
+                                    <label for="scannerTypes">Scanner type:&numsp;&numsp;</label>
+                                    <select id="scannerTypes" data-bind="options: scannerTypes, value: currentScannerType"></select>
+                                </section>
+                                <section data-bind="attr: { disabled: !chequesScanAndReadParallelState() }">
+                                    <label for="chequesScanAndReadParallel" title="Decides whether Cheque scanning&reading is parallel or not">Scan&read parallel</label>
+                                    <input id="chequesScanAndReadParallel" type="checkbox"
+                                           data-bind="checked: chequesScanAndReadParallel, attr: { disabled: !chequesScanAndReadParallelState() }"/>
+                                </section>
+                                <div class="separatorLine"></div>
+                                <section>
+                                    <label for="depositNotesDeviceTypes">Notedevice type:</label>
+                                    <select id="depositNotesDeviceTypes" data-bind="options: depositNotesDeviceTypes, value: currentNoteDeviceType"></select>
+                                </section>
+                                <section>
+                                    <label for="coinDeviceTypes">Coindevice type:</label>
+                                    <select id="coinDeviceTypes" data-bind="options: coinDeviceTypes, value: currentCoinDeviceType"></select>
+                                </section>
+                                <section>
+                                    <label for="trayIOReasons">Tray I/O reason:</label>
+                                    <select id="trayIOReasons" data-bind="options: trayIOReasons, value: currentTrayIOReason"></select>
+                                </section>
+                                <section>
+                                    <label for="allowMixedMedia" title="Allow to deposit note & cheque items together">Allow mixed media</label>
+                                    <input id="allowMixedMedia" type="checkbox" data-bind="checked: allowMixedMedia"/>
+                                </section>
+                                <section>
+                                    <label for="L3NotesCredited" title="Decides whether Level 3 notes will be credited or not">L3 notes credited</label>
+                                    <input id="L3NotesCredited" type="checkbox" data-bind="checked: l3NotesCredited"/>
+                                </section>
+                            </div>
+                        </fieldset>
+                        <fieldset id="depositInsertion">
+                            <legend>Deposit insertion items</legend>
+                            <section id="depositInsertionContainer">
+                                <label class="chValue">Value</label>
+                                <label class="chCount">Count</label>
+                                <label class="chCurrency">Currency</label>
+                                <label class="chType">Type</label>
+                                <label class="chLevel">Level</label>
+                                <label class="chRemove"></label>
+                                <!-- ko template: { foreach: insertionItems } -->
+                                    <select class="chValue" data-bind="options: $data.values, value: $data.value"></select>
+                                    <div class="chCount">
+                                        <button class="chDec" data-bind="click: $data.decCount">-</button>
+                                        <input type="text" onclick="this.select();" data-bind="value: $data.count"/>
+                                        <button class="chInc" data-bind="click: $data.incCount">+</button>
+                                    </div>
+                                    <input class="chCurrency" type="text" readonly data-bind="value: $data.currency"/>
+                                    <select class="chType" data-bind="options: $data.types, value: $data.type"></select>
+                                    <select class="chLevel" data-bind="options: $data.levels, value: $data.level"></select>
+                                    <button class="chRemove" title="Removes this item" data-bind="click: $data.removeItem">Remove</button>
+                                <!-- /ko -->
+                            </section>
+                            <button id="addDepositItem" data-bind="click: addItem" title="Add a new deposit item">Add item</button>
+                            <button id="submitDeposit" data-bind="click: submit" title="Submits the changes">Submit</button>
+                        </fieldset>
+                        <fieldset id="depositChequesInsertion">
+                            <legend>Deposit cheques</legend>
+                            <section id="depositChequesInsertionContainer">
+                                <label class="chValue">Amount</label>
+                                <label class="chCurrency">Currency</label>
+                                <label class="chMarkAs">Mark as</label>
+                                <label class="chScoreMicr">Score MICR</label>
+                                <label class="chScoreOcr">Score OCR</label>
+                                <label class="chRemove"></label>
+                                <!-- ko template: { foreach: insertionCheques } -->
+                                    <input class="chValue" type="text" onclick="this.select();" data-bind="value: $data.amount"/>
+                                    <input class="chCurrency" type="text" readonly data-bind="value: $data.currency"/>
+                                    <select class="chMarkAs" data-bind="options: $data.markAs, value: $data.markedWith, attr: { disabled: $data.scoreMicr() === 'Bad' && $data.scoreOcr() === 'Bad'? true : false}"></select>
+                                    <select class="chScoreMicr" data-bind="options: $data.scoreMicrCodes, value: $data.scoreMicr"></select>
+                                    <select class="chScoreOcr" data-bind="options: $data.scoreOcrCodes, value: $data.scoreOcr"></select>
+                                    <button class="chRemove" title="Removes this cheque" data-bind="click: $data.removeCheque">Remove</button>
+                                <!-- /ko -->
+                            </section>
+                            <button id="addDepositCheque" data-bind="click: addCheque" title="Add a new deposit cheque">Add cheque</button>
+                            <button id="submitDepositCheque" data-bind="click: submit" title="Submits the changes">Submit</button>
+                        </fieldset>
+                    </div>
+                    <h3>Cassette units</h3>
+                    <div id="cassettesContent">
+                        <fieldset id="cassettes">
+                            <legend>Cassettes</legend>
+                            <div class="unitMainButtons">
+                                <button data-bind="click: toggleState" title="Disables / enables all units">Toggle state</button>
+                                <button data-bind="click: submit" title="Submit changes">Submit</button>
+                            </div>
+                            <div id="cassetteContainer">
+                                <label class="chName">Name</label>
+                                <label class="chState">Online</label>
+                                <label class="chType">Type</label>
+                                <label class="chValue">Value</label>
+                                <label class="chCurrency">Currency</label>
+                                <label class="chCount">Count</label>
+                                <!-- ko template: { foreach: cassettes } -->
+                                    <button class="chName" data-bind="text: $data.name, click: $data.cuInfo.toggleState"></button>
+                                    <var class="chState" data-state="true" data-bind="attr: {'data-state': $data.cuInfo.online}"></var>
+                                    <label class="chType" data-bind="text: $data.cuInfo.type"></label>
+                                    <input class="chValue" type="text" id="val-1" onclick="this.select();" data-bind="value: $data.cuInfo.value, attr: {id: 'val-' + $data.name, readonly: $data.cuInfo.readonly && $data.cuInfo.readonly() === true ? true : false}"/>
+                                    <input class="chCurrency" type="text" id="curr-1" readonly data-bind="value: $data.cuInfo.currency, attr: {id: 'curr-' + $data.name}"/>
+                                    <input class="chCount" onclick="this.select();" type="text" id="count-1" data-bind="value: $data.cuInfo.count, attr: {id: 'count-' + $data.name}"/>
+                                <!-- /ko -->
+                            </div>
+                        </fieldset>
+                    </div>
+                    <h3>Hopper units</h3>
+                    <div id="hopperContent">
+                        <fieldset id="hoppers">
+                            <legend>Hoppers</legend>
+                            <div class="unitMainButtons">
+                                <button data-bind="click: toggleState" title="Disables / enables all units">Toggle state</button>
+                                <button data-bind="click: submit" title="Submit changes">Submit</button>
+                            </div>
+                            <div id="hopperContainer">
+                                <label class="chName">Name</label>
+                                <label class="chState">Online</label>
+                                <label class="chType">Type</label>
+                                <label class="chValue">Value</label>
+                                <label class="chCurrency">Currency</label>
+                                <label class="chCount">Count</label>
+                                <!-- ko template: { foreach: hoppers } -->
+                                    <button class="chName" data-bind="text: $data.name, click: $data.cuInfo.toggleState"></button>
+                                    <var class="chState" data-state="true" data-bind="attr: {'data-state': $data.cuInfo.online}"></var>
+                                    <label class="chType" data-bind="text: $data.cuInfo.type"></label>
+                                    <input class="chValue" onclick="this.select();" type="text" id="hopp-val-1" data-bind="value: $data.cuInfo.value, attr: {id: 'hopp-val-' + $data.name}"/>
+                                    <input class="chCurrency" type="text" id="hopp-curr-1" readonly data-bind="value: $data.cuInfo.currency, attr: {id: 'hopp-curr-' + $data.name}"/>
+                                    <input class="chCount" onclick="this.select();" type="text" id="hopp-count-1" data-bind="value: $data.cuInfo.count, attr: {id: 'hopp-count-' + $data.name}"/>
+                                <!-- /ko -->
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div id="devicesPanel">
+                <fieldset id="devicesContentSet">
+                    <legend>Devices</legend>
+                    <div id="devicesContainer">
+                        <label class="chName">Unit</label>
+                        <label class="chState">Online</label>
+                        <label class="chMandatory">Mandatory</label>
+                        <label class="chInstalled">Installed</label>
+                        <label class="chExtra"></label>
+                        <button class="chName" data-bind="click: toggleStateCardReaderUnit">Magstripe reader</button>
+                        <var class="chState" data-state="true" data-bind="attr: {'data-state': cardReaderUnitOnline}"></var>
+                        <div class="chMandatory" data-bind="attr: { disabled: !cardReaderUnitOnline() }">
+                            <input id="cardReaderCheckBox" type="checkbox" checked="checked" data-bind="checked: cardReaderMandatory, enable: cardReaderUnitOnline"/>
+                            <label for="cardReaderCheckBox"></label>
+                        </div>
+                        <div class="chInstalled">
+                            <input id="cardReaderCheckBoxInstalled" type="checkbox" checked="checked"
+                                   data-bind="checked: cardReaderInstalled"/>
+                            <label for="cardReaderCheckBoxInstalled"></label>
+                        </div>
+                        <div class="chExtra">
+                            <input id="cardReaderRetractCount" type="text" data-bind="value: cardReaderRetractNo"/>
+                            <label for="cardReaderRetractCount">Retract-No.:</label>
+                        </div>
+                        <button class="chName" data-bind="click: toggleStateContactlessReaderUnit">Contactless reader</button>
+                        <var class="chState" data-state="true" data-bind="attr: {'data-state': contactlessReaderUnitOnline}"></var>
+                        <div class="chMandatory" data-bind="attr: { disabled: !contactlessReaderUnitOnline()}">
+                            <input id="contactlessReaderCheckBox" type="checkbox" checked="checked" data-bind="checked: contactlessReaderMandatory, enable: contactlessReaderUnitOnline"/>
+                            <label for="contactlessReaderCheckBox"></label>
+                        </div>
+                        <div class="chInstalled">
+                            <input id="contactlessReaderCheckBoxInstalled" type="checkbox" checked="checked"
+                                   data-bind="checked: contactlessReaderInstalled"/>
+                            <label for="contactlessReaderCheckBoxInstalled"></label>
+                        </div>
+                        <div></div>
+                        <button class="chName" data-bind="click: toggleStateCashUnit">Cashdispenser</button>
+                        <var class="chState" data-state="true" data-bind="attr: {'data-state': cashUnitOnline}"></var>
+                        <div class="chMandatory" data-bind="attr: { disabled: !cashUnitOnline()}">
+                            <input id="cashUnitCheckBox" type="checkbox" checked="checked" data-bind="checked: cashUnitMandatory, enable: cashUnitOnline"/>
+                            <label for="cashUnitCheckBox"></label>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <button class="chName" data-bind="click: toggleStateHopperUnit">Hoppers</button>
+                        <var class="chState" data-state="true" data-bind="attr: {'data-state': hopperUnitOnline}"></var>
+                        <div class="chMandatory" data-bind="attr: { disabled: !hopperUnitOnline() }">
+                            <input id="hopperUnitCheckBox" type="checkbox" checked="checked" data-bind="checked: hopperUnitMandatory, enable: hopperUnitOnline"/>
+                            <label for="hopperUnitCheckBox"></label>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <button class="chName" data-bind="click: toggleStateDepositUnit">Recycler</button>
+                        <var class="chState" data-state="true" data-bind="attr: {'data-state': depositUnitOnline}"></var>
+                        <div class="chMandatory" data-bind="attr: { disabled: !depositUnitOnline() }">
+                            <input id="depositUnitCheckBox" type="checkbox" checked="checked" data-bind="checked: depositUnitMandatory, enable: depositUnitOnline"/>
+                            <label for="depositUnitCheckBox"></label>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <button class="chName" data-bind="click: toggleStateDepositChequesUnit">Cheque scanner</button>
+                        <var class="chState" data-state="true" data-bind="attr: {'data-state': depositChequesUnitOnline}"></var>
+                        <div class="chMandatory" data-bind="attr: { disabled: !depositChequesUnitOnline() }">
+                            <input id="chequesUnitCheckBox" type="checkbox" checked="checked" data-bind="checked: chequesUnitMandatory, enable: depositChequesUnitOnline"/>
+                            <label for="chequesUnitCheckBox"></label>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <button class="chName" data-bind="click: toggleStatePrinterUnit">Printer</button>
+                        <var class="chState" data-state="true" data-bind="attr: {'data-state': printerUnitOnline}"></var>
+                        <div class="chMandatory" data-bind="attr: { disabled: !printerUnitOnline() }">
+                            <input id="printerUnitCheckBox" type="checkbox" checked="checked" data-bind="checked: printerUnitMandatory, enable: printerUnitOnline"/>
+                            <label for="printerUnitCheckBox"></label>
+                        </div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </fieldset>
+                <fieldset class="logPanel">
+                    <legend>Messages</legend>
+                    <pre id="logFieldDevices" class="logField" contenteditable="false" data-bind="html: logText"></pre>
+                </fieldset>
+            </div>
+            <div id="eventsPanel">
+                <div id="eventEmitter">
+                    <fieldset id="events">
+                        <legend>Events</legend>
+                        <section class="event">
+                            <label for="eventSource">Event source:</label>
+                            <select id="eventSource" title="Select the source of the event" data-bind="options: eventSource, value: currentEventSource"></select>
+                        </section>
+                        <section class="event">
+                            <label for="eventTypes">Event type:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <select id="eventTypes" title="Select the type of the event" data-bind="options: eventTypes, value: currentEventType"></select>
+                        </section>
+                        <section class="eventData event">
+                            <label for="eventDataSelectBox">Event data:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <select id="eventDataSelectBox" title="Optionally, select event data" data-placeholder="event data"
+                                    data-bind="options: eventData, value: eventDataSelected, __optionsText: 'name', optionsCaption: 'Select event data...', optionsAfterRender: afterRendered">
+                            </select>
+                        </section>
+                        <section id="eventToSend" class="event">
+                            <label>Event:</label>
+                            <span id="eventToSendSource" data-bind="text: eventToSendSource"></span>
+                            <span id="eventToSendType" data-bind="text: eventToSendType"></span>
+                            <input id="eventToSendData" title="Type new event data in and press enter" data-bind="value: eventDataSelected">
+                        </section>
+                        <section id="eventSendEventContainer">
+                            <button id="sendEvent" title="Send the event times x value in right hand field\n with a delay of the field next to times" data-bind="click: sendEvent">Send event</button>
+                            <label for="sendEventTimes">X</label>
+                            <input id="sendEventTimes" title="How often the event is fired when pressing the button" data-bind="value: sendEventTimes">
+                            <label for="sendEventDelay">with delay</label>
+                            <input id="sendEventDelay" title="Delay time in ms when the event(s) is/are fired when pressing the button" data-bind="value: sendEventDelay">
+                        </section>
+                    </fieldset>
+                </div>
+            </div>
+            <div id="transactionPanel">
+                <div id="cardInfosContainer">
+                    <fieldset id="cardTypes">
+                        <legend>Card types</legend>
+                        <div>
+                            <input id="cardType01" type="radio" name="cardTypes" value="cardType01" data-bind="checked: cardType"/>
+                            <label for="cardType01">Type 01 (Magstripe)</label>
+                        </div>
+                        <div>
+                            <input id="cardType02" type="radio" name="cardTypes" value="cardType02" data-bind="checked: cardType"/>
+                            <label for="cardType02">Type 02 (Magstripe)</label>
+                        </div>
+                        <div>
+                            <input id="cardTypeEMV" type="radio" name="cardTypes" value="cardTypeEMV" data-bind="checked: cardType"/>
+                            <label for="cardTypeEMV">Type EMV</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="pinInfos">
+                    <fieldset>
+                        <legend>PIN</legend>
+                        <div id="pinInfosContainer">
+                            <div>
+                                <input id="pinInvalid" type="checkbox" data-bind="checked: pinInvalid"/>
+                                <label for="pinInvalid">PIN invalid</label>
+                            </div>
+                            <div>
+                                <label for="pinCounterInp">Retry count:</label>
+                                <input id="pinCounterInp" type="text" onclick="this.select();" data-bind="value: tryCounter"/>
+                            </div>
+                            <div>
+                                <label for="pinMaxTriesInp">Max tries:</label>
+                                <input id="pinMaxTriesInp" type="text" onclick="this.select();" data-bind="value: maxTries"/>
+                            </div>
+                            <div>
+                                <input id="pinAutoConfirm" type="checkbox" data-bind="checked: autoConfirm"/>
+                                <label for="pinAutoConfirm">Auto confirm</label>
+                            </div>
+                            <section>
+                                <label for="pinMinLength">PIN min len:</label>
+                                <select id="pinMinLength" data-bind="options: pinMinLengths, value: pinMinLen"></select>
+                            </section>
+                            <section>
+                                <label for="pinMaxLength">PIN max len:</label>
+                                <select id="pinMaxLength" data-bind="options: pinMaxLengths, value: pinMaxLen"></select>
+                            </section>
+
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="fundsAndPrepaid">
+                    <div id="fundsInfos">
+                        <fieldset>
+                            <legend>Funds</legend>
+                            <div id="fundsInfosContainer">
+                                <div>
+                                    <input id="insufficientFunds" type="checkbox" data-bind="checked: insufficientFunds"/>
+                                    <label for="insufficientFunds">Insufficient funds</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div id="prepaidInfos">
+                        <fieldset>
+                            <legend>Prepaid</legend>
+                            <div id="prepaidInfosContainer">
+                                <div>
+                                    <input id="prepaidMinuteSelection" type="checkbox" data-bind="checked: prepaidMinuteSelection"/>
+                                    <label for="prepaidMinuteSelection">Minute selection</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div id="hostInfos">
+                    <fieldset>
+                        <legend>Host</legend>
+                        <div id="hostContainer">
+                            <div>
+                                <input id="hostOffline" type="checkbox" data-bind="checked: hostOffline"/>
+                                <label for="hostOffline">Host offline</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <fieldset id="viewInfo">
+                <legend>View info</legend>
+                <section id="viewInfoDetails">
+                    <div class="col1">view-key:</div>
+                    <div id="viewKey" class="col2"></div>
+                    <div class="col1">view-id:</div>
+                    <div id="viewId" class="col2"></div>
+                    <div class="col1">ui-result:</div>
+                    <div id="uiResult" class="col2"></div>
+                </section>
+            </fieldset>
+        </div>
+    </div>
+    </body>
+    <script src="../../../lib/require.js"></script>
+    <script>
+        // require(["ControlPanel"]);
+        require(["ControlPanel"], mod => {
+            window.onerror = function(message, file, line) {
+                const error = `Exception caught in ControlPanel.html:\nMessage: ${message}\nFile: ${file} Line: ${line}`;
+                try {
+                    Wincor.UI.Diagnostics.LogProvider.error(error);
+                    updateLogPanel(error);
+                } catch(e) {
+                    console.error(error);
+                    updateLogPanel(error);
+                }
+            };
+        }, err => {
+            console.error(err);
+        });
+    </script>
+    <script>
+    </script>
+</html>

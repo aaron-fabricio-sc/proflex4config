@@ -1,0 +1,7 @@
+{
+  "Import": ["../proxies/wn.UI.Service.Interfaces"],
+  "CommentNoEppInterface": "This interface substitutes the EppProxy configuration with the EppServiceMock",
+  "EppProxy": {
+    "service": "servicemocks/wn.UI.Service.EppServiceMock"
+  }
+}

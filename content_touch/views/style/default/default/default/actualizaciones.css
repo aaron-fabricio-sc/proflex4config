@@ -1,0 +1,108 @@
+
+body{
+     background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 24%, rgba(9, 9, 121, 1) 58%, rgba(0, 123, 138, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    box-sizing: border-box;
+
+   
+
+}
+
+
+/* header */
+
+#flexHeader{
+
+
+    background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 24%, rgba(9, 9, 121, 1) 58%, rgba(0, 123, 138, 1) 100%, rgba(0, 212, 255, 1) 100%);
+width: 100%;
+
+}
+
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: flex-end;
+}
+.logo img{
+    width: 300px;
+    height: 100px;
+}
+
+
+#flexHeader{
+    flex-basis: 0;
+}
+
+#flexHeader #flexHeaderTop{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px;
+    align-items: center;
+    padding: 0;
+    
+
+}
+#language:hover{
+box-shadow: 2px 4px 59px 22px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 2px 4px 59px 22px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 2px 4px 59px 22px rgba(255, 255, 255, 0.75);
+}
+#help:hover{
+    box-shadow: 2px 4px 59px 22px rgba(255, 255, 255, 0.75);
+        -webkit-box-shadow: 2px 4px 59px 22px rgba(255, 255, 255, 0.75);
+        -moz-box-shadow: 2px 4px 59px 22px rgba(255, 255, 255, 0.75);
+}
+
+
+
+
+
+/* main */
+
+
+#flexMain{
+background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 24%, rgba(9, 9, 121, 1) 58%, rgba(0, 123, 138, 1) 100%, rgba(0, 212, 255, 1) 100%);
+
+
+    border-top: solid 1px white;
+    
+    margin: 0;
+}
+
+
+
+
+/* amouttentry.html */
+
+
+/* se agrego un emoji en la parte del input */
+#generalInputBack{
+    transform: rotateZ(0deg);
+    background-color: transparent;
+    text-align: center;
+    font-size: 22px;
+}
+
+
+
+
+/* BOTONES  */
+
+.menuButton{
+    background: rgb(26, 44, 77);
+}
+
+
+/* boton de confirmacion */
+
+/* cambio de color del boton */
+/* 
+.buttonZone > .button {
+    background: linear-gradient(180deg, red 0%, var(--color01-alpha-30) 100%);
+    border: 1px solid var(--color01);
+} */

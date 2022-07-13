@@ -1,0 +1,63 @@
+@charset "utf-8";
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ animations-custom.css 4.3.1-200122-21-0cd8a9f7-1a04bc7d
+
+*/
+
+/*
+ * CSS document for resolution-dependent information
+ */
+@keyframes insertChequesShortSideFirstSlotIn3D {
+    /* "rotate(180deg)" and "transform-origin" are applied to have the code on the right. These settings will be missing in case of CodeLeft (see further below) */
+    0% {
+        opacity: 0;
+        transform: translate3d(0px, 440px, 0px) rotate(180deg);
+        transform-origin: 50% 52%; /*der y-Wert muss wegen der Perspektive von itemLane angepasst sein (also nicht 50%): Wegen der Prespektive entspricht 50% nicht mehr dem Mittelpunkt */
+    }
+    5% {
+        opacity: 1;
+    }
+    70% {
+        /*move in front of the slot, leave margin-bottom unchanged on -230px, i.e. do not change the space between the cheques */
+        transform: translate3d(0px, 20px, 0px) rotate(180deg) scale(0.8);
+        transform-origin: 50% 52%; /*der y-Wert muss wegen der Perspektive von itemLane angepasst sein (also nicht 50%): Wegen der Prespektive entspricht 50% nicht mehr dem Mittelpunkt */
+        margin-bottom: -330px;
+    }
+    100% {
+        /*move into the slot, let the cheques come together by changing margin-bottom */
+        transform: translate3d(0px, 0px, 0px) rotate(180deg) scale(0.8);
+        margin-bottom: -345px;
+        transform-origin: 50% 52%; /*der y-Wert muss wegen der Perspektive von itemLane angepasst sein (also nicht 50%): Wegen der Prespektive entspricht 50% nicht mehr dem Mittelpunkt */
+    }
+}
+
+@keyframes insertChequesShortSideFirstSlotIn3DCodeLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(0px, 440px, 0px);
+    }
+    5% {
+        opacity: 1;
+    }
+    70% {
+        /*move in front of the slot, leave margin-bottom unchanged on -230px, i.e. do not change the space between the cheques */
+        transform: translate3d(0px, 20px, 0px) scale(0.8);
+        margin-bottom: -330px;
+    }
+    100% {
+        /*move into the slot, let the cheques come together by changing margin-bottom */
+        transform: translate3d(0px, 0px, 0px) scale(0.8);
+        margin-bottom: -345px;
+    }
+}
+

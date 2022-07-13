@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+$MOD$ offlinehandling.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>offlinehandling</title>
+    <script>
+        window.addEventListener("load", function() {
+            var vs = null;
+            if(window.top && window.top.Wincor && window.top.Wincor.UI.Service.Provider) {
+                vs = window.top.Wincor.UI.Service.Provider.ViewService;
+            }
+            if(vs) {
+                vs.offlineHandling("%1");
+            }
+        }, false);
+    </script>
+</head>
+<body style="background-color: #333333">
+offline
+</body>
+</html>

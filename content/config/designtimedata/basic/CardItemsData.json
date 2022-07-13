@@ -1,0 +1,14 @@
+{
+    "insertCard": true,
+    "insertCardStripeUp": false,
+    "insertCardLSF": false,
+    "ejectCard": false,
+    "ejectCardStripeUp": false,
+    "ejectCardLSF": false,
+    "insertContactless": true,
+    "cardNotOperational": false,
+    "cardLSFNotOperational": false,
+    "contactlessNotOperational": false,
+    "noCardDevice": false,
+    "animationTextCard": "Card"
+}

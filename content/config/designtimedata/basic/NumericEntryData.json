@@ -1,0 +1,12 @@
+{
+    "preValue": "",
+    "placeHolder": "1234567890",
+    "formatOption": "NONE",
+    "allowLeadingZero": false,
+    "showLastInputOnSecure": true,
+    "clearByCorrect": true,
+    "minLen": 5,
+    "maxLen": 10,
+    "messageLength": "Something is wrong with the input length not between 5 and 15",
+    "messageLevel": "ErrorBox"
+}

@@ -1,0 +1,36 @@
+<!--
+$MOD$ messagepopup.component.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<div id="popupMainContent">
+    <!--
+    This version information should reside within main-div-tag to also get removed when removing popup.
+    -->
+    <div class="modalOverlayPopup">
+        <div class="popupWindow" data-view-key="">
+            <div id="popupWindowContent" data-view-key="">
+                <main id="flexMainPopup" data-view-key="" data-content-style="InfoBox" data-bind="attr: { 'data-content-style': messageLevel }">
+                    <var class="color03 font01" data-bind="command: {id: 'MESSAGE_POPUP_LABEL', type: CMDTYPE.TEXT, state: CMDSTATE.NONE, action: null, label: {html: message, inplace: true}}"></var>
+
+                    <div class="buttonsZone">
+                        <div class="buttonZone">
+                            <div id="buttonConfirmPopup" class="button dialogSmallButton"
+                                 data-bind="command: {id: 'CONFIRM_MESSAGE_POPUP', args: 'CONFIRM', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_[#POPUP_TYPE#]_Button_Yes', 'Yes')}, eppkey: 'CONFIRM'}">
+                                <svg data-bind="svguse: { name: 'yes.svg' }"></svg>
+                                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM_MESSAGE_POPUP')"></var>
+                            </div>
+                        </div>
+                        <div class="buttonZone">
+                            <div id="buttonCancelPopup" class="button dialogSmallButton"
+                                 data-bind="command: {id: 'CANCEL_MESSAGE_POPUP', args: 'CANCEL', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_[#POPUP_TYPE#]_Button_No', 'No')}, eppkey: 'CANCEL'}">
+                                <svg data-bind="svguse: { name: 'no.svg' }"></svg>
+                                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL_MESSAGE_POPUP')"></var>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <span class="timeoutProgressBar"></span>
+        </div>
+    </div>
+</div>

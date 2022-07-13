@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 110 180" enable-background="new 0 0 110 180" xml:space="preserve">
+	 	 	 	 <style type="text/css">
+                       @import "../default/default/svg.css";
+                  </style>
+
+<rect id="BG_8_" x="3" y="1" fill="#FFFFFF" width="102" height="177"/>
+<rect id="noteColorAll" x="4" y="3" fill="#C8E8CC" width="100" height="174"/>
+<rect id="noteColorMiddle" x="4" y="39" fill="#337733" width="100" height="100"/>
+<circle opacity="0.3" fill="#FFFFFF"  cx="58.9" cy="90" r="33.1"/>
+<g>
+	<text transform="matrix(0 1 -1 0 13.5215 41.0001)" fill="#FFFFFF" font-size="8">BANK</text>
+</g>
+<rect id="stripe" x="8" y="41" fill="#114411" width="4" height="80"/>
+<rect x="84" y="7" fill="#436EB3" fill-opacity="0" width="13" height="21"/>
+<rect x="75.4" y="96.8" fill="none" width="27.6" height="81.2"/>
+<text id="noteValueRight" transform="matrix(0 1.0048 -1 0 75.4756 157)" fill="#29282C" font-size="33.0686"></text>
+<rect x="3" y="1" fill="none" width="19.6" height="47.8"/>
+<text id="noteValueLeft" transform="matrix(0 1 -1 0 8 4)" fill="#29282C" font-size="20"></text>
+<path opacity="0.3"  d="M106,1H2v178h104V1z M3,178V2h102v176H3z"/>
+<path opacity="0.5"  d="M105,2H3v176h102V2z M4,177V3h100v174H4z"/>
+<path opacity="0.1"  d="M107,0H1v180h106V0z M2,179V1h104v178H2z"/>
+
+   <script type="text/javascript">
+        <![CDATA[
+            let id = this.frameElement.id;
+            let noteColorClass = "genNoteStripe_5", stripeColorClass = "genNoteMain";
+            if(id && id !== "" && id !== 0 && id !== "0" && !isNaN(id)) {
+                if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                    let vm = window.parent.Wincor.UI.Content.ViewModelContainer.getById("flexMain");
+                    if(vm && vm.bankingContext.currencyData) {
+                        let value = id / Math.pow(10, Math.abs(vm.bankingContext.currencyData.exponent));
+                        document.getElementById("noteValueLeft").textContent = value;
+                        document.getElementById("noteValueRight").textContent = value;
+                    }
+                    else { // fallback...
+                        document.getElementById("noteValueLeft").textContent = id / 100;
+                        document.getElementById("noteValueRight").textContent = id / 100;
+                    }
+                }
+                switch(id) {
+                    case "5":
+                    case "500": noteColorClass = "genNote_5"; stripeColorClass = "genNoteStripe_5"; break;
+                    case "10":
+                    case "1000": noteColorClass = "genNote_10"; stripeColorClass = "genNoteStripe_10"; break;
+                    case "20":
+                    case "2000": noteColorClass = "genNote_20"; stripeColorClass = "genNoteStripe_20"; break;
+                    case "50":
+                    case "5000": noteColorClass = "genNote_50"; stripeColorClass = "genNoteStripe_50"; break;
+                    case "100":
+                    case "10000": noteColorClass = "genNote_100"; stripeColorClass = "genNoteStripe_100"; break;
+                    case "200":
+                    case "20000": noteColorClass = "genNote_200"; stripeColorClass = "genNoteStripe_200"; break;
+                    case "500":
+                    case "50000": noteColorClass = "genNote_500"; stripeColorClass = "genNoteStripe_500"; break;
+                }
+            }
+
+            document.getElementById("noteColorAll").setAttribute("class", "genNoteMain");
+            document.getElementById("noteColorMiddle").setAttribute("class", noteColorClass);
+            document.getElementById("stripe").setAttribute("class", stripeColorClass);
+        ]]>
+    </script>
+</svg>

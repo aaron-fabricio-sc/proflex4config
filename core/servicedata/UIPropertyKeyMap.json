@@ -1,0 +1,17 @@
+{
+  "VOUCHER_IMAGE_PATH": "UtilityService.PATHS.VOUCHER",
+  "RECEIPT_IMAGE_PATH": "UtilityService.PATHS.RECEIPT",
+  "ACTIVE_VIEWSET": "ViewService.viewSetName",
+  "ACTIVE_STYLE": "ViewService.currentStyleType",
+  "ACTIVE_VENDOR": "ViewService.currentVendor",
+  "ACTIVE_RESOLUTION": "ViewService.currentResolution",
+  "WINDOW_SIZE_X": "ViewService.initialLocation.width",
+  "WINDOW_SIZE_Y": "ViewService.initialLocation.height",
+  "WINDOW_POS_X": "ViewService.initialLocation.left",
+  "WINDOW_POS_Y": "ViewService.initialLocation.top",
+  "CONTENT_RUNNING": "ViewService.contentRunning",
+  "INSTRUCTION_TEXT": "flexHeader.cmdRepos.commands.INSTRUCTION.label",
+  "HEADLINE_TEXT": "flexHeader.cmdRepos.commands.HEADLINE.label",
+  "INIT_ERROR": "flexMain.errorDuringInitialize",
+  "SPLIT_SCREEN_MODE": "flexHeader.splitScreenMode"
+}

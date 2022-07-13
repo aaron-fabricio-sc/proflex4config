@@ -1,0 +1,58 @@
+{
+    "allowConfirmWithoutSelection": false,
+    "minSelection": -1,
+    "maxSelection": -1,
+    "groups": [
+        {
+            "name": "RECEIPT_PREFERENCES",
+            "items": [
+                {
+                    "result": "PAPER",
+                    "selected": false,
+                    "state": 0
+                },
+                {
+                    "result": "No_receipt_required",
+                    "selected": false,
+                    "state": 0
+                },
+                {
+                    "result": "DISPLAY",
+                    "selected": false,
+                    "state": 2
+                },
+                {
+                    "result": "EMAIL",
+                    "selected": false,
+                    "state": 0
+                    
+                },
+                {
+                    "result": "TWITTER",
+                    "selected": false,
+                    "state": 0
+                },
+                {
+                    "result": "FACEBOOK",
+                    "selected": false,
+                    "state": 0
+                },
+                {
+                    "result": "GOOGLE+",
+                    "selected": false,
+                    "state": 0
+                },
+                {
+                    "result": "WHATSAPP",
+                    "selected": false,
+                    "state": 0
+                },
+                {
+                    "result": "TEXTMESSAGE",
+                    "selected": false,
+                    "state": 0
+                }
+            ]
+        }
+    ]
+}

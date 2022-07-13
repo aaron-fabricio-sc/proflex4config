@@ -1,0 +1,1377 @@
+@charset "utf-8";
+
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+$MOD$ mercury-base.css 4.3.1-210624-21-ae6e96c6-1a04bc7d
+
+*/
+
+/*
+=== Mercury base style ===
+
+Base style for both "MercuryDark" and  "MercuryLight" theme.
+It adds colors, border-radius and animation effects to the base layouts.css style.
+
+*/
+
+/*-- Fonts --*/
+@font-face {
+    font-family: "Ubuntu Light";
+    src: url(../../fonts/Ubuntu/Ubuntu-Light.ttf) format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(../../fonts/Ubuntu/Ubuntu-Regular.ttf) format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(../../fonts/Ubuntu/Ubuntu-Bold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Quivira";
+    src: url(../../fonts/Quivira/Quivira.otf) format('opentype');
+    font-weight: normal;
+}
+
+html * {
+    font-family: Ubuntu, "Ubuntu Light", Quivira, Arial, Verdana, sans-serif;
+}
+
+/*-- Text --*/
+label, p, var, span, .subMenuItem>var::before, .subMenuItem>var::after {
+    text-shadow: 1px 1px 3px var(--color04);
+}
+
+/*-- Help --*/
+#flexHelp>div {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/*-- Header-top --*/
+#flexHeaderTop {
+    font-family: "Ubuntu Light", Quivira, Arial, Verdana, sans-serif;
+}
+
+/*-- Header-bottom --*/
+#flexHeaderBottom {
+    /*For smooth toggle when header message disappears*/
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#flexHeader[data-message-visible="true"]:not([data-view-id="message"]):not([data-view-id="question"]):not([data-view-id="adainformation"]):not([data-view-id="receipt"]) #flexHeaderBottom {
+    opacity: 0;
+    /*For smooth toggle when header message appears*/
+    transition: opacity 0.5s;
+}
+
+#flexHeader[data-message-visible="true"] #flexAdditionalHeaderInfo {
+    opacity: 0.15;
+    /*For smooth toggle when header message appears*/
+    transition: opacity 0.5s;
+}
+
+div[data-popup-active="true"] #headline, div[data-popup-active="true"] #instruction,
+div[data-popup-active="true"] #flexTime, div[data-popup-active="true"] #flexAdditionalHeaderInfo,
+div[data-popup-active="true"] #flexNav, div[data-popup-active="true"] #flexArticle, div[data-popup-active="true"] #flexAside {
+    opacity: 0.15;
+}
+
+/*-- Date/Time --*/
+#flexTime>#time>var:nth-child(1) {
+    font-weight: bold;
+}
+
+#flexHeader[data-message-visible="true"] time {
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+}
+
+/*-- Main --*/
+#flexMain.hideFlexMainOnActiveVK {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+/*-- General alignment of figures --*/
+figure {
+    transform: translatez(0);
+}
+
+/*-- Buttons --*/
+.button, .checkBoxItem, .radioButtonItem {
+    transform: translatez(0);
+}
+
+.button, #buttonCancel, #buttonConfirm, #buttonCorrect, #buttonCancelPopup, #buttonConfirmPopup, #buttonCorrectPopup {
+    box-shadow: 2px 2px 8px 0 var(--color04-alpha-80);
+    outline: none;
+}
+
+.button {
+    background: linear-gradient(180deg, var(--color01-alpha-60) 0%, var(--color01-alpha-30) 100%);
+    border-top: 1px solid var(--color01);
+    border-bottom: 1px solid var(--color01);
+}
+
+.keyboardButton {
+    border: 1px solid var(--color01);
+}
+
+#buttonCancel, #buttonCancelPopup {
+    background: linear-gradient(180deg, var(--color07-alpha-60) 0%, var(--color07-alpha-30) 100%);
+    border-top: 1px solid var(--color07);
+    border-bottom: 1px solid var(--color07);
+}
+
+#buttonConfirm, #buttonConfirmPopup {
+    background: linear-gradient(180deg, var(--color06-alpha-60) 0%, var(--color06-alpha-30) 100%);
+    border-top: 1px solid var(--color06);
+    border-bottom: 1px solid var(--color06);
+}
+
+#buttonCorrect, #buttonCorrectPopup {
+    background: linear-gradient(180deg, var(--color10-alpha-60) 0%, var(--color10-alpha-30) 100%);
+    border-top: 1px solid var(--color10);
+    border-bottom: 1px solid var(--color10);
+}
+
+/*prominent item*/
+.button.skLeft.prominentItem {
+    background: linear-gradient(0deg, var(--color02-alpha-70) 0%, var(--color02-alpha-80) 10%, var(--color01-alpha-30) 11%, var(--color01-alpha-60) 100%);
+    border-bottom: 1px solid var(--color02-alpha-80);
+}
+
+.button.skRight.prominentItem {
+    background: linear-gradient(0deg, var(--color02-alpha-70) 0%, var(--color02-alpha-80) 10%, var(--color01-alpha-30) 11%, var(--color01-alpha-60) 100%);
+    border-bottom: 1px solid var(--color02-alpha-80);
+}
+
+.button.skLeft, .button:active.skLeft, .pressed.skLeft {
+    border-left: 0;
+    border-right: 1px solid var(--color01);
+}
+
+.button.skRight, .button:active.skRight, .pressed.skRight {
+    border-right: 0;
+    border-left: 1px solid var(--color01);
+}
+
+#buttonCancel.skRight, #buttonCancel.skRight:active, #buttonCancel.skRight.pressed,
+#buttonCancelPopup.skRight, #buttonCancelPopup.skRight:active, #buttonCancelPopup.skRight.pressed {
+    border-right: 0;
+    border-left: 1px solid var(--color07);
+}
+
+#buttonCancel.skLeft, #buttonCancel.skLeft:active, #buttonCancel.skLeft.pressed,
+#buttonCancelPopup.skLeft, #buttonCancelPopup.skLeft:active, #buttonCancelPopup.skLeft.pressed {
+    border-left: 0;
+    border-right: 1px solid var(--color07);
+}
+
+#buttonConfirm.skRight, #buttonConfirm.skRight:active, #buttonConfirm.skRight.pressed,
+#buttonConfirmPopup.skRight, #buttonConfirmPopup.skRight:active, #buttonConfirmPopup.skRight.pressed {
+    border-right: 0;
+    border-left: 1px solid var(--color06);
+}
+
+#buttonConfirm.skLeft, #buttonConfirm.skLeft:active, #buttonConfirm.skLeft.pressed,
+#buttonConfirmPopup.skLeft, #buttonConfirmPopup.skLeft:active, #buttonConfirmPopup.skLeft.pressed {
+    border-left: 0;
+    border-right: 1px solid var(--color06);
+}
+
+#buttonCorrect.skRight, #buttonCorrect.skRight:active, #buttonCorrect.skRight.pressed,
+#buttonCorrectPopup.skRight, #buttonCorrectPopup.skRight:active, #buttonCorrectPopup.skRight.pressed {
+    border-right: 0;
+    border-left: 1px solid var(--color10);
+}
+
+#buttonCorrect.skLeft, #buttonCorrect.skLeft:active, #buttonCorrect.skLeft.pressed,
+#buttonCorrectPopup.skLeft, #buttonCorrectPopup.skLeft:active, #buttonCorrectPopup.skLeft.pressed {
+    border-left: 0;
+    border-right: 1px solid var(--color10);
+}
+
+.button:active.skLeft, .pressed.skLeft {
+    background: linear-gradient(90deg, var(--color01) 0%, var(--color01-alpha-30) 100%);
+    box-shadow: 0 0 6px 0 var(--color04);
+    border-right: 1px solid var(--color01-alpha-80);
+}
+
+.button:active.skRight, .pressed.skRight {
+    background: linear-gradient(-90deg, var(--color01) 0%, var(--color01-alpha-30) 100%);
+    box-shadow: 0 0 6px 0 var(--color04);
+    border-left: 1px solid var(--color01-alpha-80);
+}
+
+#buttonCancel.skRight:active, #buttonCancel.skRight.pressed,
+#buttonCancelPopup.skRight:active, #buttonCancelPopup.skRight.pressed {
+    background: linear-gradient(-90deg, var(--color07) 0%, var(--color07-alpha-30) 100%);
+    box-shadow: 0 0 6px 0 var(--color04);
+    border-left: 1px solid var(--color07-alpha-80);
+}
+
+#buttonCancel.skLeft:active, #buttonCancel.skLeft.pressed,
+#buttonCancelPopup:active.skLeft, #buttonCancelPopup.skLeft.pressed {
+    background: linear-gradient(90deg, var(--color07) 0%, var(--color07-alpha-30) 100%);
+    box-shadow: 0 0 6px 0 var(--color04);
+    border-right: 1px solid var(--color07-alpha-80);
+}
+
+#buttonConfirm.skRight:active, .pressed.skRight#buttonConfirm,
+#buttonConfirmPopup.skRight:active, .pressed.skRight#buttonConfirmPopup {
+    background: linear-gradient(-90deg, var(--color06) 0%, var(--color06-alpha-30) 100%);
+    box-shadow: 0 0 6px 0 var(--color04);
+    border-left: 1px solid var(--color06-alpha-80);
+}
+
+#buttonConfirm.skLeft:active, #buttonConfirm.skLeft.pressed,
+#buttonConfirmPopup.skLeft:active, #buttonConfirmPopup.skLeft.pressed {
+    background: linear-gradient(90deg, var(--color06) 0%, var(--color06-alpha-30) 100%);
+    box-shadow: 0 0 6px 0 var(--color04);
+    border-right: 1px solid var(--color06-alpha-80);
+}
+
+#buttonCorrect.skRight:active, #buttonCorrect.skRight.pressed,
+#buttonCorrectPopup.skRight:active, #buttonCorrectPopup.skRight.pressed {
+    background: linear-gradient(-90deg, var(--color10) 0%, var(--color10-alpha-30) 100%);
+    box-shadow: 0 0 6px 0 var(--color04);
+    border-left: 1px solid var(--color10-alpha-80);
+}
+
+#buttonCorrect.skLeft:active, #buttonCorrect.skLeft.pressed,
+#buttonCorrectPopup.skLeft:active, #buttonCorrectPopup.skLeft.pressed {
+    background: linear-gradient(90deg, var(--color10) 0%, var(--color10-alpha-30) 100%);
+    box-shadow: 0 0 6px 0 var(--color04);
+    border-right: 1px solid var(--color10-alpha-80);
+}
+
+.button:active.skLeft>img, .pressed.skLeft>img,
+.button:active.skRight>img, .pressed.skRight>img,
+.button:active.skLeft>object, .pressed.skLeft>object,
+.button:active.skLeft>svg, .pressed.skLeft>svg,
+.button:active.skRight>object, .pressed.skRight>object,
+.button:active.skRight>svg, .pressed.skRight>svg {
+    opacity: 0.4;
+}
+
+/*Buttons disabled*/
+.button[disabled]:not(.pressed), .disabled:not(.pressed),
+#buttonConfirm[disabled]:not(.pressed), #buttonConfirmPopup[disabled]:not(.pressed),
+#buttonCancel[disabled]:not(.pressed), #buttonCancelPopup[disabled]:not(.pressed),
+#buttonCorrect[disabled]:not(.pressed), #buttonCorrectPopup[disabled]:not(.pressed) {
+    box-shadow: none;
+    border: none;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.button[disabled]:not(.pressed),
+.disabled:not(.pressed),
+.button[disabled]:not(.pressed).skLeft.prominentItem,
+.button[disabled]:not(.pressed).skRight.prominentItem {
+    background: var(--color01-alpha-25);
+    border-top: 1px solid var(--color01-alpha-0);
+    border-bottom: 1px solid var(--color01-alpha-0);
+    transition: background 0.25s;
+}
+
+#buttonCancel[disabled]:not(.pressed), #buttonCancelPopup[disabled]:not(.pressed) {
+    background: var(--color07-alpha-25);
+    border-top: 1px solid var(--color07-alpha-0);
+    border-bottom: 1px solid var(--color07-alpha-0);
+    transition: background 0.25s;
+}
+
+#buttonConfirm[disabled]:not(.pressed), #buttonConfirmPopup[disabled]:not(.pressed) {
+    background: var(--color06-alpha-25);
+    border-top: 1px solid var(--color06-alpha-0);
+    border-bottom: 1px solid var(--color06-alpha-0);
+    transition: background 0.25s;
+}
+
+#buttonCorrect[disabled]:not(.pressed), #buttonCorrectPopup[disabled]:not(.pressed) {
+    background: var(--color10-alpha-25);
+    border-top: 1px solid var(--color10-alpha-0);
+    border-bottom: 1px solid var(--color10-alpha-0);
+    transition: background 0.25s;
+}
+
+.button[disabled]:not(.pressed).skLeft, .disabled:not(.pressed).skLeft {
+    border-left: 0;
+    border-right: 1px solid var(--color01-alpha-0);
+}
+
+#buttonCancel[disabled]:not(.pressed).skLeft, #buttonCancelPopup[disabled]:not(.pressed).skLeft {
+    border-right: 1px solid var(--color07-alpha-0);
+}
+
+#buttonConfirm[disabled]:not(.pressed).skLeft, #buttonConfirmPopup[disabled]:not(.pressed).skLeft {
+    border-right: 1px solid var(--color06-alpha-0);
+}
+
+#buttonCorrect[disabled]:not(.pressed).skLeft, #buttonCorrectPopup[disabled]:not(.pressed).skLeft {
+    border-right: 1px solid var(--color10-alpha-0);
+}
+
+.button[disabled]:not(.pressed).skRight, .disabled:not(.pressed).skRight {
+    border-right: 0;
+    border-left: 1px solid var(--color01-alpha-0);
+}
+
+#buttonCancel[disabled]:not(.pressed).skRight, #buttonCancelPopup[disabled]:not(.pressed).skRight {
+    border-left: 1px solid var(--color07-alpha-0);
+}
+
+#buttonConfirm[disabled]:not(.pressed).skRight, #buttonConfirmPopup[disabled]:not(.pressed).skRight {
+    border-left: 1px solid var(--color06-alpha-0);
+}
+
+#buttonCorrect[disabled]:not(.pressed).skRight, #buttonCorrectPopup[disabled]:not(.pressed).skRight {
+    border-left: 1px solid var(--color10-alpha-0);
+}
+
+.button[disabled]:not(.pressed) var,
+.disabled:not(.pressed) var,
+.button[disabled]:not(.pressed) span,
+.disabled:not(.pressed) span {
+    color: var(--color04-alpha-50);
+    text-shadow: none;
+    cursor: not-allowed;
+    transition: color 0.25s;
+}
+
+.disabledElement:not(.pressed),
+.slidingCheckBox[disabled]:not(.pressed), .slidingCheckBox .disabled:not(.pressed),
+.checkBoxItem[disabled]:not(.pressed), .radioButtonItem[disabled]:not(.pressed) {
+    opacity: 0.25;
+}
+
+.checkBoxItem[disabled]:not(.pressed) .slidingCheckBox, .radioButtonItem[disabled]:not(.pressed) .radioButton {
+    opacity: 0.7;
+}
+
+.button[disabled]:not(.pressed)>img,
+.disabled:not(.pressed)>img,
+.button[disabled]:not(.pressed)>object,
+.disabled:not(.pressed)>object,
+.button[disabled]:not(.pressed)>svg,
+.disabled:not(.pressed)>svg,
+.checkBoxItem[disabled]:not(.pressed)>object,
+.checkBoxItem[disabled]:not(.pressed)>svg,
+.radioButtonItem[disabled]:not(.pressed)>object,
+.radioButtonItem[disabled]:not(.pressed)>svg {
+    opacity: 0.2;
+    transition: opacity 0.25s;
+}
+
+/*To override disabled elements of opacity: 0.25 in layouts.css*/
+.button[disabled]:not(.pressed),
+.disabled:not(.pressed),
+#buttonConfirm[disabled]:not(.pressed),
+.buttonConfirm[disabled]:not(.pressed),
+#buttonConfirmPopup[disabled]:not(.pressed),
+#buttonCancel[disabled]:not(.pressed),
+#buttonCancelPopup[disabled]:not(.pressed),
+#buttonCorrect[disabled]:not(.pressed),
+#buttonCorrectPopup[disabled]:not(.pressed) {
+    opacity: initial;
+}
+
+.button var, .button span {
+    text-shadow: 1px 1px 3px var(--color04);
+    display: inherit;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.skLeft.subMenuItem[disabled]:not(.pressed)>var::before {
+    color: var(--color03-alpha-25);
+}
+
+.skRight.subMenuItem[disabled]:not(.pressed)>var::after {
+    color: var(--color03-alpha-25);
+}
+
+.skLeft.subMenuItem>var::before {
+    position: absolute;
+    content: '\22ee';
+    color: var(--color03);
+}
+
+.skRight.subMenuItem>var::after {
+    position: absolute;
+    content: '\22ee';
+    color: var(--color03);
+}
+
+.button:active.skLeft var, .pressed.skLeft var, .button:active.skLeft span, .pressed.skLeft span {
+    text-shadow: 3px 3px 3px var(--color04);
+}
+
+.button:active.skRight var, .pressed.skRight var, .button:active.skRight span, .pressed.skRight span {
+    text-shadow: -3px -3px 3px var(--color04);
+}
+
+/*
+ * Component specific
+ */
+
+/*-- Scrollbar --*/
+::-webkit-scrollbar-track {
+    border: solid var(--color01);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color01-alpha-40);
+}
+
+/*-- Selection slide indicator --*/
+#slideIndicatorGroup {
+    animation: fadeIn 0.5s;
+}
+
+.slideIndicator, .slideIndicatorActive {
+    border: 1px solid var(--color09-alpha-25);
+    background: linear-gradient(180deg, var(--color09-alpha-40) 0%, var(--color09-alpha-20) 100%);
+    box-shadow: 2px 2px 8px var(--color04-alpha-80);
+}
+
+.slideIndicatorActive {
+    background: linear-gradient(180deg, var(--color01-alpha-60) 0%, var(--color01-alpha-30) 100%);
+    border: 1px solid var(--color01);
+}
+
+/*-- Selection bread crumbs --*/
+.breadCrumb {
+    color: var(--color02);
+    background: var(--color01-alpha-50);
+}
+
+.breadCrumb:last-child {
+    color: var(--color03);
+}
+
+.breadCrumb:first-child {
+    color: var(--color02);
+}
+
+.breadCrumb:active:not(:last-child) {
+    color: var(--color03);
+}
+
+.breadCrumb::after { /*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+    position: absolute;
+    content: '';
+    /*we need to prevent the arrows from getting buried under the next link*/
+    z-index: 1;
+    /*stylish arrow design using box shadow*/
+    box-shadow: 2px -2px 0 1px var(--color04-alpha-60), 3px -3px 0 2px var(--color09-alpha-15);
+}
+
+.breadCrumb:last-child::after { /*we don't need an arrow after the last link*/
+    content: none;
+}
+
+.breadCrumb::before { /*we will use the :before element to show numbers*/
+    position: absolute;
+    content: attr(data-number);
+    text-align: center;
+    alignment: center;
+    color: var(--color03);
+}
+
+/*-- Inputs and textareas --*/
+input, textarea {
+    cursor: inherit;
+    outline: none;
+}
+
+input[type="text"]:enabled, input[type="number"]:enabled, input[type="email"]:enabled, input[type="search"]:enabled,
+input[type="tel"]:enabled, input[type="url"]:enabled, textarea:enabled {
+    background: var(--color09);
+    border: none;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="search"]:focus,
+input[type="tel"]:focus, input[type="url"]:focus, textarea:focus {
+    background: var(--color09);
+    border: none;
+}
+
+/* Style for the HTML5 placeholder attribute within input or form fields */
+input::placeholder {
+    color: var(--color04);
+    opacity: 0.3;
+}
+
+input:disabled(:not([data-view-id="formentry"])), textarea:disabled, input[data-visual-state="2"] {
+    opacity: 0.4;
+    background-color: var(--color09-alpha-30);
+    border: 1px solid var(--color09-alpha-30);
+}
+
+div[data-view-id="formentry"] input:disabled {
+    background-color: var(--color09-alpha-40);
+    border: 2px solid var(--color09-alpha-0);
+}
+
+.generalInput {
+    text-align: right;
+}
+
+.generalInputLabel {
+    text-shadow: none;
+    color: var(--color05);
+    z-index: 2;
+}
+
+.generalInputCaption {
+    z-index: 2;
+    text-align: right;
+}
+
+/* enabled but not the active input field */
+input[data-visual-state="0"] {
+    opacity: 1;
+}
+
+/* pressed = active input field */
+input[data-visual-state="1"] {
+    opacity: 1;
+    border: 2px solid var(--color01);
+}
+
+/* Use a different style for inputs which are disabled, but should much as visible as other elements are */
+input:disabled:required, textarea:disabled:valid {
+    opacity: 1;
+}
+
+/* special styling for the input field of the Virtual keyboard */
+/* validation state: empty: no value or disabled */
+input[type="text"][data-validation-state="empty"],
+input[data-validation-state="empty"][id="generalVKInput"] {
+    border: 2px solid var(--color09);
+}
+
+/* validation state: valid */
+input[type="text"][data-validation-state="valid"],
+input[data-validation-state="valid"][id="generalVKInput"] {
+    border: 2px solid var(--color06);
+}
+
+/* validation state: wrong */
+input[type="text"][data-validation-state="invalid"],
+input[data-validation-state="invalid"][id="generalVKInput"] {
+    border: 2px solid var(--color07);
+}
+
+var[data-validation-state="empty"] {
+    /* no additional style */
+}
+
+/* validation state: valid */
+var[data-validation-state="valid"] {
+    color: var(--color06);
+}
+
+/* validation state: wrong */
+var[data-validation-state="invalid"] {
+    color: var(--color07);
+}
+
+/*-- Checkboxes --*/
+.slidingCheckBox {
+    border: 1px solid var(--color01);
+    box-shadow: 2px 2px 8px 0 var(--color04-alpha-80);
+}
+
+.slidingCheckBox::after, .slidingCheckBox::before {
+    text-shadow: 2px 2px 0 var(--color04-alpha-80);
+}
+
+.slidingCheckBox::after {
+    color: var(--color07-alpha-80);
+    content: 'O';
+}
+
+.slidingCheckBox::before {
+    color: var(--color06);
+    content: 'I';
+}
+
+.slidingCheckBox label {
+    background: linear-gradient(180deg, var(--color01) 20%, var(--color01-sliding-checkbox-label) 100%);
+    box-shadow: 0 2px 2px 0 var(--color04-alpha-70);
+    transition: left 0.3s ease-out;
+}
+
+/*-- Radiobuttons --*/
+.radioButton {
+    border: 1px solid var(--color01);
+    box-shadow: 2px 2px 8px 0 var(--color04-alpha-80);
+}
+
+.radioButton label {
+    background: linear-gradient(180deg, var(--color01) 20%, var(--color01-sliding-checkbox-label) 100%);
+    box-shadow: 2px 2px 2px 0 var(--color04-alpha-70);
+}
+
+@keyframes radioActive {
+    0% {
+        transform: scale(0.5);
+        box-shadow: 0 0 11px 0 var(--color01-alpha-10), 0 0 11px 0 var(--color01-alpha-30);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 11px 11px var(--color01-alpha-10), 0 0 11px 11px var(--color01-alpha-30);
+    }
+}
+
+.radioButton input[type=radio]:checked + label {
+    animation: radioActive 0.2s ease-out;
+}
+
+.radioButtonItem {
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.radioButtonItemLeft {
+    justify-content: flex-start;
+    border: 1px solid var(--color01);
+    border-left: none;
+}
+
+.radioButtonItemRight {
+    justify-content: flex-end;
+    border: 1px solid var(--color01);
+    border-right: none;
+}
+
+.radioButtonItemRight>var {
+    text-align: end;
+}
+
+/*-- Wait spinner --*/
+#waitSpinner .point {
+    background-color: var(--color09-alpha-1);
+}
+
+.spinner {
+    z-index: 9999;
+}
+
+#waitSpinner .circle {
+    border: solid transparent;
+    /* Can't be optimized since top must be separated from other border sides */
+    border-top: solid var(--color09-alpha-1);
+}
+
+.spinner2 {
+    border: 15px solid var(--color02-alpha-15);
+    border-top: 15px solid var(--color02-alpha-80);
+}
+
+/* bounce following spinner */
+#waitSpinner .followingSpinnerShape {
+    background-color: var(--color02-alpha-60);
+    border: 1px solid var(--color02);
+    animation-name: bounce_followingSpinner;
+    animation-duration: 2.1s;
+    animation-iteration-count: infinite;
+    /*animation-timing-function: ease-in-out;*/
+}
+
+#followingSpinner_1 {
+    animation-delay: 0s;
+}
+
+#followingSpinner_2 {
+    animation-delay: 0.21s;
+}
+
+#followingSpinner_3 {
+    animation-delay: 0.42s;
+}
+
+#followingSpinner_4 {
+    animation-delay: 0.63s;
+}
+
+/* rotate plane spinner */
+.rotatePlaneSpinner {
+    background-color: var(--color02-alpha-60);
+    border: 1px solid var(--color02);
+    animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(120px);
+    }
+    50% {
+        transform: perspective(120px) rotateY(180deg);
+        background-color: var(--color01-alpha-60);
+        border: 1px solid var(--color01);
+    }
+    100% {
+        transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+/* stretch play spinner */
+.stretchPlaySpinner>div {
+    background-color: var(--color10-alpha-60);
+    border: 1px solid var(--color10);
+    display: inline-block;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.stretchPlaySpinner .rect2 {
+    animation-delay: -1.1s;
+}
+
+.stretchPlaySpinner .rect3 {
+    animation-delay: -1.0s;
+}
+
+.stretchPlaySpinner .rect4 {
+    animation-delay: -0.9s;
+}
+
+.stretchPlaySpinner .rect5 {
+    animation-delay: -0.8s;
+}
+
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+    }
+    50% {
+        background-color: var(--color01-alpha-60);
+        border: 1px solid var(--color01);
+    }
+    20% {
+        transform: scaleY(1.0);
+    }
+}
+
+/* cube grid spinner */
+.sk-cube-grid {
+    width: 80px;
+    height: 80px;
+}
+
+.sk-cube-grid .sk-cube {
+    width: 30%;
+    height: 30%;
+    float: left;
+    background-color: var(--color01-alpha-60);
+    border: 1px solid var(--color01);
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.sk-cube-grid .sk-cube1 {
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube2 {
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube3 {
+    animation-delay: 0.4s;
+}
+
+.sk-cube-grid .sk-cube4 {
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube5 {
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube6 {
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube7 {
+    animation-delay: 0s;
+}
+
+.sk-cube-grid .sk-cube8 {
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube9 {
+    animation-delay: 0.2s;
+}
+
+@keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        transform: scale3D(1, 1, 1);
+    }
+    35% {
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+/* follow balls spinner */
+.follow-balls {
+    width: 77px;
+    text-align: center;
+}
+
+.follow-balls>div {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    background-color: var(--color01);
+    /*border-radius: 100%;*/
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.follow-balls .bounce1 {
+    animation-delay: -0.32s;
+}
+
+.follow-balls .bounce2 {
+    background-color: var(--color02);
+    animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/*-- Components - Popup overlay and window --*/
+.modalOverlay, .modalOverlayPopup {
+    background-color: var(--color04-alpha-60);
+}
+
+#waitSpinnerModalOverlay.modalOverlay {
+    background-color: var(--color04-alpha-30);
+}
+
+.popupWindow {
+    background-color: var(--color04);
+    border: 1px solid var(--color09);
+    box-shadow: 2px 2px 8px var(--color04-alpha-80);
+    animation: fadeIn 0.35s ease-in;
+}
+
+#popupWindowContent {
+    background: var(--color05) linear-gradient(180deg, var(--color03-alpha-15) 0%, var(--color07-alpha-0) 100%);
+}
+
+/*Popup Selection*/
+#popupSelectionItemContainer .button[data-current-item=true] {
+    transform: translateX(5px) scaleY(1.4) scaleX(1.1);
+}
+
+#popupSelectionItemContainer .button[data-current-item=false] {
+    opacity: 0.2;
+}
+
+/* pop up hints */
+.popupHint, .popupHint[data-content-style$="InfoBox"] {
+    display: inline-block;
+    background: var(--color05) linear-gradient(180deg, var(--color03-alpha-15) 0%, var(--color07-alpha-0) 100%);
+    color: var(--color03);
+    border: 1px solid var(--color01);
+    box-shadow: 5px 5px 8px var(--color04-alpha-80);
+    text-align: center;
+    word-wrap: break-word;
+    z-index: 1002;
+    transform: translatez(0);
+}
+
+.popupHint[data-content-style$="WarningBox"] {
+    border: 1px solid var(--color10);
+}
+
+.popupHint[data-content-style$="ErrorBox"] {
+    border: 1px solid var(--color07);
+}
+
+.popupHint::before, .popupHint[data-content-style$="InfoBox"]::before {
+    color: var(--color01);
+    content: "\25c4";
+}
+
+.popupHint[data-content-style$="WarningBox"]::before {
+    color: var(--color10);
+}
+
+.popupHint[data-content-style$="ErrorBox"]::before {
+    color: var(--color07);
+}
+
+/*-- List rows and shadows top/bottom --*/
+.listRow:nth-of-type(odd) {
+    background: var(--color09-alpha-10);
+}
+
+.listRow:nth-of-type(even) {
+    background: var(--color09-alpha-20);
+}
+
+/*-- General message / escalation in  message and question view --*/
+#flexMessageContainerHeader .messageArea {
+    animation: escalationMoveIn 0.8s ease-in;
+}
+
+#flexMessageContainerHeader .disappear {
+    animation: escalationMoveOut 0.5s ease-out;
+}
+
+#flexMessageContainerArticle {
+    animation: fadeIn 0.25s ease-in; /*zoom/scale effects may disturb UIMovements for content scrolling purpose*/
+}
+
+.messageIcon {
+    display: inline-flex;
+}
+
+/*-- Virtual Keyboard --*/
+#vkModalOverlay.modalOverlay {
+    background-color: var(--color04-alpha-60);
+}
+
+#generalVKInputLabel {
+    text-shadow: none;
+}
+
+/*-- Timeout progress bar --*/
+.timeoutProgressBar {
+    display: none;
+    overflow: hidden;
+    background-color: var(--color09);
+}
+
+/*-- Views: idlepresentation and cardanimations --*/
+.contactlessReaderBack {
+    background: linear-gradient(180deg, var(--color09-alpha-30) 0%, var(--color09-alpha-20) 100%);
+    border: 1px solid var(--color01);
+    border-radius: 10px;
+}
+
+/*-- View: pinentry --*/
+#pinDigitsArea {
+    animation: fadeIn 0.15s;
+}
+
+.pinDigit.flipped {
+    transform: rotateY(180deg);
+    animation: flip-Y-180 0.6s ease-out;
+}
+
+div.front {
+    background-color: var(--color09-alpha-30);
+}
+
+div.frontCurrent {
+    background-color: var(--color09-alpha-30);
+}
+
+div.frontCurrent>var {
+    animation: blink 1s ease-out infinite;
+}
+
+div.back {
+    background-color: var(--color01-alpha-70);
+}
+
+/*-- Views: message, question, adainformation --*/
+div[data-view-id="message"] #flexTime,
+div[data-view-id="question"] #flexTime,
+div[data-view-id="adainformation"] #flexTime,
+div[data-view-id="receipt"] #flexTime {
+    filter: none;
+}
+
+/*-- View: adaadjustment --*/
+div[data-view-id="adaadjustment"] #flexNavSK00::before,
+div[data-view-id="adaadjustment"] #flexNavSK02:before {
+    content: '';
+    z-index: -1;
+    background: var(--color09-alpha-20);
+    box-shadow: 2px 2px 2px var(--color04);
+}
+
+/* Text */
+div[data-view-id="adaadjustment"] #flexNavSK00::after,
+div[data-view-id="adaadjustment"] #flexNavSK02::after {
+    color: var(--color09);
+    text-shadow: 1px 1px 3px var(--color04);
+}
+
+div[data-view-id="adaadjustment"] #flexNavSK01::before,
+div[data-view-id="adaadjustment"] #flexNavSK03::before {
+    content: '';
+    z-index: -1002;
+    background: var(--color09-alpha-15);
+}
+
+/*-- View: accountselection / billpaymentselection --*/
+div[data-view-id="accountselection"] #flexNav #additional,
+div[data-view-id="billpaymentselection"] #flexNav #additional {
+    background: var(--color09-alpha-20);
+    animation: accountSelectionDetails 0.6s ease-in;
+}
+
+/*-- View: pleasewait --*/
+/* Points loader */
+#waitLine>div {
+    background-color: var(--color01-alpha-60);
+    border: 1px solid var(--color01);
+}
+
+/* Wave spinner */
+#spinnerWave>div {
+    display: inline-block;
+    background-color: var(--color01-alpha-60);
+    border: 1px solid var(--color01);
+    color: var(--color01-alpha-80);
+}
+
+/*-- View: billsplitting --*/
+#amountHead {
+    background: linear-gradient(180deg, var(--color09-alpha-50) 0%, var(--color09-alpha-50) 94%, var(--color09-alpha-0) 95%, var(--color09-alpha-1) 100%);
+    box-shadow: 0 10px 16px 0 var(--color04-alpha-60);
+}
+
+/*-- View: billselection --*/
+div[data-view-id="billselection"] .flexDistributionRow[data-current-denomination="true"] {
+    /*outline: 1px solid red;*/
+    background: var(--color09-alpha-20);
+}
+
+/*-- View: amountentry, numericentry, formentry --*/
+.generalInputFieldAreaZone[data-view-state="2"] object,
+.generalInputFieldAreaZone[data-view-state="2"] svg {
+    opacity: 0.2;
+}
+
+/*-- View: depositresult --*/
+#flexDepositResultTotalAmount {
+    background: linear-gradient(180deg, var(--color09-alpha-50) 0%, var(--color09-alpha-50) 94%, var(--color09-alpha-0) 95%, var(--color09-alpha-1) 100%);
+}
+
+.flexDepositResultDetailsRow {
+    animation-name: moveInLeft;
+    animation-duration: 0.3s;
+}
+
+.flexDepositResultDetailsRow[data-row-l2="true"] {
+    background: var(--color07-alpha-30);
+}
+
+.flexDepositResultDetailsRow[data-row-l2="true"] .note {
+    border: 1px solid var(--color07);
+    background: var(--color07-alpha-80);
+}
+
+.flexDepositResultDetailsRow[data-row-l2="true"] .note>object,
+.flexDepositResultDetailsRow[data-row-l2="true"] .note>svg {
+    opacity: 0.7;
+}
+
+/*-- View: Accountinformation --*/
+/*- AINStd, AINIfx, AINPcemov -*/
+#flexAccountAINStdAINIfxAINPcemov {
+    background: var(--color09-alpha-10);
+}
+
+/* Transaction area */
+#flexTransactionsHeader {
+    background: var(--color09-alpha-50);
+}
+
+/*-- AINPcebal --*/
+#flexAccountDetailsAINPcebal {
+    background: var(--color09-alpha-10);
+}
+
+#flexTransactionsHeaderAINPcebal, #flexTransactionsDataAINPcebal .transaction {
+   animation-name: moveInLeft;
+    animation-duration: 0.3s;
+}
+
+.row1TransData, .row2TransData, .transaction {
+    animation-name: moveInLeft;
+    animation-duration: 0.3s;
+}
+
+/*-- View: depositchequesresult --*/
+#chqInfoArea {
+    background: var(--color09-alpha-20);
+    border: 1px solid var(--color04);
+}
+
+#chqInfoArea.accepted {
+    border: 1px solid var(--color06);
+}
+
+#chqInfoArea.declined {
+    border: 1px solid var(--color07);
+}
+
+#chqArea #declinedMessage {
+    background: var(--color07-alpha-50);
+}
+
+#chqNoFromTo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+}
+
+#chqArea .chequeImageContainer {
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+}
+
+#chqArea .backImage {
+    transform: rotate3d(1, 0, 0, 180deg);
+}
+
+div[data-view-id="depositchequesresult"] #chqInfoArea[data-document-zoom="out"] {
+    transition: all 0.25s ease-out;
+}
+
+div[data-view-id="depositchequesresult"] #chqInfoArea[data-document-zoom="in"] #chqNoFromTo,
+div[data-view-id="depositchequesresult"] #chqInfoArea[data-document-zoom="in"] #declinedMessage {
+    opacity: 0;
+}
+
+div[data-view-id="depositchequesresult"] #chqInfoArea[data-document-zoom="in"] {
+    transition: all 0.25s ease-in;
+}
+
+/*-- View: scannedimageviewer --*/
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #imgViewer {
+    background: var(--color04-alpha-80);
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #chqImgCarrier2 {
+    transition: top 0.25s, left 0.25s, margin-top 0.25s, width 0.25s, height 0.25s;
+    transition-timing-function: ease-in;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier2 {
+    transition: top 0.25s, left 0.25s, margin-top 0.25s, width 0.25s, height 0.25s;
+    transition-timing-function: ease-in;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="out"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="out"] #chqImgCarrier2 {
+    transition: top 0.25s, left 0.25s, margin-top 0.25s, width 0.25s, height 0.25s;
+    transition-timing-function: ease-out;
+}
+
+/* -- View: scancodeanimations.html --*/
+.scanBackground {
+    background-color: var(--color09-alpha-20);
+}
+
+#barcodeSlot, #qrcodeSlot {
+    background-color: var(--color09-alpha-30);
+    border: solid 1px var(--color09-alpha-60);
+}
+
+/* -- View: checkboxes.html --*/
+.checkBoxItem {
+    text-transform: uppercase;
+}
+
+.checkBoxItemLeft {
+    justify-content: flex-start;
+    border: 1px solid var(--color01);
+    border-left: none;
+}
+
+.checkBoxItemRight {
+    justify-content: flex-end;
+    border: 1px solid var(--color01);
+    border-right: none;
+}
+
+.checkBoxItemRight>var {
+    text-align: end;
+}
+
+/*-- View: Chiptransactions / emvtransactions --*/
+#flexChipTransactionsHeader, #flexTransLogHeader {
+    background: var(--color09-alpha-50);
+}
+
+/* Transaction */
+.chipTransaction, .transLogTransaction {
+    animation-name: moveInLeft;
+    animation-duration: 0.3s;
+}
+
+/*-- View: receipt.html --*/
+div[data-view-id="receipt"] .messageArea {
+    position: relative; /*because of pseudo elements before/after to keep responsivity*/
+    justify-content: center;
+    border: none;
+    box-shadow: none;
+    /*sawtooth effect*/
+    background: linear-gradient(-135deg, var(--color09) 8px, transparent 0) 0 8px, linear-gradient(135deg, var(--color09) 8px, var(--color05) 0) 0 8px;
+    background-color: var(--color09);
+    background-position: left bottom;
+    background-repeat: repeat-x;
+}
+
+/*sawtooth effect: resolution dependent, note that background-size must be after the background: linear-gradient*/
+@media (min-width: 1px) {
+    div[data-view-id="receipt"] .messageArea {
+        background-size: 22px 10px;
+    }
+}
+
+@media (min-width: 1280px) {
+    div[data-view-id="receipt"] .messageArea {
+        background-size: 26px 10px;
+    }
+}
+
+div[data-view-id="receipt"] .messageArea::before,
+div[data-view-id="receipt"] .messageArea::after {
+    position: absolute;
+    content: '\25D7';
+    color: var(--color05);
+}
+
+div[data-view-id="receipt"] .messageArea::after {
+    content: '\25D6';
+}
+
+div[data-view-id="receipt"] .messageArea>var {
+    font-family: Courier, sans-serif;
+    text-shadow: none;
+    word-break: break-all;
+}
+
+/*-- View: mobiletransaction.html --*/
+.mobilePhoneBack {
+    background: var(--color03-alpha-60);
+    border: 1px solid var(--color01);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.mobilePhoneDisplayBack {
+    background: var(--color04-alpha-40);
+    z-index: 1;
+}
+
+#mobilePhone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#mobilePhoneDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*-- View: signaturepad.html --*/
+#signatureArea {
+    background: var(--color09-alpha-20);
+    color: var(--color03);
+    border: 1px solid var(--color09-alpha-60);
+    z-index: 1;
+}
+
+/*-- View: outofserviceadditionalinfos.html --*/
+#atmInfosHeadline {
+    background: linear-gradient(180deg, var(--color09-alpha-50) 0%, var(--color09-alpha-50) 94%, var(--color09-alpha-0) 95%, var(--color09-alpha-1) 100%);
+    align-items: flex-start;
+}
+
+#mapLocationContainer #mapLocationContainerClose {
+    border: none;
+    font-weight: bold;
+    background-color: rgba(0, 60, 136, .5);
+    color: var(--color09);
+}
+
+#mapLocationContainer #mapLocationContainerClose:focus,
+#mapLocationContainer #mapLocationContainerClose:hover {
+    text-decoration: none;
+    background-color: rgba(0, 60, 136, .7)
+}
+
+#mapLocationContainer #popup-content {
+    word-break: keep-all;
+}
+
+/* -- View: dualchoiceselection.html --*/
+div[data-view-id="dualchoiceselection"] #leftColumnText {
+    animation: fadeInRight 0.75s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #rightColumnText {
+    animation: fadeInLeft 0.75s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #leftColumnText[data-validation-state=true],
+div[data-view-id="dualchoiceselection"] #rightColumnText[data-validation-state=true] {
+    color: var(--color06);
+    transition: color 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft,
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight {
+    border-top: 1px dashed var(--color09);
+    animation: zoomIn 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorVertical {
+    /*align-self: center;*/
+    border-left: 1px dashed var(--color09);
+    animation: zoomIn 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorVertical[data-validation-state=true] {
+    border-left: 1px solid var(--color06);
+    transition: border-left 0.6s ease-in;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft[data-validation-state=true],
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight[data-validation-state=true] {
+    border-top: 1px solid var(--color06);
+    transition: border-top 0.6s ease-in;
+}

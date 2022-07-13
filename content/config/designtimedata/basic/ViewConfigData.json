@@ -1,0 +1,53 @@
+{
+  "commandconfig": {
+      "CANCEL": 0,
+      "CONFIRM": 0,
+      "CORRECT": 0,
+      "REQUEST_SUPPORT": 2,
+      "CARDLESS": 0,
+      "OTHER": 3
+  },
+   "items": {
+       "inputFields": [
+           {
+               "id": "EMAIL",
+               "editable": "true",
+               "type": "email",
+               "formatOption": "NONE",
+               "clearByCorrect": "true",
+               "minLen": "3",
+               "maxLen": "27"
+           },
+           {
+               "id": "TWITTER",
+               "editable": "true",
+               "type": "text",
+               "formatOption": "NONE",
+               "clearByCorrect": "true",
+               "minLen": "3",
+               "maxLen": "27"
+           },
+           {
+               "id": "TEXTMESSAGE",
+               "editable": "true",
+               "type": "number",
+               "mandatory": "0",
+               "formatOption": "NONE",
+               "clearByCorrect": "true",
+               "minValue": "0",
+               "maxValue": "9999999999",
+               "multiplier": "1",
+               "allowLeadingZero": "true"
+           },
+           {
+               "id": "FACEBOOK",
+               "editable": "true",
+               "type": "text",
+               "formatOption": "NONE",
+               "clearByCorrect": "true",
+               "minLen": "3",
+               "maxLen": "27"
+           }
+       ]
+   }
+}

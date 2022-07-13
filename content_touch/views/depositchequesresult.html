@@ -1,0 +1,126 @@
+<!--
+$MOD$ depositchequesresult.html 4.3.1-201117-21-8626b331-1a04bc7d
+-->
+
+<main id="flexMain" data-bind="virtualExtend: {
+                                acceptedText: getLabel('GUI_[#VIEW_KEY#]_Label_Accepted', 'Cheque accepted'),
+                                declinedText: getLabel('GUI_[#VIEW_KEY#]_Label_ChequeDetailsHint', 'This cheque was declined and will be returned.'),
+                                defaultText:  getLabel('GUI_[#VIEW_KEY#]_Label_PleaseAccept', 'Please accept...') }">
+    <!-- Nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- Article -->
+    <article id="flexArticle" data-bind="foreach: { data: dataList.items, as: 'cheque' },
+                                         gesture: { grid: 'chqControl',
+                                                    horizontalScrollbarElement: 'scrollbar-horizontal',
+                                                    options: {initialSnap: (dataList.items().length > 1 ? true : false)},
+                                                    gestures: { Swipe: {'direction':'DIRECTION_HORIZONTAL', 'events':['swipe']},
+                                                                Pan: {'direction':'DIRECTION_HORIZONTAL', 'events':['panstart','panmove','panend']}
+                                                    },
+                                                    containment: {'element':'window'},
+                                                    notifications: ev => $root.viewHelper.getActiveModule().onMoveChequesContainer(ev)
+                                         }">
+            <!-- Cheque information -->
+            <div id="chqControl" class="chqControl" data-bind="attr: {class: cheque.isAccepted() ? 'accepted chqControl' : (cheque.isDeclined() ? 'declined chqControl' : 'chqControl')}">
+                <div class="buttonsZone" style="display: none;"> <!-- Due to lazy-loading we set display none here, see corresponding code-behind -->
+                    <div id="chqInfoDetails">
+                        <var class="font02 color01" data-bind="
+                            html: $root.getLabel('GUI_[#VIEW_KEY#]_Label_ChequeNo', 'Cheque')() + '&nbsp;' + (cheque.index + 1) + '&nbsp;' +  $root.getLabel('GUI_[#VIEW_KEY#]_Label_ChequeOf', 'of')() + '&nbsp;' +  $root.maxChequeNo()"></var>
+
+                        <var class="font02 color01" data-bind="visibility: cheque.docType() === 'Cheque', html: $root.getLabel('GUI_[#VIEW_KEY#]_Label_ChequeAmount', 'Cheque amount:')"></var>
+                        <var class="font01 color02" data-bind="visibility: cheque.docType() === 'Cheque', format: {src: cheque.amount, pattern: '#M'}"></var>
+                    </div>
+                    <!-- Change amount btn -->
+                    <div class="buttonZone chqLeftButton">
+                        <div class="button dialogSmallButton"
+                             data-bind="command: {id: 'CHANGE_AMOUNT' + $index(), type: $root.CMDTYPE.BUTTON, state: cheque.isChgAmountEnabled, action: $root.onButtonPressed.bind($root, 'CHANGE_AMOUNT', $index())}">
+                            <svg data-bind="svguse: {name: 'change_check_amount.svg'}"></svg>
+                            <var class="color03 font01" data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Button_ChangeAmount', 'Change amount')"></var>
+                        </div>
+                    </div>
+                </div>
+                <div id="chqInfoArea" style="display: none;"> <!-- Due to lazy-loading we set display none here, see corresponding code-behind -->
+                    <div id="chqInfo" data-cheque-state="" data-bind="visibility: cheque.docType() === 'Cheque', attr: { 'data-cheque-state': cheque.isDeclined() ? 'declined' : '' }">
+                        <!-- Set the virtual cheque state texts dependent from the current cheque (value binding) and use just set texts for html binding -->
+                        <var data-bind="html: cheque.isAccepted() ? $root.acceptedText : (cheque.isDeclined() ? $root.declinedText : $root.defaultText),
+                                       attr: { class: cheque.isAccepted() ? 'font02 color06' : (cheque.isDeclined() ? 'font02 color03' : 'font02 color02')}">
+                        </var>
+                    </div>
+                    <svg class="iconSwipeVerticalToTurn" data-bind="svguse: {name: 'gesture_swipe_vertical_to_turn.svg'}, fadeVisible: cheque.isGestureSwipeVerticalTurnVisible"></svg>
+                    <svg class="iconDoubleTap" data-bind="svguse: {name: 'gesture_double_tap.svg'}, fadeVisible: cheque.isGestureDoubleTapVisible"></svg>
+                    <div class="chqImg" data-okimage="" data-bind="attr: {'data-okimage': cheque.imagePath, id: 'chequeNo_' + $index()},
+                                                                   gesture: { gestures: {
+                                                                                Tap: {
+                                                                                    events:['tap'],
+                                                                                    taps: 2,
+                                                                                    interval: 500,
+                                                                                    threshold: 20,
+                                                                                    posThreshold: 100,
+                                                                                    disableDefaultHandler: true,
+                                                                                    handler: ev => $root.viewHelper.getActiveModule().zoomToggle(ev, $index())
+                                                                                },
+                                                                                Pan: {
+                                                                                    direction:'DIRECTION_VERTICAL',
+                                                                                    events:['panstart','panmove','panend'],
+                                                                                    threshold: 30,
+                                                                                    disableDefaultHandler: true,
+                                                                                    handler: ev => $root.viewHelper.getActiveModule().onTurnCheque(ev, $index())
+                                                                                }
+                                                                            }
+                                                                   }">
+                        <div class="chequeImageContainer" data-bind="attr: {'data-chq-no': $index()}">
+                            <div class="frontImage">
+                                <img alt="" src="" data-bind="attr: {src: cheque.frontImagePath}">
+                            </div>
+                            <div class="backImage">
+                                <img alt="" src="" data-bind="attr: {src: cheque.backImagePath}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonsZone chqRightButton" style="display: none;"> <!-- Due to lazy-loading we set display none here, see corresponding code-behind -->
+                    <!-- Accept btn -->
+                    <div class="buttonZone">
+                        <div class="button dialogSmallButton"
+                             data-bind="command: {id: 'ACCEPT' + $index(), type: $root.CMDTYPE.BUTTON, state: cheque.isAcceptEnabled, action: $root.onButtonPressed.bind($root, 'ACCEPT', $index())}">
+                            <svg data-bind="svguse: {name: 'confirm.svg'}"></svg>
+                            <var class="color03 font01" data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Button_Accept', 'Accept')"></var>
+                        </div>
+                    </div>
+                    <!-- Decline btn -->
+                    <div class="buttonZone">
+                        <div class="button dialogSmallButton"
+                             data-bind="command: {id: 'DECLINE' + $index(), type: $root.CMDTYPE.BUTTON, state: cheque.isDeclineEnabled, action: $root.onButtonPressed.bind($root, 'DECLINE', $index())}">
+                            <svg data-bind="svguse: {name: 'cancel.svg'}"></svg>
+                            <var class="color03 font01" data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Button_Decline', 'Decline')"></var>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </article>
+    <!-- Aside -->
+    <aside id="flexAside">
+        <!-- Confirm btn -->
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button dialogSmallButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                <svg data-bind="svguse: {name: 'confirm.svg'}"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                 data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: {name: 'cancel.svg'}"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

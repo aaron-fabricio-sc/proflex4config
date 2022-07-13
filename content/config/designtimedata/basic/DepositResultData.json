@@ -1,0 +1,19 @@
+{
+    "messageL2": "<object class='messageIcon' type='image/svg+xml' data='style/default/images/l2_notes.svg'></object> Some of your deposited notes might be counterfeit!",
+    "totals": [
+        { "total": 206640, "L2": 5000, "L3": 0, "L4": 201640, "exp": -2, "currency": "EUR" }
+    ],
+
+    "denominations": [
+        { "value": 10000, "count": 17, "currency": "EUR", "exp": -2, "type": 0, "level": 4 },
+        { "value": 20000, "count": 17, "currency": "EUR", "exp": -2, "type": 0, "level": 4 },
+        { "value": 50000, "count": 17, "currency": "EUR", "exp": -2, "type": 0, "level": 4 },
+        { "value": 5000, "count": 7, "currency": "EUR", "exp": -2, "type": 0, "level": 4 },
+        { "value": 500, "count": 7, "currency": "EUR", "exp": -2, "type": 0, "level": 4 },
+        { "value": 1000, "count": 7, "currency": "EUR", "exp": -2, "type": 0, "level": 4 },
+        { "value": 2000, "count": 7, "currency": "EUR", "exp": -2, "type": 0, "level": 4 },
+        { "value": 5000, "count": 1, "currency": "EUR", "exp": -2, "type": 0, "level": 2 },
+        { "value": 1, "count": 40, "currency": "EUR", "exp": -2, "type": 1, "level": 4 },
+        { "value": 100, "count": 8, "currency": "EUR", "exp": -2, "type": 1, "level": 4 }
+    ]
+}

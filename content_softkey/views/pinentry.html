@@ -1,0 +1,66 @@
+<!--
+$MOD$ pinentry.html 4.3.1-200123-21-8cd258cb-1a04bc7d
+-->
+
+<main id="flexMain">
+    <!-- nav -->
+    <nav id="flexNav">
+        <div id="flexNavSK00"></div>
+        <div id="flexNavSK01"></div>
+        <div id="flexNavSK02">
+            <!--Pseudo button to take place to let pindigits area appear at the center-->
+            <div class="button button03 skLeft iconButton" style="visibility: hidden;"></div>
+        </div>
+        <div id="flexNavSK03"></div>
+    </nav>
+
+    <!-- article -->
+    <article id="flexArticle" data-bind="command: {id: 'PIN', action: designMode ? onButtonPressed : null, state: CMDSTATE.NONE}">
+        <div id="pinDigitsArea" data-pin-range="low" data-bind="visibility: activatePinContainer, foreach: pinDigitExpected, attr: {'data-pin-range': maxPinLength <= 12 ? 'low' : 'high'}">
+            <div class="pinDigitContainer">
+                <div class="pinDigit" data-bind="attr: {class: $data ? 'pinDigit flipped' : 'pinDigit'}">
+                    <div class="front" data-bind="attr: { class: $parent.currentPinLen() === $index() ? 'frontCurrent' : 'front' }">
+                        <var class="color03 font01" data-bind="text: $parent.currentPinLen() === $index() ? '_' : ''"></var>
+                    </div>
+                    <div class="back">
+                        <var class="color02 font01">*</var>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <div id="flexAsideSK00"></div>
+        <div id="flexAsideSK01"></div>
+        <div id="flexAsideSK02">
+            <div id="buttonConfirm" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM', args: ['CONFIRM', 'CONFIRM'], state: CMDSTATE.DISABLED, adaType: ADA_TYPE.FUNCTION_KEY, adakey: '7', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: ['CONFIRM', 'F3']}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK03">
+            <div id="buttonCancel" class="button button03 skRight iconButton"
+                 data-bind="command: {id: 'CANCEL', args: ['CANCEL','CANCEL'], state: CMDSTATE.DISABLED, adaType: ADA_TYPE.FUNCTION_KEY, adakey: '8', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: ['F4', 'CANCEL']}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonCorrect" class="button footerButton"
+                    data-bind="command: {id: 'CORRECT', adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Correct', 'Correct')}, eppkey: 'BACKSPACE'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CORRECT')"></var>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel"></div>
+</footer>

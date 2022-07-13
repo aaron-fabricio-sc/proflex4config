@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">#
+	 <style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                 	if(style.innerHTML) {
+                    	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    }
+                    else {
+                    	style.textContent = style.textContent.replace("default/svg.css", styleRes.type() + "svg.css");
+                    }
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>	
+<g class="shadowGroup1">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M15,21.7v-7.5c0,0-1-10.7,8.6-10.7c9.5,0,8.7,9.2,8.7,10.5"/>
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M32.3,40.5H15c-1.4,0-2.6-1.2-2.6-2.6V24.2c0-1.4,1.2-2.6,2.6-2.6
+		h17.2c1.4,0,2.6,1.2,2.6,2.6v13.7C34.9,39.3,33.7,40.5,32.3,40.5z"/>
+	<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M26.1,31.8l-1.4-4c0.5-0.3,0.9-0.9,0.9-1.6
+		c0-1-0.8-1.9-1.9-1.9s-1.9,0.8-1.9,1.9c0,0.7,0.4,1.3,1,1.7l-1.5,3.9c-0.1,0.2,0.1,0.5,0.3,0.5h4C26,32.2,26.1,32,26.1,31.8z"/>
+	<path d="M16.3,34.1h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5l-0.7-1.4l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6
+		l1.4,0.3L16.3,34.1z"/>
+	<path d="M21.3,34.1h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5l-0.7-1.4l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6
+		l1.4,0.3L21.3,34.1z"/>
+	<path d="M26.2,34.1h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5l-0.7-1.4l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6
+		l1.4,0.3L26.2,34.1z"/>
+	<path d="M31.2,34.1h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5l-0.7-1.4l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6
+		l1.4,0.3L31.2,34.1z"/>
+	<rect x="14.7" y="38.5" width="4.2" height="0.3"/>
+</g>
+<g class="shadowGroup2">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M14.5,21.4v-7.5c0,0-1-10.7,8.6-10.7c9.5,0,8.7,9.2,8.7,10.5"/>
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M31.7,40.1H14.5c-1.4,0-2.6-1.2-2.6-2.6V23.8c0-1.4,1.2-2.6,2.6-2.6
+		h17.2c1.4,0,2.6,1.2,2.6,2.6v13.7C34.3,38.9,33.2,40.1,31.7,40.1z"/>
+	<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M25.5,31.4l-1.4-4c0.5-0.3,0.9-0.9,0.9-1.6
+		c0-1-0.8-1.9-1.9-1.9s-1.9,0.8-1.9,1.9c0,0.7,0.4,1.3,1,1.7l-1.5,3.9c-0.1,0.2,0.1,0.5,0.3,0.5h4C25.4,31.9,25.6,31.7,25.5,31.4z"
+		/>
+	<path d="M15.7,33.7h0.9V35l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5l-0.7-1.4l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6
+		l1.4,0.3L15.7,33.7z"/>
+	<path d="M20.7,33.7h0.9V35l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5l-0.7-1.4l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6
+		l1.4,0.3L20.7,33.7z"/>
+	<path d="M25.7,33.7h0.9V35l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5l-0.7-1.4l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6
+		l1.4,0.3L25.7,33.7z"/>
+	<path d="M30.6,33.7h0.9V35l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5l-0.7-1.4l-0.6,1.4l-0.8-0.5l0.8-1.6L29,35.3l0.2-0.6l1.4,0.3
+		L30.6,33.7z"/>
+	<rect x="14.1" y="38.2" width="4.2" height="0.3"/>
+</g>
+<g class="shadowGroup3">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M13.9,20.9v-7.5c0,0-1-10.7,8.6-10.7c9.5,0,8.7,9.2,8.7,10.5"/>
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M31.1,39.6H13.9c-1.4,0-2.6-1.2-2.6-2.6V23.3c0-1.4,1.2-2.6,2.6-2.6
+		h17.2c1.4,0,2.6,1.2,2.6,2.6V37C33.7,38.5,32.6,39.6,31.1,39.6z"/>
+	<path fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M24.9,30.9l-1.4-4c0.5-0.3,0.9-0.9,0.9-1.6
+		c0-1-0.8-1.9-1.9-1.9s-1.9,0.8-1.9,1.9c0,0.7,0.4,1.3,1,1.7l-1.5,3.9c-0.1,0.2,0.1,0.5,0.3,0.5h4C24.8,31.4,25,31.2,24.9,30.9z"/>
+	<path d="M15.1,33.3H16v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5L15.6,36l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6l1.4,0.3
+		L15.1,33.3z"/>
+	<path d="M20.1,33.3H21v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5L20.6,36L20,37.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6l1.4,0.3
+		L20.1,33.3z"/>
+	<path d="M25.1,33.3H26v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5L25.6,36L25,37.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6l1.4,0.3
+		L25.1,33.3z"/>
+	<path d="M30,33.3h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6l-0.8,0.5L30.5,36l-0.6,1.4l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6l1.4,0.3
+		L30,33.3z"/>
+	<rect x="13.5" y="37.7" width="4.2" height="0.3"/>
+</g>
+<g>
+	<path class="strokeColor" fill="none" stroke="#000000" stroke-miterlimit="10" d="M13.3,20.5V13c0,0-1-10.7,8.6-10.7c9.5,0,8.7,9.2,8.7,10.5"/>
+	<path class="strokeColor" fill="none" stroke="#000000" stroke-miterlimit="10" d="M30.5,39.2H13.3c-1.4,0-2.6-1.2-2.6-2.6V22.9c0-1.4,1.2-2.6,2.6-2.6
+		h17.2c1.4,0,2.6,1.2,2.6,2.6v13.7C33.1,38.1,32,39.2,30.5,39.2z"/>
+	<path class="strokeColor" fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M24.3,30.5l-1.4-4c0.5-0.3,0.9-0.9,0.9-1.6
+		c0-1-0.8-1.9-1.9-1.9S20,23.9,20,24.9c0,0.7,0.4,1.3,1,1.7l-1.5,3.9c-0.1,0.2,0.1,0.5,0.3,0.5h4C24.2,31,24.4,30.8,24.3,30.5z"/>
+	<path class="fillColor" d="M14.5,32.8h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6L15.7,37L15,35.6L14.5,37l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6l1.4,0.3
+		L14.5,32.8z"/>
+	<path class="fillColor" d="M19.5,32.8h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6L20.7,37L20,35.6L19.4,37l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6l1.4,0.3
+		L19.5,32.8z"/>
+	<path class="fillColor" d="M24.5,32.8h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6L25.6,37L25,35.6L24.4,37l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6l1.4,0.3
+		L24.5,32.8z"/>
+	<path class="fillColor" d="M29.4,32.8h0.9v1.3l1.5-0.5l0.3,0.6l-1.5,0.7l0.9,1.6L30.6,37l-0.7-1.4L29.3,37l-0.8-0.5l0.8-1.6l-1.5-0.5l0.2-0.6l1.4,0.3
+		L29.4,32.8z"/>
+	<rect class="fillColor" x="12.9" y="37.3" width="4.2" height="0.3"/>
+</g>
+</svg>

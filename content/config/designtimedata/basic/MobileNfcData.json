@@ -1,0 +1,5 @@
+{
+    "mobileNfc": true,
+    "mobileNfcNotOperational": false,
+    "animationTextMobileNfc": "Mobile Nfc"
+}

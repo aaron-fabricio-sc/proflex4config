@@ -1,0 +1,13 @@
+{
+    "ChipTrans": {
+        "transactions": [
+            { "transDate": "12.04.2003", "transTime": "06:36:48", "transSign": "-", "transAmount": " 400.00 EUR", "transNewBalance": "607.00 EUR",      "transState": "OK" },
+            { "transDate": "12.04.2003", "transTime": "05:24:33", "transSign": "+", "transAmount": " 12.00 EUR",  "transNewBalance": "1,007.00 EUR",    "transState": "OK" },
+            { "transDate": "10.04.2003", "transTime": "04:20:13", "transSign": "-", "transAmount": " 5.00 EUR",   "transNewBalance": "995.00 EUR",      "transState": "OK" },
+            { "transDate": "02.04.2003", "transTime": "23:26:39", "transSign": "-", "transAmount": " 400.00 EUR", "transNewBalance": "1,000.00 EUR",    "transState": "NOK" },
+            { "transDate": "29.03.2003", "transTime": "13:26:00", "transSign": "+", "transAmount": " 800.00 EUR", "transNewBalance": "1,000.00 EUR",    "transState": "OK" },
+            { "transDate": "26.03.2003", "transTime": "03:26:23", "transSign": "+", "transAmount": " 100.00 EUR", "transNewBalance": "200.00 EUR",      "transState": "OK" },
+            { "transDate": "30.05.2002", "transTime": "07:26:33", "transSign": "+", "transAmount": " 100.00 EUR", "transNewBalance": "100.00 EUR",      "transState": "OK" }
+        ]
+    }
+}

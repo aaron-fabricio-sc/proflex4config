@@ -1,0 +1,85 @@
+<!--
+$MOD$ signaturepad.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+﻿<!-- main -->
+<main id="flexMain">
+    <nav id="flexNav">
+        <div id="flexNavSK00"></div>
+        <div id="flexNavSK01"></div>
+        <div id="flexNavSK02"></div>
+        <div id="flexNavSK03">
+            <div id="buttonCorrect" class="button button03 skLeft iconButton borderDrawing"
+                 data-bind="command: {id: 'CORRECT',
+                            args: ['CORRECT','CORRECT','CORRECT'],
+							adaType: ADA_TYPE.SELECTION_KEY,
+                            adakey: '4',
+                            state: CMDSTATE.DISABLED,
+                            label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Correct', 'Correct')},
+                            eppkey: ['CLEAR', 'BACKSPACE', 'F5']}">
+                <svg data-bind="svguse: { name: 'reset.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('CORRECT')"></var>
+            </div>
+        </div>
+    </nav>
+
+    <article id="flexArticle">
+        <canvas id="signatureArea" data-line-thickness="4.5" data-bind="
+            gesture: {
+                options: {
+                },
+                gestures: {
+                    Press: {
+                        events:['press'],
+                        disableDefaultHandler: true,
+                        handler: $root.viewHelper.getActiveModule().drawSignature
+                    },
+                    Pan: {
+                        direction: 'DIRECTION_ALL',
+                        events:['panstart','panmove','panend'],
+                        disableDefaultHandler: true,
+                        handler: jQuery.throttle(10, ev => $root.viewHelper.getActiveModule().drawSignature(ev))
+                    },
+                    Tap: {
+                        events:['tap'],
+                        disableDefaultHandler: true,
+                        handler: $root.viewHelper.getActiveModule().drawSignature
+                    }
+                }
+            }">
+        </canvas>
+    </article>
+
+    <aside id="flexAside">
+        <div id="flexAsideSK00"></div>
+        <div id="flexAsideSK01"></div>
+        <div id="flexAsideSK02"></div>
+        <div id="flexAsideSK03">
+            <div id="buttonConfirm" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM',
+                            args: ['CONFIRM','CONFIRM'],
+                            adaType: ADA_TYPE.SELECTION_KEY,
+                            adakey: '8',
+                            label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')},
+                            eppkey: ['CONFIRM', 'F4']}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                 data-bind="command: {id: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>
+

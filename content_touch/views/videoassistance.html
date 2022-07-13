@@ -1,0 +1,59 @@
+<!--
+$MOD$ videoassistance.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <div id="videoImageArea">
+            <img id="animation" class="videoImage" src="" data-bind="attr: {src: getLabel('GUI_[#VIEW_KEY#]_Video_Image', 'style/default/images/video_conference.svg')}">
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+
+        <div class="checkBoxItem">
+            <var class="color03 font01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_Mute_Switch', 'Mute')"></var>
+            <div style="display: flex; flex-direction: row">
+                <div class="slidingCheckBox borderDrawing" data-bind="command: {id: 'MUTE_SWITCH', type: 'checkbox'}">
+                    <input id="MUTE_SWITCH" type="checkbox" value="None" name="check"
+                           data-bind="checked: muteSwitch, disable: false"/>
+                    <label for="MUTE_SWITCH"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttonZone">
+            <div class="button dialogSmallButton borderDrawing" data-bind=" command: {id: 'VOL_PLUS', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Volumeplus', 'Volume up')} }">
+                <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('VOL_PLUS')"></var>
+            </div>
+        </div>
+
+        <div class="buttonZone">
+            <div class="button dialogSmallButton borderDrawing" data-bind=" command: {id: 'VOL_MINUS', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Volumeminus', 'Volume down')} }">
+                <svg data-bind="svguse: { name: 'minus.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('VOL_MINUS')"></var>
+            </div>
+        </div>
+
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton borderDrawing" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

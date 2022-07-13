@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+	 
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+	
+<g class="shadowGroup3">
+<rect x="18.813" y="8.008" fill="none" stroke="#000000" width="25.248" height="13.634"/>
+<line fill="none" stroke="#000000" x1="20.4" y1="10.227" x2="25.018" y2="10.227"/>
+<line fill="none" stroke="#000000" x1="37.643" y1="10.227" x2="42.26" y2="10.227"/>
+<line fill="none" stroke="#000000" x1="35.261" y1="19.244" x2="42.26" y2="19.244"/>
+<line fill="none" stroke="#000000" x1="20.4" y1="14.05" x2="42.26" y2="14.05"/>
+<line fill="none" stroke="#000000" x1="20.4" y1="15.926" x2="42.26" y2="15.926"/>
+</g>
+
+<g class="shadowGroup2">
+	<rect x="18.478" y="7.673" fill="none" stroke="#000000" width="25.25" height="13.635"/>
+	<line fill="none" stroke="#000000" x1="20.066" y1="9.892" x2="24.684" y2="9.892"/>
+	<line fill="none" stroke="#000000" x1="37.309" y1="9.892" x2="41.926" y2="9.892"/>
+	<line fill="none" stroke="#000000" x1="34.926" y1="18.91" x2="41.926" y2="18.91"/>
+	<line fill="none" stroke="#000000" x1="20.066" y1="13.715" x2="41.926" y2="13.715"/>
+	<line fill="none" stroke="#000000" x1="20.066" y1="15.591" x2="41.926" y2="15.591"/>
+</g>
+
+<g class="shadowGroup1">
+	<rect x="18.17" y="7.365" fill="none" stroke="#000000" width="25.248" height="13.635"/>
+	<line fill="none" stroke="#000000" x1="19.756" y1="9.584" x2="24.373" y2="9.584"/>
+	<line fill="none" stroke="#000000" x1="37" y1="9.584" x2="41.616" y2="9.584"/>
+	<line fill="none" stroke="#000000" x1="34.618" y1="18.602" x2="41.616" y2="18.602"/>
+	<line fill="none" stroke="#000000" x1="19.756" y1="13.408" x2="41.616" y2="13.408"/>
+	<line fill="none" stroke="#000000" x1="19.756" y1="15.283" x2="41.616" y2="15.283"/>
+</g>
+
+
+	<rect x="17.868" y="7.063" fill="none" class="strokeColor" stroke="#000000" width="25.247" height="13.634"/>
+	<line fill="none" stroke="#000000" class="strokeColor" x1="19.454" y1="9.281" x2="24.071" y2="9.281"/>
+	<line fill="none" stroke="#000000" class="strokeColor" x1="36.696" y1="9.281" x2="41.313" y2="9.281"/>
+	<line fill="none" stroke="#000000" class="strokeColor" x1="34.314" y1="18.299" x2="41.313" y2="18.299"/>
+	<line fill="none" stroke="#000000" class="strokeColor" x1="19.454" y1="13.104" x2="41.313" y2="13.104"/>
+	<line fill="none" stroke="#000000" class="strokeColor" x1="19.454" y1="14.979" x2="41.313" y2="14.979"/>
+
+
+<g class="shadowGroup3">
+	<rect x="1.813" y="23.766" fill="none" stroke="#000000" width="27.475" height="14.912"/>
+	<rect x="4.215" y="25.663" fill="none" stroke="#000000" width="22.761" height="11.207"/>
+	<circle fill="#000000" cx="5.338" cy="26.815" r="1.439"/>
+	<circle fill="#000000" cx="25.832" cy="26.815" r="1.439"/>
+	<circle fill="#000000" cx="25.832" cy="35.74" r="1.439"/>
+	<circle fill="#000000" cx="5.361" cy="35.74" r="1.439"/>
+	<circle fill="none" stroke="#000000" cx="15.928" cy="30.634" r="2.485"/>
+	<line fill="none" stroke="#000000" x1="13.442" y1="34.702" x2="18.232" y2="34.702"/>
+</g>
+
+<g class="shadowGroup2">
+	<rect x="1.631" y="23.583" fill="none" stroke="#000000" width="27.474" height="14.912"/>
+	<rect x="4.033" y="25.481" fill="none" stroke="#000000" width="22.761" height="11.207"/>
+	<circle fill="#000000" cx="5.156" cy="26.634" r="1.439"/>
+	<circle fill="#000000" cx="25.649" cy="26.634" r="1.439"/>
+	<circle fill="#000000" cx="25.649" cy="35.559" r="1.439"/>
+	<circle fill="#000000" cx="5.178" cy="35.559" r="1.439"/>
+	<circle fill="none" stroke="#000000" cx="15.745" cy="30.452" r="2.485"/>
+	<line fill="none" stroke="#000000" x1="13.26" y1="34.52" x2="18.05" y2="34.52"/>
+</g>
+
+<g class="shadowGroup1">
+	<rect x="1.464" y="23.417" fill="none" stroke="#000000" width="27.475" height="14.912"/>
+	<rect x="3.867" y="25.314" fill="none" stroke="#000000" width="22.761" height="11.207"/>
+	<circle fill="#000000" cx="4.989" cy="26.467" r="1.439"/>
+	<circle fill="#000000" cx="25.482" cy="26.467" r="1.439"/>
+	<circle fill="#000000" cx="25.482" cy="35.392" r="1.439"/>
+	<circle fill="#000000" cx="5.012" cy="35.392" r="1.439"/>
+	<circle fill="none" stroke="#000000" cx="15.579" cy="30.285" r="2.485"/>
+	<line fill="none" stroke="#000000" x1="13.094" y1="34.353" x2="17.884" y2="34.353"/>
+</g>
+
+
+	<rect x="1.089" y="23.041" fill="none" class="strokeColor" stroke="#000000" width="27.475" height="14.912"/>
+	<rect x="3.491" y="24.938" fill="none" class="strokeColor" stroke="#000000" width="22.761" height="11.207"/>
+	<circle fill="#000000" class="fillColor" cx="4.614" cy="26.091" r="1.439"/>
+	<circle fill="#000000" class="fillColor" cx="25.107" cy="26.091" r="1.439"/>
+	<circle fill="#000000" class="fillColor" cx="25.107" cy="35.016" r="1.439"/>
+	<circle fill="#000000" class="fillColor" cx="4.636" cy="35.016" r="1.439"/>
+	<circle fill="none" stroke="#000000" class="strokeColor" cx="15.203" cy="29.91" r="2.485"/>
+	<line fill="none" stroke="#000000" class="strokeColor" x1="12.718" y1="33.978" x2="17.508" y2="33.978"/>
+
+</svg>

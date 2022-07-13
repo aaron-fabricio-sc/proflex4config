@@ -1,0 +1,2679 @@
+@charset "utf-8";
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ sizes-positions.css 4.3.1-210422-21-8faf2d6b-1a04bc7d
+
+*/
+
+/*
+ * CSS document for resolution-dependent information
+ */
+
+/*---- Comments guidelines: ----*/
+/*
+ * Headline
+ */
+/*---- Sub headline: ----*/
+/*-- Element specific --*/
+/* Attribute specific */
+
+/*---- General order of attributes: ----*/
+/*
+element, #id, .class {
+    position: relative / absolute / fixed;
+    flex-basis: <number>px / <number>%;
+    float: none / left / right;
+    width, height: <number>px / <number>%;
+    min-width, max-width: <number>px / <number>%;
+    min-height, max-height: <number>px / <number>%;
+    top, right, bottom, left: <number>px / <number>%;
+    margin: <number>px, <number>px, <number>px, <number>px; (used, if more than one parameter)
+    margin-top, margin-right, margin-bottom, margin-left: <number>px;
+    padding: <number>px, <number>px, <number>px, <number>px; (used, if more than one parameter)
+    padding-top, padding-right, padding-bottom, padding-left: <number>px;
+    border-width: <number>px;
+    border-radius: <number>px;
+    border-top-left-radius, border-top-right-radius, border-bottom-left-radius, border-bottom-right-radius: <number>px;
+    line-height: <number>px;
+    font-size: <number>px;
+    border-spacing: <number>px;
+    word-spacing: <number>px;
+    -webkit-text-stroke-width: <number>px;
+}
+*/
+
+
+/*---- Normalization of elements ----*/
+html, body, div, table, header, footer, nav, main, article, aside, figure, figcaption, section, canvas,
+button, input, textarea, img, var, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, tr, td {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    position: absolute;
+    z-index: -1000;
+}
+
+/*---- Screen ----*/
+:root {
+    --font-size01: 21px;
+    --font-size02: 19px;
+    --font-size03: 17px;
+    --font-size04: 40px;
+    --font-size05: 40px;
+    --font-size06: 28px;
+
+    --header-height-dm-total: 314px;
+    --header-height-dm-image: 230px;
+}
+
+/*
+ * General structure and measurements
+ */
+
+/*---- Screen ----*/
+body, body>:first-child, body>:first-child>:first-child {
+    height: 100vh; /*span body*/
+}
+
+/*-- fonts --*/
+
+/* font01 Button description, Headline, Time, ...*/
+.font01 {
+    font-size: var(--font-size01);
+    line-height: 30px;
+}
+
+/* font02 Instruction, ...*/
+.font02 {
+    font-size: var(--font-size02);
+    line-height: 24px;
+}
+
+/* font03 */
+.font03 {
+    font-size: var(--font-size03);
+    line-height: 20px;
+}
+
+/* font04/05 */
+.font04, .font05 {
+    font-size: var(--font-size04);
+    line-height: 50px;
+}
+
+/* font06 (keyboard)*/
+.font06 {
+    font-size: var(--font-size06);
+    line-height: 36px;
+}
+
+/*---- Grid layout of screen ----*/
+
+/*-- Header --*/
+#flexHeader {
+    flex-basis: 180px;
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="selection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="amountselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="emvapplicationselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="prepaidproviderselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="formentry"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="checkboxes"] #flexHeader,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="accountselection"] #flexHeader,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="billpaymentselection"] #flexHeader {
+     flex-basis: var(--header-height-dm-total);
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="amountentry"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="cardanimations"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="depositanimations"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="depositchequesanimations"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="depositenvelopeanimations"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="genericimage"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="mobileanimations"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="mobiletransaction"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="message"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="numericentry"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="outofservice"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="offlinespa"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="pinentry"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="pleasewait"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="printeranimations"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="question"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="receipt"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="scancodeanimations"] #flexHeader,
+body[data-dm-available=true] div[data-view-id="withdrawalanimations"] #flexHeader{
+    flex-basis: var(--header-height-dm-total);
+}
+
+#flexHeaderTop {
+    padding: 0 0 0 64px;
+}
+
+#flexLogo {
+    margin-top: 34px;
+}
+
+#flexLogo>:first-child {
+    /* The height is the decisive factor for the logo, and for Chrome it is sufficient to only use 'height' to limit the size of the image (the image will keep its ratio)*/
+    /* But Firefox will not display the logo if 'width' is missing, we also add the 'width' (which we can get with Chomre's inspector after adjusting the height) */
+    width: 77px;
+    height: 59px;
+}
+
+/*-- Additional header info --*/
+#flexAdditionalHeaderInfo {
+    padding-top: 39px;
+}
+
+/*-- Help --*/
+#flexHelp {
+    margin-right: -20%;
+}
+
+#flexHelp object, #flexHelp svg {
+    width: 46px;
+    height: 46px;
+    padding: 46px 15px 0 0;
+}
+
+/*-- Date/Time --*/
+#flexTime {
+    min-width: 250px;
+}
+
+#time {
+    padding-bottom: 7px;
+}
+
+#timeMeridiem {
+    margin-left: 10px;
+}
+
+/*-- Headline/Instruction --*/
+#flexHeaderBottom {
+    flex-basis: 80px;
+    padding: 0 62px 0 62px;
+}
+
+#flexHeaderBottom>:first-child {
+    margin-bottom: 5px;
+}
+
+/*-- Main --*/
+/*-- Contains the elements: nav, article and aside --*/
+/*-- Article --*/
+#flexArticle, #flexArticlePopup {
+    flex-basis: 100%;
+    min-width: 0;
+    padding-top: 33px; /* Same top distance like first soft key */
+}
+
+/*-- Nav/Aside --*/
+/*-- Soft key's LEFT/RIGHT --*/
+#flexNav, #flexNavPopup,
+#flexAside, #flexAsidePopup {
+    flex-basis: 0;
+    margin-top: 33px;
+}
+
+#flexNav>:not(:first-child), #flexNavPopup>:not(:first-child),
+#flexAside>:not(:first-child), #flexAsidePopup>:not(:first-child) {
+    margin-top: 45px;
+}
+
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="amountselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="checkboxes"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="emvapplicationselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="formentry"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="prepaidproviderselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="selection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="amountselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="checkboxes"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="emvapplicationselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="formentry"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="prepaidproviderselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="selection"] #flexAside,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="accountselection"] #flexNav,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="billpaymentselection"] #flexNav,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="accountselection"] #flexAside,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="billpaymentselection"] #flexAside {
+    margin-top: -101px;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="amountentry"] #flexNav,
+body[data-dm-available=true] div[data-view-id="question"] #flexNav,
+body[data-dm-available=true] div[data-view-id="receipt"] #flexNav,
+body[data-dm-available=true] div[data-view-id="amountentry"] #flexAside,
+body[data-dm-available=true] div[data-view-id="cardanimations"] #flexAside,
+body[data-dm-available=true] div[data-view-id="depositchequesanimations"] #flexAside,
+body[data-dm-available=true] div[data-view-id="message"] #flexAside,
+body[data-dm-available=true] div[data-view-id="numericentry"] #flexAside,
+body[data-dm-available=true] div[data-view-id="pinentry"] #flexAside,
+body[data-dm-available=true] div[data-view-id="question"] #flexAside,
+body[data-dm-available=true] div[data-view-id="receipt"] #flexAside {
+    margin-top: -101px;
+}
+
+#flexNavSK00, #flexNavSK01, #flexNavSK02, #flexNavSK03,
+#flexNavPopupSK00, #flexNavPopupSK01, #flexNavPopupSK02, #flexNavPopupSK03,
+#flexAsideSK00, #flexAsideSK01, #flexAsideSK02, #flexAsideSK03,
+#flexAsidePopupSK00, #flexAsidePopupSK01, #flexAsidePopupSK02, #flexAsidePopupSK03, .checkBoxItem, .radioButtonItem {
+    /*same height as for each softkey button + 2px border*/
+    height: 75px;
+}
+
+/*-- Footer --*/
+#flexFooter {
+    height: 0;
+}
+
+#flexHome, #flexExtra, #flexConfirm, #flexCorrect, #flexCancel {
+    flex-basis: 0;
+}
+
+/*
+ * Element specific
+ */
+
+/*-- General alignment of figures --*/
+article>figure {
+    margin-top: 0;
+}
+
+article>figure>var {
+    margin-bottom: 20px;
+}
+
+/*-- Buttons --*/
+/*
+   To profit from flex box model div element is styled as a button with class .button
+   Please keep in mind that not everything is working in the same way for div and button and
+   vice versa, in particular the flex box model for button.
+*/
+
+.button.skLeft {
+    padding-right: 20px;
+}
+
+.button.skRight {
+    padding-left: 20px;
+}
+
+.button.skLeft>var {
+    padding-right: 20px;
+    padding-left: 40px;
+}
+
+.button.skRight>var {
+    padding-left: 20px;
+}
+
+.button>img, .button>object, .button>svg {
+    min-width: 46px;
+    max-width: 46px;
+    height: 46px;
+    z-index: 1000;
+}
+
+.button01, .button02, .button03, .button04 {
+    /*+2px border so that the overall height is 75px as in spec*/
+    height: 73px;
+}
+
+/* button01 - EXTRA SHORT (only icon on button) - */
+.button01 {
+    width: 120px;
+}
+
+/* button02 - SHORT - */
+.button02 {
+    width: 219px;
+}
+
+/* button03 - MIDDLE - */
+.button03 {
+    width: 319px;
+}
+
+/* button04 - LONG - */
+.button04, .checkBoxItem, .radioButtonItem {
+    width: 419px;
+}
+
+/* 1366x768 16:9 resolution */
+@media (min-width: 1366px) {
+    .button01 {
+        /*keep same default width for pure icon button*/
+    }
+
+    .button02 {
+        width: 280px;
+    }
+
+    .button03 {
+        width: 380px;
+    }
+
+    div[data-view-id="accountinformation"] .button03 {
+        width: 280px;
+    }
+
+    .button04, .checkBoxItem, .radioButtonItem {
+        width: 480px;
+    }
+}
+
+/* softkey types left/right */
+.skLeft {
+    padding-left: 22px;
+}
+
+.skRight {
+    padding-right: 22px;
+}
+
+.skLeft.button03>img, .skLeft.button04>img,
+.skLeft.button03>object, .skLeft.button04>object,
+.skLeft.button03>svg, .skLeft.button04>svg {
+    padding-right: 10px;
+}
+
+.skRight.button03>img, .skRight.button04>img,
+.skRight.button03>object, .skRight.button04>object,
+.skRight.button03>svg, .skRight.button04>svg {
+    padding-left: 10px;
+}
+
+/* sub menu item left/right */
+.skLeft.subMenuItem>var::before {
+    left: 15px;
+    font-size: var(--font-size06);
+}
+
+.skRight.subMenuItem>var::after {
+    left: calc(100% - 20px);
+    font-size: var(--font-size06);
+}
+
+/* keyboard button (VK) */
+.keyboardButton, .fnKey, .spaceKey, .enterKey, .arrowKeys {
+    width: 76px;
+    height: 76px;
+}
+
+/*-- Scrollbar --*/
+::-webkit-scrollbar {
+    width: 13%;
+}
+
+::-webkit-scrollbar-track {
+    border-width: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+}
+
+/*
+ * Component specific
+ */
+
+/*-- Selection slide indicator --*/
+#slideIndicatorGroup {
+    flex-basis: 100%;
+    /* Please update if softkey position changes */
+    margin-top: 382px;
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="amountselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="selection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="emvapplicationselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="prepaidproviderselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="checkboxes"] #slideIndicatorGroup,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="accountselection"] #slideIndicatorGroup,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="billpaymentselection"] #slideIndicatorGroup {
+    /* Please update if softkey position changes */
+    margin-top: 247px;
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="TOP_DOWN"] div[data-view-id="amountselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="TOP_DOWN"] div[data-view-id="selection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="TOP_DOWN"] div[data-view-id="emvapplicationselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="TOP_DOWN"] div[data-view-id="prepaidproviderselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="TOP_DOWN"] div[data-view-id="checkboxes"] #slideIndicatorGroup,
+body[data-max-softkeys="3"][data-softkeys-orientation="TOP_DOWN"] div[data-view-id="accountselection"] #slideIndicatorGroup,
+body[data-max-softkeys="3"][data-softkeys-orientation="TOP_DOWN"] div[data-view-id="billpaymentselection"] #slideIndicatorGroup {
+    /* Please update if softkey position changes */
+    margin-top: 264px;
+}
+
+#slideIndicatorGroup:first-child {
+    margin-left: 20px;
+}
+
+.slideIndicator, .slideIndicatorActive {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+/*-- Selection bread crumbs --*/
+.breadCrumb {
+    padding: 6px 10px 6px 60px;
+}
+
+.breadCrumb:first-child { /*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+    padding-left: 46px;
+}
+
+.breadCrumb:first-child::before {
+    left: 14px;
+}
+
+.breadCrumb:last-child {
+    border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+    padding-right: 20px;
+}
+
+.breadCrumb::after { /*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+    top: 0;
+    right: -18px; /*half of square's length*/
+    /*same dimension as the line-height of .breadcrumb */
+    width: 36px;
+    height: 36px;
+    /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's:
+    length=1; diagonal=(1^2 + 1^2)^0.5=1.414 (pythagoras theorem)
+    if diagonal required=1; length=1/1.414=0.707*/
+    transform: scale(0.670) rotate(45deg);
+    /*5px - for rounded arrows and 50px - to prevent hover glitches on the border created using shadows*/
+    border-radius: 0 6px 0 50px;
+}
+
+.breadCrumb::before { /*we will use the :before element to show numbers*/
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 8px 0;
+    top: 0;
+    left: 30px;
+}
+
+/*-- Checkboxes --*/
+.slidingCheckBox, .slidingCheckBox input[type=checkbox] {
+    min-width: 98px;
+    height: 45px;
+}
+
+.slidingCheckBox::after, .slidingCheckBox::before {
+    font-size: 2.2em;
+    top: 1px;
+}
+
+.slidingCheckBox::after {
+    right: 10px;
+}
+
+.slidingCheckBox::before {
+    left: 18px;
+}
+
+.slidingCheckBox label {
+    width: 48px;
+    height: 39px;
+    top: 3px;
+    left: 3px;
+}
+
+.slidingCheckBox input[type=checkbox]:checked + label {
+    left: 47px;
+}
+
+.checkBoxItemLeft {
+    margin-left: 0;
+    padding-left: 62px;
+}
+
+.checkBoxItemRight {
+    margin-right: 0;
+    padding-right: 61px;
+}
+
+.checkBoxItemLeft>var {
+    margin-left: 10px;
+}
+
+.checkBoxItemRight>var {
+    margin-right: 10px;
+}
+
+/*-- Radiobuttons --*/
+.radioButton, .radioButton input[type=radio] {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.radioButton input[type=radio]:checked + label {
+    width: 42px;
+    height: 42px;
+    top: 4px;
+    left: 4px;
+    border-radius: 50%;
+}
+
+.radioButtonItemLeft {
+    /*margin-left: 62px;*/
+    margin-left: 0;
+    padding-left: 62px;
+}
+
+.radioButtonItemRight {
+    /*margin-right: 61px;*/
+    margin-right: 0;
+    padding-right: 62px;
+}
+
+.radioButtonItemLeft>var {
+    margin-left: 10px;
+}
+
+.radioButtonItemRight>var {
+    margin-right: 10px;
+}
+
+/*-- Wait spinner --*/
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -90px 0 0 -90px;
+    z-index: 9999;
+}
+
+.spinner2 {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    border-width: 15px;
+    border-radius: 100%;
+    z-index: 1000;
+}
+
+#waitSpinner .circle {
+    /* Absolute position with 3d animation=render layer */
+    position: absolute;
+    border-width: 25px;
+    border-radius: 50%;
+}
+
+.circle.one {
+    height: 50px;
+    width: 50px;
+    left: 50px;
+    top: 50px;
+}
+
+.circle.two {
+    height: 100px;
+    width: 100px;
+    top: 25px;
+    left: 25px;
+}
+
+.circle.three {
+    height: 150px;
+    width: 150px;
+    top: 0;
+    left: 0;
+}
+
+/* Points spinner */
+#waitLine>div {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+}
+
+/* Wave spinner */
+#spinnerWave {
+    width: 205px;
+    height: 100px;
+}
+
+#spinnerWave>div {
+    height: 100%;
+    width: 15px;
+    margin: 0 10px 0 10px;
+}
+
+/* bounce following spinner */
+.followingSpinner {
+    width: 260px;
+    height: 30px;
+}
+
+#waitSpinner .followingSpinnerShape {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+}
+
+/* rotate plane spinner */
+.rotatePlaneSpinner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
+/* stretch play spinner */
+.stretchPlaySpinner {
+    width: 66px;
+    height: 100px;
+}
+
+.stretchPlaySpinner>div {
+    height: 100%;
+    width: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+/*-- message article / message header --*/
+.flexMessageContainer {
+    padding: 0 42px 0 42px;
+}
+
+.messageArea {
+    padding: 13px 20px 20px 20px;
+}
+
+.messageArea>var ul {
+    /*to have a padding for lists, if the displayed text contains ul-tags */
+    padding-left: 5%;
+}
+
+#flexMessageContainerHeader {
+    margin-top: 98px;
+    width: calc(100% - 84px); /*42px is the padding of class 'flexMessageContainer' */
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="selection"] #flexMessageContainerHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="amountselection"] #flexMessageContainerHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="emvapplicationselection"] #flexMessageContainerHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="prepaidproviderselection"] #flexMessageContainerHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="formentry"] #flexMessageContainerHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="checkboxes"] #flexMessageContainerHeader,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="accountselection"] #flexMessageContainerHeader,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id="billpaymentselection"] #flexMessageContainerHeader {
+    margin-top: var(--header-height-dm-image);
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="amountentry"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="cardanimations"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="depositanimations"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="depositchequesanimations"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="depositenvelopeanimations"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="genericimage"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="mobileanimations"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="mobiletransaction"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="message"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="numericentry"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="outofservice"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="offlinespa"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="pinentry"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="pleasewait"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="printeranimations"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="question"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="receipt"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="scancodeanimations"] #flexMessageContainerHeader,
+body[data-dm-available=true] div[data-view-id="withdrawalanimations"] #flexMessageContainerHeader{
+    margin-top: var(--header-height-dm-image);
+}
+
+#flexMessageContainerHeader .messageArea {
+    min-height: 70px;
+    padding: 5px 20px 4px 20px;
+}
+
+.messageIcon {
+    background-size: 100%;
+    width: 46px;
+    height: 46px;
+    margin-right: 5px;
+}
+
+/*-- Popups: - Popup overlay and window --*/
+.modalOverlay, .modalOverlayPopup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.popupWindow {
+    height: 240px;
+    margin: 310px 112px 0 112px;
+}
+
+#popupWindowContent {
+    flex-basis: 100%;
+    padding: 20px 0 20px 80px;
+}
+
+#popupWindowContent>main>var {
+    width: 65%;
+}
+
+#popupWindowContent>main>nav {
+    margin-top: 10px;
+    margin-left: -112px;
+    padding-top: 0;
+}
+
+#popupWindowContent>main>aside {
+    margin-top: 2px;
+    margin-right: -112px;
+    padding-top: 0;
+}
+
+#flexMessageContainerPopup {
+    margin-top: 10px;
+    width: 400px;
+    padding: 0;
+}
+
+/* AmountEntry Popup*/
+#popupWindowAmountEntry {
+    height: 478px;
+    margin-top: 190px;
+}
+
+#flexArticlePopupAmountEntry {
+    flex-basis: 100%;
+    padding-top: 0;
+}
+
+#flexArticlePopupAmountEntry #flexMessageContainerPopup {
+    margin-top: 10px;
+    width: 400px;
+    padding: 0;
+}
+
+/*Popup Selection*/
+#popupWindowSelection {
+    height: 478px;
+    margin-top: 190px;
+}
+
+#popupWindowSelection #flexMainPopup {
+    flex-basis: 100%;
+}
+
+#flexArticlePopupSelection {
+    flex-basis: 100%;
+    height: 100%;
+}
+
+#popupSelectionItemContainer {
+    width: 420px;
+    height: 384px;
+    margin-top: 24px;
+    padding-left: 34px;
+}
+
+#popupSelectionItemContainer .button {
+    min-height: 73px;
+    margin-bottom: 2px;
+    margin-left: -20px;
+}
+
+#popupSelectionItemContainer .button[data-current-item=false] {
+    margin-left: -15px;
+}
+
+/* Help Popup */
+#popupWindowHelp {
+    height: 575px;
+    margin-top: 155px;
+}
+
+#popupWindowHelp #flexMainPopup {
+    flex-basis: 100%;
+}
+
+#popupWindowHelp #helpContent {
+    width: auto;
+    max-width: 902px;
+    height: 398px;
+    max-height: 400px;
+}
+
+#popupWindowHelp #helpImage, #popupWindowHelp #helpVideo {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}
+
+/* pleasewait.component Popup */
+#pleaseWaitPopup #flexMainPopup,
+#pleaseWaitPopup #popupWindowContent,
+#pleaseWaitPopup #flexArticlePopup {
+    margin: 0;
+    padding: 0;
+    height: 400px;
+}
+
+#pleaseWaitPopup #flexArticlePopup #waitLine {
+    height: 40px;
+    margin-top: 10px;
+}
+
+#pleaseWaitPopup #flexArticlePopup>var {
+    padding: 20px;
+}
+
+/* pop up hints */
+.popupHint {
+    position: absolute;
+    margin: 0 10px 0 8px;
+    padding: 7px;
+}
+
+.popupHint::before {
+    position: absolute;
+    top: 4px;
+    left: -23px;
+    font-size: 26px;
+}
+
+/*-- Virtual Keyboard --*/
+#virtualKeyboardContainer {
+    position: absolute;
+    height: 450px;
+}
+
+#virtualKeyboardArea {
+    padding: 0 6px 0 0;
+}
+
+#virtualKeyboardArea #keyArea {
+    flex-basis: 1016px;
+}
+
+#virtualKeyboardArea #keyAreaNumPad {
+    flex-basis: 260px;
+}
+
+.keyboardButton {
+    margin: 6px 0 0 6px;
+}
+
+.keyboardButton>var {
+    width: 100%;
+}
+
+#popupKeysArea {
+    margin-top: 10px;
+    padding: 0 5px 5px 0;
+}
+
+#popupKeysArea .keyboardButton {
+    flex-basis: auto;
+    width: auto;
+    margin: 5px 0 0 5px;
+    min-width: 55px;
+    max-height: 55px;
+}
+
+#placedummy00 {
+    width: 30px;
+}
+
+#placedummy01 {
+    width: 30px;
+}
+
+#placedummy02 {
+    width: 108px;
+}
+
+#placedummy03 {
+    width: 26px;
+}
+
+#keyboardButtonBACKSPACE {
+    width: 108px;
+}
+
+#keyboardButtonCLEAR {
+    width: 108px;
+}
+
+#enterKey {
+    width: 188px;
+}
+
+#fnKey {
+    width: 116px;
+}
+
+#spaceKey {
+    width: 610px;
+}
+
+#generalVKInput {
+    width: 100%;
+    height: 55px;
+    padding: 20px 0 0 62px;
+}
+
+#generalVKInputLabel {
+    position: fixed;
+    margin-left: 62px;
+}
+
+/*-- Timeout progress bar --*/
+.timeoutProgressBar {
+    min-height: 4px;
+    width: 0;
+    margin-left: -1px;
+    padding-left: 0;
+}
+
+/*
+ * View specific
+ */
+
+/*-- View: message / question --*/
+div[data-view-id="message"] #flexNav,
+div[data-view-id="question"] #flexNav,
+div[data-view-id="message"] #flexAside,
+div[data-view-id="question"] #flexAside {
+    /*allow flexNav/flexAside to overlap flexArticle by overflow visible,
+      otherwise flexArticle shrinks by the width of flexNav and/or flexAside*/
+    max-width: 0;
+}
+
+div[data-view-id="message"] .messageArea,
+div[data-view-id="question"] .messageArea {
+    max-height: 300px;
+}
+
+div[data-view-id="question"] .messageArea[data-other-available="true"] {
+    max-height: 185px;
+}
+
+div[data-view-id="question"] .messageArea[data-other-available="true"] {
+    max-height: 185px;
+}
+
+div[data-view-id="question"] .button var {
+    width: 100%; /*so its possible with inline style (via text) that the label may be right aligned*/
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="message"] .messageArea,
+body[data-dm-available=true] div[data-view-id="question"] .messageArea {
+    max-height: 195px;
+}
+
+body[data-dm-available=true] div[data-view-id="question"] .messageArea[data-other-available="true"] {
+    max-height: 75px;
+}
+
+body[data-dm-available=true] div[data-view-id="message"]  #flexArticle,
+body[data-dm-available=true] div[data-view-id="question"]  #flexArticle  {
+    margin-top: -20px;
+}
+
+/*-- View: pleasewait --*/
+div[data-view-id="pleasewait"] #flexArticle #waitLine {
+    margin-top: 60px;
+    padding-left: 0;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="pleasewait"]  #flexArticle {
+    margin-top: 76px;
+}
+
+div[data-view-id="pleasewait"] #flexNav {
+    padding-left: 0;
+}
+
+div[data-view-id="pleasewait"] #flexAside {
+    padding-right: 0;
+}
+
+/*-- Views: idlepresentation / cardanimations / mobileanimations --*/
+div[data-view-id="idlepresentation"] #flexAside,
+div[data-view-id="cardanimations"] #flexAside {
+    flex-basis: auto;
+}
+
+/* 3D card insert/eject */
+#cardInsert3D, #cardEject3D {
+    transform: perspective(800px) rotate3d(1, 0, 0, 62deg);
+}
+
+#cardInsert3DLSF, #cardEject3DLSF {
+    transform: perspective(800px) rotate3d(1, 0, 0, 53deg);
+}
+
+#cardInsert3D>img, #cardEject3D>img, #cardNotOp>img, #cardInsert3DLSF>img, #cardEject3DLSF>img, #cardLSFNotOp>img,
+#cardInsert3D>svg, #cardEject3D>svg, #cardNotOp>svg, #cardInsert3DLSF>svg, #cardEject3DLSF>svg, #cardLSFNotOp>svg {
+    width: 200px;
+    height: auto;
+}
+
+#cardNotOp>img, #cardLSFNotOp>img,
+#cardNotOp>svg, #cardLSFNotOp>svg {
+    margin-top: -30px;
+    width: 150px;
+    height: auto;
+}
+
+#cardLSFNotOp>img, #cardLSFNotOp>svg {
+    margin-top: -80px;
+    transform: rotate(-90deg);
+}
+
+/* Contactless reader */
+#contactlessReaderArea {
+    width: 300px;
+    height: 340px;
+}
+
+#cardInsertContactless, #cardInsertContactlessNotOp  {
+    position: relative;
+    width: 140px;
+}
+
+#cardInsertContactlessNotOp  {
+    margin-left: 100px;
+    margin-top: -75px;
+}
+
+.contactlessReaderBack  {
+    position: relative;
+    width: 200px;
+    height: 180px;
+}
+
+/* Mobile Nfc */
+#mobileNfc, #mobileNfcNotOp  {
+    position: relative;
+    width: 175px;
+}
+
+#mobileNfcNotOp  {
+    margin-left: 100px;
+    margin-top: -75px;
+}
+
+/* Position of nfc symbol */
+.contactlessReaderBack>object, .contactlessReaderBack>svg {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* OutOfService symbol for card devices */
+.deviceOutOfService {
+    width: 150px;
+}
+
+#cardReader>.deviceOutOfService{
+    margin-top: -200px;
+}
+
+#cardReaderLSF>.deviceOutOfService {
+    margin-top: -202px;
+    z-index: 1;
+}
+
+#contactlessReader>.deviceOutOfService {
+    margin-top: -322px;
+    margin-left: -99px;
+}
+
+/* QR code */
+div[data-view-id="idlepresentation"] #qrCode {
+    position: absolute;
+    top: 40px;
+    right: 120px;
+}
+
+div[data-view-id="idlepresentation"] #qrCode:first-child,
+div[data-view-id="idlepresentation"] #qrCode:first-child svg {
+    width: 140px;
+    height: 140px;
+}
+
+/*-- View: pinentry --*/
+div[data-view-id="pinentry"] #flexNav,
+div[data-view-id="pinentry"] #flexAside {
+    /*allow flexAside/flexAside to overlap flexArticle by overflow visible,
+      otherwise flexArticle shrinks of the width of flexAside*/
+    max-width: 0;
+}
+
+#pinDigitsArea {
+    height: 90px;
+    margin-top: 60px;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] #pinDigitsArea {
+    margin-top: 7px;
+}
+
+.pinDigitContainer {
+    width: 58px; /*plus 2x1px border*/
+    height: 78px; /*plus 2x1px border*/
+    perspective: 1500px;
+}
+
+.pinDigitContainer:not(:last-child) {
+    margin-right: 10px;
+}
+
+.pinDigitContainer .front {
+    width: 60px;
+    height: 80px;
+}
+
+.pinDigit, .pinDigit>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: -1px;
+}
+
+div.frontCurrent>var {
+    font-size: 4em;
+    line-height: 1.0em;
+}
+
+div.back {
+    width: 60px;
+    height: 80px;
+}
+
+div.back>var {
+    font-size: 4em;
+    line-height: 1.5em;
+}
+
+/*low=PIN len <= 12, high=PIN len > 12*/
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer {
+    width: 46px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer .front {
+    width: 48px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer div.back {
+    width: 48px;
+}
+
+/*-- View: adaadjustment --*/
+div[data-view-id="adaadjustment"] #flexNav {
+    flex-basis: 363px;
+}
+
+div[data-view-id="adaadjustment"] #flexNavSK00::before,
+div[data-view-id="adaadjustment"] #flexNavSK02::before {
+    position: absolute;
+    width: 273px;
+    height: 216px;
+    margin-top: -10px;
+    margin-left: -75px;
+    transform: skew(-13deg);
+}
+
+div[data-view-id="adaadjustment"] #flexNavSK00::after,
+div[data-view-id="adaadjustment"] #flexNavSK02::after {
+    position: relative;
+    margin-left: 240px;
+}
+
+div[data-view-id="adaadjustment"] #flexNavSK01::before,
+div[data-view-id="adaadjustment"] #flexNavSK03::before {
+    position: absolute;
+    width: 400px;
+    height: 216px;
+    margin-top: -130px;
+}
+
+/*-- View: selection, checkboxes, emvapplicationselection, prepaidproviderselection --*/
+div[data-view-id="selection"] #flexAside, div[data-view-id="selection"] #flexNav,
+div[data-view-id="checkboxes"] #flexAside, div[data-view-id="checkboxes"] #flexNav,
+div[data-view-id="formentry"] #flexAside, div[data-view-id="formentry"] #flexNav,
+div[data-view-id="emvapplicationselection"] #flexAside, div[data-view-id="emvapplicationselection"] #flexNav,
+div[data-view-id="prepaidproviderselection"] #flexAside, div[data-view-id="prepaidproviderselection"] #flexNav {
+    /*otherwise the aside would shrink and the breadcrumbs move to the right if no items in
+      the aside except the 'next' button, which is usually shorter than the items*/
+    min-width: 462px;
+}
+
+/*-- View: accountselection / billpaymentselection --*/
+div[data-view-id="accountselection"] #flexNav,
+div[data-view-id="billpaymentselection"] #flexNav,
+div[data-view-id="accountselection"] #flexAside,
+div[data-view-id="billpaymentselection"] #flexAside {
+    /*allow flexNav/flexAside to overlap flexArticle by overflow visible,
+      otherwise flexArticle shrinks by the width of flexNav and/or flexAside*/
+    max-width: 0;
+}
+
+div[data-view-id="accountselection"] #flexNav>div #additional,
+div[data-view-id="billpaymentselection"] #flexNav>div #additional {
+    height: 75px;
+}
+
+div[data-view-id="accountselection"] #flexNav>div #additional>div,
+div[data-view-id="billpaymentselection"] #flexNav>div #additional>div {
+    width: 1px;
+    height: 100%;
+}
+
+div[data-view-id="accountselection"] #flexNav>div #additional>var,
+div[data-view-id="billpaymentselection"] #flexNav>div #additional>var{
+    min-width: 226px;
+    padding: 0 10px 0 20px;
+    text-align: left;
+}
+
+div[data-view-id="accountselection"] #flexNav>div #additional>var:nth-child(3),
+div[data-view-id="billpaymentselection"] #flexNav>div #additional>var:nth-child(3) {
+    min-width: 212px;
+    padding: 0 20px 0 10px;
+    text-align: right;
+}
+
+
+/*-- View: outofservice / offlinespa --*/
+.outOfServicePattern {
+    height: 75px;
+    min-width: 100%;
+}
+
+#outOfServiceMessage {
+    min-height: 60px;
+    padding: 50px 0 56px 0;
+}
+
+/*-- View: welcome --*/
+div[data-view-id="welcome-view"] #flexMain,
+div[data-view-id="welcome"] #flexMain {
+    margin-top: 11px;
+}
+
+#welcomeMessage1 {
+    margin-top: 140px;
+}
+
+/*== View: item animations views ==*/
+div[data-view-id="cardanimations"] figure:not([id="waitSpinner"]),
+div[data-view-id="withdrawalanimations"] figure:not([id="waitSpinner"]),
+div[data-view-id="printeranimations"] figure:not([id="waitSpinner"]) {
+    margin-top: 40px;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="cardanimations"] figure:not([id="waitSpinner"]) {
+    margin-top: 16px;
+}
+
+body[data-dm-available=true] div[data-view-id="withdrawalanimations"] figure:not([id="waitSpinner"]) {
+    margin-top: 26px;
+}
+
+div[data-view-id="idlepresentation"] figure:not([id="waitSpinner"]) {
+    margin-top: 120px;
+}
+
+div[data-view-id="depositchequesanimations"] figure:not([id="waitSpinner"]) {
+    margin-top: 30px;
+}
+
+/* -- DM support -- */
+/* -- DM support for depositchequesanimatons -- */
+body[data-dm-available=true] div[data-view-id="depositchequesanimations"] #flexArticle {
+    margin-top: 10px;
+}
+body[data-dm-available=true] div[data-view-id="depositchequesanimations"] figure:not([id="waitSpinner"]) {
+    margin-top: -13px;
+}
+
+#flexAnimationHead {
+    flex-basis: 5%;
+    max-height: 180px;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="depositanimations"] #flexAnimationHead,
+body[data-dm-available=true] div[data-view-id="depositchequesanimations"] #flexAnimationHead{
+    max-height: 140px;
+}
+
+div[data-view-id="cardanimations"] #flexArticle,
+div[data-view-id="withdrawalanimations"] #flexArticle,
+div[data-view-id="depositanimations"] #flexArticle,
+div[data-view-id="depositchequesanimations"] #flexArticle,
+div[data-view-id="printeranimations"] #flexArticle {
+    padding: 0 62px 60px 62px;
+}
+
+div[data-view-id="cardanimations"] #flexAside,
+div[data-view-id="withdrawalanimations"] #flexAside,
+div[data-view-id="depositanimations"] #flexAside,
+div[data-view-id="depositchequesanimations"] #flexAside,
+div[data-view-id="printeranimations"] #flexAside {
+    /*allow flexAside to overlap flexArticle by overflow visible,
+      otherwise flexArticle shrinks of the width of flexAside*/
+    max-width: 0;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="cardanimations"] #flexArticle {
+    padding: 0 150px 60px 0;
+}
+
+/* cheque scanning animation */
+#chequesScanningTexts {
+    height: 60px;
+}
+
+#chequeScanRedLight {
+    width: 60px;
+    height: 208px;
+    border-radius: 6px;
+}
+
+#chequeBack {
+    margin-top: 38px;
+}
+
+.chequeScanArea {
+    width: 290px;
+    height: 141px;
+    margin-top: -166px;
+}
+
+/*-- View: printeranimations/withdrawanimations --*/
+div[data-view-id="printeranimations"] #flexAside {
+    flex-basis: auto;
+}
+
+#flexAnimations {
+    flex-basis: 100%;
+}
+
+#receiptEject3D>object, #eReceiptSend>object,
+#receiptEject3D>svg, #eReceiptSend>svg {
+    width: inherit;
+    height: 230px;
+}
+
+#documentEject3D>object, #documentEject3D>svg {
+    width: 150px;
+    height: auto;
+}
+
+div[data-view-id="depositanimations"] #flexArticle figure:not([class="shortSideFirst"]) {
+    height: 330px;
+}
+
+/*-- Items slot --*/
+.flexItemsSlot>object, .flexItemsSlot>svg {
+    width: 200px;
+    height: 51px;
+}
+
+.flexItemsSlotLSF>object, .flexItemsSlotLSF>svg {
+    width: 300px;
+    height: 51px;
+}
+
+.flexItemsSlotIn>object, .flexMetalSlotIn>object,
+.flexItemsSlotIn>svg, .flexMetalSlotIn>svg {
+    width: 240px;
+    height: 70px;
+}
+
+.flexItemsSlotIn .note, .flexItemsSlotIn .coin, #takeMetalItems {
+    padding-right: 20px;
+}
+
+/*-- Notes/coins/cheque/genericimage --*/
+.note, .voucher {
+    width: 160px;
+    height: auto;
+}
+
+.coin {
+    width: 160px;
+    height: auto;
+}
+
+.noteShortSideFirst {
+    flex-basis: 250px;
+}
+
+.chequeShortSideFirst {
+    /*
+    A possible "transform:  rotate(180deg)" here will be overridden by ANY transform in animations.css, even if you apply a "transform: translate" in animation.cssw
+    */
+    flex-basis: 250px;
+    margin-bottom: -230px;
+}
+
+/* 3D notes eject */
+.itemLane {
+    width: 160px;
+    height: 152px;
+    margin-top: -30px; /*move the lane onto the slot */
+    transform: perspective(800px) rotate3d(1, 0, 0, 66deg);
+    /*setting the y-value of transform-origin to 0% means that the rotate axis is on the upper border of .itemLane. This way, the items will still start at the slot. The default value is 50% */
+    transform-origin: 50% 0;
+}
+
+/* 3D metal eject */
+.itemLaneMetal {
+    height: 250px;
+    width: 160px;
+    margin-top: -25px; /*move the lane onto the slot */
+    transform: perspective(800px) rotate3d(1, 0, 0, 66deg);
+    /*setting the y-value of transform-origin to 0% means that the rotate axis is on the upper border of .itemLaneMetal. This way, the items will still start at the slot. The default value is 50% */
+    transform-origin: 50% 0;
+}
+
+#noteEject3D .note3D {
+    margin-bottom: -95px;
+}
+
+#noteEject3D .note3D:last-child {
+    margin-bottom: -70px;
+}
+
+#noteEject3D .notesEjectShortSideFirstAnimation3D,
+#noteInsert3D .notesInsertShortSideFirstAnimation3D {
+    margin-bottom: -100px;
+}
+
+#noteEject3D .notesEjectShortSideFirstAnimation3D:last-child,
+#noteInsert3D .notesInsertShortSideFirstAnimation3D:last-child {
+    margin-bottom: -70px;
+}
+
+.flexMetalWarningArea {
+    height: 100px;
+    width: 200px;
+    margin-top: -110px;
+}
+
+.genericImage {
+    width: 100%;
+    height: auto;
+}
+
+#cardAnimationSingleArea {
+    /* min-width only necessary for Firefox ... */
+    min-width: 90px;
+}
+
+#flexAdditionalHints {
+    flex-basis: 100%;
+    max-height: 180px;
+    /*flex-shrink: 0;*/
+}
+
+#flexAdditionalTexts>var {
+    padding-bottom: 6px;
+}
+
+#flexAdditionalTexts>var:first-child {
+    padding-top: 2px;
+}
+
+#flexAdditionalTexts>var:last-child {
+    padding-bottom: 11px;
+}
+
+#flexAdditionalIcons {
+    flex-basis: 300px;
+    padding: 0 25px 0 25px;
+}
+
+.warningIcon, .redCircle {
+    width: 56px;
+    height: auto;
+}
+
+.warningIconBig, .redCircleBig  {
+    width: 90px;
+    height: auto;
+}
+
+.warningIconBig {
+    margin-top: 10px;
+}
+
+.redCircleBig {
+    margin-top: -100px;
+    margin-bottom: 18px;
+}
+
+#flexAdditionalIcons>object, #flexAdditionalIcons>svg {
+    padding: 30px 0 10px 10px;
+}
+
+#takeMetalAnimationArea {
+    padding-right: 10px;
+}
+
+#takeCoinAnimationArea {
+    padding-left: 10px;
+}
+
+/*-- View: withdrawalanimations --*/
+div[data-view-id="withdrawalanimations"] .note, div[data-view-id="withdrawalanimations"] .voucher {
+    width: 160px;
+    height: auto;
+}
+
+div[data-view-id="withdrawalanimations"] .coin {
+    width: 160px;
+    height: auto;
+}
+
+/*-- View: billsplitting --*/
+div[data-view-id="billsplitting"] #flexArticle {
+    padding: 0 62px 0 62px;
+    margin-top: 0;
+}
+
+div[data-view-id="billsplitting"] #flexArticle>var {
+    text-align: right;
+}
+
+div[data-view-id="billsplitting"] #flexAside {
+    flex-basis: auto;
+}
+
+#amountHead {
+    flex-basis: 40px;
+    padding-right: 20px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+#amountHead>:nth-child(1) {
+    margin-right: 30px;
+}
+
+.flexDistributionRow>var {
+    text-align: right;
+    min-width: 40px;
+}
+
+.flexDistributionRow .result {
+    min-width: 70px;
+}
+
+.flexDistributionRow .itemStack {
+    flex-basis: 100%;
+    margin-left: 150px;
+}
+
+.flexDistributionRow .note {
+    width: 143px;
+    height: 78px;
+    margin-top: 4px;
+    margin-bottom: 11px;
+}
+
+.flexDistributionRow[data-max-distributions="6"] .note {
+    width: 118px;
+    height: 61px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.flexDistributionRow[data-max-distributions="7"] .note {
+    width: 100px;
+    height: 41px;
+    margin-top: 3px;
+    margin-bottom: 22px;
+}
+
+.flexDistributionRow .coin {
+    width: 134px;
+    height: 46px;
+    margin-bottom: 11px;
+}
+
+.flexDistributionRow .note:not(:first-child) {
+    margin-left: -280px;
+}
+
+.flexDistributionRow .coin:not(:first-child) {
+    margin-left: -300px;
+}
+
+.flexDistributionRow.billSplitGrouping>var {
+    visibility: hidden;
+}
+
+/*-- View: billselection --*/
+div[data-view-id="billselection"] #flexArticle {
+    /*Use if there are softkeys on the left*/
+    margin-left: -162px;
+    padding: 0 42px 0 42px;
+}
+
+#amountHead>:nth-child(1), #amountHead>:nth-child(2), #amountHead>:nth-child(3) {
+    margin-right: 20px;
+}
+
+div[data-view-id="billselection"] .flexDistributionRow {
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+div[data-view-id="billselection"] .flexDistributionRow .note:not(:first-child) {
+    margin-left: -500px;
+}
+
+/*-- Views: amountentry, numericentry --*/
+div[data-view-id="amountentry"] #generalInputFieldArea,
+div[data-view-id="numericentry"] #generalInputFieldArea {
+    padding-left: 63px;
+}
+
+div[data-view-id="numericentry"] #generalInputFieldArea {
+    padding-top: 120px;
+}
+
+.generalInput {
+    height: 75px;
+    width: 390px;
+    padding-left: 8px;
+    padding-right: 10px;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="amountentry"] #flexArticle {
+    margin-top: -14px;
+}
+
+body[data-dm-available=true] div[data-view-id="numericentry"] #flexArticle {
+    margin-top: -134px;
+}
+
+/*-- View: depositresult --*/
+div[data-view-id="depositresult"] #flexArticle {
+    margin-left: -102px;
+    margin-right: 20px;
+}
+
+div[data-view-id="depositresult"] #flexNav {
+    flex-basis: 165px;
+}
+
+div[data-view-id="depositresult"] #flexAside {
+    flex-basis: auto;
+}
+
+.l2Sign>object, .l2Sign>svg {
+    background-size: 100%;
+    width: 46px;
+    height: 46px;
+    margin-right: 5px;
+}
+
+#flexDepositResultTotalAmount {
+    flex-basis: 75px;
+    min-height: 75px;
+}
+
+#firstRowAmountCaptionArea, #secondRowAmountCaptionArea {
+    flex-basis: 260px;
+}
+
+#firstRowAmountCurrencyArea, #secondRowAmountCurrencyArea {
+    margin-left: 20px;
+    flex-basis: 45px;
+}
+
+#firstRowAmountSumCaptionArea, #secondRowAmountSumCaptionArea {
+    flex-basis: 200px;
+}
+
+.flexDepositResultDetailsRow {
+    height: 88px;
+    padding-left: 120px;
+}
+
+.flexDepositResultDetailsRow>var {
+    text-align: right;
+    min-width: 50px;
+}
+
+.flexDepositResultDetailsRow .note, .flexDepositResultDetailsRow .coin {
+    margin: 7px 0 6px 0;
+    width: 125px;
+    height: 75px;
+}
+
+.flexDepositResultDetailsRow .crossX {
+    min-width: 46px;
+    max-width: 46px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.flexDepositResultDetailsRow .result {
+    min-width: 115px;
+}
+
+/*-- View: accountinformation --*/
+div[data-view-id="accountinformation"] #flexArticle {
+    flex-basis: 910px;
+}
+
+div[data-view-id="accountinformation"] #flexNav {
+    flex-basis: 52px;
+}
+
+div[data-view-id="accountinformation"] #flexAside {
+    flex-basis: 62px;
+}
+
+#AINPcebal, #AINPcemov, #AINIfx, #AINPcebalTable {
+    flex-basis: 100%;
+}
+
+#flexAccountDetailsArea {
+    flex-basis: 100%;
+    height: 75px;
+}
+
+/*- AINStd, AINIfx, AINPcemov -*/
+#flexAccountAINStdAINIfxAINPcemov {
+    height: 75px;
+    margin-right: 310px;
+    padding-left: 10px;
+}
+
+#flexAccountDetailsColumn1 {
+    flex-basis: 380px;
+}
+
+#flexAccountDetailsColumn2 {
+    flex-basis: 210px;
+}
+
+#accountNumberArea  {
+    min-width: 380px;
+}
+
+#accountNumberLabel, #accountNumberLabel {
+    flex-basis: 100px;
+}
+
+#accountNumberValue {
+    flex-basis: 280px;
+}
+
+#balanceArea {
+    width: 190px;
+    padding-left: 19px;
+}
+
+#balanceLabel, #balanceValue {
+    flex-basis: 190px;
+}
+
+#AINPcemovTable #balanceLabel {
+    flex-basis: 150px;
+    padding-right: 0;
+}
+
+#accountHolderArea, #accountTypeArea  {
+    min-width: 380px;
+}
+
+#accountHolderLabel, #accountTypeLabel {
+    flex-basis: 100px;
+}
+
+#accountHolderValue {
+    flex-basis: 280px;
+}
+
+#AINPcemovTable #accountHolderLabel {
+    flex-basis: 150px;
+}
+
+/* Transaction area */
+#flexTransactionsArea {
+    min-width: 910px;
+    height: 500px;
+}
+
+#flexTransactionsHeader {
+    margin-top: 30px;
+}
+
+#flexTransactionsHeaderAINStdAINIfxAINPcemov {
+    height: 75px;
+    padding-left: 10px;
+}
+
+#row1TransactionsHeader, #row2TransactionsHeader {
+    flex-basis: 50%;
+}
+
+#transHeadExpirationDateLabel {
+    flex-basis: 200px;
+}
+
+#transHeadEffectiveDateLabel {
+    flex-basis: 200px;
+}
+
+#transHeadAmountLabel {
+    flex-basis: 200px;
+    padding-right: 300px;
+}
+
+#transHeadPurposeLabel {
+    flex-basis: 100%;
+}
+
+/* Transaction */
+.transaction {
+    height: 105px;
+    padding-right: 100px;
+    padding-left: 10px;
+}
+
+.row1TransData, .row2TransData  {
+    flex-basis: 100%;
+}
+
+.row1TransData {
+    height: 35px;
+}
+
+.row2TransData {
+    height: 60px;
+    padding: 5px 0 5px 0;
+}
+
+.expirationDateValue {
+    flex-basis: 200px;
+}
+
+.effectiveDateValue {
+    flex-basis: 200px;
+}
+
+.amountValue {
+    flex-basis: 200px;
+    padding-right: 20px;
+}
+
+.currencyValue {
+    flex-basis: 70px;
+    padding-right: 110px;
+}
+
+.column1purposeValue, .column2purposeValue {
+    height: 60px;
+}
+
+.purposeValue {
+    height: 30px;
+}
+
+/*- AINPcebal -*/
+#flexAccountDetailsAINPcebal {
+    height: 75px;
+    margin-right: 310px;
+    padding-left: 10px;
+}
+
+#flexTransactionsHeaderAINPcebal {
+    height: 75px;
+    padding: 0 100px 0 10px;
+}
+
+#transHeadAccountTypeLabel, #transHeadAccountNumberLabel, #transHeadAccountBalanceLabel, #transHeadAvailableAmountLabel {
+    flex-basis: 200px;
+}
+
+#transHeadAccountTypeLabel, .accountTypeValue {
+    flex-basis: 140px;
+}
+
+#transHeadAccountNumberLabel, .accountNumberValue, #transHeadAccountBalanceLabel, .accountBalanceValue {
+    flex-basis: 160px;
+}
+
+#transHeadAvailableAmountLabel, .availableAmountValue {
+    flex-basis: 195px;
+}
+
+/*- Visibility: AINStd, AINIfx, AINPcemov, AINPcebal -*/
+#AINPcemovTable #flexAccountDetailsColumn1, #AINPcemovTable #flexAccountDetailsColumn2 {
+    flex-basis: 50%;
+}
+
+#AINPcemovTable #balanceArea {
+    width: 210px;
+    padding-left: 0;
+}
+
+#AINPcemovTable #balanceLabel, #AINPcemovTable #accountHolderLabel {
+    flex-basis: 150px;
+}
+
+#AINPcemovTable #accountHolderValue, #AINPcemovTable #balanceValue {
+    flex-basis: 440px;
+}
+
+
+/*-- View: depositchequesresult --*/
+div[data-view-id="depositchequesresult"] #flexArticle {
+    padding: 33px 12px 0 12px;
+}
+
+div[data-view-id="depositchequesresult"] #flexNav,
+div[data-view-id="depositchequesresult"] #flexAside {
+    flex-basis: auto;
+}
+
+#chqInfoArea {
+    flex-basis: 314px;
+}
+
+#chqInfoArea #chqInfoDetails {
+    flex-basis: 100%;
+    height: 75px;
+}
+
+#chqInfoDetailsColumn1, #chqInfoDetailsColumn2 {
+    flex-basis: 50%;
+}
+
+#chqInfoDetailsColumn1>var, #chqInfoDetailsColumn2>var {
+    padding: 5px 20px 0 20px;
+}
+
+#chqArea {
+    margin: -5px 8px 5px 8px;
+    height: 240px;
+    perspective: 1500px;
+}
+
+#chqArea #declinedMessage {
+    height: 50px;
+    margin: 0;
+    padding: 10px 10px 16px 10px;
+}
+
+#chqArea #declinedMessage var {
+    margin-left: 3px;
+}
+
+#chqArea img {
+    min-width: 458px;
+    max-width: 458px;
+    height: 188px;
+    max-height: 188px;
+}
+
+#chqArea .chequeImageContainer, #chqArea .frontImage, #chqArea .backImage {
+    height: 188px;
+}
+
+#chqNoFromTo {
+    flex-basis: 100%;
+    max-width: 262px;
+    margin: 65px 0 0 106px;
+}
+
+div[data-view-id="depositchequesresult"] #chqInfoArea[data-document-zoom="in"] {
+    transform: scale(2.2, 1.9);
+    margin-top: -296px;
+}
+
+/*-- View: scannedimageviewer --*/
+div[data-view-id="scannedimageviewer"] #chqInfoArea {
+    flex-basis: 480px;
+    height: 360px;
+    max-height: 360px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea, div[data-view-id="scannedimageviewer"] #imgViewer {
+    width: 100%;
+    height: 100%;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea #chqInfoDetails {
+    height: 65px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoDetailsColumn1>var, div[data-view-id="scannedimageviewer"] #chqInfoDetailsColumn2>var {
+    padding: 5px 15px 0 15px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqImgCarrier2 {
+    position: absolute;
+    width: 446px;
+    height: 268px;
+    margin: 10px 0 0 0;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #imgViewer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #chqImgCarrier2 {
+    width: 952px;
+    height: 522px;
+    margin-top: 30px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier2 {
+    width: 472px;
+    height: 692px;
+    margin-top: 30px;
+}
+
+div[data-view-id="scannedimageviewer"] #idScanImage {
+    display: none;
+    position: absolute;
+    left: 292px;
+}
+
+div[data-view-id="scannedimageviewer"] #chequeScanRedLight {
+    width: 60px;
+    height: 270px;
+    margin-top: 74px;
+}
+
+/*-- View: depositenvelopeanimations.html --*/
+.envelopeOpen {
+    width: 280px;
+}
+
+.envelopeShortSide {
+    width: 130px;
+}
+
+.envelopeShortSidePerspective {
+    transform: perspective(900px) rotate3d(1, 0, 0, 60deg);
+}
+
+.envelopeLongSidePerspective {
+    transform: perspective(900px) rotate3d(1, 0, 0, 46deg);
+}
+
+/*-- View: scancodeanimations.html --*/
+#barcodeSlot {
+    width: 95px;
+    height: 6px;
+}
+
+#barcodeRedLightTop {
+    width: 95px;
+    height: 95px;
+    perspective: 180px;
+}
+
+#barcodeRedLight {
+    height: 195px;
+}
+
+#barcodeBack {
+    width: 100px;
+    perspective: 180px;
+}
+
+#barcodeScanArea {
+    margin-top: 150px;
+    width:  300px;
+    height: 150px;
+    perspective: 180px;
+    transform: rotateX(40deg);
+}
+
+.barcode {
+    width: 210px;
+    height: 75px;
+    transform-origin: 0;
+    transform: rotateX(40deg);
+}
+
+#qrcodeSlot {
+    width: 80px;
+    height: 6px;
+}
+
+#qrcodeRedLightTop {
+    width: 80px;
+    height: 80px;
+    perspective: 180px;
+}
+
+#qrcodeRedLight {
+    height: 180px;
+}
+
+#qrcodeBack {
+    width: 100px;
+    perspective: 180px;
+}
+
+#qrcodeScanArea {
+    margin-top: 94px;
+    width:  300px;
+    height: 150px;
+    perspective: 180px;
+    transform: rotateX(40deg);
+}
+
+.qrcode {
+    width: 120px;
+    height: 120px;
+    transform-origin: 0;
+    transform: rotateX(45deg);
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="scancodeanimations"] #flexArticle {
+    margin-top: -30px;
+}
+
+/*-- View: chiptransactions / emvtransactions --*/
+div[data-view-id="chiptransactions"] #flexArticle,
+div[data-view-id="emvtransactions"] #flexArticle {
+    flex-basis: 750px;
+    margin-left: -192px;
+}
+
+div[data-view-id="chiptransactions"] #flexNav,
+div[data-view-id="emvtransactions"] #flexNav {
+    flex-basis: 16%;
+}
+
+div[data-view-id="chiptransactions"] #flexAside,
+div[data-view-id="emvtransactions"] #flexAside {
+    flex-basis: 16%;
+}
+
+/* Transaction area */
+#flexChipTransactionsArea, #flexTransLogArea {
+    flex-basis: 100%;
+    height: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#flexChipTransactionsHeader, #flexTransLogHeader {
+    height: 75px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#rowChipTransactionsHeader, #rowTransLogHeader, #rowTransLogHeaderECash {
+    flex-basis: 100%;
+}
+
+/* Head: chiptransactions  */
+#transHeadChipDateLabel {
+    flex-basis: 16%;
+    margin-left: 50px;
+}
+
+#transHeadChipTimeLabel {
+    flex-basis: 15%;
+}
+
+#transHeadChipAmountLabel {
+    flex-basis: 20%;
+}
+
+#transHeadChipBalanceLabel {
+    flex-basis: 23%;
+}
+
+#transHeadChipStateLabel {
+    flex-basis: 12%;
+}
+
+/* Head: emvtransactions  */
+#transHeadLogDateLabel {
+    flex-basis: 10%;
+    margin-left: 10px;
+}
+
+#transHeadLogTimeLabel {
+    flex-basis: 10%;
+}
+
+#transHeadLogAmountLabel {
+    flex-basis: 20%;
+}
+
+#transHeadLogRefAmountLabel {
+    flex-basis: 20%;
+}
+
+#transHeadLogOtherLabel {
+    flex-basis: 40%;
+}
+
+#transHeadLogPlaceLabel {
+    flex-basis: 100%;
+    margin-left: 10px;
+}
+
+/* Head: emvtransactions ECash */
+#transHeadLogDateLabelECash {
+    flex-basis: 25%;
+    margin-left: 10px;
+}
+
+#transHeadLogTimeLabelECash {
+    flex-basis: 25%;
+}
+
+#transHeadLogCountryLabelECash {
+    flex-basis: 25%;
+}
+
+#transHeadLogNumberLabelECash {
+    flex-basis: 25%;
+}
+
+/* Transaction: chiptransactions */
+.chipTransaction {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rowChipTransData  {
+    flex-basis: 100%;
+    height:70px;
+}
+
+.chipDateValue {
+    flex-basis: 16%;
+    margin-left: 50px;
+}
+
+.chipTimeValue {
+    flex-basis: 15%;
+}
+
+.chipAmountValue {
+    flex-basis: 20%;
+}
+
+.chipBalanceValue {
+    flex-basis: 23%;
+}
+
+.chipStateValue {
+    flex-basis: 12%;
+}
+
+/* Transaction emvtransactions*/
+.transLogTransaction {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rowTransLogData  {
+    flex-basis: 100%;
+    height:70px;
+}
+
+.rowTransLogDataLine1, .rowTransLogDataLine1ECash  {
+    flex-basis: 100%;
+    height:35px;
+}
+
+.rowTransLogDataLine2  {
+    flex-basis: 100%;
+    height:35px;
+}
+
+.transLogDateValue {
+    flex-basis: 10%;
+    margin-left: 10px;
+}
+
+.transLogTimeValue {
+    flex-basis: 10%;
+}
+
+.transLogAmountValue {
+    flex-basis: 20%;
+}
+
+.transLogRefAmountValue {
+    flex-basis: 20%;
+}
+
+.transLogCountryValue {
+    flex-basis: 6%;
+}
+
+.transLogCurrencyValue {
+    flex-basis: 6%;
+}
+
+.transLogTypeValue {
+    flex-basis: 6%;
+}
+
+.transLogNumberValue {
+    flex-basis: 10%;
+}
+
+.transLogPlaceValue {
+    flex-basis: 100%;
+    margin-left: 10px;
+}
+
+/* ECash transaction */
+.transLogDateValueECash {
+    margin-left: 10px;
+}
+
+.transLogDateValueECash, .transLogTimeValueECash, .transLogCountryValueECash, .transLogNumberValueECash {
+    flex-basis: 25%;
+}
+
+/* -- View: formentry.html  -- */
+div[data-view-id="formentry"] #flexNav .generalInputFieldAreaZone {
+    padding-left: 62px;
+}
+
+div[data-view-id="formentry"] #flexAside .generalInputFieldAreaZone {
+    padding-right: 62px;
+}
+
+div[data-view-id="formentry"] #flexNav input, div[data-view-id="formentry"] #flexAside input {
+    padding-top: 18px;
+}
+
+div[data-view-id="formentry"] .generalInput {
+    width: 380px;
+    height: 53px; /* (height + padding-top) has to 4px smaller than default because of border */
+    padding-right: 50px;
+}
+
+.generalInputLabel {
+    position: fixed;
+    padding-left: 8px;
+    padding-top: 0;
+    font-size: var(--font-size03);
+}
+
+.generalInputFieldAreaZone object, .generalInputFieldAreaZone svg {
+    width: 46px;
+    height: 46px;
+    margin: 20px 0 0 -4px;
+}
+
+/*-- View: receipt.html --*/
+div[data-view-id="receipt"] .messageArea {
+    width: 390px;
+    height: 410px;
+    margin-left: 58px;
+    padding: 10px 5px 10px 5px;
+}
+
+div[data-view-id="receipt"] #MESSAGE img {
+    max-width: 390px;
+    max-height: 50%;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="receipt"] .messageArea {
+    height: 390px;
+    max-height: 390px;
+}
+
+body[data-dm-available=true] div[data-view-id="receipt"] #flexArticle {
+    margin-top: -14px;
+}
+
+div[data-view-id="receipt"] .messageArea::before,
+div[data-view-id="receipt"] .messageArea::after {
+    top: 10%;
+    left: -15px;
+    font-size: var(--font-size04);
+}
+
+div[data-view-id="receipt"] .messageArea::after {
+    left: calc(100% - 13px);
+}
+
+div[data-view-id="receipt"] .messageArea>var {
+    padding: 20px;
+}
+
+/*-- View: mobiletransaction.html --*/
+#mobilePhone {
+    width: 240px;
+    height: 400px;
+}
+
+#mobilePhoneTop {
+    margin-top: 10px;
+    height: 15px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+#mobilePhoneDisplay {
+    width: 200px;
+    height: 280px;
+}
+
+#confirmationCode {
+    padding-top: 10px;
+}
+
+#mobilePhoneBottom {
+    margin-bottom: 10px;
+    height: 15px;
+    width: 70px;
+    border-radius: 10px;
+}
+
+/* -- DM support -- */
+body[data-dm-available=true] div[data-view-id="mobiletransaction"] #flexArticle {
+    margin-top: -15px;
+}
+
+/*-- View: signaturepad.html --*/
+#signatureArea {
+    position: relative;
+    margin: 0 0 0 -299px;
+    width: 897px;
+    height: 300px;
+}
+
+/*-- View: videoassistance.html --*/
+.videoImage {
+    height: 300px;
+    width: auto;
+}
+
+#videoImageArea {
+    /* min-width only necessary for Firefox ... */
+    min-width: 90px;
+}
+
+div[data-view-id="videoassistance"] #flexArticle {
+    padding-left: 62px;
+}
+
+/*-- View: outofserviceadditionalinfos.html --*/
+div[data-view-id="outofserviceadditionalinfos"] #flexArticle {
+    padding: 26px 62px 0 42px;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: [atmInfos] auto [atmQRCodes] auto;
+}
+
+div[data-view-id="outofserviceadditionalinfos"] #flexNav {
+    flex-basis: 0;
+    width: 0;
+}
+
+#atmQRCodesInfo {
+    margin-left: 20px;
+    padding-right: 20px;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+div[data-view-id="outofserviceadditionalinfos"] #listContainer {
+    max-height: 333px;
+}
+
+#atmInfosHeadline, .flexAtmInfosDetailsRow {
+    grid-template-columns: 65% 12% 13% 10%;
+    grid-column-gap: 0;
+    grid-row-gap: 15px;
+    padding-left: 20px;
+}
+
+#atmInfos[data-allow-map-locations="false"] #atmInfosHeadline, #atmInfos[data-allow-map-locations="false"] .flexAtmInfosDetailsRow {
+    grid-column-gap: 40px;
+}
+
+#atmInfosHeadline {
+    height: 58px;
+    margin-bottom: 2px;
+}
+
+#atmInfosHeadlineDistance {
+    grid-template-rows: 1fr 1fr;
+}
+
+#flexAtmInfosDetails {
+   max-height: 320px;
+}
+
+.flexAtmInfosDetailsRow {
+    padding: 2px 0 2px 20px;
+}
+
+.flexAtmInfosDetailsRow .atmAddress {
+    grid-template-rows: 1fr 1fr;
+}
+
+.flexAtmInfosDetailsRow .atmMapLocation {
+    width: 62px;
+    height: 52px;
+}
+
+#atmQRCodes {
+    margin-left: 20px;
+}
+
+#atmQRCodes>*:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+#mapLocationContainer {
+    /*size is calculated by code-behind*/
+}
+
+#mapLocationContainer #mapLocationContainerClose {
+    width: 55px;
+    height: 55px;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+}
+
+/* -- View: dualchoiceselection.html --*/
+div[data-view-id="dualchoiceselection"] #flexArticle {
+    padding-top: 0;
+}
+
+div[data-view-id="dualchoiceselection"] #leftColumnText {
+    left: 62px;
+}
+
+div[data-view-id="dualchoiceselection"] #rightColumnText {
+    right: 62px;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft,
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight {
+    width: 20%;
+    height: 1px;
+    margin-top: 16px;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft {
+    right: 50%;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight {
+    left: 50%;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorVertical {
+    height: 100%;
+    left: 50%;
+    margin-top: 16px;
+}
+

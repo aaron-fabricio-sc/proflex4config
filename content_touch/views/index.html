@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--
+$MOD$ index.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+<html>
+  <head>
+    <title>ProFlex4 UI</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="style/default/images/dm/PF4_UI.ico" />
+    <script>
+      document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          let href,
+            url,
+            childs = document.getElementsByTagName("head")[0].children,
+            storage = window.sessionStorage;
+          for (let i = childs.length - 1; i >= 0; i--) {
+            // css href updater
+            href = childs[i].href;
+            if (href) {
+              url = storage.getItem(href.substr(href.lastIndexOf("/") + 1)); // extract file name as a storage key
+              if (
+                url &&
+                href.indexOf(url.substr(url.indexOf("style"))) === -1
+              ) {
+                childs[i].href = url ? url : href;
+              }
+            }
+          }
+        },
+        false
+      );
+      // install global error handler
+      if (window.top) {
+        window.onerror = function (message, file, line, column, errorObj) {
+          if (window.Wincor) {
+            try {
+              let args = Array.prototype.slice.call(arguments);
+              window.Wincor.UI.Service.Provider.propagateError(
+                JSON.stringify(args, null, ""),
+                "ROUTING",
+                errorObj
+              );
+            } catch (e) {
+              // sometimes errors produce cyclic structures in arguments, so stringify failed...
+              console.error(
+                message + " " + file + " " + line + " " + column + e
+              );
+              // when propagateError fails, we have at least a console error logged before
+              window.Wincor.UI.Service.Provider.propagateError(
+                message + "-" + file + "-" + line,
+                "ROUTING",
+                errorObj
+              );
+            }
+          } else {
+            console.error(
+              "Wincor is not defined error: " + JSON.stringify(arguments)
+            );
+          }
+        };
+      } else {
+        window.onerror = (message, file, line, column, errorObj) =>
+          console.error(JSON.stringify(arguments));
+      }
+    </script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style/default/default/default/layouts.css"
+      data-style-resource="layouts.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style/default/default/default/sizes-positions.css"
+      data-style-resource="sizes-positions.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style/default/default/default/animations.css"
+      data-style-resource="animations.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style/default/default/default/layouts-custom.css"
+      data-style-resource="layouts-custom.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style/default/default/default/sizes-positions-custom.css"
+      data-style-resource="sizes-positions-custom.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style/default/default/default/animations-custom.css"
+      data-style-resource="animations-custom.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style/default/default/default/svg.css"
+      data-style-resource="svg.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style/default/default/default/transitions.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="style/default/default/default/actualizaciones.css
+      "
+    />
+    <!-- el diseño del loader  -->
+    <style type="text/css">
+      .conteneur_general_load_9 {
+        width: 60px;
+        height: 130px;
+      }
+      .loader_9,
+      .loader_9:before,
+      .loader_9:after {
+        -webkit-animation: load_neuf 1s infinite ease-in;
+        -moz-animation: load_neuf 1s infinite ease-in;
+        -ms-animation: load_neuf 1s infinite ease-in;
+        animation: load_neuf 1s infinite ease-in;
+        width: 20px;
+        height: 80px;
+      }
+      .loader_9:before,
+      .loader_9:after {
+        position: absolute;
+        top: 0;
+        content: "";
+      }
+      .loader_9:before {
+        right: -20px;
+      }
+      .loader_9 {
+        position: relative;
+        -webkit-animation-delay: -0.16s;
+        -moz-animation-delay: -0.16s;
+        -ms-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+      .loader_9:after {
+        right: 20px;
+        -webkit-animation-delay: -0.32s;
+        -moz-animation-delay: -0.32s;
+        -ms-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+      @-webkit-keyframes load_neuf {
+        0%,
+        80%,
+        100% {
+          box-shadow: 0 0 #d3d3d3;
+          height: 80px;
+          background: #d3d3d3;
+        }
+        40% {
+          box-shadow: 0 -15px #00a096;
+          height: 100px;
+          background: #00a096;
+        }
+      }
+      @-moz-keyframes load_neuf {
+        0%,
+        80%,
+        100% {
+          box-shadow: 0 0 #d3d3d3;
+          height: 80px;
+          background: #d3d3d3;
+        }
+        40% {
+          box-shadow: 0 -15px #00a096;
+          height: 100px;
+          background: #00a096;
+        }
+      }
+      @-ms-keyframes load_neuf {
+        0%,
+        80%,
+        100% {
+          box-shadow: 0 0 #d3d3d3;
+          height: 80px;
+          background: #d3d3d3;
+        }
+        40% {
+          box-shadow: 0 -15px #00a096;
+          height: 100px;
+          background: #00a096;
+        }
+      }
+      @keyframes load_neuf {
+        0%,
+        80%,
+        100% {
+          box-shadow: 0 0 #d3d3d3;
+          height: 80px;
+          background: #d3d3d3;
+        }
+        40% {
+          box-shadow: 0 -15px #00a096;
+          height: 100px;
+          background: #00a096;
+        }
+      }
+    </style>
+  </head>
+
+  <body data-view-type="touch" data-view-key="" oncontextmenu="return false;">
+    <div id="applicationHost"></div>
+
+    <script src="../../lib/require.js"></script>
+
+    <script>
+      require(["../../content/config/ContentResources"]);
+    </script>
+  </body>
+</html>

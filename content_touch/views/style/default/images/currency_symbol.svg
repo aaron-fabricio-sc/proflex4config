@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+     <style type="text/css">
+        @import "../default/default/svg.css";
+     </style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+<g id="symbolGroup" style="display:none">
+    <g class="shadowGroup1">
+        <text id="symbolcurrencySymbol_2" class="color04 font04" transform="matrix(1 0 0 1 12.5097 39.3414)"> </text>
+    </g>
+    <g class="shadowGroup2">
+        <text id="symbolcurrencySymbol_3" class="color04 font04" transform="matrix(1 0 0 1 10.7219 38.5541)"> </text>
+    </g>
+    <g class="shadowGroup3">
+        <text id="symbolcurrencySymbol_4" class="color04 font04" transform="matrix(1 0 0 1 8.8715 37.866)"> </text>
+    </g>
+    <g>
+        <text id="symbolcurrencySymbol" class="color02 font04" transform="matrix(1 0 0 1 7 37.0002)"> </text>
+    </g>
+</g>
+<g id="isoGroup" style="display:none">
+    <g class="shadowGroup1">
+        <text id="isocurrencySymbol_2" class="color04 font01" transform="matrix(1 0 0 1 2.0302 39.3414)"> </text>
+    </g>
+    <g class="shadowGroup2">
+        <text id="isocurrencySymbol_3" class="color04 font01" transform="matrix(1 0 0 1 1.3819 38.5541)"> </text>
+    </g>
+    <g class="shadowGroup3">
+        <text id="isocurrencySymbol_4" class="color04 font01" transform="matrix(1 0 0 1 0.7000 37.866)"> </text>
+    </g>
+    <g>
+        <text id="isocurrencySymbol" class="color02 font01" transform="matrix(1 0 0 1 0 37.0002)"> </text>
+    </g>
+</g>
+
+    <script type="text/javascript">
+        <![CDATA[
+            const defaultSymbol = "€";
+            function show(symbol) {
+                let prefix = symbol.length === 1 ? "symbol" : "iso";
+                document.getElementById(prefix + "Group").style.display = "block";
+                document.getElementById(prefix + "currencySymbol").textContent = symbol;
+                document.getElementById(prefix + "currencySymbol_2").textContent = symbol;
+                document.getElementById(prefix + "currencySymbol_3").textContent = symbol;
+                document.getElementById(prefix + "currencySymbol_4").textContent = symbol;
+            }
+
+            if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                // try to get currency symbol from main view model
+                let vm = window.parent.Wincor.UI.Content.ViewModelContainer.getById("flexMain");
+                if(vm && vm.bankingContext.currencyData) {
+                    let symbol = vm.bankingContext.currencyData.symbol.length === 1 ? vm.bankingContext.currencyData.symbol : vm.bankingContext.currencyData.iso;
+                    show(symbol);
+                } else if(vm) { // fallback if main viewmodel doesn't provide -currencyData
+                    let currency = vm.getLabel("GUI_[#VIEW_KEY#]_Label_CurrencySymbol", defaultSymbol);
+                    // this svg may be loaded once again (eg during style type change), so a new subscription will be done.
+                    // this is uncritical because any subscription will be disposed by the BaseViewModel while cleaning viewmodel
+                    vm.subscribeToObservable(currency, value => {
+                        show(value);
+                    });
+                }
+                else { // fallback (hard coded), if view model couldn't retrieved by "flexMain"
+                    show(defaultSymbol);
+                }
+            }
+            else { // fallback (hard coded), if no namespace is given
+                show(defaultSymbol);
+            }
+        ]]>
+    </script>
+</svg>

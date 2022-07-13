@@ -1,0 +1,112 @@
+<!--
+$MOD$ scannedimageviewer.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain" data-bind="">
+    <!-- Nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- Article -->
+    <article id="flexArticle">
+        <!-- Image information -->
+        <div id="chqControl">
+            <div class="buttonsZone">
+                <div id="chqInfoDetails">
+                    <var class="font02 color01"
+                         data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Label_DocumentType', 'Document')"></var>
+                    <var class="font02 color09"
+                         data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Label_DocumentSide', '')"></var>
+                </div>
+                <!-- Scan again btn -->
+                <div class="buttonZone chqLeftButton">
+                    <div class="button dialogSmallButton borderDrawing"
+                         data-bind="command: {id: 'SCAN_AGAIN', type: CMDTYPE.BUTTON}">
+                        <svg data-bind="svguse: { name: 'change_check_amount.svg' }"></svg>
+                        <var class="color03 font01"
+                             data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Button_ScanAgain', 'Scan again')"></var>
+                    </div>
+                </div>
+            </div>
+            <div id="chqInfoArea">
+                <div id="chqInfo">
+                    <var class="font02 color02"
+                         data-bind="html: isAccepted() ? getLabel('GUI_[#VIEW_KEY#]_Label_Accepted', '') : getLabel('GUI_[#VIEW_KEY#]_Label_PleaseAccept', '')"></var>
+                </div>
+                <div id="imgViewer" data-document-type="" data-bind="gesture: {
+                                                                        options: {
+                                                                        },
+                                                                        gestures: {
+                                                                            Tap: {
+                                                                                events:['tap'],
+                                                                                taps: 2,
+                                                                                interval: 500,
+                                                                                threshold: 20,
+                                                                                posThreshold: 100,
+                                                                                disableDefaultHandler: true,
+                                                                                handler: $root.viewHelper.getActiveModule().zoomToggle
+                                                                            }
+                                                                        }
+                                                                    }">
+                    <div id="chqImgCarrier1" class="chqImg"></div>
+                    <div id="chqImgCarrier2" class="chqImg"></div>
+                </div>
+                <div id="idScanImage" class="chequeScanningAnimation3D">
+                    <div id="chequeScanRedLight"></div>
+                </div>
+            </div>
+            <div class="buttonsZone chqRightButton">
+                <!-- Accept btn -->
+                <div class="buttonZone">
+                    <div class="button dialogSmallButton buttonConfirm borderDrawing"
+                         data-bind="command: {id: 'ACCEPT', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, eppkey: 'CONFIRM'}">
+                        <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                        <var class="color09 font01"
+                             data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Button_Accept', 'Accept')"></var>
+                    </div>
+                </div>
+                <!-- Next btn -->
+                <div class="buttonZone">
+                    <div class="button dialogSmallButton borderDrawing"
+                         data-bind="command: {id: 'NEXT_IMAGE', state: CMDSTATE.HIDDEN, type: CMDTYPE.BUTTON}">
+                        <svg data-bind="svguse: { name: 'flip_image.svg' }"></svg>
+                        <var class="color03 font01" data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Button_NextImage', 'Next image')"></var>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Aside -->
+    <aside id="flexAside">
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonsZone">
+            <div class="buttonZone">
+                <div id="buttonConfirm" class="button footerButton borderDrawing"
+                     data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                    <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                    <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+                </div>
+            </div>
+            <div class="buttonZone">
+                <div class="button footerButton borderDrawing"
+                     data-bind="command: {id: 'PRINT', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Print', 'Print')}}">
+                    <svg data-bind="svguse: { name: 'printer.svg' }"></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                 data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

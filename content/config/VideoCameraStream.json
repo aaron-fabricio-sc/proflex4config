@@ -1,0 +1,20 @@
+[
+    {
+        "viewKeys": [
+            "PinEntry",
+            "PinEntryEtsDummy",
+            "PinChangePinEntry"
+        ],
+        "stream": "http://localhost:8005/stream"
+    },
+    {
+        "viewKeys": [
+        ],
+        "stream": "http://localhost:8005/stream"
+    },
+    {
+        "viewKeys": [
+        ],
+        "stream": "http://localhost:8005/stream"
+    }
+]

@@ -1,0 +1,25 @@
+{
+    "images": [
+        {
+            "imagePath": "style/default/images/identity_card_silhouette.svg"
+        },
+        {
+            "imagePath": "style/default/images/identity_card_silhouette_back.svg"
+        },
+        {
+            "imagePath": "style/default/images/dm/insertcard3.jpg"
+        },
+        {
+            "imagePath": "style/default/images/dm/future.jpg"
+        },
+        {
+            "imagePath": "style/default/images/dm/future2.jpg"
+        },
+        {
+            "imagePath": "style/default/images/dm/tower.jpg"
+        },
+        {
+            "imagePath": "style/default/images/dm/dark-side-atm.jpg"
+        }
+    ]
+}

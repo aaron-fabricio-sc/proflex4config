@@ -1,0 +1,148 @@
+<!--
+$MOD$ amountentry.html 4.3.1-200123-21-8cd258cb-1a04bc7d
+-->
+
+<main id="flexMain">
+    <nav id="flexNav">
+        <div id="flexNavSK00"></div>
+        <div id="flexNavSK01">
+            <div id="generalInputFieldArea">
+                <input type="text" class="font04 generalInput" tabindex="-1" onfocus="blur();" placeholder="" data-bind="
+                           attr: { 'placeholder': placeHolderFormatted },
+                           format: { src: amountField, target: amountFieldFormatted, placeholder_src: placeHolder, placeholder_target: placeHolderFormatted, pattern: formatOption },
+                           autoSizeInputFont: amountField,
+                           command: {
+                               id: 'AMOUNT_INPUT',
+                               state: CMDSTATE.ENABLED,
+                               adaType: ADA_TYPE.INPUTFIELD,
+                               label: {value: amountFieldFormatted, inplace: true}
+                           }"/>
+            </div>
+        </div>
+        <div id="flexNavSK02"></div>
+        <div id="flexNavSK03">
+            <div class="button button03 skLeft iconButton borderDrawing"
+                 data-bind="command: {id: 'MIXTURE',
+                            state: CMDSTATE.HIDDEN,
+                            adaType: ADA_TYPE.SELECTION_KEY,
+                            label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Mixture', 'Bill splitting')},
+                            eppkey: 'F5'}">
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('MIXTURE')"></var>
+                <svg data-bind="svguse: { name: 'bill_splitting.svg' }"></svg>
+
+            </div>
+        </div>
+    </nav>
+    <article id="flexArticle">
+        <!-- We claim separately to hear beep sound when ADA is not active, but we dont wanne see any button on the screen here due to softkey layout conventions  -->
+        <div id="pinPadButtons" style="display: none;">
+            <!-- 1. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '1', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_1', '1')}, eppkey: '1'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('1')"></var>
+                </div>
+            </div>
+            <!-- 2. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '2', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_2', '2')}, eppkey: '2'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('2')"></var>
+                </div>
+            </div>
+            <!-- 3. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '3', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_3', '3')}, eppkey: '3'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('3')"></var>
+                </div>
+            </div>
+            <!-- 4. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '4', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_4', '4')}, eppkey: '4'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('4')"></var>
+                </div>
+            </div>
+            <!-- 5. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '5', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_5', '5')}, eppkey: '5'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('5')"></var>
+                </div>
+            </div>
+            <!-- 6. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '6', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_6', '6')}, eppkey: '6'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('6')"></var>
+                </div>
+            </div>
+            <!-- 7. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '7', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_7', '7')}, eppkey: '7'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('7')"></var>
+                </div>
+            </div>
+            <!-- 8. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '8', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_8', '8')}, eppkey: '8'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('8')"></var>
+                </div>
+            </div>
+            <!-- 9. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '9', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_9', '9')}, eppkey: '9'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('9')"></var>
+                </div>
+            </div>
+            <!-- 0. btn -->
+            <div class="buttonZone">
+                <div class="button fieldButton" data-bind="command: {id: '0', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_0', '0')}, eppkey: '0'}">
+                    <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('0')"></var>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <div id="flexAsideSK00"></div>
+        <div id="flexAsideSK01">
+            <div id="buttonConfirm" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM',
+                            args: ['CONFIRM','CONFIRM'],
+                            adaType: ADA_TYPE.SELECTION_KEY,
+                            label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Get money')},
+                            eppkey: ['CONFIRM', 'F2']}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+
+        <div id="flexAsideSK02">
+            <div id="buttonCorrect" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CORRECT',
+                            args: ['CORRECT','CORRECT','CORRECT'],
+							adaType: ADA_TYPE.SELECTION_KEY,
+                            state: CMDSTATE.DISABLED,
+                            label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Correct', 'Correct')},
+                            eppkey: ['CLEAR', 'BACKSPACE', 'F3']}">
+                <svg data-bind="svguse: { name: 'reset.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('CORRECT')"></var>
+            </div>
+        </div>
+
+        <div id="flexAsideSK03">
+            <div id="buttonCancel"  class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CANCEL',
+                            args: ['CANCEL','CANCEL'],
+                            adaType: ADA_TYPE.SELECTION_KEY,
+                            label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')},
+                            eppkey: ['F4', 'CANCEL']}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel"></div>
+</footer>

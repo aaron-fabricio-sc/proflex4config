@@ -1,0 +1,9 @@
+{
+    "takeEnvelope": true,
+    "insertEnvelope": false,
+    "insertEnvelopeMoney" : true,
+    "insertEnvelopeCheques" : false,
+    "insertEnvelopeMoneyCheques" : false,
+    "animationTextTakeEnvelope": "Envelope",
+    "animationTextInsertEnvelope": "Envelope"
+}

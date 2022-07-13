@@ -1,0 +1,91 @@
+<!--
+$MOD$ dualchoiceselection.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <!-- nav -->
+    <nav id="flexNav" data-bind="foreach: { data: itemsLeft, as: 'item' }">
+        <div data-bind="attr: {id: 'flexNavSK0' + $index()}">
+            <div class="radioButtonItem radioButtonItemLeft borderDrawing" data-bind="
+                command: {id: 'RADIOBUTTON_CMD_' + $data.result,
+                          type: $root.CMDTYPE.RADIOBUTTON,
+                          state: item.state,
+                          adaType: $root.ADA_TYPE.RADIOBUTTON,
+                          adaText: $root.getLabel('GUI_[#VIEW_KEY#]_Label_' + item.result + '_ADA', ''),
+                          adaTextPost: $root.getLabel('GUI_[#VIEW_KEY#]_Label_' + item.result + '_ADA_Clicked', ''),
+                          adakey: $index() + 1,
+                          eppkey: 'F' + (8 - $index())}">
+                <div class="radioButton">
+                    <input id="id_left" type="radio" name="radioGroupLeft" data-bind="
+                            checked: $root.getGroups()[0].selectedItem,
+                            checkedValue: item.result,
+                            disable: item.state() === 2,
+                            attr: { id: item.result }"/>
+                    <label for="id_left" data-bind="attr: { for: item.result}"></label>
+                </div>
+                <var class="color03 font01" data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Label_DocumentType_' + item.result, item.result)"></var>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <var id="leftColumnText" class="color03 font01" data-validation-state="" data-bind="
+                    html: $root.getLabel('GUI_[#VIEW_KEY#]_Label_LeftColumn', 'Something I know'),
+                    attr: {'data-validation-state': $root.getGroups()[0].valid}">
+        </var>
+        <div id="separatorHorizontalLeft" data-validation-state="" data-bind="attr: {'data-validation-state': $root.getGroups()[0].valid}"></div>
+        <div id="separatorHorizontalRight" data-validation-state="" data-bind="attr: {'data-validation-state': $root.getGroups()[1].valid}"></div>
+        <div id="separatorVertical" data-validation-state="" data-bind="attr: {'data-validation-state': $root.getGroups()[0].valid() && $root.getGroups()[1].valid}"></div>
+        <var id="rightColumnText" class="color03 font01" data-validation-state="" data-bind="
+                    html: $root.getLabel('GUI_[#VIEW_KEY#]_Label_RightColumn', 'Something I have'),
+                    attr: {'data-validation-state': $root.getGroups()[1].valid}">
+        </var>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside" data-bind="foreach: { data: itemsRight, as: 'item' }">
+        <div data-bind="attr: {id: 'flexAsideSK0' + $index()}">
+            <div class="radioButtonItem radioButtonItemRight borderDrawing" data-bind="
+                command: {id: 'RADIOBUTTON_CMD_' + item.result,
+                          type: $root.CMDTYPE.RADIOBUTTON,
+                          state: item.state,
+                          adaType: $root.ADA_TYPE.RADIOBUTTON,
+                          adaText: $root.getLabel('GUI_[#VIEW_KEY#]_Label_' + item.result + '_ADA', ''),
+                          adaTextPost: $root.getLabel('GUI_[#VIEW_KEY#]_Label_' + item.result + '_ADA_Clicked', ''),
+                          adakey: $index() + 5,
+                          eppkey: 'F' + ($index() + 1)}">
+                <var class="color03 font01" data-bind="html: $root.getLabel('GUI_[#VIEW_KEY#]_Label_DocumentType_' + item.result, item.result)"></var>
+                <div class="radioButton">
+                    <input id="id_right" type="radio" name="radioGroupRight" data-bind="
+                        checked: $root.getGroups()[1].selectedItem,
+                        checkedValue: item.result,
+                        disable: item.state() === 2,
+                        attr: { id: item.result }"/>
+                    <label for="id_right" data-bind="attr: { for: item.result}"></label>
+                </div>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button footerButton"
+                    data-bind="command: {id: 'CONFIRM', adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

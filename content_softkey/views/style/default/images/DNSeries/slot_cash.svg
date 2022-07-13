@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 215.4 198.5" enable-background="new 0 0 215.4 198.5" xml:space="preserve">
+<g opacity="0.2">
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="108.05" y1="-2121.5225" x2="108.05" y2="-1949.012" gradientTransform="matrix(1 0 0 -1 0 -1935.1111)">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#29282C"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M16.3,57.2c0-24.8,6.8-44.7,15-44.7h153.5c8.3,0,15,20.2,15,44.7v87.6c0,24.8-6.8,44.7-15,44.7H31.3
+		c-8.3,0-15-20.2-15-44.7V57.2z"/>
+</g>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="107.75" y1="-1989.9629" x2="107.75" y2="-1953.302" gradientTransform="matrix(1 0 0 -1 0 -1935.1111)">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#29282C"/>
+</linearGradient>
+<polygon opacity="0.2" fill="url(#SVGID_2_)" points="61.7,55 61.7,18 153.8,18 153.8,55 "/>
+<path fill="none" class="slotFrameColor" color="#000000" stroke="#000000" stroke-width="18" stroke-miterlimit="10" d="M190.4,189.5H25c-8.8,0-16-17.6-16-39V48
+	C9,26.6,16.2,9,25,9h165.4c8.8,0,16,17.6,16,39v102.4C206.4,171.9,199.2,189.5,190.4,189.5z"/>
+<g opacity="0.2">
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="108.25" y1="18.8" x2="108.25" y2="182" gradientTransform="matrix(1 0 0 -1 0 200)">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="9.035477e-02" style="stop-color:#F9F9F9"/>
+		<stop  offset="0.2167" style="stop-color:#E6E6E6"/>
+		<stop  offset="0.3644" style="stop-color:#C8C8C8"/>
+		<stop  offset="0.5282" style="stop-color:#9F9F9F"/>
+		<stop  offset="0.7053" style="stop-color:#696969"/>
+		<stop  offset="0.8906" style="stop-color:#292929"/>
+		<stop  offset="1" style="stop-color:#000000"/>
+	</linearGradient>
+	<polyline fill="url(#SVGID_3_)" points="193.9,180.2 153.8,55 153.3,18 61.2,18 61.7,55 22.6,181.2 	"/>
+</g>
+</svg>

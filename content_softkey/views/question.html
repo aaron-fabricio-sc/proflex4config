@@ -1,0 +1,119 @@
+<!--
+$MOD$ question.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <nav id="flexNav">
+        <div id="flexNavSK00"></div>
+        <div id="flexNavSK01"></div>
+        <div id="flexNavSK02">
+            <div class="button button04 skLeft iconButton borderDrawing"
+                 data-bind="command: {id: 'OTHER',
+                            state: CMDSTATE.HIDDEN,
+                            adaType: ADA_TYPE.SELECTION_KEY,
+                            label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Other', 'Other')},
+                            eppkey: 'F6',
+                            adakey: '3'}">
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('OTHER')"></var>
+                <svg data-bind="svguse: { name: 'GUI_[#VIEW_KEY#]_Button_Other_Icon1', icondefault: 'icon_empty.svg', inline: true, afterRender: $root.viewHelper.currencySymbol}"></svg>
+            </div>
+        </div>
+        <div id="flexNavSK03">
+            <div class="button button04 skLeft iconButton borderDrawing"
+                 data-bind="command: {id: 'YES',
+                            state: CMDSTATE.ENABLED,
+                            adaType: ADA_TYPE.SELECTION_KEY,
+                            label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Yes', 'Yes')},
+                            eppkey: 'F5',
+                            adakey: '4'}">
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('YES')"></var>
+                <svg data-bind="svguse: { name: 'GUI_[#VIEW_KEY#]_Button_Yes_Icon1', icondefault: 'yes.svg', inline: true, afterRender: $root.viewHelper.currencySymbol}"></svg>
+            </div>
+        </div>
+    </nav>
+
+    <article id="flexArticle">
+        <div id="flexMessageContainerArticle" class="flexMessageContainer " data-bind="visible: messageBoxVisible">
+            <div class="messageArea" data-other-available="false" data-view-key="" data-content-style="InfoBox" data-bind="attr: { 'data-content-style': messageLevel },
+                                                            gesture: {
+                                                                options: {
+                                                                    lockIfSpace: true
+                                                                },
+                                                                grid: '#flexArticle .messageArea',
+                                                                gestures: {
+                                                                    Swipe: {
+                                                                        direction: 'DIRECTION_VERTICAL',
+                                                                        events: ['swipe'],
+                                                                        enable: false
+                                                                    },
+                                                                    Pan: {
+                                                                        direction:'DIRECTION_VERTICAL',
+                                                                        events:['panstart','panmove','panend'],
+                                                                        enable: false
+                                                                    }
+                                                                },
+                                                                containment: {
+                                                                    element: '#flexArticle .messageArea',
+                                                                    useScrollWidth: false,
+                                                                    useScrollHeight: false
+                                                                },
+                                                                target: 'MESSAGE'
+                                                            }">
+                <var id="MESSAGE" class="color03 font01" data-bind="command: {id: 'MESSAGE', adaType: ADA_TYPE.MESSAGE, action: null, state: CMDSTATE.NONE, label: {html: messageText, inplace: true}}"></var>
+            </div>
+        </div>
+    </article>
+
+    <aside id="flexAside">
+        <div id="flexAsideSK00">
+            <div class="button button02 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'PRINT',
+                         args: 'CONFIRM',
+                         state: CMDSTATE.HIDDEN,
+                         adaType: ADA_TYPE.SELECTION_KEY,
+                         label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Print', 'Print')},
+                         eppkey: 'F1',
+                         adakey: '5'}">
+                <svg data-bind="svguse: { name: 'printer.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('PRINT')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK01">
+            <div class="button button01 skRight iconButton"
+                 data-bind="command: {id: 'BTN_SCROLL_UP', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.SELECTION_KEY, adakey: '6', eppkey: 'F2'}">
+                <svg data-bind="svguse: { name: 'arrow_up.svg' }"></svg>
+            </div>
+        </div>
+        <div id="flexAsideSK02">
+            <div class="button button01 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BTN_SCROLL_DOWN', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.SELECTION_KEY, adakey: '7', eppkey: 'F3'}">
+                <svg data-bind="svguse: { name: 'arrow_down.svg' }"></svg>
+            </div>
+        </div>
+        <div id="flexAsideSK03">
+            <div class="button button04 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'NO',
+                            state: CMDSTATE.ENABLED,
+                            adaType: ADA_TYPE.SELECTION_KEY,
+                            label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_No', 'No')},
+                            eppkey: 'F4',
+                            adakey: '8'}">
+                <svg data-bind="svguse: { name: 'GUI_[#VIEW_KEY#]_Button_No_Icon1', icondefault: 'no.svg', inline: true, afterRender: $root.viewHelper.currencySymbol}"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('NO')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

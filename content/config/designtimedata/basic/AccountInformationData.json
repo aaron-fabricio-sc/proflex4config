@@ -1,0 +1,48 @@
+{
+    "defaultTableType": "AINStd",
+    "AINStd": {
+        "account": { "number": "DE23100000001234567890", "holder": "Susanne Scroll", "balanceCurrency": "EUR", "balanceValue": "1300.00", "balanceType": "H" },
+        "transactions": [
+            { "expirationDate": "03/26/2003", "effectiveDate": "03/26/2003", "currency": "EUR", "amount": "100.00", "balanceType": "S", "description1": "Petrol Station, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "03/29/2003", "effectiveDate": "04/01/2003", "currency": "EUR", "amount": "800.00", "balanceType": "H", "description1": "Salary, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "04/02/2003", "effectiveDate": "04/02/2003", "currency": "EUR", "amount": "400.00", "balanceType": "S", "description1": "Wincor ATM, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "04/10/2003", "effectiveDate": "04/11/2003", "currency": "EUR", "amount": "5.00", "balanceType": "H", "description1": "Credit Note, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "04/12/2003", "effectiveDate": "04/12/2003", "currency": "EUR", "amount": "12.00", "balanceType": "S", "description1": "Parking Fee, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "04/12/2003", "effectiveDate": "04/12/2003", "currency": "EUR", "amount": "400.00", "balanceType": "S", "description1": "Wincor ATM, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "05/30/2002", "effectiveDate": "06/01/2002", "currency": "EUR", "amount": "100.00", "balanceType": "H", "description1": "Credit Note, 33100 Paderborn", "description2": "", "description3": "", "description4": "" }
+        ]
+    },
+    "AINPcemov": {
+        "account": { "holder": "Susanne Scroll", "balanceCurrency": "EUR", "balanceValue": "1300.00", "balanceType": "H" },
+        "transactions": [
+            { "expirationDate": "03/26/2003", "effectiveDate": "03/26/2003", "currency": "EUR", "amount": "100.00", "balanceType": "-", "description1": "Petrol Station, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "03/29/2003", "effectiveDate": "04/01/2003", "currency": "EUR", "amount": "800.00", "balanceType": "+", "description1": "Salary, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "04/02/2003", "effectiveDate": "04/02/2003", "currency": "EUR", "amount": "400.00", "balanceType": "-", "description1": "Wincor ATM, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "04/10/2003", "effectiveDate": "04/11/2003", "currency": "EUR", "amount": "5.00", "balanceType": "+", "description1": "Credit Note, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "04/12/2003", "effectiveDate": "04/12/2003", "currency": "EUR", "amount": "12.00", "balanceType": "-", "description1": "Parking Fee, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "04/12/2003", "effectiveDate": "04/12/2003", "currency": "EUR", "amount": "400.00", "balanceType": "-", "description1": "Wincor ATM, 33100 Paderborn", "description2": "", "description3": "", "description4": "" },
+            { "expirationDate": "05/30/2002", "effectiveDate": "06/01/2002", "currency": "EUR", "amount": "100.00", "balanceType": "+", "description1": "Credit Note, 33100 Paderborn", "description2": "", "description3": "", "description4": "" }
+        ]
+    },
+    "AINIfx": {
+        "account": { "number": "DE23100000001234567890", "type": "Giro account" },
+        "transactions": [
+            { "expirationDate": "03/26/2003", "effectiveDate": "03/26/2003", "currency": "EUR", "amount": "100.00", "balanceType": "S", "description1": "Petrol Station, 33100 Paderborn" },
+            { "expirationDate": "03/29/2003", "effectiveDate": "04/01/2003", "currency": "EUR", "amount": "800.00", "balanceType": "H", "description1": "Salary, 33100 Paderborn" },
+            { "expirationDate": "04/02/2003", "effectiveDate": "04/02/2003", "currency": "EUR", "amount": "400.00", "balanceType": "S", "description1": "Wincor ATM, 33100 Paderborn" },
+            { "expirationDate": "04/10/2003", "effectiveDate": "04/11/2003", "currency": "EUR", "amount": "5.00", "balanceType": "H", "description1": "Credit Note, 33100 Paderborn" },
+            { "expirationDate": "04/12/2003", "effectiveDate": "04/12/2003", "currency": "EUR", "amount": "12.00", "balanceType": "S", "description1": "Parking Fee, 33100 Paderborn" },
+            { "expirationDate": "04/12/2003", "effectiveDate": "04/12/2003", "currency": "EUR", "amount": "400.00", "balanceType": "S", "description1": "Wincor ATM, 33100 Paderborn" },
+            { "expirationDate": "05/30/2002", "effectiveDate": "06/01/2002", "currency": "EUR", "amount": "100.00", "balanceType": "H", "description1": "Credit Note, 33100 Paderborn" }
+        ]
+    },
+    "AINPcebal": {
+        "transactions": [
+            { "accountType": "Savings", "accountNumber": "0000000007", "accountBalance": "EUR 100.00 S", "availableAmount": "EUR 900.00" },
+            { "accountType": "Credit Card", "accountNumber": "0000000008", "accountBalance": "EUR 1000.00 S", "availableAmount": "EUR 1500.00" },
+            { "accountType": "Savings", "accountNumber": "0000000009", "accountBalance": "EUR 200.00 S", "availableAmount": "EUR 100.00" },
+            { "accountType": "Savings", "accountNumber": "0000000010", "accountBalance": "EUR 100.00 S", "availableAmount": "EUR 900.00" },
+            { "accountType": "Credit Card", "accountNumber": "0000000011", "accountBalance": "EUR 1000.00 H", "availableAmount": "EUR 1500.00" }
+        ]
+    }
+}

@@ -1,0 +1,790 @@
+{
+    "examples": [
+        { "viewKey": "*",
+        "elements": [
+            { "captions": ["CAPTION 0000123"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_0", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_0", "rawdata": ["Selection 0"] },
+            { "captions": ["CAPTION 1"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_1", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_1", "rawdata": ["Selection 1"] },
+            { "captions": ["CAPTION 2"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_2", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_2", "rawdata": ["Selection 2"] },
+            { "captions": ["CAPTION 3"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_3", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_3", "rawdata": ["Selection 3"] },
+            { "captions": ["CAPTION 4"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_4", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_4", "rawdata": ["Selection 4"] },
+            { "captions": ["CAPTION 5"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_5", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_5", "rawdata": ["Selection 5"] },
+            { "captions": ["CAPTION 6"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_6", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_6", "rawdata": ["Selection 6"] },
+            { "captions": ["CAPTION 7"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_7", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_7", "rawdata": ["Selection 7"] },
+            { "captions": ["CAPTION 8"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_8", "icon": "Icon_Placeholder_45x45.svg", "rawresult": "ITEM_8", "rawdata": ["Selection 8"] },
+            {
+                "captions": ["CAPTION 6"],
+                "adaText": "",
+                "adaPost": "",
+                "state": 0,
+                "result": "RESULT_9",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_6",
+                "rawdata": ["Selection 6"]
+            },
+            {
+                "captions": ["CAPTION 7"],
+                "adaText": "",
+                "adaPost": "",
+                "state": 0,
+                "result": "RESULT_10",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_7",
+                "rawdata": ["Selection 7"]
+            },
+            {
+                "captions": ["CAPTION 8"],
+                "adaText": "",
+                "adaPost": "",
+                "state": 0,
+                "result": "RESULT_11",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_8",
+                "rawdata": ["Selection 8"]
+            },
+            {
+                "captions": ["CAPTION 8"],
+                "adaText": "",
+                "adaPost": "",
+                "state": 0,
+                "result": "RESULT_12",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_8",
+                "rawdata": ["Selection 8"]
+            }
+        ]
+        },
+        {   "viewKey": "MenuSelection",
+            "priorities": {
+                "prominent": [
+                    "COUTFAST=prominentItem",
+                    "CHCCDM=prominentItem",
+                    "CASHOUT_FUNCTIONS=prominentItem",
+                    "STP_FUNCTIONS=prominentItem",
+                    "DEPOSIT_FUNCTIONS=prominentItem"],
+                "staticpos": [
+                    "CASHOUT_FUNCTIONS=1",
+                    "STP_FUNCTIONS=1",
+                    "DEPOSIT_FUNCTIONS=2"
+                ],
+                "itemgaps": true,
+                "order": [
+                    "CASHOUT_FUNCTIONS",
+                    "DEPOSIT_FUNCTIONS",
+                    "COUTFAST",
+                    "COUT",
+                    "BAL",
+                    "CHCCDM",
+                    "PREFMENU",
+                    "CIN",
+                    "AIN",
+                    "COUTMIXED",
+                    "ENV",
+                    "TRA",
+                    "PREPAID",
+                    "STP",
+                    "PINCHG",
+                    "STPM",
+                    "STAMP",
+                    "BILLPAY",
+                    "BILLCARD",
+                    "PAY",
+                    "ORDPOST",
+                    "ORDCURR",
+                    "ORDCASH"
+                ],
+                "submenus": [
+                    {
+                        "CASHOUT_FUNCTIONS": [
+                            "COUTFAST",
+                            "COUT",
+                            "COUTMIXED",
+                            "PREPAID",
+                            "BILLPAY",
+                            "BILLCARD",
+                            {
+                                "STP_FUNCTIONS": [
+                                    "STP",
+                                    "STPM",
+                                    "STAMP"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "DEPOSIT_FUNCTIONS": [
+                            "CIN",
+                            "CHCCDM",
+                            "ENV"
+                        ]
+                    }
+                ]
+            },
+        "elements": [
+            {
+                "captions": [
+                    "Cashout functions"
+                ],
+                "adaText": "Cashout functions",
+                "adaPost": "Cashout functions",
+                "state": "0",
+                "result": "CASHOUT_FUNCTIONS",
+                "icon": "withdrawal_mixed.svg",
+                "rawresult": "ITEM_1",
+                "rawdata": ["CASHOUT_FUNCTIONS"],
+                "CASHOUT_FUNCTIONS": [
+                        {
+                            "captions": [
+                                "Withdraw Notes"
+                            ],
+                            "adaText": "Withdraw Notes",
+                            "adaPost": "Withdraw Notes",
+                            "state": "0",
+                            "result": "COUT",
+                            "icon": "WITHDRAWAL.svg",
+                            "rawresult": "ITEM_1",
+                            "rawdata": [
+                                "COUT"
+                            ]
+                        },
+                        {
+                            "captions": [
+                                "<span class='color03 font05'>€ 50</span>"
+                            ],
+                            "adaText": "50 Euro",
+                            "adaPost": "Fast Cash",
+                            "state": "0",
+                            "result": "COUTFAST",
+                            "icon": "fast_cash.svg",
+                            "rawresult": "ITEM_2",
+                            "rawdata": [
+                                "COUTFAST"
+                            ]
+                        },
+                        {
+                            "captions": [
+                                "Mixed Withdrawal"
+                            ],
+                            "adaText": "Mixed Withdrawal",
+                            "adaPost": "Mixed Withdrawal",
+                            "state": "0",
+                            "result": "COUTMIXED",
+                            "icon": "withdrawal_mixed.svg",
+                            "rawresult": "ITEM_3",
+                            "rawdata": [
+                                "COUTMIXED"
+                            ]
+                        },
+                        {
+                            "captions": [
+                                "Bill payment (cash)"
+                            ],
+                            "adaText": "Bill payment",
+                            "adaPost": "Bill payment",
+                            "state": "0",
+                            "result": "BILLPAY",
+                            "icon": "bill_payment_cash.svg",
+                            "rawresult": "ITEM_18",
+                            "rawdata": [
+                                "BILLPAY"
+                            ]
+                        },
+                        {
+                            "captions": [
+                                "Bill payment (card)"
+                            ],
+                            "adaText": "Bill payment",
+                            "adaPost": "Bill payment",
+                            "state": "0",
+                            "result": "BILLCARD",
+                            "icon": "bill_payment_card.svg",
+                            "rawresult": "ITEM_19",
+                            "rawdata": [
+                                "BILLCARD"
+                            ]
+                        },
+                        {
+                            "captions": [
+                                "Payment (general)"
+                            ],
+                            "adaText": "Payment",
+                            "adaPost": "Payment",
+                            "state": "0",
+                            "result": "PAY",
+                            "icon": "payment.svg",
+                            "rawresult": "ITEM_20",
+                            "rawdata": [
+                                "PAY"
+                            ]
+                        },
+                        {
+                            "captions": [
+                                "Statement print functions"
+                            ],
+                            "adaText": "Statement print functions",
+                            "adaPost": "Statement print functions",
+                            "state": "0",
+                            "result": "STP_FUNCTIONS",
+                            "icon": "withdrawal_mixed.svg",
+                            "rawresult": "ITEM_4",
+                            "rawdata": [
+                                "STP_FUNCTIONS"
+                            ],
+                            "STP_FUNCTIONS": [
+                                {
+                                    "captions": [
+                                        "Statement Print"
+                                    ],
+                                    "adaText": "Statement Print",
+                                    "adaPost": "Statement Print",
+                                    "state": "0",
+                                    "result": "STP",
+                                    "icon": "mini_statement.svg",
+                                    "rawresult": "ITEM_14",
+                                    "rawdata": [
+                                        "STP"
+                                    ]
+                                },
+                                {
+                                    "captions": [
+                                        "Mini Statement"
+                                    ],
+                                    "adaText": "Mini Statement",
+                                    "adaPost": "Mini Statement",
+                                    "state": "0",
+                                    "result": "STPM",
+                                    "icon": "mini_statement.svg",
+                                    "rawresult": "ITEM_15",
+                                    "rawdata": [
+                                        "STPM"
+                                    ]
+                                },
+                                {
+                                    "captions": [
+                                        "Voucher dispense"
+                                    ],
+                                    "adaText": "Voucher dispense",
+                                    "adaPost": "Voucher dispense",
+                                    "state": "0",
+                                    "result": "STAMP",
+                                    "icon": "voucher.svg",
+                                    "rawresult": "ITEM_17",
+                                    "rawdata": [
+                                        "STAMP"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+            },
+            {
+                "captions": [
+                    "Deposit functions"
+                ],
+                "adaText": "Deposit functions",
+                "adaPost": "Deposit functions",
+                "state": "0",
+                "result": "DEPOSIT_FUNCTIONS",
+                "icon": "withdrawal_mixed.svg",
+                "rawresult": "ITEM_2",
+                "rawdata": [
+                    "DEPOSIT_FUNCTIONS"
+                ],
+                
+                "DEPOSIT_FUNCTIONS": [
+                    {
+                        "captions": [
+                            "DEPOSIT"
+                        ],
+                        "adaText": "DEPOSIT",
+                        "adaPost": "",
+                        "state": "0",
+                        "result": "CIN",
+                        "icon": "deposit_cash.svg",
+                        "rawresult": "ITEM_1",
+                        "rawdata": [
+                            "CIN"
+                        ]
+                    },
+                    {
+                        "captions": [
+                            "Cheque Deposit"
+                        ],
+                        "adaText": "Cheque Deposit",
+                        "adaPost": "Cheque Deposit",
+                        "state": "0",
+                        "result": "CHCCDM",
+                        "icon": "deposit_cheque.svg",
+                        "rawresult": "ITEM_2",
+                        "rawdata": [
+                            "CHCCDM"
+                        ]
+                    },
+                    {
+                        "captions": [
+                            "Envelope Deposit"
+                        ],
+                        "adaText": "Envelope Deposit",
+                        "adaPost": "",
+                        "state": "0",
+                        "result": "ENV",
+                        "icon": "deposit_envelope.svg",
+                        "rawresult": "ITEM_3",
+                        "rawdata": [
+                            "ENV"
+                        ]
+                    }
+                ]
+            },
+            {
+                "captions": ["Account Information"],
+                "adaText": "Account Information",
+                "adaPost": "Account Information",
+                "state": "0",
+                "result": "AIN",
+                "icon": "account_information.svg",
+                "rawresult": "ITEM_0",
+                "rawdata": ["AIN"]
+            },
+            {
+                "captions": ["Balance Inquiry"],
+                "adaText": "Balance Inquiry",
+                "adaPost": "Balance Inquiry",
+                "state": "0",
+                "result": "BAL",
+                "icon": "BALANCE.svg",
+                "rawresult": "ITEM_1",
+                "rawdata": ["BAL"]
+            },
+           
+            {
+                "captions": ["Menu Preferences"],
+                "adaText": "Menu Preferences",
+                "adaPost": "",
+                "state": "0",
+                "result": "PREFMENU",
+                "icon": "PREFERENCES.svg",
+                "rawresult": "ITEM_7",
+                "rawdata": ["FCCHG"]
+            },
+            {
+                "captions": ["Cash amount order"],
+                "adaText": "Cash amount order",
+                "adaPost": "",
+                "state": "0",
+                "result": "ORDCASH",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_9",
+                "rawdata": ["ORDCASH"]
+            },
+            {
+                "captions": ["Foreign currency order"],
+                "adaText": "Foreign currency order",
+                "adaPost": "",
+                "state": "0",
+                "result": "ORDCURR",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_10",
+                "rawdata": ["ORDCURR"]
+            },
+            {
+                "captions": ["Postal statements order"],
+                "adaText": "Postal statements order",
+                "adaPost": "",
+                "state": "0",
+                "result": "ORDPOST",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_11",
+                "rawdata": ["ORDPOST"]
+            },
+            {
+                "captions": ["Pin change"],
+                "adaText": "Pin change",
+                "adaPost": "",
+                "state": "0",
+                "result": "PINCHG",
+                "icon": "pin_change.svg",
+                "rawresult": "ITEM_12",
+                "rawdata": ["PINCHG"]
+            },
+            {
+                "captions": ["Prepaid Topup"],
+                "adaText": "Prepaid Topup",
+                "adaPost": "Prepaid Topup",
+                "state": "0",
+                "result": "PREPAID",
+                "icon": "mobile_cash.svg",
+                "rawresult": "ITEM_13",
+                "rawdata": ["PREPAID"]
+            },
+            {
+                "captions": ["Transfer"],
+                "adaText": "Transfer",
+                "adaPost": "Transfer",
+                "state": "0",
+                "result": "TRA",
+                "icon": "transfer.svg",
+                "rawresult": "ITEM_16",
+                "rawdata": ["TRA"]
+            }
+             
+        ]
+        },
+        {   "viewKey": "MenuPreferenceSelection",
+            "priorities": { "prominent": ["COUTFAST=prominentItem", "CHCCDM=prominentItem"], "itemgaps": true,
+                "order": [
+                    "COUTFAST",
+                    "COUT",
+                    "BAL",
+                    "CHCCDM",
+                    "PREFMENU",
+                    "CIN",
+                    "AIN",
+                    "COUTMIXED",
+                    "ENV",
+                    "TRA",
+                    "PREPAID",
+                    "STP",
+                    "PINCHG",
+                    "STPM",
+                    "STAMP",
+                    "BILLPAY",
+                    "BILLCARD",
+                    "PAY",
+                    "ORDPOST",
+                    "ORDCURR",
+                    "ORDCASH"
+                ]
+            },
+        "elements": [
+            {
+                "captions": ["Withdraw Notes"],
+                "adaText": "Withdraw Notes",
+                "adaPost": "Withdraw Notes",
+                "state": "0",
+                "result": "COUT",
+                "icon": "WITHDRAWAL.svg",
+                "rawresult": "ITEM_3",
+                "rawdata": ["COUT"]
+            },
+            {
+                "captions": ["Account Information"],
+                "adaText": "Account Information",
+                "adaPost": "Account Information",
+                "state": "0",
+                "result": "AIN",
+                "icon": "account_information.svg",
+                "rawresult": "ITEM_0",
+                "rawdata": ["AIN"]
+            },
+            {
+                "captions": ["Balance Inquiry"],
+                "adaText": "Balance Inquiry",
+                "adaPost": "Balance Inquiry",
+                "state": "0",
+                "result": "BAL",
+                "icon": "BALANCE.svg",
+                "rawresult": "ITEM_1",
+                "rawdata": ["BAL"]
+            },
+            {
+                "captions": ["<span class='color03 font05'>€ 50</span>"],
+                "adaText": "50 Euro",
+                "adaPost": "Fast Cash",
+                "state": "0",
+                "result": "COUTFAST",
+                "icon": "fast_cash.svg",
+                "rawresult": "ITEM_4",
+                "rawdata": ["COUTFAST"]
+            },
+            {
+                "captions": ["Cheque Deposit"],
+                "adaText": "Cheque Deposit",
+                "adaPost": "Cheque Deposit",
+                "state": "0",
+                "result": "CHCCDM",
+                "icon": "deposit_cheque.svg",
+                "rawresult": "ITEM_2",
+                "rawdata": ["CHCCDM"]
+            },
+            {
+                "captions": ["Mixed Withdrawal"],
+                "adaText": "Mixed Withdrawal",
+                "adaPost": "Mixed Withdrawal",
+                "state": "0",
+                "result": "COUTMIXED",
+                "icon": "withdrawal_mixed.svg",
+                "rawresult": "ITEM_5",
+                "rawdata": ["COUTMIXED"]
+            },
+            {
+                "captions": ["Envelope Deposit"],
+                "adaText": "Envelope Deposit",
+                "adaPost": "",
+                "state": "0",
+                "result": "ENV",
+                "icon": "deposit_envelope.svg",
+                "rawresult": "ITEM_6",
+                "rawdata": ["ENV"]
+            },
+            {
+                "captions": ["Menu Preferences"],
+                "adaText": "Menu Preferences",
+                "adaPost": "",
+                "state": "0",
+                "result": "PREFMENU",
+                "icon": "PREFERENCES.svg",
+                "rawresult": "ITEM_7",
+                "rawdata": ["FCCHG"]
+            },
+            {
+                "captions": ["DEPOSIT"],
+                "adaText": "DEPOSIT",
+                "adaPost": "",
+                "state": "0",
+                "result": "CIN",
+                "icon": "deposit_cash.svg",
+                "rawresult": "ITEM_8",
+                "rawdata": ["CIN"]
+            },
+            {
+                "captions": ["Cash amount order"],
+                "adaText": "Cash amount order",
+                "adaPost": "",
+                "state": "0",
+                "result": "ORDCASH",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_9",
+                "rawdata": ["ORDCASH"]
+            },
+            {
+                "captions": ["Foreign currency order"],
+                "adaText": "Foreign currency order",
+                "adaPost": "",
+                "state": "0",
+                "result": "ORDCURR",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_10",
+                "rawdata": ["ORDCURR"]
+            },
+            {
+                "captions": ["Postal statements order"],
+                "adaText": "Postal statements order",
+                "adaPost": "",
+                "state": "0",
+                "result": "ORDPOST",
+                "icon": "Icon_Placeholder_45x45.svg",
+                "rawresult": "ITEM_11",
+                "rawdata": ["ORDPOST"]
+            },
+            {
+                "captions": ["Pin change"],
+                "adaText": "Pin change",
+                "adaPost": "",
+                "state": "0",
+                "result": "PINCHG",
+                "icon": "pin_change.svg",
+                "rawresult": "ITEM_12",
+                "rawdata": ["PINCHG"]
+            },
+            {
+                "captions": ["Prepaid Topup"],
+                "adaText": "Prepaid Topup",
+                "adaPost": "Prepaid Topup",
+                "state": "0",
+                "result": "PREPAID",
+                "icon": "mobile_cash.svg",
+                "rawresult": "ITEM_13",
+                "rawdata": ["PREPAID"]
+            },
+            {
+                "captions": ["Statement Print"],
+                "adaText": "Statement Print",
+                "adaPost": "Statement Print",
+                "state": "0",
+                "result": "STP",
+                "icon": "mini_statement.svg",
+                "rawresult": "ITEM_14",
+                "rawdata": ["STP"]
+            },
+            {
+                "captions": ["Mini Statement"],
+                "adaText": "Mini Statement",
+                "adaPost": "Mini Statement",
+                "state": "0",
+                "result": "STPM",
+                "icon": "mini_statement.svg",
+                "rawresult": "ITEM_15",
+                "rawdata": ["STPM"]
+            },
+            {
+                "captions": ["Transfer"],
+                "adaText": "Transfer",
+                "adaPost": "Transfer",
+                "state": "0",
+                "result": "TRA",
+                "icon": "transfer.svg",
+                "rawresult": "ITEM_16",
+                "rawdata": ["TRA"]
+            },
+            {
+                "captions": ["Bill payment (cash)"],
+                "adaText": "Bill payment",
+                "adaPost": "Bill payment",
+                "state": "0",
+                "result": "BILLPAY",
+                "icon": "bill_payment_cash.svg",
+                "rawresult": "ITEM_18",
+                "rawdata": ["BILLPAY"]
+            },
+            {
+                "captions": ["Bill payment (card)"],
+                "adaText": "Bill payment",
+                "adaPost": "Bill payment",
+                "state": "0",
+                "result": "BILLCARD",
+                "icon": "bill_payment_card.svg",
+                "rawresult": "ITEM_19",
+                "rawdata": ["BILLCARD"]
+            },
+            {
+                "captions": ["Payment (general)"],
+                "adaText": "Payment",
+                "adaPost": "Payment",
+                "state": "0",
+                "result": "PAY",
+                "icon": "payment.svg",
+                "rawresult": "ITEM_20",
+                "rawdata": ["PAY"]
+            }
+        ]
+        },
+        {
+            "viewKey": "LanguageSelection",
+            "elements": [
+                { "captions": ["English"], "adaText": "", "adaPost": "", "state": 0, "result": "en-US", "icon": "flag_english.svg", "rawresult": "", "rawdata": [] },
+                { "captions": ["German"], "adaText": "", "adaPost": "", "state": 0, "result": "de-DE", "icon": "flag_german.svg", "rawresult": "", "rawdata": [] },
+                { "captions": ["France"], "adaText": "", "adaPost": "", "state": 0, "result": "fr-FR", "icon": "flag_french.svg", "rawresult": "", "rawdata": [] },
+                { "captions": ["Spain"], "adaText": "", "adaPost": "", "state": 0, "result": "es-ES", "icon": "flag_spanish.svg", "rawresult": "", "rawdata": [] },
+                { "captions": ["Turkey"], "adaText": "", "adaPost": "", "state": 0, "result": "tu-TU", "icon": "flag_turkish.svg", "rawresult": "", "rawdata": [] },
+                { "captions": ["Australia"], "adaText": "", "adaPost": "", "state": 0, "result": "en-AS", "icon": "flag_australia.svg", "rawresult": "", "rawdata": [] },
+                { "captions": ["Brazil"], "adaText": "", "adaPost": "", "state": 0, "result": "es-BR", "icon": "flag_brazil.svg", "rawresult": "", "rawdata": [] },
+                { "captions": ["Czech"], "adaText": "", "adaPost": "", "state": 0, "result": "cz-CZ", "icon": "flag_czech.svg", "rawresult": "", "rawdata": [] },
+                { "captions": ["Italy"], "adaText": "", "adaPost": "", "state": 0, "result": "it-IT", "icon": "flag_italy.svg", "rawresult": "", "rawdata": [] }
+            ]
+        },
+        {
+            "viewKey": "MixtureSelection",
+            "elements": [
+                {
+                    "captions": ["1x5€,   3x10€,   5x20€,   1x50€"],
+                    "adaText": "",
+                    "adaPost": "",
+                    "state": 0,
+                    "result": "Mix1",
+                    "icon": "",
+                    "rawresult": "",
+                    "rawdata": []
+                },
+                {
+                    "captions": ["1x5€,   3x10€,   1x50€,  1x100€"],
+                    "adaText": "",
+                    "adaPost": "",
+                    "state": 0,
+                    "result": "Mix2",
+                    "icon": "",
+                    "rawresult": "",
+                    "rawdata": []
+                },
+                {
+                    "captions": ["1x5€,   13x10€,   1x50€"],
+                    "adaText": "",
+                    "adaPost": "",
+                    "state": 0,
+                    "result": "Mix3",
+                    "icon": "",
+                    "rawresult": "",
+                    "rawdata": []
+                }
+            ]
+        },
+        {   "viewKey": "AccountSelection",
+        "elements": [
+            { "captions": ["10000", "01 Savings", "1.000.000,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_0", "icon": "", "rawresult": "ITEM_0", "rawdata": ["11111111111111111", "Primary checking account", "USD", "10.33", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["30000", "02 Savings", "3.000.000,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_2", "icon": "", "rawresult": "ITEM_1", "rawdata": ["2111111111111212", "Secondary checking account", "USD", "10000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["40000", "03 Savings", "4,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_3", "icon": "", "rawresult": "ITEM_2", "rawdata": ["3111111111111313", "Primary saving account", "USD", "3000000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["50000", "04 Savings", "5,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_4", "icon": "", "rawresult": "ITEM_3", "rawdata": ["4111111111111414", "Secondary saving account", "USD", "40000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["20000", "05 Savings", "2,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_1", "icon": "", "rawresult": "ITEM_4", "rawdata": ["5111111111111515", "5 checking account", "USD", "50000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["60000", "06 Savings", "6,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_5", "icon": "", "rawresult": "ITEM_5", "rawdata": ["611111111111616", "6 checking account", "USD", "60000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["70000", "07 Savings", "7,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_6", "icon": "", "rawresult": "ITEM_6", "rawdata": ["711111111111717", "7 checking account", "USD", "70000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["80000", "08 Savings", "8,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_7", "icon": "", "rawresult": "ITEM_7", "rawdata": ["811111111111818", "8 checking account", "USD", "80000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["90000", "09 Savings", "9,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_8", "icon": "", "rawresult": "ITEM_8", "rawdata": ["911111111111919", "9 checking account", "USD", "90000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["10000", "10 Savings", "10,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_9", "icon": "", "rawresult": "ITEM_9", "rawdata": ["10111111111112020", "10 checking account", "USD", "100000.11", "+", "10000", "EUR", "1000", "010"] },
+            { "captions": ["11000", "11 Savings", "11,00€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_10", "icon": "", "rawresult": "ITEM_10", "rawdata": ["111111111112121", "11 checking account", "USD", "110000.11", "+", "10000", "EUR", "1000", "010"] }
+        ]
+        },
+
+        {   "viewKey": "BillPaymentSelection",
+            "elements": [
+                { "captions": ["10000", "Corp 01", "1111111111"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_0", "icon": "", "rawresult": "ITEM_0", "rawdata": ["Corp.ID1", "Corp.Name1", "1111111111"] },
+                { "captions": ["30000", "Corp 02", "2222222222"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_2", "icon": "", "rawresult": "ITEM_1", "rawdata": ["Corp.ID2", "Corp.Name2", "2222222222"] },
+                { "captions": ["40000", "Corp 03", "3333333333"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_3", "icon": "", "rawresult": "ITEM_2", "rawdata": ["Corp.ID3", "Corp.Name3", "3333333333"] },
+                { "captions": ["50000", "Corp 04", "4444444444"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_4", "icon": "", "rawresult": "ITEM_3", "rawdata": ["Corp.ID4", "Corp.Name4", "4444444444"] },
+                { "captions": ["20000", "Corp 05", "5555555555"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_1", "icon": "", "rawresult": "ITEM_4", "rawdata": ["Corp.ID5", "Corp.Name5", "5555555555"] },
+                { "captions": ["60000", "Corp 06", "6666666666"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_5", "icon": "", "rawresult": "ITEM_5", "rawdata": ["Corp.ID6", "Corp.Name6", "6666666666"] },
+                { "captions": ["70000", "Corp 07", "7777777777"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_6", "icon": "", "rawresult": "ITEM_6", "rawdata": ["Corp.ID7", "Corp.Name7", "7777777777"] },
+                { "captions": ["80000", "Corp 08", "8888888888"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_7", "icon": "", "rawresult": "ITEM_7", "rawdata": ["Corp.ID8", "Corp.Name8", "8888888888"] },
+                { "captions": ["90000", "Corp 09", "9999999999"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_8", "icon": "", "rawresult": "ITEM_8", "rawdata": ["Corp.ID9", "Corp.Name9", "9999999999"] },
+                { "captions": ["10000", "Corp 10", "1010101010"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_9", "icon": "", "rawresult": "ITEM_9", "rawdata": ["Corp.ID10", "Corp.Name10", "1010101010"] },
+                { "captions": ["11000", "Corp 11", "1111111111"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_10", "icon": "", "rawresult": "ITEM_10", "rawdata": ["Corp.ID11", "Corp.Name11", "1111111111"] }
+            ]
+        },
+
+        {   "viewKey": "WithdrawalAmountSelection",
+            "priorities": {
+                "prominent": [
+                    "AMOUNT_OTHER=prominentItem"
+                ],
+                "order": ["AMOUNT_OTHER"],
+                "itemgaps": true
+            },
+                "elements": [
+            { "captions": ["20", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_0", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["50", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_1", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["100", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_2", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["150", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_3", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["200", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_4", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["300", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_5", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["350", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_6", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["450", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_7", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["500", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_8", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["600", "€"], "adaText": "", "adaPost": "", "state": 0, "result": "BUTTON_9", "icon": "currency_symbol.svg", "rawresult": "", "rawdata": [] },
+            { "captions": ["Other amount", ""], "adaText": "", "adaPost": "", "state": 0, "result": "AMOUNT_OTHER", "icon": "other_amount.svg", "rawresult": "", "rawdata": [] }
+        ]
+        },
+        {   "viewKey": "EmvApplicationSelection",
+        "elements": [
+            { "captions": ["CAPTION 0"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_0", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_0", "rawdata": ["Mastercard", ""] },
+            { "captions": ["CAPTION 1"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_1", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_1", "rawdata": ["VISA", ""] },
+            { "captions": ["CAPTION 2"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_2", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_2", "rawdata": ["Eurocard", ""] },
+            { "captions": ["CAPTION 3"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_3", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_3", "rawdata": ["GIRO", ""] },
+            { "captions": ["CAPTION 4"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_4", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_4", "rawdata": ["EMV 4 (very short)", ""] },
+            { "captions": ["CAPTION 5"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_5", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_5", "rawdata": ["American Express (no logo)", ""] },
+            { "captions": ["CAPTION 6"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_6", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_6", "rawdata": ["EMV 6", ""] },
+            { "captions": ["CAPTION 7"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_7", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_7", "rawdata": ["EMV 7", ""] },
+            { "captions": ["CAPTION 8"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_8", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_8", "rawdata": ["EMV 8", ""] },
+            { "captions": ["CAPTION 9"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_9", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_9", "rawdata": ["EMV 9", ""] },
+            { "captions": ["CAPTION 10"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_10", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_10", "rawdata": ["EMV 10", ""] },
+            { "captions": ["CAPTION 11"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_11", "icon": "Icon_Placeholder_70x45.svg", "rawresult": "ITEM_11", "rawdata": ["EMV 11", ""] }
+            ]
+        },
+		{   "viewKey": "PrepaidProviderSelection",
+        "elements": [
+            { "captions": ["CAPTION 0"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_0", "icon": "", "rawresult": "ITEM_0", "rawdata": ["Telekom", ""] },
+            { "captions": ["CAPTION 1"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_1", "icon": "", "rawresult": "ITEM_1", "rawdata": ["Vodafone", ""] },
+            { "captions": ["CAPTION 2"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_2", "icon": "", "rawresult": "ITEM_2", "rawdata": ["e-plus", ""] },
+            { "captions": ["CAPTION 3"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_3", "icon": "", "rawresult": "ITEM_3", "rawdata": ["O2", ""] },
+            { "captions": ["CAPTION 4"], "adaText": "", "adaPost": "", "state": 0, "result": "RESULT_4", "icon": "", "rawresult": "ITEM_4", "rawdata": ["NSA", ""] }
+            ]
+        }
+    ]
+}

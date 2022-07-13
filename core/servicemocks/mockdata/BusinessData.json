@@ -1,0 +1,3750 @@
+{
+  ".*_VIEWSTATE_S" : {
+    "*" : "3"
+  },
+  "CCAPPLFW_PROP_APPLICATION_STATE" : {
+    "*" : "2"
+  },
+  "CCAPPLFW_PROP_RESTART_STATE" : {
+    "*" : "N"
+  },
+  "CCAPPLFW_PROP_RESTRICTION_LIST" : {
+    "*" : ""
+  },
+  "CCAPPLFW_PROP_VDM_MODE" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_ACCUM_REFUSED_COINS" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_ACCUM_REFUSED_NOTES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_ALREADY_BUNDLE_IN_SAFE" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_AUTOCASHIN_ENABLED" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_BOOK_AFTER_CONFIRM" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_BUTTON_INSERT_MORE_MONEY" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_CASHIN_DEVICE_TYPE" : {
+    "*" : "RM3"
+  },
+  "CCCAINTAFW_PROP_CASHIN_FUNCTION" : {
+    "*" : "CIN",
+    "DepositCoinsInsertion" : "COININ",
+    "DepositNotesAndCoinsInsertion" : "CINMIXED",
+    "DepositNotesInsertion" : "CIN"
+  },
+  "CCCAINTAFW_PROP_CASHIN_LIMIT" : {
+    "*" : "70.00"
+  },
+  "CCCAINTAFW_PROP_CASHIN_PAID" : {
+    "*" : "40.00"
+  },
+  "CCCAINTAFW_PROP_COININ_DEVICE_TYPE" : {
+    "*" : "CM3"
+  },
+  "CCCAINTAFW_PROP_COINS_INSERTED" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_COINS_INTERIM_DEPOSIT" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_COINS_IN_SAFE" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_COINS_ON_ESCROW" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_COINS_REFUSED" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_COINS_RETURNED" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_COIN_BUNDLES_COUNT" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_COIN_DEVICE_FULL" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_COIN_DEVICE_WILL_BE_FULL" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_COIN_FULL" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_COIN_INSERT_TIMEOUT" : {
+    "*" : "60"
+  },
+  "CCCAINTAFW_PROP_COIN_INSERT_TIMEOUT_MS" : {
+    "*" : "60000"
+  },
+  "CCCAINTAFW_PROP_COIN_PRESENT_TIMEOUT" : {
+    "*" : "20"
+  },
+  "CCCAINTAFW_PROP_COIN_PRESENT_TIMEOUT_MS" : {
+    "*" : "20000"
+  },
+  "CCCAINTAFW_PROP_CURRENT_DEPOSIT_TYPE" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_CUSTOMER_CANCELED_DEPOSIT" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_CUSTOMER_REACTION" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_CASH_UNIT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_COUNT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_CURRENCY" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_CURRENCY_EXPONENT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_DENOM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_EVENT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_LEVEL" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_SUM_MINOR" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_DISTRIBUTION_DATA_TYPE" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_CURRENCY" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_CURRENCY_EXPONENT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_DENOM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_EVENT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_L1_COUNT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_L2_COUNT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_L3_COUNT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_L4FIT_COUNT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_L4UNFIT_COUNT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_L4_COUNT" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DETAILED_LEVEL_DISTRIBUTION_DATA_TYPE" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DEVICE_CONTROL" : {
+    "*" : "EXPLICIT"
+  },
+  "CCCAINTAFW_PROP_DIALOG_MODE" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_DISP_L2_AMOUNTS" : {
+    "*" : "50.00"
+  },
+  "CCCAINTAFW_PROP_DISP_TADATA_SUM_MINOR" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_CASH_UNIT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_COUNT" : {
+    "*" : [ null ]
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_DENOM" : {
+    "*" : [ null ]
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_EVENT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_DISTRIBUTION_DATA_TYPE" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_FORMAT_RESULT_DISPLAY" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL2_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL2_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL2_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL2_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL2_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL2_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL2_DATA_TYPE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL3_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL3_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL3_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL3_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL3_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL3_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL3_DATA_TYPE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL4_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL4_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL4_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL4_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL4_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL4_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_CURRENT_LEVEL4_DATA_TYPE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL2_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL2_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL2_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL2_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL2_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL2_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL2_DATA_TYPE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL3_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL3_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL3_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL3_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL3_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL3_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL3_DATA_TYPE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL4_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL4_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL4_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL4_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL4_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL4_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_INTERIM_LEVEL4_DATA_TYPE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL2_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL2_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL2_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL2_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL2_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL2_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL2_DATA_TYPE" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL3_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL3_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL3_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL3_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL3_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL3_DATA_SUM_MINOR" : {
+    "*" : [ "0" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL3_DATA_TYPE" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL4_DATA_COUNT" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL4_DATA_CURRENCY" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL4_DATA_CURRENCY_EXPONENT" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL4_DATA_DENOM" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL4_DATA_SUM" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL4_DATA_SUM_MINOR" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_IDENT_LEVEL4_DATA_TYPE" : {
+    "*" : [ "" ]
+  },
+  "CCCAINTAFW_PROP_JRN_CASHUNIT" : {
+    "*" : "3"
+  },
+  "CCCAINTAFW_PROP_JRN_CONFIGURED" : {
+    "*" : "1"
+  },
+  "CCCAINTAFW_PROP_JRN_COUNT" : {
+    "*" : "1"
+  },
+  "CCCAINTAFW_PROP_JRN_CURRENCY" : {
+    "*" : "EUR"
+  },
+  "CCCAINTAFW_PROP_JRN_CU_COUNT" : {
+    "*" : "219"
+  },
+  "CCCAINTAFW_PROP_JRN_CU_CURRENCY" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_JRN_CU_DENOM" : {
+    "*" : "500"
+  },
+  "CCCAINTAFW_PROP_JRN_CU_ID" : {
+    "*" : "49063"
+  },
+  "CCCAINTAFW_PROP_JRN_CU_INIT_COUNT" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_JRN_CU_NUMBER" : {
+    "*" : "3"
+  },
+  "CCCAINTAFW_PROP_JRN_CU_TYPE" : {
+    "*" : "9"
+  },
+  "CCCAINTAFW_PROP_JRN_DENOM" : {
+    "*" : "500"
+  },
+  "CCCAINTAFW_PROP_JRN_DENOM_COIN" : {
+    "*" : "5"
+  },
+  "CCCAINTAFW_PROP_JRN_L4_UNFIT_COUNT" : {
+    "*" : "1"
+  },
+  "CCCAINTAFW_PROP_JRN_NOTELEVEL" : {
+    "*" : "4"
+  },
+  "CCCAINTAFW_PROP_JRN_NOTE_ID" : {
+    "*" : "26001"
+  },
+  "CCCAINTAFW_PROP_JRN_NUMBER_L2_NOTES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_JRN_NUMBER_L3_NOTES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_JRN_SIGNATURES" : {
+    "*" : "1"
+  },
+  "CCCAINTAFW_PROP_JRN_SIGNATURES_DUMMY" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_JRN_SIGNATURES_STORED" : {
+    "*" : "1"
+  },
+  "CCCAINTAFW_PROP_JSON_RESULT" : {
+    "*" : "{\"totals\": [{ \"total\": 1420340, \"L2\": 5000, \"L3\": 0, \"L4\": 1420340, \"exp\": -2, \"currency\": \"EUR\" } ], \"denominations\": [{ \"value\": 10000, \"count\": 17, \"currency\": \"EUR\", \"exp\": -2, \"type\": 0, \"level\": 4 },{ \"value\": 20000, \"count\": 17, \"currency\": \"EUR\", \"exp\": -2, \"type\": 0, \"level\": 4 },{ \"value\": 50000, \"count\": 17, \"currency\": \"EUR\", \"exp\": -2, \"type\": 0, \"level\": 4 },{ \"value\": 5000, \"count\": 7, \"currency\": \"EUR\", \"exp\": -2, \"type\": 0, \"level\": 4 },{ \"value\": 500, \"count\": 7, \"currency\": \"EUR\", \"exp\": -2, \"type\": 0, \"level\": 4 },{ \"value\": 1000, \"count\": 7, \"currency\": \"EUR\", \"exp\": -2, \"type\": 0, \"level\": 4 },{ \"value\": 2000, \"count\": 7, \"currency\": \"EUR\", \"exp\": -2, \"type\": 0, \"level\": 4 },{ \"value\": 5000, \"count\": 1, \"currency\": \"EUR\", \"exp\": -2, \"type\": 0, \"level\": 2 },{ \"value\": 1, \"count\": 40, \"currency\": \"EUR\", \"exp\": -2, \"type\": 1, \"level\": 4 },{ \"value\": 100, \"count\": 8, \"currency\": \"EUR\", \"exp\": -2, \"type\": 1, \"level\": 4 }]}"
+  },
+  "CCCAINTAFW_PROP_JSON_ROLLBACKCOINS" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_JSON_ROLLBACKNOTES" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_L2BOX_FULL" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_MACHINE_STATE" : {
+    "*" : null
+  },
+  "CCCAINTAFW_PROP_MAX_COIN_BUNDLES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_MAX_ESCROW" : {
+    "*" : "50"
+  },
+  "CCCAINTAFW_PROP_MAX_NOTE_BUNDLES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_MONEY_ERROR" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_MONEY_FULL" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_MONEY_INSERT_TIMEOUT" : {
+    "*" : "60"
+  },
+  "CCCAINTAFW_PROP_MONEY_INSERT_TIMEOUT_MS" : {
+    "*" : "60000"
+  },
+  "CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT" : {
+    "*" : "20"
+  },
+  "CCCAINTAFW_PROP_MONEY_PRESENT_TIMEOUT_MS" : {
+    "*" : "20000"
+  },
+  "CCCAINTAFW_PROP_MONEY_REFUSED" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_MONEY_STATUS" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_NOTES_IN_SAFE" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_NOTES_ON_ESCROW" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_NOTE_BUNDLES_COUNT" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NOTE_DEVICE_FULL" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_NUMBER_DETAILED_DISTRIBUTION_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_DETAILED_LEVEL_DISTRIBUTION_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_DISTRIBUTION_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_CURRENT_LEVEL2_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_CURRENT_LEVEL3_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_CURRENT_LEVEL4_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_INTERIM_LEVEL2_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_INTERIM_LEVEL3_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_INTERIM_LEVEL4_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_LEVEL2_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_LEVEL3_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_IDENT_LEVEL4_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_INTERNAL_CURRENT_PROP_VALUES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_INTERNAL_INTERIM_PROP_VALUES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_INTERNAL_PROP_VALUES" : {
+    "*" : ""
+  },
+  "CCCAINTAFW_PROP_NUMBER_NOTES_ON_STACKER" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_OF_RETRACTS" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_REFUSED_COINS" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_REFUSED_NOTES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_TRANSACTION_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_TRANSACTION_LEVEL2_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_TRANSACTION_LEVEL3_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_NUMBER_TRANSACTION_LEVEL4_DATA" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_P6_HANDLING" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_PARTIAL_DEPOSIT_AMOUNT_MINOR" : {
+    "*" : "5000"
+  },
+  "CCCAINTAFW_PROP_PARTIAL_DEPOSIT_KEYS[A,0,1]" : {
+    "*" : "Higher_Partial_Deposit_Amount_||_Lower_Partial_Deposit_Amount_||_Other_Amount_||_BACK"
+  },
+  "CCCAINTAFW_PROP_PARTIAL_DEPOSIT_PAYBACK" : {
+    "*" : "5000"
+  },
+  "CCCAINTAFW_PROP_PAYMENT_ACTIVE" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_PAYMENT_CHANGE_AMOUNT" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_PAYMENT_INCLUDES_L2" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_PRESENT_INPUT_REASON" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_RETRACTRECYCLE_SUCCESS" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_RETRACT_SUCCESSFUL" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_ROLLBACK_ACTIVE" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_ROLLBACK_L2_AMOUNTS" : {
+    "*" : "2000 EUR"
+  },
+  "CCCAINTAFW_PROP_ROLLBACK_L3_AMOUNTS" : {
+    "*" : "1000 EUR"
+  },
+  "CCCAINTAFW_PROP_SPLIT_DENOM_DISPLAY" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_SUBCASHIN_EVENT" : {
+    "*" : "FALSE"
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_DATA_CURRENCY" : {
+    "*" : [ "EUR", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_DATA_SUM" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_DATA_SUM_MINOR" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL2_DATA_CURRENCY" : {
+    "*" : [ "EUR", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL2_DATA_SUM" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL2_DATA_SUM_MINOR" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL3_DATA_CURRENCY" : {
+    "*" : [ "EUR", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL3_DATA_SUM" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL3_DATA_SUM_MINOR" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL4_DATA_CURRENCY" : {
+    "*" : [ "EUR", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL4_DATA_SUM" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_TRANSACTION_LEVEL4_DATA_SUM_MINOR" : {
+    "*" : [ "40000", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCAINTAFW_PROP_UMPTEEN_BUNDLES" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_UMPTEEN_COINS" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_WXTEXT_KEY_CURRENCY_PROBLEM" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_WXTEXT_KEY_INSERT_MORE_MONEY" : {
+    "*" : "0"
+  },
+  "CCCAINTAFW_PROP_WXTEXT_PREFIX" : {
+    "*" : ""
+  },
+  "CCCHCCDMTAFW_ACCEPTED_INDEX" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCHCCDMTAFW_AMOUNT" : {
+    "*" : [ "4400", "0", "3000", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCHCCDMTAFW_BACKIMAGE_FILE" : {
+    "*" : [ "style/default/images/single_cheque_generic_long_side_back.svg", "style/default/images/single_cheque_generic_long_side_back.svg", "style/default/images/single_cheque_generic_long_side_back.svg", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCHCCDMTAFW_BACKIMAGE_TYPE" : {
+    "*" : [ "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8" ]
+  },
+  "CCCHCCDMTAFW_CASSETTE1_COUNT" : {
+    "*" : "0"
+  },
+  "CCCHCCDMTAFW_CASSETTE2_COUNT" : {
+    "*" : "0"
+  },
+  "CCCHCCDMTAFW_CHEQUEONSCREEN" : {
+    "*" : [ "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE" ]
+  },
+  "CCCHCCDMTAFW_CHEQUE_ACCEPTED" : {
+    "*" : [ "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE" ]
+  },
+  "CCCHCCDMTAFW_CHEQUE_EXTENDED_STATUS" : {
+    "*" : [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  },
+  "CCCHCCDMTAFW_CHEQUE_ID" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCHCCDMTAFW_CHEQUE_NR_ONSCREEN" : {
+    "*" : "0"
+  },
+  "CCCHCCDMTAFW_CHEQUE_PARALLELIZATION" : {
+    "*" : "FALSE"
+  },
+  "CCCHCCDMTAFW_CHEQUE_START_INDEX" : {
+    "*" : "0"
+  },
+  "CCCHCCDMTAFW_CODELINE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCHCCDMTAFW_DEPOSIT_CHEQUES_OPERATION_STATUS" : {
+    "*" : null
+  },
+  "CCCHCCDMTAFW_DOCUMENT_TYPE" : {
+    "*" : [ "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque", "Cheque" ]
+  },
+  "CCCHCCDMTAFW_FORMATTED_SUM" : {
+    "*" : "0.00"
+  },
+  "CCCHCCDMTAFW_FRONTIMAGE_FILE" : {
+    "*" : [ "style/default/images/single_cheque_generic_long_side.svg", "style/default/images/single_cheque_generic_long_side.svg", "style/default/images/single_cheque_generic_long_side.svg", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCHCCDMTAFW_FRONTIMAGE_TYPE" : {
+    "*" : [ "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8" ]
+  },
+  "CCCHCCDMTAFW_LAST_BIN_DESTINATION" : {
+    "*" : "0"
+  },
+  "CCCHCCDMTAFW_MAX_MEDIA_ONSTACKER" : {
+    "*" : "0"
+  },
+  "CCCHCCDMTAFW_MEDIAONSTACKER" : {
+    "*" : "3"
+  },
+  "CCCHCCDMTAFW_MEDIAONSTACKER_ACCEPTED" : {
+    "*" : "2"
+  },
+  "CCCHCCDMTAFW_MEDIAONSTACKER_DECLINED" : {
+    "*" : "1"
+  },
+  "CCCHCCDMTAFW_MEDIAONSTACKER_REMAINING" : {
+    "*" : "50"
+  },
+  "CCCHCCDMTAFW_METAL" : {
+    "*" : "FALSE"
+  },
+  "CCCHCCDMTAFW_METAL_DETECTED_STR" : {
+    "*" : ""
+  },
+  "CCCHCCDMTAFW_NUMBER_CHECKS" : {
+    "*" : null
+  },
+  "CCCHCCDMTAFW_OCR_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCHCCDMTAFW_OCR_SCORE" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCCHCCDMTAFW_PRESENT_REASON" : {
+    "*" : ""
+  },
+  "CCCHCCDMTAFW_PROP_DEPOSITSTATUS" : {
+    "*" : [ "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3" ]
+  },
+  "CCCHCCDMTAFW_RECEIPTIMAGE_FILE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCCHCCDMTAFW_RESTART" : {
+    "*" : ""
+  },
+  "CCCHCCDMTAFW_RESTART_MEDIAONSTACKER" : {
+    "*" : "0,"
+  },
+  "CCCHCCDMTAFW_RETRACT_BOX_COUNT" : {
+    "*" : "0"
+  },
+  "CCCHCCDMTAFW_SCANNER_TYPE" : {
+    "*" : "CCDM"
+  },
+  "CCCHCCDMTAFW_SCORE_MICR" : {
+    "*" : [ "TRUE", "FALSE", "TRUE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE" ]
+  },
+  "CCCHCCDMTAFW_SCORE_OCR" : {
+    "*" : [ "TRUE", "FALSE", "TRUE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "FALSE" ]
+  },
+  "CCCHCCDMTAFW_SEAC_SCANNER" : {
+    "*" : "FALSE"
+  },
+  "CCCHCCDMTAFW_SUM" : {
+    "*" : "5000"
+  },
+  "CCCHCCDMTAFW_TIMEOUT" : {
+    "*" : "FALSE"
+  },
+  "CCCHCCDMTAFW_VALIDATED_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCHPFW_PROP_ACCOUNT_BALANCE" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_ALTERNATE_AMOUNT" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_APPROVAL_AMOUNT" : {
+    "*" : "5000"
+  },
+  "CCHPFW_PROP_AUTOSTORNO_ACTIVE" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_BALANCE_SIGN" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_CAMERA_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_CARDLESS_FUNCTION_PREFIX" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_CARDLESS_IDENTIFICATION_OPTIONS" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_CARD_EXPDATE" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_CARD_HANDLING_INDICATOR" : {
+    "*" : "N"
+  },
+  "CCHPFW_PROP_CARD_ISSUER" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_CARD_PAN" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_CARD_SEQNR" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_CASHBACK_DATA" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_CHECK_CHAINING_INDICATOR" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_CHECK_HANDLING_INDICATOR" : {
+    "*" : "N"
+  },
+  "CCHPFW_PROP_CHECK_ID" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_COMJOURNALLOGGING" : {
+    "*" : "1"
+  },
+  "CCHPFW_PROP_COMMAND_TYPE" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_COMPUTER_ID" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_COM_STATE" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_CREDITOR_INPUT_DATA" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_CREDITOR_INPUT_METHOD" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_DEVICE_STATE" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_DISPLAY_DIALOG_NAME" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_DISPLAY_VARIABLE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "AccountDetailedSelection" : [ "111111111111111", "Savings Account", "€", "50000", "20000", "70000", "10000", "30000", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "AccountInformationOverview" : [ "111111111111111", "Susanne Scroll", "€", "1300.00", "H", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "BalanceInquiryInfo" : [ "5000", "€", "2000", "0", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "BillPaymentDataConfirmation" : [ "Gottschalk", "", "iii-30000000012", "", "15000", "Mustermann", "", "", "", "DE03472501010123456", "", "", "Standard Transfer", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "HostItemInput" : [ "ACCOUNT", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "HostItemQuestion" : [ "DCC", "", "With Conversion", "With Conversion", "", "Without Conversion", "Without Conversion", "", "", "", "800.00", "PLN", "192.07", "EUR", "PLN -> EUR", "0.24003", "14/01/2015", "12:34:15", "0.00%", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "HostItemSelection" : [ "ACCOUNT", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "HostResponseInfo" : [ "", "", "", "", "", "", "", "", "Some Description", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    "PceAccountInformationOverview" : [ "111111111111111", "Susanne Scroll", "€", "1300.00", "H", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCHPFW_PROP_DISPLAY_VARIABLE[A,0,3]" : {
+    "*" : "",
+    "BillPaymentPayeeSelection" : "Corp.ID1_||_Corp.Name1_||_1111111111_||_Corp.ID2_||_Corp.Name2_||_2222222222_||_Corp.ID3_||_Corp.Name3_||_3333333333_||_Corp.ID4_||_Corp.Name4_||_4444444444"
+  },
+  "CCHPFW_PROP_DISPLAY_VARIABLE[A,0,6]" : {
+    "*" : "",
+    "AccountInformationOverview" : "C_||_100.00_||_EUR_||_03/26/2003_||_03/27/2003_||_Petrol Station, 33100 Paderborn_||_C_||_200.00_||_EUR_||_03/29/2003_||_04/01/2003_||_King Hotel, 33100 Paderborn_||_H_||_543.00_||_EUR_||_01/31/2013_||_02/01/2013_||_Diebold-Nixdorf, 33100 Paderborn_||_C_||_150.00_||_EUR_||_03/29/2003_||_04/01/2003_||_Queen Hotel, 33100 Paderborn_||_C_||_50.00_||_EUR_||_03/29/2003_||_04/01/2003_||_Pawn Hotel, 33100 Paderborn"
+  },
+  "CCHPFW_PROP_DISPLAY_VARIABLE[A,0,7]" : {
+    "*" : "",
+    "PceBalanceInquiryInfo" : "Savings_||_0000000007_||_100.00_||_EUR_||_S_||_900.00_||_EUR_||_Credit Card_||_0000000008_||_1000.00_||_EUR_||_H_||_1500.00_||_EUR"
+  },
+  "CCHPFW_PROP_DISPLAY_VARIABLE[A,2,3]" : {
+    "*" : "HOST ITEM 1_||_HOST ITEM 1_||_HOST ITEM 1_||_HOST ITEM 2_||_HOST ITEM 2_||_HOST ITEM 2_||_HOST ITEM 3_||_HOST ITEM 3_||_HOST ITEM 3_||_HOST ITEM 4_||_HOST ITEM 4_||_HOST ITEM 4"
+  },
+  "CCHPFW_PROP_DISPLAY_VARIABLE[A,5,9]" : {
+    "*" : "",
+    "AccountInformationOverview" : "03/26/2003_||_03/27/2003_||_EUR_||_100.00_||_S_||_Petrol Station, 33100 Paderborn_||__||__||__||_03/29/2003_||_04/01/2003_||_EUR_||_200.00_||_S_||_King Hotel, 33100 Paderborn_||__||__||__||_04/02/2003_||_04/02/2003_||_EUR_||_400.00_||_S_||_Diebold-Nixdorf ATM, 33100 Paderborn_||__||__||__||_04/16/2003_||_04/16/2003_||_EUR_||_300.00_||_S_||_Petrol Station, 33100 Paderborn_||__||__||__||_05/01/2003_||_05/01/2003_||_EUR_||_600.00_||_S_||_King Hotel, 33100 Paderborn_||__||__||__||_05/03/2003_||_05/03/2003_||_EUR_||_400.00_||_S_||_Diebold-Nixdorf ATM, 33100 Paderborn_||__||__||_",
+    "PceAccountInformationOverview" : "03/26/2003_||_03/27/2003_||_EUR_||_100.00_||_S_||_Petrol Station, 33100 Paderborn_||__||__||__||_03/29/2003_||_04/01/2003_||_EUR_||_200.00_||_S_||_King Hotel, 33100 Paderborn_||__||__||__||_04/02/2003_||_04/02/2003_||_EUR_||_400.00_||_S_||_Diebold-Nixdorf ATM, 33100 Paderborn_||__||__||__||_04/16/2003_||_04/16/2003_||_EUR_||_300.00_||_S_||_Petrol Station, 33100 Paderborn_||__||__||__||_05/01/2003_||_05/01/2003_||_EUR_||_600.00_||_S_||_King Hotel, 33100 Paderborn_||__||__||__||_05/03/2003_||_05/03/2003_||_EUR_||_400.00_||_S_||_Diebold-Nixdorf ATM, 33100 Paderborn_||__||__||_"
+  },
+  "CCHPFW_PROP_DISPLAY_VARIABLE_VIEWSTATE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCHPFW_PROP_ENDORSEMENT_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_EPP_JOURNAL" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_EVENTSCRIPT_RESULT_DATA" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_FEATURE_LIST" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_GEN_B_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_GEN_C_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_GOINSERVICE_INDICATOR" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_HOSTACTIVATED_DATA" : {
+    "*" : [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "1234567890", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "10000", "EUR", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  },
+  "CCHPFW_PROP_HOSTMESSAGESCRIPT_RESULT_DATA" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_HOSTRESPONSECODE" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_HOST_STATE" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_HPFW_STATE" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_INITIAL_WITHDRAWAL_AMOUNT" : {
+    "*" : "5000"
+  },
+  "CCHPFW_PROP_JOURNAL_VARIABLE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCHPFW_PROP_LAST_RESPONSE_CODE" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_MAXIMAL_AMOUNT" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_MAXIMAL_CASHIN_AMOUNT" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_MENUE_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_MENUE_LIFECYCLE_INDICATOR" : {
+    "*" : "1"
+  },
+  "CCHPFW_PROP_MENUE_LIST_TYPE" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_MSG_CONDITIONCODE" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_MSG_RETURNCODE" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_OFFLINESCRIPT_RESULT_DATA" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_ONLINESCRIPT_RESULT_DATA" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_PASSBOOK_HANDLING_INDICATOR" : {
+    "*" : "N"
+  },
+  "CCHPFW_PROP_PASSBOOK_LINE_NUMBER" : {
+    "*" : [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  },
+  "CCHPFW_PROP_PASSBOOK_MAGNETIC_STRIPE_DATA" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_PASSBOOK_PAGE_NUMBER" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_PASSBOOK_TABLE_DATA" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_PASSBOOK_TRACK_FORMAT" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_PASSBOOK_TRACK_UPDATE" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_POLLING_STATUS" : {
+    "*" : "TRANSACTION_PENDING",
+    "AssistanceCheckCashingApprovalInfo" : "TRANSACTION_PENDING",
+    "AssistanceDepositChequesApprovalInfo" : "TRANSACTION_PENDING",
+    "AssistanceLimitApprovalInfo" : "TRANSACTION_PENDING",
+    "AssistanceSupportInfo" : "REQUEST_WAITING"
+  },
+  "CCHPFW_PROP_PRESTAGED_DEPOSIT_ACCOUNT" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_PRESTAGED_DEPOSIT_ACCOUNT.number" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_PRESTAGED_WITHDRAWAL_ACCOUNT" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_PRESTAGED_WITHDRAWAL_ACCOUNT.number" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_PRINTER_HANDLING_INDICATOR" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_PRINTER_ID" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_PRINTER_MSG_NAME" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_PRINTER_VARIABLE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCHPFW_PROP_RCM_CUSTOM_COMMAND" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_RCM_LOGIN" : {
+    "*" : "NONE"
+  },
+  "CCHPFW_PROP_RCM_ONLINE_TRANSACTION" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_RCM_UI_IMAGE_QRCODE_FILEPATH" : {
+    "*" : ""
+  },
+  "RCC_RSP_QRCODE_TOKEN": {
+    "*": ""
+  },
+  "CCHPFW_PROP_REFNR" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_SCRIPT_RESULT_DATA" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_SECURE_CODE_REQUIRED" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_SEND_STORNO" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_SERVICE_PROVIDER_ID" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_SETKEY_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_SETKEY_ENCR" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_SETKEY_TYPE" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_STARTUPSCRIPT_RESULT_DATA" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_STORE_WITHDRAWAL_SETTINGS" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_SUBSCRIPT_RESULT_DATA" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_TA_CHAINING" : {
+    "*" : "D"
+  },
+  "CCHPFW_PROP_TA_EVENT_REASON" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_TA_SEQ_NUMBER" : {
+    "*" : "1"
+  },
+  "CCHPFW_PROP_TERMINAL_FUNCLOCKLIST" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_TERMINAL_LOCKLIST" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_TIMEOUT_RESULT" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_TRACK_1_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_TRACK_2_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_TRACK_3_DATA" : {
+    "*" : ""
+  },
+  "CCHPFW_PROP_TRANSACTIONSCRIPT_RESULT_DATA" : {
+    "*" : "0"
+  },
+  "CCHPFW_PROP_TRANSACTION_REFERENCE" : {
+    "*" : null
+  },
+  "CCHPFW_PROP_TRAN_LOCKED" : {
+    "*" : ""
+  },
+  "CCHPMUX_PROP_LAST_HPFW_RETURNCODE" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_ACTIVATE_DISPLAY_VERIFY_KEYS" : {
+    "*" : "1"
+  },
+  "CCSOPSRV_PROP_ADDR1" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_AMT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_AMT_CASS" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CARDS_RETAINED" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_CARDS_RETAINED_CLRD" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_CASHIN_FRAMEWORK_LOADED" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_CASHOUT_FRAMEWORK_LOADED" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_CASH_CLRD" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_CASS_ACTUAL" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CASS_CURRENCY" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CASS_DENOM" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CASS_DISPENSED" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_CASS_DISPENSED_CUST" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CASS_INITIAL" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CASS_NUMBER" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_CASS_REJECTED" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CASS_REM_IN_SAFE" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CASS_TYPE" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CDM_INIT" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_CITY" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_COUNTER_PRINTER" : {
+    "*" : "SELECT"
+  },
+  "CCSOPSRV_PROP_COUNTRY" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_COUNT_CASS" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CURCODE" : {
+    "*" : [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  },
+  "CCSOPSRV_PROP_CURCODE_CASS" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_CUR_NUMBER" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DATETIME" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DEPOSITS" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DEPOSITS_CLRD" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DEPOSIT_AMT" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DEPOSIT_COUNT" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DEPOSIT_CURCODE" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_DEPOSIT_CUR_NUMBER" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DEPOSIT_MEDIAID" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DEPOSIT_MEDIASUBTYPE" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DEPOSIT_MEDIATYPE" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DISPENSED_AMT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_DISPENSED_COUNT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_DISPENSED_CUR" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_DISPENSE_BELOW_0" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_DISPLAY_TEXT_PROPERTY" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_INITIAL_DISPLAY" : {
+    "*" : "SELECT"
+  },
+  "CCSOPSRV_PROP_INITIAL_ENTRY" : {
+    "*" : "SELECT"
+  },
+  "CCSOPSRV_PROP_IS_FRAMEWORK_LOADED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCSOPSRV_PROP_LAST_SETTLEMENT_DATE" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_LAST_SETTLEMENT_TIME" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_MEDIAID" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_MEDIASUBTYPE" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_MEDIATYPE" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_MESSAGE_PENDING" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_MULTIPLE_SUBFORM_CONTENT" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCSOPSRV_PROP_NETWORKOWNER" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_NUBER_OF_VERIFY_KEYS" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_NUMBER_BALANCE_INQUIRIES" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_NUMBER_CASS" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_NUMBER_ERRONEOUS_TRANSACTIONS" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_NUMBER_WITHDRAWALS" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_ORIGINAL_AMT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_ORIGINAL_COUNT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_ORIGINAL_CUR" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_POSTALCODE" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_ALL_DATA" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_CASHIN_CASS_DETAILS_AVAIL" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_CASHIN_CASS_DETAILS_HEADER" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_CASHIN_CASS_DETAILS_SUBFORM" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_CASSETTE_DATA" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_CASS_DATA_SUBFORM" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_CHEQUE_CASS_DATA_SUBFORM" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_CI_LAST_CLEARED" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_CURRENT_INDEX" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_HEADER_FORMAT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_LAST_CLEARED" : {
+    "*" : [ "", "", "" ]
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_NOTE_DATA" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_NUMBER_OF_TYPES" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_NUM_OF_TRAN" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_SKIP_CASHIN_CASS" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_TA_DATA" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_TOTAL_CASHIN" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_COUNTER_TYPE_INFO" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_STANDARD_NOTE_COUNTS" : {
+    "*" : [ "0", "0", "0" ]
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_ALL_DEVICES_GOOD" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_CARD_BIN" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_CASH" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_ELECTRONIC_JOURNAL" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_ENVELOPE_DEPOSIT" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_IS_CASHUNIT_DEFECT" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_IS_CASH_DEV_FATAL" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_IS_REJECT_FULL" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_IS_RETRACT_FULL" : {
+    "*" : "0"
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_JOURNAL_PRINTER_INK" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_JOURNAL_PRINTER_PAPER" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_JOURNAL_PRINTER_TONER" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_RECEIPT_PRINTER_BIN" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_RECEIPT_PRINTER_INK" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_RECEIPT_PRINTER_PAPER" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_RECEIPT_PRINTER_TONER" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_STATEMENT_PRINTER_BIN" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_STATEMENT_PRINTER_PAPER" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_PRINT_SUPPLIES_STATEMENT_PRINTER_TONER" : {
+    "*" : ""
+  },
+  "CCSOPSRV_PROP_REPLDEC_AMT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_REPLDEC_COUNT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_REPLDEC_CUR" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_REPLINC_AMT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_REPLINC_COUNT" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_REPLINC_CUR" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_SETTLEMENT_PRINT_LINES" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCSOPSRV_PROP_SETTLEMENT_TYPE" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_SOPWASACTIVE" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_STATEPROV" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_STMNTS_RETRACTED" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_STMNTS_RETRACTED_CLRD" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_TERMINALID" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_TERMINAL_DESC" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_TOTAL_AMT_CASS" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_TOTAL_CURCODE_CASS" : {
+    "*" : [ null ]
+  },
+  "CCSOPSRV_PROP_TOTAL_WITHDRAWALS" : {
+    "*" : null
+  },
+  "CCSOPSRV_PROP_TYPE_STANDARD_VALUE" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCSOPSRV_PROP_TYPE_STANDARD_VALUE_DISPENSER" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCSOPSRV_PROP_TYPE_STANDARD_VALUE_RECYCLER" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCSOPSRV_PROP_VERIFY_KEY" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCSOPSRV_PROP__KEYNAME" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_ABORTFORM" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_ABORT_RECEIPT_OPTION" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_ACCOUNT_TYPE" : {
+    "*" : "000"
+  },
+  "CCTAFW_PROP_ACTIVATE_SUBMIT" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_ACTIVE_DEVICES" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_ACTIVE_IDCU_TYPE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_ACTIVE_LIMIT_GROUP" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_ACTIVE_MENU_DATA" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_ACTIVE_MENU_ITEMS" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_ADA_STATUS_VALUE" : {
+    "*" : "OFF"
+  },
+  "CCTAFW_PROP_ALTERNATIVE_CURRENCY" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_ATM_LOCATION_STATE_INFOS" : {
+    "*" : "[{\"atm\":{ \"name\":\"ATM 1\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Schildern\", \"streetNo\":\"11\", \"longitude\":\"8.75438\", \"latitude\":\"51.71751\", \"zipCode\":\"33098\", \"city\":\"Paderborn\" } }, \"distanceKm\":0.8, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"OPENCONSUMER\" }, { \"atm\":{ \"name\":\"ATM 2\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Harthumarstraße\", \"streetNo\":\"15\", \"zipCode\":\"33098\", \"city\":\"Paderborn\", \"longitude\":\"8.75444\", \"latitude\":\"51.72147\" } }, \"distanceKm\":1.4, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"OPENCONSUMER\" }, { \"atm\":{ \"name\":\"ATM 3\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Westernmauer\", \"streetNo\":\"70\", \"zipCode\":\"33098\", \"city\":\"Paderborn\", \"longitude\":\"8.74890\", \"latitude\":\"51.72013\" } }, \"distanceKm\":2.0, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"OPENCONSUMER\" }, { \"atm\":{ \"name\":\"ATM 4\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Borchener Straße\", \"streetNo\":\"5\", \"zipCode\":\"33100\", \"city\":\"Paderborn\", \"longitude\":\"8.74511\", \"latitude\":\"51.71489\" } }, \"distanceKm\":2.7, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"CLOSEDCONSUMER\" }, { \"atm\":{ \"name\":\"ATM 5\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Pohlweg\", \"streetNo\":\"110\", \"zipCode\":\"33100\", \"city\":\"Paderborn\", \"longitude\":\"8.77088\", \"latitude\":\"51.70388\" } }, \"distanceKm\":3.2, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"CLOSEDCONSUMER\" }]"
+  },
+  "CCTAFW_PROP_ATM_TYPE" : {
+    "*" : "TEST_ATM_6600"
+  },
+  "CCTAFW_PROP_AUTHORIZATION_RESPONSE_CODE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_AUTHORIZATION_STATUS" : {
+    "*" : "C"
+  },
+  "CCTAFW_PROP_AUTHORIZE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_AVAILABLE_DEPOSIT_COINS_CURRENCIES" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_AVAILABLE_DEPOSIT_COINS_DENOMINATIONS" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_AVAILABLE_DEPOSIT_NOTES_CURRENCIES" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_AVAILABLE_DEPOSIT_NOTES_DENOMINATIONS" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_AVAILABLE_WITHDRAWAL_NOTES_CURRENCIES" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_AVAILABLE_WITHDRAWAL_NOTES_DENOMINATIONS" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_BACKTRACKING_SIZE_128" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_BACKTRACKING_SIZE_256" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_BACKTRACKING_SIZE_32" : {
+    "*" : [ null, null, null, null ]
+  },
+  "CCTAFW_PROP_BACKTRACKING_SIZE_64" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_BCR_SCAN_RESULT" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_BILLPAY_LISE_LIST" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_BILLPAY_LISE_LIST[A,0,3]" : {
+    "*" : "Electricity Provider_||_Electricity Provider_||_Electricity Provider_||_Internet Provider_||_Internet Provider_||_Internet Provider_||_Mobile Phone Provider_||_Mobile Phone Provider_||_Mobile Phone Provider"
+  },
+  "CCTAFW_PROP_BLE_ACCESS_CODE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_BLE_CONFIRMATION_CODE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_BLE_CRYPTOGRAM" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_BLE_LOCAL_CODE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_BLE_RANDOM" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_BLE_TRANSACTION_CODE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_CARDHOLDER_ACCOUNT" : {
+    "*" : "1234567890"
+  },
+  "CCTAFW_PROP_CARDHOLDER_BANKCODE" : {
+    "*" : "1111111111"
+  },
+  "CCTAFW_PROP_CARDHOLDER_CARDSEQNO" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_CARDHOLDER_PAN" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_CARDHOLDER_RETRY_COUNT" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_CARDHOLDER_VALIDDATE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_CARDLESS_IDENTIFICATION_INPUT_TYPE" : {
+    "*" : "numeric"
+  },
+  "CCTAFW_PROP_CARDLESS_IDENTIFICATION_OPTION" : {
+    "*" : "SSN"
+  },
+  "CCTAFW_PROP_CARDLESS_IDENTIFICATION_SCANNING_TYPE" : {
+    "*" : "off"
+  },
+  "CCTAFW_PROP_CARD_ACTIVE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_CARD_CLASS" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_CARD_CLASS_CUSTOMER_CONTENTS" : {
+    "*" : [ "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_CARD_CLASS_DEFAULT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_CARD_EXCEPTION" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_CARD_OPERATION_STATUS" : {
+    "*" : "N"
+  },
+  "CCTAFW_PROP_CARD_POSITION_STATUS" : {
+    "*" : "3"
+  },
+  "CCTAFW_PROP_CARD_READER" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_CARD_RETAINED" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_CARD_TABLE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_CARD_VALIDATED_AFTER_MENU" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_CARD_VALIDATION_STATUS" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_CASH_PRESENTATION_TIMEOUT" : {
+    "*" : "10"
+  },
+  "CCTAFW_PROP_CHAINING_ALLOWED" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_CHAINING_COUNTER" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_CHECK_BRANDING_DATA" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_CHECK_NEXT_AMOUNT_RESULT" : {
+    "*" : [ "0" ]
+  },
+  "CCTAFW_PROP_CHEQUE_BUNDLE_OPERATION_STATUS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_COIN_DISPENSE_AMOUNT" : {
+    "*" : "500"
+  },
+  "CCTAFW_PROP_COIN_DISPENSE_PENDING" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_COIN_MIXTURE_CURRENCY" : {
+    "*" : [ null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_COIN_MIXTURE_NUMBER" : {
+    "*" : [ null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_COIN_MIXTURE_TYPE" : {
+    "*" : [ null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_COIN_MIXTURE_VALUE" : {
+    "*" : [ null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_COUTFAST_AMOUNT" : {
+    "*" : [ "5000", "50" ]
+  },
+  "CCTAFW_PROP_COUTFAST_CURRENCY" : {
+    "*" : [ "EUR", "€", "Euro" ]
+  },
+  "CCTAFW_PROP_COUT_LISE_ALGOS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_COUT_LISE_ALGOS[A,0,1]" : {
+    "*" : "1_||_3_||_4"
+  },
+  "CCTAFW_PROP_COUT_LISE_AMOUNTS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_COUT_LISE_CURRENCIES" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_COUT_LISE_CURRENCIES[A,0,1]" : {
+    "*" : "EUR_||_USD"
+  },
+  "CCTAFW_PROP_COUT_LISE_HIGH_LOW" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_COUT_LISE_HIGH_LOW[A,0,1]" : {
+    "*" : "Lower_Amount_||_Higher_Amount_||_OTHER"
+  },
+  "CCTAFW_PROP_CURRENCY" : {
+    "*" : "EUR"
+  },
+  "CCTAFW_PROP_CURRENCY_ADA_TEXT" : {
+    "*" : "Euro"
+  },
+  "CCTAFW_PROP_CURRENCY_EXPONENT" : {
+    "*" : "-2"
+  },
+  "CCTAFW_PROP_CURRENCY_ISO_EXPONENT" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_CURRENCY_ISO_NUMBER" : {
+    "*" : "EUR"
+  },
+  "CCTAFW_PROP_CURRENCY_SYMBOL" : {
+    "*" : "€"
+  },
+  "CCTAFW_PROP_CURRENT_DATE" : {
+    "*" : "27.11.2018"
+  },
+  "CCTAFW_PROP_CURRENT_TIME" : {
+    "*" : "19:30:51"
+  },
+  "CCTAFW_PROP_CURRENT_UTC" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_CUSTOMER_INPUT_VARIABLE" : {
+    "*" : [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "111111111111111", "Checkings account", null, "222222222222222", null, "CA", null, "5000", "EUR", "en-US", null, "Provider 1a", "01768823376", null, null, "Cheques", "15", "", "2", null, null, "Payment_Category_1", "Corp.ID1", "Corp.Name1", "12345678", null, null, null, null, null, null, "12345678", "PMT_ACCOUNTING", "60", null, null, null, null, "PAPER", null, null, "{\"order\":[\"COUTFAST\",\"COUT\",\"BAL\",\"STP\",\"AIN\",\"STPM\",\"LANGCHG\",\"PINCHG\",\"RECCHG\",\"FCCHG\",\"MENUCHG\",\"CUSTOM\"], \"itemgaps\":\"true\", \"prominent\":[\"COUTFAST=prominentItem\",\"BAL=prominentItem\"]}", "0815", "4911", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_CUSTOMER_PREF_ACCOUNT_DATA" : {
+    "*" : [ null, null, null, null, "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_DCC" : {
+    "*" : [ "1.1774,20325,EUR,-2,Euro,978,€,23939,USD,-2,US Dollar,840,$,DN INTERBANK,1529408021,1529494421,3.75,0.00", "1.1774", "20325", "EUR", "-2", "Euro", "978", "€", "23930", "USD", "-2", "US Dollar", "840", "$", "DN INTERBANK", "1529408021", "1529494421", "3.75", "0.00" ]
+  },
+  "CCTAFW_PROP_DCC_CURRENCY_ISO_NUMBER" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_DCC_TRANSACTION_AMOUNT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_DEFAULT_LANGUAGE" : {
+    "*" : "ENGLISH"
+  },
+  "CCTAFW_PROP_DENOM_SELECTION_ADA_TEXTS" : {
+    "*" : [ null, "1 times 50.00 Euro and 2 times 20.00 Euro and 1 times 10.00 Euro", null, "2 times 50.00 Euro", "1 times 50.00 Euro and 1 times 20.00 Euro and 2 times 10.00 Euro and 2 times 5.00 Euro", null, null, null ]
+  },
+  "CCTAFW_PROP_DENOM_SELECTION_TEXTS" : {
+    "*" : [ null, "1 x 50.00 €, 2 x 20.00 €, 1 x 10.00 €", null, "2 x 50.00 €", "1 x 50.00 €, 1 x 20.00 €, 2 x 10.00 €, 2 x 5.00 €", null, null, null ]
+  },
+  "CCTAFW_PROP_DEPOSIT_MODE" : {
+    "*" : "NONE"
+  },
+  "CCTAFW_PROP_DIP_CARD_TAKE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_DISPENSED_NOTES" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_DISPENSE_ALGO" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_DISPENSE_AMOUNT" : {
+    "*" : "20000"
+  },
+  "CCTAFW_PROP_DISPENSE_COINS_OPERATION_STATUS" : {
+    "*" : "NO_OPERATION"
+  },
+  "CCTAFW_PROP_DISPENSE_NOTES_OPERATION_STATUS" : {
+    "*" : "NO_OPERATION"
+  },
+  "CCTAFW_PROP_DISPENSE_OPERATION_STATUS" : {
+    "*" : "N"
+  },
+  "CCTAFW_PROP_DOCUMENT_DATA_JSON" : {
+    "*" : "",
+    "DocumentScanResult" : "{ \"images\": [ { \"imagePath\": \"style/default/images/dm/1280px-DE_Licence_2013_Back.jpg\", \"aspect\": \"Back\" }, { \"imagePath\": \"style/default/images/dm/1280px-DE_Licence_2013_Front.jpg\", \"aspect\": \"Front\" } ] }",
+    "SignatureScanResult" : "{ \"images\": [ { \"imagePath\": \"style/default/images/dm/signature_john_doe.png\", \"aspect\": \"Front\" }] }",
+    "ViewPaidCheques" : "{ \"images\": [ { \"imagePath\": \"style/default/images/01f.jpg\", \"aspect\": \"Front\" },{ \"imagePath\": \"style/default/images/01b.jpg\", \"aspect\": \"Back\" } ] }"
+  },
+  "CCTAFW_PROP_DOCUMENT_MIXTURE_CURRENCY" : {
+    "*" : [ null ]
+  },
+  "CCTAFW_PROP_DOCUMENT_MIXTURE_DISPENSED_IN_TRX" : {
+    "*" : [ null ]
+  },
+  "CCTAFW_PROP_DOCUMENT_MIXTURE_DISPENSED_IN_TRX_TO_CUS" : {
+    "*" : [ null ]
+  },
+  "CCTAFW_PROP_DOCUMENT_MIXTURE_NUMBER" : {
+    "*" : [ null ]
+  },
+  "CCTAFW_PROP_DOCUMENT_MIXTURE_STATE" : {
+    "*" : [ null ]
+  },
+  "CCTAFW_PROP_DOCUMENT_MIXTURE_TYPE" : {
+    "*" : [ null ]
+  },
+  "CCTAFW_PROP_DOCUMENT_MIXTURE_VALUE" : {
+    "*" : [ null ]
+  },
+  "CCTAFW_PROP_DOCUMENT_SIDE" : {
+    "*" : "Front"
+  },
+  "CCTAFW_PROP_DOCUMENT_TYPE" : {
+    "*" : "",
+    "DocumentScanPrepare" : "IDCard",
+    "DocumentScanResult" : "IDCard",
+    "DocumentScanning" : "IDCard",
+    "SignatureRequest" : "Signature",
+    "SignatureScanResult" : "Signature",
+    "ViewPaidCheques" : "Cheque"
+  },
+  "CCTAFW_PROP_DUAL_TOWER_USAGE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_EMV_APPLICATION_LABEL" : {
+    "*" : "MasterCard"
+  },
+  "CCTAFW_PROP_EMV_APPLICATION_SELECTION_LISE_DATA" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_EMV_APPLICATION_SELECTION_LISE_DATA[A,0,2]" : {
+    "*" : "VISA CREDIT_||__||_MASTERCARD_||_"
+  },
+  "CCTAFW_PROP_EMV_AUTHORIZE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_EMV_CARD_SUPPORTS_ONLINE_PIN" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_EMV_DATA_NOT_PRESENT" : {
+    "*" : "0x00"
+  },
+  "CCTAFW_PROP_EMV_PAN" : {
+    "*" : "6721911234567894579F"
+  },
+  "CCTAFW_PROP_EMV_SELECTED_APPLICATION_INDEX" : {
+    "*" : "-1"
+  },
+  "CCTAFW_PROP_EMV_TRANS_LOG_ECASH_LISE_DATA" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_EMV_TRANS_LOG_ECASH_LISE_DATA[A,0,5]" : {
+    "*" : "111111_||_011123_||_123456789012_||_123456789012_||_Testplace 1_||_222222_||_011123_||_123456789012_||_123456789012_||_Testplace 2"
+  },
+  "CCTAFW_PROP_EMV_TRANS_LOG_LISE_DATA" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_EMV_TRANS_LOG_LISE_DATA[A,0,9]" : {
+    "*" : "111111_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place_||_222222_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place2_||_110103_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place3_||_110103_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place4_||_110103_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place5_||_110103_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place6_||_110103_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place7_||_888888_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place8_||_110103_||_011123_||_123456789012_||_123456789012_||_111_||_EUR_||_XY_||_1234_||_Place9"
+  },
+  "CCTAFW_PROP_ENABLE_STATISTIC" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_ENCRYPTED_PIN" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_END_TRANSACTION_STATE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_ENV_DEPOSIT_OPERATION_STATUS" : {
+    "*" : "N"
+  },
+  "CCTAFW_PROP_EPP_ACTIVE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_ERROR_INDEX" : {
+    "*" : "ERR108000"
+  },
+  "CCTAFW_PROP_ETS_LAYOUT" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_EXCEPTION_AMOUNT" : {
+    "*" : "5000"
+  },
+  "CCTAFW_PROP_FAC_OPTION" : {
+    "*" : [ "0,0", "1", "0" ]
+  },
+  "CCTAFW_PROP_FCC" : {
+    "*" : [ "1.1000,2000,EUR,-2,Euro,978,€,2200,USD,-2,US Dollar,840,$,0", "1.1000", "2000", "EUR", "-2", "Euro", "978", "€", "2200", "USD", "-2", "US Dollar", "840", "$", "0" ]
+  },
+  "CCTAFW_PROP_FEE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_FEE_AMOUNT" : {
+    "*" : [ "325", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_FEE_AMOUNT_ALL" : {
+    "*" : "325"
+  },
+  "CCTAFW_PROP_FEE_AVAILABLE" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_FEE_CURRENCY" : {
+    "*" : "EUR"
+  },
+  "CCTAFW_PROP_FEE_CURRENCY_ADA_TEXT" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_FEE_CURRENCY_SYMBOL" : {
+    "*" : "€"
+  },
+  "CCTAFW_PROP_FEE_MAXIMUM" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_FEE_MESSAGE_BIT" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_FEE_MINIMUM" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_FEE_RATE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_FEE_REDUCED_TRANSACTION_AMOUNT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_FEE_SET_MESSAGE_BIT" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_FILTERED_ACCOUNT" : {
+    "*" : [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_FORM" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_FUNCTION_SELECTION_CODE" : {
+    "*" : "EMPTY"
+  },
+  "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA" : {
+    "*" : [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA[A,0,1]" : {
+    "*" : "",
+    "CardlessIdentificationSelection" : "Account_||_SSN_||_Id_||_Passport_||_DriversLicense_||_PRESTAGED_CODE",
+    "DepositEnvelopeDocumentTypeSelection" : "CA_||_CH_||_CC",
+    "DepositMixedMediaSummaryResult" : "NOTE_DETAILS_||_CHEQUE_DETAILS_||_CONFIRM",
+    "FastCashPreferenceAmountSelection" : "5000_||_10000_||_15000_||_20000_||_30000_||_OTHER",
+    "FastCashPreferenceCurrencySelection" : "EUR_||_USD",
+    "MenuPreferenceSelection" : "AIN_||_BAL_||_BILLPAY_||_CIN_||_COININ_||_CINMIXED_||_COUT_||_COUTFAST_||_COINOUT_||_COUTMIXED_||_CHCCDM_||_ENV_||_FCCHG_||_ORDPOST_||_ORDCASH_||_ORDCURR_||_LANGCHG_||_MENUCHG_||_STPM_||_PINCHG_||_PREPAID_||_RECCHG_||_STP_||_TRA",
+    "OrderAmountSelection" : "500000_||_1000000_||_1500000_||_2000000_||_3000000_||_OTHER",
+    "OrderCurrencies" : "5000_||_10000_||_15000_||_20000_||_30000_||_OTHER",
+    "OrderCurrenciesCurrencySelection" : "USD_||_GBP",
+    "OrderUnitSelection" : "10_||_20_||_OTHER",
+    "ReceiptPreferenceSelection" : "NO_||_PAPER_||_DISPLAY_||_EMAIL_||_TEXTMESSAGE_||_FACEBOOK_||_TWITTER",
+    "ValueItemAmountSelection" : "1_||_5"
+  },
+  "CCTAFW_PROP_GENERIC_LIST_SELECTION_JSON_GROUPS" : {
+    "*" : "",
+    "BillPaymentFormInput" : "{ \"groups\": [ { \"name\": \"FormEntryData\", \"items\": [ { \"id\": \"Payee_ID\", \"state\": 0, \"value\": \"\" }, { \"id\": \"Payee_name\", \"state\": 0, \"value\": \"John Doe\" }, { \"id\": \"Bill_reference_number\", \"state\": 0, \"value\": \"\" }, { \"id\": \"Amount\", \"state\": 0, \"value\": \"\" } ] } ] }",
+    "CardlessDualIdentificationSelection" : "{ \"groups\": [ { \"name\": \"0\", \"items\": [ { \"result\": \"ACCOUNT\", \"selected\": false, \"state\": 0 }, { \"result\": \"SSN\", \"selected\": false, \"state\": 0 }, { \"result\": \"TRANSACTION_CODE\", \"selected\": false, \"exclusive\": true, \"state\": 0 } ] }, { \"name\": \"1\", \"items\": [ { \"result\": \"IDCARD\", \"selected\": false, \"exclusive\": true, \"state\": 0 }, { \"result\": \"DRIVINGLICENSE\", \"selected\": false, \"state\": 0 }, { \"result\": \"PASSPORT\", \"selected\": false, \"state\": 0 } ] } ] }",
+    "CardlessIdEntry" : "{ \"groups\": [ { \"name\": \"FormEntryData\", \"items\": [ { \"id\":  \"SSN\", \"state\": \"0\", \"value\": \"\" } ] } ] }",
+    "ClearPreferencesMultipleChoiceSelection" : "{ \"groups\": [ { \"name\": \"LISE_CONFIGURATION\", \"items\": [ { \"result\":      \"ACCOUNT\", \"selected\": false, \"state\": 0 }, { \"result\": \"FASTCASH\", \"selected\": true, \"state\": 0 }, { \"result\": \"LANGUAGE\", \"selected\": false, \"state\": 0 }, { \"result\": \"MENU\", \"selected\": false, \"state\": 0 }, { \"result\": \"RECEIPT\", \"selected\": false, \"state\": 0 } ] } ] }",
+    "MultiAccountSelection" : "{ \"groups\": [ { \"name\": \"MultiAccountData\", \"items\": [ { \"result\":      \"CHK1\", \"selected\": false, \"state\": 0 }, { \"result\": \"SAV1\", \"selected\": false, \"state\": 0 }, { \"result\": \"CRT1\", \"selected\": false, \"state\": 0 }, { \"result\": \"CHK2\", \"selected\": false, \"state\": 0 }, { \"result\": \"SAV2\", \"selected\": false, \"state\": 0 } ] } ] }",
+    "ReceiptPreferenceMultipleChoiceSelection" : "{ \"groups\": [ { \"name\": \"RECEIPT_PREFERENCES\", \"items\": [ { \"result\":      \"PAPER\", \"selected\": false, \"state\": 0 }, { \"result\": \"NO\", \"selected\": true, \"state\": 0 }, { \"result\": \"DISPLAY\", \"selected\": false, \"state\": 0 }, { \"result\": \"EMAIL\", \"selected\": false, \"state\": 0 }, { \"result\": \"TWITTER\", \"selected\": false, \"state\": 0 }, { \"result\": \"FACEBOOK\", \"selected\": false, \"state\": 0 }, { \"result\": \"TEXTMESSAGE\", \"selected\": false, \"state\": 0 } ] } ] }"
+  },
+  "CCTAFW_PROP_GENERIC_LIST_SELECTION_VIEWSTATES" : {
+    "*" : "0,0,3,3"
+  },
+  "CCTAFW_PROP_GENERIC_STRING_LIST" : {
+    "*" : [ "ACCOUNT,FASTCASH,LANGUAGE,MENU,RECEIPT", "ACCOUNT", "FASTCASH", "LANGUAGE", "MENU", "RECEIPT", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_HEADLINE" : {
+    "*" : "[TRANSACTION NAME]"
+  },
+  "CCTAFW_PROP_HIGH_AMOUNT_MINOR" : {
+    "*" : "2000"
+  },
+  "CCTAFW_PROP_HOST_AUTHORIZED_AMOUNT" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_HOST_RESPONSE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_HOST_RESPONSE_CODE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_HWPRT_OPTION" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_IDCU_INSTALLED" : {
+    "*" : [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1" ]
+  },
+  "CCTAFW_PROP_IDCU_TYPE" : {
+    "*" : [ "0", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "3" ]
+  },
+  "CCTAFW_PROP_IDSCAN_DOCUMENT_STATUS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_IDSCAN_DOCUMENT_TYPE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_INSTALLED_LANGUAGES" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_INSTALLED_LANGUAGES_ID" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_INSTALLED_LANGUAGES_NAME" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_INTERNAL_AMOUNT" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_INTERNAL_FUNCTION_SELECTION_CODE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_INTERNAL_UUID_NUMBER" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_ITEM_STATUS" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_JOURNAL_AMOUNT" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_LANGUAGE_ID" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_LANGUAGE_ISO" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_LANGUAGE_ITEMS" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_LANGUAGE_ITEMS[A,0,1]" : {
+    "*" : "ENGLISH_||_GERMAN_||_SPANISH"
+  },
+  "CCTAFW_PROP_LANGUAGE_NAME" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_LANGUAGE_SET_MANUALLY" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_LAST_CARDHOLDER_ACCOUNT_DIGITS" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_LAST_DLG_INPUT_RESULT" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_LISE_ACCOUNT_ITEM[A,0,9]" : {
+    "*" : "11111111111111112_||_Primary checking_||_USD_||_10330.11_||_+_||_10000_||_EUR_||_1000_||_010_||_222222222222222223_||_Secondary checking_||_USD_||_20000.11_||_+_||_10000_||_EUR_||_1000_||_010_||_333333333333333_||_Everyday checking_||_USD_||_32000.11_||_+_||_10000_||_EUR_||_1000_||_010_||_44444444444444442_||_Savings_||_USD_||_10330.11_||_+_||_10000_||_EUR_||_1000_||_010_||_555555555555555523_||_Credit_||_USD_||_20000.11_||_+_||_10000_||_EUR_||_1000_||_010_||_666666666666666_||_General savings_||_USD_||_32000.11_||_+_||_10000_||_EUR_||_1000_||_010"
+  },
+  "CCTAFW_PROP_LISE_AMOUNT_ITEM[A,0,1]" : {
+    "*" : "1000_||_1500_||_2500_||_5000_||_10000_||_15000_||_20000_||_25000_||_30000_||_50000_||_OTHER"
+  },
+  "CCTAFW_PROP_LISE_CONFIGURATION" : {
+    "*" : "",
+    "AccountSelection" : "CCTAFW_PROP_LISE_ACCOUNT_ITEM,0,9",
+    "BillPaymentPayeeSelection" : "CCHPFW_PROP_DISPLAY_VARIABLE,0,3",
+    "BillPaymentPaymentCategorySelection" : "CCTAFW_PROP_BILLPAY_LISE_LIST,0,3",
+    "CardlessIdentificationSelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "DepositEnvelopeDocumentTypeSelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "DepositMixedMediaSummaryResult" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "DepositPartialDepositAlternativeAmountQuestion" : "CCCAINTAFW_PROP_PARTIAL_DEPOSIT_KEYS,0,1",
+    "EmvApplicationSelection" : "CCTAFW_PROP_EMV_APPLICATION_SELECTION_LISE_DATA,0,2",
+    "FastCashPreferenceAmountSelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "FastCashPreferenceCurrencySelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "HostItemSelection" : "CCHPFW_PROP_DISPLAY_VARIABLE,2,3",
+    "LanguageSelection" : "CCTAFW_PROP_LANGUAGE_ITEMS,0,1",
+    "MenuPreferenceSelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "MenuSelection" : "CCTAFW_PROP_MENU_ITEMS,0,1",
+    "OrderAmountSelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "OrderCurrenciesCurrencySelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "OrderUnitSelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "PrepaidAmountSelection" : "CCTAFW_PROP_PREPAID_LISE_LIST,1,1",
+    "PrepaidMinuteSelection" : "CCTAFW_PROP_PREPAID_LISE_LIST,1,1",
+    "PrepaidProviderSelection" : "CCTAFW_PROP_PREPAID_LISE_LIST,7,11",
+    "ReceiptPreferenceSelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "ValueItemAmountSelection" : "CCTAFW_PROP_GENERIC_LIST_SELECTION_DATA,0,1",
+    "WithdrawalAlternativeAmountSelection" : "CCTAFW_PROP_COUT_LISE_HIGH_LOW,0,1",
+    "WithdrawalAmountSelection" : "CCTAFW_PROP_LISE_AMOUNT_ITEM,0,1",
+    "WithdrawalCurrencySelection" : "CCTAFW_PROP_COUT_LISE_CURRENCIES,0,1",
+    "WithdrawalNotesDenomAlgoSelection" : "CCTAFW_PROP_COUT_LISE_ALGOS,0,1"
+  },
+  "CCTAFW_PROP_LISE_DATAINDEX" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_LISE_INDEX" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_LISE_INDEX_MAX" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_LISE_OFFSET" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_LISE_STEP" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_LOGICAL_CASSETTE_IDS" : {
+    "*" : [ null ]
+  },
+  "CCTAFW_PROP_LOGICAL_HOPPER_IDS" : {
+    "*" : [ null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_LOW_AMOUNT_MINOR" : {
+    "*" : "1000"
+  },
+  "CCTAFW_PROP_MAX_AMOUNT" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_MAX_AMOUNT_ACT" : {
+    "*" : "1000000"
+  },
+  "CCTAFW_PROP_MENUE_DATA" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_MENUE_LIFECYCLE_INDICATOR" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_MENUE_LIST_TYPE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_MENU_ITEMS" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_MENU_ITEMS[A,0,1]" : {
+    "*" : "AIN_||_BAL_||_BILLPAY_||_CIN_||_CINMIXED_||_COININ_||_COUT_||_COUTFAST_||_COUTMIXED_||_COINOUT_||_CHCCDM_||_MIXEDMEDIA_||_CHQCASH_||_ENV_||_FCCHG_||_LANGCHG_||_MENUCHG_||_ORDCASH_||_ORDCURR_||_ORDPOST_||_ORDCHQ_||_PINCHG_||_RECCHG_||_PREPAID_||_STP_||_STPM_||_TRA_||_VOUCHER_||_ACCOUNTCHG_||_PINUNLOCK_||_CLEARPREFCHG"
+  },
+  "CCTAFW_PROP_MENU_LISE_INPUT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_MENU_LISE_VIEWSTATE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_MENU_PREFERENCE" : {
+    "*" : "{\"order\":[\"COUTFAST\",\"COUT\",\"BAL\",\"STP\",\"AIN\",\"STPM\",\"LANGCHG\",\"PINCHG\",\"RECCHG\",\"FCCHG\",\"MENUCHG\",\"CUSTOM\"], \"prominent\":[\"COUTFAST=prominentItem\",\"MENUCHG=prominentItem\"]}"
+  },
+  "CCTAFW_PROP_MENU_PREFERENCE_ITEMS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_MIN_AMOUNT" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_MIN_AMOUNT_ACT" : {
+    "*" : "5"
+  },
+  "CCTAFW_PROP_MIN_MAX_AMOUNT_CURRENCIES" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_MIXTURE_DISPLAY_DATA" : {
+    "*" : "{\"amount\":\"100000\",\"currency\":\"EUR\",\"symbol\":\"€\",\"ada\":\"Euro\",\"exponent\":\"-2\",\"maxnotes\":60,\"maxcoins\":50,\"denominations\":[{\"type\":0,\"count\":10,\"val\":500,\"softLimit\":20},{\"type\":0,\"count\":20,\"val\":1000,\"softLimit\":20},{\"type\":0,\"count\":5,\"val\":2000,\"softLimit\":20},{\"type\":0,\"count\":6,\"val\":5000,\"softLimit\":20},{\"type\":0,\"count\":5,\"val\":10000,\"softLimit\":20},{\"type\":0,\"count\":3,\"val\":20000,\"softLimit\":20}]}"
+  },
+  "CCTAFW_PROP_MIXTURE_SELECT_OPTION" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_MM_OPERATION_STATUS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_MM_RESULT_ID" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_MULTI_FORM_CONTENT" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_MULTI_FORM_COUNT" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_NOTE_DISPENSE_AMOUNT" : {
+    "*" : "19500"
+  },
+  "CCTAFW_PROP_NUMBER_MIN_MAX_LIMITS" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_OUT_OF_SERVICE_ADA_TEXT" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_PAYMENT_ACCOUNTING" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PAYMENT_AMOUNT" : {
+    "*" : "15000"
+  },
+  "CCTAFW_PROP_PAYMENT_CHANGE_AMOUNT" : {
+    "*" : "2950"
+  },
+  "CCTAFW_PROP_PAYMENT_DATA" : {
+    "*" : [ "Gottschalk", "", "iii-30000000012", "", "15000", "Mustermann", "", "", "", "DE03472501010123456", "15", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_PAYMENT_STATUS" : {
+    "*" : "PAY_OUT_OK"
+  },
+  "CCTAFW_PROP_PERSISTANT_REVERALS" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PHYSICAL_HOPPER_IDS" : {
+    "*" : [ null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_PIN_CHANGE_DIGITS" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_PIN_CHANGE_PAC" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_PIN_DIGITS" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PIN_FLAG" : {
+    "*" : "3"
+  },
+  "CCTAFW_PROP_PIN_FORMAT" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PIN_HOST_VALIDATED" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PIN_MAX_LENGTH" : {
+    "*" : "6"
+  },
+  "CCTAFW_PROP_PIN_MAX_TRIES" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PIN_MIN_LENGTH" : {
+    "*" : "4"
+  },
+  "CCTAFW_PROP_PIN_OPTIONS" : {
+    "*" : "4,4,1"
+  },
+  "CCTAFW_PROP_PIN_TRY_COUNT" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PREFERENCE_ITEMS" : {
+    "*" : "ACCOUNT,FASTCASH,LANGUAGE,MENU,RECEIPT"
+  },
+  "CCTAFW_PROP_PREFERENCE_ITEMS_SELECTED" : {
+    "*" : [ "ACCOUNT,FASTCASH", null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_PREPAID_LISE_LIST" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_PREPAID_LISE_LIST[A,1,1]" : {
+    "*" : "",
+    "PrepaidAmountSelection" : "1100_||_1200_||_1300_||_1400_||_1500_||_1600_||_1700",
+    "PrepaidMinuteSelection" : "10_||_20_||_30_||_40_||_50_||_60_||_70"
+  },
+  "CCTAFW_PROP_PREPAID_LISE_LIST[A,7,11]" : {
+    "*" : "Provider 1a_||_1100_||_1200_||_1300_||_1400_||_1500_||_1600_||_1700_||_1000_||_10000_||__||_Provider 2a_||_2100_||_2200_||_2300_||_2400_||_2500_||_2600_||_2700_||_2000_||_20000_||__||_Provider 3a_||_3100_||_3200_||_3300_||_3400_||_3500_||_3600_||_3700_||_3000_||_30000_||_"
+  },
+  "CCTAFW_PROP_PREPARE_DISPENSE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PRESENTATION_AMOUNT" : {
+    "*" : "20000"
+  },
+  "CCTAFW_PROP_PRESENT_RESULT" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PRINTER_RESULT" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_PRINTER_VARIABLE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_PRTDOC_OPERATION_STATUS" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_RECEIPT_MODE_OPTION" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_RECEIPT_OPTION" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_RECEIPT_PREFERENCE" : {
+    "*" : [ "NO,PAPER,DISPLAY,EMAIL,TEXTMESSAGE,FACEBOOK,TWITTER", "NO", "PAPER", "DISPLAY", "EMAIL", "TEXTMESSAGE", "FACEBOOK", "TWITTER" ]
+  },
+  "CCTAFW_PROP_RECEIPT_PREFERENCE_DETAILS" : {
+    "*" : [ ",,,info@sample.com,0123456789,https://www.facebook.com/sample,https://twitter.com/sample", "", "", "", "info@sample.com", "0123456789", "https://www.facebook.com/sample", "https://twitter.com/sample" ]
+  },
+  "CCTAFW_PROP_RECEIPT_PREFERENCE_ITEMS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_RECEIPT_PREFERENCE_JSON_GROUPS" : {
+    "*" : "{ \"groups\": [ { \"name\": \"RECEIPT_PREFERENCES\", \"items\": [ { \"result\":      \"PAPER\", \"selected\": false }, { \"result\": \"NO\", \"selected\": true }, { \"result\": \"DISPLAY\", \"selected\": false }, { \"result\": \"EMAIL\", \"selected\": false }, { \"result\": \"TWITTER\", \"selected\": false }, { \"result\": \"FACEBOOK\", \"selected\": false }, { \"result\": \"TEXTMESSAGE\", \"selected\": false } ] } ] }"
+  },
+  "CCTAFW_PROP_RECEIPT_PREFERENCE_RESTRICTION" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_RECEIPT_PRINT_INDICATOR" : {
+    "*" : "0,0,0,0"
+  },
+  "CCTAFW_PROP_RECEIPT_QUESTION" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_RECEIPT_RAW_BODY" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_RECEIPT_RAW_DATA_ALL" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_RECEIPT_RAW_FOOTER" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_RECEIPT_RAW_HEADER" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_REFRESH_WATCHDOG" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_REJECTED_NOTES" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_REMAINING_CHEQUES_NOTES" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_REMAINING_NOTES_ON_STACKER" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_RESPONSE_CODE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_RESUBMIT_AUTHORIZATION_REQUESTED" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_RETURN_CARD_OPTION" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_SEL_INSTALLED" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_SESSION_BASED_RECEIPT" : {
+    "*" : "-1"
+  },
+  "CCTAFW_PROP_SESSION_BASED_RECEIPT_COUNT" : {
+    "*" : "-1"
+  },
+  "CCTAFW_PROP_SESSION_BASED_RECEIPT_TRIGGER" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_SET_PIN_OPTION_INTERNAL" : {
+    "*" : "TRUE"
+  },
+  "CCTAFW_PROP_SET_PRINT_TRANS_STATUS" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_SHOW_LOCALFEE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_SHOW_REVERSALS" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_STATE_LOCALFEE" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_STATISTICS_ACCOUNTCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_AIN" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ALLFUNCS" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_ACCOUNTCHG" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_AIN" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_BAL" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_BARCODE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_BILLPAY" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_CEXMIXED" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_CEXNOTES" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_CHCCDM" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_CHQCASH" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_CIN" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_CINMIXED" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_CIN_PRESTAGED" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_CLEARPREFCHG" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_COININ" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_COINOUT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_COUT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_COUTALL" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_COUTFAST" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_COUTMIXED" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_COUT_PRESTAGED" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_ENV" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_ENVPAY" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_FCCHG" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_LANGCHG" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_MENUCHG" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_MIXEDMEDIA" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_ORDCASH" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_ORDCHQ" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_ORDCURR" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_ORDPOST" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_PBKUPD" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_PINCHG" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_PINUNLOCK" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_PREPAID" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_RECCHG" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_STP" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_STPM" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_TRA" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_ALL_VOUCHER" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_BAL" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_BARCODE" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_BARCODE_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_BILLPAY" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_BILLPAY_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CANCEL" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CARDS_BAD_TOTAL" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CARDS_CAPTURED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CARDS_LAST_BAD" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_CARDS_LAST_GOOD" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_CARDS_TOTAL" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CEXMIXED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CEXMIXED_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CEXNOTES" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CEXNOTES_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CHCCDM" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CHCCDM_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CHCCDM_QUICK_CONFIRM" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CHQCASH" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CIN" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CINMIXED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CINMIXED_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CIN_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CIN_PRESTAGED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_CLEARPREFCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COININ" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COININ_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COINOUT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COINOUT_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COUT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COUTALL" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_COUTALL_AMOUNT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_COUTFAST" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COUTFAST_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COUTMIXED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COUTMIXED_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COUT_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_COUT_PRESTAGED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_DEPOSIT_COIN_BUNDLES" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_DEPOSIT_NOTE_BUNDLES" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_DEPOSIT_TRANSACTION_WITH_L2" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_DEPOSIT_TRANSACTION_WITH_RETRACT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_DISPENSED_NOTES_TOTAL" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ENV" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ENVPAY" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ENVPAY_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ENV_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_FCCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_FEE_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_LANGCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_ALL" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_AVERAGE_RESPONSE_TIME" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_COUPON" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_FAILED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_LAST_FAILED" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_LAST_GOOD" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_MULTI_SESSION" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_SINGLE_SESSION" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MARKETING_WITH_CUSTOMER_INTERACTION" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MENUCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_MIXEDMEDIA" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_ACCOUNTCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_AIN" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_BAL" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_BARCODE" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_BILLPAY" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_CEXMIXED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_CEXNOTES" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_CHCCDM" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_CHQCASH" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_CIN" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_CINMIXED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_CIN_PRESTAGED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_CLEARPREFCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_COININ" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_COINOUT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_COUT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_COUTALL" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_COUTFAST" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_COUTMIXED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_COUT_PRESTAGED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_ENV" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_ENVPAY" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_FCCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_LANGCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_MENUCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_MIXEDMEDIA" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_ORDCASH" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_ORDCHQ" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_ORDCURR" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_ORDPOST" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_PBKUPD" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_PINCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_PINUNLOCK" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_PREPAID" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_RECCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_STP" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_STPM" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_TRA" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_NEGATIVE_VOUCHER" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ORDCASH" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ORDCHQ" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ORDCURR" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_ORDPOST" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_PBKUPD" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_PINCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_PINUNLOCK" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_PREPAID" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_PREPAID_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_RECCHG" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_REJECTED_NOTES_TOTAL" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_STP" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_STPM" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_TIMEOUT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_TRA" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_TRANSACTIONS_DATE_LAST_DENIED" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_TRANSACTIONS_DATE_LAST_GOOD" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_STATISTICS_TRANSACTIONS_DENIED" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_TRA_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_VOUCHER" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_VOUCHER_AMOUNT" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STATISTICS_WITHDRAWAL_RETRACTS" : {
+    "*" : [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", null, null ]
+  },
+  "CCTAFW_PROP_STP_XFS_FORMS" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_SUB_FUNCTION_SELECTION_CODE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_TARGET_ACCOUNT_DATA" : {
+    "*" : [ "{\"id\":\"account_1\",\"splitAmount\":\"100000\"},{\"id\":\"account_2\",\"splitAmount\":\"50000\"}", "{\"id\":\"account_1\",\"splitAmount\":\"100000\"}", "{\"id\":\"account_2\",\"splitAmount\":\"50000\"}", null, null, null, null, null, null, null, null, null ]
+  },
+  "CCTAFW_PROP_TA_AUTHORIZE_CALLED" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_TA_EXPONENT_LIST" : {
+    "*" : [ "", "" ]
+  },
+  "CCTAFW_PROP_TIMEDATE" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_TRACK_1_DATA" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_TRACK_2_DATA" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_TRACK_3_DATA" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_TRANSACTION_AMOUNT" : {
+    "*" : [ "5000", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+    "ChequeCashingAlternativeAmountDispensable" : [ "1234", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+    "PrepaidAmountConfirmation" : [ "5000", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+    "TransferAmountConfirmation" : [ "5000", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ]
+  },
+  "CCTAFW_PROP_TRANSACTION_FLOW_STATUS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_TRANSACTION_SEQUENCE_COUNTER" : {
+    "*" : "0x00"
+  },
+  "CCTAFW_PROP_TRANSACTION_STATUS" : {
+    "*" : "N"
+  },
+  "CCTAFW_PROP_TRANSACTION_TECHNOLOGY" : {
+    "*" : "1"
+  },
+  "CCTAFW_PROP_TRANS_FEE_AMOUNT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_TRANS_UUID" : {
+    "*" : "S1A12345620140923000000"
+  },
+  "CCTAFW_PROP_UI_INPUT_FIELD_CONTENT_FORMATTED" : {
+    "*" : [ "0.00", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_UI_INPUT_FIELD_CONTENT_UNFORMATTED" : {
+    "*" : [ "0", "", "", "", "", "", "", "", "", "" ]
+  },
+  "CCTAFW_PROP_UI_RECEIPTDISPLAYINFO_MESSAGE" : {
+    "*" : "PROFLEX4<BR><BR>BALANCE RECEIPT<BR><BR>FROM         xxxxxxxxxxxx1111<BR><BR>BALANCE          500.00 EUR<BR><BR>27.11.2018   19:30:51"
+  },
+  "CCTAFW_PROP_UI_RECEIPTDISPLAYINFO_MESSAGE_ADA" : {
+    "*" : ""
+  },
+  "CCTAFW_PROP_UI_STYLESHEET_KEY" : {
+    "*" : "MercuryDark"
+  },
+  "CCTAFW_PROP_UI_VIEWSET_KEY" : {
+    "*" : "GUI_*_Viewset_Softkey"
+  },
+  "CCTAFW_PROP_UI_VIEW_INTERACTION_RESULT" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_UI_VIEW_RC" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_VALID_PIN_ENTERED" : {
+    "*" : "0"
+  },
+  "CCTAFW_PROP_VALUE_ITEM_AMOUNT" : {
+    "*" : "100"
+  },
+  "CCTAFW_PROP_VENDOR_NAME" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_VIDEO_TELLER_CREDENTIALS" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_WITHDRAWAL_AMOUNT_INPUT_DECIMALS" : {
+    "*" : "true"
+  },
+  "CCTAFW_PROP_WITHDRAWAL_MODE" : {
+    "*" : null
+  },
+  "CCTAFW_PROP_WITHDRAWAL_PAYOUT_OPTIONS" : {
+    "*" : "NO_OPERATION"
+  },
+  "CCTAFW_PROP_WXTEXT_KEY_HOST_RESPONSE" : {
+    "*" : "100"
+  },
+  "CC_NOTE_TRACKING_PROP_SNR_DEPOSITED_ITEMS" : {
+    "*" : ""
+  },
+  "CC_NOTE_TRACKING_PROP_SNR_DISPENSED_ITEMS" : {
+    "*" : ""
+  },
+  "CSCROOT" : {
+    "*" : "C:\\ProBase\\CSCW32"
+  },
+  "DATA_DIC_CONTAINER0" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER1" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER2" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER3" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER4" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER5" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER6" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER7" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER8" : {
+    "*" : ""
+  },
+  "DATA_DIC_CONTAINER9" : {
+    "*" : ""
+  },
+  "EMVCLFW_PROP_CONTACTLESS_TA_ACTIVE" : {
+    "*" : null
+  },
+  "EMVCLFW_PROP_TRANSACTION_OUTCOME" : {
+    "*" : null
+  },
+  "EMVDCFW_REQUIRED_PROP_ISSUER_SCRIPTS" : {
+    "*" : null
+  },
+  "EMVDCFW_REQUIRED_PROP_PIN_ENTER_RESULT" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_ISSUER_SCRIPTS_RESULT" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_PSE_ISSUER_DATA" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_42" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_50" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_57" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5A" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F20" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F24" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F25" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F28" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F2A" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F2D" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F30" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F34" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F36" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F50" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F53" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F54" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F55" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F56" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_5F57" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_81" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_82" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_84" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_87" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_8A" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_8C" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_8D" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_8E" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_8F" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_90" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_91" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_92" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_93" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_94" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_95" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_97" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_98" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9A" : {
+    "*" : "0x00,0x00,0x00"
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9B" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9C" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F01" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F02" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F05" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F06" : {
+    "*" : "A0000000041010"
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F07" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F08" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F09" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F0B" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F0D" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F0E" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F0F" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F10" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F11" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F12" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F13" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F14" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F15" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F16" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F17" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F1A" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F1B" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F1C" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F1D" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F1E" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F1F" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F20" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F21" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F23" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F24" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F26" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F27" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F2D" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F2E" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F2F" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F32" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F33" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F34" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F35" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F36" : {
+    "*" : [ null, null ]
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F37" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F38" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F39" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F3B" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F40" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F42" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F43" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F44" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F45" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F46" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F47" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F48" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F49" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F4A" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F4B" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F4C" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F4D" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F4E" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_9F4F" : {
+    "*" : null
+  },
+  "EMVDEBITCREDITFW_PROP_TAG_BF0C" : {
+    "*" : null
+  },
+  "GUIAPP_ACTIVE_VIEWSET" : {
+    "*" : "touch"
+  },
+  "GUIAPP_CURRENT_VIEWKEY" : {
+    "*" : ""
+  },
+  "GUIAPP_HEADLINE_TEXT" : {
+    "*" : "Note"
+  },
+  "GUIAPP_INSTRUCTION_TEXT" : {
+    "*" : "Please insert your card"
+  },
+  "GUIAPP_RESULT_CODE" : {
+    "*" : "-1"
+  },
+  "GUIAPP_RESULT_DETAIL" : {
+    "*" : ""
+  },
+  "GUIAPP_RESULT_VIEWKEY" : {
+    "*" : ""
+  },
+  "GUIDM_CURRENT_VIEWKEY" : {
+    "*" : ""
+  },
+  "GUIDM_RECEIPT_IMAGE_PATH" : {
+    "*" : ""
+  },
+  "GUIDM_RESULT_CODE" : {
+    "*" : "-1"
+  },
+  "GUIDM_RESULT_DETAIL" : {
+    "*" : ""
+  },
+  "GUIDM_RESULT_VIEWKEY" : {
+    "*" : ""
+  },
+  "GUIDM_VOUCHER_IMAGE_PATH" : {
+    "*" : ""
+  },
+  "GUIVIDEO_CURRENT_VIEWKEY" : {
+    "*" : ""
+  },
+  "GUIVIDEO_RESULT_CODE" : {
+    "*" : "-1"
+  },
+  "GUIVIDEO_RESULT_DETAIL" : {
+    "*" : ""
+  },
+  "GUIVIDEO_RESULT_VIEWKEY" : {
+    "*" : ""
+  },
+  "GUI_ADA_TEXT_SWITCH_INSTANCE" : {
+    "*" : ""
+  },
+  "IMAGE_PATH" : {
+    "*" : null
+  },
+  "P6_DIALOG_DATA" : {
+    "*" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  },
+  "P6_DIALOG_ENDDATE" : {
+    "*" : ""
+  },
+  "P6_DIALOG_ERROR" : {
+    "*" : ""
+  },
+  "P6_DIALOG_MESSAGE" : {
+    "*" : ""
+  },
+  "P6_DIALOG_STARTDATE" : {
+    "*" : ""
+  },
+  "P6_DIALOG_WARNING" : {
+    "*" : ""
+  },
+  "P6_RESULT_DATE" : {
+    "*" : ""
+  },
+  "P6_RESULT_NOTECURRENCY" : {
+    "*" : ""
+  },
+  "P6_RESULT_NOTELEVEL" : {
+    "*" : ""
+  },
+  "P6_RESULT_NOTEVALUE" : {
+    "*" : ""
+  },
+  "P6_RESULT_PAN" : {
+    "*" : ""
+  },
+  "P6_RESULT_TERMID" : {
+    "*" : ""
+  },
+  "P6_RESULT_TIME" : {
+    "*" : ""
+  },
+  "P6_RESULT_TRACK2" : {
+    "*" : ""
+  },
+  "P6_RESULT_TRACK3" : {
+    "*" : [ "", "" ]
+  },
+  "P6_RESULT_VALUE_1" : {
+    "*" : ""
+  },
+  "P6_RESULT_VALUE_2" : {
+    "*" : ""
+  },
+  "P6_RESULT_VALUE_3" : {
+    "*" : ""
+  },
+  "P6_RESULT_VALUE_4" : {
+    "*" : ""
+  },
+  "RCC_REQ_AUTHPSCASHIN_ACCOUNT" : {
+    "*" : "12345678"
+  },
+  "RCC_REQ_AUTHPSWITHDRAWAL_ACCOUNT" : {
+    "*" : null
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_ADRESSDATA_CITY" : {
+    "*" : "Paderborn"
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_ADRESSDATA_COUNTRYCODEDATA_COUNTRYCODE" : {
+    "*" : null
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_ADRESSDATA_COUNTRYCODEDATA_NAME" : {
+    "*" : "Germany"
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_ADRESSDATA_COUNTRYCODEDATA_NUMERICCODE" : {
+    "*" : null
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_ADRESSDATA_PLACEMENT" : {
+    "*" : "Monopoly"
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_ADRESSDATA_STREET" : {
+    "*" : "Schlossalle"
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_ADRESSDATA_STREETNO" : {
+    "*" : "18"
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_ADRESSDATA_ZIPCODE" : {
+    "*" : "012345"
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_NAME" : {
+    "*" : "C4090 Sys144"
+  },
+  "RCC_RSP_LOADMASTERDATA_WORKSTATION_SUBSIDIARY" : {
+    "*" : "Filiale Borsdorf"
+  },
+  "RCC_RSP_LOCATEATM_ATM_LOCATION_STATE_INFOS" : {
+    "*" : "[{\"atm\":{ \"name\":\"ATM 1\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Schildern\", \"streetNo\":\"11\", \"longitude\":\"8.75438\", \"latitude\":\"51.71751\", \"zipCode\":\"33098\", \"city\":\"Paderborn\" } }, \"distanceKm\":0.8, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"OPENCONSUMER\" }, { \"atm\":{ \"name\":\"ATM 2\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Harthumarstraße\", \"streetNo\":\"15\", \"zipCode\":\"33098\", \"city\":\"Paderborn\", \"longitude\":\"8.75444\", \"latitude\":\"51.72147\" } }, \"distanceKm\":1.4, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"OPENCONSUMER\" }, { \"atm\":{ \"name\":\"ATM 3\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Westernmauer\", \"streetNo\":\"70\", \"zipCode\":\"33098\", \"city\":\"Paderborn\", \"longitude\":\"8.74890\", \"latitude\":\"51.72013\" } }, \"distanceKm\":2.0, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"OPENCONSUMER\" }, { \"atm\":{ \"name\":\"ATM 4\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Borchener Straße\", \"streetNo\":\"5\", \"zipCode\":\"33100\", \"city\":\"Paderborn\", \"longitude\":\"8.74511\", \"latitude\":\"51.71489\" } }, \"distanceKm\":2.7, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"CLOSEDCONSUMER\" }, { \"atm\":{ \"name\":\"ATM 5\", \"primanota\":\"Primanota\", \"timeZone\":\"TimeZone\", \"remark\":\"Remark\", \"addressData\":{ \"street\":\"Pohlweg\", \"streetNo\":\"110\", \"zipCode\":\"33100\", \"city\":\"Paderborn\", \"longitude\":\"8.77088\", \"latitude\":\"51.70388\" } }, \"distanceKm\":3.2, \"enabledTransactions\":[ \"WITHDRAWAL\", \"DEPOSIT\" ], \"wkstState\":\"CLOSEDCONSUMER\" }]"
+  },
+  "RCC_RSP_LOGON_CONSUMER_GROUP_LEVEL" : {
+    "*" : null
+  },
+  "RCC_RSP_LOGON_PRESTAGED_TRANSACTION_ACCOUNT" : {
+    "*" : null
+  },
+  "RCC_RSP_LOGON_PRESTAGED_TRANSACTION_TRANSACTION_TYPE" : {
+    "*" : "PRESTAGED_CASHOUT"
+  },
+  "RCC_RSP_RE_LOGON_CONSUMER_GROUP_LEVEL" : {
+    "*" : null
+  },
+  "RCC_RSP_WS_RESPONSE_CODE" : {
+    "*" : "OK"
+  },
+  "RCC_RSP_WS_TRAN_RSP_CODE" : {
+    "*" : "OK"
+  },
+  "RCC_RSP_WS_TRAN_RSP_CODE_EXT" : {
+    "*" : "DEFAULT",
+    "PrestagedInitializationFailedInfo" : "TRANSACTION_NOT_FOUND",
+    "PrestagedWithdrawalFailedInfo" : "DEFAULT"
+  },
+  "RCC_SERVER_ADDRESS" : {
+    "*" : "https://MY_SERVER:9080"
+  },
+  "RCC_VAR_JRN_MESSAGE_ID" : {
+    "*" : "1"
+  },
+  "RCC_VAR_JRN_MESSAGE_RET" : {
+    "*" : "0"
+  },
+  "RCC_VAR_JRN_REQ_NUM" : {
+    "*" : "0"
+  },
+  "RCC_VAR_JRN_REQ_NUM_BATCH" : {
+    "*" : "0"
+  },
+  "ReceiptFooter1" : {
+    "*" : "02.02.2018   14:41:33"
+  },
+  "ReceiptFooter2" : {
+    "*" : "THANK YOU FOR YOUR CUSTOM"
+  },
+  "ReceiptHeader1" : {
+    "*" : "PROFLEX4 BANK"
+  },
+  "ReceiptHeader2" : {
+    "*" : "MACHINE 1234"
+  },
+  "TEST_DATA_DUMMY_LISE_DATA[A,0,1]" : {
+    "*" : "A_||_B_||_C_||_D_||_E_||_F_||_G_||_H_||_I_||_OTHER"
+  },
+  "VAR_ACCOUNTCHG_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_ACCOUNT_END_VIEWSTATE_S" : {
+    "*" : "3"
+  },
+  "VAR_ACCOUNT_PRINT_VIEWSTATE_S" : {
+    "*" : "3"
+  },
+  "VAR_AIN_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_BAL_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_BILLPAY_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_BUTTON_IDLE_LOOP_LEFT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_BUTTON_IDLE_LOOP_RIGHT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CARDEJECT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CARDLESS_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CASHIN_VIEWSTATE_S" : {
+    "*" : null
+  },
+  "VAR_CHCCDM_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CHEQUE_DETAILS_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CHQCASH_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CINMIXED_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CIN_PRESTAGED_VIEWSTATE_S" : {
+    "*" : "3"
+  },
+  "VAR_CIN_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CLEARPREFCHG_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_COININCONFIRM_CANCELBUTTON_VIEWSTATE_S" : {
+    "*" : "3"
+  },
+  "VAR_COININ_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_COINOUT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_CONFIRM_DEPOSIT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_COUTFAST_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_COUTMIXED_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_COUT_PRESTAGED_VIEWSTATE_S" : {
+    "*" : "3"
+  },
+  "VAR_COUT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_DEPOSIT_CANCEL_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_DEPOSIT_CONFIRM_VIEWSTATE_S" : {
+    "*" : "0",
+    "DepositCoinsRollback" : "3"
+  },
+  "VAR_DEVICES_BARCODE_SCANNER_VIEWSTATE_S" : {
+    "*" : "2"
+  },
+  "VAR_DEVICES_ENVELOPEDEPOSIT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_DEVICES_SIGNATURE_PAD_VIEWSTATE_S" : {
+    "*" : "2"
+  },
+  "VAR_ENDCOININSERT_VIEWSTATE_S" : {
+    "*" : null
+  },
+  "VAR_ENGLISH_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_ENV_DISP_AND_DEP_VIEWSTATE_S" : {
+    "*" : "3"
+  },
+  "VAR_ENV_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_FCCHG_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_GERMAN_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_HIGHER_PARTIAL_DEPOSIT_AMOUNT_S" : {
+    "*" : "6000"
+  },
+  "VAR_HIGHER_PARTIAL_DEPOSIT_AMOUNT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_INSERTMOREMONEY_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_LANGCHG_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_LANGUAGE_S" : {
+    "*" : "English"
+  },
+  "VAR_LIMIT_APPROVAL_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_LOWER_PARTIAL_DEPOSIT_AMOUNT_S" : {
+    "*" : "4000"
+  },
+  "VAR_LOWER_PARTIAL_DEPOSIT_AMOUNT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_MAIN_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_MENUCHG_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_MIXEDMEDIA_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_MIXED_MONEY" : {
+    "*" : "NOTES"
+  },
+  "VAR_MIXTURE_SELECTION_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_NOTE_DETAILS_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_ORDCASH_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_ORDCHQ_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_ORDCURR_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_ORDPOST_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_PARTIAL_DEPOSIT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_PINCHG_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_PINUNLOCK_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_PREPAID_PRINT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_PREPAID_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_PRINTER_VIEWSTATE_S" : {
+    "*" : [ "0", "3", "3" ]
+  },
+  "VAR_RECCHG_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_REQUEST_SUPPORT_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_SPANISH_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_STPM_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_STP_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_TEMPORARY_PAC" : {
+    "*" : ""
+  },
+  "VAR_TRANSFERCHEQUE_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_TRA_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VAR_VOUCHER_VIEWSTATE_S" : {
+    "*" : "0"
+  },
+  "VIDEO_REQUEST" : {
+    "*" : ""
+  },
+  "VIDEO_REQUEST_PEERID" : {
+    "*" : ""
+  },
+  "VIDEO_REQUEST_TELLERNAME" : {
+    "*" : ""
+  },
+  "VIDEO_REQUEST_VIDEOURL" : {
+    "*" : ""
+  }
+}

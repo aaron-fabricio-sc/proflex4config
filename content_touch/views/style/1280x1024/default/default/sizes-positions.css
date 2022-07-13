@@ -1,0 +1,2521 @@
+@charset "utf-8";
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ sizes-positions.css 4.3.1-210422-21-8faf2d6b-1a04bc7d
+
+*/
+
+/*
+ * CSS document for resolution-dependent information
+ */
+
+/*---- Comments guidelines: ----*/
+/*
+ * Headline
+ */
+/*---- Sub headline: ----*/
+/*-- Element specific --*/
+/* Attribute specific */
+
+/*---- General order of attributes: ----*/
+/*
+element, #id, .class {
+    position: relative / absolute / fixed;
+    flex-basis: <number>px / <number>%;
+    float: none / left / right;
+    width, height: <number>px / <number>%;
+    min-width, max-width: <number>px / <number>%;
+    min-height, max-height: <number>px / <number>%;
+    top, right, bottom, left: <number>px / <number>%;
+    margin: <number>px, <number>px, <number>px, <number>px; (used, if more than one parameter)
+    margin-top, margin-right, margin-bottom, margin-left: <number>px;
+    padding: <number>px, <number>px, <number>px, <number>px; (used, if more than one parameter)
+    padding-top, padding-right, padding-bottom, padding-left: <number>px;
+    border-width: <number>px;
+    border-radius: <number>px;
+    border-top-left-radius, border-top-right-radius, border-bottom-left-radius, border-bottom-right-radius: <number>px;
+    line-height: <number>px;
+    font-size: <number>px;
+    border-spacing: <number>px;
+    word-spacing: <number>px;
+}
+*/
+
+/*---- Normalization of elements ----*/
+html, body, div, table, header, footer, nav, main, article, aside, figure, figcaption, section, canvas,
+button, input, textarea, img, var, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, tr, td {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    position: absolute;
+    z-index: -1000;
+    max-height: 100%;
+}
+
+/*---- Screen ----*/
+:root {
+    --font-size01: 24px;
+    --font-size02: 21px;
+    --font-size03: 21px;
+    --font-size04: 45px;
+    --font-size05: 75px;
+    --font-size06: 34px;
+}
+
+/*
+ * General structure and measurements
+ */
+
+/*---- Screen ----*/
+body, body>:first-child, body>:first-child>:first-child {
+    height: 100vh; /*span body*/
+}
+
+/*-- fonts --*/
+
+/* font01 Button description, Headline, Time, ...*/
+.font01 {
+    font-size: var(--font-size01);
+    line-height: 34px;
+}
+
+/* font02 Instruction, ...*/
+.font02 {
+    font-size: var(--font-size02);
+    line-height: 30px;
+}
+
+/* font03 */
+.font03 {
+    font-size: var(--font-size03);
+    line-height: 30px;
+}
+
+/* font04 */
+.font04 {
+    font-size: var(--font-size04);
+    line-height: 55px;
+}
+
+/* font05 */
+.font05 {
+    font-size: var(--font-size05);
+    line-height: 90px;
+}
+
+/* font06 (keyboard)*/
+.font06 {
+    font-size: var(--font-size06);
+    line-height: 41px;
+}
+
+/*---- Grid layout of screen ----*/
+
+/*-- Header --*/
+#flexHeader {
+    flex-basis: 448px;
+}
+
+#flexHeaderTop {
+    padding: 40px 78px 0 42px;
+}
+
+#flexLogo {
+    margin-top: 46px;
+}
+
+#flexLogo>:first-child {
+    /* The height is the decisive factor for the logo, and for Chrome it is sufficient to only use 'height' to limit the size of the image (the image will keep its ratio)*/
+    /* But Firefox will not display the logo if 'width' is missing, we also add the 'width' (which we can get with Chomre's inspector after adjusting the height) */
+    width: 99px;
+    height: 74px;
+}
+
+/*-- Additional header info --*/
+#flexAdditionalHeaderInfo {
+    min-width: 25%;
+    padding-top: 8px;
+}
+
+/*-- Help --*/
+#flexHelp {
+    margin-right: -8%;
+}
+
+#flexHelp div, #flexHelp object, #flexHelp svg, #flexHeader svg {
+    width: 52px;
+    height: 52px;
+}
+
+#flexHelp div {
+    margin-right: 15px;
+}
+
+/*-- Date/Time --*/
+#flexTime {
+    min-width: 261px;
+    padding: 0 0 0 28px;
+}
+
+#time {
+    padding-bottom: 3px;
+}
+
+#timeMeridiem {
+    margin-left: 15px;
+}
+
+/*-- Headline/Instruction --*/
+#flexHeaderBottom {
+    flex-basis: 108px;
+    padding: 0 40px 0 40px;
+}
+
+body[data-browser-notation="Firefox"] #flexHeaderBottom {
+    max-height: calc(47% - 108px);
+}
+
+#flexHeaderBottom>:first-child {
+    margin-bottom: 1px;
+}
+
+/*-- Main --*/
+/*-- Contains the elements: nav, article and aside --*/
+#flexMain, #flexMainPopup {
+    padding-top: 19px;
+}
+
+/*-- Nav --*/
+#flexNav, #flexNavPopup {
+    flex-basis: 0;
+}
+
+/*-- Article --*/
+#flexArticle, #flexArticlePopup {
+    flex-basis: 100%;
+    padding-left: 40px;
+    height: 490px;
+}
+
+/*-- Aside --*/
+#flexAside, #flexAsidePopup {
+    flex-basis: 0;
+    padding-right: 40px;
+}
+
+/*-- Footer --*/
+#flexFooter {
+    height: 66px;
+    min-height: 66px;
+    padding: 0 40px 0 40px;
+}
+
+#flexExtra {
+    flex-basis: 650px;
+}
+
+#flexCancel {
+}
+
+/*
+ * Element specific
+ */
+
+/*-- Buttons --*/
+/*
+   To profit from flex box model div element is styled as a button with class .button
+   Please keep in mind that not everything is working in the same way for div and button and
+   vice versa, in particular the flex box model for button.
+*/
+
+.button>var {
+    padding: 0 20px 0 20px;
+}
+
+.button>img, .button>object, .button>svg {
+    width: 46px;
+    height: 46px;
+    z-index: 1000;
+}
+
+/* menu button (article) */
+.menuButton {
+    width: 378px;
+    height: 217px;
+}
+
+.menuButton>object, .menuButton>svg {
+    width: 81px;
+    height: 81px;
+    padding: 5px 0 10px 0;
+}
+
+.menuButton.prominentItem {
+    width: 378px;
+    height: 456px;
+}
+
+.menuButton.prominentItem>object, .menuButton.prominentItem>svg {
+    margin-bottom: 30px;
+    width: 111px;
+    height: 111px;
+}
+
+.subMenuItem::after {
+    bottom: calc(100% - 60px);
+    left: calc(100% - 25px);
+    font-size: var(--font-size06);
+}
+
+/* dialog/dialogSmall button (aside: confirm) */
+.dialogButton {
+    width: 298px;
+    height: 168px;
+}
+
+.dialogButton>object, .dialogButton>svg {
+    width: 61px;
+    height: 61px;
+}
+
+.dialogSmallButton {
+    width: 298px;
+    height: 118px;
+}
+
+/* footer button (footer: cancel) */
+.footerButton {
+    width: 298px;
+    height: 63px;
+}
+
+/* field button (article: input field) */
+.fieldButton {
+    width: 178px;
+    height: 88px;
+}
+
+/* keyboard button (VK) */
+.keyboardButton, .fnKey, .spaceKey, .enterKey, .arrowKeys {
+    width: 95px;
+    height: 95px;
+}
+
+/*
+ * Each button stays within a single button zone, one or more button zone may stay in a buttonsZone (plural)
+ * A view may have more than one buttons zones, that's why it is a class instead of an id.
+ */
+.buttonZone:not(:last-child) .menuButton {
+    margin: 0 20px 20px 0;
+}
+
+.buttonZone:not(:last-child) .dialogButton, .buttonZone:not(:last-child) .dialogSmallButton {
+    margin-bottom: 10px;
+}
+
+.buttonsZone .buttonZone:not(:last-child) .dialogButton,
+.buttonsZone .buttonZone:not(:last-child) .dialogSmallButton,
+.buttonsZone .buttonZone:not(:last-child) .footerButton {
+    margin-right: 20px;
+}
+
+/* 1366x768 16:9 resolution */
+@media (min-width: 1366px) {
+}
+
+/*-- Scrollbar --*/
+::-webkit-scrollbar {
+    width: 13%;
+}
+
+::-webkit-scrollbar-track {
+    border-width: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.scrollbar-vertical {
+    /*
+        Margin-right has to be the same as the
+        width but negative! With this trick we
+        remove the space of an element with
+        position "relative" (in this case
+        "relative" is set by javascript later).
+    */
+    width: 20px;
+    margin-left: -20px;
+}
+
+.scrollbar-horizontal {
+    /*
+        Margin-right has to be the same as the
+        width but negative! With this trick we
+        remove the space of an element with
+        position "relative" (in this case
+        "relative" is set by javascript later).
+    */
+    height: 20px;
+    margin-top: -24px;
+}
+
+/*
+ * Component specific
+ */
+
+/*-- Selection bread crumbs --*/
+.breadCrumb {
+    padding: 8px 20px 8px 65px;
+}
+
+.breadCrumb:first-child { /*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+    padding-left: 56px;
+}
+
+.breadCrumb:first-child::before {
+    left: 17px;
+}
+
+.breadCrumb:last-child {
+    border-radius: 0 6px 6px 0; /*this was to prevent glitches on hover*/
+    padding-right: 22px;
+}
+
+.breadCrumb::after { /*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+    top: 0;
+    right: -18px; /*half of square's length*/
+    /*same dimension as the line-height of .breadcrumb */
+    width: 43px;
+    height: 43px;
+    /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's:
+    length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+    if diagonal required = 1; length = 1/1.414 = 0.707*/
+    transform: scale(0.670) rotate(45deg);
+    /*5px - for rounded arrows and 50px - to prevent hover glitches on the border created using shadows*/
+    border-radius: 0 6px 0 50px;
+}
+
+.breadCrumb::before { /*we will use the :before element to show numbers*/
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px 0;
+    top: 0;
+    left: 30px;
+}
+
+/*-- Checkboxes --*/
+.slidingCheckBox, .slidingCheckBox input[type=checkbox] {
+    min-width: 130px;
+    height: 60px;
+}
+
+.slidingCheckBox::after, .slidingCheckBox::before {
+    font-size: 3.3em;
+    top: -1px;
+}
+
+.slidingCheckBox::after {
+    right: 12px;
+}
+
+.slidingCheckBox::before {
+    left: 23px;
+}
+
+.slidingCheckBox label {
+    width: 63px;
+    height: 54px;
+    top: 3px;
+    left: 3px;
+}
+
+.slidingCheckBox input[type=checkbox]:checked + label {
+    left: 64px;
+}
+
+/*-- Radiobuttons --*/
+.radioButton, .radioButton input[type=radio] {
+    width: 66px;
+    height: 66px;
+}
+
+.radioButton input[type=radio]:checked + label {
+    width: 58px;
+    height: 58px;
+    top: 4px;
+    left: 4px;
+}
+
+.radioButtonItem {
+    min-width: 300px;
+    max-width: 300px;
+    margin: 0 50px 30px 0;
+}
+
+.radioButtonItem>var {
+    margin-left: 20px;
+}
+
+/*-- Wait spinner --*/
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -90px 0 0 -90px;
+    z-index: 9999;
+}
+
+.spinner2 {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    border-width: 15px;
+    border-radius: 100%;
+    z-index: 1000;
+}
+
+#waitSpinner .circle {
+    /* Absolute position with 3d animation = render layer */
+    position: absolute;
+    border-width: 25px;
+    border-radius: 50%;
+}
+
+.circle.one {
+    height: 50px;
+    width: 50px;
+    left: 50px;
+    top: 50px;
+}
+
+.circle.two {
+    height: 100px;
+    width: 100px;
+    top: 25px;
+    left: 25px;
+}
+
+.circle.three {
+    height: 150px;
+    width: 150px;
+    top: 0;
+    left: 0;
+}
+
+/* Points spinner */
+#waitLine>div {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+}
+
+/* Wave spinner */
+#spinnerWave {
+    width: 205px;
+    height: 100px;
+}
+
+#spinnerWave>div {
+    height: 100%;
+    width: 15px;
+    margin: 0 10px 0 10px;
+}
+
+/* bounce following spinner */
+.followingSpinner {
+    width: 260px;
+    height: 30px;
+}
+
+#waitSpinner .followingSpinnerShape {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+}
+
+/* rotate plane spinner */
+.rotatePlaneSpinner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
+/* stretch play spinner */
+.stretchPlaySpinner {
+    width: 96px;
+    height: 150px;
+}
+
+.stretchPlaySpinner>div {
+    height: 100%;
+    width: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+/*-- message article / message header --*/
+.flexMessageContainer {
+    padding: 0 20px 0 20px;
+}
+
+.messageArea {
+    padding: 10px 20px 10px 20px;
+}
+
+.messageArea>var ul {
+    /*to have a padding for lists, if the displayed text contains ul-tags*/
+    padding-left: 5%;
+}
+
+#flexMessageContainerHeader {
+    margin-top: 330px;
+    width: calc(100% - 40px); /*20px is the padding of class 'flexMessageContainer' */
+}
+
+#flexMessageContainerHeader .messageArea {
+    min-height: 80px;
+    padding: 10px 20px 10px 20px;
+}
+
+#flexMessageContainerArticle {
+    margin: 0 -20px 0 -20px;
+    padding: 0;
+}
+
+.messageIcon {
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+/*-- Popups: - Popup overlay and window --*/
+.modalOverlay, .modalOverlayPopup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.popupWindow {
+    height: 450px;
+    margin: 320px 112px 0 112px;
+}
+
+#flexMainPopup {
+    height: 330px;
+}
+
+#flexMessageContainerPopup {
+    margin-top: 20px;
+    width: 890px;
+    padding: 0;
+}
+
+#popupWindowContent {
+    flex-basis: 100%;
+}
+
+#popupWindowContent main {
+    margin: 5px 20px 0 20px;
+}
+
+#popupWindowContent .buttonsZone {
+    margin-bottom: 10px;
+}
+
+#popupWindowContent>main>nav, #popupWindowContent>main>aside {
+    padding-top: 0;
+}
+
+/* AmountEntry Popup */
+#popupWindowAmountEntry {
+    height: 630px;
+    margin-top: 300px;
+}
+
+#popupWindowAmountEntry #flexMainPopup {
+    flex-basis: 100%;
+}
+
+#popupWindowAmountEntry #flexArticlePopupAmountEntry {
+    width: 600px;
+}
+
+#popupWindowAmountEntry #flexArticlePopupAmountEntry>var {
+    min-height: 40px;
+    padding: 0 0 6px 18px;
+}
+
+#popupWindowAmountEntry #flexAsidePopup {
+    max-width: 27%;
+    margin: 46px 0 0 -5px;
+}
+
+#popupWindowAmountEntry #flexMessageContainerPopup {
+    margin: 10px 0 10px 20px;
+}
+
+/* Help Popup */
+#popupWindowHelp {
+    height: 800px;
+    margin-top: 200px;
+}
+
+#popupWindowHelp #flexMainPopup {
+    flex-basis: 100%;
+}
+
+#popupWindowHelp #helpContent {
+    width: auto;
+    max-width: 1015px;
+    height: 575px;
+    max-height: 575px;
+}
+
+#popupWindowHelp #helpImage, #popupWindowHelp #helpVideo {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}
+
+/* Selection Popup */
+#popupWindowSelection {
+    height: 720px;
+    margin-top: 225px;
+}
+
+#popupWindowSelection #flexMainPopup {
+    flex-basis: 100%;
+}
+
+#flexArticlePopupSelection {
+    flex-basis: 100%;
+    max-height: 490px;
+}
+
+/* pleasewait.component Popup */
+#pleaseWaitPopup #flexMainPopup,
+#pleaseWaitPopup #flexArticlePopup {
+    margin: 0;
+    padding: 0;
+}
+
+#pleaseWaitPopup #flexArticlePopup #waitLine {
+    height: 50px;
+    margin-top: 15px;
+}
+
+#pleaseWaitPopup #flexArticlePopup>var {
+    padding: 25px;
+}
+
+/* pop up hints */
+.popupHint {
+    position: absolute;
+    margin: 0 10px 0 8px;
+    padding: 7px;
+    font-size: 21px;
+}
+
+.popupHint::before {
+    position: absolute;
+    top: 4px;
+    left: -28px;
+    font-size: 32px;
+}
+
+/*-- List container/rows and shadows top/bottom --*/
+#listContainer {
+    height: 480px;
+}
+
+/*-- Virtual Keyboard --*/
+#virtualKeyboardContainer {
+    position: absolute;
+    height: 570px;
+}
+
+#virtualKeyboardArea {
+    padding: 0 10px 0 0;
+}
+
+#virtualKeyboardArea #keyArea {
+    flex-basis: 1270px;
+}
+
+#virtualKeyboardArea #keyAreaNumPad {
+    flex-basis: 320px;
+}
+
+.keyboardButton {
+    margin: 8px 0 0 8px;
+}
+
+.keyboardButton>var {
+    width: 100%;
+}
+
+.keyboardButton>.secondKeyCode {
+    padding-right: 5px;
+}
+
+#popupKeysArea {
+    padding: 0 5px 5px 0;
+}
+
+#popupKeysArea .keyboardButton {
+    flex-basis: auto;
+    width: auto;
+    margin: 5px 0 0 5px;
+    min-width: 65px;
+    max-height: 65px;
+}
+
+#placedummy00 {
+    width: 30px;
+}
+
+#placedummy01 {
+    width: 60px;
+}
+
+#placedummy02 {
+    width: 128px;
+}
+
+#placedummy03 {
+    width: 24px;
+}
+
+#keyboardButtonBACKSPACE {
+    width: 128px;
+}
+
+#keyboardButtonCLEAR {
+    width: 128px;
+}
+
+#enterKey {
+    width: 204px;
+}
+
+#fnKey {
+    width: 144px;
+}
+
+#spaceKey {
+    width: 767px;
+}
+
+#generalVKInput {
+    width: 100%;
+    height: 70px;
+    padding: 20px 0 0 40px;
+}
+
+#generalVKInputLabel {
+    position: fixed;
+    margin-left: 40px;
+}
+
+/*-- In transaction background --*/
+#txnBackground {
+    position: absolute;
+    left: 0;
+    top: 334px;
+    width: 100%;
+    height: 100%;
+}
+
+/*-- Timeout progress bar --*/
+.timeoutProgressBar {
+    height: 5px;
+    width: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/*
+ * View specific
+ */
+
+/*-- View: pleasewait --*/
+div[data-view-id="pleasewait"] #flexArticle #waitLine {
+    margin-top: 60px;
+    padding-left: 0;
+}
+
+div[data-view-id="pleasewait"] #flexAside {
+    padding-right: 0;
+}
+
+/*-- View: pinentry --*/
+#pinDigitsArea {
+    margin-top: 60px;
+}
+
+.pinDigitContainer {
+    width: 68px; /*plus 2x1px border*/
+    height: 88px; /*plus 2x1px border*/
+    perspective: 1500px;
+}
+
+.pinDigitContainer:not(:last-child) {
+    margin-right: 10px;
+}
+
+.pinDigitContainer .front {
+    width: 70px;
+    height: 90px;
+}
+
+.pinDigit, .pinDigit>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: -1px;
+}
+
+div.frontCurrent>var {
+    font-size: 4.5em;
+    line-height: 1.0em;
+}
+
+div.back {
+    width: 70px;
+    height: 90px;
+}
+
+div.back>var {
+    font-size: 4.5em;
+    line-height: 1.5em;
+}
+
+/*low=PIN len <= 12, high=PIN len > 12*/
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer {
+    width: 65px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer .front {
+    width: 67px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer div.back {
+    width: 67px;
+}
+
+/*-- View: pinentryets --*/
+div[data-view-id="pinentryets"] #flexArticle {
+    padding: 0;
+}
+
+div[data-view-id="pinentryets"] #flexNav,
+div[data-view-id="pinentryets"] #flexAside {
+    width: 0;
+    padding: 0;
+}
+
+#flexEtsContainerArea {
+    width: 856px;
+    height: 474px;
+}
+
+/* PIN digit area */
+div[data-view-id="pinentryets"] #pinDigitsArea {
+    height: 95px;
+    margin: 0;
+    padding: 0;
+}
+
+div[data-view-id="pinentryets"] .pinDigitContainer {
+    width: 40px; /*plus 2x1px border*/
+    height: 88px; /*plus 2x1px border*/
+    perspective: 1500px;
+}
+
+div[data-view-id="pinentryets"] .pinDigitContainer:not(:last-child) {
+    margin-right: 6px;
+}
+
+div[data-view-id="pinentryets"] .pinDigitContainer .front {
+    width: 42px;
+    height: 90px;
+}
+
+div[data-view-id="pinentryets"] div.back {
+    width: 42px;
+    height: 90px;
+}
+
+div[data-view-id="pinentryets"] div.frontCurrent>var {
+    font-size: 3em;
+    line-height: 1.8em;
+}
+
+div[data-view-id="pinentryets"] div.back>var {
+    font-size: 3em;
+    line-height: 2em;
+}
+
+/* PIN pad area */
+div[data-view-id="pinentryets"] #pinPadButtons>.buttonZone {
+    padding: 0 5px 5px 0;
+}
+
+div[data-view-id="pinentryets"] #pinPadButtons > .buttonZone:nth-child(3),
+div[data-view-id="pinentryets"] #pinPadButtons > .buttonZone:nth-child(6),
+div[data-view-id="pinentryets"] #pinPadButtons > .buttonZone:nth-child(9),
+div[data-view-id="pinentryets"] #pinPadButtons > .buttonZone:nth-child(10) {
+    padding-right: 0;
+}
+
+/* function button area */
+div[data-view-id="pinentryets"]  #functionButtons {
+    margin-left: 6px;
+}
+
+div[data-view-id="pinentryets"] #functionButtons .fieldButton {
+    width: 298px;
+    margin-bottom: 5px;
+}
+
+/*-- Views: selection --*/
+div[data-view-id="selection"] #flexAside,
+div[data-view-id="emvapplicationselection"] #flexAside,
+div[data-view-id="prepaidproviderselection"] #flexAside,
+div[data-view-id="accountselection"] #flexAside,
+div[data-view-id="billpaymentselection"] #flexAside,
+div[data-view-id="amountselection"] #flexAside,
+div[data-view-id="menupreferences"] #flexAside,
+div[data-view-id="checkboxes"] #flexAside,
+div[data-view-id="formentry"] #flexAside {
+    padding: 0; /*ensure swiping area is full from left-right edge*/
+}
+
+/*-- View: accountselection / billpaymentselection --*/
+div[data-view-id="accountselection"] #flexArticle,
+div[data-view-id="billpaymentselection"] #flexArticle {
+    margin-left: 40px;
+}
+
+div[data-view-id="accountselection"] #flexArticle .buttonZone,
+div[data-view-id="billpaymentselection"] #flexArticle .buttonZone {
+    margin: 0 36px 20px 0;
+}
+
+div[data-view-id="accountselection"] #flexArticle .menuButton>:first-child,
+div[data-view-id="billpaymentselection"] #flexArticle .menuButton>:first-child {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+div[data-view-id="accountselection"] #flexArticle .buttonZone:not(:last-child) .menuButton,
+div[data-view-id="billpaymentselection"] #flexArticle .buttonZone:not(:last-child) .menuButton {
+    margin: 0;
+}
+
+div[data-view-id="accountselection"] .additional>var,
+div[data-view-id="billpaymentselection"] .additional>var {
+    padding: 40px 0 20px 0;
+}
+
+div[data-view-id="accountselection"] .additional>:nth-child(1),
+div[data-view-id="billpaymentselection"] .additional>:nth-child(1) {
+    padding-top: 50px;
+}
+
+/*-- Views: message, question --*/
+
+/*-- Example for a view specific style by using data-view-key --*/
+div[data-view-id="message"] .messageArea,
+div[data-view-id="question"] .messageArea {
+    height: 445px;
+}
+
+div[data-view-id="message"] .messageArea .buttonsZone,
+div[data-view-id="question"] .messageArea .buttonsZone,
+#popupWindowHelp .buttonsZone {
+    /*if many text which needs whole height space, the buttonsZone would drag outside the messageArea,
+      the space-between cares about that the buttons stay in the bottom even if only 1 line of text*/
+    margin-top: -1100px;
+}
+
+/*-- View: outofservice / offlinespa --*/
+div[data-view-id="outofservice"] #flexArticle, div[data-view-id="outofservice"] #flexAside,
+div[data-view-id="offlinespa"] #flexArticle, div[data-view-id="offlinespa"] #flexAside {
+    padding: 0;
+    margin: 0;
+}
+
+.outOfServicePattern {
+    height: 95px;
+    min-width: 100%;
+}
+
+#outOfServiceMessage {
+    min-height: 70px;
+    padding: 70px 0 66px 0;
+}
+
+/*-- View: welcome --*/
+div[data-view-id="welcome-view"] #flexMain,
+div[data-view-id="welcome"] #flexMain {
+    margin: -4px 0 0 -22px;
+}
+
+#welcomeMessage1 {
+    margin: 40px 0 0 20px;
+}
+
+#welcomeMessage2 {
+    margin-left: 20px;
+}
+
+/*== View: item animations views ==*/
+#flexAnimations {
+    flex-basis: 100%;
+    max-height: 380px;
+    padding: 10px 0 20px 0;
+}
+
+/*-- Items slot --*/
+/*-- General alignment of figures --*/
+figure {
+    margin-top: 0;
+}
+
+figure>var {
+    margin-bottom: 23px;
+}
+
+.flexItemsSlot>object, .flexItemsSlot>svg {
+    width: auto;
+    height: 60px;
+}
+
+.flexItemsSlotLSF>object, .flexItemsSlotLSF>svg {
+    width: auto;
+    height: 60px;
+}
+
+.flexItemsSlotIn>object, .flexMetalSlotIn>object,
+.flexItemsSlotIn>svg, .flexMetalSlotIn>svg {
+    width: 240px;
+    height: 70px;
+}
+
+.flexItemsSlotIn .note, .flexItemsSlotIn .coin, #takeMetalItems {
+    padding-right: 20px;
+}
+
+/*-- Notes/coins/cheque/genericimage --*/
+.note, .voucher {
+    width: 160px;
+    height: auto;
+}
+
+.coin {
+    width: 160px;
+    height: auto;
+}
+
+.noteShortSideFirst {
+    flex-basis: 250px;
+}
+
+.chequeShortSideFirst {
+    /*
+     A possible "transform:  rotate(180deg)" here will be overridden by ANY transform in animations.css, even if you apply a "transform: translate" in animation.cssw
+     */
+    flex-basis: 250px;
+    margin-bottom: -230px;
+}
+/* 3D notes eject */
+.itemLane {
+    width: 220px;
+    margin-top: -35px; /*move the lane onto the slot */
+    transform: perspective(800px) rotate3d(1, 0, 0, 60deg);
+    /*setting the y-value of transform-origin to 0% means that the rotate axis is on the upper border of .itemLane. This way, the items will still start at the slot. The default value is 50% */
+    transform-origin: 50% 10%;
+}
+
+/* 3D metal eject */
+.itemLaneMetal {
+    width: 220px;
+    height: 250px;
+    margin-top: -25px; /*move the lane onto the slot */
+    transform: perspective(800px) rotate3d(1, 0, 0, 66deg);
+    /*setting the y-value of transform-origin to 0% means that the rotate axis is on the upper border of .itemLaneMetal. This way, the items will still start at the slot. The default value is 50% */
+    transform-origin: 50% 0;
+}
+
+.flexMetalWarningArea {
+    height: 120px;
+    width: 240px;
+    margin-top: -120px;
+}
+
+#noteEject3D .note3D {
+    margin-bottom: -95px;
+}
+
+#noteEject3D .note3D:last-child {
+    margin-bottom: -70px;
+}
+
+#noteEject3D .notesEjectShortSideFirstAnimation3D {
+    margin-bottom: -100px;
+}
+
+#noteEject3D .notesEjectShortSideFirstAnimation3D:last-child {
+    margin-bottom: -70px;
+}
+
+.genericImage {
+    width: 80%;
+    height: auto;
+}
+
+#cardAnimationSingleArea {
+    /* min-width only necessary for Firefox ... */
+    min-width: 90px;
+}
+
+#flexAdditionalTexts>var {
+    padding-bottom: 6px;
+}
+
+#flexAdditionalTexts>var:first-child {
+    padding-top: 0;
+}
+
+#flexAdditionalTexts>var:last-child {
+    padding-bottom: 11px;
+}
+
+#flexAdditionalIcons {
+    flex-basis: auto;
+    max-height: 80px;
+    margin: 0 25px 0 25px;
+}
+
+.warningIcon, .redCircle {
+    width: 77px;
+    height: 77px;
+}
+
+.warningIconBig, .redCircleBig  {
+    width: 110px;
+    height: auto;
+}
+
+.warningIconBig {
+    margin-top: 10px;
+}
+
+.redCircleBig {
+    margin-top: -114px;
+    margin-bottom: 30px;
+}
+
+#flexAdditionalIcons>object, #flexAdditionalIcons>svg {
+    margin: 0 0 0 20px;
+}
+
+#takeMetalAnimationArea {
+    padding-right: 10px;
+}
+
+#takeCoinAnimationArea {
+    padding-left: 10px;
+}
+
+/*-- View: withdrawalanimations/depositanimations --*/
+div[data-view-id="withdrawalanimations"] .note, div[data-view-id="depositanimations"] .note, div[data-view-id="withdrawalanimations"] .voucher {
+    width: 160px;
+    height: auto;
+}
+
+div[data-view-id="withdrawalanimations"] .coin {
+    width: 160px;
+    height: auto;
+}
+
+/*-- View: depositanimations / depositchequesanimations --*/
+div[data-view-id="depositanimations"] #flexArticle {
+    padding-left: 20px;
+}
+
+div[data-view-id="depositchequesanimations"] #flexArticle {
+    padding-left: 0;
+}
+
+div[data-view-id="depositanimations"] #flexNav,
+div[data-view-id="depositchequesanimations"] #flexNav {
+    flex-basis: auto;
+    margin-left: 40px;
+}
+
+div[data-view-id="depositchequesanimations"] figure {
+    margin-top: 37px;
+}
+
+div[data-view-id="depositchequesanimations"] figure>var {
+    margin-bottom: 0;
+}
+
+div[data-view-id="depositchequesanimations"] .chequeShortSideFirst {
+    width: 160px;
+}
+
+/* cheque scanning animation */
+div[data-view-id="depositchequesanimations"] #waitSpinner {
+    margin-top: 100px;
+}
+
+#chequesScanningTexts {
+    height: 20px;
+}
+
+#chequeScanRedLight {
+    width: 60px;
+    height: 240px;
+}
+
+#chequeBack {
+    margin-top: 40px;
+}
+
+.chequeScanArea {
+    width: 370px;
+    height: 170px;
+    margin-top: -200px;
+}
+
+/*-- Views: idlepresentation / cardanimations / mobileanimations --*/
+div[data-view-id="cardanimations"] #flexArticle>figure,
+div[data-view-id="idlepresentation"] #flexArticle>figure {
+    margin-top: 60px;
+}
+
+div[data-view-id="cardanimations"] #flexAside,
+div[data-view-id="idlepresentation"] #flexAside {
+    flex-basis: auto;
+}
+
+div[data-view-id="cardanimations"] #flexAside>:first-child,
+div[data-view-id="idlepresentation"] #flexAside>:first-child {
+    margin-top: 60px;
+}
+
+/* 3D card insert/eject */
+#cardInsert3D, #cardEject3D {
+    transform: perspective(1000px) rotate3d(1, 0, 0, 57deg);
+}
+
+#cardInsert3DLSF, #cardEject3DLSF {
+    transform: perspective(800px) rotate3d(1, 0, 0, 45deg);
+}
+
+#cardInsert3D>img, #cardEject3D>img, #cardNotOp>img, #cardInsert3DLSF>img, #cardEject3DLSF>img, #cardLSFNotOp>img,
+#cardInsert3D>svg, #cardEject3D>svg, #cardNotOp>svg, #cardInsert3DLSF>svg, #cardEject3DLSF>svg, #cardLSFNotOp>svg {
+    width: 250px;
+    height: auto;
+}
+
+#cardNotOp>img, #cardLSFNotOp>img,
+#cardNotOp>svg, #cardLSFNotOp>svg {
+    margin-top: -30px;
+    width: 150px;
+    height: auto;
+}
+
+#cardLSFNotOp>img, #cardLSFNotOp>svg {
+    margin-top: -80px;
+    transform: rotate(-90deg);
+}
+
+/* Contactless reader */
+#contactlessReaderArea {
+    width: 300px;
+    height: 340px;
+}
+
+#cardInsertContactless, #cardInsertContactlessNotOp {
+    position: relative;
+    width: 170px;
+}
+
+#cardInsertContactlessNotOp {
+    margin-left: 100px;
+    margin-top: -75px;
+}
+
+.contactlessReaderBack {
+    position: relative;
+    width: 230px;
+    height: 200px;
+}
+
+/* Mobile Nfc */
+#mobileNfc, #mobileNfcNotOp  {
+    position: relative;
+    /*width: 170px;*/
+    width: 210px;
+}
+
+#mobileNfcNotOp  {
+    margin-left: 100px;
+    margin-top: -75px;
+}
+
+
+/* Position of nfc symbol */
+.contactlessReaderBack>object, .contactlessReaderBack>svg {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* DeviceOOS symbol for card devices */
+.deviceOutOfService {
+    width: 160px;
+}
+
+#cardReader>.deviceOutOfService {
+    margin-top: -205px;
+}
+
+#cardReaderLSF>.deviceOutOfService {
+    margin-top: -208px;
+    z-index: 1;
+}
+
+#contactlessReader>.deviceOutOfService {
+    margin-top: -317px;
+    margin-left: -60px;
+}
+
+/* QR code */
+div[data-view-id="idlepresentation"] #qrCode {
+    position: absolute;
+    top: 40px;
+    right: 170px;
+}
+
+div[data-view-id="idlepresentation"] #qrCode:first-child,
+div[data-view-id="idlepresentation"] #qrCode:first-child svg {
+    width: 170px;
+    height: 170px;
+}
+
+/*-- View: printeranimations/withdrawanimations --*/
+/* 3D receipt/document eject */
+#receiptEject3D>object, #eReceiptSend>object,
+#receiptEject3D>svg, #eReceiptSend>svg {
+    width: inherit;
+    height: 300px;
+}
+
+#documentEject3D>object, #documentEject3D>svg {
+    width: 200px;
+    height: auto;
+}
+
+/*-- View: billsplitting --*/
+div[data-view-id="billsplitting"] #flexArticle {
+    padding: 0 40px 0 40px;
+}
+
+div[data-view-id="billsplitting"] #flexAside {
+    flex-basis: auto;
+    margin-top: -60px;
+    height: 550px;
+}
+
+div[data-view-id="billsplitting"] .scrollbar-vertical {
+    margin-left: 0;
+}
+
+#amountHead {
+    flex-basis: 75px;
+    padding-right: 20px;
+    margin-bottom: 7px;
+}
+
+#amountHead>:nth-child(1) {
+    margin-right: 30px;
+}
+
+.flexDistributionRow {
+    padding-right: 20px;
+}
+
+.flexDistributionRow>var {
+    text-align: right;
+    min-width: 60px;
+}
+
+.flexDistributionRow .result {
+    min-width: 80px;
+}
+
+.flexDistributionRow .itemStack {
+    flex-basis: 100%;
+    margin-left: 270px;
+}
+
+#billsplitting .note {
+    width: 140px;
+    height: 72px;
+    margin-bottom: 20px;
+}
+
+#billsplitting .coin {
+    width: 155px;
+    height: 60px;
+    margin-bottom: 6px;
+}
+
+.flexDistributionRow .note:not(:first-child) {
+    margin-left: -470px;
+}
+
+.flexDistributionRow .coin:not(:first-child) {
+    margin-left: -435px;
+}
+
+.flexDistributionRow.billSplitGrouping>var {
+    visibility: hidden;
+}
+
+/*-- View: billselection --*/
+div[data-view-id="billselection"] #flexArticle {
+    padding: 0 42px 0 42px;
+}
+
+div[data-view-id="billselection"] .scrollbar-vertical {
+    margin-left: 0;
+}
+
+div[data-view-id="billselection"] #amountHead>:nth-child(1),
+div[data-view-id="billselection"] #amountHead>:nth-child(2),
+div[data-view-id="billselection"] #amountHead>:nth-child(3) {
+    margin-right: 20px;
+}
+
+div[data-view-id="billselection"] .flexDistributionRow {
+    padding-right: 20px;
+}
+
+div[data-view-id="billselection"] .upDown {
+    min-width: 184px;
+    margin-left: 30px;
+}
+
+div[data-view-id="billselection"] .flexDistributionRow .itemStack {
+    flex-basis: 100%;
+    margin-left: 160px;
+}
+
+div[data-view-id="billselection"] .crossX {
+    margin-right: 30px;
+}
+
+div[data-view-id="billselection"] .fieldButton {
+    width: 60px;
+    height: 60px;
+}
+
+div[data-view-id="billselection"] .itemCount {
+    line-height: 60px;
+    min-width: 60px;
+    height: 62px;
+}
+
+div[data-view-id="billselection"] .note {
+    width: 140px;
+    height: 72px;
+    margin-bottom: 20px;
+}
+
+div[data-view-id="billselection"] .flexDistributionRow .note:not(:first-child) {
+    margin-left: -470px;
+}
+
+/*-- View: amountselection --*/
+div[data-view-id="amountselection"] .menuButton>object,
+div[data-view-id="amountselection"] .menuButton>svg {
+    width: 91px;
+    height: 91px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+div[data-view-id="amountselection"] div[data-amount-button="true"] var {
+    font-size: var(--font-size05);
+}
+
+/*-- Views: amountentry, numericentry, formentry --*/
+div[data-view-id="amountentry"] #flexArticle,
+div[data-view-id="numericentry"] #flexArticle {
+    margin-right: -5px;
+}
+
+div[data-view-id="formentry"] #flexArticle {
+    padding: 0 42px 0 42px;
+}
+
+div[data-view-id="amountentry"] #flexAside,
+div[data-view-id="numericentry"] #flexAside {
+    flex-basis: auto;
+}
+
+#flexInputArea {
+    width: 600px;
+}
+
+.flexInputFormArea {
+    width: 500px;
+    margin-right: 30px;
+}
+
+#generalInputFieldArea {
+    margin: 0 20px 11px 20px;
+}
+
+.generalInputFieldAreaZone {
+    margin: 0 0 26px 0;
+}
+
+.generalInputFieldAreaZone object, .generalInputFieldAreaZone svg {
+    width: 46px;
+    height: 46px;
+    margin: 25px 0 0 -4px;
+}
+
+.generalInput {
+    height: 66px;
+    padding-right: 50px;
+    padding-left: 10px;
+}
+
+div[data-view-id="formentry"] .generalInput {
+    height: 63px; /* (height + padding-top) has to 4px smaller than default because of border */
+    padding-right: 50px;
+}
+
+div[data-view-id="formentry"] input {
+    padding-top: 18px;
+}
+
+.generalInputLabel {
+    position: fixed;
+    padding-left: 10px;
+    padding-top: 0;
+    font-size: var(--font-size03);
+}
+
+#generalInputBack {
+    width: 46px;
+    height: 46px;
+    z-index: 1;
+    margin-left: 538px;
+    margin-top: -56px;
+    transform: rotateZ(45deg);
+}
+
+#flexArticlePopupAmountEntry #generalInputBack {
+    margin-left: 539px;
+}
+
+#buttonCorrectFront {
+    width: 45px;
+    height: 45px;
+    margin-left: -23px;
+}
+
+div[data-view-id="amountentry"] #buttonCorrect,
+div[data-view-id="numericentry"] #buttonCorrect, #buttonCorrectPopup {
+    height: 63px;
+    margin-bottom: 8px;
+}
+
+div[data-view-id="amountentry"] #buttonCorrect var,
+div[data-view-id="numericentry"] #buttonCorrect var, #buttonCorrectPopup var {
+    max-width: 233px; /*to prevent from affecting buttonCorrectFront*/
+}
+
+
+div[data-view-id="amountentry"] #buttonConfirm {
+    height: 158px;
+}
+
+#pinPadButtons {
+}
+
+#pinPadButtons>.buttonZone {
+    padding: 5px;
+}
+
+
+/*-- View: depositresult --*/
+div[data-view-id="depositresult"] #flexArticle {
+    margin-left: -20px;
+    margin-right: 50px;
+}
+
+div[data-view-id="depositresult"] #flexAside {
+    flex-basis: auto;
+}
+
+.l2Sign>object, .l2Sign>svg {
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+#flexDepositResultTotalAmount {
+    flex-basis: 82px;
+    min-height: 82px;
+    margin-bottom: 2px;
+}
+
+#firstRowAmountCaptionArea, #secondRowAmountCaptionArea {
+    flex-basis: 298px;
+}
+
+#firstRowAmountCurrencyArea, #secondRowAmountCurrencyArea {
+    margin-left: 40px;
+    flex-basis: 65px;
+}
+
+#firstRowAmountSumCaptionArea, #secondRowAmountSumCaptionArea {
+    flex-basis: 313px;
+}
+
+.flexDepositResultDetailsRow {
+    min-height: 100px;
+    padding-left: 160px;
+}
+
+.flexDepositResultDetailsRow>var {
+    text-align: right;
+    min-width: 70px;
+}
+
+.flexDepositResultDetailsRow .note, .flexDepositResultDetailsRow .coin {
+    margin: 10px 0 9px 0;
+    width: 145px;
+    height: 88px;
+}
+
+.flexDepositResultDetailsRow .crossX {
+    min-width: 61px;
+    max-width: 61px;
+    height: auto;
+    margin-left: 50px;
+}
+
+.flexDepositResultDetailsRow[data-row-l2="true"] .crossX {
+    margin-right: -2px;
+}
+
+.flexDepositResultDetailsRow .result {
+    min-width: 160px;
+}
+
+/*-- View: accountinformation --*/
+div[data-view-id="accountinformation"] #flexArticle {
+    padding: 0 30px 0 20px;
+}
+
+div[data-view-id="accountinformation"] #flexAside {
+    flex-basis: auto;
+    padding: 0 40px 0 15px;
+}
+
+#AINPcebal, #AINPcemov, #AINIfx, #AINPcebalTable {
+    flex-basis: 100%;
+}
+
+#flexAccountDetailsArea {
+    flex-basis: 100%;
+    height: 75px;
+}
+
+/*- AINStd, AINIfx, AINPcemov -*/
+#flexAccountAINStdAINIfxAINPcemov {
+    height: 75px;
+    padding-left: 20px;
+}
+
+#flexAccountDetailsColumn1 {
+    flex-basis: 410px;
+}
+
+#flexAccountDetailsColumn2 {
+    flex-basis: 275px;
+}
+
+#accountNumberArea {
+    min-width: 380px;
+}
+
+#accountNumberLabel {
+    flex-basis: 100px;
+}
+
+#accountNumberValue {
+    flex-basis: 280px;
+}
+
+#balanceArea {
+    width: 380px;
+    height: 75px;
+    padding-left: 19px;
+}
+
+#AINPcemovTable #balanceArea {
+    width: 400px;
+}
+
+#balanceLabel, #balanceValue {
+    flex-basis: 190px;
+}
+
+#AINPcemovTable #balanceLabel {
+    flex-basis: 150px;
+    padding-right: 0;
+}
+
+#accountHolderArea, #accountTypeArea {
+    min-width: 400px;
+}
+
+#accountHolderLabel, #accountTypeLabel {
+    flex-basis: 100px;
+}
+
+#accountHolderValue {
+    flex-basis: 280px;
+}
+
+#AINPcemovTable #accountHolderLabel {
+    flex-basis: 150px;
+}
+
+/* Transaction area */
+#flexTransactionsArea {
+    height: 490px;
+}
+
+#flexTransactionsDataArea {
+    height: 400px;
+}
+
+#flexTransactionsHeader {
+    margin-top: 15px;
+}
+
+#flexTransactionsHeaderAINStdAINIfxAINPcemov {
+    height: 75px;
+    padding-left: 20px;
+}
+
+#row1TransactionsHeader, #row2TransactionsHeader {
+    flex-basis: 50%;
+}
+
+#transHeadExpirationDateLabel {
+    flex-basis: 200px;
+}
+
+#transHeadEffectiveDateLabel {
+    flex-basis: 200px;
+}
+
+#transHeadAmountLabel {
+    flex-basis: 100px;
+    padding-right: 155px;
+}
+
+#transHeadPurposeLabel {
+    flex-basis: 100%;
+}
+
+/* Transaction */
+.transaction {
+    height: 90px;
+    padding-left: 20px;
+}
+
+.row1TransData, .row2TransData {
+    flex-basis: 100%;
+}
+
+.row1TransData {
+    height: 30px;
+}
+
+.row2TransData {
+    height: 50px;
+    padding: 5px 0 5px 0;
+}
+
+.expirationDateValue {
+    flex-basis: 200px;
+}
+
+.effectiveDateValue {
+    flex-basis: 200px;
+}
+
+.amountValue {
+    flex-basis: 100px;
+    padding-right: 20px;
+}
+
+.currencyValue {
+    flex-basis: 70px;
+    padding-right: 60px;
+}
+
+.column1purposeValue, .column2purposeValue {
+    height: 50px;
+}
+
+.purposeValue {
+    height: 30px;
+}
+
+/*- AINPcebal -*/
+#flexAccountDetailsAINPcebal {
+    height: 75px;
+    padding-left: 20px;
+}
+
+#flexTransactionsHeaderAINPcebal {
+    height: 75px;
+    padding: 0 15px 0 20px;
+}
+
+#flexTransactionsDataAINPcebal>.transaction {
+    height: 90px;
+}
+
+#transHeadAccountTypeLabel, .accountTypeValue {
+    flex-basis: 140px;
+}
+
+#transHeadAccountNumberLabel, .accountNumberValue, #transHeadAccountBalanceLabel, .accountBalanceValue {
+    flex-basis: 160px;
+}
+
+#transHeadAvailableAmountLabel, .availableAmountValue {
+    flex-basis: 195px;
+}
+
+/*- Visibility: AINStd, AINIfx, AINPcemov, AINPcebal -*/
+#AINPcemovTable #flexAccountDetailsColumn1, #AINPcemovTable #flexAccountDetailsColumn2 {
+    flex-basis: 50%;
+}
+
+#AINPcemovTable #balanceArea {
+    padding-left: 0;
+}
+
+#AINPcemovTable #balanceLabel, #AINPcemovTable #accountHolderLabel {
+    flex-basis: 160px;
+}
+
+#AINPcemovTable #accountHolderValue, #AINPcemovTable #balanceValue {
+    flex-basis: 440px;
+}
+
+/*-- View: depositchequesresult --*/
+div[data-view-id="depositchequesresult"] #flexArticle {
+    height: 350px;
+    margin-left: -20px;
+}
+
+div[data-view-id="depositchequesresult"] #flexAside {
+    flex-basis: auto;
+    margin-bottom: 20px;
+}
+
+div[data-view-id="depositchequesresult"] .scrollbar-horizontal {
+    margin-top: -40px;
+}
+
+div[data-view-id="depositchequesresult"] #chqControl .dialogSmallButton {
+    width: 198px;
+}
+
+#chqControl {
+    min-width: 1065px;
+    max-height: 298px;
+    margin-right: 20px;
+}
+
+#chqControl .buttonsZone {
+    margin: 10px 0 10px 20px;
+}
+
+#chqControl .buttonsZone.chqRightButton {
+    margin-left: 5px;
+}
+
+#chqInfoDetails {
+    min-width: 200px;
+}
+
+#chqInfoDetails>var {
+    padding: 5px 0 0 0;
+}
+
+#chqInfoArea {
+    margin: 0 5px 4px 10px;
+}
+
+#chqInfoArea #chqInfo {
+    width: 605px;
+    height: 100%;
+}
+
+#chqInfoArea #chqInfo>var {
+    padding: 0 10px 0 10px;
+}
+
+#chqInfoArea img {
+    min-width: 605px;
+    max-width: 605px;
+    height: 240px;
+}
+
+#chqInfoArea .iconSwipeVerticalToTurn, #chqInfoArea .iconDoubleTap {
+    width: 61px;
+    min-height: 61px;
+}
+
+#chqInfoArea .iconSwipeVerticalToTurn {
+    margin-top: 5px;
+}
+
+#chqInfoArea .iconDoubleTap {
+    width: 67px;
+    min-height: 67px;
+    margin-top: 10px;
+}
+
+#chqInfoArea .chqImg {
+    perspective: 1200px;
+}
+
+#chqInfoArea .chequeImageContainer, #chqInfoArea .frontImage, #chqInfoArea .backImage {
+    height: 240px;
+}
+
+/*-- View: scannedimageviewer --*/
+div[data-view-id="scannedimageviewer"] #flexArticle {
+    padding-left: 30px;
+}
+
+div[data-view-id="scannedimageviewer"] #flexAside {
+    padding-right: 10px;
+}
+
+div[data-view-id="scannedimageviewer"]  #chqControl {
+    width: 100%;
+    height: 417px;
+    max-height: 417px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"] {
+    height: 477px;
+    max-height: 477px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl .buttonsZone {
+    margin: 15px 0 15px 10px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl .chqRightButton {
+    margin-right: -10px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea {
+    margin: 0 8px 0 0;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea, div[data-view-id="scannedimageviewer"] #imgViewer {
+    width: 100%;
+    height: 100%;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea #chqInfo {
+    min-height: 35px;
+    max-height: 35px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqImgCarrier2 {
+    position: absolute;
+    width: 560px;
+    height: 348px;
+    margin: 20px 0 0 10px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"] #chqImgCarrier2 {
+    width: 280px;
+    height: 408px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #imgViewer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-zoom="in"] #chqImgCarrier2 {
+    width: 1210px;
+    height: 700px;
+    margin-top: 30px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"][data-document-zoom="in"] #chqImgCarrier2 {
+    width: 619px;
+    height: 897px;
+    margin-top: 30px;
+}
+
+div[data-view-id="scannedimageviewer"] #idScanImage {
+    display: none;
+    position: absolute;
+    left: 355px;
+}
+
+div[data-view-id="scannedimageviewer"] #chequeScanRedLight {
+    width: 70px;
+    height: 348px;
+    margin-top: 40px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqControl[data-document-type="Document"] #chequeScanRedLight {
+    height: 408px;
+}
+
+/*-- View: menupreferences --*/
+div[data-view-id="menupreferences"] .currentPreferencesButton .preferencesMinMaxButton {
+    margin: -50px 0 10px -10px;
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton>object,
+div[data-view-id="menupreferences"] .currentPreferencesButton>svg {
+   transform: scale(0.8);
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton.prominentItem .preferencesMinMaxButton::before {
+    margin: 0;
+    padding: 10px 15px 0 0;
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton .preferencesMinMaxButton::before {
+    margin: 10px 10px 0 0;
+    padding: 0 0 10px 5px;
+}
+
+/*-- View: envelopeanimations --*/
+.envelopeOpen {
+    width: 360px;
+}
+
+.envelopeShortSide {
+    width: 150px;
+}
+
+.envelopeShortSidePerspective {
+    transform: perspective(900px) rotate3d(1, 0, 0, 60deg);
+}
+
+.envelopeLongSidePerspective {
+    transform: perspective(900px) rotate3d(1, 0, 0, 44deg);
+}
+
+/*-- View: scancodeanimations.html --*/
+#barcodeSlot {
+    width: 100px;
+    height: 6px;
+}
+
+#barcodeRedLightTop {
+    width: 100px;
+    height: 100px;
+    perspective: 180px;
+}
+
+#barcodeRedLight {
+    height: 200px;
+}
+
+#barcodeBack {
+    width: 100px;
+    perspective: 180px;
+}
+
+#barcodeScanArea {
+    margin-top: 170px;
+    width:  400px;
+    height: 140px;
+    perspective: 180px;
+    transform: rotateX(40deg);
+}
+
+.barcode {
+    width: 224px;
+    height: 80px;
+    transform-origin: 0;
+    transform: rotateX(20deg);
+}
+
+#qrcodeSlot {
+    width: 90px;
+    height: 6px;
+}
+
+#qrcodeRedLightTop {
+    width: 90px;
+    height: 90px;
+    perspective: 180px;
+}
+
+#qrcodeRedLight {
+    height: 195px;
+}
+
+#qrcodeBack {
+    width: 100px;
+    perspective: 180px;
+}
+
+#qrcodeScanArea {
+    margin-top: 95px;
+    width:  380px;
+    height: 190px;
+    perspective: 180px;
+    transform: rotateX(40deg);
+}
+
+.qrcode {
+    width: 150px;
+    height: 150px;
+    transform-origin: 0;
+    transform: rotateX(40deg);
+}
+
+/* -- View: checkboxes.html --*/
+.checkBoxItem {
+    margin: 0 65px 50px 0;
+}
+
+.checkBoxItem>var {
+    margin-bottom: 5px;
+}
+
+.checkBoxItem object, .checkBoxItem svg {
+    width: 61px;
+    height: 61px;
+}
+
+/*-- View: chiptransactions --*/
+div[data-view-id="chiptransactions"] #flexArticle {
+    padding: 0 40px 0 40px;
+}
+
+div[data-view-id="chiptransactions"] #flexAside {
+    flex-basis: auto;
+    padding: 0 40px 0 20px;
+}
+
+div[data-view-id="chiptransactions"] .scrollbar-vertical {
+    margin-left: 0;
+}
+
+/* Transaction area */
+#flexChipTransactionsArea {
+    flex-basis: 100%;
+    height: 490px;
+}
+
+#rowChipTransactionsHeader {
+    padding-left: 12px;
+    padding-right: 12px;
+    flex-basis: 100%;
+    height: 75px;
+}
+
+#transHeadChipDateLabel {
+    flex-basis: 25%;
+}
+
+#transHeadChipTimeLabel {
+    flex-basis: 20%;
+}
+
+#transHeadChipAmountLabel {
+    flex-basis: 20%;
+}
+
+#transHeadChipBalanceLabel {
+    flex-basis: 23%;
+}
+
+#transHeadChipStateLabel {
+    flex-basis: 12%;
+}
+
+/* Transaction */
+.chipTransaction {
+    height: 75px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.rowChipTransData {
+    flex-basis: 100%;
+}
+
+.chipDateValue {
+    flex-basis: 25%;
+}
+
+.chipTimeValue {
+    flex-basis: 20%;
+}
+
+.chipAmountValue {
+    flex-basis: 20%;
+}
+
+.chipBalanceValue {
+    flex-basis: 23%;
+}
+
+.chipStateValue {
+    flex-basis: 12%;
+}
+
+/*-- View: receipt.html --*/
+div[data-view-id="receipt"] .messageArea {
+    width: 380px;
+    height: 455px;
+    padding: 10px;
+}
+
+div[data-view-id="receipt"] .messageArea::before,
+div[data-view-id="receipt"] .messageArea::after {
+    top: 10%;
+    left: -17px;
+    font-size: var(--font-size04);
+}
+
+div[data-view-id="receipt"] .messageArea::after {
+    left: calc(100% - 16px);
+}
+
+div[data-view-id="receipt"] .messageArea>var {
+    height: 425px;
+    padding: 20px;
+}
+
+div[data-view-id="receipt"] #messageGrid {
+    height: 30%;
+}
+
+div[data-view-id="receipt"] #MESSAGE img {
+    max-width: 380px;
+    max-height: 50%;
+}
+
+/*-- View: mobiletransaction.html --*/
+#mobilePhone {
+    width: 300px;
+    height: 500px;
+}
+
+#mobilePhoneTop {
+    margin-top: 15px;
+    height: 18px;
+    width: 60px;
+}
+
+#mobilePhoneDisplay {
+    width: 250px;
+    height: 350px;
+}
+
+#confirmationCode {
+    padding-top: 10px;
+}
+
+#mobilePhoneBottom {
+    margin-bottom: 15px;
+    height: 18px;
+    width: 90px;
+}
+
+/*-- View: signaturepad.html --*/
+#signatureArea {
+    position: relative;
+    width: 100%;
+    height: 418px;
+}
+
+/*-- View: videoassistance.html --*/
+.videoImage {
+    height: 385px;
+    width: auto;
+}
+
+#videoImageArea {
+    /* min-width only necessary for Firefox ... */
+    min-width: 90px;
+}
+
+div[data-view-id="videoassistance"] .checkBoxItem {
+    min-width: 219px;
+}
+
+/*-- View: outofserviceadditionalinfos.html --*/
+div[data-view-id="outofserviceadditionalinfos"] #flexArticle {
+    height: 100%;
+    padding-left: 22px;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: [atmInfos] auto [atmQRCodes] auto;
+}
+
+div[data-view-id="outofserviceadditionalinfos"] #flexFooter {
+    height: 0;
+    min-height: 0;
+}
+
+#atmQRCodesInfo {
+    margin-left: 20px;
+    padding-right: 20px;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+div[data-view-id="outofserviceadditionalinfos"] #listContainer {
+    height: 420px;
+    max-height: 420px;
+}
+
+#atmInfosHeadline, .flexAtmInfosDetailsRow {
+    grid-template-columns: 65% 12% 13% 10%;
+    grid-column-gap: 0;
+    grid-row-gap: 15px;
+    padding-left: 20px;
+}
+
+#atmInfos[data-allow-map-locations="false"] #atmInfosHeadline, #atmInfos[data-allow-map-locations="false"] .flexAtmInfosDetailsRow {
+    grid-column-gap: 40px;
+}
+
+#atmInfosHeadline {
+    height: 68px;
+    margin-bottom: 2px;
+}
+
+#atmInfosHeadlineDistance {
+    grid-template-rows: 1fr 1fr;
+}
+
+#flexAtmInfosDetails {
+    max-height: 410px;
+}
+
+.flexAtmInfosDetailsRow {
+    padding: 6px 0 8px 20px;
+}
+
+.flexAtmInfosDetailsRow .atmAddress {
+    grid-template-rows: 1fr 1fr;
+}
+
+.flexAtmInfosDetailsRow .atmMapLocation {
+    width: 72px;
+    height: 62px;
+}
+
+#atmQRCodes {
+    margin-left: 20px;
+}
+
+#atmQRCodes>*:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+#mapLocationContainer {
+    /*size is calculated by code-behind*/
+}
+
+#mapLocationContainer #mapLocationContainerClose {
+    width: 55px;
+    height: 55px;
+    top: 10px;
+    right: 10px;
+    font-size: 2.50em;
+}
+
+/* -- View: dualchoiceselection.html --*/
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft,
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight {
+    width: 47%;
+    height: 1px;
+    margin-top: 30px;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft {
+    left: 40px;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight {
+    right: 40px;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorVertical {
+    height: 100%;
+    left: 50%;
+}
+
+div[data-view-id="dualchoiceselection"] #leftColumnText,
+div[data-view-id="dualchoiceselection"] #rightColumnText {
+    margin: -20px 0 50px 0;
+}

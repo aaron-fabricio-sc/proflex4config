@@ -1,0 +1,140 @@
+{
+  "AmountInputDecimal" : {
+    "config" : {
+      "decimal" : "true",
+      "formatOption" : "#M",
+      "maxAmount" : "[&CCTAFW_PROP_MAX_AMOUNT_ACT;;0&]",
+      "minAmount" : "[&CCTAFW_PROP_MIN_AMOUNT_ACT;;0&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "amountentry"
+  },
+  "AmountInputNoDecimal" : {
+    "config" : {
+      "decimal" : "false",
+      "formatOption" : "#M",
+      "maxAmount" : "[&CCTAFW_PROP_MAX_AMOUNT_ACT;;0&]",
+      "minAmount" : "[&CCTAFW_PROP_MIN_AMOUNT_ACT;;0&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "amountentry"
+  },
+  "AmountSelection" : {
+    "priorities" : {
+      "order" : [ "OTHER" ],
+      "prominent" : [ "OTHER=prominentItem" ],
+      "staticpos" : [ "OTHER=8", "BACK=4" ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "amountselection"
+  },
+  "IdInput" : {
+    "config" : {
+      "allowLeadingZero" : "false",
+      "maxLen" : "13",
+      "minLen" : "1"
+    },
+    "privateInput" : "true",
+    "timeout" : "(#InputTimeout#)",
+    "url" : "numericentry"
+  },
+  "Message" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "resultMapping" : {
+      "2" : "0"
+    },
+    "url" : "message"
+  },
+  "MessageAsync" : {
+    "commandconfig" : {
+      "CONFIRM" : "3"
+    },
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "message"
+  },
+  "NumericInput" : {
+    "config" : {
+      "maxLen" : "18",
+      "minLen" : "1",
+      "placeholder" : "0"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "numericentry"
+  },
+  "PhoneNumberInput" : {
+    "config" : {
+      "allowLeadingZero" : "true",
+      "maxLen" : "18",
+      "minLen" : "8",
+      "placeholder" : "004915123456"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "numericentry"
+  },
+  "PinInput" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#PinentryTimeout#)",
+    "url" : "pinentry[&CCTAFW_PROP_ETS_LAYOUT;;&].html"
+  },
+  "PrinterAnimations" : {
+    "commandconfig" : {
+      "CANCEL" : "3"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "printeranimations"
+  },
+  "Question" : {
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "QuestionOther" : {
+    "commandconfig" : {
+      "OTHER" : "0"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "question"
+  },
+  "Selection" : {
+    "priorities" : {
+      "prominent" : [ "OTHER=prominentItem" ],
+      "staticpos" : [ "OTHER=8" ]
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "selection"
+  },
+  "Wait" : {
+    "popup" : {
+      "ontimeout" : "false"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "pleasewait"
+  },
+  "WaitSpin" : {
+    "popup" : {
+      "ontimeout" : "false",
+      "waitspinner" : "true"
+    },
+    "timeout" : "(#EndlessTimeout#)",
+    "url" : "pleasewait"
+  },
+  "WithdrawalAmountInput" : {
+    "commandconfig" : {
+      "MIXTURE" : "[&VAR_MIXTURE_SELECTION_VIEWSTATE_S;;3&]"
+    },
+    "config" : {
+      "decimal" : "[&CCTAFW_PROP_WITHDRAWAL_AMOUNT_INPUT_DECIMALS;;true&]",
+      "formatOption" : "#M",
+      "maxAmount" : "[&CCTAFW_PROP_MAX_AMOUNT_ACT;;0&]",
+      "minAmount" : "[&CCTAFW_PROP_MIN_AMOUNT_ACT;;0&]"
+    },
+    "timeout" : "(#InputTimeout#)",
+    "url" : "amountentry"
+  }
+}

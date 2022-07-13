@@ -1,0 +1,1019 @@
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ sizes-positions-portrait.css 4.3.1-200123-21-8cd258cb-1a04bc7d
+
+*/
+
+
+/*Place your changes here*/
+/* padding: top right bottom left; */
+
+:root {
+    --header-height-dm-total: 530px;
+    --header-height-dm-image: 425px;
+}
+
+#flexHeader {
+    flex-basis: 370px;
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexHeader,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "dualchoiceselection"] #flexHeader,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexHeader,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexHeader {
+    flex-basis: 515px;
+}
+
+/* -- DM support -- */
+body[data-dm-available = true] div[data-view-id = "amountentry"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "cardanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "depositenvelopeanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "genericimage"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "message"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "mobileanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "mobiletransaction"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "numericentry"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "outofservice"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "offlinespa"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "pinentry"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "pleasewait"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "printeranimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "question"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "receipt"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "scancodeanimations"] #flexHeader,
+body[data-dm-available = true] div[data-view-id = "withdrawalanimations"] #flexHeader {
+    /*flex-basis: 538px;*/
+    flex-basis: 515px;
+}
+
+/*-- Header --*/
+#flexHeaderTop {
+    padding-left: 30px;
+}
+
+/*-- Additional header info --*/
+#flexAdditionalHeaderInfo {
+    min-width: 10%;
+    margin-left: 60px;
+    padding-top: 22px;
+}
+
+/*-- Help --*/
+#flexHelp {
+    margin-right: -5%;
+}
+
+/*-- Headline/Instruction --*/
+#flexHeaderBottom {
+    flex-basis: 90px;
+    padding: 0 30px 0 30px;
+}
+
+/*-- Article --*/
+#flexArticle {
+    padding-bottom: 0 !important;
+    margin-top: 35px;
+}
+
+/*-- Flex Nav/Aside --*/
+#flexNav, #flexNavPopup, #flexAside, #flexAsidePopup {
+    margin-top: 50px;
+}
+
+#flexNav > :not(:first-child), #flexNavPopup > :not(:first-child),
+#flexAside > :not(:first-child), #flexAsidePopup > :not(:first-child) {
+    margin-top: 120px;
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "dualchoiceselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexNav,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "dualchoiceselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "formentry"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #flexAside,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #flexAside,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexNav,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexNav,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #flexAside,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #flexAside {
+    /*margin-top: -108px;*/
+    margin-top: -85px;
+}
+
+/* DM support */
+body[data-dm-available = true] div[data-view-id = "amountentry"] #flexNav,
+body[data-dm-available = true] div[data-view-id = "question"] #flexNav,
+body[data-dm-available = true] div[data-view-id = "receipt"] #flexNav,
+body[data-dm-available = true] div[data-view-id = "amountentry"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "cardanimations"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "message"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "numericentry"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "pinentry"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "question"] #flexAside,
+body[data-dm-available = true] div[data-view-id = "receipt"] #flexAside {
+    /*margin-top: -108px;*/
+    margin-top: -85px;
+}
+
+/*-- BreadCrumb group --*/
+#breadCrumbGroup, #slideIndicatorGroup {
+    margin-top: 640px; /*please update if softkey pos changes*/
+}
+
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "amountselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "selection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "emvapplicationselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "prepaidproviderselection"] #slideIndicatorGroup,
+body[data-max-softkeys="6"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "checkboxes"] #slideIndicatorGroup,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "accountselection"] #slideIndicatorGroup,
+body[data-max-softkeys="3"][data-softkeys-orientation="BOTTOM_UP"] div[data-view-id = "billpaymentselection"] #slideIndicatorGroup {
+    /* Please update if softkey position changes */
+    /*margin-top: 362px;*/
+    margin-top: 385px;
+}
+
+/*-- Softkey button length --*/
+/* button03 - MIDDLE - */
+.button03 {
+    width: 319px;
+}
+
+/* button04 - LONG - */
+.button04 {
+    width: 409px;
+}
+
+.checkBoxItem, .radioButtonItem {
+    width: 459px;
+}
+
+/* softkey types left/right */
+.skLeft {
+    padding-left: 20px;
+}
+
+.skRight {
+    padding-right: 20px;
+}
+
+/*-- Checkboxes --*/
+.checkBoxItemLeft {
+    padding-left: 30px;
+}
+
+.checkBoxItemRight {
+    padding-right: 30px;
+}
+
+/*-- Radiobuttons --*/
+.radioButtonItemLeft {
+    padding-left: 30px;
+
+}
+
+.radioButtonItemRight {
+    padding-right: 30px;
+}
+
+/*-- Virtual Keyboard --*/
+/* keyboard button (VK) */
+.keyboardButton, .fnKey, .spaceKey, .enterKey, .arrowKeys {
+    width: 75px;
+    height: 85px;
+}
+
+#virtualKeyboardContainer {
+    height: 800px;
+}
+
+#virtualKeyboardArea {
+    padding: 0 5px 0 0;
+}
+
+#virtualKeyboardArea #keyArea {
+    flex-basis: 1000px;
+}
+
+.keyboardButton {
+    margin: 6px 0 0 6px;
+}
+
+.keyboardButton > .secondKeyCode {
+    padding-right: 5px;
+}
+
+#popupKeysArea {
+    padding: 0 5px 5px 0;
+}
+
+#popupKeysArea .keyboardButton {
+    flex-basis: auto;
+    width: auto;
+    margin: 5px 0 0 5px;
+    min-width: 65px;
+    max-height: 65px;
+}
+
+#placedummy00 {
+    width: 0;
+}
+
+#placedummy01 {
+    width: 0;
+}
+
+#placedummy02 {
+    width: 108px;
+}
+
+#placedummy03 {
+    width: 14px;
+}
+
+#keyboardButtonBACKSPACE {
+    width: 100px;
+}
+
+#keyboardButtonCLEAR {
+    width: 95px;
+}
+
+#enterKey {
+    width: 194px;
+}
+
+#fnKey {
+    width: 156px;
+}
+
+#spaceKey {
+    width: 561px;
+}
+
+#generalVKInput {
+    width: 100%;
+    height: 70px;
+    padding: 20px 0 0 26px;
+}
+
+#generalVKInputLabel {
+    position: fixed;
+    margin-left: 30px;
+}
+
+/*-- Popup window --*/
+#flexNavPopup, #flexAsidePopup {
+    margin-top: 5px;
+}
+
+.popupWindow {
+    height: 400px;
+    margin: 570px 80px 0 80px;
+}
+
+#popupWindowContent {
+    padding: 20px 0 40px 40px;
+}
+
+#popupWindowContent > main > aside {
+    margin: 35px -132px 0 0;
+}
+
+#popupWindowAmountEntry {
+    height: 613px;
+    margin-top: 365px;
+}
+
+/*Popup Selection*/
+#popupWindowSelection {
+    height: 799px;
+    margin-top: 365px;
+}
+
+#popupWindowHelp {
+    height: 682px;
+    margin-top: 340px;
+}
+
+/*-- View: welcome --*/
+div[data-view-id="welcome-view"] #flexMain,
+div[data-view-id="welcome"] #flexMain {
+    margin-top: 50px;
+}
+
+/*== View: item animations views ==*/
+div[data-view-id="cardanimations"] figure:not([id="waitSpinner"]),
+div[data-view-id="withdrawalanimations"] figure:not([id="waitSpinner"]),
+div[data-view-id="printeranimations"] figure:not([id="waitSpinner"]) {
+    margin-top: 0;
+}
+
+#flexAnimations {
+    margin-top: 100px;
+}
+
+div[data-view-id="cardanimations"] #flexArticle,
+div[data-view-id="withdrawalanimations"] #flexArticle,
+div[data-view-id="depositanimations"] #flexArticle,
+div[data-view-id="depositchequesanimations"] #flexArticle,
+div[data-view-id="printeranimations"] #flexArticle {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*-- message article / message header --*/
+#flexMessageContainerHeader {
+    margin-top: 280px;  /* 370 - 90 */
+    width: calc(100% - 100px); /*50px is the padding of class 'flexMessageContainer' */
+}
+
+.flexMessageContainer {
+    padding: 0 50px 0 50px;}
+
+/*-- View: adaadjustment --*/
+div[data-view-id="adaadjustment"] #flexNavSK00::before, div[data-view-id="adaadjustment"] #flexNavSK02::before {
+    margin-top: -4px;
+}
+
+div[data-view-id="adaadjustment"] #flexNavSK01::before, div[data-view-id="adaadjustment"] #flexNavSK03::before {
+    width: 540px;
+    margin-top: -209px;
+}
+
+/*-- View: accountselection / billpaymentselection --*/
+div[data-view-id="accountselection"] #flexNav > div #additional>var,
+div[data-view-id="billpaymentselection"] #flexNav > div #additional>var {
+    min-width: 230px;
+}
+
+div[data-view-id="accountselection"] #flexNav > div #additional>var:nth-child(3),
+div[data-view-id="billpaymentselection"] #flexNav > div #additional>var:nth-child(3) {
+    min-width: 228px;
+}
+
+/* -- View depositanimations.html -- */
+#flexAnimationHead {
+    max-height: 295px;
+}
+
+/*-- View: selection, checkboxes, formentry, emvapplicationselection, prepaidproviderselection --*/
+div[data-view-id="selection"] #flexAside, div[data-view-id="selection"] #flexNav,
+div[data-view-id="checkboxes"] #flexAside, div[data-view-id="checkboxes"] #flexNav,
+div[data-view-id="dualchoiceselection"] #flexAside, div[data-view-id="dualchoiceselection"] #flexNav,
+div[data-view-id="formentry"] #flexAside, div[data-view-id="formentry"] #flexNav,
+div[data-view-id="emvapplicationselection"] #flexAside, div[data-view-id="emvapplicationselection"] #flexNav,
+div[data-view-id="prepaidproviderselection"] #flexAside, div[data-view-id="prepaidproviderselection"] #flexNav {
+    /*otherwise the aside would shrink and the breadcrumbs move to the right if no items in
+      the aside except the 'next' button, which is usually shorter than the items*/
+    min-width: 500px;
+}
+
+/*-- View: billsplitting --*/
+div[data-view-id="billsplitting"] #flexArticle {
+    padding-left: 10px;
+    padding-right: 40px;
+    margin-top: 30px;
+}
+
+.flexDistributionRow .note {
+    height: 110px;
+}
+
+.flexDistributionRow .note:not(:first-child) {
+    margin-left: -220px;
+}
+
+.flexDistributionRow .coin:not(:first-child) {
+    margin-left: -210px;
+}
+
+/*-- View: billselection --*/
+div[data-view-id="billselection"] #flexArticle {
+    /*Use if there are softkeys on the left*/
+    margin-left: -142px;
+    padding-right: 20px;
+}
+
+div[data-view-id="billselection"] #amountHead {
+    flex-basis: 93px;
+}
+
+div[data-view-id="billselection"] .flexDistributionRow .note:not(:first-child) {
+    margin-left: -200px;
+}
+
+/*-- View: depositchequesresult --*/
+div[data-view-id="depositchequesresult"] .button02 {
+    width: 170px
+}
+
+div[data-view-id="depositchequesresult"] #flexArticle {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#chqArea img {
+    min-width: 512px;
+    max-width: 512px;
+}
+
+#chqNoFromTo {
+    margin-top: 200px;
+}
+
+div[data-view-id="depositchequesresult"] #chqInfoArea[data-document-zoom="in"] {
+    transform: scale(1.9, 2);
+}
+
+/*-- View: depositresult --*/
+div[data-view-id="depositresult"] #flexArticle {
+    margin-left: -110px;
+    margin-right: 10px;
+}
+
+div[data-view-id="depositresult"] #flexNav {
+    flex-basis: 120px;
+}
+
+#flexDepositResultTotalAmount {
+    flex-basis: 95px;
+    min-height: 95px;
+    padding-right: 50px;
+}
+
+.flexDepositResultDetailsRow {
+    height: 130px;
+    padding-left: 110px;
+    padding-right: 20px;
+}
+
+.flexDepositResultDetailsRow .note, .flexDepositResultDetailsRow .coin {
+    margin: 10px 0 10px 0;
+    width: 155px;
+    height: 100px;
+}
+
+.flexDepositResultDetailsRow .crossX {
+    min-width: 40px;
+    max-width: 40px;
+    margin-left: 0;
+}
+
+.flexDepositResultDetailsRow .result {
+    min-width: 100px;
+}
+
+/*-- Views: amountentry, numericentry --*/
+div[data-view-id="numericentry"] #generalInputFieldArea {
+    padding-top: 206px;
+}
+
+div[data-view-id="amountentry"] #generalInputFieldArea,
+div[data-view-id="numericentry"] #generalInputFieldArea {
+    padding-left: 30px;
+}
+
+/*-- View: outofservice / offlinespa --*/
+.outOfServicePattern {
+    height: 130px;
+}
+
+#outOfServiceMessage {
+    min-height: 100px;
+    padding: 156px 0 156px 0;
+}
+
+/*-- View: accountinformation --*/
+div[data-view-id="accountinformation"] #flexArticle {
+    flex-basis: 910px;
+}
+
+div[data-view-id="accountinformation"] #flexNav {
+    flex-basis: 22px;
+}
+
+div[data-view-id="accountinformation"] #flexAside {
+    flex-basis: 62px;
+}
+
+div[data-view-id="accountinformation"] #flexAside #buttonConfirm {
+    width: 269px; /*Use as a button02, even the view has set it as button04*/
+}
+
+#AINPcebal, #AINPcemov, #AINIfx, #AINPcebalTable {
+    flex-basis: 100%;
+}
+
+#flexAccountDetailsArea {
+    flex-basis: 100%;
+    height: 95px;
+}
+
+/*- AINStd, AINIfx, AINPcemov -*/
+#flexAccountAINStdAINIfxAINPcemov {
+    height: 95px;
+    margin-right: 310px;
+    padding-left: 10px;
+}
+
+#flexAccountDetailsColumn1 {
+    flex-basis: 380px;
+}
+
+#flexAccountDetailsColumn2 {
+    flex-basis: 210px;
+}
+
+#accountNumberArea {
+    min-width: 380px;
+}
+
+#accountNumberLabel, #accountNumberLabel {
+    flex-basis: 100px;
+}
+
+#accountNumberValue {
+    flex-basis: 280px;
+}
+
+#balanceArea {
+    width: 190px;
+    padding-left: 19px;
+}
+
+#balanceLabel, #balanceValue {
+    flex-basis: 190px;
+}
+
+#AINPcemovTable #balanceLabel {
+    flex-basis: 150px;
+    padding-right: 0;
+}
+
+#accountHolderArea, #accountTypeArea {
+    min-width: 380px;
+}
+
+#accountHolderLabel, #accountTypeLabel {
+    flex-basis: 100px;
+}
+
+#accountHolderValue {
+    flex-basis: 280px;
+}
+
+#AINPcemovTable #accountHolderLabel {
+    flex-basis: 150px;
+}
+
+/* Transaction area */
+#flexTransactionsArea {
+    min-width: 910px;
+    height: 700px;
+}
+
+#flexTransactionsHeader {
+    margin-top: 30px;
+}
+
+#flexTransactionsHeaderAINStdAINIfxAINPcemov {
+    height: 95px;
+    padding-left: 10px;
+}
+
+#row1TransactionsHeader, #row2TransactionsHeader {
+    flex-basis: 50%;
+}
+
+#transHeadExpirationDateLabel {
+    flex-basis: 200px;
+}
+
+#transHeadEffectiveDateLabel {
+    flex-basis: 200px;
+}
+
+#transHeadAmountLabel {
+    flex-basis: 200px;
+    padding-right: 300px;
+}
+
+#transHeadPurposeLabel {
+    flex-basis: 100%;
+}
+
+/* Transaction */
+.transaction {
+    height: 125px;
+    padding-right: 100px;
+    padding-left: 10px;
+}
+
+.row1TransData, .row2TransData {
+    flex-basis: 100%;
+}
+
+.row1TransData {
+    height: 55px;
+}
+
+.row2TransData {
+    height: 80px;
+    padding: 5px 0 5px 0;
+}
+
+.expirationDateValue {
+    flex-basis: 200px;
+}
+
+.effectiveDateValue {
+    flex-basis: 200px;
+}
+
+.amountValue {
+    flex-basis: 200px;
+    padding-right: 20px;
+}
+
+.currencyValue {
+    flex-basis: 70px;
+    padding-right: 110px;
+}
+
+.column1purposeValue, .column2purposeValue {
+    height: 80px;
+}
+
+.purposeValue {
+    height: 50px;
+}
+
+/*- AINPcebal -*/
+#flexAccountDetailsAINPcebal {
+    height: 95px;
+    margin-right: 310px;
+    padding-left: 10px;
+}
+
+#flexTransactionsHeaderAINPcebal {
+    height: 95px;
+    padding: 0 100px 0 10px;
+}
+
+#transHeadAccountTypeLabel, #transHeadAccountNumberLabel, #transHeadAccountBalanceLabel, #transHeadAvailableAmountLabel {
+    flex-basis: 200px;
+}
+
+#transHeadAccountTypeLabel, .accountTypeValue {
+    flex-basis: 140px;
+}
+
+#transHeadAccountNumberLabel, .accountNumberValue, #transHeadAccountBalanceLabel, .accountBalanceValue {
+    flex-basis: 160px;
+}
+
+#transHeadAvailableAmountLabel, .availableAmountValue {
+    flex-basis: 195px;
+}
+
+/*- Visibility: AINStd, AINIfx, AINPcemov, AINPcebal -*/
+#AINPcemovTable #flexAccountDetailsColumn1, #AINPcemovTable #flexAccountDetailsColumn2 {
+    flex-basis: 50%;
+}
+
+#AINPcemovTable #balanceArea {
+    width: 210px;
+    padding-left: 0;
+}
+
+#AINPcemovTable #balanceLabel, #AINPcemovTable #accountHolderLabel {
+    flex-basis: 150px;
+}
+
+#AINPcemovTable #accountHolderValue, #AINPcemovTable #balanceValue {
+    flex-basis: 440px;
+}
+
+/*-- View: message / question --*/
+div[data-view-id="message"] #flexNav,
+div[data-view-id="question"] #flexNav,
+div[data-view-id="message"] #flexAside,
+div[data-view-id="question"] #flexAside {
+    /*allow flexNav/flexAside to overlap flexArticle by overflow visible,
+      otherwise flexArticle shrinks by the width of flexNav and/or flexAside*/
+    max-width: 0;
+}
+
+div[data-view-id="message"] .messageArea,
+div[data-view-id="question"] .messageArea {
+    max-height: 560px;
+}
+
+div[data-view-id="question"] .messageArea[data-other-available="true"] {
+    max-height: 500px;
+}
+
+/*-- View: pinentry --*/
+#pinDigitsArea {
+    margin-top: 120px;
+}
+
+.pinDigitContainer {
+    width: 60px; /*plus 2x1px border*/
+    height: 108px; /*plus 2x1px border*/
+}
+
+.pinDigitContainer:not(:last-child) {
+    margin-right: 14px;
+}
+
+.pinDigitContainer .front {
+    width: 62px;
+    height: 110px;
+}
+
+div.frontCurrent > var {
+    line-height: 1.7em;
+}
+
+div.back {
+    width: 62px;
+    height: 110px;
+}
+
+div.back > var {
+    line-height: 2.0em;
+}
+
+/*low=PIN len <= 12, high=PIN len>12*/
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer {
+    width: 46px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer:not(:last-child) {
+    margin-right: 13px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer .front {
+    width: 48px;
+}
+
+#pinDigitsArea[data-pin-range="high"] .pinDigitContainer div.back {
+    width: 48px;
+}
+
+/* -- DM-Support -- */
+/* -- DM support for mobiletransaction -- */
+body[data-dm-available = true] div[data-view-id = "mobiletransaction"] #mobilePhone {
+    height: 480px;
+}
+
+/* -- DM support for printeranimations / withdrawalanimations -- */
+body[data-dm-available = true] div[data-view-id="printeranimations"] #flexArticle figure:not([id="waitSpinner"]),
+body[data-dm-available = true] div[data-view-id="withdrawalanimations"] #flexArticle figure:not([id="waitSpinner"]) {
+    margin-top: 0;
+}
+
+/* -- DM support for message and question -- */
+body[data-dm-available = true] div[data-view-id="message"] #flexArticle,
+body[data-dm-available = true] div[data-view-id="question"] #flexArticle {
+    margin-top: 20px;
+}
+
+body[data-dm-available = true] div[data-view-id="message"] .messageArea,
+body[data-dm-available = true] div[data-view-id="question"] .messageArea {
+    max-height: 520px;
+}
+
+body[data-dm-available = true] div[data-view-id="question"] .messageArea[data-other-available="true"] {
+    max-height: 450px;
+}
+
+/* -- DM support for depositenvelopeanimatons -- */
+body[data-dm-available = true] div[data-view-id = "depositenvelopeanimations"] #flexArticle {
+    margin-top: 10px;
+}
+
+/* -- DM support for depositanimatons / depositchequesanimatons -- */
+body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexArticle,
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexArticle {
+    margin-top: 10px;
+}
+
+body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexAnimationHead,
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexAnimationHead {
+    max-height: 175px;
+}
+
+body[data-dm-available = true] div[data-view-id = "depositanimations"] #flexArticle figure:not([class="shortSideFirst"]) {
+    margin-top: -100px;
+}
+
+body[data-dm-available = true] div[data-view-id = "depositchequesanimations"] #flexArticle figure:not([id="waitSpinner"]) {
+    margin-top: 0;
+}
+
+/* -- DM support for numericentry -- */
+body[data-dm-available = true] div[data-view-id = "numericentry"] #flexArticle {
+    margin-top: -109px;
+}
+
+/*-- genericimage --*/
+.genericImage {
+    width: 250px;
+}
+
+/*-- View: chiptransactions --*/
+div[data-view-id="chiptransactions"] #flexArticle {
+    flex-basis: 800px;
+    margin-left: -130px;
+}
+
+div[data-view-id="emvtransactions"] #flexArticle {
+    flex-basis: 650px;
+    margin-left: -130px;
+}
+
+div[data-view-id="chiptransactions"] #flexNav,
+div[data-view-id="emvtransactions"] #flexNav {
+    flex-basis: 0;
+}
+
+div[data-view-id="chiptransactions"] #flexAside,
+div[data-view-id="emvtransactions"] #flexAside {
+    flex-basis: 15%;
+}
+
+/*-- do not display confirm text in this res because it is too long --*/
+div[data-view-id="emvtransactions"] #flexAside #buttonConfirm var {
+    display: none;
+}
+
+/* Transaction area */
+#transHeadChipDateLabel {
+    margin-left: 25px;
+}
+
+/* Transaction */
+.chipDateValue {
+    margin-left: 25px;
+}
+
+/*-- View: receipt.html --*/
+div[data-view-id="receipt"] .messageArea {
+    height: 500px;
+    margin-left: 64px;
+    padding: 20px;
+}
+
+div[data-view-id="receipt"] .messageArea > var {
+    height: 460px;
+    padding: 20px;
+}
+
+/* -- View: formentry.html  -- */
+div[data-view-id="formentry"] #flexNav .generalInputFieldAreaZone {
+    padding-left: 30px;
+}
+
+div[data-view-id="formentry"] #flexAside .generalInputFieldAreaZone {
+    padding-right: 30px;
+}
+
+div[data-view-id="formentry"] #flexNav input, div[data-view-id="formentry"] #flexAside input {
+    padding-top: 18px;
+}
+
+div[data-view-id="formentry"] .generalInput {
+    width: 380px;
+    padding-right: 30px;
+}
+
+/*-- View: scannedimageviewer --*/
+div[data-view-id="scannedimageviewer"] #flexArticle {
+    margin-top: 130px;
+}
+
+div[data-view-id="scannedimageviewer"] #flexNav,
+div[data-view-id="scannedimageviewer"] #flexAside {
+    /*allow flexAside/flexAside to overlap flexArticle by overflow visible,
+      otherwise flexArticle shrinks of the width of flexAside*/
+    max-width: 0;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea {
+    flex-basis: 570px;
+    height: 450px;
+    max-height: 450px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea, div[data-view-id="scannedimageviewer"] #imgViewer {
+    width: 100%;
+    height: 100%;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea #chqInfoDetails {
+    height: 85px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoDetailsColumn1 > var, div[data-view-id="scannedimageviewer"] #chqInfoDetailsColumn2 > var {
+    padding: 10px 20px 0 20px;
+}
+
+div[data-view-id="scannedimageviewer"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqImgCarrier2 {
+    position: absolute;
+    width: 528px;
+    height: 330px;
+    margin: 20px 0 0 0;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #chqImgCarrier1,
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #chqImgCarrier2 {
+    width: 1000px;
+    height: 600px;
+    margin-top: 30px;
+    transition: top 0.25s, left 0.25s, margin-top 0.25s, width 0.25s, height 0.25s;
+    transition-timing-function: ease-in;
+}
+
+div[data-view-id="scannedimageviewer"] #idScanImage {
+    left: 300px;
+}
+
+/*-- View: signaturepad.html --*/
+#signatureArea {
+    width: 980px;
+    height: 478px;
+    margin-left: -330px;
+}
+
+/*-- View: videoassistance.html --*/
+div[data-view-id="videoassistance"] #flexArticle {
+    padding-left: 32px;
+}
+
+/*-- View: outofserviceadditionalinfos.html */
+div[data-view-id="outofserviceadditionalinfos"] #flexArticle {
+    padding-left: 12px;
+    grid-template-columns: 80.5% 20%;
+}
+
+#atmInfosHeadline {
+    min-height: 84px;
+    margin-bottom: 4px;
+}
+
+div[data-view-id="outofserviceadditionalinfos"] #listContainer {
+    height: 620px;
+    max-height: 620px;
+}
+
+#atmInfosHeadline, .flexAtmInfosDetailsRow {
+    grid-template-columns: 62% 13% 15% 10%;
+}
+
+#flexAtmInfosDetails {
+    max-height: 536px;
+}
+
+.flexAtmInfosDetailsRow {
+    padding: 15px 0 15px 20px;
+}
+
+.flexAtmInfosDetailsRow .atmAddress {
+    grid-template-rows: 1.4fr 1.1fr;
+}
+
+/* -- View: dualchoiceselection.html --*/
+div[data-view-id="dualchoiceselection"] #leftColumnText {
+    left: 30px;
+}
+
+div[data-view-id="dualchoiceselection"] #rightColumnText {
+    right: 30px;
+}

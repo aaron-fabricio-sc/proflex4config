@@ -1,0 +1,135 @@
+<!--
+$MOD$ header.html 4.3.1-210422-21-8faf2d6b-1a04bc7d
+-->
+<header
+  id="flexHeader"
+  data-view-id
+  data-message-visible="false"
+  data-bind="attr: { 'data-message-visible': messageVisible }, gesture: {
+                    options: {
+                        processChildEvents: ['pan', 'panstart']
+                    },
+                    gestures: {
+                        Pan: {
+                            events:['panstart'],
+                            threshold: 200,
+                            handler: () => {
+                                $root.getModule().toggleSplitMode();
+                                return true;
+                            }
+                        }
+                    }}"
+>
+  <div
+    id="logo color"
+    class="logo animate__animated animate__lightSpeedInRight"
+  >
+    <img src="style/default/images/datec.png" alt="" />
+
+    <!-- the logo placeholder -->
+  </div>
+  <div id="dato"></div>
+  <div id="flexHeaderTop">
+    <div id="flexHelp">
+      <div
+        id="screens"
+        class="button"
+        data-bind="command: 
+				{
+					id: 'SWAP_SCREENS',
+					type: CMDTYPE.BUTTON,
+					state: swapScreenViewState,
+					action: swapScreens.bind($root, 'GUIDM')
+				}"
+      >
+        <svg data-bind="svguse: { name: 'monitor_swap.svg' }"></svg>
+      </div>
+      <div
+        id="magnifyGlass"
+        class="button"
+        onclick="document.getElementById('magnifyGlassObject').getSVGDocument ? document.getElementById('magnifyGlassObject').getSVGDocument().magnifyGlassClick() :
+                             document.getElementById('magnifyGlassObject').ownerDocument.magnifyGlassClick();"
+        data-bind="command: {id: 'MAGNIFY_GLASS', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN}"
+      >
+        <svg
+          id="magnifyGlassObject"
+          data-bind="svguse: { name: 'magnify_glass.svg', inline: true, keepscript: true }"
+        ></svg>
+      </div>
+      <div
+        id="help"
+        class="button"
+        data-bind="command: {id: 'HELP', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, eppkey: 'HELP'}"
+      >
+        <svg data-bind="svguse: { name: 'help.svg' }"></svg>
+      </div>
+      <div
+        id="language"
+        class="button"
+        data-bind="command: {id: 'LANGUAGE', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED}"
+      >
+        <svg data-bind="svguse: { name: 'language.svg' }"></svg>
+      </div>
+    </div>
+    <time id="flexTime">
+      <!-- clock widget start -->
+
+      <div style="text-align: center; padding: 1em 0">
+        <iframe
+          src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=small&timezone=America%2FLa_Paz"
+          width="100%"
+          height="90"
+          frameborder="0"
+          seamless
+        ></iframe>
+      </div>
+
+      <!-- clock widget end -->
+    </time>
+  </div>
+
+  <div
+    id="flexMessageContainerHeader"
+    class="flexMessageContainer"
+    data-bind="visible: messageVisible"
+  >
+    <div
+      class="messageArea"
+      data-content-style="WarningBox"
+      data-bind="attr: { 'data-content-style': messageLevel }"
+    >
+      <var
+        class="color03 font01"
+        data-bind="
+                command: {id: 'MESSAGE_HEADER', type: CMDTYPE.TEXT, action: null, state: CMDSTATE.NONE, label: {html: messageText, inplace: true}}"
+      ></var>
+    </div>
+  </div>
+
+  <div id="flexHeaderBottom">
+    <var
+      id="headline"
+      class="color01 font01"
+      data-bind="command: {id: 'HEADLINE', type: CMDTYPE.TEXT, action: null, state: CMDSTATE.NONE, label: {html: getLabel('GUI_[#VIEW_KEY#]_Headline', ''), inplace: true}}"
+    ></var>
+    <var
+      id="instruction"
+      class="color03-dtr font02"
+      data-bind="command: {id: 'INSTRUCTION', type: CMDTYPE.TEXT, action: null, state: CMDSTATE.NONE, label: {html: getLabel('GUI_[#VIEW_KEY#]_Instruction', ''), inplace: true}}"
+    ></var>
+    <var
+      id="datos"
+      class="color03-dtr font02"
+      data-bind="command: {id: 'datos', type: CMDTYPE.TEXT, action: null, state: CMDSTATE.NONE, label: {html: getLabel('GUI_[#VIEW_KEY#]_datos', ''), inplace: true}}"
+    ></var>
+  </div>
+
+  <div
+    id="moveSplitScreenPosition"
+    class="button"
+    style="display: none"
+    onclick="Wincor.UI.Content.ViewModelContainer.getById('flexHeader').getModule().toggleSplitMode();"
+  >
+    <svg data-bind="svguse: { name: 'split_screen_horizontal.svg' }"></svg>
+  </div>
+</header>

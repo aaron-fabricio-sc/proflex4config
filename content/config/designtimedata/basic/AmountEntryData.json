@@ -1,0 +1,14 @@
+{
+    "preValue": "",
+    "placeHolder": "12300",
+    "decimal": true,
+    "minAmount": 0,
+    "maxAmount": 250000,
+    "multiplier": 1,
+    "formatOption": "#M",
+    "clearByCorrect": true,
+    "messageAll": "Something is wrong with the multiplier is not 5 or amount not between 0 and 2500 EUR",
+    "messageMinMax": "Please choose an amount between 0 and 2500 EUR.",
+    "messageMultiplier": "Please choose a multiple of 5",
+    "messageLevel": "WarningBox"
+}

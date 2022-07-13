@@ -1,0 +1,124 @@
+<!--
+$MOD$ chiptransactions.html 4.3.1-200123-21-8cd258cb-1a04bc7d
+-->
+
+<main id="flexMain">
+    <!-- Nav -->
+    <!-- nav -->
+    <nav id="flexNav">
+        <div id="flexNavSK00"></div>
+        <div id="flexNavSK01"></div>
+        <div id="flexNavSK02"></div>
+        <div id="flexNavSK03">
+            <div class="button button01 skLeft iconButton borderDrawing"
+                 data-bind="command: {id: 'BTN_SCROLL_LEFT', adaType: ADA_TYPE.SELECTION_KEY, adakey: '4', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Back', 'BACK')}, eppkey: 'F5'}">
+                <svg data-bind="svguse: { name: 'arrow_left_left.svg' }"></svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article id="flexArticle">
+
+
+            <!-- Account transaction area -->
+            <div id="flexChipTransactionsArea">
+
+                <!-- Transaction header -->
+                <div id="flexChipTransactionsHeader">
+                     <div id="rowChipTransactionsHeader">
+                        <var id="transHeadChipDateLabel" class="color03 font02"
+                             data-bind="command: {id: 'dateLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Date', 'Date'), inplace: true}}">
+                        </var>
+                        <var id="transHeadChipTimeLabel" class="color03 font02"
+                             data-bind="command: {id: 'timeLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Time', 'Time'), inplace: true}}">
+                        </var>
+                        <var id="transHeadChipAmountLabel" class="color03 font02"
+                             data-bind="command: {id: 'amountLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Amount', 'Amount'), inplace: true}}">
+                        </var>
+                        <var id="transHeadChipBalanceLabel" class="color03 font02"
+                             data-bind="command: {id: 'balanceLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Balance', 'New Balance'), inplace: true}}">
+                        </var>
+                        <var id="transHeadChipStateLabel" class="color03 font02"
+                             data-bind="command: {id: 'stateLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_State', 'State'), inplace: true}}">
+                        </var>
+                     </div>
+                </div>
+
+                <!-- Transaction data -->
+                <div id="flexChipTransactionsDataArea">
+                        <!-- ko template: { foreach: dataList.items, afterRender: notify.bind($root) } -->
+                        <div class="chipTransaction listRow" data-list-down-active="false" data-list-up-active="false" data-bind="
+                                    style: {'animation-duration': ($index() * 0.2 + 0.4) + 's'},
+                                    attr: {'data-list-down-active': $root.cmdRepos.isActive('BTN_SCROLL_DOWN'), 'data-list-up-active': $root.cmdRepos.isActive('BTN_SCROLL_UP')},
+                                    command: {  id: 'TRANS_ROW' + $index(),
+                                        adaType: $root.ADA_TYPE.DYNAMIC_VALUE,
+                                        state: $root.CMDSTATE.NONE,
+                                        action: null,
+                                        adaText: $root.getLabel('GUI_[#VIEW_KEY#]_Label_Transaction_Row_ADA', 'Transaction of date {#date#}  at time {#time#}  {#sign#} Amount: {#amount#}  New balance: {#balance#}  State: {#state#}.', null,
+                                                                      { 'date': $data.transDate,
+                                                                        'time': $data.transTime,
+                                                                        'sign': ( ($data.transSign == 'H' || $data.transSign == '+') ? $root.getLabel('GUI_[#VIEW_KEY#]_Plus_Sign_ADA','plus') : $root.getLabel('GUI_[#VIEW_KEY#]_Minus_Sign_ADA','minus')),
+                                                                        'amount': $data.transAmount,
+                                                                        'balance': $data.transNewBalance,
+                                                                        'state': $data.transState } )
+                                     }">
+                            <div class="rowChipTransData">
+                                <var class="chipDateValue color03 font02" data-bind="text: $data.transDate"></var>
+                                <var class="chipTimeValue color03 font02" data-bind="text: $data.transTime"></var>
+                                <var data-bind="text: ($data.transSign == 'H' || $data.transSign == '+' ? '+ ' + $data.transAmount : '- ' + $data.transAmount), attr: { class: ($data.transSign == 'H' || $data.transSign == '+' ? 'chipAmountValue color06 font02' : 'chipAmountValue color08 font02') }"></var>
+                                <var class="chipBalanceValue color06 font02" data-bind="text: $data.transNewBalance"> </var>
+                                <var class="chipStateValue color03 font02" data-bind="text: $data.transState"></var>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                </div>
+            </div>
+
+    </article>
+
+    <!-- Aside -->
+    <aside id="flexAside">
+        <!-- Confirm btn -->
+
+        <!-- Previous btn -->
+        <div id="flexAsideSK00">
+            <div class="button button01 skRight iconButton" disabled="disabled"
+                 data-bind="command: {id: 'BTN_SCROLL_UP', adaType: ADA_TYPE.SELECTION_KEY, adakey: '5',  label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Up', 'Previous')}, eppkey: 'F1'}">
+                <svg data-bind="svguse: { name: 'arrow_up.svg' }"></svg>
+            </div>
+        </div>
+
+        <div id="flexAsideSK01">
+        </div>
+
+        <!-- Next btn -->
+        <div id="flexAsideSK02">
+            <div class="button button01 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BTN_SCROLL_DOWN', adaType: ADA_TYPE.SELECTION_KEY, adakey: '7',  label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Down', 'Further')}, eppkey: 'F3'}">
+                <svg data-bind="svguse: { name: 'arrow_down.svg' }"></svg>
+            </div>
+        </div>
+
+        <div id="flexAsideSK03">
+            <div class="button button01 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BTN_SCROLL_RIGHT', adaType: ADA_TYPE.SELECTION_KEY, adakey: '8', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Next', 'next')}, eppkey: 'F4'}">
+                <svg data-bind="svguse: { name: 'arrow_right_right.svg' }"></svg>
+            </div>
+        </div>
+
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

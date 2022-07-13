@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+    <g class="shadowGroup1">
+    	<path d="M30.4,10.2v23.2L29,31.7l-2.4,2.4l-1.8-2.4l-1.1,2.4l-1.2-1.8l-1.1,1.8l-1.2-1.2L19,34.1l-1.2-1.8l-2.6,1.8V10.2H30.4
+    		 M31,9.6h-0.6H15.1h-0.6v0.6V34v1.2l1-0.7l2.1-1.5l0.9,1.3l0.4,0.6l0.5-0.5l0.7-0.7l0.7,0.7l0.5,0.5l0.4-0.6l0.7-1l0.7,1l0.6,0.9
+    		l0.5-0.9l0.7-1.5l1.2,1.6l0.4,0.5l0.5-0.5l1.9-1.9l1,1.2l1.1,1.4v-1.8V10.2L31,9.6L31,9.6z"/>
+    	<rect x="16.3" y="12.7"   width="4.9" height="1.8"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="23.7" y1="16.6" x2="27.3" y2="16.6"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="20" y1="17.9" x2="27.3" y2="17.9"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17" y1="21.5" x2="24.3" y2="21.5"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="24.9" y1="21.5" x2="28.5" y2="21.5"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17" y1="22.8" x2="24.3" y2="22.8"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="24.9" y1="22.8" x2="28.5" y2="22.8"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17" y1="24" x2="24.3" y2="24"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="24.9" y1="24" x2="28.5" y2="24"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17" y1="25.2" x2="24.3" y2="25.2"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17" y1="27.6" x2="28.5" y2="27.6"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="24.9" y1="25.2" x2="28.5" y2="25.2"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17" y1="28.9" x2="28.5" y2="28.9"/>
+    </g>
+
+    <g class="shadowGroup2">
+    	<path d="M30.6,10.5v23.2l-1.4-1.8l-2.4,2.4l-1.8-2.4L24,34.3l-1.2-1.8l-1.1,1.8l-1.2-1.2l-1.1,1.2L18,32.5l-2.6,1.8V10.5H30.6
+    		 M31.2,9.9h-0.6H15.4h-0.6v0.6v23.8v1.2l1-0.7l2.1-1.5l0.9,1.3l0.4,0.6l0.5-0.5l0.7-0.7l0.7,0.7l0.5,0.5l0.4-0.6l0.7-1l0.7,1
+    		l0.6,0.9l0.5-0.9l0.7-1.5l1.2,1.6l0.4,0.5l0.5-0.5l1.9-1.9l1,1.2l1.1,1.4v-1.8V10.5L31.2,9.9L31.2,9.9z"/>
+        <rect x="16.6" y="12.9"  width="4.9" height="1.8"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="23.9" y1="16.9" x2="27.6" y2="16.9"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="20.2" y1="18.1" x2="27.6" y2="18.1"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.2" y1="21.8" x2="24.5" y2="21.8"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.1" y1="21.8" x2="28.8" y2="21.8"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.2" y1="23" x2="24.5" y2="23"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.1" y1="23" x2="28.8" y2="23"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.2" y1="24.2" x2="24.5" y2="24.2"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.1" y1="24.2" x2="28.8" y2="24.2"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.2" y1="25.5" x2="24.5" y2="25.5"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.2" y1="27.9" x2="28.8" y2="27.9"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.1" y1="25.5" x2="28.8" y2="25.5"/>
+        <line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.2" y1="29.1" x2="28.8" y2="29.1"/>
+    </g>
+
+    <g class="shadowGroup3">
+    	<path d="M30.9,10.7V34l-1.4-1.8l-2.4,2.4l-1.8-2.4l-1.1,2.4L23,32.8l-1.1,1.8l-1.2-1.2l-1.1,1.2l-1.2-1.8l-2.6,1.8V10.7H30.9
+    		 M31.5,10.1h-0.6H15.6H15v0.6v23.8v1.2l1-0.7l2.1-1.5l0.9,1.3l0.4,0.6l0.5-0.5l0.7-0.7l0.7,0.7l0.5,0.5l0.4-0.6l0.7-1l0.7,1
+    		l0.6,0.9l0.5-0.9l0.7-1.5l1.2,1.6l0.4,0.5l0.5-0.5l1.9-1.9l1,1.2l1.1,1.4v-1.8V10.7L31.5,10.1L31.5,10.1z"/>
+    	<rect x="16.8" y="13.2"  width="4.9" height="1.8"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="24.2" y1="17.1" x2="27.8" y2="17.1"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="20.5" y1="18.4" x2="27.8" y2="18.4"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.5" y1="22" x2="24.8" y2="22"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.4" y1="22" x2="29" y2="22"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.5" y1="23.2" x2="24.8" y2="23.2"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.4" y1="23.2" x2="29" y2="23.2"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.5" y1="24.5" x2="24.8" y2="24.5"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.4" y1="24.5" x2="29" y2="24.5"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.5" y1="25.7" x2="24.8" y2="25.7"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.5" y1="28.1" x2="29" y2="28.1"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.4" y1="25.7" x2="29" y2="25.7"/>
+    	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="17.5" y1="29.4" x2="29" y2="29.4"/>
+    </g>
+
+    <g>
+        <path class="strokeColor" d="M30.1,10v23.2l-1.4-1.8l-2.4,2.4l-1.8-2.4l-1.1,2.4L22.2,32l-1.1,1.8l-1.2-1.2l-1.1,1.2L17.5,32l-2.6,1.8
+    		V10H30.1 M30.8,9.4h-0.6H14.9h-0.6v0.6v23.8V35l1-0.7l2.1-1.5l0.9,1.3l0.4,0.6l0.5-0.5l0.7-0.7l0.7,0.7l0.5,0.5l0.4-0.6l0.7-1
+    		l0.7,1l0.6,0.9l0.5-0.9l0.7-1.5l1.2,1.6l0.4,0.5l0.5-0.5l1.9-1.9l1,1.2l1.1,1.4v-1.8V10L30.8,9.4L30.8,9.4z"/>
+    </g>
+    <rect x="16.1" y="12.4" class="strokeColor" width="4.9" height="1.8"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="23.4" y1="16.4" x2="27.1" y2="16.4"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="19.8" y1="17.6" x2="27.1" y2="17.6"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="16.7" y1="21.3" x2="24" y2="21.3"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="24.6" y1="21.3" x2="28.3" y2="21.3"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="16.7" y1="22.5" x2="24" y2="22.5"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="24.6" y1="22.5" x2="28.3" y2="22.5"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="16.7" y1="23.7" x2="24" y2="23.7"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="24.6" y1="23.7" x2="28.3" y2="23.7"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="16.7" y1="25" x2="24" y2="25"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="16.7" y1="27.4" x2="28.3" y2="27.4"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="24.6" y1="25" x2="28.3" y2="25"/>
+    <line class="strokeColor" stroke-miterlimit="10" x1="16.7" y1="28.6" x2="28.3" y2="28.6"/>
+</svg>

@@ -1,0 +1,638 @@
+/*logo*/
+
+/*Slots*/
+.flexItemsSlot > svg, .flexItemsSlotIn > svg {
+    filter: brightness(150%) contrast(130%) drop-shadow(0px 0px 10px var(--slotFrameColor));
+}
+
+.flexItemsSlot > svg {
+    width: 300px;
+    min-height: 130px;
+}
+
+#notesEject.flexItemsSlot > svg,  .figureSlotInCash .flexItemsSlotIn > svg, .figureSlotInCash .flexMetalSlotIn > svg {
+    width: 450px;
+    min-height: 413px;
+}
+
+.flexItemsSlotLSF > svg {
+    width: 300px;
+    height: 51px;
+}
+
+.flexItemsSlotIn > svg, .flexMetalSlotIn > svg {
+    width: 240px;
+    height: 70px;
+}
+
+.flexItemsSlotIn .note, .flexItemsSlotIn .coin, #takeMetalItems {
+    padding-right: 20px;
+}
+
+#notesInsertSlotInAnimationArea, #notesEjectSlotInAnimationArea, #turnNotesAnimationArea {
+    z-index: 1;
+}
+
+
+.itemLane {
+    margin-top: -66px;
+    transform: perspective(1000px) rotate3d(1, 0, 0, 56deg);
+}
+
+/*-- View: pinentry --*/
+.pinDigit div {
+    border-radius: 50%;
+}
+
+div.back {
+    background-color: var(--color09);
+    border: none;
+}
+
+div.frontCurrent {
+    background-color: var(--color09-alpha-30);
+    border: 1px solid var(--color01);
+}
+
+.pinDigitContainer {
+    width: 88px; /*plus 2x1px border*/
+    height: 88px;
+}
+
+.pinDigitContainer .front {
+    width: 90px;
+    height: 90px;
+}
+
+div.back {
+    width: 90px;
+    height: 90px;
+}
+
+div.frontCurrent > var {
+    line-height: 0.75em;
+}
+
+
+/*CARD*/
+/* 3D card insert/eject */
+#cardInsert3D, #cardEject3D {
+    transform: perspective(1000px) rotate3d(1, 0, 0, 53deg);
+}
+
+#cardInsert3DLSF, #cardEject3DLSF {
+    transform: perspective(800px) rotate3d(1, 0, 0, 51deg);
+}
+
+
+/* view: idlepresentation */
+div[data-view-id="idlepresentation"] #flexAside {
+    width: 0;
+    padding-right: 0;
+}
+
+/*Animations*/
+.nfcAnimation {
+    animation: nfcBlink 4s infinite ease-in-out;
+}
+
+@keyframes cardInsertContactlessRotate {
+    0% {
+        opacity: 0;
+        transform: perspective(500px) translate3d(106px, -100px, 58px) rotate3d(1, 0, 0, -69deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+        transform: perspective(500px) translate3d(61px, -250px, 10px);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: perspective(500px) translate3d(14px, -232px, 9px) rotate3d(1, 0, 0, -10deg);
+    }
+}
+
+
+/*Finger Print*/
+#figureFingerPrint {
+    margin-top: 100px;
+}
+
+#figureFingerPrint #scanner {
+    width: 100px;
+    height: 100px;
+    animation-direction: reverse;
+}
+
+#figureFingerPrint #fingerPointing {
+    width: 200px;
+    height: 200px;
+    margin-top: 170px;
+}
+
+
+/*Camera*/
+/*Stream will be set by header.js based on the content/config/VideoCameraStream.json config*/
+#liveVideo {
+    display: none;
+    position: absolute;
+    width: 388px;
+    height: 215px;
+    object-fit: cover;
+	object-position: 50% 50%;
+    align-self: flex-end;
+    margin-top: 15px;
+    margin-left: -15px;
+    border: 2px solid var(--color02);
+    border-radius: 20px;
+    outline: none;
+    animation: fadeIn 1s ease-in;
+    z-index: 2;
+}
+
+
+@media (height: 768px) {
+    /* 3D card insert/eject */
+    #cardInsert3D, #cardEject3D {
+        transform: perspective(1000px) rotate3d(1, 0, 0, 56deg);
+    }
+
+    /*Card*/
+    #cardReader {
+        order: 1;
+    }
+
+    #notesEject.flexItemsSlot > svg, .figureSlotInCash .flexItemsSlotIn > svg, .figureSlotInCash .flexMetalSlotIn > svg {
+        width: 350px;
+        min-height: 313px;
+    }
+
+    /*Slot in*/
+    #flexAnimations {
+        padding-bottom: 0;
+        margin-right: 251px;
+        margin-top: 185px;
+    }
+
+    div[data-view-id="depositanimations"] .note {
+        width: 206px;
+    }
+
+    @keyframes insertNotesTray {
+        0% {
+            margin-bottom: -65%;
+            transform: translateY(-40%);
+            opacity: 0;
+        }
+        40% {
+            margin-bottom: -65%;
+            transform: translateY(-40%);
+            opacity: 1;
+        }
+        70% {
+            margin-bottom: -53%;
+            transform: translateY(-40%);
+            opacity: 1;
+        }
+        80% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0.5;
+        }
+        85% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0.25;
+        }
+        90% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0;
+        }
+        100% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0;
+        }
+    }
+    /*Slots*/
+    #flexAnimations .figureSlotInCash {
+        margin-top: 0;
+    }
+
+    #figureNotesEject {
+        margin-top: 135px;
+    }
+
+    #figureNotesEject[data-receipt-slot='true'] {
+        padding-right: 25%;
+    }
+
+    #figureNotesEject .itemLane {
+        margin-top: -252px;
+    }
+
+    #figureNotesEject .itemLane {
+        transform: perspective(400px) rotate3d(1, 0, 0, 68deg);
+    }
+
+    /*See also the setting in resultion 1024x1280*/
+    #adVideo {
+        position: absolute;
+        top: 0;
+        right: -355px; /*Calculated from video ratio 2:3*/
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -2000;
+    }
+
+    #liveVideo {
+        width: 300px;
+        height: 160px;
+        min-width: 300px;
+        min-height: 160px;
+        max-width: 300px;
+        max-height: 160px;
+    }
+}
+
+
+@media (height: 1024px) {
+    /*Card*/
+    #cardReader {
+        order: 1;
+    }
+
+
+    /*Slot in*/
+    #flexAnimations {
+        padding-bottom: 0;
+        margin-right: 251px;
+        margin-top: 185px;
+    }
+
+    div[data-view-id="depositanimations"] .note {
+        width: 306px;
+    }
+
+    @keyframes insertNotesTray {
+        0% {
+            margin-bottom: -65%;
+            transform: translateY(-40%);
+            opacity: 0;
+        }
+        40% {
+            margin-bottom: -65%;
+            transform: translateY(-40%);
+            opacity: 1;
+        }
+        70% {
+            margin-bottom: -53%;
+            transform: translateY(-40%);
+            opacity: 1;
+        }
+        80% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0.5;
+        }
+        85% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0.25;
+        }
+        90% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0;
+        }
+        100% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0;
+        }
+    }
+
+
+    #figureNotesEject {
+        margin-top: 236px;
+    }
+
+    #figureNotesEject[data-receipt-slot='true'] {
+        padding-right: 25%;
+    }
+
+    #figureNotesEject .itemLane {
+        margin-top: -352px;
+    }
+
+    #figureNotesEject .itemLane {
+        transform: perspective(400px) rotate3d(1, 0, 0, 68deg);
+    }
+
+
+    /*See also the setting in resultion 1024x1280*/
+    #adVideo {
+        position: absolute;
+        top: 0;
+        right: -800px;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -2000;
+    }
+
+    #liveVideo {
+        width: 388px;
+        height: 215px;
+        min-width: 388px;
+        min-height: 215px;
+        max-width: 388px;
+        max-height: 215px;
+    }
+}
+
+@media (height: 1280px) {
+    #flexHeaderBottom {
+        flex-basis: auto;
+        height: 150px;
+    }
+
+    /*Splitscreen mode*/
+
+    /*Header*/
+    /*Logo*/
+    #flexHeader[data-split-mode="true"] {
+        height: 314px;
+    }
+
+    #flexHeader[data-split-mode="true"] #flexLogo>:first-child {
+        width: 170px;
+        height: 130px;
+    }
+
+    /*flex help*/
+    #flexHeader[data-split-mode="true"] #flexHelp {
+        height: 80px;
+    }
+
+    #flexHeader[data-split-mode="true"][data-split-mode-position="down"] {
+        margin-top: 512px;
+    }
+
+    #flexHeader[data-split-mode="true"][data-split-mode-position="up"] {
+       margin-top: 0;
+    }
+
+    #flexFooter[data-split-mode="true"][data-split-mode-position="up"] {
+        margin-bottom: 512px;
+    }
+
+    /*advertising space*/
+    #flexHeader[data-split-mode="true"] #advertisingSpace,
+    #flexHeader[data-split-mode="true"] #advertisingSpace video {
+        position: absolute;
+        width: 1024px;
+        left: 0;
+    }
+
+    #flexHeader[data-split-mode="true"] #advertisingSpace {
+        background: linear-gradient(-45deg, gray 25%, transparent 25%, transparent 50%, gray 50%, gray 75%, transparent 75%, transparent);
+        background-size: 50px 50px;
+    }
+
+    #flexHeader[data-split-mode="true"] #advertisingSpace span {
+        position: relative;
+        font-size: 10em;
+        left: 9%;
+        top: 27%;
+    }
+
+    #flexHeader[data-split-mode="true"][data-split-mode-position="down"] #advertisingSpace {
+        top: 0;
+        height: 512px;
+    }
+
+    #flexHeader[data-split-mode="true"][data-split-mode-position="up"] #advertisingSpace {
+        top: 775px;
+        height: 505px;
+    }
+
+    /*Splitscreen button to move up/down + Advertising space button*/
+    header[data-split-mode="false"] #moveSplitScreenPosition,
+    header[data-split-mode="true"] #moveSplitScreenPosition,
+    header[data-split-mode="true"] #showAdvertisingSpace {
+        display: flex;
+        position: absolute;
+        align-self: flex-end;
+        align-content: center;
+        right: 20px;
+        margin-top: 20px;
+        width: 52px;
+        height: 52px;
+        z-index: 1;
+    }
+
+    header[data-split-mode="true"] #showAdvertisingSpace {
+        right: 100px;
+    }
+
+    header[data-split-mode="true"] #showAdvertisingSpace::after {
+        position: relative;
+        font-size: 3.5em;
+        left: 14%;
+        bottom: 19%;
+        color: white;
+    }
+
+    header[data-split-mode="true"] #showAdvertisingSpace::after {
+        content: '\25A9';
+    }
+
+    /*Card*/
+    /*-- Views: idlepresentation and cardanimations --*/
+    div[data-view-id="idlepresentation"] #flexArticle,
+    div[data-view-id="cardanimations"] #flexArticle {
+        flex-direction: column;
+    }
+
+    div[data-view-id="idlepresentation"] #flexArticle:first-child {
+        order: 0;
+    }
+
+    div[data-view-id="cardanimations"] #contactlessReader {
+        order: 1;
+    }
+
+    div[data-view-id="idlepresentation"] #flexArticle figure,
+    div[data-view-id="cardanimations"] #flexArticle figure {
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+    }
+
+    div[data-view-id="cardanimations"] #flexArticle > figure, div[data-view-id="idlepresentation"] #flexArticle > figure {
+        margin-top: 110px;
+    }
+
+    div[data-view-id="cardanimations"][data-split-mode="true"] #flexArticle > figure, div[data-view-id="idlepresentation"][data-split-mode="true"] #flexArticle > figure {
+        margin-top: 266px;
+    }
+
+    div[data-view-id="cardanimations"] #flexArticle #contactlessReader,
+    div[data-view-id="idlepresentation"] #flexArticle #contactlessReader {
+        margin-top: 0;
+    }
+
+    div[data-view-id="cardanimations"] #contactlessReaderArea, div[data-view-id="idlepresentation"] #contactlessReaderArea {
+        margin-left: 131px;
+    }
+
+    #cardReader {
+        height: 225px;
+    }
+
+    div[data-split-mode="true"] #cardReader {
+        height: 0;
+    }
+
+    div[data-split-mode="true"] #flexArticle #contactlessReader,
+    div[data-split-mode="true"] #flexArticle #contactlessReader {
+        margin-left: 500px;
+    }
+
+    #cardInsert3D, #cardEject3D {
+        transform: perspective(1000px) rotate3d(1, 0, 0, 69deg);
+        margin-top: -140px;
+    }
+
+    div[data-split-mode="true"] #cardInsert3D, div[data-split-mode="true"] #cardEject3D {
+        transform: perspective(1200px) rotate3d(1, 0, 0, 76deg);
+    }
+
+    /*Slot in*/
+    #flexAnimations {
+        padding-bottom: 0;
+        margin-right: 251px;
+        margin-top: 276px;
+    }
+
+    div[data-view-id="depositanimations"] .note {
+        width: 306px;
+    }
+
+    @keyframes insertNotesTray {
+        0% {
+            margin-bottom: -65%;
+            transform: translateY(-40%);
+            opacity: 0;
+        }
+        40% {
+            margin-bottom: -65%;
+            transform: translateY(-40%);
+            opacity: 1;
+        }
+        70% {
+            margin-bottom: -53%;
+            transform: translateY(-40%);
+            opacity: 1;
+        }
+        80% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0.5;
+        }
+        85% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0.25;
+        }
+        90% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0;
+        }
+        100% {
+            margin-bottom: -55%;
+            transform: translateY(120%);
+            opacity: 0;
+        }
+    }
+
+    /*Slots*/
+    #figureNotesEject, #flexAnimations .figureSlotInCash {
+        margin-top: 495px;
+    }
+
+    #figureNotesEject[data-receipt-slot='true'] {
+        padding-right: 20%;
+    }
+
+    #figureNotesEject[data-coin-slot='true'] {
+        padding-left: 25%;
+    }
+
+    #figureCoinsEject[data-cash-slot='true'] {
+        margin-left: -86px;
+    }
+
+    #figureNotesEject .itemLane {
+        margin-top: -352px;
+    }
+
+    div[data-split-mode="true"] #figureNotesEject {
+        margin-top: 119px;
+    }
+
+    .flexItemsSlotIn > svg {
+        width: 240px;
+        height: 70px;
+    }
+
+    .itemLane {
+        margin-top: -100px;
+        transform: perspective(1000px) rotate3d(1, 0, 0, 56deg);
+    }
+
+    #figureNotesEject .itemLane {
+        transform: perspective(400px) rotate3d(1, 0, 0, 68deg);
+    }
+
+    /*#flexHeader {*/
+    /*    flex-basis: 195px;*/
+    /*    margin-top: 650px;*/
+    /*}*/
+    /*#txnBackground {*/
+    /*    top: 748px;*/
+    /*}*/
+    /*See also the setting in resultion 1024x1280*/
+    #adVideo {
+        position: absolute;
+        top: 0;
+        right: -1000px; /*Calculated from video ratio 2:3*/
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -2000;
+    }
+
+    #liveVideo {
+        width: 311px;
+        height: 260px;
+        min-width: 311px;
+        min-height: 260px;
+        max-width: 311px;
+        max-height: 260px;
+        z-index: 2;
+    }
+}
+
+
+
+

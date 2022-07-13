@@ -1,0 +1,19 @@
+{
+  "AdaTutorialInfoTimeout" : "180000",
+  "AssistanceInfoTimeout" : "300000",
+  "COMMON_DM_CUSTOMER_REQUEST_DATA" : "&routingcode=[&CCTAFW_PROP_CARDHOLDER_BANKCODE;;&]&accountnum=[&CCTAFW_PROP_CARDHOLDER_ACCOUNT;;&]&cardseqnum=[&CCTAFW_PROP_CARDHOLDER_CARDSEQNO;;1&]&pan=[&CCTAFW_PROP_CARDHOLDER_PAN;;0000000000000000000&]",
+  "COMMON_DM_REQUEST_DATA" : "&terminalid=[&CCSOPSRV_PROP_TERMINALID;;&]&resolution=[&GUIDM_WINDOW_SIZE_X;;1024&]x[&GUIDM_WINDOW_SIZE_Y;;768&]&channelid=1&vendor=[&GUIAPP_ACTIVE_VIEWSET;;default&]_[&GUIAPP_ACTIVE_STYLE;;MercuryDark&]_[&GUIAPP_ACTIVE_VENDOR;;WN&]&media=1&lang=[&CCTAFW_PROP_LANGUAGE_ISO;#PIC=XX~~~;en&]",
+  "COMMON_HYBRID_REQUEST_DATA" : "&style=mercury&viewset=[&GUIDM_ACTIVE_VIEW_SET;;touch&]&resolution=[&GUIAPP_WINDOW_SIZE_X;;1024&]x[&GUIAPP_WINDOW_SIZE_Y;;768&]",
+  "ConfirmationTimeout" : "30000",
+  "DM_LOCAL" : "dmurl=../viewmodels/localcampaigns/SBJson/DMSBJSONData.json",
+  "DM_SERVER" : "dmurl=http://127.0.0.1:8080/dm/SBJson",
+  "EndlessTimeout" : "-1",
+  "HYBRID_LOCAL" : "dataurl=../viewmodels/designtimedata/miniflow/billpaymentstart.json",
+  "HYBRID_SERVER" : "dataurl=http://127.0.0.1:8080/miniflow",
+  "ImmediateTimeout" : "0",
+  "InputTimeout" : "120000",
+  "MessageTimeout" : "5000",
+  "PageTimeout" : "-1",
+  "PinentryTimeout" : "30000",
+  "SuspendApplicationInfoTimeout" : "300000"
+}

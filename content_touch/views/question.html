@@ -1,0 +1,83 @@
+<!--
+$MOD$ question.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <nav id="flexNav"></nav>
+    <article id="flexArticle">
+        <div id="flexMessageContainerArticle" class="flexMessageContainer" data-bind="visible: messageBoxVisible">
+            <div class="messageArea" data-view-key="" data-content-style="InfoBox" data-bind="attr: { 'data-content-style': messageLevel },
+                                                            gesture: {
+                                                                options: {
+                                                                    lockIfSpace: true
+                                                                },
+                                                                grid: '#flexArticle .messageArea',
+                                                                gestures: {
+                                                                    Swipe: {
+                                                                        direction: 'DIRECTION_VERTICAL',
+                                                                        events: ['swipe']
+                                                                    },
+                                                                    Pan: {
+                                                                        direction:'DIRECTION_VERTICAL',
+                                                                        events:['panstart','panmove','panend']
+                                                                    }
+                                                                },
+                                                                containment: {
+                                                                    element: '#flexArticle .messageArea',
+                                                                    useScrollWidth: false,
+                                                                    useScrollHeight: false
+                                                                },
+                                                                target: 'MESSAGE'
+                                                            }">
+            <var id="MESSAGE" class="color03 font01" data-bind="command: {id: 'MESSAGE', type: CMDTYPE.TEXT, action: null, state: CMDSTATE.NONE, label: {html: messageText, inplace: true}}"></var>
+                <div class="buttonsZone">
+                    <div class="buttonZone">
+                        <div id="other" class="button dialogButton"
+                             data-bind="command: {id: 'OTHER', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Other', 'Other')}}">
+                            <svg data-bind="svguse: { name: 'GUI_[#VIEW_KEY#]_Button_Other_Icon1', icondefault: 'icon_empty.svg', inline: true, afterRender: $root.viewHelper.currencySymbol}"></svg>
+                            <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('OTHER')"></var>
+                        </div>
+                    </div>
+                    <div class="buttonZone">
+                        <div class="button dialogButton"
+                             data-bind="command: {id: 'YES', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Yes', 'Yes')}}">
+                            <svg data-bind="svguse: { name: 'GUI_[#VIEW_KEY#]_Button_Yes_Icon1', icondefault: 'yes.svg', inline: true, afterRender: $root.viewHelper.currencySymbol}"></svg>
+                            <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('YES')"></var>
+                        </div>
+                    </div>
+                    <div class="buttonZone">
+                        <div class="button dialogButton"
+                             data-bind="command: {id: 'NO', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_No', 'No')}}">
+                            <svg data-bind="svguse: { name: 'GUI_[#VIEW_KEY#]_Button_No_Icon1', icondefault: 'no.svg', inline: true, afterRender: $root.viewHelper.currencySymbol}"></svg>
+                            <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('NO')"></var>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonsZone">
+            <div class="buttonZone">
+                <div class="button footerButton" data-bind="command: {id: 'PRINT', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Print', 'Print')}}">
+                    <svg data-bind="svguse: { name: 'printer.svg' }"></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>
+

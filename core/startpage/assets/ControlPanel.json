@@ -1,0 +1,360 @@
+{
+    "StyleTypes": [
+        {
+            "name": "Default",
+            "folderName": "default",
+            "enabled": true
+        },
+        {
+            "name": "Mercury dark",
+            "folderName": "MercuryDark",
+            "enabled": true
+        },
+        {
+            "name": "Mercury light",
+            "folderName": "MercuryLight",
+            "lightTheme": true,
+            "enabled": true
+        },
+        {
+            "name": "DN Series",
+            "folderName": "DNSeries",
+            "lightTheme": true,
+            "enabled": true
+        },
+        {
+            "name": "ADA hide screen",
+            "folderName": "ADAHideScreen",
+            "viewSetSupport": "softkey",
+            "enabled": true
+        },
+        {
+            "name": "ADA high contrast",
+            "folderName": "ADAHighContrast",
+            "viewSetSupport": "softkey",
+            "enabled": true
+        }
+    ],
+    "Vendors": [
+        {
+            "name": "Diebold",
+            "folderName": "DIEBOLD",
+            "viewSetSupport": "softkey",
+            "enabled": true
+        },
+        {
+            "name": "NCR",
+            "folderName": "NCR",
+            "viewSetSupport": "softkey",
+            "enabled": true
+        },
+        {
+            "name": "Wincor Nixdorf",
+            "folderName": "default",
+            "viewSetSupport": "softkey",
+            "enabled": true
+        },
+        {
+            "name": "Wincor Nixdorf/NCR",
+            "folderName": "WN-NCR",
+            "viewSetSupport": "softkey",
+            "enabled": true
+        }
+    ],
+    "DepositDeviceTypes": [
+        "CCDM",
+        "CCDM2",
+        "RM2",
+        "RM3",
+        "RM4",
+        "CRS",
+        "DIEBCRM",
+        "DIEBNAM",
+        "DIEEBNA",
+        "DLRRECYCLER",
+        "GRG",
+        "KEBCRMNTR",
+        "NCR",
+        "NCRBNA1",
+        "NCRBNA2",
+        "NCRSDM",
+        "NCRBRM",
+        "SNA",
+        "nhyMV",
+        "UNKNOWN"
+    ],
+    "CoinDeviceTypes": [
+        "CM3",
+        "CINCM4",
+        "CINCRA",
+        "CIN",
+        "NCR_CNA",
+        "UNKNOWN"
+    ],
+    "ScannerTypes": [
+        "CCDM",
+        "CCDM2",
+        "SEAC"
+    ],
+    "TrayIOReasons": {
+        "0": "Default",
+        "1": "Too many notes",
+        "2": "Cash tray must be cleared",
+        "3": "Metal or foreign objects detected",
+        "4": "Cash tray must be cleared - insert again",
+        "5": "Unknown notes"
+    },
+    "CardReaderInfo": {
+        "retractLimit": 10
+    },
+    "EventData": {
+        "TRANSACTION_MODULE": {
+            "ID_CARD": [
+                "",
+                "INSERT",
+                "INSERT_DIP",
+                "INSERT_DIP_REINSERT",
+                "PRESENT",
+                "EMVCL",
+                "EMVCL_INSERT_CARD",
+                "STATE_CHANGED_OPERATIONAL"
+            ],
+            "ID_DEPOSIT": [
+                "",
+                "CHEQUES_PRESENTED",
+                "CHEQUES_TAKEN",
+                "MEDIATAKEN",
+                "ScanCheques",
+                "COINSINSERTED",
+                "COINSPRESENTED",
+                "COINSDEVICEFULL",
+                "COINSSTACKERFULL",
+                "COINSDEPOSITEDINSTEADROLLBACK",
+                "COINSFINISHED",
+                "COINSIDLETIMEOUT",
+                "COINSOUTPUTFOMA",
+                "COINSREFUSED",
+                "COINSSHUTTEROPEN",
+                "COINSSUBCASHIN",
+                "NOTESINSERTED",
+                "NOTESPRESENTED",
+                "ERRORNOTES",
+                "NONOTES",
+                "TOOMANYNOTES",
+                "TRAYISEMPTY",
+                "TRAYNOTEMPTY",
+                "RETRACTMONEY",
+                "ROLLBACKL2",
+                "ROLLBACKL3",
+                "ROLLBACKL2L3",
+                "ROLLBACKL3NOCREDIT",
+                "ROLLBACKL2L3NOCREDIT",
+                "SHOWHOURGLASS",
+                "SHOWHOURGLASSNOTEXT"
+            ],
+            "ID_ESCALATION": [
+                "",
+                "STARTED",
+                "HALFTIMEOUT",
+                "EMVCL_CLEAR",
+                "EMVCL_INSERT_OR_SWIPE_CARD",
+                "EMVCL_ONE_CARD_ONLY",
+                "EMVCL_PRESENT_CARD_AGAIN",
+                "EMVCL_SEE_PHONE",
+                "EMVCL_TRY_ANOTHER_CARD"
+            ],
+            "ID_CURRENCY_CHANGE": [
+                ""
+            ],
+            "ID_SESSION_END": [
+                ""
+            ]
+        },
+        "EPP_MODULE": {
+            "ID_ENTER_DATA": [
+                ""
+            ],
+            "ID_ETS_LAYOUT_MOVED": [
+                ""
+            ]
+        },
+        "GUIAPP_MODULE": {
+            "ID_STATUS_CHANGED": [
+                ""
+            ],
+            "ID_POPUP_NOTIFICATION": [
+                ""
+            ]
+        },
+        "GUIDM_MODULE": {
+            "ID_STATUS_CHANGED": [
+                ""
+            ]
+        }
+    },
+    "Transaction": {
+        "CardTypes": {
+            "cardType01":  {
+                "CCTAFW_PROP_CARDHOLDER_BANKCODE": "1111111111",
+                "CCTAFW_PROP_CARDHOLDER_ACCOUNT": "1234567890",
+                "CCTAFW_PROP_CARDHOLDER_CARDSEQNO": "1"
+            },
+            "cardType02": {
+                "CCTAFW_PROP_CARDHOLDER_BANKCODE": "1111111112",
+                "CCTAFW_PROP_CARDHOLDER_ACCOUNT": "1234567891",
+                "CCTAFW_PROP_CARDHOLDER_CARDSEQNO": "2"
+            },
+            "cardTypeEMV": {
+                "CCTAFW_PROP_CARDHOLDER_BANKCODE": "1111111113",
+                "CCTAFW_PROP_CARDHOLDER_ACCOUNT": "1234567891",
+                "CCTAFW_PROP_CARDHOLDER_CARDSEQNO": "3"
+            }
+        }
+    },
+    "Ada": {
+        "StartViewKey": "LanguageSelection"
+    },
+    "Cassettes": {
+        "Cass-1": {
+            "online": true,
+            "type": "recycle",
+            "currency": "EUR",
+            "value": 500,
+            "count": 100,
+            "readonly": false
+        },
+        "Cass-2": {
+            "online": true,
+            "type": "recycle",
+            "currency": "EUR",
+            "value": 1000,
+            "count": 100,
+            "readonly": false
+        },
+        "Cass-3": {
+            "online": true,
+            "type": "recycle",
+            "currency": "EUR",
+            "value": 2000,
+            "count": 100,
+            "readonly": false
+        },
+        "Cass-4": {
+            "online": true,
+            "type": "recycle",
+            "currency": "EUR",
+            "value": 5000,
+            "count": 100,
+            "readonly": false
+        },
+        "Cass-5": {
+            "online": true,
+            "type": "recycle",
+            "currency": "EUR",
+            "value": 10000,
+            "count": 100,
+            "readonly": false
+        },
+        "Cass-6": {
+            "online": true,
+            "type": "recycle",
+            "currency": "EUR",
+            "value": 20000,
+            "count": 100,
+            "readonly": false
+        },
+        "Cass-7": {
+            "online": true,
+            "type": "recycle",
+            "currency": "EUR",
+            "value": 50000,
+            "count": 100,
+            "readonly": false
+        },
+        "Retract": {
+            "online": true,
+            "type": "retract",
+            "currency": "EUR",
+            "value": 0,
+            "count": 0,
+            "limit": 10,
+            "readonly": true
+        },
+        "Level2": {
+            "online": true,
+            "type": "deposit",
+            "currency": "EUR",
+            "value": 0,
+            "count": 0,
+            "limit": 10,
+            "readonly": true
+        },
+        "All": {
+            "online": true,
+            "type": "deposit",
+            "currency": "EUR",
+            "value": 0,
+            "count": 0,
+            "limit": 100,
+            "readonly": true
+        }
+    },
+    "Hoppers": {
+        "Coin-1": {
+            "online": true,
+            "type": "cash",
+            "currency": "EUR",
+            "value": 1,
+            "count": 100
+        },
+        "Coin-2": {
+            "online": true,
+            "type": "cash",
+            "currency": "EUR",
+            "value": 2,
+            "count": 100
+        },
+        "Coin-3": {
+            "online": true,
+            "type": "cash",
+            "currency": "EUR",
+            "value": 5,
+            "count": 100
+        },
+        "Coin-4": {
+            "online": true,
+            "type": "cash",
+            "currency": "EUR",
+            "value": 10,
+            "count": 100
+        },
+        "Coin-5": {
+            "online": true,
+            "type": "cash",
+            "currency": "EUR",
+            "value": 20,
+            "count": 100
+        },
+        "Coin-6": {
+            "online": true,
+            "type": "cash",
+            "currency": "EUR",
+            "value": 50,
+            "count": 100
+        },
+        "Coin-7": {
+            "online": true,
+            "type": "cash",
+            "currency": "EUR",
+            "value": 100,
+            "count": 100
+        },
+        "Coin-8": {
+            "online": true,
+            "type": "cash",
+            "currency": "EUR",
+            "value": 200,
+            "count": 100
+        }
+    }
+}

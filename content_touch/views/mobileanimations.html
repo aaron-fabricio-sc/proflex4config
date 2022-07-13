@@ -1,0 +1,50 @@
+<!--
+$MOD$ mobileanimations.html 4.3.1-200123-21-6725089a-1a04bc7d
+-->
+
+<!-- main -->
+<main id="flexMain">
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <!-- contactless reader - content key: MobileNfc / MobileNfcNotOperational -->
+        <figure  id="contactlessReader" data-bind="visible: viewFlexMobileNfc() || viewFlexMobileNfcNotOperational()">
+            <div id="contactlessReaderArea">
+                <div class="contactlessReaderBack">
+                    <svg class="nfcIconDisabled" data-bind="visible: viewFlexMobileNfcNotOperational, svguse: { name: 'nfc.svg' }"></svg>
+                    <svg class="nfcAnimation" data-bind="visible: viewFlexMobileNfc, svguse: { name: 'nfc.svg' }"></svg>
+                </div>
+
+                <div id="mobileNfc" class="cardInsertContactlessAnimation" data-bind="visible: viewFlexMobileNfc">
+                    <svg data-bind="svguse: {name: 'mobile_nfc.svg'}"></svg>
+                </div>
+
+                <div id="mobileNfcNotOp" data-bind="visible: viewFlexMobileNfcNotOperational">
+                    <svg data-bind="svguse: {name: 'mobile_nfc.svg'}"></svg>
+                </div>
+            </div>
+            <div class="deviceOutOfService" data-bind="visible: viewFlexMobileNfcNotOperational">
+                <svg data-bind="svguse: { name: 'deviceoutofservice_01.svg' }"></svg>
+            </div>
+        </figure>
+
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,117 @@
+{
+    "depositHints": true,
+    "insertNotes": true,
+    "ejectNotes": false,
+    "insertCoins": true,
+    "ejectCoins": false,
+    "takeMetal": false,
+    "turnNotesLongSideFirst": true,
+    "turnNotesShortSideFirst": false,
+    "insertNotesShortSideFirst": false,
+    "ejectNotesShortSideFirst": false,
+    "takeMetalShortSideFirst": false,
+
+    "denomData": {"amount": "45500", "amountCoins": "473", "currency": "EUR", "symbol": "€", "ada": "Euro", "exponent": "-2", "denominations": [
+    {
+        "type": 0,
+        "count": [0],
+        "val": 20000,
+        "level": 4
+    },
+    {
+        "type": 0,
+        "count": [0],
+        "val": 10000,
+        "level": 4
+    },{
+        "type": 0,
+        "count": [0],
+        "val": 5000,
+        "level": 4
+    },    {
+        "type": 0,
+        "count": [0],
+        "val": 2000,
+        "level": 4
+    },
+    {
+        "type": 0,
+        "count": [0],
+        "val": 1000,
+        "level": 4
+    },
+    {
+        "type": 0,
+        "count": [0],
+        "val": 500,
+        "level": 4
+    },
+        {
+            "type": 1,
+            "count": [
+                0
+            ],
+            "val": 1,
+            "softLimit": 20
+        },
+        {
+            "type": 1,
+            "count": [
+                0
+            ],
+            "val": 2,
+            "softLimit": 20
+        },
+        {
+            "type": 1,
+            "count": [
+                0
+            ],
+            "val": 5,
+            "softLimit": 20
+        },
+        {
+            "type": 1,
+            "count": [
+                0
+            ],
+            "val": 10,
+            "softLimit": 20
+        },
+        {
+            "type": 1,
+            "count": [
+                0
+            ],
+            "val": 20,
+            "softLimit": 20
+        },
+        {
+            "type": 1,
+            "count": [
+                0,
+                1
+            ],
+            "val": 50,
+            "softLimit": 20
+        },
+        {
+            "type": 1,
+            "count": [
+                0,
+                1
+            ],
+            "val": 100,
+            "softLimit": 20
+        },
+        {
+            "type": 1,
+            "count": [
+                0,
+                1,
+                2
+            ],
+            "val": 200,
+            "softLimit": 20
+        }
+    ]}}

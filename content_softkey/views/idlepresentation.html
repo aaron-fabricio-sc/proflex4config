@@ -1,0 +1,142 @@
+<!--
+$MOD$ idlepresentation.html 4.3.0-201126-102-38649749-bbdeaee3
+-->
+
+<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+
+        <!-- card reader - content key: InsertCard / InsertCardStripeUp / InsertCardNotOperational -->
+        <figure id="cardReader" data-bind="visible: viewFlexCardInsert() || viewFlexCardInsertStripeUp() || viewFlexCardNotOperational()" >
+            <div class="flexItemsSlot">
+                <svg data-bind="svguse: { name: 'slot.svg' }"></svg>
+                <div id="cardInsert3D" data-bind="visible: viewFlexCardInsert() || viewFlexCardInsertStripeUp()">
+                    <svg class="cardInsertAnimation3D" data-bind="svguse: {name: viewFlexCardInsert() ? 'credit_card_01.svg' : 'credit_card_stripe_up.svg'}"></svg>
+                </div>
+                <div id="cardNotOp" data-bind="visible: viewFlexCardNotOperational">
+                    <svg data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+            </div>
+            <div class="deviceOutOfService" data-bind="visible: viewFlexCardNotOperational">
+                <svg data-bind="svguse: { name: 'deviceoutofservice_01.svg' }"></svg>
+            </div>
+        </figure>
+
+        <!-- card reader - content key: InsertCardLSF / InsertCardLSFNotOperational -->
+        <figure id="cardReaderLSF" data-bind="visible: viewFlexCardInsertLSF() || viewFlexCardLSFNotOperational()" >
+            <div id="cardInsertLSF" class="flexItemsSlotLSF">
+                <svg data-bind="svguse: { name: 'slotLSF.svg' }"></svg>
+                <div id="cardInsert3DLSF" data-bind="visible: viewFlexCardInsertLSF()">
+                    <svg class="cardInsertAnimation3DLSF" data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+                <div id="cardLSFNotOp" data-bind="visible: viewFlexCardLSFNotOperational">
+                    <svg data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+            </div>
+            <div class="deviceOutOfService" data-bind="visible: viewFlexCardLSFNotOperational">
+                <svg data-bind="svguse: { name: 'deviceoutofservice_01.svg' }"></svg>
+            </div>
+        </figure>
+
+        <!-- contactless reader - content key: InsertContactless / ContactlessNotOperational -->
+        <figure  id="contactlessReader" data-bind="visible: viewFlexContactlessInsert() || viewFlexContactlessNotOperational()">
+            <div id="contactlessReaderArea">
+                <div class="contactlessReaderBack">
+                    <svg class="nfcIconDisabled" data-bind="svguse: {name: 'nfc.svg'}, visible: viewFlexContactlessNotOperational"></svg>
+                    <svg class="nfcAnimation" data-bind="svguse: {name: 'nfc.svg'}, visible: viewFlexContactlessInsert"></svg>
+                </div>
+
+                <div id="cardInsertContactless" class="cardInsertContactlessAnimation" data-bind="visible: viewFlexContactlessInsert">
+                    <svg data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+
+                <div id="cardInsertContactlessNotOp" data-bind="visible: viewFlexContactlessNotOperational">
+                    <svg data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+            </div>
+            <div class="deviceOutOfService" data-bind="visible: viewFlexContactlessNotOperational">
+                <svg data-bind="svguse: { name: 'deviceoutofservice_01.svg' }"></svg>
+            </div>
+        </figure>
+
+        <!-- card eject - content key: TakeCard / TakeCardStripeUp -->
+        <figure  data-bind="visible: viewFlexCardEject() || viewFlexCardEjectStripeUp()" >
+            <div id="cardEject" class="flexItemsSlot">
+                <svg data-bind="svguse: { name: 'slot.svg' }"></svg>
+                <div id="cardEject3D">
+                    <svg class="cardEjectAnimation3D" data-bind="svguse: {name: viewFlexCardEject() ? 'credit_card_01.svg' : 'credit_card_stripe_up.svg'}"></svg>
+                </div>
+            </div>
+        </figure>
+
+        <!-- card eject - content key: TakeCardLSF -->
+        <figure data-bind="visible: viewFlexCardEjectLSF()" >
+            <div id="cardEjectLSF" class="flexItemsSlotLSF">
+                <svg data-bind="svguse: { name: 'slotLSF.svg' }"></svg>
+                <div id="cardEject3DLSF">
+                    <svg class="cardEjectAnimation3DLSF" data-bind="svguse: {name: 'credit_card_01.svg'}"></svg>
+                </div>
+            </div>
+        </figure>
+
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <div id="flexAsideSK00">
+            <div class="button button02 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CARDLESS',
+                              type: CMDTYPE.BUTTON,
+                              state: CMDSTATE.HIDDEN,
+                              label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cardless', 'Cardless')},
+                             eppkey: 'F1'}">
+                <svg data-bind="svguse: { name: 'cardless.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('CARDLESS')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK01">
+            <div class="button button02 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BUTTON_IDLE_LOOP_RIGHT',
+                              type: CMDTYPE.BUTTON,
+                              args: 'MAIN_MENU',
+                              state: CMDSTATE.ENABLED,
+                              label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_MainMenu', 'Main Menu')},
+                             eppkey: 'F2'}">
+                <svg data-bind="svguse: { name: 'GUI_[#VIEW_KEY#]_Button_IdleLoopRight_Icon1', icondefault: 'main_menu.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('BUTTON_IDLE_LOOP_RIGHT')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK02">
+            <div class="button button02 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'LANGUAGE_POPUP',
+                              type: CMDTYPE.BUTTON,
+                              state: CMDSTATE.ENABLED,
+                              label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_LanguageSelection', 'Language Selection')},
+                             eppkey: 'F3'}">
+                <svg data-bind="svguse: { name: 'GUI_[#VIEW_KEY#]_Button_IdleLoopLeft_Icon1', icondefault: 'language.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('LANGUAGE_POPUP')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK03">
+            <div class="button button02 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'REQUEST_SUPPORT',
+                              type: CMDTYPE.BUTTON,
+                              state: CMDSTATE.HIDDEN,
+                              label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_RequestSupport', 'Assist Me')},
+                             eppkey: 'F4'}">
+                <svg data-bind="svguse: { name: '24hours.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('REQUEST_SUPPORT')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel"></div>
+</footer>

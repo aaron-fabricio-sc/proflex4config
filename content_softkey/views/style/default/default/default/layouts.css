@@ -1,0 +1,1695 @@
+@charset "utf-8";
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ layouts.css 4.3.1-210624-21-ae6e96c6-1a04bc7d
+
+*/
+
+/*
+ * CSS document for resolution-independent information
+ */
+
+/*---- Comments guidelines: ----*/
+/*
+ * Headline
+ */
+/*---- Sub headline: ----*/
+/*-- Element specific --*/
+/* Attribute specific */
+
+/*---- General order of attributes: ----*/
+/*
+element, #id, .class {
+    display: none / flex / block / inline;
+    visibility: hidden;
+    opacity: <number>; (between 0 and 1)
+    flex-direction: column / row;
+    order: <number>;
+    flex-grow: 0 / 1;
+    flex-shrink: 0 / 1;
+    align-self: flex-start / center / flex-end;
+    align-items: flex-start / center / flex-end;
+    justify-content: flex-start / center / flex-end;
+    flex-flow: wrap / column wrap / row wrap;
+    z-index: <number>;
+    overflow, overflow-x, overflow-y: auto / hidden;
+    content: <string>;
+    background-color: <string> / <hex>;
+    color: <string> / <hex>;
+    font-family: <string>;
+    font-weight: bold;
+    text-align: left / center / right;
+    font-style: normal;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border: <string> <string> / <hex>;
+    box-shadow: <numberx <numberx <numberx <color> <form>; (no influence on sizes and positions)
+    outline: none;
+    cursor: text / not-allowed;
+    pointer-events: none;
+    -webkit-text-size-adjust: <number>%;
+    -webkit-appearance: none;
+    -webkit-text-stroke-color: <string> / <hex>;
+    appearance: none;
+}
+*/
+
+:root {
+    /* basic colors*/
+    --color01: rgba(255, 255, 255, 1);
+    --color02: rgba(255, 255, 255, 1);
+    --color03: rgba(100, 100, 100, 1);
+    --color04: rgba(0, 0, 0, 1);
+    --color05: rgba(0, 0, 0, 1);
+    --color06: rgba(0, 0, 0, 1);
+    --color07: rgba(0, 0, 0, 1);
+    --color08: rgba(0, 0, 0, 1);
+    --color09: rgba(255, 255, 255, 1);
+    --color10: rgba(0, 0, 0, 1);
+
+    /* general */
+    background: var(--color05);
+}
+
+/*---- Normalization of elements ----*/
+html {
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;  /* Avoid scroll bars */
+    user-select: none; /* Touch specific */
+}
+
+img, object, svg {
+    pointer-events: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+canvas {
+    color: var(--color01);
+}
+
+/*
+ * General layouts, colors and fonts
+ */
+
+/*-- Colors --*/
+.color01 {
+    color: var(--color01);
+}
+
+.color02 {
+    color: var(--color02);
+}
+
+.color03 {
+    color: var(--color03);
+}
+
+.color04, button:disabled:not(.pressed)>var, .disabled:not(.pressed)>var {
+    color: var(--color04);
+}
+
+.color05 {
+    color: var(--color05);
+}
+
+.color06 {
+    color: var(--color06);
+}
+
+.color07 {
+    color: var(--color07);
+}
+
+.color08 {
+    color: var(--color08);
+}
+
+.color09 {
+    color: var(--color09);
+}
+
+.color10 {
+    color: var(--color10);
+}
+
+/*-- Fonts --*/
+html * {
+    font-family: Quivira, Arial, Verdana, sans-serif;
+}
+
+html[data-animations-off="true"] * {
+    animation: none !important;
+    transition: none !important;
+}
+
+/*-- Text --*/
+label, p, var, span, .subMenuItem>var::before, .subMenuItem>var::after  {
+    color: var(--color01);
+    font-style: normal;
+    text-align: start;
+    word-wrap: break-word;
+    cursor: inherit;
+}
+
+/*---- Grid layout of screen ----*/
+#flexHeader, #flexMain, #flexMainPopup, #flexFooter, #flexNav, #flexNavPopup, #flexArticle, #flexArticlePopup, #flexAside, #flexAsidePopup {
+    display: flex;
+}
+
+/* Select child after applicationHost */
+body>:first-child>:first-child {
+    display: flex;
+    flex-direction: column;
+    /* because sometimes the footer is rendered in the middle of the view before the article comes in and push the footer down*/
+    justify-content: space-between;
+}
+
+/*-- Header --*/
+#flexHeader {
+    order: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    overflow: visible;
+}
+
+#flexHeaderTop, #flexHeaderBottom, #flexAdditionalHeaderInfo, #flexTime, #flexHelp {
+    display: flex;
+}
+
+/*-- Header-top --*/
+#flexHeaderTop {
+    order: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Quivira, Arial, Verdana, sans-serif;
+}
+
+#flexLogo {
+    order: 1;
+}
+
+#flexLogo>:first-child {
+    /*  For Chrome 'content: url(...)' will also work, but not for Firefox.
+        Therefore we have to use 'background:  ', which is commonly recommended for all browsers*/
+    background: url('../../../default/images/dn_logo_v_white.svg') no-repeat;
+}
+
+/*-- Additional header info --*/
+#flexAdditionalHeaderInfo {
+    order: 2;
+    align-items: center;
+}
+
+/*-- Help --*/
+#flexHelp {
+    order: 3;
+    /*use flex-end to display the globe, question mark, etc. at the bottom of the line*/
+    align-items: flex-end;
+}
+
+/*-- Date/Time --*/
+#flexTime {
+    order: 3;
+    flex-direction: column;
+    justify-content: flex-end; /*this way, 'time' and 'date' are displayed at the bottom of the column and we do not have to set a pixel padding onto the top direction*/
+}
+
+/*-- Header-bottom --*/
+#flexHeaderBottom {
+    order: 2;
+    flex-direction: column;
+}
+
+/*-- Main --*/
+#flexMain, #flexMainPopup {
+    order: 2;
+    flex-direction: row;
+    overflow: visible;
+    flex-grow: 1;
+    z-index: 2;
+}
+
+/*-- Nav --*/
+#flexNav, #flexNavPopup {
+    order: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    flex-shrink: 0;
+    overflow: visible;
+    z-index: 1;
+}
+
+/*-- Soft key's LEFT --*/
+#flexNavSK00, #flexNavSK01, #flexNavSK02, #flexNavSK03,
+#flexNavPopupSK00, #flexNavPopupSK01, #flexNavPopupSK02, #flexNavPopupSK03 {
+    display: block;
+}
+
+#flexNavSK00 {
+    order: 1;
+}
+
+#flexNavSK01 {
+    order: 2;
+}
+
+#flexNavSK02 {
+    order: 3;
+}
+
+#flexNavSK03 {
+    order: 4;
+}
+
+/*-- Article --*/
+#flexArticle, #flexArticlePopup {
+    flex-direction: row;
+    order: 2;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    overflow: visible;
+    z-index: -1;
+}
+
+/*-- Aside --*/
+#flexAside, #flexAsidePopup {
+    order: 3;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-grow: 1;
+    flex-shrink: 0;
+    overflow: visible;
+    z-index: 1;
+}
+
+/*-- Soft key's RIGHT --*/
+#flexAsideSK00, #flexAsideSK01, #flexAsideSK02, #flexAsideSK03,
+#flexAsidePopupSK00, #flexAsidePopupSK01, #flexAsidePopupSK02, #flexAsidePopupSK03 {
+    display: block;
+}
+
+#flexAsideSK00 {
+    order: 1;
+}
+
+#flexAsideSK01 {
+    order: 2;
+}
+
+#flexAsideSK02 {
+    order: 3;
+}
+
+#flexAsideSK03 {
+    order: 4;
+}
+
+/*-- Footer --*/
+#flexFooter {
+    order: 3;
+    flex-direction: row;
+    z-index: 1;
+}
+
+#flexHome, #flexExtra, #flexConfirm, #flexCorrect, #flexCancel {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    visibility: hidden;
+}
+
+#flexHome {
+    order: 1;
+}
+
+#flexExtra {
+    order: 2;
+}
+
+#flexConfirm {
+    order: 3;
+}
+
+#flexCorrect {
+    order: 4;
+}
+
+#flexCancel {
+    order: 5;
+}
+
+/*
+ * Element specific
+ */
+
+/*-- General alignment of figures --*/
+article figure {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-items: center;
+    align-self: flex-start;
+    justify-content: flex-end;
+    overflow: visible;
+}
+
+/*-- Buttons --*/
+/*
+   To profit from flex box model div element is styled as a button with class .button
+   Please keep in mind that not everything is working in the same way for div and button and
+   vice versa, in particular the flex box model for button.
+*/
+button *, object, svg {
+    pointer-events: none;
+}
+
+button {
+    /*needs an explicit setting to ensure cursor is hidden when 'hideCursor' param is true*/
+    cursor: inherit;
+}
+
+.button, .checkBoxItem, .radioButtonItem {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button.skLeft {
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.button.skRight {
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+.button.button01.skLeft.iconButton {
+    justify-content: flex-end;
+}
+
+.button, #buttonCancel, #buttonConfirm, #buttonCorrect, #buttonCancelPopup, #buttonConfirmPopup, #buttonCorrectPopup {
+    outline: none;
+    border: 1px solid var(--color01);
+}
+
+.button[disabled]:not(.pressed),
+.disabled:not(.pressed),
+.disabledElement:not(.pressed),
+#buttonConfirm[disabled]:not(.pressed),
+#buttonConfirmPopup[disabled]:not(.pressed),
+#buttonCancel[disabled]:not(.pressed),
+#buttonCancelPopup[disabled]:not(.pressed),
+#buttonCorrect[disabled]:not(.pressed),
+#buttonCorrectPopup[disabled]:not(.pressed),
+.checkBoxItem[disabled]:not(.pressed),
+.radioButtonItem[disabled]:not(.pressed),
+.checkBoxItem[disabled]:not(.pressed) .slidingCheckBox,
+.radioButtonItem[disabled]:not(.pressed) .radioButton,
+.button[disabled]:not(.pressed)>img,
+.disabled:not(.pressed)>img,
+.button[disabled]:not(.pressed)>object,
+.disabled:not(.pressed)>object,
+.button[disabled]:not(.pressed)>svg,
+.disabled:not(.pressed)>svg,
+.checkBoxItem[disabled]:not(.pressed)>object,
+.checkBoxItem[disabled]:not(.pressed)>svg,
+.radioButtonItem[disabled]:not(.pressed)>object,
+.radioButtonItem[disabled]:not(.pressed)>svg,
+.slidingCheckBox[disabled]:not(.pressed),
+.slidingCheckBox .disabled:not(.pressed) {
+    color: var(--color01);
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+.button var, .button span {
+    display: inherit;
+    align-items: center;
+}
+
+/*
+ * Component specific
+ */
+.borderLineDrawingColor {
+    color: var(--color01);
+}
+
+/*-- Selection slide indicator --*/
+#slideIndicatorGroup {
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.slideIndicator, .slideIndicatorActive {
+    border: 1px solid var(--color09);
+}
+
+.slideIndicatorActive {
+    background: var(--color01);
+}
+
+/*-- Selection bread crumbs --*/
+.breadCrumb {
+    position: relative;
+    color: var(--color02);
+}
+
+/*-- Inputs and textareas --*/
+
+/* Set explicit for textarea, because there seems to be no inheritance from html */
+textarea {
+    overflow: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Disable Webkit spin-buttons for inputs with type="number" */
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.generalInput, #generalInputFieldArea, #numberInput, #charInput, #emailInput {
+    z-index: 1;
+}
+
+.generalInputCaption {
+    z-index: 2;
+}
+
+/*-- Checkboxes --*/
+.slidingCheckBox {
+    display: inline-flex;
+    position: relative;
+    border: 1px solid var(--color01);
+}
+
+.slidingCheckBox::after, .slidingCheckBox::before {
+    position: absolute;
+    z-index: 0;
+}
+
+.slidingCheckBox label {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: var(--color01);
+}
+
+.slidingCheckBox input[type=checkbox] {
+    /*necessary to activate slider even when user click left or right beside the label*/
+    display: block;
+    opacity: 0;
+    z-index: 1;
+}
+
+/*-- Radiobuttons --*/
+.radioButton {
+    display: inline-flex;
+    position: relative;
+    border: 1px solid var(--color01);
+}
+
+.radioButton label {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: var(--color01);
+}
+
+.radioButton input[type=radio] {
+    display: block;
+    opacity: 0;
+    z-index: 1;
+}
+
+.radioButtonItemLeft {
+    justify-content: flex-start;
+}
+
+.radioButtonItemRight {
+    justify-content: flex-end;
+}
+
+/*-- Components - Popup overlay and window --*/
+.modalOverlay, .modalOverlayPopup {
+    z-index: 1000;
+}
+
+.modalOverlayUndarken {
+    background-color: transparent;
+}
+
+.popupWindow {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color04);
+    border: 1px solid var(--color09);
+    word-wrap: break-word;
+}
+
+#popupWindowContent {
+    display: flex;
+    flex-direction: column;
+}
+
+#popupWindowContent>main {
+    overflow: visible;
+}
+
+/*PopupAmountEntry*/
+#flexArticlePopupAmountEntry {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+/*Popup Selection*/
+#flexArticlePopupSelection, #popupSelectionItemContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+#popupSelectionItemContainer {
+    justify-content: center;
+}
+
+/*Popup Help*/
+#flexArticlePopupHelp {
+    display: flex;
+    flex-direction: column;
+}
+
+#popupWindowHelp #flexMainPopup {
+    flex-direction: column;
+}
+
+#popupWindowHelp #helpContent {
+    overflow: hidden;
+}
+
+/* pleasewait.component Popup*/
+#pleaseWaitPopup #flexArticlePopup {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#pleaseWaitPopup #flexArticlePopup>var {
+    align-self: center;
+}
+
+/*-- General message / escalation in  message and question view --*/
+.flexMessageContainer {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    z-index: 5;
+    flex-grow: 1;
+}
+
+#flexMessageContainerHeader {
+    justify-content: flex-end;
+    overflow: visible;
+    /* position=absolute:
+    this will exclude the flexMessageContainerHeader from the surrounding flexbox handling.
+    Moving it around (with margin etc.) will then not move the other elements 'flexHeaderTop' and 'flexHeaderBottom' */
+    position: absolute;
+}
+
+div[data-popup-active="true"] #flexMessageContainerHeader {
+    opacity: 0;
+}
+
+.messageArea {
+    display: flex;
+    align-items: flex-start;
+    word-break: keep-all; /*do not use break-all, since this would break words at the end of the container and left words be broken*/
+    word-wrap: normal;
+    overflow: hidden;
+    background: var(--color04);
+    border: 1px solid var(--color09);
+}
+
+#flexMessageContainerArticle .messageArea {
+    align-items: inherit; /*to let word-break take effect*/
+}
+
+/*-- Virtual Keyboard --*/
+#vkModalOverlay.modalOverlay {
+    background-color: var(--color04);
+}
+
+#virtualKeyboardContainer {
+    background-color: var(--color05);
+    z-index: 1001;
+}
+
+#virtualKeyboardArea, #popupKeysArea {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color05);
+}
+
+#virtualKeyboardArea #keyArea, #keyAreaNumPad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.keyboardButton {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.keyboardButton>var {
+    text-transform: none;
+    justify-content: center;
+}
+
+.keyboardButton>.secondKeyCode {
+    justify-content: flex-end;
+}
+
+.keyboardButton:active, #shiftKey.pressed {
+    background-color: var(--color01);
+}
+
+#shiftKey.pressed {
+    transform: perspective(600px) rotate3d(1, 0, 0, 24deg);
+}
+
+#popupKeysArea .keyboardButton.highlighted {
+    background-color: var(--color01);
+}
+
+#popupKeysArea .keyboardButton {
+    flex-grow: 1;
+    flex-wrap: nowrap;
+}
+
+.popupHint[data-virtualkeyboard-hint="true"]::before {
+    content: '';
+}
+
+#placedummy00, #placedummy01, #placedummy02, #placedummy03 {
+    visibility: hidden;
+}
+
+#generalVKInput {
+    text-align: left;
+}
+
+/*
+ * View specific
+ */
+
+/*-- Views: idlepresentation and cardanimations --*/
+.contactlessReaderBack {
+    border: 1px solid var(--color01);
+    z-index: 1;
+}
+
+#cardInsertContactless, #cardInsertContactlessNotOp {
+    z-index: 100;
+}
+
+#contactlessReader>.deviceOutOfService {
+    z-index: 300;
+}
+
+.nfcIconDisabled {
+    opacity: 0.3;
+}
+
+/*-- Views: mobileanimations --*/
+#mobileNfc>.deviceOutOfService {
+    z-index: 300;
+}
+
+#mobileNfc, #mobileNfcNotOp {
+    z-index: 100;
+}
+
+/*-- View: pinentry --*/
+#pinDigitsArea {
+    display: flex;
+    transform-style: preserve-3d;
+}
+
+.pinDigit {
+    text-align: center;
+    transform-style: preserve-3d;
+}
+
+.pinDigit.flipped {
+    transform: rotateY(180deg);
+}
+
+.pinDigit>div {
+    backface-visibility: hidden;
+}
+
+div.front {
+    background-color: var(--color09);
+}
+
+div.frontCurrent {
+    border: 1px solid var(--color01);
+}
+
+div.back {
+    border: none;
+    transform: rotateY(180deg);
+}
+
+/*-- Views: message, question, adainformation --*/
+div[data-view-id="message"] #flexMessageContainerHeader,
+div[data-view-id="question"] #flexMessageContainerHeader,
+div[data-view-id="adainformation"] #flexMessageContainerHeader,
+div[data-view-id="receipt"] #flexMessageContainerHeader {
+    /*suppress message via header*/
+    display: none;
+}
+
+/*-- View: adaadjustment --*/
+/* Text */
+div[data-view-id="adaadjustment"] #flexNavSK00::after,
+div[data-view-id="adaadjustment"] #flexNavSK02::after {
+    color: var(--color09);
+}
+
+div[data-view-id="adaadjustment"] #flexNavSK00::after {
+    content: attr(vol);
+}
+
+div[data-view-id="adaadjustment"] #flexNavSK02::after {
+    content: attr(rate);
+}
+
+/*-- View: amountselection --*/
+div[data-view-id="amountselection"] .button.skLeft.iconButton {
+    justify-content: flex-end;
+}
+
+/*-- View: accountselection / billpaymentselection --*/
+div[data-view-id="accountselection"] #flexNav,
+div[data-view-id="billpaymentselection"] #flexNav {
+    overflow: visible;
+    z-index: 1;
+}
+
+div[data-view-id="accountselection"] #flexNav>:nth-child(1n),
+div[data-view-id="billpaymentselection"] #flexNav>:nth-child(1n){
+    display: flex;
+}
+
+div[data-view-id="accountselection"] #flexNav #additional,
+div[data-view-id="billpaymentselection"] #flexNav #additional {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: -1;
+}
+
+div[data-view-id="accountselection"] #flexNav>div #additional>div,
+div[data-view-id="billpaymentselection"] #flexNav>div #additional>div {
+    background-color: var(--color04);
+}
+
+/*-- View: outofservice / offlinespa --*/
+div[data-view-id="outofservice"] #flexArticle,
+div[data-view-id="offlinespa"] #flexArticle {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outOfServicePattern {
+    background: url('../../../default/images/pattern.svg') repeat;
+}
+
+#outOfServiceMessage {
+    text-align: center;
+    white-space: nowrap;
+}
+
+/*-- View: welcome --*/
+div[data-view-id="welcome-view"] #flexMain,
+div[data-view-id="welcome"] #flexMain {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*-- View: pleasewait --*/
+div[data-view-id="pleasewait"] #flexArticle {
+    align-items: center;
+}
+
+/* Points loader */
+#waitLine>div {
+    border: 1px solid var(--color01);
+}
+
+/*-- View: billsplitting --*/
+div[data-view-id="billsplitting"] #flexArticle, div[data-view-id="billselection"] #flexArticle {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#amountHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.flexDistributionRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+.flexDistributionRow .itemStack {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*-- View: billselection --*/
+div[data-view-id="billselection"] .flexDistributionRow[data-current-denomination="true"] {
+    /*outline: 1px solid red;*/
+    background: var(--color03);
+}
+
+/*-- View: amountentry, numericentry, formentry --*/
+div[data-view-id="amountentry"] #flexArticle,
+div[data-view-id="numericentry"] #flexArticle {
+    justify-content: flex-start;
+}
+
+div[data-view-id="formentry"] .generalInput {
+    text-align: left;
+}
+
+div[data-view-id="formentry"] .generalInputFieldAreaZone {
+    display: flex;
+    flex-direction: column;
+}
+
+.generalInputFieldAreaZone object, .generalInputFieldAreaZone svg {
+    position: fixed;
+    z-index: 1;
+    align-self: flex-end;
+}
+
+/*-- View: depositresult --*/
+div[data-view-id="depositresult"] #flexHeader .messageArea>var { /*contains an icon*/
+    display: inherit;
+}
+
+div[data-view-id="depositresult"] #flexArticle {
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 0;
+}
+
+div[data-view-id="depositresult"] #flexNav {
+    overflow: visible;
+}
+
+.l2Sign>object, .l2Sign>svg {
+    display: inline-flex;
+    background-image: url('../../../default/images/l2_notes.svg');
+}
+
+#flexDepositResultTotalAmount {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+#flexDepositResultTotalAmountRow1, #flexDepositResultTotalAmountRow2 {
+    display: flex;
+    flex-direction: row;
+}
+
+#firstRowAmountCaptionArea, #secondRowAmountCaptionArea  {
+    text-align: right;
+}
+
+#firstRowAmountCurrencyArea, #secondRowAmountCurrencyArea {
+    text-align: left;
+}
+
+#firstRowAmountSumCaptionArea, #secondRowAmountSumCaptionArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#flexDepositResultDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flexDepositResultDetailsRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flexDepositResultDetailsRow .crossX,
+.flexDepositResultDetailsRow .equals {
+    text-align: center;
+}
+
+.flexDepositResultDetailsRow .count,
+.flexDepositResultDetailsRow .result {
+    text-align: right;
+}
+
+/*== View: common item animations views ==*/
+/*-- Items slots --*/
+.flexItemsSlot, .flexItemsSlotIn, .flexMetalSlotIn, .itemLane, .itemLaneMetal, .flexMetalWarningArea, .flexItemsSlotLSF {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    justify-content: flex-start;
+}
+
+.itemLane div, .itemLaneMetal div {
+    width: inherit;
+    align-items: stretch;
+}
+
+#flexAnimations {
+    display: flex;
+    order: 2;
+    flex-grow: 1;
+}
+
+#takeMetalItems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#takeMetalAnimationArea, #takeCoinAnimationArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#takeCoinAnimationArea {
+    display: flex;
+    order: 2;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*-- View: depositanimations (CIN/COUT), depositchequesanimations --*/
+div[data-view-id="depositanimations"] #flexArticle,
+div[data-view-id="depositchequesanimations"] #flexArticle {
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: visible;
+}
+
+div[data-view-id="depositanimations"] #flexNav, div[data-view-id="depositanimations"] #flexAside,
+div[data-view-id="depositchequesanimations"] #flexNav, div[data-view-id="depositchequesanimations"] #flexAside {
+    flex-grow: 0;
+    overflow: visible;
+}
+
+#flexAdditionalHints, #flexAdditionalTexts, #flexAdditionalIcons {
+    display: flex;
+    order: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-grow: 1;
+}
+
+#flexAdditionalHints {
+    flex-shrink: 0;
+}
+
+#flexAdditionalTexts {
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+#flexAdditionalIcons {
+    order: 2;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#flexAnimationHead {
+    order: 1;
+    align-self: flex-start;
+}
+
+.warningIcon::before {
+    content: "";
+    background: url('../../images/deposit_warning_red_circle.svg') no-repeat;
+}
+
+/* cheque scanning animation */
+#chequesScanningTexts {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#chequeBack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#chequeScanRedLight {
+    z-index: 1;
+}
+
+/*-- View: Accountinformation --*/
+div[data-view-id="accountinformation"] #flexArticle {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    z-index: -1;
+}
+
+div[data-view-id="accountinformation"] #flexNav {
+    align-items: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: visible;
+    z-index: 1;
+}
+
+div[data-view-id="accountinformation"] #flexAside {
+    align-items: flex-end;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: visible;
+    z-index: 1;
+}
+
+#AINPcebal, #AINPcemov, #AINIfx, #AINPcebalTable {
+    display: flex;
+    flex-direction: column;
+}
+
+#flexAccountDetailsArea {
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+    z-index: 1;
+}
+
+/*- AINStd, AINIfx, AINPcemov -*/
+#flexAccountAINStdAINIfxAINPcemov {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    overflow: visible;
+    z-index: 1;
+}
+
+#flexAccountDetailsColumn1, #flexAccountDetailsColumn2 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    overflow: visible;
+    z-index: 1;
+}
+
+#flexAccountDetailsColumn2 {
+    flex-direction: row;
+}
+
+#accountNumberArea, #accountHolderArea, #balanceArea, #accountTypeArea {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+#balanceArea {
+    flex-direction: column;
+    border-left: 1px solid var(--color04);
+}
+
+#accountNumberLabel, #accountNumberValue, #accountHolderLabel, #accountHolderValue,
+#balanceLabel, #balanceValue, #accountTypeLabel, #accountTypeValue {
+    display: flex;
+    align-items: center;
+}
+
+/* Transaction area */
+#flexTransactionsArea {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#flexTransactionsHeader {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#flexTransactionsHeaderAINStdAINIfxAINPcemov {
+    display: flex;
+    flex-direction: column;
+}
+
+#row1TransactionsHeader, #row2TransactionsHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#transHeadExpirationDateLabel, #transHeadEffectiveDateLabel {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+#transHeadAmountLabel {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/* Transaction */
+#flexTransactionsDataArea {
+    display: flex;
+    flex-direction: column;
+}
+
+.row1TransData, .row2TransData  {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.row1TransData {
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.row2TransData {
+    flex-direction: row;
+}
+
+.expirationDateValue, .effectiveDateValue  {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.amountValue, .currencyValue {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.column1purposeValue, .column2purposeValue {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: stretch;
+}
+
+.purposeValue {
+    display: flex;
+}
+
+/*-- AINPcebal --*/
+#flexAccountDetailsAINPcebal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    overflow: visible;
+    z-index: 1;
+}
+
+#flexTransactionsHeaderAINPcebal, #flexTransactionsDataAINPcebal .transaction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#transHeadAccountTypeLabel, #transHeadAccountNumberLabel, #transHeadAccountBalanceLabel, #transHeadAvailableAmountLabel {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.accountTypeValue, .accountNumberValue, .accountBalanceValue, .availableAmountValue {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+/*- Visibility: AINStd, AINIfx, AINPcemov, AINPcebal -*/
+/* AINStdTable */
+#AINStdTable #flexAccountDetailsAINPcebal, #AINStdTable #flexTransactionsHeaderAINPcebal,
+#AINStdTable #flexTransactionsDataAINPcebal, #AINStdTable #accountTypeArea {
+    display: none;
+}
+
+/* AINIfxTable */
+#AINIfxTable #flexAccountDetailsAINPcebal, #AINIfxTable #flexTransactionsHeaderAINPcebal,
+#AINIfxTable #flexTransactionsDataAINPcebal, #AINIfxTable #accountHolderArea {
+    display: none;
+}
+
+#AINIfxTable #balanceArea, #AINPcebalTable #balanceArea {
+    visibility: hidden;
+}
+
+/* AINPcebalTable */
+#AINPcebalTable #flexAccountAINStdAINIfxAINPcemov, #AINPcebalTable #flexTransactionsHeaderAINStdAINIfxAINPcemov,
+#AINPcebalTable #flexTransactionsDataAINStdAINIfxAINPcemov {
+    display: none;
+}
+
+/* AINPcemovTable */
+#AINPcemovTable #flexAccountDetailsAINPcebal, #AINPcemovTable #flexTransactionsHeaderAINPcebal,
+#AINPcemovTable #flexTransactionsDataAINPcebal, #AINPcemovTable #accountNumberArea, #AINPcemovTable #accountTypeArea {
+    display: none;
+}
+
+#AINPcemovTable #flexAccountDetailsRow2 {
+    order: 1;
+}
+
+#AINPcemovTable #flexAccountDetailsRow1 {
+    order: 2;
+}
+
+#AINPcemovTable #balanceArea {
+    flex-direction: row;
+    border-left: none;
+}
+
+/*-- View: depositchequesresult --*/
+div[data-view-id="depositchequesresult"] #flexArticle {
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+}
+
+#chqInfoArea {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* #chqInfoDetails, #chqErrorInfoArea */
+#chqInfoArea>div {
+    display: flex;
+}
+
+#chqInfoDetails {
+    flex-direction: row;
+}
+
+#chqInfoDetailsColumn1, #chqInfoDetailsColumn2 {
+    display: flex;
+    flex-direction: column;
+}
+
+#chqInfoDetailsColumn1 {
+    align-items: flex-start;
+}
+
+#chqInfoDetailsColumn2 {
+    align-items: flex-end;
+}
+
+#chqArea {
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#chqNoFromTo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#chqArea .chequeImageContainer {
+    transform-style: preserve-3d;
+}
+
+#chqArea .frontImage {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+/*-- View: scannedimageviewer --*/
+div[data-view-id="scannedimageviewer"] #imgViewer {
+    display: flex;
+    justify-content: center;
+}
+
+div[data-view-id="scannedimageviewer"] #chqInfoArea[data-document-zoom="in"] #imgViewer {
+    z-index: 1;
+}
+
+/*-- View: envelopeanimations.html --*/
+div[data-view-id="depositenvelopeanimations"] .itemLane {
+    width: auto; /*we need an own width here*/
+}
+
+#envelopeEject3D, #envelopeInsert3D {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* -- View: scancodeanimations.html --*/
+#barcodeScanArea, #qrcodeScanArea, #barcodeBack, #qrcodeBack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+#barcodeRedLight, #qrcodeRedLight  {
+    z-index: 100;
+}
+
+.barcode, .qrcode  {
+    z-index: -1;
+}
+
+/* -- View: checkboxes.html --*/
+.checkBoxItem {
+    align-self: center;
+}
+
+.checkBoxItemRight {
+    justify-content: flex-end;
+}
+
+/*-- View: Chiptransactions / emvtransactions --*/
+div[data-view-id="chiptransactions"] #flexArticle,
+div[data-view-id="emvtransactions"] #flexArticle {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    z-index: -1;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+div[data-view-id="chiptransactions"] #flexNav,
+div[data-view-id="emvtransactions"] #flexNav {
+    align-items: flex-start;
+    overflow: visible;
+    z-index: 1;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+div[data-view-id="chiptransactions"] #flexAside,
+div[data-view-id="emvtransactions"] #flexAside {
+    align-items: flex-end;
+    overflow: visible;
+    z-index: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/* Transaction area */
+#flexChipTransactionsArea, #flexTransLogArea {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#flexChipTransactionsHeader, #flexTransLogHeader {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#rowChipTransactionsHeader, #rowTransLogHeader, #rowTransLogHeaderECash, #rowTransLogHeader2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#transHeadChipDateLabel, #transHeadChipTimeLabel,
+#transHeadLogDateLabel, #transHeadLogTimeLabel,  #transHeadLogAmountLabel,  #transHeadLogRefAmountLabel, #transHeadLogOtherLabel, #transHeadLogPlaceLabel,
+#transHeadLogDateLabelECash, #transHeadLogTimeLabelECash, #transHeadLogCountryLabelECash, #transHeadLogNumberLabelECash {
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: flex-start;
+}
+
+#transHeadChipAmountLabel, #transHeadChipBalanceLabel, #transHeadChipStateLabel {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#TransLogECash #rowTransLogHeader {
+    display: none;
+}
+
+#TransLogStd #rowTransLogHeaderECash {
+    display: none;
+}
+
+#TransLogECash .rowTransLogDataLine1 {
+    display: none;
+}
+
+#TransLogStd .rowTransLogDataLine1ECash {
+    display: none;
+}
+
+/* Transaction */
+#flexChipTransactionsDataArea, #flexTransLogDataArea {
+    display: flex;
+    flex-direction: column;
+}
+
+.rowChipTransData  {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chipDateValue, .chipTimeValue  {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.chipAmountValue, .chipBalanceValue, .chipStateValue {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.rowTransLogData   {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-direction: column;
+}
+
+.rowTransLogDataLine1, .rowTransLogDataLine1ECash  {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-direction: row;
+    align-items: center;
+}
+.rowTransLogDataLine2  {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.transLogDateValue, .transLogTimeValue, .transLogAmountValue, .transLogRefAmountValue, .transLogCountryValue,
+.transLogCurrencyValue, .transLogTypeValue, .transLogNumberValue, .transLogPlaceValue,
+.transLogDateValueECash, .transLogTimeValueECash, .transLogCountryValueECash, .transLogNumberValueECash {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/*-- View: receipt.html --*/
+div[data-view-id="receipt"] .messageArea {
+    background: var(--color01);
+}
+
+/*-- View: signaturepad.html --*/
+div[data-view-id="signaturepad"] #flexArticle {
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 2;
+}
+
+/*-- View: videoassistance.html --*/
+#videoImageArea {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+div[data-view-id="videoassistance"] .checkBoxItemRight {
+    border: none;
+}
+
+div[data-view-id="videoassistance"] #flexArticle {
+    justify-content: flex-start;
+}
+
+/*-- View: outofserviceadditionalinfos.html --*/
+div[data-view-id="outofserviceadditionalinfos"] #flexArticle {
+    display: grid;
+}
+
+#atmInfosHeadline, .flexAtmInfosDetailsRow {
+    display: grid;
+    z-index: 2;
+}
+
+#atmInfosHeadlineDistance {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#atmInfosHeadline>var:nth-child(3) {
+    text-align: center;
+}
+
+.atmDistance {
+    align-self: center;
+    text-align: right;
+}
+
+.atmMapLocation {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.atmState {
+    text-align: center;
+    align-self: center;
+}
+
+.flexAtmInfosDetailsRow .atmAddress {
+    display: grid;
+}
+
+div[data-view-id="outofserviceadditionalinfos"] .qrcode {
+    transform: none;
+}
+
+#atmQRCodes {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#mapLocationContainer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: var(--color05);
+}
+
+#mapLocationContainer #mapLocationContainerClose {
+    position: absolute;
+    align-self: flex-end;
+    z-index: 1; /*cause of a high value of the map itself*/
+    color: var(--color04);
+}
+
+/* -- View: dualchoiceselection.html --*/
+div[data-view-id="dualchoiceselection"] #flexArticle {
+    justify-content: space-between;
+}
+
+div[data-view-id="dualchoiceselection"] #leftColumnText {
+    position: absolute;
+}
+
+div[data-view-id="dualchoiceselection"] #rightColumnText {
+    position: absolute;
+}
+
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalLeft,
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorHorizontalRight,
+div[data-view-id="dualchoiceselection"] #flexArticle #separatorVertical {
+    position: absolute;
+}
+

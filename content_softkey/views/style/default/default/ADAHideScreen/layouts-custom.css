@@ -1,0 +1,19 @@
+/*
+$MOD$ layouts-custom.css 4.3.1-200121-21-2e9c3f81-1a04bc7d
+*/
+
+@charset "utf-8";
+/*//////////////////////////////////////////////////////////////////////////////	
+	CSS Document for layout
+//////////////////////////////////////////////////////////////////////////////*/
+
+:root {
+    /*background: white !important;*/
+}
+
+body {
+    /*overflow-x: hidden !important;*/
+    /*overflow-y: hidden !important;*/
+    /*display: none !important;*/
+    filter: blur(7px);
+}

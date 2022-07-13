@@ -1,0 +1,316 @@
+<!--
+$MOD$ accountinformation.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+  <!-- Nav -->
+  <nav id="flexNav"></nav>
+
+  <!-- Article -->
+  <article id="flexArticle">
+    <div
+      data-bind="attr:{ id: tableType() == 'AINStd' ? 'AINStdTable' :  tableType() == 'AINIfx' ? 'AINIfxTable' : tableType() == 'AINPcemov' ? 'AINPcemovTable' : 'AINPcebalTable' }"
+    >
+      <!-- Account details area -->
+      <div id="flexAccountDetailsArea">
+        <!-- AINStd, AINIfx, AINPcemov -->
+        <div id="flexAccountAINStdAINIfxAINPcemov">
+          <div id="flexAccountDetailsColumn1">
+            <div id="accountNumberArea">
+              <var
+                id="accountNumberLabel"
+                class="color01 font02"
+                data-bind="command: {id: 'accountNumberLabelPcemov', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AccountNumber', 'Account'), inplace: true}}"
+              >
+              </var>
+              <var
+                id="accountNumberValue"
+                class="color03 font02"
+                data-bind="command: {id: 'accountNumberValue', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Value_AccountNumber', 'DE23100000001234567890'), inplace: true}}"
+              >
+              </var>
+            </div>
+            <div id="accountHolderArea">
+              <var
+                id="accountHolderLabel"
+                class="color01 font02"
+                data-bind="command: {id: 'accountHolderLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AccountHolder', 'Name'), inplace: true}}"
+              >
+              </var>
+              <var
+                id="accountHolderValue"
+                class="color03 font02"
+                data-bind="command: {id: 'accountHolderValue', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Value_AccountHolder', 'Susanne Scroll'), inplace: true}}"
+              >
+              </var>
+            </div>
+            <div id="accountTypeArea">
+              <var
+                id="accountTypeLabel"
+                class="color01 font02"
+                data-bind="command: {id: 'accountTypeLabelPcemov', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AccountType', 'Type'), inplace: true}}"
+              >
+              </var>
+              <var
+                id="accountTypeValue"
+                class="color03 font02"
+                data-bind="command: {id: 'accountTypeValue', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Value_AccountType', 'Giro account'), inplace: true}}"
+              >
+              </var>
+            </div>
+          </div>
+          <div id="flexAccountDetailsColumn2">
+            <div id="balanceArea">
+              <var
+                id="balanceLabel"
+                class="color01 font02"
+                data-bind="command: {id: 'balanceLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AccountBalance', 'Balance'), inplace: true}}"
+              >
+              </var>
+              <var
+                id="balanceValue"
+                class="color03 font02"
+                data-bind="command: {id: 'balanceValue', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Value_AccountBalance', 'EUR 1300.00 H'), inplace: true}}"
+              >
+              </var>
+            </div>
+          </div>
+        </div>
+
+        <!-- AINPcebal -->
+        <div id="flexAccountDetailsAINPcebal">
+          <var
+            id="accountInformationLabel"
+            class="color01 font02"
+            data-bind="command: {id: 'accountInformationLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AccountInformation', 'Your account information:'), inplace: true}}"
+          >
+          </var>
+        </div>
+      </div>
+
+      <!-- Account transaction area -->
+      <div id="flexTransactionsArea">
+        <!-- Transaction header -->
+        <div id="flexTransactionsHeader">
+          <!-- AINStd, AINIfx, AINPcemov -->
+          <div id="flexTransactionsHeaderAINStdAINIfxAINPcemov">
+            <div id="row1TransactionsHeader">
+              <var
+                id="transHeadExpirationDateLabel"
+                class="color03 font02"
+                data-bind="command: {id: 'expirationDateLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_ExpirationDate', 'Expiration Date'), inplace: true}}"
+              >
+              </var>
+              <var
+                id="transHeadEffectiveDateLabel"
+                class="color03 font02"
+                data-bind="command: {id: 'effectiveDateLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_EffectiveDate', 'Effective Date'), inplace: true}}"
+              >
+              </var>
+              <var
+                id="transHeadAmountLabel"
+                class="color03 font02"
+                data-bind="command: {id: 'amountLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Amount', 'Amount'), inplace: true}}"
+              >
+              </var>
+            </div>
+            <div id="row2TransactionsHeader">
+              <var
+                id="transHeadPurposeLabel"
+                class="color03 font02"
+                data-bind="command: {id: 'purposeLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Description', 'Purpose'), inplace: true}}"
+              >
+              </var>
+            </div>
+          </div>
+
+          <!-- AINPcebal -->
+          <div id="flexTransactionsHeaderAINPcebal">
+            <var
+              id="transHeadAccountTypeLabel"
+              class="color03 font02"
+              data-bind="command: {id: 'accountTypeLabelPcebal', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AccountType', 'Type'), inplace: true}}"
+            >
+            </var>
+            <var
+              id="transHeadAccountNumberLabel"
+              class="color03 font02"
+              data-bind="command: {id: 'accountNumberLabelPcebal', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AccountNumber', 'Account'), inplace: true}}"
+            >
+            </var>
+            <var
+              id="transHeadAccountBalanceLabel"
+              class="color03 font02"
+              data-bind="command: {id: 'accountBalanceLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AccountBalance', 'Balance'), inplace: true}}"
+            >
+            </var>
+            <var
+              id="transHeadAvailableAmountLabel"
+              class="color03 font02"
+              data-bind="command: {id: 'availableAmountLabel', type: CMDTYPE.TEXT, action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_AvailableAmount', 'Available Amount'), inplace: true}}"
+            >
+            </var>
+          </div>
+        </div>
+
+        <!-- Transaction data -->
+        <div id="flexTransactionsDataArea">
+          <!-- AINStd, AINIfx, AINPcemov - whole block is active only if table type is AINStd or AINIfx or AINPcemov -->
+          <!-- ko if: (tableType() === 'AINStd' || tableType() === 'AINIfx' || tableType() === 'AINPcemov') -->
+          <div id="flexTransactionsDataAINStdAINIfxAINPcemov">
+            <!-- ko template: { foreach: dataList.items, afterRender: notify.bind($root) } -->
+            <div
+              class="transaction listRow"
+              data-list-down-active="false"
+              data-list-up-active="false"
+              data-bind="
+                                        style: {'animation-duration': ($index() * 0.2 + 0.4) + 's'},
+                                        attr: {'data-list-down-active': $root.cmdRepos.isActive('BTN_SCROLL_DOWN'), 'data-list-up-active': $root.cmdRepos.isActive('BTN_SCROLL_UP')}"
+            >
+              <div class="row1TransData">
+                <var
+                  class="expirationDateValue color03 font02"
+                  data-bind="text: $data.expirationDate"
+                ></var>
+                <var
+                  class="effectiveDateValue color03 font02"
+                  data-bind="text: $data.effectiveDate"
+                ></var>
+                <var
+                  data-bind="text: ($data.balanceType == 'H' || $data.balanceType == '+' ? '+ ' + $data.amount : ($data.balanceType == 'S' || $data.balanceType == '-' ? '- ' + $data.amount : $data.amount ) ),
+                                           attr: { class: ($data.balanceType == 'H' || $data.balanceType == '+' ? 'amountValue color06 font02' : ($data.balanceType == 'S' || $data.balanceType == '-' ? 'amountValue color08 font02' : 'amountValue color03 font02' ) ) }"
+                ></var>
+
+                <var
+                  class="currencyValue color03 font02"
+                  data-bind="text: $data.currency"
+                ></var>
+              </div>
+              <div class="row2TransData">
+                <div class="column1purposeValue">
+                  <var
+                    class="purposeValue color01 font02"
+                    data-bind="text: $data.description1"
+                  ></var>
+                  <var
+                    class="purposeValue color01 font02"
+                    data-bind="text: $data.description2"
+                  ></var>
+                </div>
+                <div class="column2purposeValue">
+                  <var
+                    class="purposeValue color01 font02"
+                    data-bind="text: $data.description3"
+                  ></var>
+                  <var
+                    class="purposeValue color01 font02"
+                    data-bind="text: $data.description4"
+                  ></var>
+                </div>
+              </div>
+            </div>
+            <!-- /ko -->
+          </div>
+          <!-- /ko -->
+
+          <!-- AINPcebal, whole block is active only if table type is AINPcebal  -->
+          <!-- ko if: (tableType() === 'AINPcebal') -->
+          <div id="flexTransactionsDataAINPcebal">
+            <!-- ko template: { foreach: dataList.items, afterRender: notify.bind($root) } -->
+            <div
+              class="transaction listRow AINPcebalRow"
+              data-list-down-active="false"
+              data-list-up-active="false"
+              data-bind="
+                                        style: {'animation-duration': ($index() * 0.2 + 0.4) + 's'},
+                                        attr: {'data-list-down-active': $root.cmdRepos.isActive('BTN_SCROLL_DOWN'), 'data-list-up-active': $root.cmdRepos.isActive('BTN_SCROLL_UP')}"
+            >
+              <var
+                class="accountTypeValue color01 font02"
+                data-bind="text: $data.accountType"
+              ></var>
+              <var
+                class="accountNumberValue color01 font02"
+                data-bind="format: {src: $data.accountNumber, pattern: '#x+-4:4'}"
+              ></var>
+              <var
+                class="accountBalanceValue color01 font02"
+                data-bind="text: $data.accountBalance"
+              ></var>
+              <var
+                class="availableAmountValue color01 font02"
+                data-bind="text: $data.availableAmount"
+              ></var>
+            </div>
+            <!-- /ko -->
+          </div>
+          <!-- /ko -->
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Aside -->
+  <aside id="flexAside">
+    <!-- Confirm btn -->
+    <div id="flexAsideSK00">
+      <div
+        id="buttonConfirm"
+        class="button button03 skRight iconButton borderDrawing"
+        data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, args: ['CONFIRM','CONFIRM'], adaType: ADA_TYPE.SELECTION_KEY, adakey: '7', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'CONFIRM')}, eppkey: ['CONFIRM', 'F1']}"
+      >
+        <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+        <var
+          class="color09 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"
+        ></var>
+      </div>
+    </div>
+
+    <!-- Previous btn -->
+    <div id="flexAsideSK01">
+      <div
+        class="button button01 skRight iconButton borderDrawing"
+        data-bind="command: {id: 'BTN_SCROLL_UP', type: CMDTYPE.BUTTON, adaType: ADA_TYPE.SELECTION_KEY, adakey: '4', state: CMDSTATE.DISABLED, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Previous', 'BACK')}, eppkey: 'F2'}"
+      >
+        <svg data-bind="svguse: { name: 'arrow_up.svg' }"></svg>
+      </div>
+    </div>
+
+    <!-- Print btn -->
+    <div id="flexAsideSK02">
+      <div
+        class="button button01 skRight iconButton borderDrawing"
+        data-bind="command: {id: 'PRINT', type: CMDTYPE.BUTTON, adaType: ADA_TYPE.SELECTION_KEY, adakey: '5', adaText: getLabel('GUI_[#VIEW_KEY#]_Button_Print_ADA', 'Print'), adaTextPost: getLabel('GUI_[#VIEW_KEY#]_Button_Print_ADA_Clicked', 'Print'), eppkey: 'F3'}"
+      >
+        <svg data-bind="svguse: { name: 'printer.svg' }"></svg>
+      </div>
+    </div>
+
+    <!-- Next btn -->
+    <div id="flexAsideSK03">
+      <div
+        class="button button01 skRight iconButton borderDrawing"
+        data-bind="command: {id: 'BTN_SCROLL_DOWN', type: CMDTYPE.BUTTON, adaType: ADA_TYPE.SELECTION_KEY, adakey: '8', state: CMDSTATE.DISABLED, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Next', 'NEXT')}, eppkey: 'F4'}"
+      >
+        <svg data-bind="svguse: { name: 'arrow_down.svg' }"></svg>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+  <div id="flexExtra"></div>
+  <div id="flexCancel">
+    <div class="buttonZone">
+      <div
+        id="buttonCancel"
+        class="button footerButton"
+        data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}"
+      >
+        <var data-bind="text: cmdRepos.getCmdLabel('CANCEL')"></var>
+      </div>
+    </div>
+  </div>
+</footer>

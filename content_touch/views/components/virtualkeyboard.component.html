@@ -1,0 +1,375 @@
+<!--
+$MOD$ virtualkeyboard.component.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<div id="vkModalOverlay" class="modalOverlay" style="display: none;">
+    <div id="virtualKeyboardContainer" data-bind="
+                    gesture: {
+                        gestures: {
+                            Swipe: {
+                                direction: 'DIRECTION_ALL',
+                                events:['swipe'],
+                                threshold: 5,
+                                velocity: 0.4,
+                                handler: function(e){
+                                    if (e.direction === 16) {// down
+                                        $root.hide();
+                                        return true;
+                                    }
+                                    if (e.direction === 2) {// left
+                                        $root.goToNextInputField(true);
+                                        return true;
+                                    }
+                                    if (e.direction === 4) {// right
+                                        $root.goToNextInputField();
+                                        return true;
+                                    }
+                                    return true;
+                                }
+                            }
+                        }
+                    }">
+        <div id="generalVKInputArea" class="virtualInputArea">
+            <label id="generalVKInputLabel" class="color05 font03" for="generalVKInput"></label><input spellcheck="false" type="text" id="generalVKInput" class="font04 generalInput virtualInputArea"/>
+        </div>
+        <div id="virtualKeyboardArea" class="color05">
+            <div id="keyArea" data-bind="
+                    visible: ko.computed(function(){return $root.activeLayout() === 'KEYBOARD'}),
+                ">
+
+                <!-- ko foreach: { data: [0,1,2,3,4,5,6,7,8,9,19,'BACKSPACE'] } -->
+                <button class="button keyboardButton" data-bind="
+                        attr: {id:'keyboardButton'+$data},
+                        gesture: {
+                            gestures: {
+                                Tap: {
+                                    time: 400,
+                                    threshold: 25,
+                                    events:['tap'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                },
+                                Pan: {
+                                    events:['panstart', 'panmove', 'panend'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                },
+                                Press: {
+                                    time: 500,
+                                    threshold: 25,
+                                    events:['press', 'pressup'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                }
+                            }
+                        },
+                        enable: $root.keys[$data].enabled,
+                        visibility: $root.keys[$data].visible" >
+                    <var class="color03 font02 secondKeyCode" data-bind="text: $root.subKeys[$data].character"></var>
+                    <var class="color03 font06" data-bind="text: $root.keys[$data].character"></var>
+                </button>
+                <!-- /ko -->
+
+                <button id="placedummy00" class="button keyboardButton" disabled="disabled"></button>
+
+                <!-- ko foreach: { data: [10,11,12,13,14,15,16,17,18] } -->
+                <button class="button keyboardButton" data-bind="
+                            attr: {id:'keyboardButton'+$data},
+                            gesture: {
+                                gestures: {
+                                    Tap: {
+                                        time: 400,
+                                        threshold: 25,
+                                        events:['tap'],
+                                        handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                    },
+                                    Pan: {
+                                        events:['panstart', 'panmove', 'panend'],
+                                        handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                    },
+                                    Press: {
+                                        time: 500,
+                                        threshold: 25,
+                                        events:['press', 'pressup'],
+                                        handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                    }
+                                }
+                            },
+                            enable: $root.keys[$data].enabled,
+                            visibility: $root.keys[$data].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text: $root.subKeys[$data].character"></var>
+                    <var class="color03 font06" data-bind="text: $root.keys[$data].character"></var>
+                </button>
+                <!-- /ko -->
+
+                <button id="enterKey" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('ENTER',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('ENTER',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['ENTER'].enabled,
+                    visibility: keys['ENTER'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['ENTER'].character"></var>
+                    <var class="color03 font04" data-bind="text: keys['ENTER'].character"></var>
+                </button>
+
+                <button id="placedummy01" class="button keyboardButton" disabled="disabled"></button>
+
+                <button id="shiftKey" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('SHIFT',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('SHIFT',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['SHIFT'].enabled,
+                    visibility: keys['SHIFT'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['SHIFT'].character"></var>
+                    <var class="color03 font04" data-bind="text: keys['SHIFT'].character"></var>
+                </button>
+                <!-- ko foreach: { data: [20,21,22,23,24,25,26,27,28] } -->
+                <button class="button keyboardButton" data-bind="
+                        attr: {
+                            id:'keyboardButton'+$data
+                        },
+                        gesture: {
+                            gestures: {
+                                Tap: {
+                                    time: 400,
+                                    threshold: 25,
+                                    events:['tap'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                },
+                                Pan: {
+                                    events:['panstart', 'panmove', 'panend'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                },
+                                Press: {
+                                    time: 500,
+                                    threshold: 25,
+                                    events:['press', 'pressup'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                }
+                            }
+                        },
+                        enable: $root.keys[$data].enabled,
+                        visibility: $root.keys[$data].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text: $root.subKeys[$data].character"></var>
+                    <var class="color03 font06" data-bind="text: $root.keys[$data].character"></var>
+                </button>
+                <!-- /ko -->
+                <button id="arrowUp" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('UP',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('UP',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['UP'].enabled,
+                    visibility: keys['UP'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['UP'].character"></var>
+                    <var class="color03 font04 arrowKeyCaption" data-bind="text: keys['UP'].character"></var>
+                </button>
+                <button id="keyboardButtonCLEAR" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('CLEAR',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('CLEAR',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['CLEAR'].enabled,
+                    visibility: keys['CLEAR'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['CLEAR'].character"></var>
+                    <var class="color03 font02 arrowKeyCaption" data-bind="text: keys['CLEAR'].character"></var>
+                </button>
+
+                <!--<button id="placedummy02" class="button keyboardButton" disabled="disabled"></button>-->
+
+                <button id="fnKey" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('FUNCTION',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('FUNCTION',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['FUNCTION'].enabled,
+                    visibility: keys['FUNCTION'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['FUNCTION'].character"></var>
+                    <var class="color03 font01" data-bind="text: keys['FUNCTION'].character"></var>
+                </button>
+                <button id="spaceKey" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('SPACE',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('SPACE',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['SPACE'].enabled,
+                    visibility: keys['SPACE'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['SPACE'].character"></var>
+                    <var class="color03 font04" data-bind="text: keys['SPACE'].character"></var>
+                </button>
+                <button id="arrowLeft" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('LEFT',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('LEFT',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['LEFT'].enabled,
+                    visibility: keys['LEFT'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['LEFT'].character"></var>
+                    <var class="color03 font04 arrowKeyCaption" data-bind="text: keys['LEFT'].character"></var>
+                </button>
+                <button id="arrowDown" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('DOWN',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('DOWN',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['DOWN'].enabled,
+                    visibility: keys['DOWN'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['DOWN'].character"></var>
+                    <var class="color03 font04 arrowKeyCaption" data-bind="text: keys['DOWN'].character"></var>
+                </button>
+                <button id="arrowRight" class="button keyboardButton" data-bind="
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 400,
+                                threshold: 25,
+                                events:['tap'],
+                                handler: function(e){$root.onButtonPressed('RIGHT',$root,e);return true;}
+                            },
+                            Press: {
+                                time: 500,
+                                threshold: 25,
+                                events:['press'],
+                                handler: function(e){$root.onButtonPressed('RIGHT',$root,e);return true;}
+                            }
+                        }
+                    },
+                    enable: keys['RIGHT'].enabled,
+                    visibility: keys['RIGHT'].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text:subKeys['RIGHT'].character"></var>
+                    <var class="color03 font04 arrowKeyCaption" data-bind="text: keys['RIGHT'].character"></var>
+                </button>
+                <button id="placedummy03" class="button keyboardButton" disabled="disabled"></button>
+            </div>
+            <!-- the numpad is only visible if active in viewmodel -->
+            <div id="keyAreaNumPad" data-bind="
+                    visible: ko.computed(function(){return $root.activeLayout() === 'NUMPAD'}),
+                ">
+                <!-- ko foreach: { data: [0,1,2,3,4,5,6,7,8,'BACKSPACE',9, 'ENTER'] } -->
+                <button class="button keyboardButton" data-bind="
+                        attr: {id:'numPadButton'+$data},
+                        gesture: {
+                            gestures: {
+                                Tap: {
+                                    time: 400,
+                                    threshold: 25,
+                                    events:['tap'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                },
+                                Pan: {
+                                    events:['panstart', 'panmove', 'panend'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                },
+                                Press: {
+                                    time: 500,
+                                    threshold: 25,
+                                    events:['press', 'pressup'],
+                                    handler: function(e){$root.onButtonPressed($data,$root,e);return true;}
+                                }
+                            }
+                        },
+                        enable: $root.keys[$data].enabled,
+                        visibility: $root.keys[$data].visible">
+                    <var class="color03 font02 secondKeyCode" data-bind="text: $root.subKeys[$data].character"></var>
+                    <var class="color03 font06" data-bind="text: $root.keys[$data].character"></var>
+                </button>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,712 @@
+@charset "utf-8";
+/*!
+ Copyright (c) 2001-2020 by Wincor Nixdorf International GmbH,
+ Heinz-Nixdorf-Ring 1, 33106 Paderborn, Germany
+
+ This software is the confidential and proprietary information
+ of Diebold Nixdorf.
+ You shall not disclose such Confidential Information and shall
+ use it only in accordance with the terms of the license agreement
+ you entered into with Diebold Nixdorf.
+
+
+$MOD$ dnseries.css 4.3.1-200827-21-0feba36c-1a04bc7d
+
+*/
+
+/*
+ * CSS document for resolution-independent information
+ */
+
+:root {
+    /* basic colors*/
+    --color01: rgba(52, 27, 47, 1);
+    --color02: rgb(255, 255, 255);
+    --color03: rgb(90, 90, 90);
+    --color04: rgba(0, 0, 0, 1);
+    --color05: rgba(160, 165, 170, 1);
+    --color06: rgb(34, 203, 53);
+    --color07: rgb(198, 11, 11);
+    --color08: rgba(245, 100, 55, 1);
+    --color09: rgba(255, 255, 255, 1);
+    --color10: rgb(250, 207, 26);
+    /* alpha variants */
+    --color01-alpha-0: rgba(10, 35, 100, 0);
+    --color01-alpha-2: rgba(10, 35, 100, 0.02);
+    --color01-alpha-5: rgba(10, 35, 100, 0.05);
+    --color01-alpha-7: rgba(10, 35, 100, 0.07);
+    --color01-alpha-9: rgba(10, 35, 100, 0.09);
+    --color01-alpha-10: rgba(10, 35, 100, 0.10);
+    --color01-alpha-15: rgba(10, 35, 100, 0.15);
+    --color01-alpha-25: rgba(10, 35, 100, 0.25);
+    --color01-alpha-30: rgba(10, 35, 100, 0.3);
+    --color01-alpha-40: rgba(10, 35, 100, 0.4);
+    --color01-alpha-50: rgba(10, 35, 100, 0.5);
+    --color01-alpha-60: rgba(10, 35, 100, 0.6);
+    --color01-alpha-70: rgba(10, 35, 100, 0.7);
+    --color01-alpha-80: rgba(10, 35, 100, 0.8);
+    --color02-alpha-0: rgba(0, 73, 135, 0);
+    --color02-alpha-15: rgba(0, 73, 135, 0.15);
+    --color02-alpha-25: rgba(0, 73, 135, 0.25);
+    --color02-alpha-30: rgba(0, 73, 135, 0.3);
+    --color02-alpha-40: rgba(0, 73, 135, 0.4);
+    --color02-alpha-50: rgba(0, 73, 135, 0.5);
+    --color02-alpha-60: rgba(0, 73, 135, 0.6);
+    --color02-alpha-70: rgba(0, 73, 135, 0.7);
+    --color02-alpha-80: rgba(0, 73, 135, 0.8);
+    --color03-alpha-0: rgba(90, 90, 90, 0);
+    --color03-alpha-1: rgba(90, 90, 90, 0.01);
+    --color03-alpha-2: rgba(90, 90, 90, 0.02);
+    --color03-alpha-5: rgba(90, 90, 90, 0.05);
+    --color03-alpha-10: rgba(90, 90, 90, 0.1);
+    --color03-alpha-15: rgba(90, 90, 90, 0.15);
+    --color03-alpha-20: rgba(90, 90, 90, 0.2);
+    --color03-alpha-25: rgba(90, 90, 90, 0.25);
+    --color03-alpha-30: rgba(90, 90, 90, 0.3);
+    --color03-alpha-40: rgba(90, 90, 90, 0.4);
+    --color03-alpha-50: rgba(90, 90, 90, 0.5);
+    --color03-alpha-60: rgba(90, 90, 90, 0.6);
+    --color03-alpha-70: rgba(90, 90, 90, 0.7);
+    --color03-alpha-80: rgba(90, 90, 90, 0.8);
+    --color04-alpha-0: rgba(0, 0, 0, 0);
+    --color04-alpha-20: rgba(0, 0, 0, 0.2);
+    --color04-alpha-30: rgba(0, 0, 0, 0.3);
+    --color04-alpha-40: rgba(0, 0, 0, 0.4);
+    --color04-alpha-50: rgba(0, 0, 0, 0.5);
+    --color04-alpha-60: rgba(0, 0, 0, 0.6);
+    --color04-alpha-70: rgba(0, 0, 0, 0.7);
+    --color04-alpha-80: rgba(0, 0, 0, 0.8);
+    --color06-alpha-0: rgba(30, 140, 40, 0);
+    --color06-alpha-25: rgba(30, 140, 40, 0.25);
+    --color06-alpha-30: rgba(30, 140, 40, 0.3);
+    --color06-alpha-40: rgba(30, 140, 40, 0.4);
+    --color06-alpha-60: rgba(30, 140, 40, 0.6);
+    --color06-alpha-70: rgba(30, 140, 40, 0.7);
+    --color06-alpha-80: rgba(30, 140, 40, 0.8);
+    --color06-scale-9: rgba(0, 198, 58, 0);
+    --color06-scale-alpha-20: rgba(0, 198, 58, 0.2);
+    --color06-scale-1: rgba(0, 198, 58, 1);
+    --color07-alpha-0: rgba(198, 58, 51, 0);
+    --color07-alpha-15: rgba(198, 58, 51, 0.15);
+    --color07-alpha-25: rgba(198, 58, 51, 0.25);
+    --color07-alpha-30: rgba(198, 58, 51, 0.3);
+    --color07-alpha-50: rgba(198, 58, 51, 0.5);
+    --color07-alpha-60: rgba(198, 58, 51, 0.6);
+    --color07-alpha-80: rgba(198, 58, 51, 0.8);
+    --color09-alpha-0: rgba(255, 255, 255, 0);
+    --color09-alpha-1: rgba(255, 255, 255, 0.01);
+    --color09-alpha-2: rgba(255, 255, 255, 0.02);
+    --color09-alpha-5: rgba(255, 255, 255, 0.05);
+    --color09-alpha-10: rgba(255, 255, 255, 0.1);
+    --color09-alpha-15: rgba(255, 255, 255, 0.15);
+    --color09-alpha-20: rgba(255, 255, 255, 0.2);
+    --color09-alpha-25: rgba(255, 255, 255, 0.25);
+    --color09-alpha-30: rgba(255, 255, 255, 0.3);
+    --color09-alpha-35: rgba(255, 255, 255, 0.35);
+    --color09-alpha-40: rgba(255, 255, 255, 0.4);
+    --color09-alpha-50: rgba(255, 255, 255, 0.5);
+    --color09-alpha-55: rgba(255, 255, 255, 0.55);
+    --color09-alpha-60: rgba(255, 255, 255, 0.6);
+    --color09-alpha-70: rgba(255, 255, 255, 0.7);
+    --color09-alpha-80: rgba(255, 255, 255, 0.8);
+    --color09-alpha-90: rgba(255, 255, 255, 0.9);
+    --color09-scale-1: rgb(52, 27, 47);
+    --color10-alpha-0: rgba(250, 225, 95, 0);
+    --color10-alpha-15: rgba(250, 225, 95, 0.15);
+    --color10-alpha-25: rgba(250, 225, 95, 0.25);
+    --color10-alpha-30: rgba(250, 225, 95, 0.3);
+    --color10-alpha-40: rgba(250, 225, 95, 0.4);
+    --color10-alpha-50: rgba(250, 225, 95, 0.5);
+    --color10-alpha-60: rgba(250, 225, 95, 0.6);
+    --color10-alpha-70: rgba(250, 225, 95, 0.7);
+    --color10-alpha-80: rgba(250, 225, 95, 0.8);
+    /* special colors*/
+    --color01-sliding-checkbox-label: var(--color09-scale-1);
+    --color03-generalinputback-popup: rgb(205, 205, 205);
+    --color04-generalinputback: linear-gradient(180deg, rgb(194, 197, 202) 0%, rgb(189, 193, 198) 100%);
+    --color04-generalinputback-txnbkg: var(--color04-generalinputback);
+    --color07-error: rgb(227, 75, 69);
+    --color02-info: rgb(0, 73, 135);
+    --color10-warning: rgb(165, 170, 6);
+    --colorSignatureBackground: var(--color09-scale-1);
+
+    /*background: url("../../../default/images/DNSeries/DN_Gradient_Blur_RGB-horz.png") no-repeat;*/
+    /*background-size: 100% 100%;*/
+
+    /*background: radial-gradient(ellipse at bottom, rgba(129, 48, 60, 1) 0%,  rgba(50, 78, 122, 1) 100%);*/
+    /*background: radial-gradient(farthest-corner at 60px 0px, rgb(18, 68, 147) 0%, rgb(76, 3, 32) 82%),  radial-gradient(farthest-side at 60px 0px, rgb(18, 68, 147) 0%, rgb(76, 3, 32) 82%);*/
+
+}
+
+html:root {
+    background: url("../../../default/images/DNSeries/DN_Gradient_Blur_RGB-horz.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/*-- Colors --*/
+.color01 {
+    color: var(--color01);
+}
+
+.color02 {
+    color: var(--color02);
+}
+
+.color03 {
+    color: var(--color09);
+}
+
+.color04, button:disabled > var, .disabled > var {
+    color: var(--color04);
+}
+
+.color05 {
+    color: var(--color05);
+}
+
+.color06 {
+    color: var(--color06);
+}
+
+.color07 {
+    color: var(--color07);
+}
+
+.color08 {
+    color: var(--color08);
+}
+
+.color09 {
+    color: var(--color09);
+}
+
+.color10 {
+    color: var(--color10);
+}
+#flexAdditionalHeaderInfo {
+    display: none;
+}
+
+#instruction {
+    font-weight: bold;
+    color: var(--color09);
+}
+
+#instruction, #headline {
+    text-align: center;
+    font-size: 2.0em;
+}
+
+div[data-view-id="outofserviceadditionalinfos"] #instruction,
+div[data-view-id="outofserviceadditionalinfos"] #headline,
+div[data-view-id="depositchequesresult"] #instruction,
+div[data-view-id="depositchequesresult"] #headline,
+div[data-view-id="scannedimageviewer"] #instruction,
+div[data-view-id="scannedimageviewer"] #headline,
+div[data-view-id="signaturepad"] #instruction,
+div[data-view-id="signaturepad"] #headline,
+div[data-view-id="pleasewait_timer"] #headline,
+div[data-view-id="pleasewait_timer"] #instruction,
+div[data-view-key="MenuPreferenceSelection"] #instruction,
+div[data-view-key="MenuPreferenceSelection"] #headline {
+    font-size: 1.75em;
+}
+
+div[data-view-key="ReceiptPreferenceMultipleChoiceSelection"] #instruction,
+div[data-view-key="ReceiptPreferenceMultipleChoiceSelection"] #headline {
+    font-size: 1.6em;
+}
+
+#flexHeaderBottom > :first-child {
+    margin-bottom: 30px;
+}
+
+#flexHeaderBottom {
+    flex-basis: auto;
+    height: 150px;
+}
+
+canvas {
+    color: var(--color09-scale-1);
+}
+
+/*
+ * General layouts, colors and fonts
+ */
+
+
+/*-- Text --*/
+label, p, var, span, .subMenuItem::after {
+    text-shadow: none;
+}
+
+/*-- Logo --*/
+#flexLogo>:first-child {
+    /*  For Chrome 'content: url(...)' will also work, but not for Firefox.
+        Therefore we have to use 'background:  ', which is commonly recommended for all browsers*/
+    background: url('../../../default/images/DN_Logo_V_White.svg') no-repeat;
+}
+
+/*-- Buttons --*/
+.button, #buttonCancel, #buttonConfirm, .buttonConfirm, #buttonCorrect, #buttonCancelPopup, #buttonConfirmPopup, #buttonCorrectPopup {
+    box-shadow: none;
+    outline: none;
+}
+
+.button {
+    background: var(--color09-scale-1);
+    border: 1px solid var(--color09);
+    border-radius: 10px;
+}
+
+#flexFooter .button {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#buttonCancel, #buttonCancelPopup {
+    background: var(--color07);
+    border: 1px solid var(--color09);
+}
+
+#buttonConfirm, .buttonConfirm, #buttonConfirmPopup {
+    background: var(--color06-scale-1);
+    border: 1px solid var(--color09);
+}
+
+#buttonCorrect, #buttonCorrectPopup,
+#buttonCorrectFront,
+body[data-browser-notation="Firefox"] #buttonCorrectFront {
+    background: var(--color10);
+    border: 1px solid var(--color09);
+}
+
+.button.activeUpperLeft, .button.activeLowerLeft, .button.activeUpperRight, .button.activeLowerRight,
+.button.activeUpper, .button.activeLower, .button.activeLowerRight, .button.activeLeft, .button.activeRight,
+.button.activeCenter, .pressed {
+    box-shadow: none;
+}
+
+.button[disabled], .disabled {
+    background: var(--color03-alpha-30);
+    border: 1px solid var(--color03-alpha-0);
+}
+
+.button[disabled] var, .disabled var, .button[disabled] span, .disabled span {
+    color: var(--color04-alpha-20);
+    text-shadow: none;
+}
+
+.button var, .button span {
+    text-shadow: none;
+}
+
+#buttonCancel var, #buttonCancel span,
+#buttonConfirm var, #buttonConfirm span,
+.buttonConfirm var, .buttonConfirm span,
+#buttonCancelPopup var, #buttonCancelPopup span,
+#buttonConfirmPopup var, #buttonConfirmPopup span {
+    text-shadow: none;
+}
+
+/*-- Selection bread crumbs --*/
+.breadCrumb {
+    background: var(--color09-alpha-50);
+    box-shadow: none;
+}
+
+.breadCrumb::after { /*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+    box-shadow: 2px -2px 0 1px var(--color09-alpha-90);
+}
+
+/*-- Input fields --*/
+input, textarea {
+    border: transparent;
+    border-radius: 15px;
+}
+
+input:disabled, textarea:disabled {
+    opacity: 0.5;
+}
+
+/*-- Checkboxes --*/
+.slidingCheckBox {
+    border: 1px solid var(--color01);
+    box-shadow: none;
+}
+
+.slidingCheckBox::after, .slidingCheckBox::before {
+    text-shadow: none;
+}
+
+.slidingCheckBox::after {
+    color: var(--color07);
+}
+
+.slidingCheckBox label {
+    background: var(--color09-scale-1);
+    box-shadow: none;
+}
+
+/*-- Radiobuttons --*/
+.radioButton {
+    box-shadow: none;
+}
+
+.radioButton label {
+    background: var(--color01);
+    box-shadow: none;
+}
+
+/*-- View: pleasewait --*/
+/* Points loader */
+#waitLine > div {
+    background-color: var(--color01);
+    border: 1px solid var(--color01);
+    border-radius: 50%;
+    margin-top: 80px;
+}
+
+/*-- Wait spinner --*/
+.spinner2 {
+    border: 15px solid var(--color01-alpha-15);
+    border-top: 15px solid var(--color01-alpha-80);
+}
+
+/* bounce following spinner */
+#waitSpinner .followingSpinnerShape {
+    background-color: var(--color01-alpha-60);
+    border: 1px solid var(--color02);
+}
+
+/* rotate plane spinner */
+.rotatePlaneSpinner {
+    background-color: var(--color01-alpha-60);
+    border: 1px solid var(--color02);
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(120px);
+    }
+    50% {
+        transform: perspective(120px) rotateY(180deg);
+        background-color: var(--color03-alpha-60);
+        border: 1px solid var(--color03);
+    }
+    100% {
+        transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+    }
+}
+
+/* stretch play spinner */
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+    }
+    50% {
+        background-color: var(--color09-alpha-55);
+        border: 1px solid var(--color09-scale-1);
+    }
+    20% {
+        transform: scaleY(1.0);
+    }
+}
+
+/* cube grid spinner */
+.sk-cube-grid .sk-cube {
+    border: 1px solid var(--color02);
+}
+
+/*-- In transaction background --*/
+#txnBackground {
+    border-top: none;
+    background: transparent; /*because the contrasts are too weak if we drive a third layer which is lighter than the normal background*/
+}
+
+/*-- OK-ZOOM --*/
+.ok-loupe {
+    /*to overwrite script values from 'okzoom' plugin*/
+    box-shadow: none !important;
+}
+
+/*
+ * View specific
+ */
+
+/*-- View: welcome --*/
+div[data-view-id="welcome"] #flexMain {
+    background: none; /*eliminate '+' pattern*/
+}
+
+/*-- Components - Popup overlay and window --*/
+.modalOverlay, .modalOverlayPopup {
+   background-color: var(--color03-alpha-70);
+}
+
+#waitSpinnerModalOverlay.modalOverlay {
+    background-color: var(--color03-alpha-40);
+}
+
+.popupWindow {
+    border: none;
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+#popupWindowContent {
+    background: var(--color02-alpha-80);
+    border-radius: 10px;
+}
+
+#popupWindowAmountEntry #popupWindowContent, #popupWindowSelection #popupWindowContent {
+    background: var(--color02-alpha-80);
+    border-radius: 10px;
+}
+
+#popupWindowContent .fieldButton {
+    background: var(--color01);
+    border: 1px solid var(--color09);
+}
+
+.timeoutProgressBar {
+    border-radius: 10px;
+}
+
+/* pop up hints */
+.popupHint, .popupHint[data-content-style$="InfoBox"] {
+    background: var(--color09-scale-1);
+    color: var(--color03);
+    border: 1px solid var(--color01);
+    border-radius: 10px;
+}
+
+.popupHint[data-content-style$="WarningBox"] {
+    border: 1px solid var(--color10-warning);
+    border-radius: 10px;
+}
+
+.popupHint[data-content-style$="ErrorBox"] {
+    border: 1px solid var(--color07-error);
+    border-radius: 10px;
+}
+
+.popupHint[data-content-style$="WarningBox"]::before {
+    color: var(--color10-warning);
+}
+
+.popupHint[data-content-style$="ErrorBox"]::before {
+    color: var(--color07-error);
+}
+
+/*-- List rows and shadows top/bottom --*/
+/* top shadow */
+.listRow[data-list-up-active]:first-child:nth-of-type(odd) {
+    background: var(--color09-alpha-10);
+}
+
+/* bottom shadow - depending on even or odd row */
+.listRow[data-list-down-active]:last-child:nth-of-type(odd) {
+    background: var(--color09-alpha-10);
+}
+
+.listRow[data-list-down-active]:last-child:nth-of-type(even) {
+    background: var(--color09-alpha-20);
+}
+
+/*-- Virtual Keyboard --*/
+#vkModalOverlay.modalOverlay {
+    background-color: var(--color03-alpha-60);
+}
+
+#virtualKeyboardContainer, #virtualKeyboardArea, #popupKeysArea {
+    background-color: var(--color03);
+}
+
+.keyboardButton:active, #shiftKey.pressed, #popupKeysArea .keyboardButton.highlighted {
+    background-color: var(--color09-alpha-55);
+}
+
+/*-- General message / escalation in  message and question view --*/
+#flexMessageContainerArticle .messageArea {
+    border-radius: 15px;
+}
+
+.messageArea, .messageArea[data-content-style$="InfoBox"] {
+    box-shadow: none;
+    background: var(--color02-info);
+    border: 1px solid var(--color02-info);
+    border-radius: 10px;
+}
+
+.messageArea[data-content-style$="WarningBox"] {
+    background: var(--color10-warning);
+    border: 1px solid var(--color10-warning);
+    border-radius: 10px;
+}
+
+.messageArea[data-content-style$="ErrorBox"] {
+    background: var(--color07-error);
+    border: 1px solid var(--color07-error);
+    border-radius: 10px;
+}
+
+/*-- View: question --*/
+div[data-view-id="question"] .buttonZone div {
+    background: var(--color01);
+    border: 1px solid var(--color09);
+}
+
+/*-- View: accountselection / billpaymentselection --*/
+div[data-view-id="accountselection"] #flexArticle .button,
+div[data-view-id="billpaymentselection"] #flexArticle .button {
+    box-shadow: none;
+}
+
+div[data-view-id="accountselection"] .additional,
+div[data-view-id="billpaymentselection"] .additional {
+    background: var(--color09-alpha-20);
+    border: 1px solid var(--color09-scale-1);
+    border-radius: 10px;
+}
+
+/*-- View: outofservice / offlinespa --*/
+div[data-view-id="outofservice"],
+div[data-view-id="offlinespa"] {
+    background: none;
+}
+
+/*-- View: billsplitting --*/
+#amountHead {
+    background: var(--color09-scale-1);
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+/*-- View: depositresult --*/
+#flexDepositResultTotalAmount {
+    background: var(--color09-scale-1);
+    border-radius: 10px;
+}
+
+.flexDepositResultDetailsRow {
+    border-radius: 10px;
+}
+
+.flexDepositResultDetailsRow[data-row-l2="true"] {
+    background: var(--color07-alpha-30);
+}
+
+.flexDepositResultDetailsRow[data-row-l2="true"] .note {
+    border: 1px solid var(--color07);
+    background: var(--color07-alpha-80);
+}
+
+
+div[data-view-id="scannedimageviewer"] #chqControl, #signatureArea {
+    border-radius: 10px;
+}
+
+
+/*-- View: accountinformation --*/
+#flexAccountDetailsAINPcebal {
+    background: var(--color09);
+}
+
+/*-- View: depositchequesresult --*/
+.chqControl {
+    border-radius: 10px;
+}
+
+#chqInfo[data-cheque-state="declined"] {
+    background: var(--color07);
+    border-radius: 10px;
+}
+
+#chqInfo[data-cheque-state="declined"]>var {
+    color: var(--color09);
+}
+
+/*-- View: menupreferences --*/
+div[data-view-id="menupreferences"] .currentPreferencesButton {
+    border: 1px solid var(--color09-alpha-40);
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton>object {
+    -webkit-filter: brightness(0%) invert(0%);
+    filter: brightness(0%) invert(0%);
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton.prominentItem .preferencesMinMaxButton::before {
+    color: var(--color01);
+    text-shadow: none;
+    box-shadow: none;
+    border-top: 2px outset var(--color01);
+    border-right: 2px inset var(--color01);
+}
+
+div[data-view-id="menupreferences"] .currentPreferencesButton .preferencesMinMaxButton::before {
+    color: var(--color01);
+    text-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px inset var(--color01);
+    border-left: 2px outset var(--color01);
+}
+
+/*-- View: receipt.html --*/
+div[data-view-id="receipt"] .messageArea::before,
+div[data-view-id="receipt"] .messageArea::after {
+    color: #BDC1C6;
+}
+
+.scrollbar-vertical {
+    border-radius: 8px;
+}
+
+.scrollbar-horizontal {
+    background: var(--color01);
+    border-radius: 8px;
+}
+
+
+/*-- Views: idlepresentation and cardanimations --*/
+.contactlessReaderBack {
+    border: 1px solid var(--color09);
+}
+
+@media (height: 768px) {
+    .contactlessReaderBack {
+        width: 170px;
+        height: 250px;
+    }
+}
+
+@media (height: 1024px) {
+    .contactlessReaderBack {
+        width: 180px;
+        height: 260px;
+    }
+}
+
+@media (height: 1280px) {
+    .contactlessReaderBack {
+        width: 150px;
+        height: 230px;
+    }
+}
+
+
+/*amountentry*/
+div[data-view-id="amountentry"] #buttonCorrect, div[data-view-id="numericentry"] #buttonCorrect, #buttonCorrectPopup {
+    justify-content: center;
+}
+
+/*amountentry*/
+#buttonCorrectFront {
+    display: none;
+}
+
+#generalInputBack {
+    display: none;
+}
+

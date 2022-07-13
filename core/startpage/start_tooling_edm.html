@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+$MOD$ start_tooling_edm.html 4.3.1-201130-21-086c3328-1a04bc7d
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tooling Start Page</title>
+    
+<script>
+    
+</script>
+
+<script type="text/javascript" src="../../lib/jquery-min.js"></script>
+
+<script>
+
+
+
+    function init() {
+        //If there are queryStrings, then keep them and add the below standard query strings
+        //If there is no queryString, nothing will be changed.
+        //For example: start_tooling_edm.html?gatewayWebSocketPort=8093  --> start.html?extendedDesignMode=true&interface=../proxies/wn.UI.Service.InterfacesDesignMode.json&longStackTraces=false&&gatewayWebSocketPort=8093
+        var tmp = document.location.href.replace("start_tooling_edm.html?", "start.html?toolingEDM=true&interface=wn.UI.Service.InterfacesDesignMode.json&longStackTraces=false&debugPanel=false&");
+
+        //If there is no queryString, then just call start.html with the standard query string, which are needed at least:
+        document.location.href= tmp.replace("start_tooling_edm.html", "start.html?toolingEDM=true&interface=wn.UI.Service.InterfacesDesignMode&longStackTraces=false&debugPanel=false");
+    }
+
+    jQuery(document).ready(init);
+</script>
+
+
+
+</head>
+
+<body>
+
+</body>
+</html>

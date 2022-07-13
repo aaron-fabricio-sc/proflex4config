@@ -1,0 +1,3 @@
+{
+    "//": "Override or add custom specific properties here. They will be merged to the standard configuration set in 'Config.js' or registry during runtime. Please note that parameter registry gets overridden from here."
+}

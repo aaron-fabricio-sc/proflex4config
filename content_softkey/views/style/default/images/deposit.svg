@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+<g class="shadowGroup1">
+	<path d="M35.8,19.8L26,29.5V5h-1v24.5l-9.6-9.7l-0.7,0.7l10.9,10.9l10.9-10.9L35.8,19.8z"/>
+	<polygon points="38,23 38,24 44,24 44,41 7,41 7,24 13,24 13,23 6,23 6,42 45,42 45,23 	"/>
+</g>
+<g class="shadowGroup2">
+	<path d="M34.8,18.8L25,28.5V4h-1v24.5l-9.6-9.7l-0.7,0.7l10.9,10.9l10.9-10.9L34.8,18.8z"/>
+	<polygon points="37,22 37,23 43,23 43,40 6,40 6,23 12,23 12,22 5,22 5,41 44,41 44,22 	"/>
+</g>
+<g class="shadowGroup3">
+	<path d="M33.8,17.8L24,27.5V3h-1v24.5l-9.6-9.7l-0.7,0.7l10.9,10.9l10.9-10.9L33.8,17.8z"/>
+	<polygon points="36,21 36,22 42,22 42,39 5,39 5,22 11,22 11,21 4,21 4,40 43,40 43,21 	"/>
+</g>
+<g>
+	<path class="fillColor" d="M32.8,16.8L23,26.5V2h-1v24.5l-9.6-9.7l-0.7,0.7l10.9,10.9l10.9-10.9L32.8,16.8z"/>
+	<polygon class="fillColor" points="35,20 35,21 41,21 41,38 4,38 4,21 10,21 10,20 3,20 3,39 42,39 42,20 	"/>
+</g>
+</svg>

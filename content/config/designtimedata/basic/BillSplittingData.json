@@ -1,0 +1,41 @@
+{
+    "amount": "41500",
+    "currency": "EUR",
+    "symbol": "€",
+    "ada": "Euro",
+    "exponent": "-2",
+    "maxnotes": 60,
+    "maxcoins": 50,
+    "denominations": [
+        {
+            "type": 0,
+            "count": 150,
+            "val": 500,
+            "softLimit": 0
+        },
+        {
+            "type": 0,
+            "count": 150,
+            "val": 1000,
+            "softLimit": 0
+        },
+        {
+            "type": 0,
+            "count": 150,
+            "val": 5000,
+            "softLimit": 0
+        },
+        {
+            "type": 0,
+            "count": 150,
+            "val": 10000,
+            "softLimit": 0
+        },
+        {
+            "type": 0,
+            "count": 150,
+            "val": 20000,
+            "softLimit": 0
+        }
+    ]
+}

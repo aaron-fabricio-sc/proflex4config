@@ -1,0 +1,126 @@
+<!--
+$MOD$ withdrawalanimations.html 4.3.1-200827-21-0feba36c-1a04bc7d
+-->
+
+﻿<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <!-- receipt eject -->
+        <figure data-bind="visible: viewFlexReceipt">
+            <var class="font01 color02" data-bind="html: animationTextReceipt"></var>
+            <div id="receiptEject" class="flexItemsSlot">
+                <!-- ko if: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot_rounded.svg', path: 'style/default/images/DNSeries/'}"></svg>
+                <!-- /ko -->
+                <!-- ko ifnot: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot.svg'}"></svg>
+                <!-- /ko -->
+                <div class="itemLane">
+                    <div id="receiptEject3D" data-bind="if: getLabel('GUI_[#VIEW_KEY#]_Headline', 'Withdrawal') !== ''">
+                        <svg id="receiptEjectAnimation3D" data-bind="svguse: { name: 'receipt.svg' }"></svg>
+                    </div>
+                </div>
+            </div>
+        </figure>
+
+        <!-- send electronic receipt  -->
+        <figure data-bind="visible: viewFlexElectronicReceipt">
+            <var class="font01 color02" data-bind="html: animationTextElectronicReceipt"></var>
+            <div id="eReceiptSend" data-bind="if: getLabel('GUI_[#VIEW_KEY#]_Headline', 'Withdrawal') !== ''">
+                <svg id="eReceiptSendAnimation" data-bind="svguse: { name: 'receipt.svg' }"></svg>
+            </div>
+        </figure>
+
+        <!-- notes eject -->
+        <figure id="figureNotesEject" data-bind="visible: viewFlexNotesEject, attr: {'data-receipt-slot': (viewFlexReceipt() || viewFlexElectronicReceipt()) && !viewFlexCoinsEject(), 'data-coin-slot': viewFlexCoinsEject() && !viewFlexReceipt() }">
+            <var class="font01 color02" data-bind="html: animationTextNotes"></var>
+            <div id="notesEject" class="flexItemsSlot">
+                <!-- ko if: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot_cash.svg', path: 'style/default/images/DNSeries/'}"></svg>
+                <!-- /ko -->
+                <!-- ko ifnot: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot.svg'}"></svg>
+                <!-- /ko -->
+                <div class="itemLane">
+                    <!-- ko foreach: { data: notes } -->
+                    <div id="noteEject3D" class="note">
+                        <!-- ko foreach: { data: $data.count } -->
+                            <div class="note3D" data-bind="visible: $index() < 5">
+                                <svg data-bind="attr: { 'data-item-value': $parent.val },
+                                                svguse: { name: $root.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                          inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                            </div>
+                        <!-- /ko -->
+                    </div>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </figure>
+
+        <!-- coins eject -->
+        <figure id="figureCoinsEject" data-bind="visible: viewFlexCoinsEject, attr: {'data-cash-slot': viewFlexNotesEject() }">
+            <var class="font01 color02" data-bind="html: animationTextCoins"></var>
+            <div id="coinsEject" class="flexItemsSlot">
+                <!-- ko if: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot_rounded.svg', path: 'style/default/images/DNSeries/'}"></svg>
+                <!-- /ko -->
+                <!-- ko ifnot: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot.svg'}"></svg>
+                <!-- /ko -->
+                <div class="itemLane" data-bind="foreach: { data: coins }">
+                    <!-- ko foreach: { data: $data.count } -->
+                    <div class="coin"
+                         data-bind="visible: $index() < 5, style: {'animation-duration': (1.5 + $parentContext.$index() * 0.2) + 's', 'padding-top': ($index() + 4) + 'px'}, attr: { id: 'coin' +  $index() % 2 }">
+                        <svg data-bind="attr: { 'data-item-value': $parent.val, 'data-currency-iso': $root.currency },
+                                            svguse: { name: 'single_coin_generic.svg', inline: true, afterRender: $root.viewHelper.singleCoinSymbol }"></svg>
+                    </div>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </figure>
+
+        <!-- voucher eject -->
+        <figure data-bind="visible: viewFlexItemsEject">
+            <var class="font01 color02" data-bind="html: animationTextItems"></var>
+            <div id="voucherEject" class="flexItemsSlot">
+                <!-- ko if: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot_rounded.svg', path: 'style/default/images/DNSeries/'}"></svg>
+                <!-- /ko -->
+                <!-- ko ifnot: styleType() === 'DNSeries/' -->
+                <svg data-bind="svguse: {name: 'slot.svg'}"></svg>
+                <!-- /ko -->
+                <div class="itemLane">
+                    <!-- ko foreach: { data: items } -->
+                    <div id="voucherEject3D" class="voucher">
+                        <!-- ko foreach: { data: $data.count } -->
+                            <div class="voucher3D" data-bind="visible: $index() < 5">
+                                <svg data-bind="svguse: { name: 'single_voucher_generic.svg' }"></svg>
+                            </div>
+                        <!-- /ko -->
+                    </div>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </figure>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button footerButton borderDrawing" data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel"></div>
+</footer>

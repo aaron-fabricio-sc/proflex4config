@@ -1,0 +1,41 @@
+<!--
+$MOD$ billpaymentselection.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain" data-bind="gesture: { grid: '#flexArticle .buttonZone',
+                                            target: 'flexArticle',
+                                                  gestures: { 'Swipe': {'direction':'DIRECTION_HORIZONTAL', 'events':['swipe']},
+                                                             'Pan': {'direction':'DIRECTION_HORIZONTAL', 'events':['panstart','panmove','panend']}},
+                                                  containment: {'element':'window'},
+                                                  horizontalScrollbarElement: 'selectionScrollbar'}">
+
+    <nav id="flexNav"></nav>
+
+    <article id="flexArticle">
+        <!-- ko template: { foreach: dataList.items } -->
+            <div class="buttonZone">
+                <div class="button menuButton" data-bind="command: {id: $data.result, type: $root.CMDTYPE.BUTTON, state: $data.state }">
+                    <var class="color02 font02" data-bind="html: $data.rawdata[0]"></var>
+                </div>
+                <div class="additional menuButton" data-bind="visible: $data.rawdata[1]() !== '' || $data.rawdata[2]() !== ''">
+                    <var class="color03 font01" data-bind="html: $data.rawdata[1]"></var>
+                    <var class="color03 font02" data-bind="text: $data.rawdata[2]"></var>
+                </div>
+            </div>
+        <!-- /ko -->
+    </article>
+
+    <aside id="flexAside"></aside>
+</main>
+
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

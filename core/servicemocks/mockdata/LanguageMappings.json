@@ -1,0 +1,67 @@
+{
+  "InstalledLanguages" : "en-US;de-DE;es-ES",
+  "LanguageSpecifications" : [ {
+    "en-US" : {
+      "NameToIso" : {
+        "English" : "06;en-US"
+      },
+      "CurrDecimalSep" : ".",
+      "NumGroupSep" : ",",
+      "CurrServerValueOffset" : -2,
+      "NumDecimalSep" : ".",
+      "NumGrouping" : 3,
+      "CurrPositiveOrder" : 0,
+      "CurrGroupSep" : ",",
+      "CurrNegativeOrder" : 8,
+      "CurrNumDigits" : 2,
+      "NumNegativeOrder" : 1,
+      "NumNumDigits" : 2,
+      "CurrCurrencySymbol" : "$",
+      "CurrGrouping" : 3,
+      "NumLeadingZero" : 1,
+      "CurrLeadingZero" : 1
+    }
+  }, {
+    "de-DE" : {
+      "NameToIso" : {
+        "German" : "01;de-DE"
+      },
+      "CurrDecimalSep" : ",",
+      "NumGroupSep" : ".",
+      "CurrServerValueOffset" : -2,
+      "NumDecimalSep" : ",",
+      "NumGrouping" : 3,
+      "CurrPositiveOrder" : 1,
+      "CurrGroupSep" : ".",
+      "CurrNegativeOrder" : 8,
+      "CurrNumDigits" : 2,
+      "NumNegativeOrder" : 1,
+      "NumNumDigits" : 2,
+      "CurrCurrencySymbol" : "EUR",
+      "CurrGrouping" : 3,
+      "NumLeadingZero" : 1,
+      "CurrLeadingZero" : 1
+    }
+  }, {
+    "es-ES" : {
+      "NameToIso" : {
+        "Spanish" : "04;es-ES"
+      },
+      "CurrDecimalSep" : ",",
+      "NumGroupSep" : ".",
+      "CurrServerValueOffset" : -2,
+      "NumDecimalSep" : ",",
+      "NumGrouping" : 3,
+      "CurrPositiveOrder" : 1,
+      "CurrGroupSep" : ".",
+      "CurrNegativeOrder" : 8,
+      "CurrNumDigits" : 2,
+      "NumNegativeOrder" : 1,
+      "NumNumDigits" : 2,
+      "CurrCurrencySymbol" : "EUR",
+      "CurrGrouping" : 3,
+      "NumLeadingZero" : 1,
+      "CurrLeadingZero" : 1
+    }
+  } ]
+}

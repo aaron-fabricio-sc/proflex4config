@@ -1,0 +1,27 @@
+<!--
+$MOD$ offlinespa.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+  <nav id="flexNav"></nav>
+
+  <!-- article -->
+  <article id="flexArticle">
+    <div class="outOfServicePattern"></div>
+
+    <var
+      class="font01 color03"
+      id="outOfServiceMessage"
+      data-bind="command: {id: 'MESSAGE', type: CMDTYPE.TEXT, action: null, state: CMDSTATE.ENABLED, label: {html: getLabel('GUI_OfflineSPA_Message', 'Sorry for the inconvenience, this terminal is<br><span class=color07>OUT OF SERVICE</span>'), inplace: true}}"
+    ></var>
+
+    <div class="outOfServicePattern"></div>
+  </article>
+
+  <aside id="flexAside"></aside>
+</main>
+
+<footer id="flexFooter">
+  <div id="flexExtra"></div>
+  <div id="flexCancel"></div>
+</footer>

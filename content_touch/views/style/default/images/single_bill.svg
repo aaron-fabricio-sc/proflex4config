@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 180 110" enable-background="new 0 0 180 110" xml:space="preserve">
+	 <style type="text/css">
+        @import "../default/default/svg.css";
+     </style>
+<rect id="BG_8_" x="1" y="3" fill="#FFFFFF" width="177" height="102"/>
+<rect id="BG_1_" x="1" y="3" opacity="0.1" fill="#4C7B47" width="177" height="102"/>
+<rect id="noteColor" x="39" y="3" opacity="0.7" fill="#4C7B47" width="100" height="102"/>
+<g opacity="0.5">
+	
+		<circle fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="6.9392,6.9392" cx="90" cy="55" r="33.1"/>
+</g>
+<g>
+	<text id="valueLeft" transform="matrix(1 0 0 1 1 101.1737)" fill="#333333" font-size="24">100</text>
+</g>
+<g>
+	<text id="currencyText" transform="matrix(1 0 0 1 41.0001 91.4786)" fill="#333333" font-size="12">euro</text>
+</g>
+<g>
+	<text id="valueRight" transform="matrix(1 0 0 1 118.7974 32.6075)" fill="#333333" text-anchor="start" font-size="35">100</text>
+</g>
+<rect id="stripe" x="41" y="93" fill="#4C7B47" width="80" height="4"/>
+<rect x="7" y="11" fill="#436EB3" width="21" height="13"/>
+
+    <script type="text/javascript">
+        <![CDATA[
+            let id = this.frameElement.id;
+            document.getElementById("valueLeft").textContent = id / 100;
+            document.getElementById("valueRight").textContent = id / 100;
+            let color;
+            switch(id) {
+                case "500": color = "#333333"; break;
+                case "1000": color = "#a9c783"; break;
+                case "2000": color = "#28a5e1"; break;
+                case "5000": color = "#DA542E"; break;
+                case "10000": color = "#2a6a2c"; break;
+                case "20000": color = "#751767"; break;
+                case "50000": color = "#ffff00"; break;
+            }
+            document.getElementById("noteColor").setAttribute("fill", color);
+            document.getElementById("stripe").setAttribute("fill", color);
+        ]]>
+    </script>
+
+</svg>

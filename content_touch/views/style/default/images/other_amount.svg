@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+<g class="shadowGroup1">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M23.1,45.8c0-3.8-1.5-4.5-3-6.1c-1.5-1.5-3-3.8-3-5.3s0.2-3,2.5-3.8
+		c0-2.3,0-15.2,0-15.9c0-0.8,1-2.3,2.5-2.3s2.6,0.8,2.6,1.5c0,0.5,0,6.5,0,9.9c0,1.4,0,2.3,0,2.3s0-4.5,2.3-4.5s2.3,1.5,2.3,2.3
+		c0,0.8,0,2.3,0,2.3s0-3,2.3-3c2.3,0,2.3,1.5,2.3,2.3s0,2.3,0,2.3s0.8-2.3,2.3-2.3s2.3,0.8,2.3,2.3s0,5.3,0,6.8s-0.8,6.1-2.3,7.6
+		s-1.5,2.3-1.5,3.8"/>
+	<rect x="12.5" y="4.3" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<rect x="22.5" y="4.3" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<rect x="32.5" y="4.3" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="18.2,19.3 12.5,19.3 12.5,13.3 18.2,13.3 	"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="18.2,28.3 12.5,28.3 12.5,22.3 18.2,22.3 	"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="26.5,13.3 30.5,13.3 30.5,17.8 	"/>
+	<rect x="32.5" y="13.3" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+</g>
+<g class="shadowGroup2">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M22.1,44.8c0-3.8-1.5-4.5-3-6.1c-1.5-1.5-3-3.8-3-5.3s0.2-3,2.5-3.8
+		c0-2.3,0-15.2,0-15.9c0-0.8,1-2.3,2.5-2.3s2.6,0.8,2.6,1.5c0,0.5,0,6.5,0,9.9c0,1.4,0,2.3,0,2.3s0-4.5,2.3-4.5s2.3,1.5,2.3,2.3
+		c0,0.8,0,2.3,0,2.3s0-3,2.3-3c2.3,0,2.3,1.5,2.3,2.3c0,0.8,0,2.3,0,2.3s0.8-2.3,2.3-2.3s2.3,0.8,2.3,2.3s0,5.3,0,6.8
+		s-0.8,6.1-2.3,7.6s-1.5,2.3-1.5,3.8"/>
+	<rect x="11.5" y="3.3" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<rect x="21.5" y="3.3" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<rect x="31.5" y="3.3" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="17.2,18.3 11.5,18.3 11.5,12.3 17.2,12.3 	"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="17.2,27.3 11.5,27.3 11.5,21.3 17.2,21.3 	"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="25.5,12.3 29.5,12.3 29.5,16.8 	"/>
+	<rect x="31.5" y="12.3" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+</g>
+<g class="shadowGroup3">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M21.1,43.5c0-3.8-1.5-4.5-3-6.1c-1.5-1.5-3-3.8-3-5.3s0.2-3,2.5-3.8
+		c0-2.3,0-15.2,0-15.9c0-0.8,1-2.3,2.5-2.3s2.6,0.8,2.6,1.5c0,0.5,0,6.5,0,9.9c0,1.4,0,2.3,0,2.3s0-4.5,2.3-4.5s2.3,1.5,2.3,2.3
+		c0,0.8,0,2.3,0,2.3s0-3,2.3-3c2.3,0,2.3,1.5,2.3,2.3s0,2.3,0,2.3s0.8-2.3,2.3-2.3s2.3,0.8,2.3,2.3s0,5.3,0,6.8s-0.8,6.1-2.3,7.6
+		s-1.5,2.3-1.5,3.8"/>
+	<rect x="10.5" y="2" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<rect x="20.5" y="2" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<rect x="30.5" y="2" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="16.2,17 10.5,17 10.5,11 16.2,11 	"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="16.2,26 10.5,26 10.5,20 16.2,20 	"/>
+	<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="24.5,11 28.5,11 28.5,15.5 	"/>
+	<rect x="30.5" y="11" fill="none" stroke="#000000" stroke-miterlimit="10" width="8" height="6"/>
+</g>
+<g>
+	<path class="strokeColor" stroke-miterlimit="10" d="M20.1,42.5c0-3.8-1.5-4.5-3-6.1c-1.5-1.5-3-3.8-3-5.3s0.2-3,2.5-3.8
+		c0-2.3,0-15.2,0-15.9c0-0.8,1-2.3,2.5-2.3s2.6,0.8,2.6,1.5c0,0.5,0,6.5,0,9.9c0,1.4,0,2.3,0,2.3s0-4.5,2.3-4.5s2.3,1.5,2.3,2.3
+		s0,2.3,0,2.3s0-3,2.3-3c2.3,0,2.3,1.5,2.3,2.3s0,2.3,0,2.3s0.8-2.3,2.3-2.3c1.5,0,2.3,0.8,2.3,2.3s0,5.3,0,6.8s-0.8,6.1-2.3,7.6
+		s-1.5,2.3-1.5,3.8"/>
+	<rect x="9.5" y="1" class="strokeColor" stroke-miterlimit="10" width="8" height="6"/>
+	<rect x="19.5" y="1" class="strokeColor" stroke-miterlimit="10" width="8" height="6"/>
+	<rect x="29.5" y="1" class="strokeColor" stroke-miterlimit="10" width="8" height="6"/>
+	<polyline class="strokeColor" stroke-miterlimit="10" points="15.2,16 9.5,16 9.5,10 15.2,10 	"/>
+	<polyline class="strokeColor" stroke-miterlimit="10" points="15.2,25 9.5,25 9.5,19 15.2,19 	"/>
+	<polyline class="strokeColor" stroke-miterlimit="10" points="23.5,10 27.5,10 27.5,14.5 	"/>
+	<rect x="29.5" y="10" class="strokeColor" stroke-miterlimit="10" width="8" height="6"/>
+</g>
+</svg>

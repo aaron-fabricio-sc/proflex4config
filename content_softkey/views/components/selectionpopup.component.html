@@ -1,0 +1,65 @@
+<!--
+$MOD$ selectionpopup.component.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<div id="popupMainContent">
+    <!--
+    This version information should reside within main-div-tag to also get removed when removing popup.
+    -->
+    <div class="modalOverlayPopup">
+        <div class="popupWindow" id="popupWindowSelection" data-view-key="">
+            <div id="popupWindowContent" data-view-key="">
+                <main id="flexMainPopup">
+                    <article id="flexArticlePopupSelection" data-bind="
+                        command: { id: 'SELECTION_DYNAMIC_ADA_TEXT',
+                                 adaType: $root.ADA_TYPE.DYNAMIC_VALUE,
+                                 state: $root.CMDSTATE.NONE,
+                                 action: null,
+                                 adaText: $root.getLabel('GUI_[#VIEW_KEY#]_POPUP_SelectedItem_ADA', 'Your current selection is {#currentItemCaption#}.')}">
+                        <var class="color03 font01" data-bind="command: {id: 'MESSAGE_POPUP_LABEL', adaType: ADA_TYPE.MESSAGE, state: CMDSTATE.ENABLED, action: null, label: {html: getLabel('GUI_[#VIEW_KEY#]_[#POPUP_TYPE#]_Message', 'Please choose your preferred item:'), inplace: true}}"></var>
+                        <div id="popupSelectionItemContainer"  data-bind="foreach: { data: dataList.items }">
+                            <div class="button button03 skRight" data-current-item="false" data-bind="
+                              command: {id: $data.result, type: $root.CMDTYPE.BUTTON, state: $data.state },
+                                 attr: { 'data-current-item': $root.currentItemIndex() === $index() ? 'true' : 'false' }">
+                                <svg data-bind="svguse: { name: $data.icon }"></svg>
+                                <var class="color03 font01" data-bind="html: $data.captions[0]"></var>
+                            </div>
+                        </div>
+                    </article>
+                    <aside id="flexAsidePopup">
+                        <div id="flexAsidePopupSK00">
+                            <div class="button button02 skRight iconButton"
+                                 data-bind="command: {id: 'BTN_SCROLL_UP_POPUP', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.SELECTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Previous', 'Up')}, adakey: '5', eppkey: 'F1'}">
+                                <svg data-bind="svguse: { name: 'arrow_up.svg' }"></svg>
+                            </div>
+                        </div>
+                        <div id="flexAsidePopupSK01">
+                            <div class="button button02 skRight iconButton"
+                                 data-bind="command: {id: 'BTN_SCROLL_DOWN_POPUP', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.SELECTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Next', 'Down')}, adakey: '6', eppkey: 'F2'}">
+                                <svg data-bind="svguse: { name: 'arrow_down.svg' }"></svg>
+                            </div>
+                        </div>
+
+                        <div id="flexAsidePopupSK02">
+                            <div id="buttonConfirmPopup"
+                                 class="button button03 skRight iconButton"
+                                 data-bind="command: {id: 'CONFIRM_SELECTION_POPUP', args: ['CONFIRM','CONFIRM'], adaType: ADA_TYPE.SELECTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, adakey: '7', eppkey: ['F3', 'CONFIRM']}">
+                                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM_SELECTION_POPUP')"></var>
+                            </div>
+                        </div>
+
+                        <div id="flexAsidePopupSK03">
+                            <div id="buttonCancelPopup"
+                                 class="button button03 skRight iconButton"
+                                 data-bind="command: {id: 'CANCEL_SELECTION_POPUP', args: ['CANCEL','CANCEL'], adaType: ADA_TYPE.SELECTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, adakey: '8', eppkey: ['F4', 'CANCEL']}">
+                                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL_SELECTION_POPUP')"></var>
+                            </div>
+                        </div>
+                    </aside>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>

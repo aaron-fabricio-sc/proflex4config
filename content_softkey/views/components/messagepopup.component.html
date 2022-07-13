@@ -1,0 +1,35 @@
+<!--
+$MOD$ messagepopup.component.html 4.3.1-200123-21-8cd258cb-1a04bc7d
+-->
+
+<div id="popupMainContent">
+    <!--
+    This version information should reside within main-div-tag to also get removed when removing popup.
+    -->
+    <div class="modalOverlayPopup">
+        <div class="popupWindow" data-view-key="">
+            <div id="popupWindowContent" data-view-key="">
+                <main id="flexMainPopup">
+                    <var class="color03 font01" data-bind="command: {id: 'MESSAGE_POPUP_LABEL', adaType: ADA_TYPE.MESSAGE, state: CMDSTATE.NONE, action: null, label: {html: message, inplace: true}}"></var>
+                    <aside id="flexAsidePopup">
+                        <div id="flexAsidePopupSK00">
+                            <div id="buttonConfirmPopup" class="button button03 skRight iconButton"
+                                 data-bind="command: {id: 'CONFIRM_MESSAGE_POPUP', args: ['CONFIRM','CONFIRM'], adaType: ADA_TYPE.SELECTION_KEY, adakey: '6', label: {html: getLabel('GUI_[#VIEW_KEY#]_[#POPUP_TYPE#]_Button_Yes', 'Yes')}, eppkey: ['F2', 'CONFIRM']}">
+                                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM_MESSAGE_POPUP')"></var>
+                            </div>
+                        </div>
+                        <div id="flexAsidePopupSK01">
+                            <div id="buttonCancelPopup" class="button button03 skRight iconButton"
+                                 data-bind="command: {id: 'CANCEL_MESSAGE_POPUP', args: ['CANCEL','CANCEL'], adaType: ADA_TYPE.SELECTION_KEY, adakey: '7', label: {html: getLabel('GUI_[#VIEW_KEY#]_[#POPUP_TYPE#]_Button_No', 'No')}, eppkey: ['F3', 'CANCEL']}">
+                                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL_MESSAGE_POPUP')"></var>
+                            </div>
+                        </div>
+                    </aside>
+                </main>
+            </div>
+            <span class="timeoutProgressBar"></span>
+        </div>
+    </div>
+</div>

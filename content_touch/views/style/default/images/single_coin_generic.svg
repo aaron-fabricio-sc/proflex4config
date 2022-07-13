@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 180 110" enable-background="new 0 0 180 110" xml:space="preserve">
+<style type="text/css">
+    @import "../default/default/svg.css";
+</style>
+
+<g opacity="0.6">
+	<circle cx="90.3" cy="54.3" r="32.7"/>
+</g>
+<g opacity="0.2">
+	<circle cx="91.3" cy="55.3" r="32.7"/>
+</g>
+<g opacity="0.1">
+	<circle cx="92.3" cy="56.3" r="32.7"/>
+</g>
+<g>
+	<circle fill="#6D5200" cx="89.3" cy="53.3" r="32.7"/>
+</g>
+<g>
+	<circle id="outerCircle" class="outerCircle" fill="#DDC973" cx="88.2" cy="52.2" r="32.7"/>
+</g>
+<circle id="innerShadow" class="innerShadow" fill="#414141" cx="89.2" cy="53.2" r="23"/>
+<circle id="innerCircle" class="innerCircle" fill="#D8D7DD" cx="88.2" cy="52.2" r="23"/>
+<text id="coinCurrencyName" transform="matrix(1 0 0 1 75.5843 67.9582)"> </text>
+<rect x="64" y="32.5" fill="none" width="47.1" height="28.5"/>
+<text id="coinValue" transform="matrix(1 0 0 1 79.1895 55.5527)"> </text>
+
+    <script type="text/javascript">
+        <![CDATA[
+            let id = this.frameElement.id;
+            let attr = this.frameElement.attributes['data-currency-iso'];
+            let currencyText = "CENT";
+            let iso = "EUR";
+            if(attr && attr.value !== "EUR") {
+                iso = attr.value;
+            }
+            currencyText = iso === "EUR" ? "CENT" : "";
+            let innerColorCl, outerColorCl, innerShadowColorCl;
+            switch(id) {
+                case "1": outerColorCl = innerColorCl = innerShadowColorCl = "colorBronze";  break;
+                case "2": outerColorCl = innerColorCl = innerShadowColorCl = "colorBronze";break;
+                case "5": outerColorCl = innerColorCl = innerShadowColorCl = "colorBronze"; break;
+                case "10": outerColorCl = innerColorCl = innerShadowColorCl = "colorGold"; break;
+                case "20": outerColorCl = innerColorCl = innerShadowColorCl = "colorGold"; break;
+                case "50": outerColorCl = innerColorCl = innerShadowColorCl = "colorGold"; break;
+                case "100": outerColorCl = "colorGold"; innerColorCl = "colorSilver"; currencyText = iso === "EUR" ? "EURO" : ""; break;
+                case "200": outerColorCl = "colorSilver"; innerColorCl = "colorGold"; currencyText = iso === "EUR" ? "EURO" : ""; break;
+            }
+            document.getElementById("outerCircle").setAttribute("class", outerColorCl);
+            document.getElementById("innerCircle").setAttribute("class", innerColorCl);
+            document.getElementById("innerShadow").setAttribute("class", innerColorCl);
+
+            if (id >= 100){
+               document.getElementById("coinValue").textContent = id / 100;
+            }
+            else {
+               document.getElementById("coinValue").textContent = id;
+            }
+
+            document.getElementById("coinCurrencyName").textContent = currencyText;
+        ]]>
+    </script>
+
+</svg>

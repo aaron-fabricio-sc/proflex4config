@@ -1,0 +1,37 @@
+/*logo*/
+#flexLogo {
+    margin-top: 5px;
+}
+
+#flexLogo > :first-child {
+    width: 190px;
+    height: 145px;
+}
+
+@media (height: 768px) {
+    #flexLogo > :first-child {
+        width: 130px;
+        height: 100px;
+    }
+}
+
+
+/*Slots*/
+.flexItemsSlot > svg {
+    width: 300px;
+    height: 130px;
+}
+
+.flexItemsSlotLSF > svg {
+    width: 300px;
+    height: 51px;
+}
+
+.flexItemsSlotIn > svg, .flexMetalSlotIn > svg {
+    width: 240px;
+    height: 70px;
+}
+
+.flexItemsSlotIn .note, .flexItemsSlotIn .coin, #takeMetalItems {
+    padding-right: 20px;
+}

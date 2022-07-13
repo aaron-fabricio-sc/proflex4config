@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+$MOD$ start.html 4.3.1-201130-21-086c3328-1a04bc7d
+-->
+<!--
+
+This page supports query string arguments via wm.UI.CoreResources:
+    gatewayType=WEBSOCKET
+    toolingEDM=true/false (if true forces also WEBSOCKET as gatewayType)
+    debugPanel=true/false
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- the following meta tag with name="viewport" is used by the iPad -->
+        <meta name="viewport" content="width=1920, user-scalable=no">
+        <title>ProFlex4 UI</title>
+        <link rel="stylesheet" href="assets/services.css">
+        <link rel="icon" href="assets/PF4_UI.ico">
+
+        <script>
+            window.onerror = function(message, file, line) {
+                let error = `Exception caught in start.html:\nMessage: ${message}\nFile: ${file} Line: ${line}`;
+                try {
+                    Wincor.UI.Diagnostics.LogProvider.error(error);
+                    Wincor.UI.Service.Provider.propagateError(error, "GENERAL");
+                } catch(e) {
+                    console.error(error);
+                }
+            };
+            window.addEventListener('contextmenu', e => {
+                e.preventDefault();
+            });
+        </script>
+    </head>
+
+    <body link="#000000" text="#000000" vlink="#000000" data-restart-spa="false" data-style-type="MercuryDark">
+
+    <div id="applicationMode" style="display: none;">
+        <H1>Welcome to ProFlex4 UI / ApplicationMode</H1>
+        <H2 class="instance"></H2>
+        <H2 class="state"></H2>
+        <H3 class="gwType"></H3>
+        <H3 id="timer"></H3>
+        <H3 class="showPageName"></H3>
+        <iframe id="applicationContent" name="applicationModeFrm" allowfullscreen="allowfullscreen" seamless="seamless" onload="if(window.contentLoaded) contentLoaded(this);"></iframe>
+    </div>
+
+    <div id="extendedDesignMode" style="display: none;">
+        <H1>Welcome to ProFlex4 UI / Extended DesignMode</H1>
+        <H2 class="state"></H2>
+        <div id="extendedDesignModeMenu" style="display: none;" data-viewset-name="">
+            <div class="tooltips">
+                <span>Starts touch view set</span>
+                <button class="funcButton" onclick="jQuery(this).attr('disabled', 'disabled'); startExtendedDesignMode('touch');">Touch</button>
+            </div>
+            <div class="tooltips">
+                <span>Starts softkey view set</span>
+                <button class="funcButton" onclick="jQuery(this).attr('disabled', 'disabled'); startExtendedDesignMode('softkey');">Softkey</button>
+            </div>
+            <div class="singleCheckBox tooltips">
+                <var>Keep viewkey</var>
+                <span>Keeps the last view key after refresh</span>
+                <div class="slidingCheckBox">
+                    <input id="keepViewKeyCheckBox" type="checkbox" value="None" name="check" onclick="keepViewKeyHandler(checked);"/>
+                    <label for="keepViewKeyCheckBox"></label>
+                </div>
+            </div>
+            <div class="singleCheckBox tooltips">
+                <var>Control panel</var>
+                <span>Opens the control panel</span>
+                <div class="slidingCheckBox">
+                    <input id="controlPanelCheckBox" type="checkbox" value="None"  name="check" onclick="controlPanelHandler(checked);"/>
+                    <label for="controlPanelCheckBox"></label>
+                </div>
+            </div>
+            <div class="singleCheckBox tooltips">
+                <var>Keep style</var>
+                <span>Keeps the last style type after refresh</span>
+                <div class="slidingCheckBox">
+                    <input id="keepStyleTypeCheckBox" type="checkbox" value="None" name="check" onclick="keepStyleTypeHandler(checked);"/>
+                    <label for="keepStyleTypeCheckBox"></label>
+                </div>
+            </div>
+            <div class="singleCheckBox tooltips">
+                <var>Activate timeouts</var>
+                <span>Activate all timeouts coming from ViewMappings</span>
+                <div class="slidingCheckBox">
+                    <input id="activateTimeoutsCheckBox" type="checkbox" value="None" name="check" onclick="activateTimeoutsHandler(checked);"/>
+                    <label for="activateTimeoutsCheckBox"></label>
+                </div>
+            </div>
+            <div class="singleCheckBox tooltips">
+                <var>Activate ADA</var>
+                <span>Activate ADA (TTS) for softkey layout</span>
+                <div class="slidingCheckBox">
+                    <input id="activateAdaCheckBox" type="checkbox" value="None" name="check" onclick="activateAdaHandler(checked);"/>
+                    <label for="activateAdaCheckBox"></label>
+                </div>
+            </div>
+        </div>
+        <iframe id="extendedDesignModeContent" name="extendedDesignModeFrm" allowfullscreen="allowfullscreen" seamless="seamless" onload="if(window.contentLoaded) contentLoaded(this);"></iframe>
+    </div>
+
+    <div id="toolingEDM" style="display: none;">
+        <H1>Welcome to ProFlex4 UI / ToolingEDM</H1>
+        <H2 class="instance"></H2>
+        <H2 class="state"></H2>
+        <H3 class="gwType"></H3>
+        <H3 class="showPageName"></H3>
+        <iframe id="toolingEDMContent" name="toolingEDMFrm" allowfullscreen="allowfullscreen" seamless="seamless" onload="if(window.contentLoaded) contentLoaded(this);"></iframe>
+    </div>
+
+    <div class="spinner" style="display: none;">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+
+    </body>
+
+    <script src="../../lib/jquery-min.js"></script>
+    <script src="../../lib/jquery-ui-min.js"></script>
+    <script src="../../lib/class.system.js"></script>
+    <script src="../../lib/require.js"></script>
+    <script>
+        require(["../CoreBundle.amd"]);
+    </script>
+
+</html>

@@ -1,0 +1,86 @@
+<!--
+$MOD$ billsplitting.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <var class="color02 font01" data-bind="format: { src: amount, pattern: isCoinsAvailable ? '#M' : '#ATRM0' }"></var>
+
+        <div id="flexDistributions" data-bind="foreach: { data: distribution, as: 'item' }">
+            <div class="flexDistributionRow"
+                 data-bind="slideVisible: { visible: item.count() > 0, duration: 600 },
+                            attr: { 'data-max-distributions': $parent.distribution().length },
+                            command: {  id: 'DENOM_ROW' + $index(),
+                                        adaType: $root.ADA_TYPE.DYNAMIC_VALUE,
+                                        state: $root.CMDSTATE.NONE,
+                                        action: null,
+                                        adaText: $root.getLabel('GUI_[#VIEW_KEY#]_Label_Denomination_Row_ADA', '{#count#} times {#val#} Euro', null, { 'count': item.count, 'val': item.valueAda })
+                                     }">
+                <div class="itemStack" data-bind="foreach: { data: item.notes, afterRender: $root.viewHelper.getActiveModule().addNote, beforeRemove:$root.viewHelper.getActiveModule().removeNote }">
+                    <div class="" data-bind="attr: { class: item.type === 0 ? 'note' : 'coin' }">
+                        <!-- ko  if: item.type === 0 -->
+                        <svg data-bind="attr: { 'data-item-value': item.value },
+                                        svguse: { name: item.currency === 'EUR' ? 'single_bill_euro.svg' : 'single_bill_generic.svg',
+                                                  inline: true, afterRender: $root.viewHelper.singleBillSymbol }"></svg>
+                        <!-- /ko -->
+                        <!-- ko  if: item.type === 1 -->
+                        <svg data-bind="attr: { 'data-item-value': item.value, 'data-currency-iso': item.currency },
+                                        svguse: { name: 'single_coin_generic.svg', inline: true, afterRender: $root.viewHelper.singleCoinSymbol }"></svg>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <var class="color01 font01 crossX" data-bind="text: 'x'"></var>
+                <var class="color03 font01" data-bind="text: item.count"></var>
+                <var class="color01 font01" data-bind="text: ' = '"></var>
+                <var class="color02 font01 result" data-bind="format: { src: item.result, pattern: '#ATRM0' }"></var>
+            </div>
+        </div>
+
+    </article>
+
+    <aside id="flexAside">
+        <div id="flexAsideSK00">
+            <div class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'SMALLER', adaType: ADA_TYPE.SELECTION_KEY, adakey: '5', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_SmallerBills', 'Smaller bills')}, eppkey: 'F1'}">
+                <svg data-bind="svguse: { name: 'minus.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('SMALLER')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK01">
+            <div class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BIGGER', adaType: ADA_TYPE.SELECTION_KEY, adakey: '6', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_BiggerBills', 'Bigger bills')}, eppkey: 'F2'}">
+                <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('BIGGER')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK02">
+            <div id="buttonCorrect" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CORRECT', args: ['CORRECT','CORRECT','CORRECT'], state: CMDSTATE.DISABLED, adaType: ADA_TYPE.SELECTION_KEY, adakey: '7', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Reset', 'Reset')}, eppkey: ['CLEAR', 'BACKSPACE', 'F3']}">
+                <svg data-bind="svguse: { name: 'reset.svg' }"></svg>
+                <var class="color03 font01" data-bind="html: cmdRepos.getCmdLabel('CORRECT')"></var>
+            </div>
+        </div>
+        <div id="flexAsideSK03">
+            <div id="buttonConfirm" class="button button03 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM', args: ['CONFIRM','CONFIRM'], adaType: ADA_TYPE.FUNCTION_KEY, adakey: '8', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_GetMoney', 'Get money')}, eppkey: ['CONFIRM', 'F4']}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

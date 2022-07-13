@@ -1,0 +1,14 @@
+{
+  "VersionWithRemoteService": "$MOD$ wn.UI.Service.InterfacesRemote.json 4.3.1-200121-21-d006a6de-1a04bc7d",
+  "Import": ["../proxies/wn.UI.Service.Interfaces"],
+  "CommentRemoteInterface": "This one extends the base interface with remote service. The remote service itself has no interface to the web-application",
+  "RemoteProxy": {
+    "service": "service/wn.UI.Service.RemoteService",
+    "entryPoints": ["getCommandRepository", "remoteExecute"],
+    "interface": {
+        "screenshot": {
+            "type": "function"
+        }
+    }
+  }
+}

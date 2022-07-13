@@ -1,0 +1,121 @@
+{
+    "allowMapLocations": true,
+    "zoomToExtent": [
+        959820.1239558380,
+        6752779.1633845335,
+        986719.4319369645,
+        6752834.6516561555
+    ],
+    "atmStateInfos": [
+        {
+            "atm": {
+                "name": "ATM 4all",
+                "primanota": "Primanota",
+                "timeZone": "TimeZone",
+                "remark": "Remark",
+                "addressData": {
+                    "street": "Heinz-Nixdorf-Ring",
+                    "streetNo": "1",
+                    "zipCode": "33106",
+                    "city": "Paderborn",
+                    "longitude": "8.74872",
+                    "latitude": "51.71788"
+                }
+            },
+            "distanceKm": 0.8,
+            "enabledTransactions": [
+                "WITHDRAWAL",
+                "DEPOSIT"
+            ],
+            "wkstState": "OPENCONSUMER"
+        },
+        {
+            "atm": {
+                "name": "ATM 4u",
+                "primanota": "Primanota",
+                "timeZone": "TimeZone",
+                "remark": "Remark",
+                "addressData": {
+                    "street": "Westernmauer",
+                    "streetNo": "10",
+                    "zipCode": "33098",
+                    "city": "Paderborn",
+                    "longitude": "8.75872",
+                    "latitude": "51.72788"
+                }
+            },
+            "distanceKm": 2.4,
+            "enabledTransactions": [
+                "WITHDRAWAL",
+                "DEPOSIT"
+            ],
+            "wkstState": "OPENCONSUMER"
+        },
+        {
+            "atm": {
+                "name": "ATM 24/7",
+                "primanota": "Primanota",
+                "timeZone": "TimeZone",
+                "remark": "Remark",
+                "addressData": {
+                    "street": "Ferdinandstrasse",
+                    "streetNo": "98a",
+                    "zipCode": "33098",
+                    "city": "Paderborn",
+                    "longitude": "8.76872",
+                    "latitude": "51.73788"
+                }
+            },
+            "distanceKm": 4.2,
+            "enabledTransactions": [
+                "WITHDRAWAL",
+                "DEPOSIT"
+            ],
+            "wkstState": "OPENCONSUMER"
+        },
+        {
+            "atm": {
+                "name": "ATM 2use",
+                "primanota": "Primanota",
+                "timeZone": "TimeZone",
+                "remark": "Remark",
+                "addressData": {
+                    "street": "Kassler Tor",
+                    "streetNo": "102",
+                    "zipCode": "33100",
+                    "city": "Paderborn",
+                    "longitude": "8.74797",
+                    "latitude": "51.7072"
+                }
+            },
+            "distanceKm": 5.7,
+            "enabledTransactions": [
+                "WITHDRAWAL",
+                "DEPOSIT"
+            ],
+            "wkstState": "CLOSEDCONSUMER"
+        },
+        {
+            "atm": {
+                "name": "ATM 4power",
+                "primanota": "Primanota",
+                "timeZone": "TimeZone",
+                "remark": "Remark",
+                "addressData": {
+                    "street": "Warburger Str.",
+                    "streetNo": "16b",
+                    "zipCode": "33100",
+                    "city": "Paderborn",
+                    "longitude": "8.72472357",
+                    "latitude": "51.721916"
+                }
+            },
+            "distanceKm": 10.2,
+            "enabledTransactions": [
+                "WITHDRAWAL",
+                "DEPOSIT"
+            ],
+            "wkstState": "CLOSEDCONSUMER"
+        }
+    ]
+}

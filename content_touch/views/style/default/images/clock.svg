@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+<g class="shadowGroup1">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10"  d="M24.4,25.2c0,0-6.4,5-6.4,8v10.3h14.5
+		V33.1c0-3-6.1-8-6.1-8v-1c0,0,6.1-5,6.1-8v-10H18v10c0,3,6.4,8,6.4,8V25.2z"/>
+	<path  d="M25.4,23.2c0,0-6.1-5.3-6.1-8.3h11.8C31.1,17.9,25.4,23.2,25.4,23.2L25.4,23.2z"/>
+	<path  d="M25.4,34.1c0,0,5.7,5,5.7,8H19.5C19.5,39.1,25.4,34.1,25.4,34.1L25.4,34.1z"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="25.2" y1="25.2" x2="25.2" y2="37.1"/>
+</g>
+<g class="shadowGroup2">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10"  d="M23.4,23.6c0,0-6.4,5-6.4,8v10.3h14.5
+		V31.5c0-3-6.1-8-6.1-8v-1c0,0,6.1-5,6.1-8v-10H17v10c0,3,6.4,8,6.4,8V23.6z"/>
+	<path  d="M24.4,21.6c0,0-6.1-5.3-6.1-8.3h11.8C30.1,16.2,24.4,21.6,24.4,21.6L24.4,21.6z"/>
+	<path  d="M24.4,32.5c0,0,5.7,5,5.7,8H18.5C18.5,37.4,24.4,32.5,24.4,32.5L24.4,32.5z"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="24.2" y1="23.6" x2="24.2" y2="35.4"/>
+</g>
+<g class="shadowGroup3">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10"  d="M22.4,21.9c0,0-6.4,5-6.4,8v10.3h14.5
+		V29.8c0-3-6.1-8-6.1-8v-1c0,0,6.1-5,6.1-8v-10H16v10c0,3,6.4,8,6.4,8V21.9z"/>
+	<path  d="M23.4,19.9c0,0-6.1-5.3-6.1-8.3h11.8C29.1,14.5,23.4,19.9,23.4,19.9L23.4,19.9z"/>
+	<path  d="M23.4,30.8c0,0,5.7,5,5.7,8H17.4C17.4,35.7,23.4,30.8,23.4,30.8L23.4,30.8z"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10"  x1="23.2" y1="21.9" x2="23.2" y2="33.7"/>
+</g>
+<g>
+	<path class="strokeColor" stroke-miterlimit="10" d="M21.4,20.5c0,0-6.4,5-6.4,8v10.3h14.5V28.4c0-3-6.1-8-6.1-8v-1
+		c0,0,6.1-5,6.1-8v-10H15v10c0,3,6.4,8,6.4,8V20.5z"/>
+	<path class="fillColor" d="M22.4,18.5c0,0-6.1-5.3-6.1-8.3h11.8C28.1,13.2,22.4,18.5,22.4,18.5L22.4,18.5z"/>
+	<path class="fillColor" d="M22.4,29c0,0,5.7,5,5.7,8H16.5C16.5,34,22.4,29,22.4,29L22.4,29z"/>
+	<line class="strokeColor" stroke-miterlimit="10" x1="22.2" y1="20.5" x2="22.2" y2="32.4"/>
+</g>
+</svg>

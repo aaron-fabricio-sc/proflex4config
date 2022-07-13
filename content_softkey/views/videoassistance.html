@@ -1,0 +1,76 @@
+<!--
+$MOD$ videoassistance.html 4.3.1-200123-21-8cd258cb-1a04bc7d
+-->
+
+<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle">
+        <div id="videoImageArea">
+            <img id="animation" class="videoImage" src="" data-bind="attr: {src: getLabel('GUI_[#VIEW_KEY#]_Video_Image', 'style/default/images/video_conference.svg')}">
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside">
+        <div id="flexAsideSK00">
+            <div class="checkBoxItem checkBoxItemRight borderDrawing" data-bind="
+                command: {
+                      id: 'MUTE_SWITCH',
+                      type: 'checkbox',
+                      adaType: ADA_TYPE.CHECKBOX,
+                      adaText: getLabel('GUI_[#VIEW_KEY#]_Label_MUTE_SWITCH_ADA', ''),
+                      adaTextPost: getLabel('GUI_[#VIEW_KEY#]_Label_MUTE_SWITCH_ADA_Clicked', ''),
+                      adakey: 5,
+                      eppkey: 'F1' }">
+                <var class="color03 font01" data-bind="html: getLabel('GUI_[#VIEW_KEY#]_Label_Mute_Switch', 'Mute')"></var>
+                <div class="slidingCheckBox">
+                    <input id="MUTE_SWITCH" type="checkbox" value="None" name="check"
+                           data-bind="checked: muteSwitch"/>
+                    <label for="MUTE_SWITCH"></label>
+                </div>
+            </div>
+        </div>
+        <div id="flexAsideSK01">
+            <div class="button button02 skRight iconButton borderDrawing" tabindex="3"
+                 data-bind="command: {id: 'VOL_PLUS',
+                    adaType: ADA_TYPE.SELECTION_KEY,
+                    state: CMDSTATE.ENABLED,
+                    label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Volumeplus', 'Volume up')},
+                    eppkey: 'F2',
+                    adakey:'6'}">
+                <svg data-bind="svguse: { name: 'plus.svg' }"></svg>
+                <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('VOL_PLUS')"></var>
+            </div>
+        </div>
+
+        <div id="flexAsideSK02">
+            <div class="button button02 skRight iconButton borderDrawing" tabindex="1"
+                 data-bind="command: {id: 'VOL_MINUS',
+                    adaType: ADA_TYPE.SELECTION_KEY,
+                    state: CMDSTATE.ENABLED,
+                    label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Volumeminus', 'Volume down')},
+                    eppkey: 'F3',
+                    adakey:'7'}">
+                <svg data-bind="svguse: { name: 'minus.svg' }"></svg>
+                <var class="color03 font01" data-bind="text: cmdRepos.getCmdLabel('VOL_MINUS')"></var>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"> </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton borderDrawing"
+                    data-bind="command: {id: 'CANCEL', state: CMDSTATE.HIDDEN, adaType: ADA_TYPE.FUNCTION_KEY, label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

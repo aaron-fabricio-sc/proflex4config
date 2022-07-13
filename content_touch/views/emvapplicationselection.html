@@ -1,0 +1,51 @@
+<!--
+$MOD$ emvapplicationselection.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain" data-bind="gesture: {
+                                grid: '#flexArticle .buttonZone',
+                                target: 'flexArticle',
+                                horizontalScrollbarElement: 'emvApplicationSelectionScrollbar',
+                                gestures: {
+                                    'Swipe': {
+                                        'direction': 'DIRECTION_HORIZONTAL',
+                                        'events':['swipe']
+                                    },
+                                    'Pan': {
+                                        'direction': 'DIRECTION_HORIZONTAL',
+                                        'events':['panstart','panmove','panend']
+                                    }
+                                },
+                                containment: {'element':'window'}}">
+
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+
+    <!-- article -->
+    <article id="flexArticle" data-bind="foreach: { data: dataList.items }">
+        <div class="buttonZone">
+            <div class="button menuButton borderDrawing" data-bind="
+                            attr: { class: 'button menuButton borderDrawing ' + $data.prominent},
+                            command: {id: $data.rawresult, type: $root.CMDTYPE.BUTTON, state: $data.state }">
+                <svg data-bind="svguse: { name: $data.rawdata[1] }"></svg>
+                <var class="color03 font01" data-bind="html: $data.rawdata[0]"></var>
+            </div>
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

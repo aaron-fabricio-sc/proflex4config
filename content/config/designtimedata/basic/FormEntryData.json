@@ -1,0 +1,94 @@
+{
+  "groups": [
+    { "name": "FormEntryData",
+      "items": [
+        {
+          "id": "Payee_ID",
+          "state": 2,
+          "value": "112233445566",
+
+          "type": "number",
+          "mandatory": 1,
+          "formatOption": "NONE",
+          "clearByCorrect": true,
+          "minValue": 100,
+          "maxValue": 9999999999,
+          "multiplier": 1,
+          "allowLeadingZero": true,
+
+          "placeHolder": "0101010101",
+          "helpText": "Please enter ...",
+          "errorText": "Please enter a valid numeric value: 100 in minimum, 9999999999 in maximum.)"
+        },
+        {
+          "id": "Payee_name",
+          "state": 0,
+          "value": "",
+
+          "type": "text",
+          "mandatory": 1,
+          "formatOption": "NONE",
+          "clearByCorrect": true,
+          "minLen": 3,
+          "maxLen": 27,
+
+          "placeHolder": "Placeholder",
+          "helpText": "Please enter ...",
+          "errorText": "Please enter a valid name: 3 characters in minimum, 27 in maximum."
+        },
+        {
+          "id": "Bill_reference_number",
+          "state": 0,
+          "value": "",
+
+          "type": "number",
+          "mandatory": 1,
+          "formatOption": "NONE",
+          "clearByCorrect": true,
+          "minValue": 10,
+          "maxValue": 9999999999,
+          "multiplier": 1,
+          "allowLeadingZero": true,
+
+          "placeHolder": "987654321",
+          "helpText": "Please enter ...",
+          "errorText": "Please enter a valid numeric value: 10 in minimum, 9999999999 in maximum."
+        },
+        {
+          "id": "Amount",
+          "state": 0,
+          "value": "",
+
+          "type": "amount",
+          "mandatory": 1,
+          "formatOption": "#C",
+          "clearByCorrect": true,
+          "minValue": 100,
+          "maxValue": 250000,
+          "multiplier": 1,
+          "decimal": true,
+          "placeHolder": "0",
+
+          "helpText": "Please enter ...",
+          "errorText": "Please enter a valid amount:  1.00 € in minimum, 2,500.00 € in maximum."
+        }
+      ,{
+          "id": "Test_Input_Field",
+          "state": 0,
+          "value": "",
+
+          "type": "text",
+          "mandatory": 1,
+          "formatOption": "NONE",
+          "clearByCorrect": true,
+          "minLen": 3,
+          "maxLen": 27,
+
+          "placeHolder": "for test purposes",
+          "helpText": "Please enter ...",
+          "errorText": "Please enter a valid test string: 3 characters in minimum, 27 in maximum."
+        }
+      ]
+    }
+  ]
+}

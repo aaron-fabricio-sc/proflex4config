@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 45 45" enable-background="new 0 0 45 45" xml:space="preserve">
+
+	<style type="text/css">
+			@import "../default/default/svg.css";
+	</style>
+	 <script type="text/javascript">
+         <![CDATA[
+             if(window.parent && window.parent.Wincor && window.parent.Wincor.UI && window.parent.Wincor.UI.Content) {
+                 let styleRes = window.parent.Wincor.UI.Content.StyleResourceResolver;
+                 if(styleRes) {
+                 	let style = document.getElementsByTagName("style")[0];
+                   	style.innerHTML = style.innerHTML.replace("default/svg.css", styleRes.type() + "svg.css");
+                    styleRes = null;
+                 }
+             }
+         ]]>
+    </script>
+
+
+<g class="shadowGroup1">
+	<polygon points="45,44 3,44 3,23 7,23 7,24 4,24 4,43 44,43 44,24 41,24 41,23 45,23 	"/>
+	<rect x="13" y="11" width="11" height="1"/>
+	<rect x="13" y="16" width="20" height="1"/>
+	<rect x="13" y="21" width="20" height="1"/>
+	<rect x="8" y="35" width="2" height="2"/>
+	<path d="M39,29V5H9v24H7v1h34v-1H39z M10,29V6h28v23H10z"/>
+</g>
+
+
+<g class="shadowGroup2">
+	<polygon points="44,43 2,43 2,22 6,22 6,23 3,23 3,42 43,42 43,23 40,23 40,22 44,22 	"/>
+	<rect x="12" y="10" width="11" height="1"/>
+	<rect x="12" y="15" width="20" height="1"/>
+	<rect x="12" y="20" width="20" height="1"/>
+	<rect x="7" y="34" width="2" height="2"/>
+	<path d="M38,28V4H8v24H6v1h34v-1H38z M9,28V5h28v23H9z"/>
+</g>
+
+
+<g class="shadowGroup3">
+	<polygon points="43,42 1,42 1,21 5,21 5,22 2,22 2,41 42,41 42,22 39,22 39,21 43,21 	"/>
+	<rect x="11" y="9" width="11" height="1"/>
+	<rect x="11" y="14" width="20" height="1"/>
+	<rect x="11" y="19" width="20" height="1"/>
+	<rect x="6" y="33" width="2" height="2"/>
+	<path d="M37,27V3H7v24H5v1h34v-1H37z M8,27V4h28v23H8z"/>
+</g>
+
+<g>
+	<polygon class="fillColor" points="42,41 0,41 0,20 4,20 4,21 1,21 1,40 41,40 41,21 38,21 38,20 42,20 	"/>
+	<rect class="fillColor" x="10" y="8" width="11" height="1"/>
+	<rect class="fillColor" x="10" y="13" width="20" height="1"/>
+	<rect class="fillColor" x="10" y="18" width="20" height="1"/>
+	<rect class="fillColor" x="5" y="32" width="2" height="2"/>
+	<path class="fillColor" d="M36,26V2H6v24H4v1h34v-1H36z M7,26V3h28v23H7z"/>
+</g>
+</svg>

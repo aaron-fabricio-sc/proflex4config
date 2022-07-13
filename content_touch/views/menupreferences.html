@@ -1,0 +1,123 @@
+<!--
+$MOD$ menupreferences.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+
+    <!-- nav -->
+    <nav id="flexNav"></nav>
+    <!-- article -->
+    <div id="gridTemplate" class="buttonZone" style="display: none;">
+        <div class="button menuButton"></div>
+    </div>
+    <article id="flexArticle" data-bind="
+        foreach: {
+            data: dataList.items
+        },
+        gesture: {
+            options: {
+                notifyMovement: false
+            },
+            grid: '#flexArticle .buttonZone',
+            gestures: {
+                'Swipe': {
+                    'direction': 'DIRECTION_HORIZONTAL',
+                    'events': ['swipe']
+                },
+                'Pan': {
+                    'direction':'DIRECTION_HORIZONTAL',
+                    'events': ['panstart','panmove','panend']
+                }
+            },
+            containment: {
+                'element':'window'
+            }
+        }">
+    <!--<article id="flexArticle" data-bind="foreach: { data: dataList.items }">-->
+        <div class="buttonZone" data-selected="false" data-bind="attr: {id: $data.result},
+                                            gesture: {
+                                                options: {
+                                                    initialMove: false,
+                                                    initialSnap: true,
+                                                    lockIfSpace: false,
+                                                    notifyMovement: false,
+                                                    processChildEvents: ['panstart','panmove','panend','tap','press']
+                                                },
+                                                grid: 'gridTemplate',
+                                                gestures: {
+                                                    Pan: {
+                                                        direction: 'DIRECTION_ALL',
+                                                        events: ['panstart','panmove','panend'],
+                                                        enable: false,
+                                                        handler: function(ev, g, m){
+                                                            var codeBehindModule = $root.viewHelper.getActiveModule();
+                                                            if (ev.type === 'panend') {
+                                                                window.setTimeout(codeBehindModule.onTap.bind(codeBehindModule, ev, g, m), 50);
+                                                            }
+                                                        }
+                                                    },
+                                                    Tap: {
+                                                        time: 1000,
+                                                        threshold: 25,
+                                                        direction: 'DIRECTION_ALL',
+                                                        events: ['tap'],
+                                                        handler: $root.viewHelper.getActiveModule().onTap
+                                                    }/*,
+                                                    Press: {
+                                                        time: 750,
+                                                        threshold: 25,
+                                                        events: ['press'],
+                                                        handler: $root.viewHelper.getActiveModule().onPress
+                                                    }*/
+                                                },
+                                                containment: {
+                                                    element: 'flexArticle',
+                                                    useScrollWidth: true
+                                                }
+                                            }">
+            <div class="button menuButton wobbling" data-bind="attr: { class: 'wobbling button menuButton ' + ($data.prominent?$data.prominent:'nonProminentItem'), id: 'inner_'+$data.result},
+                style: { 'animation-delay': -($index() * 0.2) + 's', 'animation-duration': 2 + 's'}">
+                <svg data-bind="svguse: { name: $data.icon }"></svg>
+                <var class="color03 font01" data-bind="html: $data.captions[0]"></var>
+                <var class="font04 color03 preferencesMinMaxButton" data-bind="
+                    attr: {id: 'itemMinMax'+$index() },
+                    gesture: {
+                        gestures: {
+                            Tap: {
+                                time: 1500,
+                                threshold: 25,
+                                direction: 'DIRECTION_ALL',
+                                events:['tap'],
+                                handler: $root.viewHelper.getActiveModule().onTapToggleSize
+                            }
+                        }
+                    }
+                ">
+                </var>
+            </div>
+        </div>
+    </article>
+
+    <!-- aside -->
+    <aside id="flexAside"></aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra">
+        <div class="buttonZone">
+            <div id="buttonConfirm" class="button footerButton" data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+    </div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton" data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>

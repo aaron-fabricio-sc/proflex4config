@@ -1,0 +1,227 @@
+<!--
+$MOD$ amountentry.html 4.3.1-200123-21-8cd258cb-1a04bc7d
+-->
+
+<!-- Main -->
+<main id="flexMain">
+  <!-- Nav -->
+  <nav id="flexNav"></nav>
+
+  <!-- Article -->
+  <article id="flexArticle">
+    <h1 class="color02-dtr" id="newElement">NUEVO ELEMENTO</h1>
+
+    <!-- Input field area -->
+    <div id="flexInputArea">
+      <!-- Input field -->
+      <div id="generalInputFieldArea">
+        <!-- attr: { 'placeholder': placeHolderFormatted }, se extrajo el valor por defecto del placeholder de data-blid -->
+        <input
+          type="text"
+          id="generalInput"
+          class="font04 generalInput borderDrawing"
+          onfocus="blur();"
+          placeholder=""
+          data-bind="
+                                       attr: { 'placeholder': placeHolderFormatted },
+                                       format: { src: amountField, target: amountFieldFormatted, placeholder_src: placeHolder, placeholder_target: placeHolderFormatted, pattern: formatOption },
+                                       autoSizeInputFont: amountField,
+                                       command: {id: 'AMOUNT_INPUT', type: CMDTYPE.FIELD, action: null, state: CMDSTATE.ENABLED, label: {value: amountFieldFormatted, inplace: true}}"
+        />
+        <div id="generalInputBack">👈</div>
+      </div>
+
+      <!-- Pin area -->
+      <div id="pinPadButtons">
+        <!-- 1. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '1', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_1', '1')}, eppkey: '1'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('1')"
+            ></var>
+          </div>
+        </div>
+        <!-- 2. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '2', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_2', '2')}, eppkey: '2'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('2')"
+            ></var>
+          </div>
+        </div>
+        <!-- 3. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '3', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_3', '3')}, eppkey: '3'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('3')"
+            ></var>
+          </div>
+        </div>
+        <!-- 4. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '4', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_4', '4')}, eppkey: '4'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('4')"
+            ></var>
+          </div>
+        </div>
+        <!-- 5. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '5', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_5', '5')}, eppkey: '5'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('5')"
+            ></var>
+          </div>
+        </div>
+        <!-- 6. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '6', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_6', '6')}, eppkey: '6'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('6')"
+            ></var>
+          </div>
+        </div>
+        <!-- 7. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '7', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_7', '7')}, eppkey: '7'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('7')"
+            ></var>
+          </div>
+        </div>
+        <!-- 8. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '8', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_8', '8')}, eppkey: '8'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('8')"
+            ></var>
+          </div>
+        </div>
+        <!-- 9. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '9', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_9', '9')}, eppkey: '9'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('9')"
+            ></var>
+          </div>
+        </div>
+        <!-- 0. btn -->
+        <div class="buttonZone">
+          <div
+            class="button fieldButton borderDrawing"
+            data-bind="command: {id: '0', type: CMDTYPE.BUTTON, state: CMDSTATE.ENABLED, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_0', '0')}, eppkey: '0'}"
+          >
+            <var
+              class="color03 font01"
+              data-bind="text: cmdRepos.getCmdLabel('0')"
+            ></var>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Aside -->
+  <aside id="flexAside">
+    <!-- Correct btn -->
+    <div class="buttonZone">
+      <div
+        id="buttonCorrect"
+        class="button footerButton buttonCorrect borderDrawing"
+        data-bind="command: {id: 'CORRECT', type: CMDTYPE.BUTTON, args: ['CORRECT','CORRECT'], label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Correct', 'PASA CORRECTO')}, eppkey: ['BACKSPACE', 'CLEAR']}"
+      >
+        <div id="buttonCorrectFront"></div>
+        <!--<svg data-bind="svguse: { name: 'correct.svg' }"></svg>-->
+        <var
+          class="color03 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CORRECT')"
+        ></var>
+      </div>
+    </div>
+    <!-- Confirm btn -->
+    <div class="buttonZone">
+      <div
+        id="buttonConfirm"
+        class="button dialogButton borderDrawing"
+        data-bind="command: {id: 'CONFIRM', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'Confirm')}, eppkey: 'CONFIRM'}"
+      >
+        <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+        <var
+          class="color09 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"
+        ></var>
+      </div>
+    </div>
+    <!-- Billsplitting (other) btn -->
+    <div class="buttonZone">
+      <div
+        id="other"
+        class="button dialogSmallButton borderDrawing"
+        data-bind="command: {id: 'MIXTURE', type: CMDTYPE.BUTTON, state: CMDSTATE.HIDDEN, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Mixture', 'Bill splitting')}}"
+      >
+        <svg data-bind="svguse: { name: 'bill_splitting.svg' }"></svg>
+        <var
+          class="color03 font01"
+          data-bind="html: cmdRepos.getCmdLabel('MIXTURE')"
+        ></var>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- Footer -->
+<footer id="flexFooter">
+  <div id="flexExtra"></div>
+  <div id="flexCancel">
+    <!-- Cancel btn -->
+    <div class="buttonZone">
+      <div
+        id="buttonCancel"
+        class="button footerButton"
+        data-bind="command: {id: 'CANCEL', type: CMDTYPE.BUTTON, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}"
+      >
+        <svg data-bind="svguse: { name: 'cancel.svg' }"></svg>
+        <var
+          class="color09 font01"
+          data-bind="html: cmdRepos.getCmdLabel('CANCEL')"
+        ></var>
+      </div>
+    </div>
+  </div>
+</footer>

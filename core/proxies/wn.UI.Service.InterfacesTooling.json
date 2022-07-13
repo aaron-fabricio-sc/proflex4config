@@ -1,0 +1,20 @@
+{
+  "Import": ["../proxies/wn.UI.Service.Interfaces"],
+  "CommentToolingInterface": "This interface extends the ViewProxy configuration of the imported standard interface",
+  "ViewProxy": {
+    "service": "service/wn.UI.Service.ToolingViewService",
+    "entryPoints": ["display","cancel","prepare","activate","resetUserInteractionTimeout","register","reload","select","resizeTo","setViewSet","getElementType"],
+    "interface": {
+      "setCommandRepository": {
+        "type": "function"
+      },
+      "resizeTo": {
+        "type": "function"
+      },
+      "TOOLING_MODE": {
+        "type": "boolean",
+        "writable": false
+      }
+	}
+  }
+}

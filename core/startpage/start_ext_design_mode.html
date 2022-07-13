@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+$MOD$ start_ext_design_mode.html 4.3.1-201021-21-0133f654-1a04bc7d
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Welcome to ProFlex4 UI / GUIAPP Extended Design Mode</title>
+
+        <!-- <script type="text/javascript" src="../../lib/jquery-min.js"></script> -->
+
+        <script>
+            function ready(fn) {
+                if (document.readyState !== "loading") {
+                    fn();
+                } else {
+                    document.addEventListener("DOMContentLoaded", fn);
+                }
+            }
+            function init() {
+                //If there are additional queryStrings (i.e. there's an "?" after "start_ext_design_mode.html"),
+                //then add the necessary queryStrings and add the additional ones.
+                //If there is no additional queryString, nothing will be changed.
+
+                //For example: start_ext_design_mode.html?one=two&third=fourth  --> start.html?[SEE_BELOW]&one=two&third=fourth
+                var tmp = document.location.href.replace(
+                    "start_ext_design_mode.html?",
+                    "start.html?extendedDesignMode=true&interface=wn.UI.Service.InterfacesDesignMode&debugPanel=true&longStackTraces=false&instanceName=GUIAPP&"
+                );
+                //note the '&' at the end
+                //if there was no query string, then the above replace() has not changed anything to "start.html?...." and it's still only "start_ext_design_mode.html" and the next replace() will do the work:
+
+                //If there is no additional queryString, then add only the necessary stuff
+                document.location.href = tmp.replace(
+                    "start_ext_design_mode.html",
+                    "start.html?extendedDesignMode=true&interface=wn.UI.Service.InterfacesDesignMode&debugPanel=true&longStackTraces=false&instanceName=GUIAPP"
+                );
+            }
+
+            ready(init);
+        </script>
+    </head>
+
+    <body></body>
+</html>

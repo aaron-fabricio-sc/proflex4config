@@ -1,0 +1,155 @@
+<!--
+$MOD$ emvtransactions.html 4.3.1-200121-21-2e9c3f81-1a04bc7d
+-->
+
+<main id="flexMain">
+    <!-- Nav -->
+    <!-- nav -->
+    <nav id="flexNav">
+        <div id="flexNavSK00"></div>
+        <div id="flexNavSK01"></div>
+        <div id="flexNavSK02"></div>
+        <div id="flexNavSK03"></div>
+    </nav>
+
+    <!-- Article -->
+    <article id="flexArticle">
+
+
+
+            <!-- Account transaction area -->
+            <div id="flexTransLogArea">
+                <div data-bind="attr:{ id: tableType() }">
+
+                    <!-- Transaction header -->
+                    <div id="flexTransLogHeader">
+
+                            <div id="rowTransLogHeader">
+                                 <var id="transHeadLogDateLabel" class="color03 font02"
+                                     data-bind="command: {id: 'dateLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Date', 'Date'), inplace: true}}">
+                                 </var>
+                                 <var id="transHeadLogTimeLabel" class="color03 font02"
+                                     data-bind="command: {id: 'timeLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Time', 'Time'), inplace: true}}">
+                                 </var>
+                                 <var id="transHeadLogAmountLabel" class="color03 font02"
+                                     data-bind="command: {id: 'amountLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Amount', 'Amount'), inplace: true}}">
+                                 </var>
+                                 <var id="transHeadLogRefAmountLabel" class="color03 font02"
+                                     data-bind="command: {id: 'refAmountLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_RefAmount', 'Ref. Amount'), inplace: true}}">
+                                 </var>
+                                 <var id="transHeadLogOtherLabel" class="color03 font02"
+                                     data-bind="command: {id: 'otherLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Other', 'Country/Currency/Type/Number'), inplace: true}}">
+                                 </var>
+                            </div>
+                            <div id="rowTransLogHeaderECash">
+                                 <var id="transHeadLogDateLabelECash" class="color03 font02"
+                                     data-bind="command: {id: 'dateLabelECash', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Date', 'Date'), inplace: true}}">
+                                 </var>
+                                 <var id="transHeadLogTimeLabelECash" class="color03 font02"
+                                     data-bind="command: {id: 'timeLabelECash', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Time', 'Time'), inplace: true}}">
+                                 </var>
+                                 <var id="transHeadLogCountryLabelECash" class="color03 font02"
+                                     data-bind="command: {id: 'countryLabelECash', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Country', 'Country'), inplace: true}}">
+                                 </var>
+                                 <var id="transHeadLogNumberLabelECash" class="color03 font02"
+                                     data-bind="command: {id: 'numberLabelECash', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Number', 'Number'), inplace: true}}">
+                                 </var>
+                            </div>
+
+                        <div id="rowTransLogHeader2">
+                            <var id="transHeadLogPlaceLabel" class="color02 font02"
+                                 data-bind="command: {id: 'placeLabel', action: null, label: {text: getLabel('GUI_[#VIEW_KEY#]_Label_Place', 'Merchant Name and Location'), inplace: true}}">
+                            </var>
+                        </div>
+                    </div>
+
+                    <!-- Transaction data -->
+                    <div id="flexTransLogDataArea">
+                        <div data-bind="attr:{ class: tableType() }">
+                            <!-- ko template: { foreach: dataList.items, afterRender: notify.bind($root) } -->
+                            <div class="transLogTransaction listRow" data-list-down-active="false" data-list-up-active="false" data-bind="
+                                        style: {'animation-duration': ($index() * 0.2 + 0.4) + 's'},
+                                        attr: {'data-list-down-active': $root.cmdRepos.isActive('BTN_SCROLL_DOWN'), 'data-list-up-active': $root.cmdRepos.isActive('BTN_SCROLL_UP')},
+                                        command: {  id: 'TRANS_ROW' + $index(),
+                                            state: $root.CMDSTATE.NONE,
+                                            action: null
+                                         }">
+                                <div class="rowTransLogData">
+                                    <div class="rowTransLogDataLine1">
+                                        <var class="transLogDateValue color03 font02" data-bind="text: $data.transDate"></var>
+                                        <var class="transLogTimeValue color03 font02" data-bind="text: $data.transTime"></var>
+                                        <var class="transLogAmountValue color03 font02" data-bind="text: $data.transAmount"></var>
+                                        <var class="transLogRefAmountValue color03 font02" data-bind="text: $data.transRefAmount"></var>
+                                        <var class="transLogCountryValue color03 font02" data-bind="text: $data.transCountry"></var>
+                                        <var class="transLogCurrencyValue color03 font02" data-bind="text: $data.transCurrency"></var>
+                                        <var class="transLogTypeValue color03 font02" data-bind="text: $data.transType"></var>
+                                        <var class="transLogNumberValue color03 font02" data-bind="text: $data.transNumber"></var>
+                                    </div>
+
+                                    <div class="rowTransLogDataLine1ECash">
+                                        <var class="transLogDateValueECash color03 font02" data-bind="text: $data.transDate"></var>
+                                        <var class="transLogTimeValueECash color03 font02" data-bind="text: $data.transTime"></var>
+                                        <var class="transLogCountryValueECash color03 font02" data-bind="text: $data.transCountry"></var>
+                                        <var class="transLogNumberValueECash color03 font02" data-bind="text: $data.transNumber"></var>
+                                    </div>
+
+                                    <div class="rowTransLogDataLine2">
+                                        <var class="transLogPlaceValue color02 font02" data-bind="text: $data.transPlace"> </var>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+    </article>
+
+    <!-- Aside -->
+    <aside id="flexAside">
+        <!-- Confirm btn -->
+
+        <!-- Previous btn -->
+        <div id="flexAsideSK00">
+            <div class="button button01 skRight iconButton borderDrawing" disabled="disabled"
+                 data-bind="command: {id: 'BTN_SCROLL_UP', adaType: ADA_TYPE.SELECTION_KEY, adakey: '5',  label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Up', 'Previous')}, eppkey: 'F1'}">
+                <svg data-bind="svguse: { name: 'arrow_up.svg' }"></svg>
+            </div>
+        </div>
+
+        <div id="flexAsideSK01">
+            <div class="button button01 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'BTN_SCROLL_DOWN', adaType: ADA_TYPE.SELECTION_KEY, adakey: '6',  label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Down', 'Further')}, eppkey: 'F2'}">
+                <svg data-bind="svguse: { name: 'arrow_down.svg' }"></svg>
+            </div>
+        </div>
+
+        <!-- Next btn -->
+        <div id="flexAsideSK02"></div>
+
+        <div id="flexAsideSK03">
+            <div id="buttonConfirm" class="button button01 skRight iconButton borderDrawing"
+                 data-bind="command: {id: 'CONFIRM', args: ['CONFIRM','CONFIRM'], adaType: ADA_TYPE.SELECTION_KEY, adakey: '8', label: {html: getLabel('GUI_[#VIEW_KEY#]_Button_Confirm', 'End')}, eppkey: ['CONFIRM', 'F4']}">
+                <svg data-bind="svguse: { name: 'confirm.svg' }"></svg>
+                <var class="color09 font01" data-bind="html: cmdRepos.getCmdLabel('CONFIRM')"></var>
+            </div>
+        </div>
+
+    </aside>
+</main>
+
+<!-- footer -->
+<footer id="flexFooter">
+    <div id="flexExtra"></div>
+    <div id="flexCancel">
+        <div class="buttonZone">
+            <div id="buttonCancel" class="button footerButton"
+                    data-bind="command: {id: 'CANCEL', adaType: ADA_TYPE.FUNCTION_KEY, label: {text: getLabel('GUI_[#VIEW_KEY#]_Button_Cancel', 'Cancel')}, eppkey: 'CANCEL'}">
+                <var data-bind="text: cmdRepos.getCmdLabel('CANCEL')"></var>
+            </div>
+        </div>
+    </div>
+</footer>
